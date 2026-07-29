@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:intf="http://arca.services.soa.sistinf.it" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://arca.services.soa.sistinf.it" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="RichiestaPerCodiceFiscale">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="Profilo" nillable="true" type="intf:tProfilo" />
+        <xsd:element minOccurs="0" name="CodiceFiscale" nillable="true" type="intf:tCodiceFiscale" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RichiestaPerCodiceFiscaleParziale">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Profilo" type="intf:tProfilo" />
+        <xsd:element minOccurs="0" name="CodiceFiscale" nillable="true" type="intf:tCodiceFiscale" />
+        <xsd:element minOccurs="0" name="Cognome" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" name="Nome" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" name="Sesso" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" name="DataNascita" nillable="true" type="intf:tData2" />
+        <xsd:element minOccurs="0" name="ComuneNascita" nillable="true" type="intf:tLuogo" />
+        <xsd:element minOccurs="0" name="ProvinciaNascita" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" name="StatoEsteroNascita" nillable="true" type="intf:tLuogo" />
+        <xsd:element minOccurs="0" maxOccurs="5" name="FonteArchivio" nillable="true" type="intf:tFonteArchivio2" />
+        <xsd:element minOccurs="0" name="ProvinciaCompetenza" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RichiestaPerDatiAnagrafici">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="Profilo" nillable="true" type="intf:tProfilo" />
+        <xsd:element minOccurs="0" name="DatiPersonali" nillable="true" type="intf:tDatiPersonaliParziali" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RichiestaPerDatiAnagraficiParziali">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Profilo" type="intf:tProfilo" />
+        <xsd:element minOccurs="0" name="DatiPersonali" nillable="true" type="intf:tDatiPersonaliParziali2" />
+        <xsd:element minOccurs="0" maxOccurs="5" name="FonteArchivio" nillable="true" type="intf:tFonteArchivio2" />
+        <xsd:element minOccurs="0" name="ProvinciaCompetenza" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RichiestaPerCodiceIndividuale">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Profilo" type="intf:tProfilo" />
+        <xsd:element name="ChiaveIndividuale" type="intf:tCodiceIndividualeIn" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RichiestaDettaglio">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Profilo" type="intf:tProfilo" />
+        <xsd:element name="ChiaveArca" type="intf:tChiaveArca" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="tProfilo">
+    <xsd:sequence>
+      <xsd:element name="Provenienza">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="Matricola">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="Password" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="Applicazione">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PIN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CodiceFiscaleRichiedente" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z]{3}[A-Z]{3}\d{2}[A-Z]\d{2}\w{4}[A-Z]" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="IpClient" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="Ruolo" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiPersonaliParziali">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Cognome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Nome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DataNascita" nillable="true" type="intf:tData" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiPersonaliParziali2">
+    <xsd:sequence>
+      <xsd:element name="Cognome" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Nome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DataNascita" nillable="true" type="intf:tData2" />
+      <xsd:element minOccurs="0" name="Sesso" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ComuneNascita" nillable="true" type="intf:tLuogo" />
+      <xsd:element minOccurs="0" name="ProvinciaNascita" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="3" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="StatoEsteroNascita" nillable="true" type="intf:tLuogo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DatiRisposta">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="Esito" nillable="true" type="intf:tEsito" />
+        <xsd:element minOccurs="0" name="Abilitazioni" nillable="true" type="intf:tAbilitazioni" />
+        <xsd:element minOccurs="0" maxOccurs="200" name="Sinonimi" nillable="true" type="intf:tSinonimi" />
+        <xsd:element minOccurs="0" name="Dettaglio" nillable="true" type="intf:tDettaglio" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="tEsito">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ReturnCode" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Descrizione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TotaleSinonimiGenerati" nillable="true" type="xsd:int" />
+      <xsd:element minOccurs="0" name="TotaleSinonimiRestituiti" nillable="true" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tSinonimi">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ChiaveArca" nillable="true" type="intf:tChiaveArca" />
+      <xsd:element minOccurs="0" name="LowProfile" nillable="true" type="intf:tLowProfileSin" />
+      <xsd:element minOccurs="0" name="Annotazione" nillable="true" type="intf:tElenco" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDettaglio">
+    <xsd:sequence>
+      <xsd:element name="ChiaveArca" type="intf:tChiaveArca" />
+      <xsd:element minOccurs="0" name="LowProfile" nillable="true" type="intf:tLowProfile" />
+      <xsd:element minOccurs="0" name="MediumProfile" nillable="true" type="intf:tMediumProfile" />
+      <xsd:element minOccurs="0" name="HighProfile" nillable="true" type="intf:tHighProfile" />
+      <xsd:element minOccurs="0" name="AllProfile" nillable="true" type="intf:tAllProfile" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tLowProfile">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="FormatoLuogoNascita" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="DatiPersonali" nillable="true" type="intf:tDatiPersonali" />
+      <xsd:element minOccurs="0" name="DatiEstero" nillable="true" type="intf:tDatiAggiuntivi" />
+      <xsd:element minOccurs="0" name="CodiceFiscale" nillable="true" type="intf:tCodiceFiscale" />
+      <xsd:element minOccurs="0" name="TipoValidazioneCodiceFiscale" nillable="true" type="intf:tValidCodFisc" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tLowProfileSin">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="DatiPersonali" nillable="true" type="intf:tDatiPersonali" />
+      <xsd:element minOccurs="0" name="CodiceFiscale" nillable="true" type="intf:tCodiceFiscale" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tMediumProfile">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="FormatoLuogoNascita" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="DatiPersonali" nillable="true" type="intf:tDatiPersonali" />
+      <xsd:element minOccurs="0" name="DatiEstero" nillable="true" type="intf:tDatiAggiuntivi" />
+      <xsd:element minOccurs="0" name="CodiceFiscale" nillable="true" type="intf:tCodiceFiscale" />
+      <xsd:element minOccurs="0" name="TipoValidazioneCodiceFiscale" nillable="true" type="intf:tValidCodFisc" />
+      <xsd:element minOccurs="0" name="UlterioriDatiPersonali" nillable="true" type="intf:tUlterioriDatiPersonali" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tHighProfile">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="FormatoLuogoNascita" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="DatiPersonali" nillable="true" type="intf:tDatiPersonali" />
+      <xsd:element minOccurs="0" name="DatiEstero" nillable="true" type="intf:tDatiAggiuntivi" />
+      <xsd:element minOccurs="0" name="CodiceFiscale" nillable="true" type="intf:tCodiceFiscale" />
+      <xsd:element minOccurs="0" name="TipoValidazioneCodiceFiscale" nillable="true" type="intf:tValidCodFisc" />
+      <xsd:element minOccurs="0" name="UlterioriDatiPersonali" nillable="true" type="intf:tUlterioriDatiPersonali" />
+      <xsd:element minOccurs="0" name="DatiIndirizzo" nillable="true" type="intf:tDatiIndirizzo" />
+      <xsd:element minOccurs="0" name="DatiIndirizzoEstero" nillable="true" type="intf:tDatiIndirizzoEstero" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tAllProfile">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="FormatoLuogoNascita" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="DatiPersonali" nillable="true" type="intf:tDatiPersonali" />
+      <xsd:element minOccurs="0" name="DatiEstero" nillable="true" type="intf:tDatiAggiuntivi" />
+      <xsd:element minOccurs="0" name="CodiceFiscale" nillable="true" type="intf:tCodiceFiscale" />
+      <xsd:element minOccurs="0" name="TipoValidazioneCodiceFiscale" nillable="true" type="intf:tValidCodFisc" />
+      <xsd:element minOccurs="0" name="UlterioriDatiPersonali" nillable="true" type="intf:tUlterioriDatiPersonali" />
+      <xsd:element minOccurs="0" name="DatiIndirizzo" nillable="true" type="intf:tDatiIndirizzo" />
+      <xsd:element minOccurs="0" name="DatiIndirizzoEstero" nillable="true" type="intf:tDatiIndirizzoEstero" />
+      <xsd:element minOccurs="0" maxOccurs="600" name="Riferimenti" nillable="true" type="intf:tRiferimenti" />
+      <xsd:element minOccurs="0" name="DatiAnagraficiInterni" nillable="true" type="intf:tDatiAnagraficiInterni" />
+      <xsd:element minOccurs="0" name="DatiIndirizzoInterni" nillable="true" type="intf:tDatiIndirizzoInterni" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiAnagraficiInterni">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CFStatus" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Status1" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Status2" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Status3" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Status4" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Status5" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Provenie" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="LivelloDefinizione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SedeINPS" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DataMovimentazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OraMovimentazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SedeMovimentazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CodiceOperatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CodiceProgramma" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ErroreAnagrafico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ErroreGenerico" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiIndirizzoInterni">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="StatInd" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Proveni3" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DataMovimentazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OraMovimentazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SedeMovimentazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CodiceOperatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CodiceProgramma" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ErroreIndirizzo" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tChiaveArca">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Codice" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Progressivo" nillable="true" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCodiceFiscale">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Cognome" nillable="true" type="intf:tCognCodFisc" />
+      <xsd:element minOccurs="0" name="Nome" nillable="true" type="intf:tNomeCodFisc" />
+      <xsd:element minOccurs="0" name="Anno" nillable="true" type="intf:tAnnoCodFisc" />
+      <xsd:element minOccurs="0" name="Mese" nillable="true" type="intf:tMeseCodFisc" />
+      <xsd:element minOccurs="0" name="Giorno" nillable="true" type="intf:tGiornoCodFisc" />
+      <xsd:element minOccurs="0" name="Comune" nillable="true" type="intf:tComuneCodFisc" />
+      <xsd:element minOccurs="0" name="CodControllo" nillable="true" type="intf:tCodControlloCodFisc" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tCognCodFisc">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tNomeCodFisc">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tAnnoCodFisc">
+    <xsd:restriction base="xsd:int" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tMeseCodFisc">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tGiornoCodFisc">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tComuneCodFisc">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tCodControlloCodFisc">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:complexType name="tDatiPersonaliSin">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Cognome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Nome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DataNascita" nillable="true" type="intf:tData" />
+      <xsd:element minOccurs="0" name="Sesso" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ComuneNascita" nillable="true" type="intf:tLuogo2" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiPersonali">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf:tDatiPersonaliSin">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Paese" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="StatoNascita" nillable="true" type="intf:tLuogo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiAggiuntivi">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="SecondoCognome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SecondoCognomeAcquisito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CodiceDipartimento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ProvinciaNascita" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="LuogoNascita" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tLuogo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Codice" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Nome" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tLuogo2">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf:tLuogo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Provincia" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="tData2">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Giorno" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Mese" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Anno" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tData">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Giorno" nillable="true" type="intf:tGiorno" />
+      <xsd:element minOccurs="0" name="Mese" nillable="true" type="intf:tMese" />
+      <xsd:element minOccurs="0" name="Anno" nillable="true" type="intf:tAnno" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tGiorno">
+    <xsd:restriction base="xsd:int" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tMese">
+    <xsd:restriction base="xsd:int" />
+  </xsd:simpleType>
+  <xsd:simpleType name="tAnno">
+    <xsd:restriction base="xsd:int" />
+  </xsd:simpleType>
+  <xsd:complexType name="tUlterioriDatiPersonali">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CodiceNome" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="CognomeAcquisito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DataMorte" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DataEliminazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Nazionalita" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="NazionalitaBelfiore" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="Cittadinanza" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="Residenza" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="StatoCivile" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="TitoloStudio" nillable="true" type="intf:tElenco" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiIndirizzo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CodiceResidenza" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="Paese" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="StatoResidenza" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="ComuneResidenza" nillable="true" type="intf:tLuogo2" />
+      <xsd:element minOccurs="0" name="Frazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Cap" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Civico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Indirizzo" nillable="true" type="intf:tIndirizzo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiIndirizzoEstero">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CodiceResidenza" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="Paese" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="StatoResidenza" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="Dipartimento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CityName" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Cap" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Civico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Indirizzo" nillable="true" type="intf:tIndirizzoEstero" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tRiferimenti">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ChiaveIndividuale" nillable="true" type="intf:tCodiceIndividualeOut" />
+      <xsd:element minOccurs="0" name="DataDefinizione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TipocodiceIndividuale" nillable="true" type="intf:tElenco" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tElenco">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Codice" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Descrizione" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tValidCodFisc">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:complexType name="tCodiceIndividuale">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="FonteArchivio" nillable="true" type="intf:tFonteArchivio" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCodiceIndividualeIn">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf:tCodiceIndividuale">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CodiceIndividuale" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="tCodiceIndividualeOut">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf:tCodiceIndividuale">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CodiceIndividuale" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CodiceIndividualePensione" nillable="true" type="intf:tCodicePensione" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="tFonteArchivio">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Archivio" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Progetto" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Descrizione" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tFonteArchivio2">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Archivio" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Progetto" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCodicePensione">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Categoria" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="Sede" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Certificato" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TipoComponente" nillable="true" type="intf:tElenco" />
+      <xsd:element minOccurs="0" name="FlagEliminazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Decorrenza" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tIndirizzo">
+    <xsd:sequence>
+      <xsd:element name="PrimaParte" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SecondaParte" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TerzaParte" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="QuartaParte" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tIndirizzoEstero">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="PrimaParte" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SecondaParte" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TerzaParte" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tAbilitazioni">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ConsultazioneArchiviGest" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="LivelloAut" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PrelievoAnag" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PrelievoAnagAltreSedi" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="VariazioneAnag" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" name="VariazioneArchiviGest" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

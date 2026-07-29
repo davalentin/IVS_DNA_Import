@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80767F2C-113D-4542-B3D3-380C03EE2584}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INPS.Pensioni.Liquidazione.UnitTest</RootNamespace>
+    <AssemblyName>INPS.Pensioni.Liquidazione.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INPS.DNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Context, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Crypto.RSA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data.HostIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Security.Idm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Services.Behaviors, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ANFTest.cs" />
+    <Compile Include="ArcaManTest.cs" />
+    <Compile Include="AssegnazioneCertificatoTest.cs" />
+    <Compile Include="AventiDirittoTest.cs" />
+    <Compile Include="RichiestaBonusTest.cs" />
+    <Compile Include="TotalIvsTest.cs" />
+    <Compile Include="CtrlBypassTipologieNonAbilitateTest.cs" />
+    <Compile Include="DatiPensioniTest.cs" />
+    <Compile Include="DBSComuniTest.cs" />
+    <Compile Include="AggiornamentoPECOTest.cs" />
+    <Compile Include="AnagraficaTest.cs" />
+    <Compile Include="ArcaTest.cs" />
+    <Compile Include="DecodificaTest.cs" />
+    <Compile Include="DelegatoTutoreTest.cs" />
+    <Compile Include="DetrazioniTest.cs" />
+    <Compile Include="ErroriCalcoloTest.cs" />
+    <Compile Include="EsitoCalcoloTest.cs" />
+    <Compile Include="FondoTest.cs" />
+    <Compile Include="DatiContributiviCiTest.cs" />
+    <Compile Include="GeneraCertificatiTest.cs" />
+    <Compile Include="GestioneSAITest.cs" />
+    <Compile Include="LiquidazioniAbilitateTest.cs" />
+    <Compile Include="PrepensionamentoAGOTest.cs" />
+    <Compile Include="PuliziaDomandaTest.cs" />
+    <Compile Include="SaiTest.cs" />
+    <Compile Include="SindacatiTest.cs" />
+    <Compile Include="StampeWebTest.cs" />
+    <Compile Include="SupplementiTest.cs" />
+    <Compile Include="CrossControlsTest.cs" />
+    <Compile Include="IstruttoriaTest.cs" />
+    <Compile Include="LiquidazionePensioneTest.cs" />
+    <Compile Include="UfficiPagatoriTest.cs" />
+    <Compile Include="PagamentoTest.cs" />
+    <Compile Include="SoggettiTest.cs" />
+    <Compile Include="PensioneTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuadriTest.cs" />
+    <Compile Include="RedditiTest.cs" />
+    <Compile Include="UniDetraTest.cs" />
+    <Compile Include="UtilityTest.cs" />
+    <Compile Include="VittimeTerrorismoTest.cs" />
+    <Compile Include="WebDomTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+    <Content Include="XML\AnfResponse.xml" />
+    <Content Include="XML\UniDetraResponse.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.BLCommon\INPS.Pensioni.Liquidazione.BLCommon.csproj">
+      <Project>{EAB1B8AC-A3D3-4CBA-9C1D-893E9B36F063}</Project>
+      <Name>INPS.Pensioni.Liquidazione.BLCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.BL\INPS.Pensioni.Liquidazione.csproj">
+      <Project>{812CCA70-F1C5-43E2-8814-3BE08F32BA1C}</Project>
+      <Name>INPS.Pensioni.Liquidazione</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.DataCommon\INPS.Pensioni.Liquidazione.DataCommon.csproj">
+      <Project>{27D4B169-53E7-445B-99D8-494D017D3402}</Project>
+      <Name>INPS.Pensioni.Liquidazione.DataCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.Data\INPS.Pensioni.Liquidazione.Data.csproj">
+      <Project>{CFADB017-EA4D-49C0-9EF6-3A1BC69BE6F2}</Project>
+      <Name>INPS.Pensioni.Liquidazione.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

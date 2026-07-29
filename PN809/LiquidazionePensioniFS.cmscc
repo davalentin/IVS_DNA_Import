@@ -1,0 +1,22 @@
+<!--Dimensions Source Control Bindings File-->
+<ProjectEnlistments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <BindingsSchemaVersion>1.0</BindingsSchemaVersion>
+    <Solution>
+        <RepositoryBinding />
+        <PessimisticCheckout>Unknown</PessimisticCheckout>
+    </Solution>
+    <Project>
+        <RepositoryBinding />
+        <Enlistment />
+        <EnlistmentUNC />
+        <ProjectIndex>1</ProjectIndex>
+        <UniqueName>INPS.Pensioni.LiquidazionePensione.Presenter.csproj</UniqueName>
+    </Project>
+    <Project>
+        <RepositoryBinding />
+        <Enlistment />
+        <EnlistmentUNC />
+        <ProjectIndex>2</ProjectIndex>
+        <UniqueName>INPS.Pensioni.LiquidazionePensione.View.Web.csproj</UniqueName>
+    </Project>
+</ProjectEnlistments>

@@ -1,0 +1,1976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://ws.anf.inps.it/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.anf.inps.it/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="AnfWSWEB.xsd2.xsd" namespace="http://ws.anf.inps.it/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ACT_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="ACT_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ACT_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="ANFDIP_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ANFDIP_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="ASSEGNO_UNICO_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:ASSEGNO_UNICO_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaConiuge">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaConiuge" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaConiugeResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaConiugeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANF_Coniuge">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANF_Coniuge" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANF_ConiugeResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANF_ConiugeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="AUTANF_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:AUTANF_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="CDCM_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:CDCM_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="DISAGR_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISAGR_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="DISNONAGR_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DISNONAGR_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="DITCES_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DITCES_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="DomandaPensione_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:DomandaPensione_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="fault" element="xsns:Exception" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="GESSEP_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:GESSEP_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="LAVDOM_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:LAVDOM_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="PENSIONE_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:PENSIONE_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaBeneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaBeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaDomandeANF">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaDomandeANF" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaDomandeANF_Beneficiario">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaDomandeANF_Beneficiario" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaDomandeANF_BeneficiarioResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaDomandeANF_BeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaDomandeANF_Richiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaDomandeANF_Richiedente" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaDomandeANF_RichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaDomandeANF_RichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaDomandeANFResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaDomandeANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaRichiedente">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaRichiedente" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaRichiedenteResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaRichiedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaSoggetto">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="RDC_AT_RicercaSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RDC_AT_RicercaSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_Asincrona">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_Asincrona" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_AsincronaResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_AsincronaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_Beneficiario_Asincrona">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_Beneficiario_Asincrona" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_Beneficiario_AsincronaResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_Beneficiario_AsincronaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_Coniuge_Asincrona">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_Coniuge_Asincrona" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_Coniuge_AsincronaResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_Coniuge_AsincronaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_Richiedente_Asincrona">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_Richiedente_Asincrona" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDomandeANF_Richiedente_AsincronaResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RicercaDomandeANF_Richiedente_AsincronaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiediRispostaRicercaAsincrona">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RichiediRispostaRicercaAsincrona" />
+  </wsdl:message>
+  <wsdl:message name="RichiediRispostaRicercaAsincronaResponse">
+    <wsdl:part xmlns:xsns="http://ws.anf.inps.it/" name="parameters" element="xsns:RichiediRispostaRicercaAsincronaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AnfWS">
+    <wsdl:operation name="ACT_RicercaBeneficiario">
+      <wsdl:input name="ACT_RicercaBeneficiarioRequest" message="ns0:ACT_RicercaBeneficiario" />
+      <wsdl:output name="ACT_RicercaBeneficiarioResponse" message="ns0:ACT_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaDomandeANF">
+      <wsdl:input name="ACT_RicercaDomandeANFRequest" message="ns0:ACT_RicercaDomandeANF" />
+      <wsdl:output name="ACT_RicercaDomandeANFResponse" message="ns0:ACT_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="ACT_RicercaDomandeANF_BeneficiarioRequest" message="ns0:ACT_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="ACT_RicercaDomandeANF_BeneficiarioResponse" message="ns0:ACT_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="ACT_RicercaDomandeANF_RichiedenteRequest" message="ns0:ACT_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="ACT_RicercaDomandeANF_RichiedenteResponse" message="ns0:ACT_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaRichiedente">
+      <wsdl:input name="ACT_RicercaRichiedenteRequest" message="ns0:ACT_RicercaRichiedente" />
+      <wsdl:output name="ACT_RicercaRichiedenteResponse" message="ns0:ACT_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaSoggetto">
+      <wsdl:input name="ACT_RicercaSoggettoRequest" message="ns0:ACT_RicercaSoggetto" />
+      <wsdl:output name="ACT_RicercaSoggettoResponse" message="ns0:ACT_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaBeneficiario">
+      <wsdl:input name="ANFDIP_RicercaBeneficiarioRequest" message="ns0:ANFDIP_RicercaBeneficiario" />
+      <wsdl:output name="ANFDIP_RicercaBeneficiarioResponse" message="ns0:ANFDIP_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaDomandeANF">
+      <wsdl:input name="ANFDIP_RicercaDomandeANFRequest" message="ns0:ANFDIP_RicercaDomandeANF" />
+      <wsdl:output name="ANFDIP_RicercaDomandeANFResponse" message="ns0:ANFDIP_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="ANFDIP_RicercaDomandeANF_BeneficiarioRequest" message="ns0:ANFDIP_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="ANFDIP_RicercaDomandeANF_BeneficiarioResponse" message="ns0:ANFDIP_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="ANFDIP_RicercaDomandeANF_RichiedenteRequest" message="ns0:ANFDIP_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="ANFDIP_RicercaDomandeANF_RichiedenteResponse" message="ns0:ANFDIP_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaRichiedente">
+      <wsdl:input name="ANFDIP_RicercaRichiedenteRequest" message="ns0:ANFDIP_RicercaRichiedente" />
+      <wsdl:output name="ANFDIP_RicercaRichiedenteResponse" message="ns0:ANFDIP_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaSoggetto">
+      <wsdl:input name="ANFDIP_RicercaSoggettoRequest" message="ns0:ANFDIP_RicercaSoggetto" />
+      <wsdl:output name="ANFDIP_RicercaSoggettoResponse" message="ns0:ANFDIP_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaBeneficiario">
+      <wsdl:input name="ASSEGNO_UNICO_RicercaBeneficiarioRequest" message="ns0:ASSEGNO_UNICO_RicercaBeneficiario" />
+      <wsdl:output name="ASSEGNO_UNICO_RicercaBeneficiarioResponse" message="ns0:ASSEGNO_UNICO_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaDomandeANF">
+      <wsdl:input name="ASSEGNO_UNICO_RicercaDomandeANFRequest" message="ns0:ASSEGNO_UNICO_RicercaDomandeANF" />
+      <wsdl:output name="ASSEGNO_UNICO_RicercaDomandeANFResponse" message="ns0:ASSEGNO_UNICO_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioRequest" message="ns0:ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse" message="ns0:ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteRequest" message="ns0:ASSEGNO_UNICO_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse" message="ns0:ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaRichiedente">
+      <wsdl:input name="ASSEGNO_UNICO_RicercaRichiedenteRequest" message="ns0:ASSEGNO_UNICO_RicercaRichiedente" />
+      <wsdl:output name="ASSEGNO_UNICO_RicercaRichiedenteResponse" message="ns0:ASSEGNO_UNICO_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaSoggetto">
+      <wsdl:input name="ASSEGNO_UNICO_RicercaSoggettoRequest" message="ns0:ASSEGNO_UNICO_RicercaSoggetto" />
+      <wsdl:output name="ASSEGNO_UNICO_RicercaSoggettoResponse" message="ns0:ASSEGNO_UNICO_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaBeneficiario">
+      <wsdl:input name="AUTANF_RicercaBeneficiarioRequest" message="ns0:AUTANF_RicercaBeneficiario" />
+      <wsdl:output name="AUTANF_RicercaBeneficiarioResponse" message="ns0:AUTANF_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaConiuge">
+      <wsdl:input name="AUTANF_RicercaConiugeRequest" message="ns0:AUTANF_RicercaConiuge" />
+      <wsdl:output name="AUTANF_RicercaConiugeResponse" message="ns0:AUTANF_RicercaConiugeResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF">
+      <wsdl:input name="AUTANF_RicercaDomandeANFRequest" message="ns0:AUTANF_RicercaDomandeANF" />
+      <wsdl:output name="AUTANF_RicercaDomandeANFResponse" message="ns0:AUTANF_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="AUTANF_RicercaDomandeANF_BeneficiarioRequest" message="ns0:AUTANF_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="AUTANF_RicercaDomandeANF_BeneficiarioResponse" message="ns0:AUTANF_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF_Coniuge">
+      <wsdl:input name="AUTANF_RicercaDomandeANF_ConiugeRequest" message="ns0:AUTANF_RicercaDomandeANF_Coniuge" />
+      <wsdl:output name="AUTANF_RicercaDomandeANF_ConiugeResponse" message="ns0:AUTANF_RicercaDomandeANF_ConiugeResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="AUTANF_RicercaDomandeANF_RichiedenteRequest" message="ns0:AUTANF_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="AUTANF_RicercaDomandeANF_RichiedenteResponse" message="ns0:AUTANF_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaRichiedente">
+      <wsdl:input name="AUTANF_RicercaRichiedenteRequest" message="ns0:AUTANF_RicercaRichiedente" />
+      <wsdl:output name="AUTANF_RicercaRichiedenteResponse" message="ns0:AUTANF_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaSoggetto">
+      <wsdl:input name="AUTANF_RicercaSoggettoRequest" message="ns0:AUTANF_RicercaSoggetto" />
+      <wsdl:output name="AUTANF_RicercaSoggettoResponse" message="ns0:AUTANF_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaBeneficiario">
+      <wsdl:input name="CDCM_RicercaBeneficiarioRequest" message="ns0:CDCM_RicercaBeneficiario" />
+      <wsdl:output name="CDCM_RicercaBeneficiarioResponse" message="ns0:CDCM_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaDomandeANF">
+      <wsdl:input name="CDCM_RicercaDomandeANFRequest" message="ns0:CDCM_RicercaDomandeANF" />
+      <wsdl:output name="CDCM_RicercaDomandeANFResponse" message="ns0:CDCM_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="CDCM_RicercaDomandeANF_BeneficiarioRequest" message="ns0:CDCM_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="CDCM_RicercaDomandeANF_BeneficiarioResponse" message="ns0:CDCM_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="CDCM_RicercaDomandeANF_RichiedenteRequest" message="ns0:CDCM_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="CDCM_RicercaDomandeANF_RichiedenteResponse" message="ns0:CDCM_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaRichiedente">
+      <wsdl:input name="CDCM_RicercaRichiedenteRequest" message="ns0:CDCM_RicercaRichiedente" />
+      <wsdl:output name="CDCM_RicercaRichiedenteResponse" message="ns0:CDCM_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaSoggetto">
+      <wsdl:input name="CDCM_RicercaSoggettoRequest" message="ns0:CDCM_RicercaSoggetto" />
+      <wsdl:output name="CDCM_RicercaSoggettoResponse" message="ns0:CDCM_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaBeneficiario">
+      <wsdl:input name="DISAGR_RicercaBeneficiarioRequest" message="ns0:DISAGR_RicercaBeneficiario" />
+      <wsdl:output name="DISAGR_RicercaBeneficiarioResponse" message="ns0:DISAGR_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaDomandeANF">
+      <wsdl:input name="DISAGR_RicercaDomandeANFRequest" message="ns0:DISAGR_RicercaDomandeANF" />
+      <wsdl:output name="DISAGR_RicercaDomandeANFResponse" message="ns0:DISAGR_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="DISAGR_RicercaDomandeANF_BeneficiarioRequest" message="ns0:DISAGR_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="DISAGR_RicercaDomandeANF_BeneficiarioResponse" message="ns0:DISAGR_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="DISAGR_RicercaDomandeANF_RichiedenteRequest" message="ns0:DISAGR_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="DISAGR_RicercaDomandeANF_RichiedenteResponse" message="ns0:DISAGR_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaRichiedente">
+      <wsdl:input name="DISAGR_RicercaRichiedenteRequest" message="ns0:DISAGR_RicercaRichiedente" />
+      <wsdl:output name="DISAGR_RicercaRichiedenteResponse" message="ns0:DISAGR_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaSoggetto">
+      <wsdl:input name="DISAGR_RicercaSoggettoRequest" message="ns0:DISAGR_RicercaSoggetto" />
+      <wsdl:output name="DISAGR_RicercaSoggettoResponse" message="ns0:DISAGR_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaBeneficiario">
+      <wsdl:input name="DISNONAGR_RicercaBeneficiarioRequest" message="ns0:DISNONAGR_RicercaBeneficiario" />
+      <wsdl:output name="DISNONAGR_RicercaBeneficiarioResponse" message="ns0:DISNONAGR_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaDomandeANF">
+      <wsdl:input name="DISNONAGR_RicercaDomandeANFRequest" message="ns0:DISNONAGR_RicercaDomandeANF" />
+      <wsdl:output name="DISNONAGR_RicercaDomandeANFResponse" message="ns0:DISNONAGR_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="DISNONAGR_RicercaDomandeANF_BeneficiarioRequest" message="ns0:DISNONAGR_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="DISNONAGR_RicercaDomandeANF_BeneficiarioResponse" message="ns0:DISNONAGR_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="DISNONAGR_RicercaDomandeANF_RichiedenteRequest" message="ns0:DISNONAGR_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="DISNONAGR_RicercaDomandeANF_RichiedenteResponse" message="ns0:DISNONAGR_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaRichiedente">
+      <wsdl:input name="DISNONAGR_RicercaRichiedenteRequest" message="ns0:DISNONAGR_RicercaRichiedente" />
+      <wsdl:output name="DISNONAGR_RicercaRichiedenteResponse" message="ns0:DISNONAGR_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaSoggetto">
+      <wsdl:input name="DISNONAGR_RicercaSoggettoRequest" message="ns0:DISNONAGR_RicercaSoggetto" />
+      <wsdl:output name="DISNONAGR_RicercaSoggettoResponse" message="ns0:DISNONAGR_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaBeneficiario">
+      <wsdl:input name="DITCES_RicercaBeneficiarioRequest" message="ns0:DITCES_RicercaBeneficiario" />
+      <wsdl:output name="DITCES_RicercaBeneficiarioResponse" message="ns0:DITCES_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaDomandeANF">
+      <wsdl:input name="DITCES_RicercaDomandeANFRequest" message="ns0:DITCES_RicercaDomandeANF" />
+      <wsdl:output name="DITCES_RicercaDomandeANFResponse" message="ns0:DITCES_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="DITCES_RicercaDomandeANF_BeneficiarioRequest" message="ns0:DITCES_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="DITCES_RicercaDomandeANF_BeneficiarioResponse" message="ns0:DITCES_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="DITCES_RicercaDomandeANF_RichiedenteRequest" message="ns0:DITCES_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="DITCES_RicercaDomandeANF_RichiedenteResponse" message="ns0:DITCES_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaRichiedente">
+      <wsdl:input name="DITCES_RicercaRichiedenteRequest" message="ns0:DITCES_RicercaRichiedente" />
+      <wsdl:output name="DITCES_RicercaRichiedenteResponse" message="ns0:DITCES_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaSoggetto">
+      <wsdl:input name="DITCES_RicercaSoggettoRequest" message="ns0:DITCES_RicercaSoggetto" />
+      <wsdl:output name="DITCES_RicercaSoggettoResponse" message="ns0:DITCES_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaBeneficiario">
+      <wsdl:input name="DomandaPensione_RicercaBeneficiarioRequest" message="ns0:DomandaPensione_RicercaBeneficiario" />
+      <wsdl:output name="DomandaPensione_RicercaBeneficiarioResponse" message="ns0:DomandaPensione_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaDomandeANF">
+      <wsdl:input name="DomandaPensione_RicercaDomandeANFRequest" message="ns0:DomandaPensione_RicercaDomandeANF" />
+      <wsdl:output name="DomandaPensione_RicercaDomandeANFResponse" message="ns0:DomandaPensione_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="DomandaPensione_RicercaDomandeANF_BeneficiarioRequest" message="ns0:DomandaPensione_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="DomandaPensione_RicercaDomandeANF_BeneficiarioResponse" message="ns0:DomandaPensione_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="DomandaPensione_RicercaDomandeANF_RichiedenteRequest" message="ns0:DomandaPensione_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="DomandaPensione_RicercaDomandeANF_RichiedenteResponse" message="ns0:DomandaPensione_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaRichiedente">
+      <wsdl:input name="DomandaPensione_RicercaRichiedenteRequest" message="ns0:DomandaPensione_RicercaRichiedente" />
+      <wsdl:output name="DomandaPensione_RicercaRichiedenteResponse" message="ns0:DomandaPensione_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaSoggetto">
+      <wsdl:input name="DomandaPensione_RicercaSoggettoRequest" message="ns0:DomandaPensione_RicercaSoggetto" />
+      <wsdl:output name="DomandaPensione_RicercaSoggettoResponse" message="ns0:DomandaPensione_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaBeneficiario">
+      <wsdl:input name="GESSEP_RicercaBeneficiarioRequest" message="ns0:GESSEP_RicercaBeneficiario" />
+      <wsdl:output name="GESSEP_RicercaBeneficiarioResponse" message="ns0:GESSEP_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaDomandeANF">
+      <wsdl:input name="GESSEP_RicercaDomandeANFRequest" message="ns0:GESSEP_RicercaDomandeANF" />
+      <wsdl:output name="GESSEP_RicercaDomandeANFResponse" message="ns0:GESSEP_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="GESSEP_RicercaDomandeANF_BeneficiarioRequest" message="ns0:GESSEP_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="GESSEP_RicercaDomandeANF_BeneficiarioResponse" message="ns0:GESSEP_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="GESSEP_RicercaDomandeANF_RichiedenteRequest" message="ns0:GESSEP_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="GESSEP_RicercaDomandeANF_RichiedenteResponse" message="ns0:GESSEP_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaRichiedente">
+      <wsdl:input name="GESSEP_RicercaRichiedenteRequest" message="ns0:GESSEP_RicercaRichiedente" />
+      <wsdl:output name="GESSEP_RicercaRichiedenteResponse" message="ns0:GESSEP_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaSoggetto">
+      <wsdl:input name="GESSEP_RicercaSoggettoRequest" message="ns0:GESSEP_RicercaSoggetto" />
+      <wsdl:output name="GESSEP_RicercaSoggettoResponse" message="ns0:GESSEP_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaBeneficiario">
+      <wsdl:input name="LAVDOM_RicercaBeneficiarioRequest" message="ns0:LAVDOM_RicercaBeneficiario" />
+      <wsdl:output name="LAVDOM_RicercaBeneficiarioResponse" message="ns0:LAVDOM_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaDomandeANF">
+      <wsdl:input name="LAVDOM_RicercaDomandeANFRequest" message="ns0:LAVDOM_RicercaDomandeANF" />
+      <wsdl:output name="LAVDOM_RicercaDomandeANFResponse" message="ns0:LAVDOM_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="LAVDOM_RicercaDomandeANF_BeneficiarioRequest" message="ns0:LAVDOM_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="LAVDOM_RicercaDomandeANF_BeneficiarioResponse" message="ns0:LAVDOM_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="LAVDOM_RicercaDomandeANF_RichiedenteRequest" message="ns0:LAVDOM_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="LAVDOM_RicercaDomandeANF_RichiedenteResponse" message="ns0:LAVDOM_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaRichiedente">
+      <wsdl:input name="LAVDOM_RicercaRichiedenteRequest" message="ns0:LAVDOM_RicercaRichiedente" />
+      <wsdl:output name="LAVDOM_RicercaRichiedenteResponse" message="ns0:LAVDOM_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaSoggetto">
+      <wsdl:input name="LAVDOM_RicercaSoggettoRequest" message="ns0:LAVDOM_RicercaSoggetto" />
+      <wsdl:output name="LAVDOM_RicercaSoggettoResponse" message="ns0:LAVDOM_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaBeneficiario">
+      <wsdl:input name="PENSIONE_RicercaBeneficiarioRequest" message="ns0:PENSIONE_RicercaBeneficiario" />
+      <wsdl:output name="PENSIONE_RicercaBeneficiarioResponse" message="ns0:PENSIONE_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaDomandeANF">
+      <wsdl:input name="PENSIONE_RicercaDomandeANFRequest" message="ns0:PENSIONE_RicercaDomandeANF" />
+      <wsdl:output name="PENSIONE_RicercaDomandeANFResponse" message="ns0:PENSIONE_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="PENSIONE_RicercaDomandeANF_BeneficiarioRequest" message="ns0:PENSIONE_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="PENSIONE_RicercaDomandeANF_BeneficiarioResponse" message="ns0:PENSIONE_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="PENSIONE_RicercaDomandeANF_RichiedenteRequest" message="ns0:PENSIONE_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="PENSIONE_RicercaDomandeANF_RichiedenteResponse" message="ns0:PENSIONE_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaRichiedente">
+      <wsdl:input name="PENSIONE_RicercaRichiedenteRequest" message="ns0:PENSIONE_RicercaRichiedente" />
+      <wsdl:output name="PENSIONE_RicercaRichiedenteResponse" message="ns0:PENSIONE_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaSoggetto">
+      <wsdl:input name="PENSIONE_RicercaSoggettoRequest" message="ns0:PENSIONE_RicercaSoggetto" />
+      <wsdl:output name="PENSIONE_RicercaSoggettoResponse" message="ns0:PENSIONE_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaBeneficiario">
+      <wsdl:input name="RDC_AT_RicercaBeneficiarioRequest" message="ns0:RDC_AT_RicercaBeneficiario" />
+      <wsdl:output name="RDC_AT_RicercaBeneficiarioResponse" message="ns0:RDC_AT_RicercaBeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaDomandeANF">
+      <wsdl:input name="RDC_AT_RicercaDomandeANFRequest" message="ns0:RDC_AT_RicercaDomandeANF" />
+      <wsdl:output name="RDC_AT_RicercaDomandeANFResponse" message="ns0:RDC_AT_RicercaDomandeANFResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaDomandeANF_Beneficiario">
+      <wsdl:input name="RDC_AT_RicercaDomandeANF_BeneficiarioRequest" message="ns0:RDC_AT_RicercaDomandeANF_Beneficiario" />
+      <wsdl:output name="RDC_AT_RicercaDomandeANF_BeneficiarioResponse" message="ns0:RDC_AT_RicercaDomandeANF_BeneficiarioResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaDomandeANF_Richiedente">
+      <wsdl:input name="RDC_AT_RicercaDomandeANF_RichiedenteRequest" message="ns0:RDC_AT_RicercaDomandeANF_Richiedente" />
+      <wsdl:output name="RDC_AT_RicercaDomandeANF_RichiedenteResponse" message="ns0:RDC_AT_RicercaDomandeANF_RichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaRichiedente">
+      <wsdl:input name="RDC_AT_RicercaRichiedenteRequest" message="ns0:RDC_AT_RicercaRichiedente" />
+      <wsdl:output name="RDC_AT_RicercaRichiedenteResponse" message="ns0:RDC_AT_RicercaRichiedenteResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaSoggetto">
+      <wsdl:input name="RDC_AT_RicercaSoggettoRequest" message="ns0:RDC_AT_RicercaSoggetto" />
+      <wsdl:output name="RDC_AT_RicercaSoggettoResponse" message="ns0:RDC_AT_RicercaSoggettoResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Asincrona">
+      <wsdl:input name="RicercaDomandeANF_AsincronaRequest" message="ns0:RicercaDomandeANF_Asincrona" />
+      <wsdl:output name="RicercaDomandeANF_AsincronaResponse" message="ns0:RicercaDomandeANF_AsincronaResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Beneficiario_Asincrona">
+      <wsdl:input name="RicercaDomandeANF_Beneficiario_AsincronaRequest" message="ns0:RicercaDomandeANF_Beneficiario_Asincrona" />
+      <wsdl:output name="RicercaDomandeANF_Beneficiario_AsincronaResponse" message="ns0:RicercaDomandeANF_Beneficiario_AsincronaResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Coniuge_Asincrona">
+      <wsdl:input name="RicercaDomandeANF_Coniuge_AsincronaRequest" message="ns0:RicercaDomandeANF_Coniuge_Asincrona" />
+      <wsdl:output name="RicercaDomandeANF_Coniuge_AsincronaResponse" message="ns0:RicercaDomandeANF_Coniuge_AsincronaResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Richiedente_Asincrona">
+      <wsdl:input name="RicercaDomandeANF_Richiedente_AsincronaRequest" message="ns0:RicercaDomandeANF_Richiedente_Asincrona" />
+      <wsdl:output name="RicercaDomandeANF_Richiedente_AsincronaResponse" message="ns0:RicercaDomandeANF_Richiedente_AsincronaResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiediRispostaRicercaAsincrona">
+      <wsdl:input name="RichiediRispostaRicercaAsincronaRequest" message="ns0:RichiediRispostaRicercaAsincrona" />
+      <wsdl:output name="RichiediRispostaRicercaAsincronaResponse" message="ns0:RichiediRispostaRicercaAsincronaResponse" />
+      <wsdl:fault name="Exception" message="ns0:Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AnfWSPortBinding" type="ns0:AnfWS">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ACT_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ACT_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ACT_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ACT_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ACT_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ACT_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ACT_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ACT_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ACT_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ACT_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ACT_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ACT_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ACT_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ACT_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ANFDIP_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ANFDIP_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ANFDIP_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ANFDIP_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ANFDIP_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ANFDIP_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ANFDIP_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ANFDIP_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ANFDIP_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ANFDIP_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ANFDIP_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ANFDIP_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ANFDIP_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ASSEGNO_UNICO_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ASSEGNO_UNICO_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ASSEGNO_UNICO_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ASSEGNO_UNICO_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ASSEGNO_UNICO_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ASSEGNO_UNICO_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ASSEGNO_UNICO_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ASSEGNO_UNICO_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ASSEGNO_UNICO_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaConiuge">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaConiugeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaConiugeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF_Coniuge">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaDomandeANF_ConiugeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaDomandeANF_ConiugeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AUTANF_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="AUTANF_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AUTANF_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="CDCM_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CDCM_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="CDCM_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CDCM_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="CDCM_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CDCM_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="CDCM_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CDCM_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="CDCM_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CDCM_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CDCM_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="CDCM_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CDCM_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISAGR_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISAGR_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISAGR_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISAGR_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISAGR_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISAGR_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISAGR_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISAGR_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISAGR_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISAGR_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISAGR_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISAGR_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISAGR_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISNONAGR_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISNONAGR_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISNONAGR_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISNONAGR_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISNONAGR_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISNONAGR_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISNONAGR_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISNONAGR_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISNONAGR_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISNONAGR_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DISNONAGR_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DISNONAGR_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DISNONAGR_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DITCES_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DITCES_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DITCES_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DITCES_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DITCES_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DITCES_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DITCES_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DITCES_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DITCES_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DITCES_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DITCES_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DITCES_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DITCES_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DomandaPensione_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DomandaPensione_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DomandaPensione_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DomandaPensione_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DomandaPensione_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DomandaPensione_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DomandaPensione_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DomandaPensione_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DomandaPensione_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DomandaPensione_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DomandaPensione_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DomandaPensione_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DomandaPensione_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GESSEP_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GESSEP_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GESSEP_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GESSEP_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GESSEP_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GESSEP_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GESSEP_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GESSEP_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GESSEP_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GESSEP_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GESSEP_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GESSEP_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GESSEP_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="LAVDOM_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LAVDOM_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="LAVDOM_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LAVDOM_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="LAVDOM_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LAVDOM_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="LAVDOM_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LAVDOM_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="LAVDOM_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LAVDOM_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LAVDOM_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="LAVDOM_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LAVDOM_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="PENSIONE_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PENSIONE_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="PENSIONE_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PENSIONE_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="PENSIONE_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PENSIONE_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="PENSIONE_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PENSIONE_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="PENSIONE_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PENSIONE_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PENSIONE_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="PENSIONE_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PENSIONE_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaBeneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RDC_AT_RicercaBeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDC_AT_RicercaBeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaDomandeANF">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RDC_AT_RicercaDomandeANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDC_AT_RicercaDomandeANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaDomandeANF_Beneficiario">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RDC_AT_RicercaDomandeANF_BeneficiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDC_AT_RicercaDomandeANF_BeneficiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaDomandeANF_Richiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RDC_AT_RicercaDomandeANF_RichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDC_AT_RicercaDomandeANF_RichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaRichiedente">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RDC_AT_RicercaRichiedenteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDC_AT_RicercaRichiedenteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RDC_AT_RicercaSoggetto">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RDC_AT_RicercaSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RDC_AT_RicercaSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Asincrona">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RicercaDomandeANF_AsincronaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDomandeANF_AsincronaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Beneficiario_Asincrona">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RicercaDomandeANF_Beneficiario_AsincronaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDomandeANF_Beneficiario_AsincronaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Coniuge_Asincrona">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RicercaDomandeANF_Coniuge_AsincronaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDomandeANF_Coniuge_AsincronaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDomandeANF_Richiedente_Asincrona">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RicercaDomandeANF_Richiedente_AsincronaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDomandeANF_Richiedente_AsincronaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RichiediRispostaRicercaAsincrona">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RichiediRispostaRicercaAsincronaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RichiediRispostaRicercaAsincronaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap11:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AnfWS">
+    <wsdl:port name="AnfWSPort" binding="ns0:AnfWSPortBinding">
+      <soap11:address location="http://192.168.40.149:80/WSJava/AnfWSWEB" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

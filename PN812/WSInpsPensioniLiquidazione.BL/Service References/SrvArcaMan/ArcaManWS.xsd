@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:intf1="http://schemi.arcaman.soa.sistinf.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://schemi.arcaman.soa.sistinf.it" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="tElenco">
+    <xsd:sequence>
+      <xsd:element name="Codice" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Descrizione" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tChar">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tChiaveArca">
+    <xsd:sequence>
+      <xsd:element name="Codice" type="xsd:string" />
+      <xsd:element name="Progressivo" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tCodiceFiscale">
+    <xsd:sequence>
+      <xsd:element name="Cognome" type="intf1:tCognCodFisc" />
+      <xsd:element name="Nome" type="intf1:tNomeCodFisc" />
+      <xsd:element name="Anno" type="intf1:tAnnoCodFisc" />
+      <xsd:element name="Mese" type="intf1:tMeseCodFisc" />
+      <xsd:element name="Giorno" type="intf1:tGiornoCodFisc" />
+      <xsd:element name="Comune" type="intf1:tComuneCodFisc" />
+      <xsd:element name="CodControllo" type="intf1:tCodControlloCodFisc" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tCognCodFisc">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[A-Z]{3}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tNomeCodFisc">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[A-Z]{3}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tAnnoCodFisc">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="00" />
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tMeseCodFisc">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[A-Z]" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tGiornoCodFisc">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tComuneCodFisc">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[A-Z]\d{3}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCodControlloCodFisc">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[A-Z]" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tArchivio">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tValidCodFisc">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tProgetto">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tChiave">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tChiaveRiferimento">
+    <xsd:sequence>
+      <xsd:element name="Archivio" type="intf1:tArchivio" />
+      <xsd:element name="Progetto" type="intf1:tProgetto" />
+      <xsd:element name="Chiave" type="intf1:tChiave" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tData">
+    <xsd:sequence>
+      <xsd:element name="Giorno" type="intf1:tGiorno" />
+      <xsd:element name="Mese" type="intf1:tMese" />
+      <xsd:element name="Anno" type="intf1:tAnno" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tGiorno">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="00" />
+      <xsd:maxInclusive value="31" />
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tMese">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="00" />
+      <xsd:maxInclusive value="12" />
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tAnno">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="0000" />
+      <xsd:pattern value="\d{4}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tDataStringa">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="8" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tOra">
+    <xsd:annotation>
+      <xsd:documentation>Definizione del formato dell'ora</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Ore">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="00" />
+            <xsd:maxInclusive value="23" />
+            <xsd:pattern value="\d{2}" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="Minuti">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="00" />
+            <xsd:maxInclusive value="59" />
+            <xsd:pattern value="\d{2}" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tOraSecondi">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf1:tOra">
+        <xsd:sequence>
+          <xsd:element name="Secondi">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int">
+                <xsd:minInclusive value="00" />
+                <xsd:maxInclusive value="59" />
+                <xsd:pattern value="\d{2}" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="tNome">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="80" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tNome36">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="36" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tOperatore">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="18" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tProgramma">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="5" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tNazionalita">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tNazionalitaBelfiore">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCodLuogo">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tNomeLuogo">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="60" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tProvincia">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCAP">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="9" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tMatricolaINPS">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="16" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tIndirizzoTerminale">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="18" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tSede">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tPgmApplOrigine">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="8" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tTranApplOrigine">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="8" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tFunzione">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCodiceEsito">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tDescrizioneEsito">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="70" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tEsito">
+    <xsd:sequence>
+      <xsd:element name="Codice" type="intf1:tCodiceEsito" />
+      <xsd:element name="Descrizione" type="intf1:tDescrizioneEsito" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tS001_inp">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Sicurezza di input</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CodfiscOperatore" nillable="true" type="intf1:tCodiceFiscale" />
+      <xsd:element name="MatricolaINPS" nillable="true" type="intf1:tMatricolaINPS">
+        <xsd:annotation>
+          <xsd:documentation>In caso di batch pensioni  il nome del programma applicativo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IndirizzoTerminale" nillable="true" type="intf1:tIndirizzoTerminale" />
+      <xsd:element name="SedeRichiesta" nillable="true" type="intf1:tSede" />
+      <xsd:element name="GestioneApplOrigine" type="intf1:tArchivio" />
+      <xsd:element name="SedeApplOrigine" type="intf1:tSede" />
+      <xsd:element name="PgmApplOrigine" type="intf1:tPgmApplOrigine" />
+      <xsd:element name="TranApplOrigine" type="intf1:tTranApplOrigine" />
+      <xsd:element name="Funzione" type="intf1:tFunzione" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tS001_out">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf1:tS001_inp">
+        <xsd:annotation>
+          <xsd:documentation>Modulo Sicurezza di output</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="Esito" type="intf1:tEsito" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="tCodPersona">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tSesso">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+      <xsd:pattern value="[mMfF]" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tTipoIndirizzo">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tF001">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Richiesta</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="TipoChiavePresente" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="ChiaveARCA" nillable="true" type="intf1:tChiaveArca" />
+      <xsd:element name="CodicePersona" nillable="true" type="intf1:tCodPersona" />
+      <xsd:element name="ChiaveRiferimento" nillable="true" type="intf1:tChiaveRiferimento" />
+      <xsd:element name="ChiaveSecondaria" nillable="true" type="intf1:tChiaveRiferimento" />
+      <xsd:element name="DataNascita" nillable="true" type="intf1:tData" />
+      <xsd:element name="TipoCodComuneNascita" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="CodComuneNascita" nillable="true" type="intf1:tCodLuogo" />
+      <xsd:element name="Sesso" nillable="true" type="intf1:tSesso" />
+      <xsd:element name="Cognome" nillable="true" type="intf1:tNome" />
+      <xsd:element name="Nome" nillable="true" type="intf1:tNome" />
+      <xsd:element name="TipoIndirizzo" nillable="true" type="intf1:tTipoIndirizzo" />
+      <xsd:element name="CodProvenienza" nillable="true" type="intf1:tArchivio" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tFlagDeceduto">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tDataMorte">
+    <xsd:annotation>
+      <xsd:documentation>Puo contenere all '-' per annullato</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="8" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tSiglaPaese">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCodDipartimentoEstero">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="9" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tDatiNascitaItalia">
+    <xsd:annotation>
+      <xsd:documentation>Dati del luogo di nascita per nati in Italia</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="SiglaPaese" nillable="true" type="intf1:tSiglaPaese" />
+      <xsd:element name="Stato" nillable="true" type="intf1:tNomeLuogo" />
+      <xsd:element name="TipoCodComune" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="CodComune" nillable="true" type="intf1:tCodLuogo" />
+      <xsd:element name="Provincia" nillable="true" type="intf1:tProvincia" />
+      <xsd:element name="Comune" nillable="true" type="intf1:tNomeLuogo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tDatiNascitaEstero">
+    <xsd:annotation>
+      <xsd:documentation>Dati del luogo di nascita per nati all'estero</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="SiglaPaese" nillable="true" type="intf1:tSiglaPaese" />
+      <xsd:element name="Stato" nillable="true" type="intf1:tNomeLuogo" />
+      <xsd:element name="TipoCodStato" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="CodStato" nillable="true" type="intf1:tCodLuogo" />
+      <xsd:element name="CodDipartimentoEstero" nillable="true" type="intf1:tCodDipartimentoEstero" />
+      <xsd:element name="DipartimentoEstero" nillable="true" type="intf1:tNomeLuogo">
+        <xsd:annotation>
+          <xsd:documentation>provincia o dipartimento estero in chiaro</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CittaEstera" nillable="true" type="intf1:tNomeLuogo">
+        <xsd:annotation>
+          <xsd:documentation>provincia o dipartimento estero in chiaro</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tA001">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Anagrafica</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CodiceFiscale" nillable="true" type="intf1:tCodiceFiscale" />
+      <xsd:element name="TipoValidazioneCodiceFiscale" nillable="true" type="intf1:tValidCodFisc" />
+      <xsd:element name="FlagDeceduto" nillable="true" type="intf1:tFlagDeceduto" />
+      <xsd:element name="SedeProprietaria" nillable="true" type="intf1:tSede" />
+      <xsd:element name="DataMorte" nillable="true" type="intf1:tDataMorte" />
+      <xsd:element name="DataVariazione" nillable="true" type="intf1:tData" />
+      <xsd:element name="SedeVariazione" nillable="true" type="intf1:tSede" />
+      <xsd:element name="OraVariazione" nillable="true" type="intf1:tOraSecondi" />
+      <xsd:element name="OperatoreVariazione" nillable="true" type="intf1:tOperatore" />
+      <xsd:element name="ProgrammaVariazione" nillable="true" type="intf1:tProgramma" />
+      <xsd:element name="Nazionalita" nillable="true" type="intf1:tNazionalita" />
+      <xsd:element name="NazionalitaBelfiore" nillable="true" type="intf1:tNazionalitaBelfiore" />
+      <xsd:element name="StatoEsteroNazionalita" nillable="true" type="intf1:tNomeLuogo" />
+      <xsd:element name="Cittadinanza" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="Residenza" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="StatoCivile" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="TitoloStudio" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="FormatoLuogoNascita" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="DataNascita" type="intf1:tData" />
+      <xsd:element name="Sesso" type="intf1:tSesso" />
+      <xsd:element name="Cognome" type="intf1:tNome" />
+      <xsd:element name="SecondoCognome" nillable="true" type="intf1:tNome" />
+      <xsd:element name="Nome" type="intf1:tNome" />
+      <xsd:element name="AltroCognome" nillable="true" type="intf1:tNome" />
+      <xsd:element name="CognomeAcquisito" nillable="true" type="intf1:tNome" />
+      <xsd:element name="SecondoCognomeAcquisito" nillable="true" type="intf1:tNome" />
+      <xsd:element minOccurs="0" name="DatiNascitaItalia" type="intf1:tDatiNascitaItalia" />
+      <xsd:element minOccurs="0" name="DatiNascitaEstero" type="intf1:tDatiNascitaEstero" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tFrazione">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCivico">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="18" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tIndirizzo">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="52" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tProvinciaEstera">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="52" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCittaEstera">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tIndirizzoItalia">
+    <xsd:sequence>
+      <xsd:element name="SiglaPaese" nillable="true" type="intf1:tSiglaPaese" />
+      <xsd:element name="Stato" nillable="true" type="intf1:tNomeLuogo" />
+      <xsd:element name="TipoCodComune" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="CodComune" nillable="true" type="intf1:tCodLuogo" />
+      <xsd:element name="Comune" nillable="true" type="intf1:tNomeLuogo" />
+      <xsd:element name="Provincia" nillable="true" type="intf1:tProvincia" />
+      <xsd:element name="Frazione" nillable="true" type="intf1:tFrazione" />
+      <xsd:element name="CAP" nillable="true" type="intf1:tCAP" />
+      <xsd:element name="Civico" nillable="true" type="intf1:tCivico" />
+      <xsd:element name="Indirizzo" nillable="true" type="intf1:tIndirizzo" />
+      <xsd:element name="IndirizzoSecondaParte" nillable="true" type="intf1:tIndirizzo" />
+      <xsd:element name="IndirizzoTerzaParte" nillable="true" type="intf1:tIndirizzo" />
+      <xsd:element name="IndirizzoQuartaParte" nillable="true" type="intf1:tIndirizzo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tIndirizzoEstero">
+    <xsd:sequence>
+      <xsd:element name="SiglaPaese" nillable="true" type="intf1:tSiglaPaese" />
+      <xsd:element name="Stato" nillable="true" type="intf1:tNomeLuogo" />
+      <xsd:element name="TipoCodStato" nillable="true" type="intf1:tElenco" />
+      <xsd:element name="CodStato" nillable="true" type="intf1:tCodLuogo" />
+      <xsd:element name="Provincia" nillable="true" type="intf1:tProvinciaEstera" />
+      <xsd:element name="Citta" nillable="true" type="intf1:tCittaEstera" />
+      <xsd:element name="Postcode" nillable="true" type="intf1:tCAP" />
+      <xsd:element name="Civico" nillable="true" type="intf1:tCivico" />
+      <xsd:element name="Indirizzo" nillable="true" type="intf1:tIndirizzo" />
+      <xsd:element name="IndirizzoSecondaParte" nillable="true" type="intf1:tIndirizzo" />
+      <xsd:element name="IndirizzoTerzaParte" nillable="true" type="intf1:tIndirizzo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tR001">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Indirizzo</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="StatusIndirizzo" type="intf1:tElenco" />
+      <xsd:element name="TipoIndirizzo" type="intf1:tElenco" />
+      <xsd:element name="CodProvenienza" type="intf1:tArchivio" />
+      <xsd:element name="DataVariazione" nillable="true" type="intf1:tData" />
+      <xsd:element name="OraVariazione" nillable="true" type="intf1:tOraSecondi" />
+      <xsd:element name="SedeVariazione" nillable="true" type="intf1:tSede" />
+      <xsd:element name="OperatoreVariazione" nillable="true" type="intf1:tOperatore" />
+      <xsd:element name="ProgrammaVariazione" nillable="true" type="intf1:tProgramma" />
+      <xsd:element minOccurs="0" name="IndirizzoItalia" type="intf1:tIndirizzoItalia" />
+      <xsd:element minOccurs="0" name="IndirizzoEstero" type="intf1:tIndirizzoEstero" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tChiaveGestionale">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="38" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tAltriDati">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="181" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="tK000">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Chiave gestionale di iscrizione anagrafica</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Archivio" type="intf1:tArchivio" />
+      <xsd:element name="Progetto" type="intf1:tProgetto" />
+      <xsd:element name="Sede" type="intf1:tSede" />
+      <xsd:element name="Chiave" nillable="true" type="intf1:tChiaveGestionale" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tK001">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Chiave gestionale</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Archivio" type="intf1:tArchivio" />
+      <xsd:element name="Progetto" type="intf1:tProgetto" />
+      <xsd:element name="Sede" type="intf1:tSede" />
+      <xsd:element name="Chiave" type="intf1:tChiaveGestionale" />
+      <xsd:element name="AltriDati" nillable="true" type="intf1:tAltriDati" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tK002">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Chiave gestionale secondaria</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Archivio" type="intf1:tArchivio" />
+      <xsd:element name="Progetto" type="intf1:tProgetto" />
+      <xsd:element name="Sede" type="intf1:tSede" />
+      <xsd:element name="Chiave" type="intf1:tChiaveGestionale" />
+      <xsd:element name="AltriDati" nillable="true" type="intf1:tAltriDati" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tP001_inp">
+    <xsd:annotation>
+      <xsd:documentation>Modulo Familiari di input</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ChiaveARCARef" nillable="true" type="intf1:tChiaveArca" />
+      <xsd:element name="CodRelazione" type="intf1:tElenco" />
+      <xsd:element name="DataEvento" nillable="true" type="intf1:tData" />
+      <xsd:element name="ComuneRegAna" nillable="true" type="intf1:tComuneCodFisc" />
+      <xsd:element name="CodFiscPersona" nillable="true" type="intf1:tCodiceFiscale" />
+      <xsd:element name="CognGenitore" nillable="true" type="intf1:tNome36" />
+      <xsd:element name="IICognGenitore" nillable="true" type="intf1:tNome36" />
+      <xsd:element name="NomeGenitore" nillable="true" type="intf1:tNome36" />
+      <xsd:element name="IINomeGenitore" nillable="true" type="intf1:tNome36" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tP001_out">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf1:tP001_inp">
+        <xsd:annotation>
+          <xsd:documentation>Modulo Familiari di output</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="DataVariazione" nillable="true" type="intf1:tData" />
+          <xsd:element name="DescrVariazione" nillable="true" type="intf1:tDescrizioneEsito" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="tT001">
+    <xsd:sequence>
+      <xsd:element name="Status" nillable="true" type="intf1:tChar" />
+      <xsd:element name="DataVariazione" nillable="true" type="intf1:tData" />
+      <xsd:element name="CodProfessione" nillable="true" type="intf1:tCodProfessione" />
+      <xsd:element name="CodAttivita" nillable="true" type="intf1:tCodAttivita" />
+      <xsd:element name="CodTitolo" nillable="true" type="intf1:tChar" />
+      <xsd:element name="DesTitolo" nillable="true" type="intf1:tDesTitolo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="tCodProfessione">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tCodAttivita">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="5" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tDesTitolo">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="35" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="InserimentoAnagraficaGestione">
+    <xsd:sequence>
+      <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+      <xsd:element name="Ricerca" type="intf1:tF001" />
+      <xsd:element name="Anagrafica" type="intf1:tA001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Indirizzo" type="intf1:tR001" />
+      <xsd:element name="ChiaveGestionaleIscr" type="intf1:tK000" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionaleSecondaria" type="intf1:tK002" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="InserimentoAnagraficaGestioneRichiesta" type="intf1:InserimentoAnagraficaGestione">
+    <xsd:annotation>
+      <xsd:documentation>E' richiesto almeno uno dei moduli facoltativi. Se esiste gia' l'anagrafica il modulo F001 va valorizzato con una chiave che la individui e non va passato il modulo A001.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ModificaAnagraficaGestioneRichiesta" type="intf1:ModificaAnagraficaGestione">
+    <xsd:annotation>
+      <xsd:documentation>E' richiesto almeno uno dei moduli facoltativi e il modulo F001 va valorizzato con la chiave gestionale che individua l'anagrafica</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="ModificaAnagraficaGestione">
+    <xsd:sequence>
+      <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+      <xsd:element name="Ricerca" type="intf1:tF001" />
+      <xsd:element minOccurs="0" name="Anagrafica" type="intf1:tA001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Indirizzo" type="intf1:tR001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionale" type="intf1:tK001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionaleSecondaria" type="intf1:tK002" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RicercaAnagraficaGestioneRichiesta">
+    <xsd:annotation>
+      <xsd:documentation>Il modulo di Ricerca va valorizzato con la chiave gestionale</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+        <xsd:element name="Ricerca" type="intf1:tF001" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="InserimentoAnagraficaARCARichiesta" type="intf1:InserimentoAnagraficaARCA">
+    <xsd:annotation>
+      <xsd:documentation>E' richiesto almeno uno dei moduli facoltativi. Se esiste gia' l'anagrafica il modulo F001 va valorizzato con una chiave che la individui e non va passato il modulo A001.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="InserimentoAnagraficaARCA">
+    <xsd:sequence>
+      <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+      <xsd:element name="Ricerca" type="intf1:tF001" />
+      <xsd:element minOccurs="0" name="Anagrafica" type="intf1:tA001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Indirizzo" type="intf1:tR001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Familiare" type="intf1:tP001_inp" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Titolo" type="intf1:tT001" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ModificaAnagraficaARCARichiesta" type="intf1:ModificaAnagraficaARCA">
+    <xsd:annotation>
+      <xsd:documentation>E' richiesto almeno uno dei moduli facoltativi e il modulo F001 va valorizzato con una chiave che individui l'anagrafica</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="ModificaAnagraficaARCA">
+    <xsd:sequence>
+      <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+      <xsd:element name="Ricerca" type="intf1:tF001" />
+      <xsd:element minOccurs="0" name="Anagrafica" type="intf1:tA001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Indirizzo" type="intf1:tR001" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RicercaAnagraficaARCARichiesta">
+    <xsd:annotation>
+      <xsd:documentation>Il modulo di Ricerca va valorizzato con una chiave che individui l'anagrafica</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+        <xsd:element name="Ricerca" type="intf1:tF001" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DeleteFamiliariTitoliRichiesta">
+    <xsd:annotation>
+      <xsd:documentation>E' richiesto almeno uno dei moduli facoltativi (P001 e T001) e il modulo F001 va valorizzato con una chiave che individui l'anagrafica</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+        <xsd:element name="Ricerca" type="intf1:tF001" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Familiare" type="intf1:tP001_inp" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Titolo" type="intf1:tT001" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="InserimentoGestioneRichiesta" type="intf1:InserimentoGestione">
+    <xsd:annotation>
+      <xsd:documentation>Il modulo di Ricerca va valorizzato con una chiave che individui l'anagrafica</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="InserimentoGestione">
+    <xsd:sequence>
+      <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+      <xsd:element name="Ricerca" type="intf1:tF001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionale" type="intf1:tK001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionaleSecondaria" type="intf1:tK002" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ModificaGestioneRichiesta" type="intf1:ModificaGestione">
+    <xsd:annotation>
+      <xsd:documentation>E' possibile modificare solo le eventuali informazioni aggiuntive. E' richiesto almeno uno dei moduli facoltativi e il modulo F001 va valorizzato con una chiave che individui l'anagrafica</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="ModificaGestione">
+    <xsd:sequence>
+      <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+      <xsd:element name="Ricerca" type="intf1:tF001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionale" type="intf1:tK001" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionaleSecondaria" type="intf1:tK002" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DeleteGestioneRichiesta">
+    <xsd:annotation>
+      <xsd:documentation>E' richiesto almeno uno dei moduli facoltativi e il modulo F001 va valorizzato con una chiave che individui l'anagrafica</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Sicurezza" type="intf1:tS001_inp" />
+        <xsd:element name="Ricerca" type="intf1:tF001" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionale" type="intf1:tK001" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionaleSecondaria" type="intf1:tK002" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Risposta">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Sicurezza" type="intf1:tS001_out" />
+        <xsd:element name="Ricerca" type="intf1:tF001" />
+        <xsd:element minOccurs="0" name="Anagrafica" type="intf1:tA001" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Indirizzo" type="intf1:tR001" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Familiare" type="intf1:tP001_out" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Titolo" type="intf1:tT001" />
+        <xsd:element minOccurs="0" name="ChiaveGestionaleIscr" type="intf1:tK000" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionale" type="intf1:tK001" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChiaveGestionaleSecondaria" type="intf1:tK002" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

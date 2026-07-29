@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="836224c8-7b81-4d83-ab6b-b725cddbe4fc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://srvweb01.ser-test.inps/WSUnicarpe/CalcoloQuote.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CalcoloQuote.xsd" MetadataType="Schema" ID="be058626-082a-4622-b8c3-451ffaba1b75" SourceId="1" SourceUrl="http://srvweb01.ser-test.inps/WSUnicarpe/CalcoloQuote.svc?xsd=xsd1" />
+    <MetadataFile FileName="CalcoloQuote.wsdl" MetadataType="Wsdl" ID="659e3e60-e0cc-4770-bd67-75aaa72a55a5" SourceId="1" SourceUrl="http://srvweb01.ser-test.inps/WSUnicarpe/CalcoloQuote.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CalcoloQuote.disco" MetadataType="Disco" ID="60b61e2c-fe15-40db-b789-750249222474" SourceId="1" SourceUrl="http://srvweb01.ser-test.inps/WSUnicarpe/CalcoloQuote.svc?disco" />
+    <MetadataFile FileName="CalcoloQuote1.wsdl" MetadataType="Wsdl" ID="69514be8-0fee-4f50-9039-f82c423acd39" SourceId="1" SourceUrl="http://srvweb01.ser-test.inps/WSUnicarpe/CalcoloQuote.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="CalcoloQuote2.wsdl" MetadataType="Wsdl" ID="0a1f35fd-91fd-47ae-ac9e-ff362ca29edd" SourceId="1" SourceUrl="http://srvweb01.ser-test.inps/WSUnicarpe/CalcoloQuote.svc?wsdl" />
+    <MetadataFile FileName="CalcoloQuote1.xsd" MetadataType="Schema" ID="44e4c073-6eda-48df-8507-beb709f8113f" SourceId="1" SourceUrl="http://srvweb01.ser-test.inps/WSUnicarpe/CalcoloQuote.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

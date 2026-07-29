@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3d4dd93a-c73f-4f92-b5a0-6d7281fef855" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://ws.svil.inps/Ws.Net/WSBookingBonus?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSBookingBonus.xsd" MetadataType="Schema" ID="d70f2249-e21e-46bc-a847-2398b05020e1" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSBookingBonus.xsd6.xsd" />
+    <MetadataFile FileName="WSBookingBonus1.xsd" MetadataType="Schema" ID="94b56c69-6c74-4c31-98f0-9b9d74500d87" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSBookingBonus.xsd1.xsd" />
+    <MetadataFile FileName="WSBookingBonus.wsdl" MetadataType="Wsdl" ID="7aa971d2-2a4c-4e93-ba51-1de81027f0a5" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSBookingBonus?wsdl" />
+    <MetadataFile FileName="WSBookingBonus2.xsd" MetadataType="Schema" ID="84c60436-f635-4149-82af-8933d37b854a" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSBookingBonus.xsd3.xsd" />
+    <MetadataFile FileName="WSBookingBonus3.xsd" MetadataType="Schema" ID="6076bd1f-febc-4ed4-aafe-d28801ba5e59" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSBookingBonus.xsd2.xsd" />
+    <MetadataFile FileName="WSBookingBonus4.xsd" MetadataType="Schema" ID="a3f9ce1b-10af-4c19-a1ea-c6afa0229cbb" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSBookingBonus.xsd5.xsd" />
+    <MetadataFile FileName="WSBookingBonus5.xsd" MetadataType="Schema" ID="b30267aa-a7cf-4726-957e-5df16298ed52" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSBookingBonus.xsd4.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

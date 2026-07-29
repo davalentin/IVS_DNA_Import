@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSUffPagatori/UffPagatori.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" />
+  <xs:element name="LetturaListaABI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaListaABIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="LetturaListaABIResult" nillable="true" type="q1:ArrayOfAUBA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaStoricoABI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaStoricoABIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="LetturaStoricoABIResult" nillable="true" type="q2:ArrayOfAUBA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaStoricoCAB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaStoricoCABResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="LetturaStoricoCABResult" nillable="true" type="q3:ArrayOfAUPN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaEsteroCat">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaEsteroCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="LetturaEsteroCatResult" nillable="true" type="q4:ArrayOfAUCC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoCollettori">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoCollettoriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="ElencoCollettoriResult" nillable="true" type="q5:ArrayOfAUBA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoPagatori">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABI_COLLETTORE" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoPagatoriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="ElencoPagatoriResult" nillable="true" type="q6:ArrayOfAUBA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoCABProvinciali">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SiglaProvincia" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoCABProvincialiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="ElencoCABProvincialiResult" nillable="true" type="q7:ArrayOfAUPN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoUfficiPostali">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoUfficiPostaliResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="ElencoUfficiPostaliResult" nillable="true" type="q8:ArrayOfAUPN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoCassaSede">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Lingua" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoCassaSedeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="ElencoCassaSedeResult" nillable="true" type="q9:ArrayOfAUPN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoNuoveCoordinate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElencoNuoveCoordinateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="ElencoNuoveCoordinateResult" nillable="true" type="q10:ArrayOfAUPN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaSportelliBanche">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaSportelliBancheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" minOccurs="0" name="LetturaSportelliBancheResult" nillable="true" type="q11:ArrayOfAUPN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAliveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

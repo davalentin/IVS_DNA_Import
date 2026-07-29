@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="BeneficiarioPensionatoEliminaConguaglio">
+    <xs:sequence>
+      <xs:element name="codiceFiscale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeneficiarioPensionatoEliminaConguaglio" nillable="true" type="tns:BeneficiarioPensionatoEliminaConguaglio" />
+  <xs:complexType name="PensioneEliminaConguaglio">
+    <xs:sequence>
+      <xs:element name="categoria" nillable="true" type="xs:string" />
+      <xs:element name="certificato" nillable="true" type="xs:string" />
+      <xs:element name="sede" nillable="true" type="xs:string" />
+      <xs:element name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PensioneEliminaConguaglio" nillable="true" type="tns:PensioneEliminaConguaglio" />
+  <xs:simpleType name="ProdottoEliminaConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CREDITO" />
+      <xs:enumeration value="DEBITO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProdottoEliminaConguaglio" nillable="true" type="tns:ProdottoEliminaConguaglio" />
+  <xs:simpleType name="RisultatoEliminaConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoEliminaConguaglio" nillable="true" type="tns:RisultatoEliminaConguaglio" />
+</xs:schema>

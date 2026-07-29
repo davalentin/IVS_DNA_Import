@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazioneAgo", "WSInpsPensioniLiquidazioneAgo\WSInpsPensioniLiquidazioneAgo.csproj", "{BC8BC566-1054-4432-9D9F-0830CF4A6B11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazioneAgo.BL", "WSInpsPensioniLiquidazioneAgo.BL\WSInpsPensioniLiquidazioneAgo.BL.csproj", "{600A3C9D-DBA8-4C76-AD99-831182B3648E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazioneAgo.Data", "WSInpsPensioniLiquidazioneAgo.Data\WSInpsPensioniLiquidazioneAgo.Data.csproj", "{8B0C0956-D6DD-4C9A-9EB8-87F9C204C797}"
+EndProject
+Global
+	GlobalSection(SerenaSourceControl) = preSolution
+		CMNumberOfProjects = 4
+		CMProjectRoot0 = \
+		CMLocalPath0 = .\
+		CMRelativePathToRoot0 = .\
+		CMLocalPath1 = WSInpsPensioniLiquidazioneAgo.BL\
+		CMUniqueName1 = WSInpsPensioniLiquidazioneAgo.BL.csproj
+		CMProjectName1 = WSInpsPensioniLiquidazioneAgo.BL
+		CMRelativePathToRoot1 = WSInpsPensioniLiquidazioneAgo.BL\
+		CMProjectRoot1 = \
+		CMLocalPath2 = WSInpsPensioniLiquidazioneAgo.Data\
+		CMUniqueName2 = WSInpsPensioniLiquidazioneAgo.Data.csproj
+		CMProjectName2 = WSInpsPensioniLiquidazioneAgo.Data
+		CMRelativePathToRoot2 = WSInpsPensioniLiquidazioneAgo.Data\
+		CMProjectRoot2 = \
+		CMLocalPath3 = WSInpsPensioniLiquidazioneAgo\
+		CMUniqueName3 = WSInpsPensioniLiquidazioneAgo.csproj
+		CMProjectName3 = WSInpsPensioniLiquidazioneAgo
+		CMRelativePathToRoot3 = WSInpsPensioniLiquidazioneAgo\
+		CMProjectRoot3 = \
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = INPS.Pensioni.LiquidazioneAgo.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC8BC566-1054-4432-9D9F-0830CF4A6B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8BC566-1054-4432-9D9F-0830CF4A6B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8BC566-1054-4432-9D9F-0830CF4A6B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8BC566-1054-4432-9D9F-0830CF4A6B11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600A3C9D-DBA8-4C76-AD99-831182B3648E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600A3C9D-DBA8-4C76-AD99-831182B3648E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600A3C9D-DBA8-4C76-AD99-831182B3648E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600A3C9D-DBA8-4C76-AD99-831182B3648E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0C0956-D6DD-4C9A-9EB8-87F9C204C797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0C0956-D6DD-4C9A-9EB8-87F9C204C797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0C0956-D6DD-4C9A-9EB8-87F9C204C797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0C0956-D6DD-4C9A-9EB8-87F9C204C797}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

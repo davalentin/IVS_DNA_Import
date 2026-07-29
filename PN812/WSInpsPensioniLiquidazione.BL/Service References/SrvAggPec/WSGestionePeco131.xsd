@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary">
+  <xs:complexType name="csTBPECO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESC_ERRORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FUNZ_ERRORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Item_10" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_11" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_12" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_2" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_3" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_4" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_5" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_6" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_7" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_8" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_9" type="xs:int" />
+      <xs:element minOccurs="0" name="Item_Arca" type="xs:int" />
+      <xs:element minOccurs="0" name="PGM_ERRORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAB_ERRORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_RETCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="aTBPEARCA" nillable="true" type="tns:ArrayOfiTBPEARCA" />
+      <xs:element minOccurs="0" name="aTBPECO_1" nillable="true" type="tns:iTBPECO1" />
+      <xs:element minOccurs="0" name="aTBPECO_10" nillable="true" type="tns:ArrayOfiTBPECO10" />
+      <xs:element minOccurs="0" name="aTBPECO_11" nillable="true" type="tns:ArrayOfiTBPECO11" />
+      <xs:element minOccurs="0" name="aTBPECO_12" nillable="true" type="tns:ArrayOfiTBPECO12" />
+      <xs:element minOccurs="0" name="aTBPECO_2" nillable="true" type="tns:ArrayOfiTBPECO2" />
+      <xs:element minOccurs="0" name="aTBPECO_3" nillable="true" type="tns:ArrayOfiTBPECO3" />
+      <xs:element minOccurs="0" name="aTBPECO_4" nillable="true" type="tns:ArrayOfiTBPECO4" />
+      <xs:element minOccurs="0" name="aTBPECO_5" nillable="true" type="tns:ArrayOfiTBPECO5" />
+      <xs:element minOccurs="0" name="aTBPECO_6" nillable="true" type="tns:ArrayOfiTBPECO6" />
+      <xs:element minOccurs="0" name="aTBPECO_7" nillable="true" type="tns:ArrayOfiTBPECO7" />
+      <xs:element minOccurs="0" name="aTBPECO_8" nillable="true" type="tns:ArrayOfiTBPECO8" />
+      <xs:element minOccurs="0" name="aTBPECO_9" nillable="true" type="tns:ArrayOfiTBPECO9" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csTBPECO" nillable="true" type="tns:csTBPECO" />
+  <xs:complexType name="ArrayOfiTBPEARCA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPEARCA" nillable="true" type="tns:iTBPEARCA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPEARCA" nillable="true" type="tns:ArrayOfiTBPEARCA" />
+  <xs:complexType name="iTBPEARCA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODCOMU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODFISC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COGNOME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATANASCITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROGEARCA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SESSO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPEARCA" nillable="true" type="tns:iTBPEARCA" />
+  <xs:complexType name="iTBPECO1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANZVEC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATPENSX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATWEBDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODARCA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODCEOP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODFISC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODNEWPATRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODPATRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODPROPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODPROVVIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSCART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATAELAB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATAOPZIONE335" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATASCART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATATRASM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATPREL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISP1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISP2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISP3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISP4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISP5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENTEPATR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATRICOLA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEWCAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEWPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEWSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEWZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPERATORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PATRINPS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROVNET" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPECFONDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATOELABORAZIONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATOESTERO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATOPROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOLIQUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPWEBDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALIOPZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZONPATRO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO1" nillable="true" type="tns:iTBPECO1" />
+  <xs:complexType name="ArrayOfiTBPECO10">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO10" nillable="true" type="tns:iTBPECO10" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO10" nillable="true" type="tns:ArrayOfiTBPECO10" />
+  <xs:complexType name="iTBPECO10">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANZCONT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPAZI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATEGORIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODCOMAGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODPROVAGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODREQRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMUNAZI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CTRRICH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATACESLAV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATACESMOB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATACESMOB2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATACESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATAINILAV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATAINVIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DECBONUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DENOMAZI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ETARICHAA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ETARICHGG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ETARICHMM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINEBONUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINESTRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINESTRA3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMPCONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMPORTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INDIRAZI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INIASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATRAGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATRAZI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTCES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROVAZI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RID335" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTINCR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOLOCONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPSPEC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VVDIR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VVMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO10" nillable="true" type="tns:iTBPECO10" />
+  <xs:complexType name="ArrayOfiTBPECO11">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO11" nillable="true" type="tns:iTBPECO11" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO11" nillable="true" type="tns:ArrayOfiTBPECO11" />
+  <xs:complexType name="iTBPECO11">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODISTIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSTATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPROGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERDAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDIR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDIRMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO11" nillable="true" type="tns:iTBPECO11" />
+  <xs:complexType name="ArrayOfiTBPECO12">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO12" nillable="true" type="tns:iTBPECO12" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO12" nillable="true" type="tns:ArrayOfiTBPECO12" />
+  <xs:complexType name="iTBPECO12">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AAONERE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANZBENEF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANZCONC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODBENEF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODGRUP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODINV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSGRUP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATCESSAZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NGGANT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NMMANT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPROGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ONERE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO12" nillable="true" type="tns:iTBPECO12" />
+  <xs:complexType name="ArrayOfiTBPECO2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO2" nillable="true" type="tns:iTBPECO2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO2" nillable="true" type="tns:ArrayOfiTBPECO2" />
+  <xs:complexType name="iTBPECO2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODESTERO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODREG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRORIG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGPART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPROGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OREPART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERDAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRIB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDIR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDIRMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPMOB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOCONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOGGAGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TITOCOLL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TPCUNEX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UNITATEMPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UTILE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO2" nillable="true" type="tns:iTBPECO2" />
+  <xs:complexType name="ArrayOfiTBPECO3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO3" nillable="true" type="tns:iTBPECO3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO3" nillable="true" type="tns:ArrayOfiTBPECO3" />
+  <xs:complexType name="iTBPECO3">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AADIRFS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GGDIRFS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MMDIRFS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERDAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDIR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDIRMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOCONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO3" nillable="true" type="tns:iTBPECO3" />
+  <xs:complexType name="ArrayOfiTBPECO4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO4" nillable="true" type="tns:iTBPECO4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO4" nillable="true" type="tns:ArrayOfiTBPECO4" />
+  <xs:complexType name="iTBPECO4">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANNOCOE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTR2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FASCIACD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPROGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERCREDAUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERDAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QUALAGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETR2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETR3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETR4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRIB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRORIG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOCONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO4" nillable="true" type="tns:iTBPECO4" />
+  <xs:complexType name="ArrayOfiTBPECO5">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO5" nillable="true" type="tns:iTBPECO5" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO5" nillable="true" type="tns:ArrayOfiTBPECO5" />
+  <xs:complexType name="iTBPECO5">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AREQUSR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ATTIVITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BENEFICIO336" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODGESTINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTR0196" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTR1292" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRAMIANTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRAMIANTO1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRASSEGNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRASSEGNO1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRCIECO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRCIECO1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRDIR1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRDIRDEC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRESOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRESTERI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRESTERI1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRGODINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRGODINA1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRINDCOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRINDCOM1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRINVAL74" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRINVAL741295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRMAGINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRMIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRMIN1295" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRPREP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRQUINQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAT260" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAT264" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA1820" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATAAUTVV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATAMAGANZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATASETQUOTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATINV80" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATQUIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATREQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATSPEC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEROGAL122" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GIORUSURANTI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LIMETA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LIMSER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOBDATIND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOBDATUIND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOBQUAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOBSETATT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOBSETATT2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTMEDSETT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRBIENNIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRMOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETROMOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRULTANNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETQUOTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTANTEQUINQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPREQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VVMIS92" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VVMISB" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO5" nillable="true" type="tns:iTBPECO5" />
+  <xs:complexType name="ArrayOfiTBPECO6">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO6" nillable="true" type="tns:iTBPECO6" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO6" nillable="true" type="tns:ArrayOfiTBPECO6" />
+  <xs:complexType name="iTBPECO6">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ALIMEDIARID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANCOEPIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANCOERIV1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANZCON1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODGEST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODQUOTA2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODQUOTAIVS74" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COEFPIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COEFRIV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRIB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRIB1995" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CTRSENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DL373" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTANTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTANTE1995" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTDECEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTMEDIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMPROGR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REDRETRCOMPL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SENT201" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTANTEDECEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDA0196" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDECEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTUTILI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO6" nillable="true" type="tns:iTBPECO6" />
+  <xs:complexType name="ArrayOfiTBPECO7">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO7" nillable="true" type="tns:iTBPECO7" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO7" nillable="true" type="tns:ArrayOfiTBPECO7" />
+  <xs:complexType name="iTBPECO7">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANZCONT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSINVA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATEGORIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODARCA1DC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODARCA2DC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODCOMUNEDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODFISCDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODGESTEST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODMOBI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODPROPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODREQRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSAN1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSAN2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODXCALCPAS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COGNONOMEDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRSOLIMP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRSOLSETT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAMOAS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DANADC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATACESLAV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DECORRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMPCONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMPRETR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INIASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMEDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PENSINA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERCPEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRPOND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETRPONDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RID335" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SCADRS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SESSDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETESTEREL292" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTEFFIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTINCR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOLOCONTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPCALC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VVDIR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VVMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO7" nillable="true" type="tns:iTBPECO7" />
+  <xs:complexType name="ArrayOfiTBPECO8">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO8" nillable="true" type="tns:iTBPECO8" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO8" nillable="true" type="tns:ArrayOfiTBPECO8" />
+  <xs:complexType name="iTBPECO8">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANZCON1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODGEST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODQUOTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODQUOTA2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENDIM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPCALCQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO8" nillable="true" type="tns:iTBPECO8" />
+  <xs:complexType name="ArrayOfiTBPECO9">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="iTBPECO9" nillable="true" type="tns:iTBPECO9" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfiTBPECO9" nillable="true" type="tns:ArrayOfiTBPECO9" />
+  <xs:complexType name="iTBPECO9">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODGEST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODQUOTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODSED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODZON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONTRIB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTANTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETTDA0196" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPOEMIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iTBPECO9" nillable="true" type="tns:iTBPECO9" />
+</xsd:schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Controllo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppNameChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Controllo" nillable="true" type="tns:Controllo" />
+  <xs:complexType name="Fascicolo.Input">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceCategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceFiscaleDanteCausa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceSede" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fascicolo.Input" nillable="true" type="tns:Fascicolo.Input" />
+  <xs:complexType name="Esito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Messaggio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RisultatoOperazione" type="tns:Enums.TipoEsito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Esito" nillable="true" type="tns:Esito" />
+  <xs:simpleType name="Enums.TipoEsito">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="KO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.TipoEsito" nillable="true" type="tns:Enums.TipoEsito" />
+  <xs:complexType name="Fascicolo.Output">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChiaveFascicolo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroFascicolo" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fascicolo.Output" nillable="true" type="tns:Fascicolo.Output" />
+  <xs:complexType name="Certificato.Input">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceSede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiglaCategoria" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Certificato.Input" nillable="true" type="tns:Certificato.Input" />
+  <xs:complexType name="Certificato.Output">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Certificato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Certificato.Output" nillable="true" type="tns:Certificato.Output" />
+</xs:schema>

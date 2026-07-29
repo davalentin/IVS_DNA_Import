@@ -1,0 +1,150 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="INPS.Pensioni.Liquidazione.DataCommon.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DataSourceConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06.inps,2059;Persist Security Info=True;User ID=Pensioni_Fs_WIP&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06.inps,2059;Persist Security Info=True;User ID=Pensioni_Fs_WIP</Value>
+    </Setting>
+    <Setting Name="Richieste2003ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL04.inps,1900;Initial Catalog=Richieste2003;Persist Security Info=True;User ID=Richieste2003Dec;Password=UikWrb.H8k&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL04.inps,1900;Initial Catalog=Richieste2003;Persist Security Info=True;User ID=Richieste2003Dec;Password=UikWrb.H8k</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=sqlinpssvil06.inps\sql06;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sqlinpssvil06.inps\sql06;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP;Password=sec33sHp2&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP;Password=sec33sHp2</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=sqlinpssvil06.inps\sql06;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sqlinpssvil06.inps\sql06;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString4" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString5" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=sqlinpssvil06.inps\sql06;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP;Password=sec33sHp2&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sqlinpssvil06.inps\sql06;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs_WIP;Password=sec33sHp2</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString6" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString7" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06.INPS,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP;Password=sec33sHp2&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06.INPS,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP;Password=sec33sHp2</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString8" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP;Password=sec33sHp2&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06.inps,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP;Password=sec33sHp2</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString9" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=PP1SVIL;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=PP1SVIL;Initial Catalog=Pensioni_Fs_WIP;User ID=Pensioni_Fs</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString10" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=PP1SVIL;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=PP1SVIL;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString11" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=pp1svilnew.avndrome.net\pp1svilnew;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs;Password=acn2020.&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=pp1svilnew.avndrome.net\pp1svilnew;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs;Password=acn2020.</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString12" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=pp1svilnew.avndrome.net\pp1svilnew;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=pp1svilnew.avndrome.net\pp1svilnew;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString13" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=pp1svilnew\pp1svilnew;Initial Catalog=Pensioni_Fs_WIP;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=pp1svilnew\pp1svilnew;Initial Catalog=Pensioni_Fs_WIP;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="Pensioni_Fs_WIPConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06,2059;Initial Catalog=Pensioni_Fs_WIP;Persist Security Info=True;User ID=Pensioni_Fs_WIP</Value>
+    </Setting>
+    <Setting Name="Richieste2003ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL04.ser-test.inps,1900;Initial Catalog=Richieste2003;Persist Security Info=True;User ID=Richieste2003Dec;Password=UikWrb.H8k&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL04.ser-test.inps,1900;Initial Catalog=Richieste2003;Persist Security Info=True;User ID=Richieste2003Dec;Password=UikWrb.H8k</Value>
+    </Setting>
+    <Setting Name="Pensioni_FsConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SQLINPSSVIL06.ser-test.inps,2059;Initial Catalog=Pensioni_Fs;Persist Security Info=True;User ID=Pensioni_Fs;Password=cgh3-q1s&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SQLINPSSVIL06.ser-test.inps,2059;Initial Catalog=Pensioni_Fs;Persist Security Info=True;User ID=Pensioni_Fs;Password=cgh3-q1s</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" />
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="DomandaEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentroOperativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodEnte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodTipoRichiesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceFiscaleTitolare" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CtrlStep" nillable="true" type="tns:ArrayOfCtrlStepEntity" />
+      <xs:element minOccurs="0" name="DataAggiornamento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataPresentazione" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fondo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gestione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gruppo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTipoWorkflow" type="xs:int" />
+      <xs:element minOccurs="0" name="IndConvInt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsConsultazione" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsElaborato" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NDomus" type="xs:long" />
+      <xs:element minOccurs="0" name="Prodotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgDomanda" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Soggetto" nillable="true" type="tns:SoggettoEntity" />
+      <xs:element minOccurs="0" name="StatoStepDomanda" nillable="true" type="tns:ArrayOfStatoStepDomandaEntity" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoLav" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomandaEntity" nillable="true" type="tns:DomandaEntity" />
+  <xs:complexType name="ArrayOfCtrlStepEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CtrlStepEntity" nillable="true" type="tns:CtrlStepEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCtrlStepEntity" nillable="true" type="tns:ArrayOfCtrlStepEntity" />
+  <xs:complexType name="CtrlStepEntity">
+    <xs:sequence>
+      <xs:element name="ctrlAzione" nillable="true" type="tns:ArrayOfCtrlAzioneEntity" />
+      <xs:element name="ctrlConfigurazione" nillable="true" type="tns:CtrlConfigurazioneEntity" />
+      <xs:element name="ctrlStep" nillable="true" type="tns:ArrayOfCtrlStepEntity" />
+      <xs:element name="ctrlStepServiziEsterni" nillable="true" type="tns:ArrayOfCtrlStepServiziEsterniEntity" />
+      <xs:element name="descrizione" nillable="true" type="xs:string" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="nome" nillable="true" type="xs:string" />
+      <xs:element name="statoStep" nillable="true" type="tns:ArrayOfStatoStepEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlStepEntity" nillable="true" type="tns:CtrlStepEntity" />
+  <xs:complexType name="ArrayOfCtrlAzioneEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CtrlAzioneEntity" nillable="true" type="tns:CtrlAzioneEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCtrlAzioneEntity" nillable="true" type="tns:ArrayOfCtrlAzioneEntity" />
+  <xs:complexType name="CtrlAzioneEntity">
+    <xs:sequence>
+      <xs:element name="ctrlAzione" nillable="true" type="tns:ArrayOfCtrlAzioneEntity" />
+      <xs:element name="ctrlConfigurazione" nillable="true" type="tns:CtrlConfigurazioneEntity" />
+      <xs:element name="ctrlParametroAzione" nillable="true" type="tns:ArrayOfCtrlParametroAzioneEntity" />
+      <xs:element name="descrizione" nillable="true" type="xs:string" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="nome" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" name="tipo" type="q1:Enums.DecTipoAzione" />
+      <xs:element name="url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlAzioneEntity" nillable="true" type="tns:CtrlAzioneEntity" />
+  <xs:complexType name="CtrlConfigurazioneEntity">
+    <xs:sequence>
+      <xs:element name="_x003C_ConfAzioni_x003E_k__BackingField" nillable="true" type="tns:ConfAzioni" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="isAttivo" type="xs:boolean" />
+      <xs:element name="isAzioneComeStep" type="xs:boolean" />
+      <xs:element name="isVisibile" nillable="true" type="xs:boolean" />
+      <xs:element name="legame" type="xs:boolean" />
+      <xs:element name="posizione" type="xs:int" />
+      <xs:element name="vincolo" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlConfigurazioneEntity" nillable="true" type="tns:CtrlConfigurazioneEntity" />
+  <xs:complexType name="ConfAzioni">
+    <xs:sequence>
+      <xs:element name="_x003C_ConfStatoConsumer_x003E_k__BackingField" nillable="true" type="tns:ConfStatoConsumer" />
+      <xs:element name="_x003C_ConfStatoStep_x003E_k__BackingField" nillable="true" type="tns:ConfStatoStep" />
+      <xs:element name="_x003C_ConfStep_x003E_k__BackingField" nillable="true" type="tns:ConfStep" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfAzioni" nillable="true" type="tns:ConfAzioni" />
+  <xs:complexType name="ConfStatoConsumer">
+    <xs:sequence>
+      <xs:element name="_x003C_Operazione_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+      <xs:element name="_x003C_StatoConsumer_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfStatoConsumer" nillable="true" type="tns:ConfStatoConsumer" />
+  <xs:complexType name="ConfStatoStep">
+    <xs:sequence>
+      <xs:element name="_x003C_IdStato_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_Operazione_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfStatoStep" nillable="true" type="tns:ConfStatoStep" />
+  <xs:complexType name="ConfStep">
+    <xs:sequence>
+      <xs:element name="_x003C_IdStep_x003E_k__BackingField" nillable="true" type="xs:int" />
+      <xs:element name="_x003C_Operazione_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfStep" nillable="true" type="tns:ConfStep" />
+  <xs:complexType name="ArrayOfCtrlParametroAzioneEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CtrlParametroAzioneEntity" nillable="true" type="tns:CtrlParametroAzioneEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCtrlParametroAzioneEntity" nillable="true" type="tns:ArrayOfCtrlParametroAzioneEntity" />
+  <xs:complexType name="CtrlParametroAzioneEntity">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="nome" nillable="true" type="xs:string" />
+      <xs:element name="valore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlParametroAzioneEntity" nillable="true" type="tns:CtrlParametroAzioneEntity" />
+  <xs:complexType name="ArrayOfCtrlStepServiziEsterniEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CtrlStepServiziEsterniEntity" nillable="true" type="tns:CtrlStepServiziEsterniEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCtrlStepServiziEsterniEntity" nillable="true" type="tns:ArrayOfCtrlStepServiziEsterniEntity" />
+  <xs:complexType name="CtrlStepServiziEsterniEntity">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="idServizioEsterno" type="xs:int" />
+      <xs:element name="idStep" nillable="true" type="xs:int" />
+      <xs:element name="idTipoWorkFlow" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlStepServiziEsterniEntity" nillable="true" type="tns:CtrlStepServiziEsterniEntity" />
+  <xs:complexType name="ArrayOfStatoStepEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatoStepEntity" nillable="true" type="tns:StatoStepEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatoStepEntity" nillable="true" type="tns:ArrayOfStatoStepEntity" />
+  <xs:complexType name="StatoStepEntity">
+    <xs:sequence>
+      <xs:element name="dataStato" type="xs:dateTime" />
+      <xs:element name="decStato" nillable="true" type="tns:DecStatoEntity" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="idDomanda" nillable="true" type="xs:int" />
+      <xs:element name="idStato" nillable="true" type="xs:int" />
+      <xs:element name="idStep" nillable="true" type="xs:int" />
+      <xs:element name="isAttivo" nillable="true" type="xs:boolean" />
+      <xs:element name="isVisibile" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoStepEntity" nillable="true" type="tns:StatoStepEntity" />
+  <xs:complexType name="DecStatoEntity">
+    <xs:sequence>
+      <xs:element name="descrizione" nillable="true" type="xs:string" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DecStatoEntity" nillable="true" type="tns:DecStatoEntity" />
+  <xs:complexType name="SoggettoEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataAggiornamento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoggettoEntity" nillable="true" type="tns:SoggettoEntity" />
+  <xs:complexType name="ArrayOfStatoStepDomandaEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatoStepDomandaEntity" nillable="true" type="tns:StatoStepDomandaEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatoStepDomandaEntity" nillable="true" type="tns:ArrayOfStatoStepDomandaEntity" />
+  <xs:complexType name="StatoStepDomandaEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceStatoConsumer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CognomeOperatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataAggiornamento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataStato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescrizioneStatoConsumer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdStatoStep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdStep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdStepPadre" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsCalcolato" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MatricolaOperatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ndomus" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NomeOperatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoteConsumer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroAggiornamenti" type="xs:short" />
+      <xs:element minOccurs="0" name="ProgDomanda" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProgFase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepartoInpsOperatore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoStepDomandaEntity" nillable="true" type="tns:StatoStepDomandaEntity" />
+  <xs:complexType name="ArrayOfStoricoServiziEsterniBaseEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoricoServiziEsterniBaseEntity" nillable="true" type="tns:StoricoServiziEsterniBaseEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoricoServiziEsterniBaseEntity" nillable="true" type="tns:ArrayOfStoricoServiziEsterniBaseEntity" />
+  <xs:complexType name="StoricoServiziEsterniBaseEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CognomeOperatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataStato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescrizioneStatoConsumer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdStatoStep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdStep" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MatricolaOperatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeOperatore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoricoServiziEsterniBaseEntity" nillable="true" type="tns:StoricoServiziEsterniBaseEntity" />
+  <xs:complexType name="CtrlCacheEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AbsoluteTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Chiave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondsTime" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlCacheEntity" nillable="true" type="tns:CtrlCacheEntity" />
+  <xs:complexType name="ArrayOfSedeEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SedeEntity" nillable="true" type="tns:SedeEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSedeEntity" nillable="true" type="tns:ArrayOfSedeEntity" />
+  <xs:complexType name="SedeEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAttiva" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SedeEntity" nillable="true" type="tns:SedeEntity" />
+  <xs:complexType name="ArrayOfLavorazioneEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LavorazioneEntity" nillable="true" type="tns:LavorazioneEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLavorazioneEntity" nillable="true" type="tns:ArrayOfLavorazioneEntity" />
+  <xs:complexType name="LavorazioneEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataUltimaLavorazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsElaborato" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NDomus" type="xs:long" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="StatoUltimoStep" nillable="true" type="q2:Enums.DecStato" />
+      <xs:element minOccurs="0" name="TipoPratica" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="UltimoStep" nillable="true" type="q3:Enums.Step" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LavorazioneEntity" nillable="true" type="tns:LavorazioneEntity" />
+  <xs:complexType name="ConfigurazioneLavorazioniGiacentiEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataAggiornamento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InLavorazione" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Input" nillable="true" type="tns:InputQuery" />
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeEtichetta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgLista" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="ScadenzaReload" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Totale" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfigurazioneLavorazioniGiacentiEntity" nillable="true" type="tns:ConfigurazioneLavorazioniGiacentiEntity" />
+  <xs:complexType name="InputQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodFase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodGruppo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataPresentazioneAl" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataPresentazioneDal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataPresentazioneOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataRiferimentoAl" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataRiferimentoDal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataRiferimentoOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gestione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsConvInternazionale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFondoSpeciale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInLavorazione" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIstanza" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPatrocinata" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipologiaDomanda" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InputQuery" nillable="true" type="tns:InputQuery" />
+  <xs:complexType name="ArrayOfConfigurazioneLavorazioniGiacentiEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConfigurazioneLavorazioniGiacentiEntity" nillable="true" type="tns:ConfigurazioneLavorazioniGiacentiEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConfigurazioneLavorazioniGiacentiEntity" nillable="true" type="tns:ArrayOfConfigurazioneLavorazioniGiacentiEntity" />
+  <xs:complexType name="MonitoraggioLavorazioniEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttesaPiuLunga" type="xs:short" />
+      <xs:element minOccurs="0" name="DatiAggiornatiAl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidenzaPraticheDaCompletare" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncidenzaPraticheDaLavorare" type="xs:decimal" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="IntervalloMonitoraggioLavorazioni" type="q4:Enums.IntervalliMonitoraggioLavorazioni" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MonitoraggioLavorazioni" nillable="true" type="q5:ArrayOfKeyValueOfstringint" />
+      <xs:element minOccurs="0" name="TempoMedioLavorazione" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonitoraggioLavorazioniEntity" nillable="true" type="tns:MonitoraggioLavorazioniEntity" />
+  <xs:complexType name="ListeConfiugrazioneLavorazioniGiacentiEntity">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ElencoCodFase" nillable="true" type="q6:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ElencoGruppoDomanda" nillable="true" type="q7:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ElencoPrestazioneDomanda" nillable="true" type="q8:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ElencoProvince" nillable="true" type="q9:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ElencoRegioni" nillable="true" type="q10:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ElencoTipologiaDomanda" nillable="true" type="q11:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListeConfiugrazioneLavorazioniGiacentiEntity" nillable="true" type="tns:ListeConfiugrazioneLavorazioniGiacentiEntity" />
+  <xs:complexType name="ArrayOfDettaglioLavorazioniGiacentiEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DettaglioLavorazioniGiacentiEntity" nillable="true" type="tns:DettaglioLavorazioniGiacentiEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDettaglioLavorazioniGiacentiEntity" nillable="true" type="tns:ArrayOfDettaglioLavorazioniGiacentiEntity" />
+  <xs:complexType name="DettaglioLavorazioniGiacentiEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodCatPensioneRifAttuale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodCentroOperativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodEnte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodFondo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodGestione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodGruppo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodProvincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodUnitaProcesso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodZona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataInvioAlSanitario" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataRestituzioneDalSanitario" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataRiferimento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaFinestra" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescFondo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescGestione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescGruppo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescIstanza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescRegione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescSede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsConvInternazionale" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInLavorazione" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTipoWorkFlowCensito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumCertificatoRifAttuale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumDomanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlServizioEsterno" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DettaglioLavorazioniGiacentiEntity" nillable="true" type="tns:DettaglioLavorazioniGiacentiEntity" />
+  <xs:complexType name="ArrayOfLavorazioniWebdomEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LavorazioniWebdomEntity" nillable="true" type="tns:LavorazioniWebdomEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLavorazioniWebdomEntity" nillable="true" type="tns:ArrayOfLavorazioniWebdomEntity" />
+  <xs:complexType name="LavorazioniWebdomEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataPresentazioneFase" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescFase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescIstanza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescRelazioneSoggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescSede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescSituazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsTipoWorkFlowCensito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumDomanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlServizioEsterno" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LavorazioniWebdomEntity" nillable="true" type="tns:LavorazioniWebdomEntity" />
+  <xs:complexType name="ArrayOfMemoEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemoEntity" nillable="true" type="tns:MemoEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemoEntity" nillable="true" type="tns:ArrayOfMemoEntity" />
+  <xs:complexType name="MemoEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="NomeFile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MemoEntity" nillable="true" type="tns:MemoEntity" />
+  <xs:complexType name="CtrlTipoWorkFlowEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodEnte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fondo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gestione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gruppo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTipoWorkFlow" type="xs:int" />
+      <xs:element minOccurs="0" name="IndConvInt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Prodotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoLavorazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlTipoWorkFlowEntity" nillable="true" type="tns:CtrlTipoWorkFlowEntity" />
+  <xs:complexType name="ArrayOfCtrlSperimentazioneEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CtrlSperimentazioneEntity" nillable="true" type="tns:CtrlSperimentazioneEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCtrlSperimentazioneEntity" nillable="true" type="tns:ArrayOfCtrlSperimentazioneEntity" />
+  <xs:complexType name="CtrlSperimentazioneEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAbilitato" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CtrlSperimentazioneEntity" nillable="true" type="tns:CtrlSperimentazioneEntity" />
+</xs:schema>

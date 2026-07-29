@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneAgo" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneAgo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" />
+  <xs:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" />
+  <xs:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneAgo.Entity" />
+  <xs:complexType name="ArrayOfGestioneBititolarita.DecCatEnte">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneBititolarita.DecCatEnte" nillable="true" type="tns:GestioneBititolarita.DecCatEnte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneBititolarita.DecCatEnte" nillable="true" type="tns:ArrayOfGestioneBititolarita.DecCatEnte" />
+  <xs:complexType name="GestioneBititolarita.DecCatEnte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodCategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodEnte" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneBititolarita.DecCatEnte" nillable="true" type="tns:GestioneBititolarita.DecCatEnte" />
+  <xs:complexType name="ArrayOfGestioneBititolarita.DecodificaEnte">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneBititolarita.DecodificaEnte" nillable="true" type="tns:GestioneBititolarita.DecodificaEnte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneBititolarita.DecodificaEnte" nillable="true" type="tns:ArrayOfGestioneBititolarita.DecodificaEnte" />
+  <xs:complexType name="GestioneBititolarita.DecodificaEnte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneBititolarita.DecodificaEnte" nillable="true" type="tns:GestioneBititolarita.DecodificaEnte" />
+  <xs:complexType name="GestionePrelievo.RichiestaPrelievo">
+    <xs:sequence>
+      <xs:element name="_Categoria" type="xs:short" />
+      <xs:element name="_CentroOperativoOperatore" type="xs:short" />
+      <xs:element name="_Certificato" type="xs:int" />
+      <xs:element name="_Sede" type="xs:short" />
+      <xs:element name="_SedeOperatore" type="xs:short" />
+      <xs:element name="_TipoDomanda" type="tns:GestionePrelievo.TipoDomanda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestionePrelievo.RichiestaPrelievo" nillable="true" type="tns:GestionePrelievo.RichiestaPrelievo" />
+  <xs:simpleType name="GestionePrelievo.TipoDomanda">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Reversibilità" />
+      <xs:enumeration value="Ricostituzione" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GestionePrelievo.TipoDomanda" nillable="true" type="tns:GestionePrelievo.TipoDomanda" />
+  <xs:complexType name="GestionePrelievo.RispostaPrelievo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataDecorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatiAnagDanteCausa" nillable="true" type="tns:MappingDaHost.DatiAnagDanteCausa" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiDanteCausa" nillable="true" type="q1:GestioneDanteCausa.DatiDanteCausa" />
+      <xs:element minOccurs="0" name="DatiDelegato" nillable="true" type="tns:MappingDaHost.DatiDelegato" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiDetrazioni" nillable="true" type="q2:GestioneDetrazioniImposta.DatiDetrazioni" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiEliminazione" nillable="true" type="q3:GestionePensione.DatiEliminazione" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiInabilita" nillable="true" type="q4:GestionePensioneInailInabilita.DatiInabilita" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiIntegrazioneArt11" nillable="true" type="q5:GestioneIntegrazioneArt11.IntegrazioneArt11" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiIstruttoria" nillable="true" type="q6:GestioneIstruttoria.DatiIstruttoria" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiMaggiorazioniBenefici" nillable="true" type="q7:GestioneMaggiorazioniBenefici.DatiMaggiorazioniBenefici" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiPagamento" nillable="true" type="q8:GestionePagamento.DatiPagamento" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiPensione" nillable="true" type="q9:GestionePensione.DatiPensione" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiPensioniDatiGenerici" nillable="true" type="q10:GestioneDatiGenericiAgoCi.PensioniDatiGenerici" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiSindacato" nillable="true" type="q11:GestionePensione.DatiSindacato" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" minOccurs="0" name="DatiSupplementiBase" nillable="true" type="q12:SupplementiBase" />
+      <xs:element minOccurs="0" name="DatiTutore" nillable="true" type="tns:MappingDaHost.DatiTutore" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaBititolarita" nillable="true" type="q13:ArrayOfGestioneAltrePensioni.AltraPensione" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaCalcoloContributivo" nillable="true" type="q14:ArrayOfGestioneCalcolo.DatiCalcoloContributivo" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaCalcoloRetributivo" nillable="true" type="q15:ArrayOfGestioneCalcolo.DatiCalcoloRetributivo" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaDatiBeneficiParticolari" nillable="true" type="q16:ArrayOfGestioneBeneficiParticolari.DatiBeneficiParticolari" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaDatiOneri" nillable="true" type="q17:ArrayOfGestioneOneri.DatiOneri" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneAgo.Entity" minOccurs="0" name="ListaFamiliari" nillable="true" type="q18:ArrayOfDatiFamiliari" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaInail" nillable="true" type="q19:ArrayOfGestionePensioneInailInabilita.DatiPensioniINAIL" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaResidenzeEstere" nillable="true" type="q20:ArrayOfGestioneAnagrafica.DatiResidenzaEstero" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaStatiCivili" nillable="true" type="q21:ArrayOfGestioneAnagrafica.DatiStatoCivile" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" minOccurs="0" name="ListaSupplementi" nillable="true" type="q22:ArrayOfDatiSupplementi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestionePrelievo.RispostaPrelievo" nillable="true" type="tns:GestionePrelievo.RispostaPrelievo" />
+  <xs:complexType name="MappingDaHost.DatiAnagDanteCausa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceComuneInps" type="xs:int" />
+      <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sesso" nillable="true" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappingDaHost.DatiAnagDanteCausa" nillable="true" type="tns:MappingDaHost.DatiAnagDanteCausa" />
+  <xs:complexType name="MappingDaHost.DatiDelegato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceDelegato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappingDaHost.DatiDelegato" nillable="true" type="tns:MappingDaHost.DatiDelegato" />
+  <xs:complexType name="MappingDaHost.DatiTutore">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CessValAmmSost" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceTutore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappingDaHost.DatiTutore" nillable="true" type="tns:MappingDaHost.DatiTutore" />
+  <xs:complexType name="GestioneContrib.DatiCalcolo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="IsCalcoloValido" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUnicarpe" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TipoCalcolo" type="tns:GestioneContrib.TipoCalcolo" />
+      <xs:element minOccurs="0" name="lDatiContributivi" nillable="true" type="tns:ArrayOfGestioneAggiornamentoPECO.DatiContributivi" />
+      <xs:element minOccurs="0" name="lDatiRetributivi" nillable="true" type="tns:ArrayOfGestioneAggiornamentoPECO.DatiRetributivi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneContrib.DatiCalcolo" nillable="true" type="tns:GestioneContrib.DatiCalcolo" />
+  <xs:simpleType name="GestioneContrib.TipoCalcolo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NonValido" />
+      <xs:enumeration value="Contributivo" />
+      <xs:enumeration value="Retributivo" />
+      <xs:enumeration value="Misto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GestioneContrib.TipoCalcolo" nillable="true" type="tns:GestioneContrib.TipoCalcolo" />
+  <xs:complexType name="ArrayOfGestioneAggiornamentoPECO.DatiContributivi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAggiornamentoPECO.DatiContributivi" nillable="true" type="tns:GestioneAggiornamentoPECO.DatiContributivi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAggiornamentoPECO.DatiContributivi" nillable="true" type="tns:ArrayOfGestioneAggiornamentoPECO.DatiContributivi" />
+  <xs:complexType name="GestioneAggiornamentoPECO.DatiContributivi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodGestione" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ImportoContributivo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoContributivoQuotaD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MontanteContributivo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MontanteContributivoQuotaD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quota" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="Settimane" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SettimaneQuotaD" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAggiornamentoPECO.DatiContributivi" nillable="true" type="tns:GestioneAggiornamentoPECO.DatiContributivi" />
+  <xs:complexType name="ArrayOfGestioneAggiornamentoPECO.DatiRetributivi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAggiornamentoPECO.DatiRetributivi" nillable="true" type="tns:GestioneAggiornamentoPECO.DatiRetributivi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAggiornamentoPECO.DatiRetributivi" nillable="true" type="tns:ArrayOfGestioneAggiornamentoPECO.DatiRetributivi" />
+  <xs:complexType name="GestioneAggiornamentoPECO.DatiRetributivi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodGestione" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Decorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Quota" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="RMSQuotaA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RMSQuotaB" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SettimaneA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SettimaneB" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAggiornamentoPECO.DatiRetributivi" nillable="true" type="tns:GestioneAggiornamentoPECO.DatiRetributivi" />
+  <xs:complexType name="GestioneContrib.DatiCalcoloENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImportoProRataTemporis" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoQuotaRetributivaInMisto" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LDatiContributivi" nillable="true" type="tns:ArrayOfGestioneContrib.DatiContributiviENPALS" />
+      <xs:element minOccurs="0" name="LDatiRetributivi" nillable="true" type="tns:ArrayOfGestioneContrib.DatiRetributiviENPALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneContrib.DatiCalcoloENPALS" nillable="true" type="tns:GestioneContrib.DatiCalcoloENPALS" />
+  <xs:complexType name="ArrayOfGestioneContrib.DatiContributiviENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneContrib.DatiContributiviENPALS" nillable="true" type="tns:GestioneContrib.DatiContributiviENPALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneContrib.DatiContributiviENPALS" nillable="true" type="tns:ArrayOfGestioneContrib.DatiContributiviENPALS" />
+  <xs:complexType name="GestioneContrib.DatiContributiviENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoefficienteTrasformazione" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoContributivoTotale" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Montante" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneContrib.DatiContributiviENPALS" nillable="true" type="tns:GestioneContrib.DatiContributiviENPALS" />
+  <xs:complexType name="ArrayOfGestioneContrib.DatiRetributiviENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneContrib.DatiRetributiviENPALS" nillable="true" type="tns:GestioneContrib.DatiRetributiviENPALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneContrib.DatiRetributiviENPALS" nillable="true" type="tns:ArrayOfGestioneContrib.DatiRetributiviENPALS" />
+  <xs:complexType name="GestioneContrib.DatiRetributiviENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Importo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NTotaleContributiCalcolo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Periodi" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Quota" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneContrib.DatiRetributiviENPALS" nillable="true" type="tns:GestioneContrib.DatiRetributiviENPALS" />
+  <xs:simpleType name="GestioneLiquidazionePensione.TipoSalvaguardia">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="L214" />
+      <xs:enumeration value="L122" />
+      <xs:enumeration value="L135" />
+      <xs:enumeration value="L228" />
+      <xs:enumeration value="L124" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GestioneLiquidazionePensione.TipoSalvaguardia" nillable="true" type="tns:GestioneLiquidazionePensione.TipoSalvaguardia" />
+</xs:schema>

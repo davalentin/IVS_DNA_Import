@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GestionePecoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" />
+      <xsd:import schemaLocation="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserimentoPECO" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserimentoPECOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_INPDAP_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserimentoPECO_INPDAP" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_INPDAP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserimentoPECO_INPDAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_AGO_InputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_AGO" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_AGO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_AGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_InputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_Convenzioni_Internazionali" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_Convenzioni_InternazionaliResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_InputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_Fondi_Speciali" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_Fondi_SpecialiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_InputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_Fondi_AMG" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiornamento_PECO_Fondi_AMGResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGestionePecoService">
+    <wsdl:operation name="InserimentoPECO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionePecoService/InserimentoPECO" message="tns:IGestionePecoService_InserimentoPECO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionePecoService/InserimentoPECOResponse" message="tns:IGestionePecoService_InserimentoPECO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserimentoPECO_INPDAP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionePecoService/InserimentoPECO_INPDAP" message="tns:IGestionePecoService_InserimentoPECO_INPDAP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionePecoService/InserimentoPECO_INPDAPResponse" message="tns:IGestionePecoService_InserimentoPECO_INPDAP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_AGO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_AGO" message="tns:IGestionePecoService_Aggiornamento_PECO_AGO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_AGOResponse" message="tns:IGestionePecoService_Aggiornamento_PECO_AGO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Convenzioni_Internazionali">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Convenzioni_Internazionali" message="tns:IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Convenzioni_InternazionaliResponse" message="tns:IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_Speciali">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_Speciali" message="tns:IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_SpecialiResponse" message="tns:IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_AMG">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_AMG" message="tns:IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_AMGResponse" message="tns:IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGestionePecoService" type="tns:IGestionePecoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InserimentoPECO">
+      <soap:operation soapAction="http://tempuri.org/IGestionePecoService/InserimentoPECO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserimentoPECO_INPDAP">
+      <soap:operation soapAction="http://tempuri.org/IGestionePecoService/InserimentoPECO_INPDAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_AGO">
+      <soap:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_AGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Convenzioni_Internazionali">
+      <soap:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Convenzioni_Internazionali" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_Speciali">
+      <soap:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_Speciali" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_AMG">
+      <soap:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_AMG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GestionePecoService">
+    <wsdl:port name="BasicHttpBinding_IGestionePecoService" binding="tns:BasicHttpBinding_IGestionePecoService">
+      <soap:address location="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

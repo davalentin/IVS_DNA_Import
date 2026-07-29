@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Richieste2003" Class="WebDomDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLINPSSVIL04,1900;Initial Catalog=Richieste2003;Persist Security Info=True;User ID=Richieste2003Dec" SettingsObjectName="INPS.Pensioni.Liquidazione.DataCommon.Properties.Settings" SettingsPropertyName="Richieste2003ConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DecGruppo" Member="DecGruppos">
+    <Type Name="DecGruppo">
+      <Column Name="CodGruppo" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescGruppo" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="DecGruppo_DecIstanza" Member="DecIstanzas" ThisKey="CodGruppo" OtherKey="CodGruppo" Type="DecIstanza" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecProdotto" Member="DecProdottos">
+    <Type Name="DecProdotto">
+      <Column Name="CodProdotto" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescProdotto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DescEstesaProdotto" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoCatPensione" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoStampaReiezione" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="DecProdotto_DecIstanza" Member="DecIstanzas" ThisKey="CodProdotto" OtherKey="CodProdotto" Type="DecIstanza" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecTipo" Member="DecTipos">
+    <Type Name="DecTipo">
+      <Column Name="CodTipo" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescTipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DescEstesaTipo" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="DecTipo_DecIstanza" Member="DecIstanzas" ThisKey="CodTipo" OtherKey="CodTipo" Type="DecIstanza" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecTipoRichiesta" Member="DecTipoRichiestas">
+    <Type Name="DecTipoRichiesta">
+      <Column Name="CodTipoRichiesta" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescTipoRichiesta" Type="System.String" DbType="VarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="Filtro" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IndInseribile" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecEnte" Member="DecEntes">
+    <Type Name="DecEnte">
+      <Column Name="CodEnte" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescEnte" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecGestioneFondo" Member="DecGestioneFondos">
+    <Type Name="DecGestioneFondo">
+      <Column Name="CodGestione" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodFondo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescGestione" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DescFondo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecPatronato" Member="DecPatronatos">
+    <Type Name="DecPatronato">
+      <Column Name="DescSede" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Codas400" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SedeAs400" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodInpsPatronato" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodUfficioPatronato" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescPatronato" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="SiglaStato" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="DescNazione" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescRegione" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="SiglaProvinciaIndirizzo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CAP" Type="System.String" DbType="Char(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Comune" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Indirizzo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescUfficioPatronato" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PrefissoTelefonicoNazione" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroTelefonico" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroFax" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DataChiusura" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NuovaDipendenza" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Responsabile" Type="System.String" DbType="VarChar(142) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroTelefonicoResponsabile" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="NumeroFaxResponsabile" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="EmailResponsabile" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SitoPatronato" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TipoEnte" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescEstesaPatronato" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SiglaProvincia" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecFase" Member="DecFases">
+    <Type Name="DecFase">
+      <Column Name="CodFase" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescFase" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoStampaReiezione" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecSituazione" Member="DecSituaziones">
+    <Type Name="DecSituazione">
+      <Column Name="CodSituazione" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescSituazione" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecIstanza" Member="DecIstanzas">
+    <Type Name="DecIstanza">
+      <Column Name="CodGruppo" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodProdotto" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodTipo" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescIstanza" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="IndPensRifObbl" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="DecGruppo_DecIstanza" Member="DecGruppo" ThisKey="CodGruppo" OtherKey="CodGruppo" Type="DecGruppo" IsForeignKey="true" />
+      <Association Name="DecProdotto_DecIstanza" Member="DecProdotto" ThisKey="CodProdotto" OtherKey="CodProdotto" Type="DecProdotto" IsForeignKey="true" />
+      <Association Name="DecTipo_DecIstanza" Member="DecTipo" ThisKey="CodTipo" OtherKey="CodTipo" Type="DecTipo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecComuneNazione" Member="DecComuneNaziones">
+    <Type Name="DecComuneNazione">
+      <Column Name="DescComuneNazione" Type="System.String" DbType="Char(60) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SiglaProvinciaNazione" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IndAttuale" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodCatastale" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Cap" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DecSede" Member="DecSedes">
+    <Type Name="DecSede">
+      <Column Name="CodiceSedeMeta" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="DescSede" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SiglaProvincia" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="NomeDirettore" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProvincia" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodZona" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodCentroOperativo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataUltimaModifica" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="CodTipoSede" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="CAPSede" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="IndirizzoSede" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ComuneSede" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProvinciaSede" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IndirizzoEMail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Codice6" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CodAttivitaSede" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

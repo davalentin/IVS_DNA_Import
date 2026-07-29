@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="67738ac6-3cef-49fe-9fdf-51abb3159f7e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSSCRIWO.xsd" MetadataType="Schema" ID="e4508a99-5f56-4e01-a4f6-ee97a67f1281" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSSCRIWO1.xsd" MetadataType="Schema" ID="d07e5a38-0d8d-46ee-981d-b01c1707b082" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd0" />
+    <MetadataFile FileName="WSSCRIWO2.xsd" MetadataType="Schema" ID="d576742d-de10-4acb-88d4-23c074664772" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd3" />
+    <MetadataFile FileName="WSSCRIWO3.xsd" MetadataType="Schema" ID="5996fb39-ab35-4f75-b2e7-7187e5de2a6a" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd2" />
+    <MetadataFile FileName="WSSCRIWO.wsdl" MetadataType="Wsdl" ID="02c97f64-f4aa-4fcc-9aa4-8c08b120f306" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="WSSCRIWO4.xsd" MetadataType="Schema" ID="9121a193-30f4-4203-9520-fd4b47832eee" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd4" />
+    <MetadataFile FileName="WSSCRIWO5.xsd" MetadataType="Schema" ID="6841a9ee-ed9c-4eb7-bc50-c2619200af69" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd5" />
+    <MetadataFile FileName="WSSCRIWO1.wsdl" MetadataType="Wsdl" ID="8cfb11c3-6e9b-42e6-b318-2975a1b3362c" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?wsdl" />
+    <MetadataFile FileName="WSSCRIWO.disco" MetadataType="Disco" ID="a432db64-dd06-45ce-a89a-713bab2050ab" SourceId="1" SourceUrl="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

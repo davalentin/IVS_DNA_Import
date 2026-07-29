@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:i0="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="LiquidazioneAgo" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ILiquidazioneAgo_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/" location="http://tfs2008build64.avndrome.net/TI-PrestazioniPensionistiche/TI_PNL_R.LiquidazioneAgo.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="WSHttpBinding_ILiquidazioneAgo" type="i0:ILiquidazioneAgo">
+    <wsp:PolicyReference URI="#WSHttpBinding_ILiquidazioneAgo_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GAIN">
+      <soap12:operation soapAction="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GAIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GARC">
+      <soap12:operation soapAction="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GARC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GAPL">
+      <soap12:operation soapAction="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GAPL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContextInfo">
+      <soap12:operation soapAction="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/UpdateContextInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClosePersistentConnection">
+      <soap12:operation soapAction="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/ClosePersistentConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LiquidazioneAgo">
+    <wsdl:port name="WSHttpBinding_ILiquidazioneAgo" binding="tns:WSHttpBinding_ILiquidazioneAgo">
+      <soap12:address location="http://tfs2008build64.avndrome.net/TI-PrestazioniPensionistiche/TI_PNL_R.LiquidazioneAgo.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://tfs2008build64.avndrome.net/TI-PrestazioniPensionistiche/TI_PNL_R.LiquidazioneAgo.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

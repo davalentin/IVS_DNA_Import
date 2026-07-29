@@ -1,0 +1,6 @@
+C:\Liquidazione_pensioni\PN813\branches\WIP\WSInpsPensioniLiquidazioneFS.Data\bin\Debug\INPS.Pensioni.LiquidazioneFs.Data.dll.config
+C:\Liquidazione_pensioni\PN813\branches\WIP\WSInpsPensioniLiquidazioneFS.Data\bin\Debug\INPS.Pensioni.LiquidazioneFs.Data.dll
+C:\Liquidazione_pensioni\PN813\branches\WIP\WSInpsPensioniLiquidazioneFS.Data\bin\Debug\INPS.Pensioni.LiquidazioneFs.Data.pdb
+C:\Liquidazione_pensioni\PN813\branches\WIP\WSInpsPensioniLiquidazioneFS.Data\obj\Debug\INPS.Pensioni.LiquidazioneFs.Data.dll
+C:\Liquidazione_pensioni\PN813\branches\WIP\WSInpsPensioniLiquidazioneFS.Data\obj\Debug\INPS.Pensioni.LiquidazioneFs.Data.pdb
+C:\Liquidazione_pensioni\PN813\branches\WIP\WSInpsPensioniLiquidazioneFS.Data\obj\Debug\INPS.Pensioni.LiquidazioneFs.Data.csprojResolveAssemblyReference.cache

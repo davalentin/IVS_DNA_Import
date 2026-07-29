@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" />
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="EliminaConguaglio_Gruppo01_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamentoEliminaConguaglio" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EliminaConguaglio_Gruppo01_Request" nillable="true" type="tns:EliminaConguaglio_Gruppo01_Request" />
+  <xs:complexType name="PianoDiPagamentoEliminaConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnoRiferimento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatiPiano" nillable="true" type="tns:DatiPianoEliminaConguaglio" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Pensionato" nillable="true" type="q1:BeneficiarioPensionatoEliminaConguaglio" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q2:PensioneEliminaConguaglio" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Prodotto" type="q3:ProdottoEliminaConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoEliminaConguaglio" nillable="true" type="tns:PianoDiPagamentoEliminaConguaglio" />
+  <xs:complexType name="DatiPianoEliminaConguaglio">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="NumeroPartita" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoEliminaConguaglio" nillable="true" type="tns:DatiPianoEliminaConguaglio" />
+  <xs:complexType name="EliminaConguaglio_Gruppo01_Response">
+    <xs:sequence>
+      <xs:element name="esito" nillable="true" type="tns:EsitoEliminaConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EliminaConguaglio_Gruppo01_Response" nillable="true" type="tns:EliminaConguaglio_Gruppo01_Response" />
+  <xs:complexType name="EsitoEliminaConguaglio">
+    <xs:sequence>
+      <xs:element name="codice" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="descrizione" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element name="pianoDiPagamento" nillable="true" type="tns:ArrayOfPianoDiPagamentoEliminaConguaglioResponse" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" name="risultato" type="q6:RisultatoEliminaConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoEliminaConguaglio" nillable="true" type="tns:EsitoEliminaConguaglio" />
+  <xs:complexType name="ArrayOfPianoDiPagamentoEliminaConguaglioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PianoDiPagamentoEliminaConguaglioResponse" nillable="true" type="tns:PianoDiPagamentoEliminaConguaglioResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPianoDiPagamentoEliminaConguaglioResponse" nillable="true" type="tns:ArrayOfPianoDiPagamentoEliminaConguaglioResponse" />
+  <xs:complexType name="PianoDiPagamentoEliminaConguaglioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Pensionato" nillable="true" type="q7:BeneficiarioPensionatoEliminaConguaglio" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q8:PensioneEliminaConguaglio" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Prodotto" type="q9:ProdottoEliminaConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoEliminaConguaglioResponse" nillable="true" type="tns:PianoDiPagamentoEliminaConguaglioResponse" />
+  <xs:complexType name="EliminaConguaglio_Gruppo02_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModalitaScrittura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PianiDiPagamento" nillable="true" type="tns:ArrayOfPianoDiPagamentoEliminaConguaglio02" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EliminaConguaglio_Gruppo02_Request" nillable="true" type="tns:EliminaConguaglio_Gruppo02_Request" />
+  <xs:complexType name="ArrayOfPianoDiPagamentoEliminaConguaglio02">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PianoDiPagamentoEliminaConguaglio02" nillable="true" type="tns:PianoDiPagamentoEliminaConguaglio02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPianoDiPagamentoEliminaConguaglio02" nillable="true" type="tns:ArrayOfPianoDiPagamentoEliminaConguaglio02" />
+  <xs:complexType name="PianoDiPagamentoEliminaConguaglio02">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q10:PensioneEliminaConguaglio" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Prodotto" type="q11:ProdottoEliminaConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoEliminaConguaglio02" nillable="true" type="tns:PianoDiPagamentoEliminaConguaglio02" />
+  <xs:complexType name="EliminaConguaglio_Gruppo02_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoEliminaConguaglio02" />
+      <xs:element minOccurs="0" name="PianiDiPagamento" nillable="true" type="tns:ArrayOfPianoDiPagamentoResponseEliminaConguaglio02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EliminaConguaglio_Gruppo02_Response" nillable="true" type="tns:EliminaConguaglio_Gruppo02_Response" />
+  <xs:complexType name="EsitoEliminaConguaglio02">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Descrizione" nillable="true" type="q12:ArrayOfstring" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Risultato" type="q13:RisultatoEliminaConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoEliminaConguaglio02" nillable="true" type="tns:EsitoEliminaConguaglio02" />
+  <xs:complexType name="ArrayOfPianoDiPagamentoResponseEliminaConguaglio02">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PianoDiPagamentoResponseEliminaConguaglio02" nillable="true" type="tns:PianoDiPagamentoResponseEliminaConguaglio02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPianoDiPagamentoResponseEliminaConguaglio02" nillable="true" type="tns:ArrayOfPianoDiPagamentoResponseEliminaConguaglio02" />
+  <xs:complexType name="PianoDiPagamentoResponseEliminaConguaglio02">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q14:PensioneEliminaConguaglio" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" minOccurs="0" name="Prodotto" type="q15:ProdottoEliminaConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoResponseEliminaConguaglio02" nillable="true" type="tns:PianoDiPagamentoResponseEliminaConguaglio02" />
+</xs:schema>

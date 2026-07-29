@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.datacontract.org/2004/07/LetturaPecoLibrary" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LetturaPecoLibrary">
+  <xs:complexType name="csTBPECOCERTATT_INPDAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESC_ERRORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Item_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="csTBPECOCERTATT_INPDAP_1" nillable="true" type="tns:ArrayOfcsTBPECO1CERTATT_INPDAP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csTBPECOCERTATT_INPDAP" nillable="true" type="tns:csTBPECOCERTATT_INPDAP" />
+  <xs:complexType name="ArrayOfcsTBPECO1CERTATT_INPDAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="csTBPECO1CERTATT_INPDAP" nillable="true" type="tns:csTBPECO1CERTATT_INPDAP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcsTBPECO1CERTATT_INPDAP" nillable="true" type="tns:ArrayOfcsTBPECO1CERTATT_INPDAP" />
+  <xs:complexType name="csTBPECO1CERTATT_INPDAP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data_Decorrenza_Pensione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data_Domanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data_Raggiungimento_Requisiti" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data_Scadenza_Beneficio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumDomus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prodotto_Webdom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipologia_Domanda" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csTBPECO1CERTATT_INPDAP" nillable="true" type="tns:csTBPECO1CERTATT_INPDAP" />
+  <xs:complexType name="csTBPECOLETTCERT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESC_ERRORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="csTBPECOCERTIFICAZIONI" nillable="true" type="tns:ArrayOfcsTBPECOCERTIFICAZIONE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csTBPECOLETTCERT" nillable="true" type="tns:csTBPECOLETTCERT" />
+  <xs:complexType name="ArrayOfcsTBPECOCERTIFICAZIONE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="csTBPECOCERTIFICAZIONE" nillable="true" type="tns:csTBPECOCERTIFICAZIONE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcsTBPECOCERTIFICAZIONE" nillable="true" type="tns:ArrayOfcsTBPECOCERTIFICAZIONE" />
+  <xs:complexType name="csTBPECOCERTIFICAZIONE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnoMonitoraggio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CodFiscale_Assistito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataInvio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fine" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Inizio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumDomus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prodotto_Webdom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatoDomanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoSpecifico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipologia_Domanda" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csTBPECOCERTIFICAZIONE" nillable="true" type="tns:csTBPECOCERTIFICAZIONE" />
+  <xs:complexType name="csDOPPIOSGRAVIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESC_ERRORE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoSpecifico" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csDOPPIOSGRAVIO" nillable="true" type="tns:csDOPPIOSGRAVIO" />
+  <xs:complexType name="csPECO_APeVolontario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AP_CATPENS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AP_CODFISC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AP_COMUNICAZIONE" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="AP_DATDEF" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AP_DATULT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AP_DATULTAR" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AP_DECAPE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AP_DECAPEAR" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AP_DECVEC" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AP_DECVMEF" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AP_ESITO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AP_FINSUPPL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AP_IMPORTO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AP_IMPORTOAR" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AP_IMPORTON" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AP_IMPORTONAR" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AP_RETROATTIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AP_RETURN_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AP_SISTCAL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csPECO_APeVolontario" nillable="true" type="tns:csPECO_APeVolontario" />
+  <xs:complexType name="AnnullamentoCertificazioneResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceErrore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescrizioneErrore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnullamentoCertificazioneResponse" nillable="true" type="tns:AnnullamentoCertificazioneResponse" />
+  <xs:complexType name="PECO_OpzioneContributivo_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_CODFISC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PECO_OpzioneContributivo_Request" nillable="true" type="tns:PECO_OpzioneContributivo_Request" />
+  <xs:complexType name="PECO_OpzioneContributivo_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="O_CERT_OPZIONE" nillable="true" type="tns:ArrayOfoCERTOPZIONE" />
+      <xs:element minOccurs="0" name="O_RETURN_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_RETURN_MESSAGE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PECO_OpzioneContributivo_Response" nillable="true" type="tns:PECO_OpzioneContributivo_Response" />
+  <xs:complexType name="ArrayOfoCERTOPZIONE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="oCERTOPZIONE" nillable="true" type="tns:oCERTOPZIONE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfoCERTOPZIONE" nillable="true" type="tns:ArrayOfoCERTOPZIONE" />
+  <xs:complexType name="oCERTOPZIONE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="O_Catpens_Alf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Catpens_Num" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Datdo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Datreq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="O_Statod" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="oCERTOPZIONE" nillable="true" type="tns:oCERTOPZIONE" />
+  <xs:complexType name="Verifica_Certificazioni_Per_CIGS_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODFISC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Verifica_Certificazioni_Per_CIGS_Request" nillable="true" type="tns:Verifica_Certificazioni_Per_CIGS_Request" />
+  <xs:complexType name="Verifica_Certificazioni_Per_CIGS_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODFISC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoriaAlfanumerica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataDecorrenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataRequisiti" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMDOMUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETURN_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RETURN_MESSAGE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Verifica_Certificazioni_Per_CIGS_Response" nillable="true" type="tns:Verifica_Certificazioni_Per_CIGS_Response" />
+</xsd:schema>

@@ -1,0 +1,13 @@
+version=10.2
+item-uid=43272323
+file-version=1
+checksum=c02ba334ead6edc3f32b3efdde650e83
+fetch-size=139640
+mtime=1570689141
+item-spec=504E3831333A314856473230205245464552454E43452043532D313131323430383730322E412D5352433B31
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=WSInpsPensioniLiquidazioneFS.Data/Service References/HisLiquidazioneFs/Reference.cs
+project=504E3831333A53315F5753494E505350454E53494F4E494C4951554944415A494F4E454653
+project-uid=43218169

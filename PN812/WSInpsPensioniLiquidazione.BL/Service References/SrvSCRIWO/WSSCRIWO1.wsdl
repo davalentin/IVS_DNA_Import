@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://soa.inps.it/WS01323" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSSCRIWO" targetNamespace="http://soa.inps.it/WS01323" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.inps.it/WS01323/Imports">
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd0" namespace="http://soa.inps.it/WS01323" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWSSCRIWO_GetDomanda_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomanda" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetDomanda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_ClearCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCache" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_ClearCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetStoricoServiziEsterni_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoricoServiziEsterni" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetStoricoServiziEsterni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoricoServiziEsterniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetElencoSedi_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetElencoSedi" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetElencoSedi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetElencoSediResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetAreaLavorazioni_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaLavorazioni" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetAreaLavorazioni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaLavorazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_RicercaLavorazioni_InputMessage">
+    <wsdl:part name="parameters" element="tns:RicercaLavorazioni" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_RicercaLavorazioni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RicercaLavorazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetConfigurazioneLavorazioniGiacenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurazioneLavorazioniGiacenti" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetConfigurazioneLavorazioniGiacenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurazioneLavorazioniGiacentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_SetConfigurazioneLavorazioniGiacenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetConfigurazioneLavorazioniGiacenti" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_SetConfigurazioneLavorazioniGiacenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetConfigurazioneLavorazioniGiacentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetMonitoraggioLavorazioni_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitoraggioLavorazioni" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetMonitoraggioLavorazioni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitoraggioLavorazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_DeleteConfigurazioneLavorazioniGiacenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConfigurazioneLavorazioniGiacenti" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_DeleteConfigurazioneLavorazioniGiacenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConfigurazioneLavorazioniGiacentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetListeConfiugrazioneLavorazioniGiacenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeConfiugrazioneLavorazioniGiacenti" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetListeConfiugrazioneLavorazioniGiacenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeConfiugrazioneLavorazioniGiacentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetDettaglioLavorazioniGiacenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDettaglioLavorazioniGiacenti" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetDettaglioLavorazioniGiacenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDettaglioLavorazioniGiacentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetRicercaLavorazioniWebdom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRicercaLavorazioniWebdom" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetRicercaLavorazioniWebdom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRicercaLavorazioniWebdomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetLavorazioniUrgenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLavorazioniUrgenti" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetLavorazioniUrgenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLavorazioniUrgentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetElencoMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetElencoMemo" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetElencoMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetElencoMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetIdWorkFlow_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdWorkFlow" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetIdWorkFlow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdWorkFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetListaMatricoleSperimentazione_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaMatricoleSperimentazione" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_GetListaMatricoleSperimentazione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaMatricoleSperimentazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_Aggiorna_AggiornaStatoLavorazione_InputMessage">
+    <wsdl:part name="parameters" element="tns:AggiornaStatoLavorazione" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_Aggiorna_AggiornaStatoLavorazione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AggiornaStatoLavorazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSCRIWO_Aggiorna_AggiornaStatoLavorazioneOneWay_InputMessage">
+    <wsdl:part name="parameters" element="tns:AggiornaStatoLavorazioneOneWay" />
+  </wsdl:message>
+  <wsdl:portType name="IWSSCRIWO">
+    <wsdl:operation name="GetDomanda">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetDomanda" message="tns:IWSSCRIWO_GetDomanda_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetDomandaResponse" message="tns:IWSSCRIWO_GetDomanda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/ClearCache" message="tns:IWSSCRIWO_ClearCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/ClearCacheResponse" message="tns:IWSSCRIWO_ClearCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoricoServiziEsterni">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetStoricoServiziEsterni" message="tns:IWSSCRIWO_GetStoricoServiziEsterni_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetStoricoServiziEsterniResponse" message="tns:IWSSCRIWO_GetStoricoServiziEsterni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetElencoSedi">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetElencoSedi" message="tns:IWSSCRIWO_GetElencoSedi_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetElencoSediResponse" message="tns:IWSSCRIWO_GetElencoSedi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaLavorazioni">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetAreaLavorazioni" message="tns:IWSSCRIWO_GetAreaLavorazioni_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetAreaLavorazioniResponse" message="tns:IWSSCRIWO_GetAreaLavorazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaLavorazioni">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/RicercaLavorazioni" message="tns:IWSSCRIWO_RicercaLavorazioni_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/RicercaLavorazioniResponse" message="tns:IWSSCRIWO_RicercaLavorazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurazioneLavorazioniGiacenti">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetConfigurazioneLavorazioniGiacenti" message="tns:IWSSCRIWO_GetConfigurazioneLavorazioniGiacenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetConfigurazioneLavorazioniGiacentiResponse" message="tns:IWSSCRIWO_GetConfigurazioneLavorazioniGiacenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetConfigurazioneLavorazioniGiacenti">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/SetConfigurazioneLavorazioniGiacenti" message="tns:IWSSCRIWO_SetConfigurazioneLavorazioniGiacenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/SetConfigurazioneLavorazioniGiacentiResponse" message="tns:IWSSCRIWO_SetConfigurazioneLavorazioniGiacenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoraggioLavorazioni">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetMonitoraggioLavorazioni" message="tns:IWSSCRIWO_GetMonitoraggioLavorazioni_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetMonitoraggioLavorazioniResponse" message="tns:IWSSCRIWO_GetMonitoraggioLavorazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConfigurazioneLavorazioniGiacenti">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/DeleteConfigurazioneLavorazioniGiacenti" message="tns:IWSSCRIWO_DeleteConfigurazioneLavorazioniGiacenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/DeleteConfigurazioneLavorazioniGiacentiResponse" message="tns:IWSSCRIWO_DeleteConfigurazioneLavorazioniGiacenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeConfiugrazioneLavorazioniGiacenti">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetListeConfiugrazioneLavorazioniGiacenti" message="tns:IWSSCRIWO_GetListeConfiugrazioneLavorazioniGiacenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetListeConfiugrazioneLavorazioniGiacentiResponse" message="tns:IWSSCRIWO_GetListeConfiugrazioneLavorazioniGiacenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioLavorazioniGiacenti">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetDettaglioLavorazioniGiacenti" message="tns:IWSSCRIWO_GetDettaglioLavorazioniGiacenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetDettaglioLavorazioniGiacentiResponse" message="tns:IWSSCRIWO_GetDettaglioLavorazioniGiacenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRicercaLavorazioniWebdom">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetRicercaLavorazioniWebdom" message="tns:IWSSCRIWO_GetRicercaLavorazioniWebdom_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetRicercaLavorazioniWebdomResponse" message="tns:IWSSCRIWO_GetRicercaLavorazioniWebdom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLavorazioniUrgenti">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetLavorazioniUrgenti" message="tns:IWSSCRIWO_GetLavorazioniUrgenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetLavorazioniUrgentiResponse" message="tns:IWSSCRIWO_GetLavorazioniUrgenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetElencoMemo">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetElencoMemo" message="tns:IWSSCRIWO_GetElencoMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetElencoMemoResponse" message="tns:IWSSCRIWO_GetElencoMemo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdWorkFlow">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetIdWorkFlow" message="tns:IWSSCRIWO_GetIdWorkFlow_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetIdWorkFlowResponse" message="tns:IWSSCRIWO_GetIdWorkFlow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaMatricoleSperimentazione">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetListaMatricoleSperimentazione" message="tns:IWSSCRIWO_GetListaMatricoleSperimentazione_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO/GetListaMatricoleSperimentazioneResponse" message="tns:IWSSCRIWO_GetListaMatricoleSperimentazione_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IWSSCRIWO_Aggiorna">
+    <wsdl:operation name="AggiornaStatoLavorazione">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO_Aggiorna/AggiornaStatoLavorazione" message="tns:IWSSCRIWO_Aggiorna_AggiornaStatoLavorazione_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO_Aggiorna/AggiornaStatoLavorazioneResponse" message="tns:IWSSCRIWO_Aggiorna_AggiornaStatoLavorazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaStatoLavorazioneOneWay">
+      <wsdl:input wsaw:Action="http://soa.inps.it/WS01323/IWSSCRIWO_Aggiorna/AggiornaStatoLavorazioneOneWay" message="tns:IWSSCRIWO_Aggiorna_AggiornaStatoLavorazioneOneWay_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="WSSCRIWO">
+    <wsdl:port name="BasicHttpBinding_IWSSCRIWO" binding="i0:BasicHttpBinding_IWSSCRIWO">
+      <soap:address location="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IWSSCRIWO_Aggiorna" binding="i0:BasicHttpBinding_IWSSCRIWO_Aggiorna">
+      <soap:address location="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

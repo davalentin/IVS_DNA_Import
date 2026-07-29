@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://soa.inps.it/servicecontracts/bookingbonus/1_0" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://soa.inps.it/servicecontracts/bookingbonus/1_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="WSBookingBonus.xsd1.xsd" namespace="http://soa.inps.it/servicecontracts/bookingbonus/1_0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="WSBookingBonusService_CancellaPrenotazioneBonus_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:CancellaPrenotazioneBonus" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_CancellaPrenotazioneBonus_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:CancellaPrenotazioneBonusResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_GetVersion_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_GetVersion_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_PrenotazioneElaborazioni_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:PrenotazioneElaborazioni" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_PrenotazioneElaborazioni_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:PrenotazioneElaborazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_RichiestaVerify_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:RichiestaVerify" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_RichiestaVerify_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:RichiestaVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_RiepilogoPrenotazioniBonus_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:RiepilogoPrenotazioniBonus" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_RiepilogoPrenotazioniBonus_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:RiepilogoPrenotazioniBonusResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_StatoElaborazioni_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:StatoElaborazioni" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_StatoElaborazioni_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:StatoElaborazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_VerificaAnniDirittoAlBonus_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:VerificaAnniDirittoAlBonus" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_VerificaAnniDirittoAlBonus_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:VerificaAnniDirittoAlBonusResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_VerificaDirittoAlBonus_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:VerificaDirittoAlBonus" />
+  </wsdl:message>
+  <wsdl:message name="WSBookingBonusService_VerificaDirittoAlBonus_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" name="parameters" element="xsns:VerificaDirittoAlBonusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSBookingBonusService">
+    <wsdl:operation name="CancellaPrenotazioneBonus">
+      <wsdl:input name="CancellaPrenotazioneBonusRequest" message="ns0:WSBookingBonusService_CancellaPrenotazioneBonus_InputMessage" />
+      <wsdl:output name="CancellaPrenotazioneBonusResponse" message="ns0:WSBookingBonusService_CancellaPrenotazioneBonus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <wsdl:input name="GetVersionRequest" message="ns0:WSBookingBonusService_GetVersion_InputMessage" />
+      <wsdl:output name="GetVersionResponse" message="ns0:WSBookingBonusService_GetVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrenotazioneElaborazioni">
+      <wsdl:input name="PrenotazioneElaborazioniRequest" message="ns0:WSBookingBonusService_PrenotazioneElaborazioni_InputMessage" />
+      <wsdl:output name="PrenotazioneElaborazioniResponse" message="ns0:WSBookingBonusService_PrenotazioneElaborazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaVerify">
+      <wsdl:input name="RichiestaVerifyRequest" message="ns0:WSBookingBonusService_RichiestaVerify_InputMessage" />
+      <wsdl:output name="RichiestaVerifyResponse" message="ns0:WSBookingBonusService_RichiestaVerify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RiepilogoPrenotazioniBonus">
+      <wsdl:input name="RiepilogoPrenotazioniBonusRequest" message="ns0:WSBookingBonusService_RiepilogoPrenotazioniBonus_InputMessage" />
+      <wsdl:output name="RiepilogoPrenotazioniBonusResponse" message="ns0:WSBookingBonusService_RiepilogoPrenotazioniBonus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatoElaborazioni">
+      <wsdl:input name="StatoElaborazioniRequest" message="ns0:WSBookingBonusService_StatoElaborazioni_InputMessage" />
+      <wsdl:output name="StatoElaborazioniResponse" message="ns0:WSBookingBonusService_StatoElaborazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaAnniDirittoAlBonus">
+      <wsdl:input name="VerificaAnniDirittoAlBonusRequest" message="ns0:WSBookingBonusService_VerificaAnniDirittoAlBonus_InputMessage" />
+      <wsdl:output name="VerificaAnniDirittoAlBonusResponse" message="ns0:WSBookingBonusService_VerificaAnniDirittoAlBonus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaDirittoAlBonus">
+      <wsdl:input name="VerificaDirittoAlBonusRequest" message="ns0:WSBookingBonusService_VerificaDirittoAlBonus_InputMessage" />
+      <wsdl:output name="VerificaDirittoAlBonusResponse" message="ns0:WSBookingBonusService_VerificaDirittoAlBonus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="basic" type="ns0:WSBookingBonusService">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CancellaPrenotazioneBonus">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/CancellaPrenotazioneBonus" style="document" />
+      <wsdl:input name="CancellaPrenotazioneBonusRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CancellaPrenotazioneBonusResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/GetVersion" style="document" />
+      <wsdl:input name="GetVersionRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetVersionResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrenotazioneElaborazioni">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/PrenotazioneElaborazioni" style="document" />
+      <wsdl:input name="PrenotazioneElaborazioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PrenotazioneElaborazioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaVerify">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/RichiestaVerify" style="document" />
+      <wsdl:input name="RichiestaVerifyRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RichiestaVerifyResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RiepilogoPrenotazioniBonus">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/RiepilogoPrenotazioniBonus" style="document" />
+      <wsdl:input name="RiepilogoPrenotazioniBonusRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RiepilogoPrenotazioniBonusResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatoElaborazioni">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/StatoElaborazioni" style="document" />
+      <wsdl:input name="StatoElaborazioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StatoElaborazioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaAnniDirittoAlBonus">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/VerificaAnniDirittoAlBonus" style="document" />
+      <wsdl:input name="VerificaAnniDirittoAlBonusRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VerificaAnniDirittoAlBonusResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaDirittoAlBonus">
+      <soap11:operation soapAction="http://soa.inps.it/servicecontracts/bookingbonus/1_0/WSBookingBonusService/VerificaDirittoAlBonus" style="document" />
+      <wsdl:input name="VerificaDirittoAlBonusRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VerificaDirittoAlBonusResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSBookingBonus">
+    <wsdl:port name="basic" binding="ns0:basic">
+      <soap11:address location="http://192.168.40.154:80/Ws.Net/WSBookingBonus" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,100 @@
+﻿.nav-menu {
+    position: relative;
+    z-index: 2
+}
+
+.nav-menu * {
+    color: #ffffff;
+}
+
+    .nav-menu .nav-menu__action {
+        background-color: #002460;
+        min-width: 88px;
+        padding: 4px 16px 0;
+        width: auto
+    }
+
+    .nav-menu .nav-menu__content {
+        background-color: #002460;
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        height: fit-content !important;
+        left: 8px;
+        min-width: 214px;
+        padding: 32px 24px;
+        position: absolute;
+        top: 100%;
+        width: auto;
+        z-index: 2
+    }
+
+    .nav-menu .nav-menu__action-button {
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0;
+        vertical-align: middle;
+        outline: 2px none #ffffff;
+        outline-offset: 3px;
+        
+        background-color: #002460;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        margin: 0;
+        outline: none;
+        padding: 0 !important;
+        width: 100% !important;
+        text-align: left
+    }
+
+        .nav-menu .nav-menu__action-button.nav-menu__action-button--main {
+            border: 3px solid transparent;
+            padding: 4px !important
+        }
+
+            .nav-menu .nav-menu__action-button.nav-menu__action-button--main:hover, .nav-menu .nav-menu__action-button.nav-menu__action-button--main:focus, .nav-menu .nav-menu__action-button.nav-menu__action-button--main:active {
+                border-bottom: 3px solid #fff
+            }
+
+            .nav-menu .nav-menu__action-button.nav-menu__action-button--main.nav-menu__action-button--outline:hover, .nav-menu .nav-menu__action-button.nav-menu__action-button--main.nav-menu__action-button--outline:focus, .nav-menu .nav-menu__action-button.nav-menu__action-button--main.nav-menu__action-button--outline:active {
+                border: 3px solid #fff;
+                border-radius: 4px
+            }
+
+        .nav-menu .nav-menu__action-button.nav-menu__action-button--support::after, .nav-menu .nav-menu__action-button.nav-menu__action-button--arrow::after {
+            background-size: 16px auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            content: "";
+            display: inline-block;
+            margin-left: 8px;
+            width: 16px
+        }
+
+        .nav-menu .nav-menu__action-button.nav-menu__action-button--arrow::after {
+            background-image: url(./Images/arrow-bottom-white.png);
+            height: 10px
+        }
+
+        .nav-menu .nav-menu__action-button.nav-menu__action-button--support::after {
+            background-image: url(./Images/support.png);
+            height: 16px;
+            top: 2px;
+            position: relative
+        }
+
+    .nav-menu.nav-menu--open .nav-menu__content {
+        display: flex
+    }
+
+        .nav-menu.nav-menu--open .nav-menu__content .nav-menu__action-button:hover {
+            text-decoration: underline
+        }
+
+    .nav-menu.nav-menu--open .nav-menu__action-button.nav-menu__action-button--arrow::after {
+        background-image: url(./Images/arrow-top-white.png)
+    }

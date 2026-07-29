@@ -1,0 +1,13 @@
+version=10.2
+item-uid=96017092
+file-version=2
+checksum=1edc93c107cd92cb57d13c1767fbfb40
+fetch-size=179882
+mtime=1570689072
+item-spec=504E3830393A53455256495A494F4C4951554944415A494F4E4541474F31205753444C2D313134363030333631372E412D5352433B32
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=LiquidazionePensioniFS.Presenter/Service References/SvrLiquidazioneAgo/ServizioLiquidazioneAgo1.wsdl
+project=504E3830393A57315F4C4951554944415A494F4E4550454E53494F4E494653
+project-uid=43004147

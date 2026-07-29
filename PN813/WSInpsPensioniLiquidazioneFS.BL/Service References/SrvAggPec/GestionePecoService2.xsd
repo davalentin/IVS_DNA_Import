@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" />
+  <xs:import schemaLocation="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" />
+  <xs:element name="InserimentoPECO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" minOccurs="0" name="IN_OUT" nillable="true" type="q1:csTBPECO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserimentoPECOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" minOccurs="0" name="InserimentoPECOResult" nillable="true" type="q2:csTBPECO" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" minOccurs="0" name="IN_OUT" nillable="true" type="q3:csTBPECO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserimentoPECO_INPDAP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" minOccurs="0" name="IN_OUT" nillable="true" type="q4:csTBPECO_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserimentoPECO_INPDAPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" minOccurs="0" name="InserimentoPECO_INPDAPResult" nillable="true" type="q5:csTBPECO_INPDAP" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/InserimentoPecoLibrary" minOccurs="0" name="IN_OUT" nillable="true" type="q6:csTBPECO_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_AGO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Programma_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Applicazione_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI" nillable="true" type="q7:csAggiornamentoPECO_AGO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_AGOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="Aggiornamento_PECO_AGOResult" nillable="true" type="q8:csAggiornamentoPECO_AGO" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI" nillable="true" type="q9:csAggiornamentoPECO_AGO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_Convenzioni_Internazionali">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Programma_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Applicazione_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI_CI" nillable="true" type="q10:csAggiornamentoPECO_Convenzioni_Internazionali" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_Convenzioni_InternazionaliResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="Aggiornamento_PECO_Convenzioni_InternazionaliResult" nillable="true" type="q11:csAggiornamentoPECO_Convenzioni_Internazionali" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI_CI" nillable="true" type="q12:csAggiornamentoPECO_Convenzioni_Internazionali" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_Fondi_Speciali">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Programma_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Applicazione_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI_FS" nillable="true" type="q13:csAggiornamentoPECO_Fondi_Speciali" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_Fondi_SpecialiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="Aggiornamento_PECO_Fondi_SpecialiResult" nillable="true" type="q14:csAggiornamentoPECO_Fondi_Speciali" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI_FS" nillable="true" type="q15:csAggiornamentoPECO_Fondi_Speciali" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_Fondi_AMG">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Programma_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Applicazione_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI_AMG" nillable="true" type="q16:csAggiornamentoPECO_Fondi_AMG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aggiornamento_PECO_Fondi_AMGResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="Aggiornamento_PECO_Fondi_AMGResult" nillable="true" type="q17:csAggiornamentoPECO_Fondi_AMG" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" minOccurs="0" name="DATI_AMG" nillable="true" type="q18:csAggiornamentoPECO_Fondi_AMG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

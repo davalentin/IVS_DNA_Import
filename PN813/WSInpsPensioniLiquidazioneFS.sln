@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazioneFS", "WSInpsPensioniLiquidazioneFS\WSInpsPensioniLiquidazioneFS.csproj", "{7C21ED6D-CE6F-479F-831F-02E84327C019}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazioneFS.BL", "WSInpsPensioniLiquidazioneFS.BL\WSInpsPensioniLiquidazioneFS.BL.csproj", "{2003913F-3783-4213-A78D-5FE0293B1A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazioneFS.Data", "WSInpsPensioniLiquidazioneFS.Data\WSInpsPensioniLiquidazioneFS.Data.csproj", "{F0B6D33E-B6A8-4173-AFC3-BFF787EAAF60}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = INPS.Pensioni.LiquidazioneFs.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C21ED6D-CE6F-479F-831F-02E84327C019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C21ED6D-CE6F-479F-831F-02E84327C019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C21ED6D-CE6F-479F-831F-02E84327C019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C21ED6D-CE6F-479F-831F-02E84327C019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2003913F-3783-4213-A78D-5FE0293B1A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2003913F-3783-4213-A78D-5FE0293B1A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2003913F-3783-4213-A78D-5FE0293B1A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2003913F-3783-4213-A78D-5FE0293B1A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B6D33E-B6A8-4173-AFC3-BFF787EAAF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B6D33E-B6A8-4173-AFC3-BFF787EAAF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B6D33E-B6A8-4173-AFC3-BFF787EAAF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B6D33E-B6A8-4173-AFC3-BFF787EAAF60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SerenaSourceControl) = preSolution
+		CMNumberOfProjects = 4
+		CMProjectRoot0 = \
+		CMLocalPath0 = .\
+		CMRelativePathToRoot0 = .\
+		CMLocalPath1 = WSInpsPensioniLiquidazioneFS.BL\
+		CMUniqueName1 = WSInpsPensioniLiquidazioneFS.BL.csproj
+		CMProjectName1 = WSInpsPensioniLiquidazioneFS.BL
+		CMRelativePathToRoot1 = WSInpsPensioniLiquidazioneFS.BL\
+		CMProjectRoot1 = \
+		CMLocalPath2 = WSInpsPensioniLiquidazioneFS.Data\
+		CMUniqueName2 = WSInpsPensioniLiquidazioneFS.Data.csproj
+		CMProjectName2 = WSInpsPensioniLiquidazioneFS.Data
+		CMRelativePathToRoot2 = WSInpsPensioniLiquidazioneFS.Data\
+		CMProjectRoot2 = \
+		CMLocalPath3 = WSInpsPensioniLiquidazioneFS\
+		CMUniqueName3 = WSInpsPensioniLiquidazioneFS.csproj
+		CMProjectName3 = WSInpsPensioniLiquidazioneFS
+		CMRelativePathToRoot3 = WSInpsPensioniLiquidazioneFS\
+		CMProjectRoot3 = \
+	EndGlobalSection
+EndGlobal

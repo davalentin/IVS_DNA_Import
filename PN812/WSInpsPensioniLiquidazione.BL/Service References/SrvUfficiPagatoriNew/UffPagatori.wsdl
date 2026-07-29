@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UffPagatori" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSUffPagatori/UffPagatori.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSUffPagatori/UffPagatori.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSUffPagatori/UffPagatori.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUffPagatori_LetturaListaABI_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaListaABI" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaListaABI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaListaABIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaListaABI_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q1:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaStoricoABI_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaStoricoABI" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaStoricoABI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaStoricoABIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaStoricoABI_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q2:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaStoricoCAB_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaStoricoCAB" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaStoricoCAB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaStoricoCABResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaStoricoCAB_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q3:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaEsteroCat_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaEsteroCat" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaEsteroCat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaEsteroCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaEsteroCat_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q4:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCollettori_InputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoCollettori" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCollettori_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoCollettoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCollettori_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q5:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoPagatori_InputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoPagatori" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoPagatori_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoPagatoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoPagatori_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q6:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCABProvinciali_InputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoCABProvinciali" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCABProvinciali_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoCABProvincialiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCABProvinciali_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q7:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoUfficiPostali_InputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoUfficiPostali" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoUfficiPostali_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoUfficiPostaliResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoUfficiPostali_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q8:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCassaSede_InputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoCassaSede" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCassaSede_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoCassaSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoCassaSede_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q9:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoNuoveCoordinate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoNuoveCoordinate" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoNuoveCoordinate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ElencoNuoveCoordinateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_ElencoNuoveCoordinate_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q10:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaSportelliBanche_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaSportelliBanche" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaSportelliBanche_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaSportelliBancheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_LetturaSportelliBanche_EsitoFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WSUffPagatori.Contracts" name="detail" element="q11:Esito" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_IsAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="IUffPagatori_IsAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUffPagatori">
+    <wsdl:operation name="LetturaListaABI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/LetturaListaABI" message="tns:IUffPagatori_LetturaListaABI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/LetturaListaABIResponse" message="tns:IUffPagatori_LetturaListaABI_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/LetturaListaABIEsitoFault" name="EsitoFault" message="tns:IUffPagatori_LetturaListaABI_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaStoricoABI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/LetturaStoricoABI" message="tns:IUffPagatori_LetturaStoricoABI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/LetturaStoricoABIResponse" message="tns:IUffPagatori_LetturaStoricoABI_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/LetturaStoricoABIEsitoFault" name="EsitoFault" message="tns:IUffPagatori_LetturaStoricoABI_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaStoricoCAB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/LetturaStoricoCAB" message="tns:IUffPagatori_LetturaStoricoCAB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/LetturaStoricoCABResponse" message="tns:IUffPagatori_LetturaStoricoCAB_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/LetturaStoricoCABEsitoFault" name="EsitoFault" message="tns:IUffPagatori_LetturaStoricoCAB_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaEsteroCat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/LetturaEsteroCat" message="tns:IUffPagatori_LetturaEsteroCat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/LetturaEsteroCatResponse" message="tns:IUffPagatori_LetturaEsteroCat_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/LetturaEsteroCatEsitoFault" name="EsitoFault" message="tns:IUffPagatori_LetturaEsteroCat_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElencoCollettori">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCollettori" message="tns:IUffPagatori_ElencoCollettori_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCollettoriResponse" message="tns:IUffPagatori_ElencoCollettori_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCollettoriEsitoFault" name="EsitoFault" message="tns:IUffPagatori_ElencoCollettori_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElencoPagatori">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/ElencoPagatori" message="tns:IUffPagatori_ElencoPagatori_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/ElencoPagatoriResponse" message="tns:IUffPagatori_ElencoPagatori_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/ElencoPagatoriEsitoFault" name="EsitoFault" message="tns:IUffPagatori_ElencoPagatori_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElencoCABProvinciali">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCABProvinciali" message="tns:IUffPagatori_ElencoCABProvinciali_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCABProvincialiResponse" message="tns:IUffPagatori_ElencoCABProvinciali_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCABProvincialiEsitoFault" name="EsitoFault" message="tns:IUffPagatori_ElencoCABProvinciali_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElencoUfficiPostali">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/ElencoUfficiPostali" message="tns:IUffPagatori_ElencoUfficiPostali_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/ElencoUfficiPostaliResponse" message="tns:IUffPagatori_ElencoUfficiPostali_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/ElencoUfficiPostaliEsitoFault" name="EsitoFault" message="tns:IUffPagatori_ElencoUfficiPostali_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElencoCassaSede">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCassaSede" message="tns:IUffPagatori_ElencoCassaSede_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCassaSedeResponse" message="tns:IUffPagatori_ElencoCassaSede_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/ElencoCassaSedeEsitoFault" name="EsitoFault" message="tns:IUffPagatori_ElencoCassaSede_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElencoNuoveCoordinate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/ElencoNuoveCoordinate" message="tns:IUffPagatori_ElencoNuoveCoordinate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/ElencoNuoveCoordinateResponse" message="tns:IUffPagatori_ElencoNuoveCoordinate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/ElencoNuoveCoordinateEsitoFault" name="EsitoFault" message="tns:IUffPagatori_ElencoNuoveCoordinate_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaSportelliBanche">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/LetturaSportelliBanche" message="tns:IUffPagatori_LetturaSportelliBanche_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/LetturaSportelliBancheResponse" message="tns:IUffPagatori_LetturaSportelliBanche_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUffPagatori/LetturaSportelliBancheEsitoFault" name="EsitoFault" message="tns:IUffPagatori_LetturaSportelliBanche_EsitoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUffPagatori/IsAlive" message="tns:IUffPagatori_IsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUffPagatori/IsAliveResponse" message="tns:IUffPagatori_IsAlive_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUffPagatori" type="tns:IUffPagatori">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LetturaListaABI">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/LetturaListaABI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaStoricoABI">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/LetturaStoricoABI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaStoricoCAB">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/LetturaStoricoCAB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaEsteroCat">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/LetturaEsteroCat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ElencoCollettori">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/ElencoCollettori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ElencoPagatori">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/ElencoPagatori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ElencoCABProvinciali">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/ElencoCABProvinciali" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ElencoUfficiPostali">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/ElencoUfficiPostali" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ElencoCassaSede">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/ElencoCassaSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ElencoNuoveCoordinate">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/ElencoNuoveCoordinate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaSportelliBanche">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/LetturaSportelliBanche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EsitoFault">
+        <soap:fault use="literal" name="EsitoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsAlive">
+      <soap:operation soapAction="http://tempuri.org/IUffPagatori/IsAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UffPagatori">
+    <wsdl:port name="BasicHttpBinding_IUffPagatori" binding="tns:BasicHttpBinding_IUffPagatori">
+      <soap:address location="http://msws2.svil.inps/WSUffPagatori/UffPagatori.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.VerificaConguaglio_Gruppo01" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.VerificaConguaglio_Gruppo01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="VerificaConguaglio_Gruppo01_Request">
+    <xs:sequence>
+      <xs:element name="pianoDiPagamento" nillable="true" type="tns:PianoDiPagamento" />
+      <xs:element name="proceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificaConguaglio_Gruppo01_Request" nillable="true" type="tns:VerificaConguaglio_Gruppo01_Request" />
+  <xs:complexType name="PianoDiPagamento">
+    <xs:sequence>
+      <xs:element name="identificativo" nillable="true" type="xs:string" />
+      <xs:element name="pensione" nillable="true" type="tns:Pensione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamento" />
+  <xs:complexType name="Pensione">
+    <xs:sequence>
+      <xs:element name="categoria" nillable="true" type="xs:string" />
+      <xs:element name="certificato" nillable="true" type="xs:string" />
+      <xs:element name="sede" nillable="true" type="xs:string" />
+      <xs:element name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pensione" nillable="true" type="tns:Pensione" />
+  <xs:complexType name="VerificaConguaglio_Gruppo01_Response">
+    <xs:sequence>
+      <xs:element name="esito" nillable="true" type="tns:Esito" />
+      <xs:element name="pensione" nillable="true" type="tns:Pensione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificaConguaglio_Gruppo01_Response" nillable="true" type="tns:VerificaConguaglio_Gruppo01_Response" />
+  <xs:complexType name="Esito">
+    <xs:sequence>
+      <xs:element name="codice" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="descrizione" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="piano" nillable="true" type="tns:Piano" />
+      <xs:element name="risultato" type="tns:Risultato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Esito" nillable="true" type="tns:Esito" />
+  <xs:complexType name="Piano">
+    <xs:sequence>
+      <xs:element name="codiceConguaglio" nillable="true" type="xs:string" />
+      <xs:element name="codicePiano" nillable="true" type="xs:string" />
+      <xs:element name="codiceProdotto" nillable="true" type="xs:string" />
+      <xs:element name="controllo" nillable="true" type="tns:Controllo" />
+      <xs:element name="identificativo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Piano" nillable="true" type="tns:Piano" />
+  <xs:complexType name="Controllo">
+    <xs:sequence>
+      <xs:element name="flag" type="xs:int" />
+      <xs:element name="messaggio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Controllo" nillable="true" type="tns:Controllo" />
+  <xs:simpleType name="Risultato">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Risultato" nillable="true" type="tns:Risultato" />
+</xs:schema>

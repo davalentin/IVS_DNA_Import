@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0B6D33E-B6A8-4173-AFC3-BFF787EAAF60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INPS.Pensioni.LiquidazioneFs.Data</RootNamespace>
+    <AssemblyName>INPS.Pensioni.LiquidazioneFs.Data</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>\WSInpsPensioniLiquidazioneFS.Data\</SccProjectName>
+    <SccLocalPath>WSInpsPensioniLiquidazioneFS.Data\</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>Serena Source Control Provider:{04ED75C7-FE70-4589-A196-51A6FA0D4D7E}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INPS.DNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Context, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data.HostIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaPensione\AgoTeorico.cs" />
+    <Compile Include="AreaPensione\Ago\DZ.cs" />
+    <Compile Include="AreaPensione\Ago\EL.cs" />
+    <Compile Include="AreaPensione\Ago\ES.cs" />
+    <Compile Include="AreaPensione\Ago\ET.cs" />
+    <Compile Include="AreaPensione\Ago\FS.cs" />
+    <Compile Include="AreaPensione\Ago\GAS.cs" />
+    <Compile Include="AreaPensione\Ago\GDP.cs" />
+    <Compile Include="AreaPensione\Ago\PI.cs" />
+    <Compile Include="AreaPensione\Ago\PM.cs" />
+    <Compile Include="AreaPensione\Ago\PT.cs" />
+    <Compile Include="AreaPensione\Ago\TT.cs" />
+    <Compile Include="AreaPensione\Ago\VL.cs" />
+    <Compile Include="AreaPensione\Anagrafica.cs" />
+    <Compile Include="AreaPensione\Deleghe_Tutele.cs" />
+    <Compile Include="AreaPensione\Gp4INPDAP.cs" />
+    <Compile Include="AreaPensione\Fondo\FS_New.cs" />
+    <Compile Include="AreaPensione\Fondo\GDP.cs" />
+    <Compile Include="AreaPensione\Fondo\PT.cs" />
+    <Compile Include="AreaPensione\Fondo\PT_New.cs" />
+    <Compile Include="AreaPensione\Gp4IPOST.cs" />
+    <Compile Include="AreaPensione\Residenza.cs" />
+    <Compile Include="AreaPensione\DanteCausa.cs" />
+    <Compile Include="AreaPensione\DatiNonCalcolo.cs" />
+    <Compile Include="AreaPensione\Delegato.cs" />
+    <Compile Include="AreaPensione\DelegatoNew.cs" />
+    <Compile Include="AreaPensione\Familiare.cs" />
+    <Compile Include="AreaPensione\Fondo\CL.cs" />
+    <Compile Include="AreaPensione\Fondo\DZ.cs" />
+    <Compile Include="AreaPensione\Fondo\EL.cs" />
+    <Compile Include="AreaPensione\Fondo\ES.cs" />
+    <Compile Include="AreaPensione\Fondo\ET.cs" />
+    <Compile Include="AreaPensione\Fondo\FS.cs" />
+    <Compile Include="AreaPensione\Fondo\GAS.cs" />
+    <Compile Include="AreaPensione\Fondo\PI.cs" />
+    <Compile Include="AreaPensione\Fondo\PM.cs" />
+    <Compile Include="AreaPensione\Fondo\TT.cs" />
+    <Compile Include="AreaPensione\Fondo\VL.cs" />
+    <Compile Include="AreaPensione\MaggiorazioneLegge.cs" />
+    <Compile Include="AreaPensione\MaggiorazioneSociale.cs" />
+    <Compile Include="AreaPensione\Minimo_PensInv.cs" />
+    <Compile Include="AreaPensione\Redditi.cs" />
+    <Compile Include="AreaPensione\RenditaINAIL.cs" />
+    <Compile Include="AreaPensione\Supplementi.cs" />
+    <Compile Include="AreaPensione\TipoFondo.cs" />
+    <Compile Include="AreaPensione\TrattamentiFamiglia.cs" />
+    <Compile Include="AreaPensione\TrattenuteLavAutonomi.cs" />
+    <Compile Include="Base\BaseClass.cs" />
+    <Compile Include="FSPL_FSRC.cs" />
+    <Compile Include="FSPR.cs" />
+    <Compile Include="HostRequest\FSPL_FSRC\FSPL_FSRCRequest.cs" />
+    <Compile Include="HostRequest\FSPR\FSPRRequest.cs" />
+    <Compile Include="AreaPensione\AreaVariabile.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\ACNE_CENGIO.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Addizionali_IRPEF.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Anagrafica.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Coda.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Codici_Pensione.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Codici_Procedura.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Conguagli.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Conguagli_Arretrati.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Contributi.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\DanteCausa.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Dati_Contributivi_New.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Dati_Contributivi_New1.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Dati_Contributivi_Old.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Dati_Retributivi.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Decorrenza_Cessazione.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Decorrenze.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Decorrenze_FS.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Familiari_Carico.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Fondo_Spedizionieri.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Importi.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\INPDAI.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Interessi_Legali.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Intestazione.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\IRPEF.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Maggiorazione_Sociale.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Maternita.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Pagamento.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Patronato_Sindacato.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Pensioni_Cumulate.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Pensioni_Fiscali.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Quote.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Recupero_Crediti.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Sentenze_240_495.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Supplementi_Retributivi.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Trattenute.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\AreaStampa\Trattenute_Virtuali.cs" />
+    <Compile Include="HostResponse\FSPL_FSRC\FSPL_FSRCResponse.cs" />
+    <Compile Include="HostResponse\FSPR\FSPRAreaCompressa.cs" />
+    <Compile Include="HostResponse\FSPR\FSPRResponse.cs" />
+    <Compile Include="Mocks\MockAreaCalcoloFSPL_FSRC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\HisLiquidazioneFs\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HisLiquidazioneFs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HisLiquidazioneFs\configuration91.svcinfo" />
+    <None Include="Service References\HisLiquidazioneFs\LiquidazioneFs.wsdl" />
+    <None Include="Service References\HisLiquidazioneFs\TI_PFS_R.wsdl" />
+    <None Include="Service References\HisLiquidazioneFs\TI_PFS_R.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HisLiquidazioneFs\TI_PFS_R1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HisLiquidazioneFs\TI_PFS_R2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HisLiquidazioneFs\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\HisLiquidazioneFs\INPS.Pensioni.LiquidazioneFs.Data.HisLiquidazioneFs.ClientContext.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HisLiquidazioneFs\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HisLiquidazioneFs\TI_PFS_R.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

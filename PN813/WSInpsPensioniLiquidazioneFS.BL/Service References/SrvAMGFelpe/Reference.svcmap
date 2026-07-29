@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9f84fd9c-01d5-440c-9a47-4b4d8831d539" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GestionePecoService.xsd" MetadataType="Schema" ID="eb472a41-265e-4eee-8999-4c477b041354" SourceId="1" SourceUrl="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GestionePecoService.disco" MetadataType="Disco" ID="f98d2f95-49a2-4025-bddd-01c5711c7d82" SourceId="1" SourceUrl="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?disco" />
+    <MetadataFile FileName="GestionePecoService1.xsd" MetadataType="Schema" ID="78308ee0-6f17-4302-94fd-f935249e176f" SourceId="1" SourceUrl="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GestionePecoService.wsdl" MetadataType="Wsdl" ID="b33ef60f-eb77-4edb-a0a4-112bbf8fd081" SourceId="1" SourceUrl="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?wsdl" />
+    <MetadataFile FileName="GestionePecoService2.xsd" MetadataType="Schema" ID="fe68c69e-9930-46b6-b8f3-a8df4b27c0a7" SourceId="1" SourceUrl="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GestionePecoService3.xsd" MetadataType="Schema" ID="f86e65a0-a804-4f0c-972f-ffc36c7988d3" SourceId="1" SourceUrl="http://msws.svil.inps/WSGestionePeco/GestionePecoService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

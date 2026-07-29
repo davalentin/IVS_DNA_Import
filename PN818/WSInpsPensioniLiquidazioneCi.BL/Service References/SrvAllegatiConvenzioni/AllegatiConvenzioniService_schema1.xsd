@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" targetNamespace="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ModuloAllegatoRichiesta" type="tns:TipoModuloAllegatoRichiesta" />
+  <xs:element name="ModuloAllegatoRisposta" type="tns:TipoModuloAllegatoRisposta" />
+  <xs:element name="aggiornaCI05" type="tns:aggiornaCI05" />
+  <xs:element name="aggiornaCI05Response" type="tns:aggiornaCI05Response" />
+  <xs:element name="aggiornaFase" type="tns:aggiornaFase" />
+  <xs:element name="aggiornaFaseResponse" type="tns:aggiornaFaseResponse" />
+  <xs:element name="getStatiIstituzione" type="tns:getStatiIstituzione" />
+  <xs:element name="getStatiIstituzioneResponse" type="tns:getStatiIstituzioneResponse" />
+  <xs:element name="letturaCI05" type="tns:letturaCI05" />
+  <xs:element name="letturaCI05Response" type="tns:letturaCI05Response" />
+  <xs:complexType name="TipoLetturaCI05Risposta">
+    <xs:sequence>
+      <xs:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xs:element name="Ciead75" type="tns:TipoCiead75" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoMessaggio">
+    <xs:sequence>
+      <xs:element name="Codice" type="xs:int" />
+      <xs:element name="Descrizione" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoCiead75">
+    <xs:sequence>
+      <xs:element name="AreaRichiedente" type="tns:TipoAreaRichiedente" />
+      <xs:element name="AreaDanteCausa" type="tns:TipoAreaDanteCausa" />
+      <xs:element name="AreaAltro" type="tns:TipoAreaAltro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaRichiedente">
+    <xs:sequence>
+      <xs:element name="AreaEad75" type="tns:TipoAreaEad75" />
+      <xs:element name="AreaCi2005" type="tns:TipoAreaCi2005" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaEad75">
+    <xs:sequence>
+      <xs:element name="Ido" type="xs:int" />
+      <xs:element name="Kkk2" type="xs:int" />
+      <xs:element name="KeyDom" type="tns:TipoKeyDom" />
+      <xs:element name="Sede6" type="xs:int" />
+      <xs:element name="Categ" type="xs:string" />
+      <xs:element name="Cognome" type="xs:string" />
+      <xs:element name="Sesso" type="xs:string" />
+      <xs:element name="NomeAcq" type="xs:string" />
+      <xs:element name="DataNas" type="xs:int" />
+      <xs:element name="ComNas" type="xs:string" />
+      <xs:element name="Dispon" type="xs:string" />
+      <xs:element name="ProvNas" type="xs:string" />
+      <xs:element name="Indiriz" type="xs:string" />
+      <xs:element name="Xcap" type="xs:string" />
+      <xs:element name="ComRes" type="xs:string" />
+      <xs:element name="ProvRes" type="xs:string" />
+      <xs:element name="StatRes" type="xs:string" />
+      <xs:element name="TipoDom" type="xs:string" />
+      <xs:element name="CodPato" type="xs:string" />
+      <xs:element name="Npratpa" type="xs:string" />
+      <xs:element name="DataDom" type="xs:int" />
+      <xs:element name="CoFase" type="xs:int" />
+      <xs:element name="CoInfa" type="xs:int" />
+      <xs:element name="DataLgd" type="xs:int" />
+      <xs:element name="DataDalg" type="xs:int" />
+      <xs:element name="DatEsit" type="xs:int" />
+      <xs:element name="CodEsit" type="xs:string" />
+      <xs:element name="Filler" type="xs:string" />
+      <xs:element name="CodiSitu" type="xs:string" />
+      <xs:element name="SedeRic" type="xs:int" />
+      <xs:element name="CatCer" type="tns:TipoCatCer" />
+      <xs:element name="PrintF3" type="xs:string" />
+      <xs:element name="DecPen" type="xs:int" />
+      <xs:element name="Dioti" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoKeyDom">
+    <xs:sequence>
+      <xs:element name="DataInse" type="xs:int" />
+      <xs:element name="KDomus" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoCatCer">
+    <xs:sequence>
+      <xs:element name="CateGri" type="xs:string" />
+      <xs:element name="CertRic" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaCi2005">
+    <xs:sequence>
+      <xs:element name="AreaCarCor" type="tns:TipoAreaCarCor" />
+      <xs:element name="AreaStatiEsteri" type="tns:TipoAreaStatiEsteri" />
+      <xs:element name="AreaVari" type="tns:TipoAreaVari" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaCarCor">
+    <xs:sequence>
+      <xs:element name="Citt1" type="xs:string" />
+      <xs:element name="Statc" type="xs:string" />
+      <xs:element name="DataCar" type="xs:int" />
+      <xs:element name="Prestp" type="xs:string" />
+      <xs:element name="Erreosi" type="xs:string" />
+      <xs:element name="DocRici" type="xs:string" />
+      <xs:element name="DatRici" type="xs:int" />
+      <xs:element name="SedeC106" type="xs:int" />
+      <xs:element name="Erreoss" type="xs:string" />
+      <xs:element name="DocRics" type="xs:string" />
+      <xs:element name="DatRics" type="xs:int" />
+      <xs:element name="Erreosa" type="xs:string" />
+      <xs:element name="DatRica" type="xs:int" />
+      <xs:element name="CodExit" type="xs:string" />
+      <xs:element name="DatExit" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaStatiEsteri">
+    <xs:sequence>
+      <xs:element name="Stis01" type="xs:int" />
+      <xs:element name="Matre1" type="xs:string" />
+      <xs:element name="Pi1" type="xs:string" />
+      <xs:element name="Mot1" type="xs:string" />
+      <xs:element name="Mvv1" type="xs:string" />
+      <xs:element name="FaseSt1" type="xs:int" />
+      <xs:element name="Mod2051" type="xs:string" />
+      <xs:element name="Inicol1" type="xs:int" />
+      <xs:element name="Invfor1" type="xs:int" />
+      <xs:element name="Parag1" type="xs:string" />
+      <xs:element name="Datc111" type="xs:int" />
+      <xs:element name="DatRis1" type="xs:int" />
+      <xs:element name="Preste1" type="xs:string" />
+      <xs:element name="Risult1" type="xs:int" />
+      <xs:element name="NoteSt1" type="xs:string" />
+      <xs:element name="Stis02" type="xs:int" />
+      <xs:element name="Matre2" type="xs:string" />
+      <xs:element name="Pi2" type="xs:string" />
+      <xs:element name="Mot2" type="xs:string" />
+      <xs:element name="Mvv2" type="xs:string" />
+      <xs:element name="FaseSt2" type="xs:int" />
+      <xs:element name="Mod2052" type="xs:string" />
+      <xs:element name="Inicol2" type="xs:int" />
+      <xs:element name="Invfor2" type="xs:int" />
+      <xs:element name="Parag2" type="xs:string" />
+      <xs:element name="Datc112" type="xs:int" />
+      <xs:element name="DatRis2" type="xs:int" />
+      <xs:element name="Preste2" type="xs:string" />
+      <xs:element name="Risult2" type="xs:int" />
+      <xs:element name="NoteSt2" type="xs:string" />
+      <xs:element name="Stis03" type="xs:int" />
+      <xs:element name="Matre3" type="xs:string" />
+      <xs:element name="Pi3" type="xs:string" />
+      <xs:element name="Mot3" type="xs:string" />
+      <xs:element name="Mvv3" type="xs:string" />
+      <xs:element name="FaseSt3" type="xs:int" />
+      <xs:element name="Mod2053" type="xs:string" />
+      <xs:element name="Inicol3" type="xs:int" />
+      <xs:element name="Invfor3" type="xs:int" />
+      <xs:element name="Parag3" type="xs:string" />
+      <xs:element name="Datc113" type="xs:int" />
+      <xs:element name="DatRis3" type="xs:int" />
+      <xs:element name="Preste3" type="xs:string" />
+      <xs:element name="Risult3" type="xs:int" />
+      <xs:element name="NoteSt3" type="xs:string" />
+      <xs:element name="Stis04" type="xs:int" />
+      <xs:element name="Matre4" type="xs:string" />
+      <xs:element name="Pi4" type="xs:string" />
+      <xs:element name="Mot4" type="xs:string" />
+      <xs:element name="Mvv4" type="xs:string" />
+      <xs:element name="FaseSt4" type="xs:int" />
+      <xs:element name="Mod2054" type="xs:string" />
+      <xs:element name="Inicol4" type="xs:int" />
+      <xs:element name="Invfor4" type="xs:int" />
+      <xs:element name="Parag4" type="xs:string" />
+      <xs:element name="Datc114" type="xs:int" />
+      <xs:element name="DatRis4" type="xs:int" />
+      <xs:element name="Preste4" type="xs:string" />
+      <xs:element name="Risult4" type="xs:int" />
+      <xs:element name="NoteSt4" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaVari">
+    <xs:sequence>
+      <xs:element name="MatricMigr" type="xs:string" />
+      <xs:element name="Resest" type="xs:string" />
+      <xs:element name="Riga75" type="xs:string" />
+      <xs:element name="Staz" type="xs:int" />
+      <xs:element name="TipIst" type="xs:string" />
+      <xs:element name="CodFis" type="xs:string" />
+      <xs:element name="Uniproc" type="xs:string" />
+      <xs:element name="Mail" type="xs:string" />
+      <xs:element name="CognomeIntero" type="xs:string" />
+      <xs:element name="NomeIntero" type="xs:string" />
+      <xs:element name="CognoAcqIntero" type="xs:string" />
+      <xs:element name="AltriDatiStati" type="tns:TipoAltriDatiStati" />
+      <xs:element name="DataCanc" type="xs:int" />
+      <xs:element name="CodSit" type="xs:string" />
+      <xs:element name="CodiFase" type="xs:string" />
+      <xs:element name="ProPat" type="xs:string" />
+      <xs:element name="KeyPat" type="tns:TipoKeyPat" />
+      <xs:element name="Key205" type="xs:string" />
+      <xs:element name="So" type="xs:string" />
+      <xs:element name="Filler" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAltriDatiStati">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AltriDatiStatiOcc" type="tns:TipoAltriDatiStatiOcc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAltriDatiStatiOcc">
+    <xs:sequence>
+      <xs:element name="Ci14" type="xs:string" />
+      <xs:element name="Tipc" type="xs:string" />
+      <xs:element name="Model" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoKeyPat">
+    <xs:sequence>
+      <xs:element name="Ente" type="xs:string" />
+      <xs:element name="Codinps" type="xs:string" />
+      <xs:element name="Coduff" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaDanteCausa">
+    <xs:sequence>
+      <xs:element name="FlagDc" type="xs:string" />
+      <xs:element name="CieadDc" type="tns:TipoCieadDc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoCieadDc">
+    <xs:sequence>
+      <xs:element name="DatiDc" type="tns:TipoDatiDc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoDatiDc">
+    <xs:sequence>
+      <xs:element name="CogDc" type="xs:string" />
+      <xs:element name="NomDc" type="xs:string" />
+      <xs:element name="ComDc" type="xs:string" />
+      <xs:element name="ProDc" type="xs:string" />
+      <xs:element name="StatoDc" type="xs:string" />
+      <xs:element name="DnasDc" type="xs:int" />
+      <xs:element name="Dmor" type="xs:int" />
+      <xs:element name="Lumor" type="xs:string" />
+      <xs:element name="StatoMorteDc" type="xs:string" />
+      <xs:element name="SesDc" type="xs:string" />
+      <xs:element name="CittadinDc" type="xs:string" />
+      <xs:element name="StatcDc" type="xs:string" />
+      <xs:element name="Dmat" type="xs:int" />
+      <xs:element name="Relpar" type="xs:string" />
+      <xs:element name="Tp1seded" type="xs:int" />
+      <xs:element name="Tp1catd" type="xs:int" />
+      <xs:element name="Tp1certd" type="xs:int" />
+      <xs:element name="Iw1diret" type="xs:int" />
+      <xs:element name="CodfisDc" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAreaAltro">
+    <xs:sequence>
+      <xs:element name="DataSitu" type="xs:int" />
+      <xs:element name="Flag107" type="xs:string" />
+      <xs:element name="Filler" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloAggiornaFaseRichiesta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRichiesta" type="tns:TipoAggiornaFaseRichiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoMetadatiServizio">
+    <xs:sequence>
+      <xs:element name="NomeServizio" type="tns:TipoNomeServizio" />
+      <xs:element minOccurs="0" name="Modello" type="tns:TipoClassificazioneModello" />
+      <xs:element minOccurs="0" name="CodiceModello" type="xs:int" />
+      <xs:element name="Mittente" type="xs:string" />
+      <xs:element name="Timestamp" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAggiornaFaseRichiesta">
+    <xs:sequence>
+      <xs:element name="Codesit" type="xs:string" />
+      <xs:element name="MatrxCI" type="xs:string" />
+      <xs:element name="Sede6" type="xs:string" />
+      <xs:element name="Kdomus" type="xs:string" />
+      <xs:element name="Data" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloAllegatoRichiesta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRichiesta" type="tns:TipoDatiRichiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoDatiRichiesta">
+    <xs:sequence>
+      <xs:element name="CodiceSede" type="xs:string" />
+      <xs:element name="CodiceCategoria" type="xs:string" />
+      <xs:element name="Certificato" type="xs:string" />
+      <xs:element name="PeriodoRicerca" type="tns:TipoPeriodoRichiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoPeriodoRichiesta">
+    <xs:sequence>
+      <xs:element name="AnnoDa" type="xs:int" />
+      <xs:element name="AnnoA" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aggiornaFase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloAggiornaFaseRichiesta" type="tns:TipoModuloAggiornaFaseRichiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloLetturaCI05Richiesta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRichiesta" type="tns:TipoLetturaCI05Richiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoLetturaCI05Richiesta">
+    <xs:sequence>
+      <xs:element name="Comarea" type="tns:TipoComareaPcics10" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoComareaPcics10">
+    <xs:sequence>
+      <xs:element name="Cpgmdas" type="xs:string" />
+      <xs:element name="MatricolaOp" type="xs:string" />
+      <xs:element name="Sede" type="xs:string" />
+      <xs:element name="ErroreRitorno" type="xs:int" />
+      <xs:element name="Continua" type="xs:string" />
+      <xs:element name="CheFare" type="xs:string" />
+      <xs:element name="Prova" type="xs:string" />
+      <xs:element name="Altri" type="xs:string" />
+      <xs:element name="Chiavi" type="tns:TipoChiaviPcics10" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoChiaviPcics10">
+    <xs:sequence>
+      <xs:element name="KeyDa" type="xs:int" />
+      <xs:element name="KeyA" type="xs:int" />
+      <xs:element name="KeyFrom" type="xs:string" />
+      <xs:element name="Filtro01" type="xs:string" />
+      <xs:element name="Filtro" type="xs:string" />
+      <xs:element name="Filler" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAggiornaFaseRisposta">
+    <xs:sequence>
+      <xs:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xs:element name="Codesit" type="xs:string" />
+      <xs:element name="MatrxCI" type="xs:string" />
+      <xs:element name="Sede6" type="xs:string" />
+      <xs:element name="Kdomus" type="xs:string" />
+      <xs:element name="Data" type="xs:int" />
+      <xs:element name="Codice" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloAggiornaCI05Richiesta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRichiesta" type="tns:TipoAggiornaCI05Richiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAggiornaCI05Richiesta">
+    <xs:sequence>
+      <xs:element name="Comarea" type="tns:TipoComareaPcics11" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoComareaPcics11">
+    <xs:sequence>
+      <xs:element name="Cpgmdas" type="xs:string" />
+      <xs:element name="MatricolaOp" type="xs:string" />
+      <xs:element name="Sede" type="xs:string" />
+      <xs:element name="ErroreRitorno" type="xs:int" />
+      <xs:element name="AltriD" type="xs:string" />
+      <xs:element name="CheFare" type="xs:string" />
+      <xs:element name="Prova" type="xs:string" />
+      <xs:element name="Altri" type="xs:string" />
+      <xs:element name="Chiavi" type="tns:TipoChiaviPcics11" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoChiaviPcics11">
+    <xs:sequence>
+      <xs:element name="Numedoma" type="xs:string" />
+      <xs:element name="TipoElab" type="xs:string" />
+      <xs:element name="EsitoCI" type="xs:string" />
+      <xs:element name="Filler01" type="xs:string" />
+      <xs:element name="Filler02" type="xs:string" />
+      <xs:element name="DataEsito" type="xs:int" />
+      <xs:element name="Filler03" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aggiornaCI05Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloAggiornaCI05Risposta" type="tns:TipoModuloAggiornaCI05Risposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloAggiornaCI05Risposta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRisposta" type="tns:TipoAggiornaCI05Risposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoAggiornaCI05Risposta">
+    <xs:sequence>
+      <xs:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xs:element name="Ciead75" type="tns:TipoCiead75" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoStatoIstituzione">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="Stato" type="tns:TipoStato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoStato">
+    <xs:sequence>
+      <xs:element name="CodiceStato" type="xs:string" />
+      <xs:element name="CodiceIstituzione" type="xs:string" />
+      <xs:element name="Matricola" type="xs:string" />
+      <xs:element name="ProvvedimentoEstero" type="xs:string" />
+      <xs:element name="DataProvvedimentoEstero" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloStatiRisposta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRisposta" type="tns:TipoStatiRisposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoStatiRisposta">
+    <xs:sequence>
+      <xs:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xs:element name="Cittadinanza" type="xs:string" />
+      <xs:element name="CittadinanzaDc" type="xs:string" />
+      <xs:element name="Attivita107" type="xs:string" />
+      <xs:element name="Coddb2" type="xs:string" />
+      <xs:element name="CodiceEsito" type="xs:string" />
+      <xs:element name="CodiceErroreEsteso" type="xs:string" />
+      <xs:element name="TotIstituzioni" type="xs:int" />
+      <xs:element minOccurs="0" name="Stati" type="tns:TipoStatoIstituzione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AREA_PERAS">
+    <xs:sequence>
+      <xs:element name="Numedoma" type="xs:string" />
+      <xs:element name="Progista" type="xs:string" />
+      <xs:element name="Progfase" type="xs:string" />
+      <xs:element name="PTperas" type="tns:P_TPERAS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="P_TPERAS">
+    <xs:sequence>
+      <xs:element name="Numedoma" type="xs:string" />
+      <xs:element name="Progista" type="xs:string" />
+      <xs:element name="Progfase" type="xs:string" />
+      <xs:element name="Codigrup" type="xs:string" />
+      <xs:element name="Codiprod" type="xs:string" />
+      <xs:element name="Coditipo" type="xs:string" />
+      <xs:element name="Codigest" type="xs:string" />
+      <xs:element name="Codifond" type="xs:string" />
+      <xs:element name="Codiente" type="xs:string" />
+      <xs:element name="Indicoin" type="xs:string" />
+      <xs:element name="Nazional" type="xs:string" />
+      <xs:element name="Datasitu" type="xs:string" />
+      <xs:element name="Codifase" type="xs:string" />
+      <xs:element name="Codiprov" type="xs:string" />
+      <xs:element name="Codizona" type="xs:string" />
+      <xs:element name="Codioper" type="xs:string" />
+      <xs:element name="Codiunpr" type="xs:string" />
+      <xs:element name="Datpreis" type="xs:string" />
+      <xs:element name="Codicana" type="xs:string" />
+      <xs:element name="Codifont" type="xs:string" />
+      <xs:element name="Datprefa" type="xs:string" />
+      <xs:element name="Codisitu" type="xs:string" />
+      <xs:element name="Codtipro" type="xs:string" />
+      <xs:element name="Datinici" type="xs:string" />
+      <xs:element name="Datfinci" type="xs:string" />
+      <xs:element name="Datainis" type="xs:string" />
+      <xs:element name="Datafins" type="xs:string" />
+      <xs:element name="Codtivis" type="xs:string" />
+      <xs:element name="Codiatti" type="xs:string" />
+      <xs:element name="Datainiz" type="xs:string" />
+      <xs:element name="Codienes" type="xs:string" />
+      <xs:element name="Codiuffv" type="xs:string" />
+      <xs:element name="Estrprat" type="xs:string" />
+      <xs:element name="Datfinpa" type="xs:string" />
+      <xs:element name="Codiprog" type="xs:string" />
+      <xs:element name="Codizong" type="xs:string" />
+      <xs:element name="Siglacat" type="xs:string" />
+      <xs:element name="Codicerg" type="xs:string" />
+      <xs:element name="Datadecg" type="xs:string" />
+      <xs:element name="Campfilt" type="xs:string" />
+      <xs:element name="Coduff" type="xs:string" />
+      <xs:element name="Ente" type="xs:string" />
+      <xs:element name="Codinps" type="xs:string" />
+      <xs:element name="Codifisc" type="xs:string" />
+      <xs:element name="Cognome" type="xs:string" />
+      <xs:element name="Nome" type="xs:string" />
+      <xs:element name="Cognoacq" type="xs:string" />
+      <xs:element name="Sesso" type="xs:string" />
+      <xs:element name="Datanasc" type="xs:string" />
+      <xs:element name="Comunasc" type="xs:string" />
+      <xs:element name="Provnasc" type="xs:string" />
+      <xs:element name="Statnasc" type="xs:string" />
+      <xs:element name="Comuresi" type="xs:string" />
+      <xs:element name="Provresi" type="xs:string" />
+      <xs:element name="Siglstre" type="xs:string" />
+      <xs:element name="Cap" type="xs:string" />
+      <xs:element name="Numecivi" type="xs:string" />
+      <xs:element name="Indiriz1" type="xs:string" />
+      <xs:element name="Tiporesi" type="xs:string" />
+      <xs:element name="Statciv" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoDatiAllegato">
+    <xs:sequence>
+      <xs:element name="Length" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="letturaCI05Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloLetturaCI05Risposta" type="tns:TipoModuloLetturaCI05Risposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloLetturaCI05Risposta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRisposta" type="tns:TipoLetturaCI05Risposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getStatiIstituzioneResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloStatiRisposta" type="tns:TipoModuloStatiRisposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloAllegatoRisposta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRisposta" type="tns:TipoDatiRisposta" />
+      <xs:element minOccurs="0" name="ModuloAllegato" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoDatiRisposta">
+    <xs:sequence>
+      <xs:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xs:element minOccurs="0" name="DatiAllegato" type="tns:TipoDatiAllegato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aggiornaFaseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloAggiornaFaseRisposta" type="tns:TipoModuloAggiornaFaseRisposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloAggiornaFaseRisposta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRisposta" type="tns:TipoAggiornaFaseRisposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TipoModuloStatiRichiesta">
+    <xs:sequence>
+      <xs:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xs:element name="DatiRichiesta" type="tns:AREA_PERAS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AreaPciagg">
+    <xs:sequence>
+      <xs:element name="Codesit" type="xs:string" />
+      <xs:element name="MatrxCI" type="xs:string" />
+      <xs:element name="Sede6" type="xs:string" />
+      <xs:element name="Kdomus" type="xs:string" />
+      <xs:element name="Data" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatoIstituzione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Stato" type="tns:TipoStato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="letturaCI05">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloLetturaCI05Richiesta" type="tns:TipoModuloLetturaCI05Richiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getStatiIstituzione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloStatiRichiesta" type="tns:TipoModuloStatiRichiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aggiornaCI05">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModuloAggiornaCI05Richiesta" type="tns:TipoModuloAggiornaCI05Richiesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoNomeServizio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AllegatiConvenzioniService" />
+      <xs:enumeration value="StatiIstituzioniService" />
+      <xs:enumeration value="AggiornaFaseService" />
+      <xs:enumeration value="LetturaCI05Service" />
+      <xs:enumeration value="AggiornamentoCI05Service" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TipoClassificazioneModello">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AUS" />
+      <xs:enumeration value="CAN" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

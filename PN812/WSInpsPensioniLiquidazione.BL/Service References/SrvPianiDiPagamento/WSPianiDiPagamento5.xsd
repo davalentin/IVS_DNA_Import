@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="BeneficiarioPensionatoInserisciConguaglio">
+    <xs:sequence>
+      <xs:element name="codiceFiscale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeneficiarioPensionatoInserisciConguaglio" nillable="true" type="tns:BeneficiarioPensionatoInserisciConguaglio" />
+  <xs:complexType name="PensioneInserisciConguaglio">
+    <xs:sequence>
+      <xs:element name="categoria" nillable="true" type="xs:string" />
+      <xs:element name="certificato" nillable="true" type="xs:string" />
+      <xs:element name="sede" nillable="true" type="xs:string" />
+      <xs:element name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PensioneInserisciConguaglio" nillable="true" type="tns:PensioneInserisciConguaglio" />
+  <xs:simpleType name="ProdottoInserisciConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="CREDITO" />
+      <xs:enumeration value="DEBITO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProdottoInserisciConguaglio" nillable="true" type="tns:ProdottoInserisciConguaglio" />
+  <xs:complexType name="EsitoInserisciConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Descrizione" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IDSimulazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Risultato" type="tns:RisultatoInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoInserisciConguaglio" nillable="true" type="tns:EsitoInserisciConguaglio" />
+  <xs:simpleType name="RisultatoInserisciConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoInserisciConguaglio" nillable="true" type="tns:RisultatoInserisciConguaglio" />
+  <xs:simpleType name="ComponenteAnaliticaInserisciConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="IMPORTO_NETTO" />
+      <xs:enumeration value="IRPEF_IMPONIBILE_AC" />
+      <xs:enumeration value="IRPEF_IMPONIBILE_AP" />
+      <xs:enumeration value="IRPEF_NON_IMPONIBILE" />
+      <xs:enumeration value="IMPORTO_LORDO" />
+      <xs:enumeration value="CONGUAGLIO_PENSIONE_AC" />
+      <xs:enumeration value="CONGUAGLIO_PENSIONE_AP" />
+      <xs:enumeration value="CONGUAGLIO_IRPEF_AC" />
+      <xs:enumeration value="CONGUAGLIO_IRPEF_AP" />
+      <xs:enumeration value="ONPI_MESI_AC" />
+      <xs:enumeration value="ONPI_MESI_AP" />
+      <xs:enumeration value="CONGUAGLIO_TRATTAMENTO_FAMIGLIA" />
+      <xs:enumeration value="CONGUAGLIO_ASSISTENZA_INABILI" />
+      <xs:enumeration value="CONGUAGLIO_MAGGIORAZIONE_SOCIALE" />
+      <xs:enumeration value="CONGUAGLIO_ASSEGNO_INVALIDITA" />
+      <xs:enumeration value="CONGUAGLIO_MAGGIORAZIONE_EX_COMBATTENTI" />
+      <xs:enumeration value="CONGUAGLIO_INTEGRAZIONE_TRATTAMENTO_MINIMO" />
+      <xs:enumeration value="TRATTAMENTO_LAVORO_DIPENDENTE_AC" />
+      <xs:enumeration value="TRATTAMENTO_LAVORO_DIPENDENTE_AP" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ComponenteAnaliticaInserisciConguaglio" nillable="true" type="tns:ComponenteAnaliticaInserisciConguaglio" />
+</xs:schema>

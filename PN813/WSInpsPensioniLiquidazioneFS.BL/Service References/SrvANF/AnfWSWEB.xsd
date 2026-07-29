@@ -1,0 +1,1351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.anf.inps.it/" targetNamespace="http://ws.anf.inps.it/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ACT_RicercaBeneficiario" type="tns:ACT_RicercaBeneficiario" />
+  <xs:element name="ACT_RicercaBeneficiarioResponse" type="tns:ACT_RicercaBeneficiarioResponse" />
+  <xs:element name="ACT_RicercaDomandeANF" type="tns:ACT_RicercaDomandeANF" />
+  <xs:element name="ACT_RicercaDomandeANFResponse" type="tns:ACT_RicercaDomandeANFResponse" />
+  <xs:element name="ACT_RicercaDomandeANF_Beneficiario" type="tns:ACT_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="ACT_RicercaDomandeANF_BeneficiarioResponse" type="tns:ACT_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="ACT_RicercaDomandeANF_Richiedente" type="tns:ACT_RicercaDomandeANF_Richiedente" />
+  <xs:element name="ACT_RicercaDomandeANF_RichiedenteResponse" type="tns:ACT_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="ACT_RicercaRichiedente" type="tns:ACT_RicercaRichiedente" />
+  <xs:element name="ACT_RicercaRichiedenteResponse" type="tns:ACT_RicercaRichiedenteResponse" />
+  <xs:element name="ACT_RicercaSoggetto" type="tns:ACT_RicercaSoggetto" />
+  <xs:element name="ACT_RicercaSoggettoResponse" type="tns:ACT_RicercaSoggettoResponse" />
+  <xs:element name="ANFDIP_RicercaBeneficiario" type="tns:ANFDIP_RicercaBeneficiario" />
+  <xs:element name="ANFDIP_RicercaBeneficiarioResponse" type="tns:ANFDIP_RicercaBeneficiarioResponse" />
+  <xs:element name="ANFDIP_RicercaDomandeANF" type="tns:ANFDIP_RicercaDomandeANF" />
+  <xs:element name="ANFDIP_RicercaDomandeANFResponse" type="tns:ANFDIP_RicercaDomandeANFResponse" />
+  <xs:element name="ANFDIP_RicercaDomandeANF_Beneficiario" type="tns:ANFDIP_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="ANFDIP_RicercaDomandeANF_BeneficiarioResponse" type="tns:ANFDIP_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="ANFDIP_RicercaDomandeANF_Richiedente" type="tns:ANFDIP_RicercaDomandeANF_Richiedente" />
+  <xs:element name="ANFDIP_RicercaDomandeANF_RichiedenteResponse" type="tns:ANFDIP_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="ANFDIP_RicercaRichiedente" type="tns:ANFDIP_RicercaRichiedente" />
+  <xs:element name="ANFDIP_RicercaRichiedenteResponse" type="tns:ANFDIP_RicercaRichiedenteResponse" />
+  <xs:element name="ANFDIP_RicercaSoggetto" type="tns:ANFDIP_RicercaSoggetto" />
+  <xs:element name="ANFDIP_RicercaSoggettoResponse" type="tns:ANFDIP_RicercaSoggettoResponse" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaBeneficiario" type="tns:ASSEGNO_UNICO2022_RicercaBeneficiario" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaBeneficiarioResponse" type="tns:ASSEGNO_UNICO2022_RicercaBeneficiarioResponse" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaDomandeANF" type="tns:ASSEGNO_UNICO2022_RicercaDomandeANF" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaDomandeANFResponse" type="tns:ASSEGNO_UNICO2022_RicercaDomandeANFResponse" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaDomandeANF_Beneficiario" type="tns:ASSEGNO_UNICO2022_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaDomandeANF_BeneficiarioResponse" type="tns:ASSEGNO_UNICO2022_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaDomandeANF_Richiedente" type="tns:ASSEGNO_UNICO2022_RicercaDomandeANF_Richiedente" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaDomandeANF_RichiedenteResponse" type="tns:ASSEGNO_UNICO2022_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaRichiedente" type="tns:ASSEGNO_UNICO2022_RicercaRichiedente" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaRichiedenteResponse" type="tns:ASSEGNO_UNICO2022_RicercaRichiedenteResponse" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaSoggetto" type="tns:ASSEGNO_UNICO2022_RicercaSoggetto" />
+  <xs:element name="ASSEGNO_UNICO2022_RicercaSoggettoResponse" type="tns:ASSEGNO_UNICO2022_RicercaSoggettoResponse" />
+  <xs:element name="ASSEGNO_UNICO_RicercaBeneficiario" type="tns:ASSEGNO_UNICO_RicercaBeneficiario" />
+  <xs:element name="ASSEGNO_UNICO_RicercaBeneficiarioResponse" type="tns:ASSEGNO_UNICO_RicercaBeneficiarioResponse" />
+  <xs:element name="ASSEGNO_UNICO_RicercaDomandeANF" type="tns:ASSEGNO_UNICO_RicercaDomandeANF" />
+  <xs:element name="ASSEGNO_UNICO_RicercaDomandeANFResponse" type="tns:ASSEGNO_UNICO_RicercaDomandeANFResponse" />
+  <xs:element name="ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario" type="tns:ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse" type="tns:ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="ASSEGNO_UNICO_RicercaDomandeANF_Richiedente" type="tns:ASSEGNO_UNICO_RicercaDomandeANF_Richiedente" />
+  <xs:element name="ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse" type="tns:ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="ASSEGNO_UNICO_RicercaRichiedente" type="tns:ASSEGNO_UNICO_RicercaRichiedente" />
+  <xs:element name="ASSEGNO_UNICO_RicercaRichiedenteResponse" type="tns:ASSEGNO_UNICO_RicercaRichiedenteResponse" />
+  <xs:element name="ASSEGNO_UNICO_RicercaSoggetto" type="tns:ASSEGNO_UNICO_RicercaSoggetto" />
+  <xs:element name="ASSEGNO_UNICO_RicercaSoggettoResponse" type="tns:ASSEGNO_UNICO_RicercaSoggettoResponse" />
+  <xs:element name="AUTANF_RicercaBeneficiario" type="tns:AUTANF_RicercaBeneficiario" />
+  <xs:element name="AUTANF_RicercaBeneficiarioResponse" type="tns:AUTANF_RicercaBeneficiarioResponse" />
+  <xs:element name="AUTANF_RicercaConiuge" type="tns:AUTANF_RicercaConiuge" />
+  <xs:element name="AUTANF_RicercaConiugeResponse" type="tns:AUTANF_RicercaConiugeResponse" />
+  <xs:element name="AUTANF_RicercaDomandeANF" type="tns:AUTANF_RicercaDomandeANF" />
+  <xs:element name="AUTANF_RicercaDomandeANFResponse" type="tns:AUTANF_RicercaDomandeANFResponse" />
+  <xs:element name="AUTANF_RicercaDomandeANF_Beneficiario" type="tns:AUTANF_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="AUTANF_RicercaDomandeANF_BeneficiarioResponse" type="tns:AUTANF_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="AUTANF_RicercaDomandeANF_Coniuge" type="tns:AUTANF_RicercaDomandeANF_Coniuge" />
+  <xs:element name="AUTANF_RicercaDomandeANF_ConiugeResponse" type="tns:AUTANF_RicercaDomandeANF_ConiugeResponse" />
+  <xs:element name="AUTANF_RicercaDomandeANF_Richiedente" type="tns:AUTANF_RicercaDomandeANF_Richiedente" />
+  <xs:element name="AUTANF_RicercaDomandeANF_RichiedenteResponse" type="tns:AUTANF_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="AUTANF_RicercaRichiedente" type="tns:AUTANF_RicercaRichiedente" />
+  <xs:element name="AUTANF_RicercaRichiedenteResponse" type="tns:AUTANF_RicercaRichiedenteResponse" />
+  <xs:element name="AUTANF_RicercaSoggetto" type="tns:AUTANF_RicercaSoggetto" />
+  <xs:element name="AUTANF_RicercaSoggettoResponse" type="tns:AUTANF_RicercaSoggettoResponse" />
+  <xs:element name="AnfWS_Response" type="tns:anfWSResponse" />
+  <xs:element name="Beneficiari" type="tns:beneficiari" />
+  <xs:element name="CDCM_RicercaBeneficiario" type="tns:CDCM_RicercaBeneficiario" />
+  <xs:element name="CDCM_RicercaBeneficiarioResponse" type="tns:CDCM_RicercaBeneficiarioResponse" />
+  <xs:element name="CDCM_RicercaDomandeANF" type="tns:CDCM_RicercaDomandeANF" />
+  <xs:element name="CDCM_RicercaDomandeANFResponse" type="tns:CDCM_RicercaDomandeANFResponse" />
+  <xs:element name="CDCM_RicercaDomandeANF_Beneficiario" type="tns:CDCM_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="CDCM_RicercaDomandeANF_BeneficiarioResponse" type="tns:CDCM_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="CDCM_RicercaDomandeANF_Richiedente" type="tns:CDCM_RicercaDomandeANF_Richiedente" />
+  <xs:element name="CDCM_RicercaDomandeANF_RichiedenteResponse" type="tns:CDCM_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="CDCM_RicercaRichiedente" type="tns:CDCM_RicercaRichiedente" />
+  <xs:element name="CDCM_RicercaRichiedenteResponse" type="tns:CDCM_RicercaRichiedenteResponse" />
+  <xs:element name="CDCM_RicercaSoggetto" type="tns:CDCM_RicercaSoggetto" />
+  <xs:element name="CDCM_RicercaSoggettoResponse" type="tns:CDCM_RicercaSoggettoResponse" />
+  <xs:element name="DISAGR_RicercaBeneficiario" type="tns:DISAGR_RicercaBeneficiario" />
+  <xs:element name="DISAGR_RicercaBeneficiarioResponse" type="tns:DISAGR_RicercaBeneficiarioResponse" />
+  <xs:element name="DISAGR_RicercaDomandeANF" type="tns:DISAGR_RicercaDomandeANF" />
+  <xs:element name="DISAGR_RicercaDomandeANFResponse" type="tns:DISAGR_RicercaDomandeANFResponse" />
+  <xs:element name="DISAGR_RicercaDomandeANF_Beneficiario" type="tns:DISAGR_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="DISAGR_RicercaDomandeANF_BeneficiarioResponse" type="tns:DISAGR_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="DISAGR_RicercaDomandeANF_Richiedente" type="tns:DISAGR_RicercaDomandeANF_Richiedente" />
+  <xs:element name="DISAGR_RicercaDomandeANF_RichiedenteResponse" type="tns:DISAGR_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="DISAGR_RicercaRichiedente" type="tns:DISAGR_RicercaRichiedente" />
+  <xs:element name="DISAGR_RicercaRichiedenteResponse" type="tns:DISAGR_RicercaRichiedenteResponse" />
+  <xs:element name="DISAGR_RicercaSoggetto" type="tns:DISAGR_RicercaSoggetto" />
+  <xs:element name="DISAGR_RicercaSoggettoResponse" type="tns:DISAGR_RicercaSoggettoResponse" />
+  <xs:element name="DISNONAGR_RicercaBeneficiario" type="tns:DISNONAGR_RicercaBeneficiario" />
+  <xs:element name="DISNONAGR_RicercaBeneficiarioResponse" type="tns:DISNONAGR_RicercaBeneficiarioResponse" />
+  <xs:element name="DISNONAGR_RicercaDomandeANF" type="tns:DISNONAGR_RicercaDomandeANF" />
+  <xs:element name="DISNONAGR_RicercaDomandeANFResponse" type="tns:DISNONAGR_RicercaDomandeANFResponse" />
+  <xs:element name="DISNONAGR_RicercaDomandeANF_Beneficiario" type="tns:DISNONAGR_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="DISNONAGR_RicercaDomandeANF_BeneficiarioResponse" type="tns:DISNONAGR_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="DISNONAGR_RicercaDomandeANF_Richiedente" type="tns:DISNONAGR_RicercaDomandeANF_Richiedente" />
+  <xs:element name="DISNONAGR_RicercaDomandeANF_RichiedenteResponse" type="tns:DISNONAGR_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="DISNONAGR_RicercaRichiedente" type="tns:DISNONAGR_RicercaRichiedente" />
+  <xs:element name="DISNONAGR_RicercaRichiedenteResponse" type="tns:DISNONAGR_RicercaRichiedenteResponse" />
+  <xs:element name="DISNONAGR_RicercaSoggetto" type="tns:DISNONAGR_RicercaSoggetto" />
+  <xs:element name="DISNONAGR_RicercaSoggettoResponse" type="tns:DISNONAGR_RicercaSoggettoResponse" />
+  <xs:element name="DITCES_RicercaBeneficiario" type="tns:DITCES_RicercaBeneficiario" />
+  <xs:element name="DITCES_RicercaBeneficiarioResponse" type="tns:DITCES_RicercaBeneficiarioResponse" />
+  <xs:element name="DITCES_RicercaDomandeANF" type="tns:DITCES_RicercaDomandeANF" />
+  <xs:element name="DITCES_RicercaDomandeANFResponse" type="tns:DITCES_RicercaDomandeANFResponse" />
+  <xs:element name="DITCES_RicercaDomandeANF_Beneficiario" type="tns:DITCES_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="DITCES_RicercaDomandeANF_BeneficiarioResponse" type="tns:DITCES_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="DITCES_RicercaDomandeANF_Richiedente" type="tns:DITCES_RicercaDomandeANF_Richiedente" />
+  <xs:element name="DITCES_RicercaDomandeANF_RichiedenteResponse" type="tns:DITCES_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="DITCES_RicercaRichiedente" type="tns:DITCES_RicercaRichiedente" />
+  <xs:element name="DITCES_RicercaRichiedenteResponse" type="tns:DITCES_RicercaRichiedenteResponse" />
+  <xs:element name="DITCES_RicercaSoggetto" type="tns:DITCES_RicercaSoggetto" />
+  <xs:element name="DITCES_RicercaSoggettoResponse" type="tns:DITCES_RicercaSoggettoResponse" />
+  <xs:element name="DatiDomanda" nillable="true" type="xs:anyType" />
+  <xs:element name="DomandaANF" type="tns:domandaANF" />
+  <xs:element name="DomandaPensione_RicercaBeneficiario" type="tns:DomandaPensione_RicercaBeneficiario" />
+  <xs:element name="DomandaPensione_RicercaBeneficiarioResponse" type="tns:DomandaPensione_RicercaBeneficiarioResponse" />
+  <xs:element name="DomandaPensione_RicercaDomandeANF" type="tns:DomandaPensione_RicercaDomandeANF" />
+  <xs:element name="DomandaPensione_RicercaDomandeANFResponse" type="tns:DomandaPensione_RicercaDomandeANFResponse" />
+  <xs:element name="DomandaPensione_RicercaDomandeANF_Beneficiario" type="tns:DomandaPensione_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="DomandaPensione_RicercaDomandeANF_BeneficiarioResponse" type="tns:DomandaPensione_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="DomandaPensione_RicercaDomandeANF_Richiedente" type="tns:DomandaPensione_RicercaDomandeANF_Richiedente" />
+  <xs:element name="DomandaPensione_RicercaDomandeANF_RichiedenteResponse" type="tns:DomandaPensione_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="DomandaPensione_RicercaRichiedente" type="tns:DomandaPensione_RicercaRichiedente" />
+  <xs:element name="DomandaPensione_RicercaRichiedenteResponse" type="tns:DomandaPensione_RicercaRichiedenteResponse" />
+  <xs:element name="DomandaPensione_RicercaSoggetto" type="tns:DomandaPensione_RicercaSoggetto" />
+  <xs:element name="DomandaPensione_RicercaSoggettoResponse" type="tns:DomandaPensione_RicercaSoggettoResponse" />
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="Fonte" type="tns:fonte" />
+  <xs:element name="FontiDatiANF" type="tns:fontiDatiANF" />
+  <xs:element name="GESSEP_RicercaBeneficiario" type="tns:GESSEP_RicercaBeneficiario" />
+  <xs:element name="GESSEP_RicercaBeneficiarioResponse" type="tns:GESSEP_RicercaBeneficiarioResponse" />
+  <xs:element name="GESSEP_RicercaDomandeANF" type="tns:GESSEP_RicercaDomandeANF" />
+  <xs:element name="GESSEP_RicercaDomandeANFResponse" type="tns:GESSEP_RicercaDomandeANFResponse" />
+  <xs:element name="GESSEP_RicercaDomandeANF_Beneficiario" type="tns:GESSEP_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="GESSEP_RicercaDomandeANF_BeneficiarioResponse" type="tns:GESSEP_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="GESSEP_RicercaDomandeANF_Richiedente" type="tns:GESSEP_RicercaDomandeANF_Richiedente" />
+  <xs:element name="GESSEP_RicercaDomandeANF_RichiedenteResponse" type="tns:GESSEP_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="GESSEP_RicercaRichiedente" type="tns:GESSEP_RicercaRichiedente" />
+  <xs:element name="GESSEP_RicercaRichiedenteResponse" type="tns:GESSEP_RicercaRichiedenteResponse" />
+  <xs:element name="GESSEP_RicercaSoggetto" type="tns:GESSEP_RicercaSoggetto" />
+  <xs:element name="GESSEP_RicercaSoggettoResponse" type="tns:GESSEP_RicercaSoggettoResponse" />
+  <xs:element name="LAVDOM_RicercaBeneficiario" type="tns:LAVDOM_RicercaBeneficiario" />
+  <xs:element name="LAVDOM_RicercaBeneficiarioResponse" type="tns:LAVDOM_RicercaBeneficiarioResponse" />
+  <xs:element name="LAVDOM_RicercaDomandeANF" type="tns:LAVDOM_RicercaDomandeANF" />
+  <xs:element name="LAVDOM_RicercaDomandeANFResponse" type="tns:LAVDOM_RicercaDomandeANFResponse" />
+  <xs:element name="LAVDOM_RicercaDomandeANF_Beneficiario" type="tns:LAVDOM_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="LAVDOM_RicercaDomandeANF_BeneficiarioResponse" type="tns:LAVDOM_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="LAVDOM_RicercaDomandeANF_Richiedente" type="tns:LAVDOM_RicercaDomandeANF_Richiedente" />
+  <xs:element name="LAVDOM_RicercaDomandeANF_RichiedenteResponse" type="tns:LAVDOM_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="LAVDOM_RicercaRichiedente" type="tns:LAVDOM_RicercaRichiedente" />
+  <xs:element name="LAVDOM_RicercaRichiedenteResponse" type="tns:LAVDOM_RicercaRichiedenteResponse" />
+  <xs:element name="LAVDOM_RicercaSoggetto" type="tns:LAVDOM_RicercaSoggetto" />
+  <xs:element name="LAVDOM_RicercaSoggettoResponse" type="tns:LAVDOM_RicercaSoggettoResponse" />
+  <xs:element name="PENSIONE_RicercaBeneficiario" type="tns:PENSIONE_RicercaBeneficiario" />
+  <xs:element name="PENSIONE_RicercaBeneficiarioResponse" type="tns:PENSIONE_RicercaBeneficiarioResponse" />
+  <xs:element name="PENSIONE_RicercaDomandeANF" type="tns:PENSIONE_RicercaDomandeANF" />
+  <xs:element name="PENSIONE_RicercaDomandeANFResponse" type="tns:PENSIONE_RicercaDomandeANFResponse" />
+  <xs:element name="PENSIONE_RicercaDomandeANF_Beneficiario" type="tns:PENSIONE_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="PENSIONE_RicercaDomandeANF_BeneficiarioResponse" type="tns:PENSIONE_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="PENSIONE_RicercaDomandeANF_Richiedente" type="tns:PENSIONE_RicercaDomandeANF_Richiedente" />
+  <xs:element name="PENSIONE_RicercaDomandeANF_RichiedenteResponse" type="tns:PENSIONE_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="PENSIONE_RicercaRichiedente" type="tns:PENSIONE_RicercaRichiedente" />
+  <xs:element name="PENSIONE_RicercaRichiedenteResponse" type="tns:PENSIONE_RicercaRichiedenteResponse" />
+  <xs:element name="PENSIONE_RicercaSoggetto" type="tns:PENSIONE_RicercaSoggetto" />
+  <xs:element name="PENSIONE_RicercaSoggettoResponse" type="tns:PENSIONE_RicercaSoggettoResponse" />
+  <xs:element name="ParametriRichiesta" type="tns:parametriRichiesta" />
+  <xs:element name="PeriodiValidita" type="tns:periodiValidita" />
+  <xs:element name="PeriodoANF" type="tns:periodiANF" />
+  <xs:element name="RDC_AT_RicercaBeneficiario" type="tns:RDC_AT_RicercaBeneficiario" />
+  <xs:element name="RDC_AT_RicercaBeneficiarioResponse" type="tns:RDC_AT_RicercaBeneficiarioResponse" />
+  <xs:element name="RDC_AT_RicercaDomandeANF" type="tns:RDC_AT_RicercaDomandeANF" />
+  <xs:element name="RDC_AT_RicercaDomandeANFResponse" type="tns:RDC_AT_RicercaDomandeANFResponse" />
+  <xs:element name="RDC_AT_RicercaDomandeANF_Beneficiario" type="tns:RDC_AT_RicercaDomandeANF_Beneficiario" />
+  <xs:element name="RDC_AT_RicercaDomandeANF_BeneficiarioResponse" type="tns:RDC_AT_RicercaDomandeANF_BeneficiarioResponse" />
+  <xs:element name="RDC_AT_RicercaDomandeANF_Richiedente" type="tns:RDC_AT_RicercaDomandeANF_Richiedente" />
+  <xs:element name="RDC_AT_RicercaDomandeANF_RichiedenteResponse" type="tns:RDC_AT_RicercaDomandeANF_RichiedenteResponse" />
+  <xs:element name="RDC_AT_RicercaRichiedente" type="tns:RDC_AT_RicercaRichiedente" />
+  <xs:element name="RDC_AT_RicercaRichiedenteResponse" type="tns:RDC_AT_RicercaRichiedenteResponse" />
+  <xs:element name="RDC_AT_RicercaSoggetto" type="tns:RDC_AT_RicercaSoggetto" />
+  <xs:element name="RDC_AT_RicercaSoggettoResponse" type="tns:RDC_AT_RicercaSoggettoResponse" />
+  <xs:element name="RicercaDomandeANF_Asincrona" type="tns:RicercaDomandeANF_Asincrona" />
+  <xs:element name="RicercaDomandeANF_AsincronaResponse" type="tns:RicercaDomandeANF_AsincronaResponse" />
+  <xs:element name="RicercaDomandeANF_Beneficiario_Asincrona" type="tns:RicercaDomandeANF_Beneficiario_Asincrona" />
+  <xs:element name="RicercaDomandeANF_Beneficiario_AsincronaResponse" type="tns:RicercaDomandeANF_Beneficiario_AsincronaResponse" />
+  <xs:element name="RicercaDomandeANF_Coniuge_Asincrona" type="tns:RicercaDomandeANF_Coniuge_Asincrona" />
+  <xs:element name="RicercaDomandeANF_Coniuge_AsincronaResponse" type="tns:RicercaDomandeANF_Coniuge_AsincronaResponse" />
+  <xs:element name="RicercaDomandeANF_Richiedente_Asincrona" type="tns:RicercaDomandeANF_Richiedente_Asincrona" />
+  <xs:element name="RicercaDomandeANF_Richiedente_AsincronaResponse" type="tns:RicercaDomandeANF_Richiedente_AsincronaResponse" />
+  <xs:element name="RichiediRispostaRicercaAsincrona" type="tns:RichiediRispostaRicercaAsincrona" />
+  <xs:element name="RichiediRispostaRicercaAsincronaResponse" type="tns:RichiediRispostaRicercaAsincronaResponse" />
+  <xs:element name="SedeCompetenzaOrigine" type="tns:sedeCompetenzaOrigine" />
+  <xs:element name="return" type="tns:baseResponse" />
+  <xs:complexType name="ACT_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anfWSResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="tns:FontiDatiANF" />
+          <xs:element minOccurs="0" ref="tns:ParametriRichiesta" />
+          <xs:element minOccurs="0" name="DataRichiesta" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DomandeANF" type="tns:domandeANF" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorMessage" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fontiDatiANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FonteDatiANF" type="tns:fonteDatiANF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fonteDatiANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFonteDatiANF" type="xs:string" />
+      <xs:element minOccurs="0" name="dataOraAggiornamentoFonte" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="descrizioneFonteDatiANF" type="xs:string" />
+      <xs:element name="richiestaFonteDatiANF" type="xs:int" />
+      <xs:element name="rispostaNumeroDomandeANF" type="xs:int" />
+      <xs:element minOccurs="0" name="statoFonteDatiANF" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="parametriRichiesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" name="periodoDa" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="periodoA" nillable="true" type="xs:dateTime" />
+      <xs:element name="dettaglioDatiAnagrafici" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="domandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="fonti" nillable="true" type="tns:fonte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fonte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFonteDatiANF" type="xs:string" />
+      <xs:element minOccurs="0" name="dataValiditaDati" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:DomandaANF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="domandaANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datiDomanda" type="tns:datiDomanda" />
+      <xs:element minOccurs="0" name="datiAutorizzazione" type="tns:datiAutorizzazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datiDomanda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataPresentazioneDomanda" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataUltimaElaborazionePratica" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="importoANF" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="identificativoDomandaPratica" type="tns:identificativoDomandaPratica" />
+      <xs:element minOccurs="0" name="sedeCompetenza" type="tns:sedeCompetenza" />
+      <xs:element minOccurs="0" name="statoDomanda" type="tns:statoDomanda" />
+      <xs:element minOccurs="0" name="periodiANF" type="tns:periodiANF" />
+      <xs:element minOccurs="0" name="richiedente" type="tns:richiedente" />
+      <xs:element minOccurs="0" name="beneficiari" type="tns:beneficiari" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="identificativoDomandaPratica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codicePratica" type="xs:string" />
+      <xs:element minOccurs="0" name="codicePratica1" type="xs:string" />
+      <xs:element minOccurs="0" name="codicePratica2" type="xs:string" />
+      <xs:element minOccurs="0" name="codicePratica3" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroProtocolloDomanda" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sedeCompetenza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sedeCompetenzaOrigine" type="tns:sedeCompetenzaOrigine" />
+      <xs:element minOccurs="0" name="sedeCompetenzaUnico" type="tns:sedeCompetenzaUnico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sedeCompetenzaOrigine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoCodifica" type="xs:string" />
+      <xs:element minOccurs="0" name="sede" type="xs:string" />
+      <xs:element minOccurs="0" name="centroOperativo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sedeCompetenzaUnico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sede" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoCodifica" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="statoDomanda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="statoDomandaOrigine" type="xs:string" />
+      <xs:element minOccurs="0" name="statoDomandaUnico" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodiANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PeriodoANF" type="tns:periodoANF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodoANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataDa" type="xs:dateTime" />
+      <xs:element name="giorniANF" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" name="cognome" type="xs:string" />
+      <xs:element minOccurs="0" name="datiNascita" type="tns:datiNascita" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="residenza" type="tns:residenza" />
+      <xs:element minOccurs="0" name="sesso" type="xs:string" />
+      <xs:element minOccurs="0" name="statoCivile" type="xs:string" />
+      <xs:element minOccurs="0" name="statoCivileUnico" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datiNascita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceComune" type="xs:string" />
+      <xs:element minOccurs="0" name="data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="siglaProvincia" type="xs:string" />
+      <xs:element minOccurs="0" name="stato" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="residenza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cap" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceComune" type="xs:string" />
+      <xs:element minOccurs="0" name="indirizzo" type="xs:string" />
+      <xs:element minOccurs="0" name="siglaProvincia" type="xs:string" />
+      <xs:element minOccurs="0" name="stato" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="beneficiari">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Beneficiario" type="tns:beneficiario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" name="cognome" type="xs:string" />
+      <xs:element minOccurs="0" name="datiNascita" type="tns:datiNascita" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="periodiValidita" type="tns:periodiValidita" />
+      <xs:element minOccurs="0" name="respinto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="sesso" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoBeneficiario" type="tns:tipoBeneficiario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodiValidita">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PeriodoValidita" type="tns:periodoValidita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodoValidita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataDa" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoBeneficiarioOrigine" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoBeneficiarioUnico" type="tns:tipoBeneficiarioUnico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoBeneficiarioUnico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="beneficiarioUnico" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datiAutorizzazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataPresentazione" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="numeroProtocollo" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" name="tipologia" type="xs:string" />
+      <xs:element minOccurs="0" name="sedeCompetenza" type="xs:string" />
+      <xs:element minOccurs="0" name="flgOccupato" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoAutorizzazioneDomanda" type="xs:string" />
+      <xs:element minOccurs="0" name="datiAnagraficiRichiedente" type="tns:datiAnagraficiRichiedente" />
+      <xs:element minOccurs="0" name="beneficiarioAutorizzazione" type="tns:beneficiarioAutorizzazione" />
+      <xs:element minOccurs="0" name="statoDomanda" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datiAnagraficiRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" name="cognome" type="xs:string" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="statoCivileRichiedente" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="beneficiarioAutorizzazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="autorizzazione" type="tns:autorizzazione" />
+      <xs:element minOccurs="0" name="beneficiario" type="tns:datiAnagraficiBeneficiario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="autorizzazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceAutorizzazione" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceRespinta" type="xs:string" />
+      <xs:element minOccurs="0" name="dataDecorrenzaRichiesta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="periodoAutorizzazione" type="tns:periodoAutorizzazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodoAutorizzazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataDecorrenzaConcessa" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataScadenza" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dataScadenzaAnticipata" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datiAnagraficiBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" type="xs:string" />
+      <xs:element minOccurs="0" name="cognome" type="xs:string" />
+      <xs:element minOccurs="0" name="dataNascita" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="sesso" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoBeneficiario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_Beneficiario_Asincrona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_Beneficiario_AsincronaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CDCM_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomandaPensione_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_Richiedente_Asincrona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_Richiedente_AsincronaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaConiuge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaConiugeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO2022_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANF_Coniuge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AUTANF_RicercaDomandeANF_ConiugeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GESSEP_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ANFDIP_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RDC_AT_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaDomandeANF_Richiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaDomandeANF_RichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_Asincrona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_AsincronaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISAGR_RicercaBeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaSoggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaSoggettoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_Coniuge_Asincrona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RicercaDomandeANF_Coniuge_AsincronaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ASSEGNO_UNICO_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LAVDOM_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaDomandeANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DITCES_RicercaDomandeANFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PENSIONE_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaRichiedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISNONAGR_RicercaRichiedenteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:anfWSResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RichiediRispostaRicercaAsincrona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RichiediRispostaRicercaAsincronaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaDomandeANF_Beneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="richiesta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ACT_RicercaDomandeANF_BeneficiarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

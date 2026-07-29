@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" />
+  <xs:complexType name="SupplementiBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnniIncremento05Percento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AnniIncremento1Percento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContributiLegge335" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="ImportoIVS" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Legge407AnniServizioQuotaA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Legge407AnniServizioQuotaB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Legge407AnniServizioQuotaC" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Legge407RetribuzionePensionabileQuotaC" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Legge407RetribuzionePensionabileRMSQuotaA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Legge407RetribuzionePensionabileRMSQuotaB" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Legge407SettimaneIncrementoQuotaA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Legge407SettimaneIncrementoQuotaB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Legge407SettimaneServizioQuotaB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NSettimaneUtiliDiritto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NSettimaneUtiliMisura" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RMS7290" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RMSArt2DPCM161289" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RenditaFacoltativaConvenzionale" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RenditaFacoltativaOrdinaria" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementiBase" nillable="true" type="tns:SupplementiBase" />
+  <xs:complexType name="ArrayOfDatiSuppRecordENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiSuppRecordENPALS" nillable="true" type="tns:DatiSuppRecordENPALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiSuppRecordENPALS" nillable="true" type="tns:ArrayOfDatiSuppRecordENPALS" />
+  <xs:complexType name="DatiSuppRecordENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Decorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DettaglioSalvato" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FineSupplemento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdSuppRecordEnpals" type="xs:long" />
+      <xs:element minOccurs="0" name="Importo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InizioSupplemento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsFromGP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFromSas" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RenditaFacoltativaConvenzionale" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RenditaFacoltativaOrdinaria" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiSuppRecordENPALS" nillable="true" type="tns:DatiSuppRecordENPALS" />
+  <xs:complexType name="ArrayOfDatiSupplementi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiSupplementi" nillable="true" type="tns:DatiSupplementi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiSupplementi" nillable="true" type="tns:ArrayOfDatiSupplementi" />
+  <xs:complexType name="DatiSupplementi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmmontareContributivo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CodGestioneSupplemento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceLiquidazione" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DecorrenzaSupplemento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="MontanteSupplemento" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NSettimaneSupplemento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumDomanda" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="QuotaSupplemento" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="RMSSupplemento" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoSupplemento" nillable="true" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiSupplementi" nillable="true" type="tns:DatiSupplementi" />
+  <xs:complexType name="ArrayOfDatiSupplementiENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiSupplementiENPALS" nillable="true" type="tns:DatiSupplementiENPALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiSupplementiENPALS" nillable="true" type="tns:ArrayOfDatiSupplementiENPALS" />
+  <xs:complexType name="DatiSupplementiENPALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoefficienteTrasformazione" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Decorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="IdSuppRecordENPALS" type="xs:long" />
+      <xs:element minOccurs="0" name="Importo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoContributivoTotale" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoProRataTemporis" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsFromGP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFromSAS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Montante" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NTotaleContributiCalcolo" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Periodi" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Quota" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoSupplemento" nillable="true" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiSupplementiENPALS" nillable="true" type="tns:DatiSupplementiENPALS" />
+  <xs:complexType name="DatiContribuzioneEnpals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="QuotaA" nillable="true" type="tns:DatiContribuzioneEnpals.Quota" />
+      <xs:element minOccurs="0" name="QuotaB" nillable="true" type="tns:DatiContribuzioneEnpals.Quota" />
+      <xs:element minOccurs="0" name="QuotaC" nillable="true" type="tns:DatiContribuzioneEnpals.Quota" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="Tipologia" type="q1:TipologiaContribuzioneEnpals" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiContribuzioneEnpals" nillable="true" type="tns:DatiContribuzioneEnpals" />
+  <xs:complexType name="DatiContribuzioneEnpals.Quota">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Enpals" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Estera" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Figurativa" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Inps" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Ufficio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Volontaria" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiContribuzioneEnpals.Quota" nillable="true" type="tns:DatiContribuzioneEnpals.Quota" />
+</xs:schema>

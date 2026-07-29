@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="11fabe6b-b72e-4c14-8677-a3d93019705f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="1_0.wsdl" MetadataType="Wsdl" ID="c52b08cb-a97d-493a-b042-32bc6e19656b" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="cc95e51f-33f5-4c46-bbc9-0a640a1c40aa" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="1_0.xsd" MetadataType="Schema" ID="bfe0f1c2-2641-4f30-a6a2-621d78251ded" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="998f7fcb-258c-467c-880c-1afe77e8cb84" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.Service.Contracts.DataContracts.xsd" MetadataType="Schema" ID="86477910-0be7-48a4-b80e-9e1385ffed4f" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.Entity.xsd" MetadataType="Schema" ID="253d8341-7ba6-4275-b272-c75d6ba7a65a" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.BLCommon.xsd" MetadataType="Schema" ID="f3b16e66-2178-4edf-be68-d8c09d927491" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5bc54b02-497c-4537-b23d-6fb69e3cd16c" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.BLCommon.Entity.xsd" MetadataType="Schema" ID="e380c903-c192-436c-ba2f-1ffbd5aca3fd" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.xsd" MetadataType="Schema" ID="d6e80d2f-10d5-41fb-b121-a97e1da8636f" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="3f4ee679-a13d-4cf6-8ba6-4de343a74405" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="System.IO.xsd" MetadataType="Schema" ID="bba9e313-87db-4f5a-af5c-09838f438379" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="922c0d1f-63d9-48be-a4f3-a959f86d6434" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.Entity.Oneri.xsd" MetadataType="Schema" ID="47365eb2-4e6a-4cda-a95d-5d4a8a36d333" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+    <MetadataFile FileName="INPS.DNA.xsd" MetadataType="Schema" ID="094d9ebb-9327-485e-b67b-24565235791f" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.Liquidazione.Service/ServizioLiquidazione.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

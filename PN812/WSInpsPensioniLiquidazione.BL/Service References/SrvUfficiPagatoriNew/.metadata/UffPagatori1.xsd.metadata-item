@@ -1,0 +1,13 @@
+version=10.2
+item-uid=100026351
+file-version=1
+checksum=09235c307441e996b18b33b4e407182f
+fetch-size=2488
+mtime=1570689127
+item-spec=504E3831323A55464650414741544F524931205853442D313930333737393834362E412D5352433B31
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=WSInpsPensioniLiquidazione.BL/Service References/SrvUfficiPagatoriNew/UffPagatori1.xsd
+project=504E3831323A53315F5753494E505350454E53494F4E494C4951554944415A494F4E45
+project-uid=43036098

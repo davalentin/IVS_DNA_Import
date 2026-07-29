@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.Entity.Oneri" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.Entity.Oneri" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DatiOneriBenefParticolari">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaDatiBeneficiParticolari" nillable="true" type="tns:ArrayOfDatiOneriBenefParticolari.DatiBeneficiParticolari" />
+      <xs:element minOccurs="0" name="ListaDatiOneri" nillable="true" type="tns:ArrayOfDatiOneriBenefParticolari.DatiOneri" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiOneriBenefParticolari" nillable="true" type="tns:DatiOneriBenefParticolari" />
+  <xs:complexType name="ArrayOfDatiOneriBenefParticolari.DatiBeneficiParticolari">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiOneriBenefParticolari.DatiBeneficiParticolari" nillable="true" type="tns:DatiOneriBenefParticolari.DatiBeneficiParticolari" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiOneriBenefParticolari.DatiBeneficiParticolari" nillable="true" type="tns:ArrayOfDatiOneriBenefParticolari.DatiBeneficiParticolari" />
+  <xs:complexType name="DatiOneriBenefParticolari.DatiBeneficiParticolari">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceBenefici" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Settimane" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiOneriBenefParticolari.DatiBeneficiParticolari" nillable="true" type="tns:DatiOneriBenefParticolari.DatiBeneficiParticolari" />
+  <xs:complexType name="ArrayOfDatiOneriBenefParticolari.DatiOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiOneriBenefParticolari.DatiOneri" nillable="true" type="tns:DatiOneriBenefParticolari.DatiOneri" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiOneriBenefParticolari.DatiOneri" nillable="true" type="tns:ArrayOfDatiOneriBenefParticolari.DatiOneri" />
+  <xs:complexType name="DatiOneriBenefParticolari.DatiOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Decorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdCodeGruppo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdCodeSottoGruppo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IsStorico" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Onere" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Scadenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ScadenzaBeneficio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Settimane" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiOneriBenefParticolari.DatiOneri" nillable="true" type="tns:DatiOneriBenefParticolari.DatiOneri" />
+  <xs:complexType name="DatiPrepensionamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CessazioneAmianto" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CessazioneBeneficioPrepensionamento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CodiceAzienda" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CodiceLegge" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OnereMancataContribuzione" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SettimaneAmianto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SettimaneMaggioreAnzianita" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SettimaneUtiliDiritto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SettimaneUtiliMisura" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPrepensionamento" nillable="true" type="tns:DatiPrepensionamento" />
+</xs:schema>

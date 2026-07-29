@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AggiornamentoPecoLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="csAggiornamentoPECO_AGO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filler" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_AnzCont" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Arca1_DC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Arca2_DC" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Assinva" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Att_econ" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_CF_dantecausa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Campo36" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Certificato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_CodProPE" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Cod_ben_par" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_CodcomDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Codicefiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Codicesede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Codmobi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Codreqrid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Codsani1" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Codsani2" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Codxcalcpas" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_CognomeDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_CpdProv" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_DaMoAS" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_DaNaDC" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_DatOPZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Data_Calc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Datreq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Decorre" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Defin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Deroga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Finass" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Finebonus" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_FlagRiduz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Funzione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Iniass" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Iniziobonus" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_NomeDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_NumDom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_NumDomus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_NumFigli" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Pensina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_PercRiduz" type="xs:double" />
+      <xs:element minOccurs="0" name="PL_Prof_indiv" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Return_Code" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Scadrs" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_SceltaLM" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_SessoDC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Set_ben_par" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_SettInCR" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_SoloCPNTR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_TipCert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_TipoPratica" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Tipoliquidazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_VVDir" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_VVMis" type="xs:int" />
+      <xs:element minOccurs="0" name="aCONTRIBUTIVA" nillable="true" type="tns:ArrayOfCONTRIBUTIVA" />
+      <xs:element minOccurs="0" name="aONERI" nillable="true" type="tns:ArrayOfONERI" />
+      <xs:element minOccurs="0" name="aRETRIBUTIVA" nillable="true" type="tns:ArrayOfRETRIBUTIVA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csAggiornamentoPECO_AGO" nillable="true" type="tns:csAggiornamentoPECO_AGO" />
+  <xs:complexType name="ArrayOfCONTRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CONTRIBUTIVA" nillable="true" type="tns:CONTRIBUTIVA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCONTRIBUTIVA" nillable="true" type="tns:ArrayOfCONTRIBUTIVA" />
+  <xs:complexType name="CONTRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PL_CodQuota_Contr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Codgest_contr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Contrib" type="xs:double" />
+      <xs:element minOccurs="0" name="PL_Montante" type="xs:double" />
+      <xs:element minOccurs="0" name="PL_Settda0196" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CONTRIBUTIVA" nillable="true" type="tns:CONTRIBUTIVA" />
+  <xs:complexType name="ArrayOfONERI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ONERI" nillable="true" type="tns:ONERI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfONERI" nillable="true" type="tns:ArrayOfONERI" />
+  <xs:complexType name="ONERI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PL_AnzBenef" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_AnzCon" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_CodBenef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_CodGrup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_CodInv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_CodSGrup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_DecOnere" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Onere" type="xs:double" />
+      <xs:element minOccurs="0" name="PL_Scadenza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ONERI" nillable="true" type="tns:ONERI" />
+  <xs:complexType name="ArrayOfRETRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RETRIBUTIVA" nillable="true" type="tns:RETRIBUTIVA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRETRIBUTIVA" nillable="true" type="tns:ArrayOfRETRIBUTIVA" />
+  <xs:complexType name="RETRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PL_Anzcon1" type="xs:int" />
+      <xs:element minOccurs="0" name="PL_Codgest_retr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Codquota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PL_Rms" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RETRIBUTIVA" nillable="true" type="tns:RETRIBUTIVA" />
+  <xs:complexType name="csAggiornamentoPECO_Convenzioni_Internazionali">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CI_AnzCont92" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Anzcont" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_CF_Dantecausa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Campo36" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Certificato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Cieco" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Codconv" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Codfisc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Codicesede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Codprov" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_DatOPZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Data_Calc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Datreq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Decorre" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Deroga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Est95" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_FLAGRIDUZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Finass" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Finebonus" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Funzione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Impivs" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_Iniass" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Iniziobonus" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Mmedset" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_Mob" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_NumFigli" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Numdomus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_PERCRIDUZ" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_Reqrid" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Return_Code" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_SceltaLM" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Setass" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Seteff" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Setfitt" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_TipCert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Tipcal" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_TipoPratica" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Tipoliquid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Usur" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_VVDir" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_VVMis92" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_VVMisb" type="xs:int" />
+      <xs:element minOccurs="0" name="aCONTRIBUTIVA_CI" nillable="true" type="tns:ArrayOfCI_CONTRIBUTIVA" />
+      <xs:element minOccurs="0" name="aISTITUZIONI_CI" nillable="true" type="tns:ArrayOfCI_ISTITUZIONI" />
+      <xs:element minOccurs="0" name="aONERI_CI" nillable="true" type="tns:ArrayOfCI_TABONERI" />
+      <xs:element minOccurs="0" name="aRETRIBUTIVA_CI" nillable="true" type="tns:ArrayOfCI_RETRIBUTIVA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csAggiornamentoPECO_Convenzioni_Internazionali" nillable="true" type="tns:csAggiornamentoPECO_Convenzioni_Internazionali" />
+  <xs:complexType name="ArrayOfCI_CONTRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CI_CONTRIBUTIVA" nillable="true" type="tns:CI_CONTRIBUTIVA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCI_CONTRIBUTIVA" nillable="true" type="tns:ArrayOfCI_CONTRIBUTIVA" />
+  <xs:complexType name="CI_CONTRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CI_Anzconc" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_CodQuota_Contr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Codgest_Contr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Contrib" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_Montante" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CI_CONTRIBUTIVA" nillable="true" type="tns:CI_CONTRIBUTIVA" />
+  <xs:complexType name="ArrayOfCI_ISTITUZIONI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CI_ISTITUZIONI" nillable="true" type="tns:CI_ISTITUZIONI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCI_ISTITUZIONI" nillable="true" type="tns:ArrayOfCI_ISTITUZIONI" />
+  <xs:complexType name="CI_ISTITUZIONI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CI_Direst" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_Dirmisest" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_Istit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Misest" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_Stato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CI_ISTITUZIONI" nillable="true" type="tns:CI_ISTITUZIONI" />
+  <xs:complexType name="ArrayOfCI_TABONERI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CI_TABONERI" nillable="true" type="tns:CI_TABONERI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCI_TABONERI" nillable="true" type="tns:ArrayOfCI_TABONERI" />
+  <xs:complexType name="CI_TABONERI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CI_AnzBenef" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_AnzCon" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_CodBenef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_CodGrup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_CodInv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_CodSGrup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_DecOnere" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Onere" type="xs:double" />
+      <xs:element minOccurs="0" name="CI_ScadenzaA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CI_TABONERI" nillable="true" type="tns:CI_TABONERI" />
+  <xs:complexType name="ArrayOfCI_RETRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CI_RETRIBUTIVA" nillable="true" type="tns:CI_RETRIBUTIVA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCI_RETRIBUTIVA" nillable="true" type="tns:ArrayOfCI_RETRIBUTIVA" />
+  <xs:complexType name="CI_RETRIBUTIVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CI_Anzconr" type="xs:int" />
+      <xs:element minOccurs="0" name="CI_Codgest_Retr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Codquota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CI_Rms" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CI_RETRIBUTIVA" nillable="true" type="tns:CI_RETRIBUTIVA" />
+  <xs:complexType name="csAggiornamentoPECO_Fondi_Speciali">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="F_Amianto" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Anzcont" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Attivita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Beneficio336" type="xs:double" />
+      <xs:element minOccurs="0" name="F_CF_Dantecausa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Campo36" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Certificato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Cieco" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Codfisc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Codicesede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Codprov" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_DatOPZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Data_Calc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Datreq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Decorre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Deroga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Deroga2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_FLAGRIDUZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Finass" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Finebonus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Funzione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Iniass" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Iniziobonus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Inv74" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Mob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_NumFigli" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Numdomus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_PERCRIDUZ" type="xs:double" />
+      <xs:element minOccurs="0" name="F_Persviag" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Reqrid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Retrbiennio" type="xs:double" />
+      <xs:element minOccurs="0" name="F_Retrpond" type="xs:double" />
+      <xs:element minOccurs="0" name="F_Retrultanno" type="xs:double" />
+      <xs:element minOccurs="0" name="F_Return_Code" type="xs:int" />
+      <xs:element minOccurs="0" name="F_SceltaLM" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Sistcal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_TipCert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_TipoPratica" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Tipoliquid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Tippen" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Usur" type="xs:int" />
+      <xs:element minOccurs="0" name="aCONTRIBUTIVE_FS" nillable="true" type="tns:ArrayOfF_CONTRIBUTIVE" />
+      <xs:element minOccurs="0" name="aONERI_FS" nillable="true" type="tns:ArrayOfF_TABONERI" />
+      <xs:element minOccurs="0" name="aRETRIBUTIVE_FS" nillable="true" type="tns:ArrayOfF_RETRIBUTIVE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="csAggiornamentoPECO_Fondi_Speciali" nillable="true" type="tns:csAggiornamentoPECO_Fondi_Speciali" />
+  <xs:complexType name="ArrayOfF_CONTRIBUTIVE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="F_CONTRIBUTIVE" nillable="true" type="tns:F_CONTRIBUTIVE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfF_CONTRIBUTIVE" nillable="true" type="tns:ArrayOfF_CONTRIBUTIVE" />
+  <xs:complexType name="F_CONTRIBUTIVE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="F_AnzAA" type="xs:int" />
+      <xs:element minOccurs="0" name="F_AnzGG" type="xs:int" />
+      <xs:element minOccurs="0" name="F_AnzMM" type="xs:int" />
+      <xs:element minOccurs="0" name="F_Anzconc" type="xs:int" />
+      <xs:element minOccurs="0" name="F_CodGest_Contr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_CodQuota_Contr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Contrib" type="xs:double" />
+      <xs:element minOccurs="0" name="F_Montante" type="xs:double" />
+      <xs:element minOccurs="0" name="F_MonteSCL" type="xs:double" />
+      <xs:element minOccurs="0" name="F_SetteSCL" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="F_CONTRIBUTIVE" nillable="true" type="tns:F_CONTRIBUTIVE" />
+  <xs:complexType name="ArrayOfF_TABONERI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="F_TABONERI" nillable="true" type="tns:F_TABONERI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfF_TABONERI" nillable="true" type="tns:ArrayOfF_TABONERI" />
+  <xs:complexType name="F_TABONERI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="F_AnzBenef" type="xs:int" />
+      <xs:element minOccurs="0" name="F_AnzCon" type="xs:int" />
+      <xs:element minOccurs="0" name="F_CodBenef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_CodGrup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_CodInv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_CodSGrup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_DecOnere" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Onere" type="xs:double" />
+      <xs:element minOccurs="0" name="F_Scadenza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="F_TABONERI" nillable="true" type="tns:F_TABONERI" />
+  <xs:complexType name="ArrayOfF_RETRIBUTIVE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="F_RETRIBUTIVE" nillable="true" type="tns:F_RETRIBUTIVE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfF_RETRIBUTIVE" nillable="true" type="tns:ArrayOfF_RETRIBUTIVE" />
+  <xs:complexType name="F_RETRIBUTIVE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="F_Anzconr" type="xs:int" />
+      <xs:element minOccurs="0" name="F_CodGest_Retr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_CodQuota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="F_Rms" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="F_RETRIBUTIVE" nillable="true" type="tns:F_RETRIBUTIVE" />
+</xs:schema>

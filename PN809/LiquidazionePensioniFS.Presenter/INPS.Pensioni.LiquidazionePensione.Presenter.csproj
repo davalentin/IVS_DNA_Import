@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INPS.Pensioni.LiquidazionePensione.Presenter</RootNamespace>
+    <AssemblyName>INPS.Pensioni.LiquidazionePensione.Presenter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>\LiquidazionePensioniFS.Presenter\</SccProjectName>
+    <SccLocalPath>LiquidazionePensioniFS.Presenter\</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>Serena Source Control Provider:{04ED75C7-FE70-4589-A196-51A6FA0D4D7E}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INPS.DNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Caching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Context, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Presenter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Security.Idm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract\RicercaPosizione.cs" />
+    <Compile Include="Contract\InfoLiquidazione.cs" />
+    <Compile Include="Contract\RisultatoRicercaPosizione.cs" />
+    <Compile Include="Contract\StatoPratica.cs" />
+    <Compile Include="IView\ILavorazioneManualeAutomatiche.cs" />
+    <Compile Include="IView\IAziendeEditorialiLetteraB.cs" />
+    <Compile Include="IView\IBancheFideiussioneESOPMI.cs" />
+    <Compile Include="IView\IDataLimitePrepensionamentoLetteraB.cs" />
+    <Compile Include="PresenterAziendeEditorialiLetteraB.cs" />
+    <Compile Include="PresenterAziendeESOPMI.cs" />
+    <Compile Include="IView\IDataLimiteINDCOM.cs" />
+    <Compile Include="PresenterAziendeESPA.cs" />
+    <Compile Include="IView\IBancheFideiussioneESPA.cs" />
+    <Compile Include="IView\IAziendeEditorialiPerTipo0179.cs" />
+    <Compile Include="IView\IRichiestaBonus.cs" />
+    <Compile Include="PresenterAziendeEditorialiPerTipo0179.cs" />
+    <Compile Include="PresenterAziendeESOAMB.cs" />
+    <Compile Include="IView\IAziendeESOAMB.cs" />
+    <Compile Include="IView\IAziendeESOTRA.cs" />
+    <Compile Include="PresenterAziendeESOTRA.cs" />
+    <Compile Include="IView\IAziendeEditorialiPerTipo0171.cs" />
+    <Compile Include="IView\IAziendeVESO29.cs" />
+    <Compile Include="IView\IAziendeVOESO.cs" />
+    <Compile Include="IView\IMenuLeftAltreFunzioni.cs" />
+    <Compile Include="PresenterAziendeEditoriali.cs" />
+    <Compile Include="IView\IAziendeEditoriali.cs" />
+    <Compile Include="PresenterAziendeCredito.cs" />
+    <Compile Include="Crypt.cs" />
+    <Compile Include="Enum\TipoAppartenenzaRuolo.cs" />
+    <Compile Include="IView\IAziendeCredito.cs" />
+    <Compile Include="IView\IAggiornamenti.cs" />
+    <Compile Include="IView\IAggiornamento.cs" />
+    <Compile Include="IView\IAltreDomandeCollegate.cs" />
+    <Compile Include="IView\IAventiDiritto.cs" />
+    <Compile Include="IView\IAvvisi.cs" />
+    <Compile Include="IView\IAziendeVESO33.cs" />
+    <Compile Include="IView\IBancheFideiussione.cs" />
+    <Compile Include="IView\IBititolarita.cs" />
+    <Compile Include="IView\IBypassControlli.cs" />
+    <Compile Include="IView\IBypassTipologieNonAbilitate.cs" />
+    <Compile Include="IView\ICambioStatoDomanda.cs" />
+    <Compile Include="IView\ICrossContribuzioneEnpals.cs" />
+    <Compile Include="IView\IControlliDinamici.cs" />
+    <Compile Include="IView\IDatiFondo.cs" />
+    <Compile Include="IView\IDatiNoCalcolo.cs" />
+    <Compile Include="IView\IDecorrenzaProvvisoriaCoefficienti.cs" />
+    <Compile Include="IView\IFaq.cs" />
+    <Compile Include="IView\IOneri.cs" />
+    <Compile Include="IView\IPeriodi.cs" />
+    <Compile Include="IView\IPuliziaDomanda.cs" />
+    <Compile Include="IView\ITrasformazioniAbilitate.cs" />
+    <Compile Include="IView\IAbilitazioneServizi.cs" />
+    <Compile Include="IView\IVersioni.cs" />
+    <Compile Include="IView\IDanteCausa.cs" />
+    <Compile Include="IView\IDatiContributivi.cs" />
+    <Compile Include="IView\IDatiContributiviAgo.cs" />
+    <Compile Include="IView\IDatiContributiviCi.cs" />
+    <Compile Include="IView\IDelegatoTutore.cs" />
+    <Compile Include="IView\IDetrazioni.cs" />
+    <Compile Include="IView\IEliminazione.cs" />
+    <Compile Include="IView\IFamiliari.cs" />
+    <Compile Include="IView\IHomePage.cs" />
+    <Compile Include="IView\IInfoCalcolo.cs" />
+    <Compile Include="IView\IInfoLiquidazione.cs" />
+    <Compile Include="IView\IInfoWebDomFelpeOneri.cs" />
+    <Compile Include="IView\ILiquidazionePensione.cs" />
+    <Compile Include="IView\ILiquidazionePensioneAgo.cs" />
+    <Compile Include="IView\ILiquidazionePensioneCi.cs" />
+    <Compile Include="IView\ILiquidazioniAbilitate.cs" />
+    <Compile Include="IView\IMaggiorazioneBenefici.cs" />
+    <Compile Include="IView\IMaggiorazioneBeneficiAgo.cs" />
+    <Compile Include="IView\IMaggiorazioneBeneficiCi.cs" />
+    <Compile Include="IView\IMessaggiHermes.cs" />
+    <Compile Include="IView\IPagamento.cs" />
+    <Compile Include="IView\IQuadriSemafori.cs" />
+    <Compile Include="IView\IRecordFondo.cs" />
+    <Compile Include="IView\IRedditi.cs" />
+    <Compile Include="IView\IRiassegnazioneDomanda.cs" />
+    <Compile Include="IView\IRicercaPosizione.cs" />
+    <Compile Include="IView\IRuoli.cs" />
+    <Compile Include="IView\ISbloccoCancellazione.cs" />
+    <Compile Include="IView\ISbloccoDomanda.cs" />
+    <Compile Include="IView\ISedi.cs" />
+    <Compile Include="IView\ISegnalazione.cs" />
+    <Compile Include="IView\IStampa.cs" />
+    <Compile Include="IView\IStatoPratiche.cs" />
+    <Compile Include="IView\ISupplementi.cs" />
+    <Compile Include="IView\ITipologieNonAbilitate.cs" />
+    <Compile Include="IView\ITitolarePensione.cs" />
+    <Compile Include="LogSicurezza.cs" />
+    <Compile Include="PresenterAggiornamenti.cs" />
+    <Compile Include="PresenterAggiornamento.cs" />
+    <Compile Include="PresenterAltreDomandeCollegate.cs" />
+    <Compile Include="PresenterAventiDiritto.cs" />
+    <Compile Include="PresenterAvvisi.cs" />
+    <Compile Include="PresenterAziendeEditorialiPerTipo0171.cs" />
+    <Compile Include="PresenterAziendeVESO29.cs" />
+    <Compile Include="PresenterAziendeVESO33.cs" />
+    <Compile Include="PresenterAziendeVOESO.cs" />
+    <Compile Include="PresenterBancaFideiussione.cs" />
+    <Compile Include="PresenterBititolarita.cs" />
+    <Compile Include="PresenterBypassControlli.cs" />
+    <Compile Include="PresenterBypassTipologieNonAbilitate.cs" />
+    <Compile Include="PresenterCambioDataLimitePrepensionamentoLetteraB.cs" />
+    <Compile Include="PresenterCambioStatoDomanda.cs" />
+    <Compile Include="PresenterContribuzioneEnpals.cs" />
+    <Compile Include="PresenterCambioDataLimiteINDCOMEStrorico.cs" />
+    <Compile Include="PresenterControlliDinamici.cs" />
+    <Compile Include="PresenterDatiContributiviAGO.cs" />
+    <Compile Include="PresenterDatiContributiviCI.cs" />
+    <Compile Include="PresenterDatiFondo.cs" />
+    <Compile Include="PresenterEliminazione.cs" />
+    <Compile Include="PresenterFaq.cs" />
+    <Compile Include="PresenterInvioCalcolo.cs" />
+    <Compile Include="PresenterInvioSegnalazione.cs" />
+    <Compile Include="PresenterLavorazioneManualeAutomatiche.cs" />
+    <Compile Include="PresenterLiquidazioniAbilitate.cs" />
+    <Compile Include="PresenterMenuLeftAltreFunzioni.cs" />
+    <Compile Include="PresenterMessaggiHermes.cs" />
+    <Compile Include="PresenterNoCalcolo.cs" />
+    <Compile Include="PresenterOneri.cs" />
+    <Compile Include="PresenterPeriodi.cs" />
+    <Compile Include="PresenterProvvisorieCoefficienti.cs" />
+    <Compile Include="PresenterPuliziaDomanda.cs" />
+    <Compile Include="PresenterRiassegnazioneDomanda.cs" />
+    <Compile Include="PresenterRichiestaBonus.cs" />
+    <Compile Include="PresenterSbloccoCancellazione.cs" />
+    <Compile Include="PresenterSbloccoDomanda.cs" />
+    <Compile Include="PresenterStampa.cs" />
+    <Compile Include="PresenterSupplementi.cs" />
+    <Compile Include="Delegati.cs" />
+    <Compile Include="Enum\Ruoli.cs" />
+    <Compile Include="PresenterDanteCausa.cs" />
+    <Compile Include="PresenterDatiContributivi.cs" />
+    <Compile Include="PresenterDelegatoTutore.cs" />
+    <Compile Include="PresenterDetrazioni.cs" />
+    <Compile Include="PresenterFamiliari.cs" />
+    <Compile Include="PresenterLiquidazione.cs" />
+    <Compile Include="PresenterElaborazionePosizione.cs" />
+    <Compile Include="PresenterLiquidazionePensione.cs" />
+    <Compile Include="PresenterMaggiorazioneBenefici.cs" />
+    <Compile Include="PresenterMenuLeft.cs" />
+    <Compile Include="PresenterPagamento.cs" />
+    <Compile Include="PresenterRedditi.cs" />
+    <Compile Include="PresenterSedi.cs" />
+    <Compile Include="PresenterAbilitazioneServizi.cs" />
+    <Compile Include="PresenterTipologieNonAbilitate.cs" />
+    <Compile Include="PresenterTitolare.cs" />
+    <Compile Include="PresenterTrasformazioniAbilitate.cs" />
+    <Compile Include="PresenterVisualizzaStatoPratiche.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SvrLiquidazioneAgo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SvrLiquidazioneCi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SvrLiquidazioneFs\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SvrLiquidazione\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\SvrLiquidazioneAgo\1_0.wsdl" />
+    <None Include="Service References\SvrLiquidazioneAgo\1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.Liquidazione.BLCommon.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.Liquidazione.BLCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazioneAgo.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazioneAgo.Service.Contracts.DataContracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazioneAgo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.AreaVersioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.GestioneContribStatoEsteroCumulo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.GestioneFamiliariConsultazioneUnificataANF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\service.wsdl" />
+    <None Include="Service References\SvrLiquidazioneAgo\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo.wsdl" />
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo1.wsdl" />
+    <None Include="Service References\SvrLiquidazioneCi\1_01.wsdl" />
+    <None Include="Service References\SvrLiquidazioneCi\1_01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.Liquidazione.BLCommon.Entity1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.Liquidazione.BLCommon1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazioneCi.Entity1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazioneCi1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.AreaVersioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.GestioneFamiliariConsultazioneUnificataANF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\service1.wsdl" />
+    <None Include="Service References\SvrLiquidazioneCi\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi.wsdl" />
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi1.wsdl" />
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi2.wsdl" />
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi3.wsdl" />
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi910.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi914.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi915.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi916.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi99.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\1_0.wsdl" />
+    <None Include="Service References\SvrLiquidazioneFs\1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.Liquidazione.BLCommon.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.Liquidazione.BLCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazioneFs.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazioneFs.Service.Contracts.DataContracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazioneFs.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaDatiContributivi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaDatiFondo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaEsito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaLiquidazionePensione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaMaggiorazioniBenefici.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaNoCalcolo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaPrelievo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.AreaVersioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneFs.GestioneFamiliariConsultazioneUnificataANF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\service.wsdl" />
+    <None Include="Service References\SvrLiquidazioneFs\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazioneFs\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\1_0.wsdl" />
+    <None Include="Service References\SvrLiquidazione\1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.DNA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.Liquidazione.BLCommon.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.Liquidazione.BLCommon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.Liquidazione.Entity.Oneri.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.Liquidazione.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.Liquidazione.Service.Contracts.DataContracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.Liquidazione.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.Anagrafica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAbilitazioneServizi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAggiornamenti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAggiornamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAltreDomandeCollegate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAltreFunzioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAventiDiritto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAvvisi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeCredito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeEditoriali.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeEditorialiLetteraB.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeEditorialiPerTipo0171.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeEditorialiPerTipo0179.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeESOAMB.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeESOTRA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeVESO29.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeVESO33.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaAziendeVOESO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaBancaFideiussione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaBancaFideiussioneESOPMI.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaBancaFideiussioneESPA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaBypassControllo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaCambioStatoDomanda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaControlliDinamici.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaCtrlBypassTipologieNonAbilitate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaDanteCausa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaDecodifica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaDetrazioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaEliminazione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaEsito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaFAQ.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaHomepage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaInfoPratica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaLavorazioneManualeAutomatiche.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaLiquidazioniAbilitate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaMessaggiHermes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaNuovoCalcolo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaOneri.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaPagamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaPeriodi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaProvvisoriePerCoefficienti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaPuliziaDomanda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaQuadri.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaRedditi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaRiassegnazioneDomanda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaRichiestaBonus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaRispostaRiepilogo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaRispostaStatoPratica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaSediMatricola.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaStoricoDataLimiteDomandeINDCOM.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaStoricoDataLimitePrepensionementoLetteraB.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaSupplementi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaTipologieNonAbilitate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaTitolare.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaTrasformazioniAbilitate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.AreaVersioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.DatiContribuzioneEnpals.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.GestioneAnniRichiestaBonusDatiPrenotazioneElaborazioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.GestioneAreaFamiliariAreaDecFam.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.GestioneAreaFamiliariAreaFamiliare.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.GestioneFamiliariConsultazioneUnificataANF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazione.UfficioPagatore.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazione\service.wsdl" />
+    <None Include="Service References\SvrLiquidazione\System.IO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SvrLiquidazione\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SvrLiquidazioneAgo\" />
+    <WCFMetadataStorage Include="Service References\SvrLiquidazioneCi\" />
+    <WCFMetadataStorage Include="Service References\SvrLiquidazioneFs\" />
+    <WCFMetadataStorage Include="Service References\SvrLiquidazione\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.AreaDatiContributivi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.AreaEsito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.AreaLiquidazionePensione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.AreaPrelievo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneCi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.AreaDatiContributivi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.AreaEsito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.AreaLiquidazionePensione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.AreaPrelievo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SvrLiquidazioneAgo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.GestioneContribStatoEstero.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.AreaMaggiorazioniBenefici.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.AreaMaggiorazioniBenefici.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneAgo.AreaDatiBititolarita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\INPS.Pensioni.LiquidazionePensione.Presenter.SvrLiquidazioneCi.AreaDatiBititolarita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo21.wsdl" />
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo24.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo12.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneAgo\ServizioLiquidazioneAgo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneCi\ServizioLiquidazioneCi1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneFs\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneFs\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazioneFs\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazione\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazione\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SvrLiquidazione\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

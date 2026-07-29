@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://intranet.collaudo.inps.it/WS.Net/WsUfficiPagatori/consultaliste/wsufficipagatoriDB.asmx?wsdl" docRef="http://intranet.collaudo.inps.it/WS.Net/WsUfficiPagatori/consultaliste/wsufficipagatoriDB.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://intranet.collaudo.inps.it/WS.Net/WsUfficiPagatori/consultaliste/wsufficipagatoriDB.asmx" xmlns:q1="http://tempuri.org/" binding="q1:WSUfficiPagatoriDbSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

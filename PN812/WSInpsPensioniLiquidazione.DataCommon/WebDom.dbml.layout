@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.25" name="WebDom">
+  <DataContextMoniker Name="/WebDomDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a018df6d-43d6-4a8a-852f-7b1471916023" absoluteBounds="0.75, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/WebDomDataContext/DecGruppo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="337520be-d4ea-4fb5-8bbb-a4543aca9b64" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a7fc5d7-afa7-4f04-a0a9-4a7fbfdd0e7b" absoluteBounds="3.125, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/WebDomDataContext/DecProdotto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36490ca5-32e4-45ca-a76b-ea2effcde616" absoluteBounds="3.1399999999999997, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70cf462b-e9dc-41b9-86fe-aab74a460472" absoluteBounds="5.75, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/WebDomDataContext/DecTipo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aeb9f9af-7c79-41e5-ba28-ce33e21099fa" absoluteBounds="5.765, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa1c12b0-17d7-40d0-a834-502d07566202" absoluteBounds="0.75, 2, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebDomDataContext/DecTipoRichiesta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45f5620e-8c78-4173-8834-96b403c69688" absoluteBounds="0.76500000000000012, 2.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45abbbd4-157e-42b6-a1a6-f5b56846f09f" absoluteBounds="3.125, 2.5, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/WebDomDataContext/DecEnte" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9cc70a62-63e2-4e6a-9c35-01375cb49d81" absoluteBounds="3.14, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a77e2c6-98d0-41d5-9c0d-d7e47d15ee33" absoluteBounds="5.75, 2.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebDomDataContext/DecGestioneFondo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4da8b2f9-02df-4b23-83f0-4157abfc8ca6" absoluteBounds="5.765, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af4aeeda-5bfe-4427-9b04-20da0ecff030" absoluteBounds="0.75, 3.75, 2, 6.1938297526041648">
+      <DataClassMoniker Name="/WebDomDataContext/DecPatronato" />
+      <nestedChildShapes>
+        <elementListCompartment Id="854d2e93-389b-4c96-aaa3-66b633e960c7" absoluteBounds="0.76500000000000012, 4.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01ccf431-7bde-47ce-8f24-9883038a38a9" absoluteBounds="3.125, 4, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/WebDomDataContext/DecFase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8209e1b-4a2f-420a-b046-8510aff22642" absoluteBounds="3.1399999999999997, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc710e41-dd0f-4281-ae79-e1eddf70f83e" absoluteBounds="5.75, 4.375, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/WebDomDataContext/DecSituazione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="679a6983-32e3-427b-8eb5-65466da04a22" absoluteBounds="5.7650000000000006, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ccce401a-7d90-4806-984b-2650f4465afc" absoluteBounds="8.375, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/WebDomDataContext/DecIstanza" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0443e98-60d9-4c1a-968f-98938dd0a0b8" absoluteBounds="8.39, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 0.500917455779247); (3.12591745577925 : 0.125); (8 : 0.125); (8.375 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebDomDataContext/DecGruppo/DecGruppo_DecIstanza" />
+      <nodes>
+        <classShapeMoniker Id="a018df6d-43d6-4a8a-852f-7b1471916023" />
+        <classShapeMoniker Id="ccce401a-7d90-4806-984b-2650f4465afc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 2.10984537760417); (8.375 : 2.10984537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebDomDataContext/DecProdotto/DecProdotto_DecIstanza" />
+      <nodes>
+        <classShapeMoniker Id="5a7fc5d7-afa7-4f04-a0a9-4a7fbfdd0e7b" />
+        <classShapeMoniker Id="ccce401a-7d90-4806-984b-2650f4465afc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.75 : 1.13025024414063); (8.375 : 1.13025024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebDomDataContext/DecTipo/DecTipo_DecIstanza" />
+      <nodes>
+        <classShapeMoniker Id="70cf462b-e9dc-41b9-86fe-aab74a460472" />
+        <classShapeMoniker Id="ccce401a-7d90-4806-984b-2650f4465afc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6f687ecd-c0c5-4790-99cc-e54aa54b2d77" absoluteBounds="3.125, 5.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/WebDomDataContext/DecComuneNazione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b66c984f-1402-4361-8b92-8d9858e5391f" absoluteBounds="3.14, 6.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1c886707-8198-4cb5-8852-8aae5a09074c" absoluteBounds="8.5, 2.5, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/WebDomDataContext/DecSede" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d925a0e2-bb31-414d-9c49-3ea6e97f193f" absoluteBounds="8.515, 2.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

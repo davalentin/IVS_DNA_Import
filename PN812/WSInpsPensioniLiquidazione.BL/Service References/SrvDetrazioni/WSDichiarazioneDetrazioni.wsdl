@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://tempuri.org/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="WSDichiarazioneDetrazioni.xsd1.xsd" namespace="http://tempuri.org/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistraDichiarazioneSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RegistraDichiarazione" />
+  </wsdl:message>
+  <wsdl:message name="RegistraDichiarazioneSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RegistraDichiarazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraProtocolloDichiarazioneSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RegistraProtocolloDichiarazione" />
+  </wsdl:message>
+  <wsdl:message name="RegistraProtocolloDichiarazioneSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RegistraProtocolloDichiarazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDatiMese_2SoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaDatiMese_2" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDatiMese_2SoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaDatiMese_2Response" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDatiStoricoSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaDatiStorico" />
+  </wsdl:message>
+  <wsdl:message name="RicercaDatiStoricoSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaDatiStoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RicercaGenerale_2SoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaGenerale_2" />
+  </wsdl:message>
+  <wsdl:message name="RicercaGenerale_2SoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaGenerale_2Response" />
+  </wsdl:message>
+  <wsdl:message name="RicercaPerDatiPensionato_2SoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaPerDatiPensionato_2" />
+  </wsdl:message>
+  <wsdl:message name="RicercaPerDatiPensionato_2SoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:RicercaPerDatiPensionato_2Response" />
+  </wsdl:message>
+  <wsdl:portType name="WSDichiarazioneDetrazioniSoap">
+    <wsdl:operation name="RegistraDichiarazione">
+      <wsdl:input name="RegistraDichiarazioneRequest" message="ns0:RegistraDichiarazioneSoapIn" />
+      <wsdl:output name="RegistraDichiarazioneResponse" message="ns0:RegistraDichiarazioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraProtocolloDichiarazione">
+      <wsdl:input name="RegistraProtocolloDichiarazioneRequest" message="ns0:RegistraProtocolloDichiarazioneSoapIn" />
+      <wsdl:output name="RegistraProtocolloDichiarazioneResponse" message="ns0:RegistraProtocolloDichiarazioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDatiMese_2">
+      <wsdl:input name="RicercaDatiMese_2Request" message="ns0:RicercaDatiMese_2SoapIn" />
+      <wsdl:output name="RicercaDatiMese_2Response" message="ns0:RicercaDatiMese_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDatiStorico">
+      <wsdl:input name="RicercaDatiStoricoRequest" message="ns0:RicercaDatiStoricoSoapIn" />
+      <wsdl:output name="RicercaDatiStoricoResponse" message="ns0:RicercaDatiStoricoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaGenerale_2">
+      <wsdl:input name="RicercaGenerale_2Request" message="ns0:RicercaGenerale_2SoapIn" />
+      <wsdl:output name="RicercaGenerale_2Response" message="ns0:RicercaGenerale_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaPerDatiPensionato_2">
+      <wsdl:input name="RicercaPerDatiPensionato_2Request" message="ns0:RicercaPerDatiPensionato_2SoapIn" />
+      <wsdl:output name="RicercaPerDatiPensionato_2Response" message="ns0:RicercaPerDatiPensionato_2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDichiarazioneDetrazioniSoap" type="ns0:WSDichiarazioneDetrazioniSoap">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistraDichiarazione">
+      <soap11:operation soapAction="http://tempuri.org/RegistraDichiarazione" style="document" />
+      <wsdl:input name="RegistraDichiarazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RegistraDichiarazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraProtocolloDichiarazione">
+      <soap11:operation soapAction="http://tempuri.org/RegistraProtocolloDichiarazione" style="document" />
+      <wsdl:input name="RegistraProtocolloDichiarazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RegistraProtocolloDichiarazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDatiMese_2">
+      <soap11:operation soapAction="http://tempuri.org/RicercaDatiMese_2" style="document" />
+      <wsdl:input name="RicercaDatiMese_2Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDatiMese_2Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDatiStorico">
+      <soap11:operation soapAction="http://tempuri.org/RicercaDatiStorico" style="document" />
+      <wsdl:input name="RicercaDatiStoricoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDatiStoricoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaGenerale_2">
+      <soap11:operation soapAction="http://tempuri.org/RicercaGenerale_2" style="document" />
+      <wsdl:input name="RicercaGenerale_2Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaGenerale_2Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaPerDatiPensionato_2">
+      <soap11:operation soapAction="http://tempuri.org/RicercaPerDatiPensionato_2" style="document" />
+      <wsdl:input name="RicercaPerDatiPensionato_2Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaPerDatiPensionato_2Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSDichiarazioneDetrazioniSoap12" type="ns0:WSDichiarazioneDetrazioniSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistraDichiarazione">
+      <soap12:operation soapAction="http://tempuri.org/RegistraDichiarazione" style="document" />
+      <wsdl:input name="RegistraDichiarazioneRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RegistraDichiarazioneResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraProtocolloDichiarazione">
+      <soap12:operation soapAction="http://tempuri.org/RegistraProtocolloDichiarazione" style="document" />
+      <wsdl:input name="RegistraProtocolloDichiarazioneRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RegistraProtocolloDichiarazioneResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDatiMese_2">
+      <soap12:operation soapAction="http://tempuri.org/RicercaDatiMese_2" style="document" />
+      <wsdl:input name="RicercaDatiMese_2Request">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDatiMese_2Response">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaDatiStorico">
+      <soap12:operation soapAction="http://tempuri.org/RicercaDatiStorico" style="document" />
+      <wsdl:input name="RicercaDatiStoricoRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaDatiStoricoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaGenerale_2">
+      <soap12:operation soapAction="http://tempuri.org/RicercaGenerale_2" style="document" />
+      <wsdl:input name="RicercaGenerale_2Request">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaGenerale_2Response">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaPerDatiPensionato_2">
+      <soap12:operation soapAction="http://tempuri.org/RicercaPerDatiPensionato_2" style="document" />
+      <wsdl:input name="RicercaPerDatiPensionato_2Request">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaPerDatiPensionato_2Response">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSDichiarazioneDetrazioni">
+    <wsdl:port name="WSDichiarazioneDetrazioniSoap" binding="ns0:WSDichiarazioneDetrazioniSoap">
+      <soap11:address location="https://192.168.40.188:443/Ws.Net/WSDichiarazioneDetrazioni" />
+    </wsdl:port>
+    <wsdl:port name="WSDichiarazioneDetrazioniSoap12" binding="ns0:WSDichiarazioneDetrazioniSoap12">
+      <soap12:address location="https://192.168.40.188:443/Ws.Net/WSDichiarazioneDetrazioni" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

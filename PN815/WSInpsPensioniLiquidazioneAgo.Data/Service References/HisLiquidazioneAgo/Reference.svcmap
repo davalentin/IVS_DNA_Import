@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5b0a1b2f-a40d-40d4-967d-7dc663d545ba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TI_PNL_R6.xsd" MetadataType="Schema" ID="99ecbe86-9197-450b-ae8d-f8f87064f200" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc?xsd=xsd1" />
+    <MetadataFile FileName="LiquidazioneAgo2.wsdl" MetadataType="Wsdl" ID="cf5ac2b7-038b-4e70-ac7d-1ff228473b32" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc?wsdl" />
+    <MetadataFile FileName="TI_PNL_R7.xsd" MetadataType="Schema" ID="f63ae61b-7cfd-49f9-abc8-fe01ec238864" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc?xsd=xsd2" />
+    <MetadataFile FileName="TI_PNL_R8.xsd" MetadataType="Schema" ID="1caccc91-ee52-4650-b67c-8dbffd668d6c" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc?xsd=xsd0" />
+    <MetadataFile FileName="TI_PNL_R2.disco" MetadataType="Disco" ID="c46e586e-f28a-4670-9bac-0526025373b1" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc?disco" />
+    <MetadataFile FileName="TI_PNL_R2.wsdl" MetadataType="Wsdl" ID="85a63b9c-9a6f-4099-910b-bf70e7c7536f" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

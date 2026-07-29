@@ -1,0 +1,9 @@
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\obj\Debug\INPS.Pensioni.LiquidazioneAgo.Data.pdb
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\bin\Debug\INPS.Pensioni.LiquidazioneAgo.Data.dll.config
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\bin\Debug\INPS.Pensioni.LiquidazioneAgo.Data.dll
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\bin\Debug\INPS.Pensioni.LiquidazioneAgo.Data.pdb
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\bin\Debug\INPS.Pensioni.Liquidazione.BLCommon.dll
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\bin\Debug\Newtonsoft.Json.dll
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\bin\Debug\INPS.Pensioni.Liquidazione.DataCommon.dll
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\obj\Debug\INPS.Pensioni.LiquidazioneAgo.Data.dll
+C:\Liquidazione_pensioni\PN815\branches\WIP\WSInpsPensioniLiquidazioneAgo.Data\obj\Debug\WSInpsPensioniLiquidazioneAgo.Data.csprojResolveAssemblyReference.cache

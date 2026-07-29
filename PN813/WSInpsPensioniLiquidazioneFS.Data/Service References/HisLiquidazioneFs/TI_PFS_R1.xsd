@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ClientContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliasTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionUsage" type="tns:ConnectionTypes" />
+      <xs:element minOccurs="0" name="Converter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DynamicRE" nillable="true" type="tns:BaseRemoteEnvironment" />
+      <xs:element minOccurs="0" name="IMSClientId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMSLTerm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMSModName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsConnectionViable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsConversational" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPersistent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LUName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LibraryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MirrorProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtmaSystemId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersistentConnectionCorrelator" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersistentConnectionTimeout" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Port" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiveTimeout" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RemoteEnvironment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendTimeout" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransportHeaders" nillable="true" type="tns:CustomTransportHeaders" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserAgent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserObject" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="WcfExclusiveUse" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientContext" nillable="true" type="tns:ClientContext" />
+  <xs:simpleType name="ConnectionTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NonPersistent" />
+      <xs:enumeration value="PersistentOpen" />
+      <xs:enumeration value="PersistentUse" />
+      <xs:enumeration value="PersistentClose" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConnectionTypes" nillable="true" type="tns:ConnectionTypes" />
+  <xs:complexType name="BaseRemoteEnvironment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodePage" type="xs:int" />
+      <xs:element minOccurs="0" name="Locale" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+      <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Security" type="xs:int" />
+      <xs:element minOccurs="0" name="SyncLevel2Supported" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TimeOut" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseRemoteEnvironment" nillable="true" type="tns:BaseRemoteEnvironment" />
+  <xs:complexType name="RemoteEnvironmentClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AggregateConverterFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateConverterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DevDefinesGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="HostEnvironment" type="tns:HostEnvironment" />
+      <xs:element minOccurs="0" name="HostEnvironmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostLanguages" nillable="true" type="tns:ArrayOfHostLanguage" />
+      <xs:element minOccurs="0" name="HostPlatformName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostPlatformType" type="tns:HostPlatformTypes" />
+      <xs:element minOccurs="0" name="IsForNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSupportedByManagedRuntime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersistentConnectionsSupported" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrimitiveConverterClassId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimitiveConverterFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimitiveConverterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgrammingModel" type="tns:ProgrammingModel" />
+      <xs:element minOccurs="0" name="ProgrammingModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RECPropertyPages" nillable="true" type="tns:ArrayOfRECPropertyPage" />
+      <xs:element minOccurs="0" name="RemoteEnvironmentClassID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemoteEnvironmentType" type="tns:RemoteEnvironmentTypes" />
+      <xs:element minOccurs="0" name="RemoteEnvironmentVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateMachineFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateMachineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionsAreSupported" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Transport" type="tns:Transport" />
+      <xs:element minOccurs="0" name="TransportFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransportProtocolName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VendorID" type="ser:guid" />
+      <xs:element minOccurs="0" name="VendorName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+  <xs:simpleType name="HostEnvironment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CICS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">256</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">512</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Systemz">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Systemi">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2048</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SystemiDistributedProgramCall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2099200</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NonMicrosoft">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32768</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HostEnvironment" nillable="true" type="tns:HostEnvironment" />
+  <xs:complexType name="ArrayOfHostLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HostLanguage" nillable="true" type="tns:HostLanguage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHostLanguage" nillable="true" type="tns:ArrayOfHostLanguage" />
+  <xs:complexType name="HostLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DevImport" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExporterGuid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileExt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImporterAssembly" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImporterClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCOBOL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPLI" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRPG" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LanguageExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HostLanguage" nillable="true" type="tns:HostLanguage" />
+  <xs:simpleType name="HostPlatformTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PlatformSystemz">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PlatformSystemi">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2048</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PlatformNonMS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32768</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HostPlatformTypes" nillable="true" type="tns:HostPlatformTypes" />
+  <xs:simpleType name="ProgrammingModel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UserData" />
+      <xs:enumeration value="DistributedProgramCall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2097152</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ELMUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">131072</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ELMLink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">131073</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRMUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65536</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRMLink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65537</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Link">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMSConnect">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMSImplicit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">262144</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMSExplicit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">524288</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProgrammingModel" nillable="true" type="tns:ProgrammingModel" />
+  <xs:complexType name="ArrayOfRECPropertyPage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RECPropertyPage" nillable="true" type="tns:RECPropertyPage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRECPropertyPage" nillable="true" type="tns:ArrayOfRECPropertyPage" />
+  <xs:complexType name="RECPropertyPage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identifier" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="PropertyGUID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RECPropertyPage" nillable="true" type="tns:RECPropertyPage" />
+  <xs:simpleType name="RemoteEnvironmentTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ELMLink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">131361</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ELMUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">131360</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRMLink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65825</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRMUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65824</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HttpLink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">385</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HttpUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">384</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LegacyTCP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LegacyIMSConnect">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">96</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMSConnect">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">608</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LegacyCICSLink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SNALink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">283</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LegacyCICSLU62">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SNAUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">282</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LegacyIMSLU62">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMSLU62">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">538</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DistributedProgramCall">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2099232</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMSImplicit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">262688</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMSExplicit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">524832</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SystemzSocketsUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1056</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SystemzSocketsLink">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1057</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SystemiSocketsUserData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2080</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RemoteEnvironmentTypes" nillable="true" type="tns:RemoteEnvironmentTypes" />
+  <xs:simpleType name="Transport">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LU62">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TCP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Http">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Transport" nillable="true" type="tns:Transport" />
+  <xs:complexType name="HTTPBaseRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AliasTransactionId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AllowRedirects" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Converter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpPort" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MirrorProgramName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeOut" type="xs:int" />
+          <xs:element minOccurs="0" name="UseConverter" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UseSsl" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserAgent" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HTTPBaseRemoteEnvironment" nillable="true" type="tns:HTTPBaseRemoteEnvironment" />
+  <xs:complexType name="HTTPLinkRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HTTPBaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Converter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MirrorProgramName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseConverter" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HTTPLinkRemoteEnvironment" nillable="true" type="tns:HTTPLinkRemoteEnvironment" />
+  <xs:complexType name="TCPBaseRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConcurrentServerTransactionId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="TCPPorts" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TCPBaseRemoteEnvironment" nillable="true" type="tns:TCPBaseRemoteEnvironment" />
+  <xs:complexType name="DPCRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CertCommonName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoVerifyCert" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="TCPPorts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseSsl" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DPCRemoteEnvironment" nillable="true" type="tns:DPCRemoteEnvironment" />
+  <xs:complexType name="SNAUserDataRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SNABaseRemoteEnvironment">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SNAUserDataRemoteEnvironment" nillable="true" type="tns:SNAUserDataRemoteEnvironment" />
+  <xs:complexType name="SNABaseRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LocalLUName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteLUName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="SyncLevel2Supported" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SNABaseRemoteEnvironment" nillable="true" type="tns:SNABaseRemoteEnvironment" />
+  <xs:complexType name="TCPRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="TCPPorts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseSsl" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TCPRemoteEnvironment" nillable="true" type="tns:TCPRemoteEnvironment" />
+  <xs:complexType name="HTTPUserDataRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HTTPBaseRemoteEnvironment">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HTTPUserDataRemoteEnvironment" nillable="true" type="tns:HTTPUserDataRemoteEnvironment" />
+  <xs:complexType name="SNALinkRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SNABaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdministrationFlags" type="tns:RemoteEnvironmentAdministration" />
+          <xs:element minOccurs="0" name="MirrorTranId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SNALinkRemoteEnvironment" nillable="true" type="tns:SNALinkRemoteEnvironment" />
+  <xs:simpleType name="RemoteEnvironmentAdministration">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UserCodePage" />
+          <xs:enumeration value="AllowSyncPoint">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">268435456</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="RemoteEnvironmentAdministration" nillable="true" type="tns:RemoteEnvironmentAdministration" />
+  <xs:complexType name="ELMLinkRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TCPRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="TCPPorts" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ELMLinkRemoteEnvironment" nillable="true" type="tns:ELMLinkRemoteEnvironment" />
+  <xs:complexType name="ELMUserDataRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TCPRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="TCPPorts" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ELMUserDataRemoteEnvironment" nillable="true" type="tns:ELMUserDataRemoteEnvironment" />
+  <xs:complexType name="TRMLinkRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TCPBaseRemoteEnvironment">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TRMLinkRemoteEnvironment" nillable="true" type="tns:TRMLinkRemoteEnvironment" />
+  <xs:complexType name="TRMUserDataRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TCPBaseRemoteEnvironment">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TRMUserDataRemoteEnvironment" nillable="true" type="tns:TRMUserDataRemoteEnvironment" />
+  <xs:complexType name="IMSConnectRemoteEnvironment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRemoteEnvironment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CertCommonName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImsFormatModName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItocExitName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoVerifyCert" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OtmaSystemId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClass" nillable="true" type="tns:RemoteEnvironmentClass" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentClassId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemoteEnvironmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSOApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Security" type="xs:int" />
+          <xs:element minOccurs="0" name="TCPPorts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseSsl" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IMSConnectRemoteEnvironment" nillable="true" type="tns:IMSConnectRemoteEnvironment" />
+  <xs:complexType name="CustomTransportHeaders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HeaderFromAfterDataSent" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="HeaderFromBeforeDataSent" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="HeaderToBeforeDataSent" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomTransportHeaders" nillable="true" type="tns:CustomTransportHeaders" />
+</xs:schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://soa.inps.it/WS00233/1_0" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/WS00233/1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Calcola">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:CalcoloQuoteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CalcoloQuoteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceSede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataAutSuppPrec" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataDecorrenza" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataFineSupplemento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInizioAssicurazione" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInizioSupplemento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SiglaCategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplementoGestioneSpeciale" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcoloQuoteRequest" nillable="true" type="tns:CalcoloQuoteRequest" />
+  <xs:element name="CalcolaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalcolaResult" nillable="true" type="tns:CalcoloQuoteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CalcoloQuoteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodEsito" type="xs:int" />
+      <xs:element minOccurs="0" name="DataDecorrenza" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescrizioneEsito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quote" nillable="true" type="tns:ArrayOfQuotaContributiva" />
+      <xs:element minOccurs="0" name="RiferimentoCalcolo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcoloQuoteResponse" nillable="true" type="tns:CalcoloQuoteResponse" />
+  <xs:complexType name="ArrayOfQuotaContributiva">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuotaContributiva" nillable="true" type="tns:QuotaContributiva" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuotaContributiva" nillable="true" type="tns:ArrayOfQuotaContributiva" />
+  <xs:complexType name="QuotaContributiva">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmmontareContributi" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CodiceGestione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceLiquidazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MontanteIvs" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Settimane" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuotaContributiva" nillable="true" type="tns:QuotaContributiva" />
+</xs:schema>

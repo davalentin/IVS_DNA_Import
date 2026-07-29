@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{600A3C9D-DBA8-4C76-AD99-831182B3648E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INPS.Pensioni.LiquidazioneAgo</RootNamespace>
+    <AssemblyName>INPS.Pensioni.LiquidazioneAgo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>\WSInpsPensioniLiquidazioneAgo.BL\</SccProjectName>
+    <SccLocalPath>WSInpsPensioniLiquidazioneAgo.BL\</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>Serena Source Control Provider:{04ED75C7-FE70-4589-A196-51A6FA0D4D7E}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INPS.DNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Context, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data.HostIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.Pensioni.Liquidazione.BLCommon">
+      <HintPath>..\WSInpsPensioniLiquidazioneAgo\dll_esterne\INPS.Pensioni.Liquidazione.BLCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="INPS.Pensioni.Liquidazione.DataCommon">
+      <HintPath>..\WSInpsPensioniLiquidazioneAgo\dll_esterne\INPS.Pensioni.Liquidazione.DataCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Schema, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.Schema.UnitTesting, Version=9.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GestioneAllegatiConvenzioni.cs" />
+    <Compile Include="GestioneNACI.cs" />
+    <Compile Include="MappingVersoHostNew.cs" />
+    <Compile Include="MappingDaHostNew.cs" />
+    <Compile Include="Entity\Decodifica\CtrlScadenzaIndennizzoINDCOM.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAccordiLetteraB.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAccordiPerTipo0179.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAziendeLetteraB.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAziendePerTipo0179.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAccordiPerTipo0171.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAziendePerTipo0171.cs" />
+    <Compile Include="Entity\Decodifica\DecCodiceTrattenute.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaBanchePerSede.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaGestioneQuotaFondoINPGI.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaGestioneQuotaFondoIntegrativo.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiMaggiorazioneBeneficiStorico.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiSentenzaArt4.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiSentenze.cs" />
+    <Compile Include="GestioneANF.cs" />
+    <Compile Include="GestioneDatiPensioni.cs" />
+    <Compile Include="Entity\Bititolarita\AltraPensione.cs" />
+    <Compile Include="Entity\Decodifica\CDCMMR.cs" />
+    <Compile Include="Entity\Decodifica\CodiceCieco.cs" />
+    <Compile Include="Entity\Decodifica\CodiceMaggiorazioneExCombattente.cs" />
+    <Compile Include="Entity\Decodifica\CodiceParticolare.cs" />
+    <Compile Include="Entity\Decodifica\CodiciNatura.cs" />
+    <Compile Include="Entity\Decodifica\CodiciOneri.cs" />
+    <Compile Include="Entity\Decodifica\CtrlDecorrenzaRetrExInpdai.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAccordi.cs" />
+    <Compile Include="Entity\Decodifica\DecAnagraficaAziende.cs" />
+    <Compile Include="Entity\Decodifica\DecAziendaScadenzaAssegnoGGMMAAAA.cs" />
+    <Compile Include="Entity\Decodifica\DecBancaFideiussione.cs" />
+    <Compile Include="Entity\Decodifica\DecEnteGestioneFondo.cs" />
+    <Compile Include="Entity\Decodifica\DecModalitaLiquidazione.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaAzienda.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaDerogaENPALS.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaEnteCassaProfessionale.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaGestioneCalcoloContributivo.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaGestioneCalcoloRetributivo.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaLegge44997.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaRiconoscimentiInvalidita.cs" />
+    <Compile Include="Entity\Decodifica\DecodificaTipoQuota.cs" />
+    <Compile Include="Entity\Decodifica\DomandaRicorso.cs" />
+    <Compile Include="Entity\Decodifica\Mobilita.cs" />
+    <Compile Include="Entity\Decodifica\SoggettoBeneficiario.cs" />
+    <Compile Include="Entity\Decodifica\TipoBenefici.cs" />
+    <Compile Include="Entity\Decodifica\TipoCalcoloVincente.cs" />
+    <Compile Include="Entity\Decodifica\TipologiaBeneficioTerrorismo.cs" />
+    <Compile Include="Entity\Decodifica\TipologiaPrestazione.cs" />
+    <Compile Include="Entity\Familiari\Familiari.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiAssicurativi.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiGenerici.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiInail.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiIstruttoria.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiLiquidazionePensioneStorico.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiOpzione.cs" />
+    <Compile Include="Entity\LiquidazionePensione\DatiProvenienza.cs" />
+    <Compile Include="Entity\MaggiorazioneBenefici\DatiBenefici.cs" />
+    <Compile Include="Entity\MaggiorazioneBenefici\DatiBeneficioVittimeTerrorismo.cs" />
+    <Compile Include="Entity\MaggiorazioneBenefici\DatiExCombattente.cs" />
+    <Compile Include="Entity\MaggiorazioneBenefici\DatiMaggiorazioni.cs" />
+    <Compile Include="Entity\Titolare\Sindacato.cs" />
+    <Compile Include="GestioneAggiornamentoPECO.cs" />
+    <Compile Include="GestioneBititolarita.cs" />
+    <Compile Include="GestioneCalcoloDomanda.cs" />
+    <Compile Include="GestioneContrib.cs" />
+    <Compile Include="GestioneControlli.cs" />
+    <Compile Include="GestioneDelegheSindacali.cs" />
+    <Compile Include="GestioneLiquidazionePensione.cs" />
+    <Compile Include="GestioneMaggiorazioniBenefici.cs" />
+    <Compile Include="GestionePrelievo.cs" />
+    <Compile Include="GestioneTotalIvs.cs" />
+    <Compile Include="MappingDaHost.cs" />
+    <Compile Include="MappingVersoHost.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SrvAggPec\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SrvAllegatiConvenzioni\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SrvANF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SrvDatiPensioni\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SrvDelegheSindacali\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SrvNACI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SrvWSTotalIvs\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceReferences\AggPecClient.cs" />
+    <Compile Include="ServiceReferences\AllegatiConvenzioniClient.cs" />
+    <Compile Include="ServiceReferences\ANFClient.cs" />
+    <Compile Include="ServiceReferences\DatiPensioniClient.cs" />
+    <Compile Include="ServiceReferences\DelegheSindacaliClient.cs" />
+    <Compile Include="ServiceReferences\NACIClient.cs" />
+    <Compile Include="ServiceReferences\TotalIvsClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.AggiornamentoPECO_Felpe_Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.AnnullamentoCertificazioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csAggiornamentoPECO_Fondi_AMG.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csAggiornamentoPECO_Fondi_AMG_INPDAP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csDOPPIOSGRAVIO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csPECO_APeVolontario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csTBPECOCERTATT_INPDAP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csTBPECOLETTCERT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csTBPECO_INPDAP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.PECO_OpzioneContributivo_Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.Verifica_Certificazioni_Per_CIGS_Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\WSGestionePeco.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvAllegatiConvenzioni\AllegatiConvenzioniService.wsdl" />
+    <None Include="Service References\SrvAllegatiConvenzioni\AllegatiConvenzioniService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvAllegatiConvenzioni\INPS.Pensioni.LiquidazioneAgo.SrvAllegatiConvenzioni.TipoModuloAggiornaCI05Risposta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAllegatiConvenzioni\INPS.Pensioni.LiquidazioneAgo.SrvAllegatiConvenzioni.TipoModuloAggiornaFaseRisposta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAllegatiConvenzioni\INPS.Pensioni.LiquidazioneAgo.SrvAllegatiConvenzioni.TipoModuloAllegatoRisposta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAllegatiConvenzioni\INPS.Pensioni.LiquidazioneAgo.SrvAllegatiConvenzioni.TipoModuloLetturaCI05Risposta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAllegatiConvenzioni\INPS.Pensioni.LiquidazioneAgo.SrvAllegatiConvenzioni.TipoModuloStatiRisposta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvANF\AnfWSWEB.wsdl" />
+    <None Include="Service References\SrvANF\AnfWSWEB.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvANF\INPS.Pensioni.LiquidazioneAgo.SrvANF.anfWSResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\DatiPensioniSOAP.wsdl" />
+    <None Include="Service References\SrvDatiPensioni\DatiPensioniSOAP.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.AnagraficaComponentiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.Bonus14esimaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.bonus388_2000Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.ConguagliAnniPrecedentiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.ConguagliAnnoInCorsoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.ConguagliDaRinnovoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiAbbinamentiPensioniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiAnagraficaDaCfResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiAnagraficaDaChiavePensioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiAnniRifResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiCalcoloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiCodicePensioneTrasferitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiConguagliArteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiConguagliDa730Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiContabiliResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiCUDeDetrazioniImpostaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiCumuliByRilevanzaANFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiCumuliByRilevanzaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiDettaglioSindacatiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiDiarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiECodiciVariResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiEstrazioneInCorsoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiGP5GP6Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiInvCivResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiLavorazioniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiMovimentazioniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiNucleoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiPatrimonioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiPensioniAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiPensioniDaDiarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiPensioniVigentiSoggettoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiPianiPagamentoSoggettoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiPrincipaliPensioniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiRedditiCasellarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiRedditiDichiaratiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiRedditiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiRilevanzeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP4Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP5Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP6Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP7Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.DatiTGP8Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.EstrazioneUltimaRataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.ImportiPensioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.MandatiRatePensioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.PensioniDaEnteRifResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.PensioniDaVerificareResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.PianiPagamentoSoggettoEliminateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.PianiPagamentoVigentiSoggettoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.RettificheIrpefSuPreventivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.VociContabiliMandatoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDatiPensioni\INPS.Pensioni.LiquidazioneAgo.SrvDatiPensioni.VociContabiliRataPensioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ConsultazioneSindacato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.CostoServizioPerAnno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.DatiSoggetto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.DeleghePensione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.DettagliRichieste.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.DettagliSoggettoCittadino.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.DocumentoOperativita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.EnteRiferimento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Esito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.EsitoControlloPresaInCarico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.EsitoDocRevoca.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.esitoElaborazione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.EsitoPresaInCarico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Fase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.MENU.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Movimentazioni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.NOTIFICHE_CHK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.PeriodiIscrizione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Pignoramento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ReportCostoRegionale.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ReportTrattenute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Riporti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.RISULTATO_QUERY_BLACKLIST.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.RUBRICA_GRUPPO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.SINDPAG_NONCONT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.StatiRichieste.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.StatisticheAmministratore.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.StatisticheOperatore.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.TDELSIND.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.TELE_BLACKLIST.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Trattenute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.VOCE_RUBRICA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\WSDelegheSindacali1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvNACI\INPS.Pensioni.LiquidazioneAgo.SrvNACI.getDatiNaciResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvNACI\INPS.Pensioni.LiquidazioneAgo.SrvNACI.getMedicalReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvNACI\INPS.Pensioni.LiquidazioneAgo.SrvNACI.getStatiIstituzioneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvNACI\INPS.Pensioni.LiquidazioneAgo.SrvNACI.verificaProceduraEESSIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvNACI\WSSERVIZINACIService.wsdl" />
+    <None Include="Service References\SrvWSTotalIvs\INPS.Pensioni.LiquidazioneAgo.SrvWSTotalIvs.clsDati.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvWSTotalIvs\INPS.Pensioni.LiquidazioneAgo.SrvWSTotalIvs.clsDatiCumulo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvWSTotalIvs\wstotalivs.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csAggiornamentoPECO_AGO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csAggiornamentoPECO_Convenzioni_Internazionali.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csAggiornamentoPECO_Fondi_Speciali.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\INPS.Pensioni.LiquidazioneAgo.SrvAggPec.csTBPECO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvAggPec\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SrvAggPec\configuration.svcinfo" />
+    <None Include="Service References\SrvAggPec\configuration91.svcinfo" />
+    <None Include="Service References\SrvAggPec\WSGestionePeco.wsdl" />
+    <None Include="Service References\SrvAggPec\WSGestionePeco1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvAggPec\WSGestionePeco11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvAggPec\WSGestionePeco12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ALLEGATO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ANAGRAFICASINDACATI_STORICO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.AnagraficaSindacato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ARGOMENTI_LISTA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ARGOMENTI_PROPOSTI.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ARGOMENTI_RUOLO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Categoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.CategoriaCensita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.CODICIMOVIMENTAZIONE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Comunicazione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Costo_Servizio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ElencoSindacatiCompatibili.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ESITI.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ESITO_ALLEGATO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ESITO_RICERCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Faq.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Identity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.ImportiDettaglio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Movimentazione_Pensione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Notifica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.RichiestaTelematizzazione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.RispostaCompatibilita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.RispostaElencoSindacati.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.RispostaSindacato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.SedeInps.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.SINDPAG.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.Statistiche.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.StoricoMovimentaziniSoggetto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\INPS.Pensioni.LiquidazioneAgo.SrvDelegheSindacali.TARIFFE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SrvDelegheSindacali\configuration.svcinfo" />
+    <None Include="Service References\SrvDelegheSindacali\configuration91.svcinfo" />
+    <None Include="Service References\SrvDelegheSindacali\WSDelegheSindacali.wsdl" />
+    <None Include="Service References\SrvDelegheSindacali\WSDelegheSindacali.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SrvAggPec\" />
+    <WCFMetadataStorage Include="Service References\SrvAllegatiConvenzioni\" />
+    <WCFMetadataStorage Include="Service References\SrvANF\" />
+    <WCFMetadataStorage Include="Service References\SrvDatiPensioni\" />
+    <WCFMetadataStorage Include="Service References\SrvDelegheSindacali\" />
+    <WCFMetadataStorage Include="Service References\SrvNACI\" />
+    <WCFMetadataStorage Include="Service References\SrvWSTotalIvs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazioneAgo.Data\INPS.Pensioni.LiquidazioneAgo.Data.csproj">
+      <Project>{8B0C0956-D6DD-4C9A-9EB8-87F9C204C797}</Project>
+      <Name>INPS.Pensioni.LiquidazioneAgo.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvWSTotalIvs\wstotalivs.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvWSTotalIvs\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvWSTotalIvs\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvWSTotalIvs\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvDatiPensioni\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvDatiPensioni\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvDatiPensioni\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvANF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvANF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvANF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvAllegatiConvenzioni\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvAllegatiConvenzioni\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvAllegatiConvenzioni\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvNACI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvNACI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SrvNACI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

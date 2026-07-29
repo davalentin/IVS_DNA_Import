@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="INTERPIL_WS_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumeroDomandaProtocollo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pensione" nillable="true" type="tns:PensioneType" />
+      <xs:element minOccurs="0" name="InteressiLegali" nillable="true" type="tns:InteressiLegaliType" />
+      <xs:element minOccurs="0" name="RivalutazioneMonetaria" nillable="true" type="tns:RivalutazioneMonetariaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="INTERPIL_WS_Request" nillable="true" type="tns:INTERPIL_WS_Request" />
+  <xs:complexType name="PensioneType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CentroOperativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PensioneType" nillable="true" type="tns:PensioneType" />
+  <xs:complexType name="InteressiLegaliType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatiAnalitici" nillable="true" type="tns:DatiAnaliticiType" />
+      <xs:element minOccurs="0" name="DatiIstruttoria" nillable="true" type="tns:DatiIstruttoriaType" />
+      <xs:element minOccurs="0" name="DatiPagamento" nillable="true" type="tns:DatiPagamentoType" />
+      <xs:element minOccurs="0" name="PianoPagamento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InteressiLegaliType" nillable="true" type="tns:InteressiLegaliType" />
+  <xs:complexType name="DatiAnaliticiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImponibileIRPEFAnnoCorrente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImponibileIRPEFAnnoPrecedente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoNonImponibile" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumeroProgressivoTrattenuta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiAnaliticiType" nillable="true" type="tns:DatiAnaliticiType" />
+  <xs:complexType name="DatiIstruttoriaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodicePagamentoArretrati" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataContabile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataFineCalcolo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataInizioCalcolo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiIstruttoriaType" nillable="true" type="tns:DatiIstruttoriaType" />
+  <xs:complexType name="DatiPagamentoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodicePagamentoArretrati" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceUfficioPagatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataFineCalcolo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImponibileIRPEFAnnoCorrente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImponibileIRPEFAnnoPrecedente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoNetto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoNonImponibile" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MatricolaDipendente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priorita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatoPagamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeducibilitaTassazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPagamentoType" nillable="true" type="tns:DatiPagamentoType" />
+  <xs:complexType name="RivalutazioneMonetariaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatiAnalitici" nillable="true" type="tns:DatiAnaliticiType" />
+      <xs:element minOccurs="0" name="DatiIstruttoria" nillable="true" type="tns:DatiIstruttoriaType" />
+      <xs:element minOccurs="0" name="DatiPagamento" nillable="true" type="tns:DatiPagamentoType" />
+      <xs:element minOccurs="0" name="PianoPagamento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RivalutazioneMonetariaType" nillable="true" type="tns:RivalutazioneMonetariaType" />
+  <xs:complexType name="INTERPIL_WS_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoType" />
+      <xs:element minOccurs="0" name="NumeroDomandaProtocollo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pensione" nillable="true" type="tns:PensioneType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="INTERPIL_WS_Response" nillable="true" type="tns:INTERPIL_WS_Response" />
+  <xs:complexType name="EsitoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Risultato" type="tns:RisultatoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoType" nillable="true" type="tns:EsitoType" />
+  <xs:simpleType name="RisultatoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoType" nillable="true" type="tns:RisultatoType" />
+  <xs:complexType name="ArrayOfTestCaseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestCaseType" nillable="true" type="tns:TestCaseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestCaseType" nillable="true" type="tns:ArrayOfTestCaseType" />
+  <xs:complexType name="TestCaseType">
+    <xs:sequence>
+      <xs:element name="guid" nillable="true" type="xs:string" />
+      <xs:element name="parametri" nillable="true" type="tns:ArrayOfParametriType" />
+      <xs:element name="rules" nillable="true" type="tns:ArrayOfRuleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestCaseType" nillable="true" type="tns:TestCaseType" />
+  <xs:complexType name="ArrayOfParametriType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParametriType" nillable="true" type="tns:ParametriType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParametriType" nillable="true" type="tns:ArrayOfParametriType" />
+  <xs:complexType name="ParametriType">
+    <xs:sequence>
+      <xs:element name="column" nillable="true" type="xs:string" />
+      <xs:element name="entity" type="tns:EntitaType" />
+      <xs:element name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametriType" nillable="true" type="tns:ParametriType" />
+  <xs:simpleType name="EntitaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DatiPianoDiPagamento" />
+      <xs:enumeration value="DatiAnalitici" />
+      <xs:enumeration value="DatiIstruttoria" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntitaType" nillable="true" type="tns:EntitaType" />
+  <xs:complexType name="ArrayOfRuleType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RuleType" nillable="true" type="tns:RuleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRuleType" nillable="true" type="tns:ArrayOfRuleType" />
+  <xs:complexType name="RuleType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RuleType" nillable="true" type="tns:RuleType" />
+</xs:schema>

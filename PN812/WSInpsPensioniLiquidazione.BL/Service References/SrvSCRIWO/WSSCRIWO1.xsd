@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://soa.inps.it/WS01323" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/WS01323" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" />
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" />
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" />
+  <xs:element name="GetDomanda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="domandaRequest" nillable="true" type="tns:DomandaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DomandaRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="Domanda" nillable="true" type="q1:DomandaEntity" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q2:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomandaRequest" nillable="true" type="tns:DomandaRequest" />
+  <xs:element name="GetDomandaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDomandaResult" nillable="true" type="tns:DomandaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DomandaResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="Domanda" nillable="true" type="q3:DomandaEntity" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q4:AreaEsito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomandaResponse" nillable="true" type="tns:DomandaResponse" />
+  <xs:element name="ClearCache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nomeServer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ClearCacheResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoricoServiziEsterni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="storicoRequest" nillable="true" type="tns:StoricoServiziEsterniRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StoricoServiziEsterniRequest">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Richiesta" nillable="true" type="q5:AreaRichiestaStorico" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q6:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoricoServiziEsterniRequest" nillable="true" type="tns:StoricoServiziEsterniRequest" />
+  <xs:element name="GetStoricoServiziEsterniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStoricoServiziEsterniResult" nillable="true" type="tns:StoricoServiziEsterniResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StoricoServiziEsterniResponse">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q7:AreaEsito" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaStorico" nillable="true" type="q8:ArrayOfStoricoServiziEsterniBaseEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoricoServiziEsterniResponse" nillable="true" type="tns:StoricoServiziEsterniResponse" />
+  <xs:element name="GetElencoSedi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaSediRequest" nillable="true" type="tns:AreaSediRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaSediRequest">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q9:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaSediRequest" nillable="true" type="tns:AreaSediRequest" />
+  <xs:element name="GetElencoSediResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetElencoSediResult" nillable="true" type="tns:AreaSediResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaSediResponse">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="CachePolicy" nillable="true" type="q10:CtrlCacheEntity" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q11:AreaEsito" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaSedi" nillable="true" type="q12:ArrayOfSedeEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaSediResponse" nillable="true" type="tns:AreaSediResponse" />
+  <xs:element name="GetAreaLavorazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaLavorazioniRequest" nillable="true" type="tns:AreaLavorazioniRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniRequest">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q13:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniRequest" nillable="true" type="tns:AreaLavorazioniRequest" />
+  <xs:element name="GetAreaLavorazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAreaLavorazioniResult" nillable="true" type="tns:AreaLavorazioniResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniResponse">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q14:AreaEsito" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListaTipoPratica" nillable="true" type="q15:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniResponse" nillable="true" type="tns:AreaLavorazioniResponse" />
+  <xs:element name="RicercaLavorazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaRicercaLavorazioniRequest" nillable="true" type="tns:AreaRicercaLavorazioniRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaRicercaLavorazioniRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChiaveRicerca" nillable="true" type="xs:string" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="StatoLavorazioneWorkflow" nillable="true" type="q16:Enums.RicercaStatoLavorazioneWorkflow" />
+      <xs:element minOccurs="0" name="TipoPratica" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="TipoRicerca" nillable="true" type="q17:Enums.TipoRicerca" />
+      <xs:element minOccurs="0" name="TopResults" nillable="true" type="xs:int" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q18:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaRicercaLavorazioniRequest" nillable="true" type="tns:AreaRicercaLavorazioniRequest" />
+  <xs:element name="RicercaLavorazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RicercaLavorazioniResult" nillable="true" type="tns:AreaRicercaLavorazioniResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaRicercaLavorazioniResponse">
+    <xs:sequence>
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q19:AreaEsito" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaLavorazioni" nillable="true" type="q20:ArrayOfLavorazioneEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaRicercaLavorazioniResponse" nillable="true" type="tns:AreaRicercaLavorazioniResponse" />
+  <xs:element name="GetConfigurazioneLavorazioniGiacenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaLavorazioniGiacentiRequest" nillable="true" type="tns:AreaLavorazioniGiacentiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniGiacentiRequest">
+    <xs:sequence>
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ConfigurazioneLavorazioniGiacenti" nillable="true" type="q21:ConfigurazioneLavorazioniGiacentiEntity" />
+      <xs:element minOccurs="0" name="SoloOutput" type="xs:boolean" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q22:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniGiacentiRequest" nillable="true" type="tns:AreaLavorazioniGiacentiRequest" />
+  <xs:element name="GetConfigurazioneLavorazioniGiacentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetConfigurazioneLavorazioniGiacentiResult" nillable="true" type="tns:AreaLavorazioniGiacentiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniGiacentiResponse">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q23:AreaEsitoBase" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaConfigurazioneLavorazioniGiacenti" nillable="true" type="q24:ArrayOfConfigurazioneLavorazioniGiacentiEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniGiacentiResponse" nillable="true" type="tns:AreaLavorazioniGiacentiResponse" />
+  <xs:element name="SetConfigurazioneLavorazioniGiacenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaLavorazioniGiacentiRequest" nillable="true" type="tns:AreaLavorazioniGiacentiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetConfigurazioneLavorazioniGiacentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetConfigurazioneLavorazioniGiacentiResult" nillable="true" type="tns:AreaLavorazioniGiacentiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonitoraggioLavorazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaMonitoraggioLavorazioniRequest" nillable="true" type="tns:AreaMonitoraggioLavorazioniRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaMonitoraggioLavorazioniRequest">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Input" nillable="true" type="q25:AreaInput" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q26:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaMonitoraggioLavorazioniRequest" nillable="true" type="tns:AreaMonitoraggioLavorazioniRequest" />
+  <xs:element name="GetMonitoraggioLavorazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMonitoraggioLavorazioniResult" nillable="true" type="tns:AreaMonitoraggioLavorazioniResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaMonitoraggioLavorazioniResponse">
+    <xs:sequence>
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q27:AreaEsitoBase" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="MonitoraggioLavorazioni" nillable="true" type="q28:MonitoraggioLavorazioniEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaMonitoraggioLavorazioniResponse" nillable="true" type="tns:AreaMonitoraggioLavorazioniResponse" />
+  <xs:element name="DeleteConfigurazioneLavorazioniGiacenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaLavorazioniGiacentiRequest" nillable="true" type="tns:AreaLavorazioniGiacentiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteConfigurazioneLavorazioniGiacentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteConfigurazioneLavorazioniGiacentiResult" nillable="true" type="tns:AreaLavorazioniGiacentiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListeConfiugrazioneLavorazioniGiacenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaListeConfiugrazioneLavorazioniGiacentiRequest" nillable="true" type="tns:AreaListeConfiugrazioneLavorazioniGiacentiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaListeConfiugrazioneLavorazioniGiacentiRequest">
+    <xs:sequence>
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q29:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaListeConfiugrazioneLavorazioniGiacentiRequest" nillable="true" type="tns:AreaListeConfiugrazioneLavorazioniGiacentiRequest" />
+  <xs:element name="GetListeConfiugrazioneLavorazioniGiacentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetListeConfiugrazioneLavorazioniGiacentiResult" nillable="true" type="tns:AreaListeConfiugrazioneLavorazioniGiacentiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaListeConfiugrazioneLavorazioniGiacentiResponse">
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q30:AreaEsitoBase" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListeConfigurazioneLavorazioniGiacenti" nillable="true" type="q31:ListeConfiugrazioneLavorazioniGiacentiEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaListeConfiugrazioneLavorazioniGiacentiResponse" nillable="true" type="tns:AreaListeConfiugrazioneLavorazioniGiacentiResponse" />
+  <xs:element name="GetDettaglioLavorazioniGiacenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaLavorazioniGiacentiRequest" nillable="true" type="tns:AreaDettaglioLavorazioniGiacentiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaDettaglioLavorazioniGiacentiRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgLista" type="xs:unsignedByte" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q32:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaDettaglioLavorazioniGiacentiRequest" nillable="true" type="tns:AreaDettaglioLavorazioniGiacentiRequest" />
+  <xs:element name="GetDettaglioLavorazioniGiacentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDettaglioLavorazioniGiacentiResult" nillable="true" type="tns:AreaDettaglioLavorazioniGiacentiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaDettaglioLavorazioniGiacentiResponse">
+    <xs:sequence>
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q33:AreaEsito" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaDettaglioLavorazioniGiacenti" nillable="true" type="q34:ArrayOfDettaglioLavorazioniGiacentiEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaDettaglioLavorazioniGiacentiResponse" nillable="true" type="tns:AreaDettaglioLavorazioniGiacentiResponse" />
+  <xs:element name="GetRicercaLavorazioniWebdom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaLavorazioniWebdomRequest" nillable="true" type="tns:AreaLavorazioniWebdomRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniWebdomRequest">
+    <xs:sequence>
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Ricerca" nillable="true" type="q35:AreaRicercaLavorazioniWebdom" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q36:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniWebdomRequest" nillable="true" type="tns:AreaLavorazioniWebdomRequest" />
+  <xs:element name="GetRicercaLavorazioniWebdomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRicercaLavorazioniWebdomResult" nillable="true" type="tns:AreaLavorazioniWebdomResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniWebdomResponse">
+    <xs:sequence>
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q37:AreaEsito" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaLavorazioniWebdomEntity" nillable="true" type="q38:ArrayOfLavorazioniWebdomEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniWebdomResponse" nillable="true" type="tns:AreaLavorazioniWebdomResponse" />
+  <xs:element name="GetLavorazioniUrgenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaLavorazioniUrgentiRequest" nillable="true" type="tns:AreaLavorazioniUrgentiRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniUrgentiRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q39:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniUrgentiRequest" nillable="true" type="tns:AreaLavorazioniUrgentiRequest" />
+  <xs:element name="GetLavorazioniUrgentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLavorazioniUrgentiResult" nillable="true" type="tns:AreaLavorazioniUrgentiResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaLavorazioniUrgentiResponse">
+    <xs:sequence>
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q40:AreaEsitoBase" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaDettaglioLavorazioniGiacenti" nillable="true" type="q41:ArrayOfDettaglioLavorazioniGiacentiEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLavorazioniUrgentiResponse" nillable="true" type="tns:AreaLavorazioniUrgentiResponse" />
+  <xs:element name="GetElencoMemo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaMemoRequest" nillable="true" type="tns:AreaMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaMemoRequest">
+    <xs:sequence>
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q42:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaMemoRequest" nillable="true" type="tns:AreaMemoRequest" />
+  <xs:element name="GetElencoMemoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetElencoMemoResult" nillable="true" type="tns:AreaMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaMemoResponse">
+    <xs:sequence>
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q43:AreaEsitoBase" />
+      <xs:element minOccurs="0" name="LinkMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LinkMemoDownload" nillable="true" type="xs:string" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaMemo" nillable="true" type="q44:ArrayOfMemoEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaMemoResponse" nillable="true" type="tns:AreaMemoResponse" />
+  <xs:element name="GetIdWorkFlow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workFlowRequest" nillable="true" type="tns:WorkFlowRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="WorkFlowRequest">
+    <xs:sequence>
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="Parametri" nillable="true" type="q45:CtrlTipoWorkFlowEntity" />
+      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Utente" nillable="true" type="q46:AreaUtente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkFlowRequest" nillable="true" type="tns:WorkFlowRequest" />
+  <xs:element name="GetIdWorkFlowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetIdWorkFlowResult" nillable="true" type="tns:WorkFlowResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="WorkFlowResponse">
+    <xs:sequence>
+      <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q47:AreaEsito" />
+      <xs:element minOccurs="0" name="IdWorkFlow" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkFlowResponse" nillable="true" type="tns:WorkFlowResponse" />
+  <xs:element name="GetListaMatricoleSperimentazione">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaMatricoleSperimentazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetListaMatricoleSperimentazioneResult" nillable="true" type="tns:AreaSperimentazioneResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AreaSperimentazioneResponse">
+    <xs:sequence>
+      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="CachePolicyAbilitazione" nillable="true" type="q48:CtrlCacheEntity" />
+      <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="CachePolicyLista" nillable="true" type="q49:CtrlCacheEntity" />
+      <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q50:AreaEsitoBase" />
+      <xs:element minOccurs="0" name="IsSperimentazioneAbilitata" type="xs:boolean" />
+      <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.Entities" minOccurs="0" name="ListaCtrlSperimentazioneEntity" nillable="true" type="q51:ArrayOfCtrlSperimentazioneEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaSperimentazioneResponse" nillable="true" type="tns:AreaSperimentazioneResponse" />
+  <xs:element name="AggiornaStatoLavorazione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:StatoLavorazioneRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StatoLavorazioneRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChiaveLavorazione" nillable="true" type="xs:string" />
+      <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Lavorazioni" nillable="true" type="q52:ArrayOfLavorazione" />
+      <xs:element minOccurs="0" name="SistemaChiamante" nillable="true" type="xs:string" />
+      <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="TipoLavorazione" type="q53:Enums.TipoLavorazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoLavorazioneRequest" nillable="true" type="tns:StatoLavorazioneRequest" />
+  <xs:element name="AggiornaStatoLavorazioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AggiornaStatoLavorazioneResult" nillable="true" type="tns:StatoLavorazioneResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StatoLavorazioneResponse">
+    <xs:sequence>
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" minOccurs="0" name="Esito" nillable="true" type="q54:AreaEsitoBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoLavorazioneResponse" nillable="true" type="tns:StatoLavorazioneResponse" />
+  <xs:element name="AggiornaStatoLavorazioneOneWay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="statoDomandaRequest" nillable="true" type="tns:StatoLavorazioneRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

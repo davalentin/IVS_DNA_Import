@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://soa.inps.it/WS01179" xmlns:ns1="http://tempuri.org/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://soa.inps.it/WS01179" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="WsVerTitolIBAN?ns1.wsdl" />
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="WsVerTitolIBAN.xsd2.xsd" namespace="http://soa.inps.it/WS01179" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWsVerTitolIBAN_annullaEntiExtra_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaEntiExtra" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_annullaEntiExtra_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaEntiExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_annullaEntiExtraRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaEntiExtraRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_annullaEntiExtraRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaEntiExtraRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_annullaSR163_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaSR163" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_annullaSR163_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaSR163Response" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_annullaSR163Rc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaSR163Rc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_annullaSR163Rc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:annullaSR163RcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaEntiExtra_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaEntiExtra" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaEntiExtra_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaEntiExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaEntiExtraRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaEntiExtraRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaEntiExtraRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaEntiExtraRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSDB_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSDB" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSDB_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSDBRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSDBRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSDBRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSDBRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSR163_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSR163" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSR163_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSR163Response" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSR163Rc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSR163Rc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaSR163Rc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaSR163RcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitolarita_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitolarita" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitolarita_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitolaritaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitolaritaRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitolaritaRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitolaritaRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitolaritaRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitUff_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitUff" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitUff_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitUffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitUffRC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitUffRC" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_certificaTitUffRC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:certificaTitUffRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIban_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIban" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIban_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIbanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIbanBic_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIbanBic" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIbanBic_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIbanBicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIbanBicRC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIbanBicRC" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIbanBicRC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIbanBicRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIbanRC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIbanRC" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getLastIbanRC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getLastIbanRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioni_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioni" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioni_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniB_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniB" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniB_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniBRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniBRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniBRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniBRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniSDB_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniSDB" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniSDB_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniSDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniSDBRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniSDBRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaCertificazioniSDBRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaCertificazioniSDBRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaOperazioni_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaOperazioni" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaOperazioni_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaOperazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaOperazioniRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaOperazioniRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getListaOperazioniRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getListaOperazioniRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getStatusVarCoord_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getStatusVarCoord" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getStatusVarCoord_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getStatusVarCoordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getStatusVarCoordRC_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getStatusVarCoordRC" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_getStatusVarCoordRC_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:getStatusVarCoordRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitIbanNew_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitIbanNew" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitIbanNew_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitIbanNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitIbanNewRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitIbanNewRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitIbanNewRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitIbanNewRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolarita_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolarita" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolarita_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaB_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaB" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaB_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaBPens_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaBPens" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaBPens_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaBPensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaBPensRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaBPensRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaBPensRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaBPensRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaBRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaBRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaBRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaBRcResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaRc_InputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaRc" />
+  </wsdl:message>
+  <wsdl:message name="IWsVerTitolIBAN_verificaTitolaritaRc_OutputMessage">
+    <wsdl:part xmlns:xsns="http://soa.inps.it/WS01179" name="parameters" element="xsns:verificaTitolaritaRcResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWsVerTitolIBAN">
+    <wsdl:operation name="annullaEntiExtra">
+      <wsdl:input name="annullaEntiExtraRequest" message="ns0:IWsVerTitolIBAN_annullaEntiExtra_InputMessage" />
+      <wsdl:output name="annullaEntiExtraResponse" message="ns0:IWsVerTitolIBAN_annullaEntiExtra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="annullaEntiExtraRc">
+      <wsdl:input name="annullaEntiExtraRcRequest" message="ns0:IWsVerTitolIBAN_annullaEntiExtraRc_InputMessage" />
+      <wsdl:output name="annullaEntiExtraRcResponse" message="ns0:IWsVerTitolIBAN_annullaEntiExtraRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="annullaSR163">
+      <wsdl:input name="annullaSR163Request" message="ns0:IWsVerTitolIBAN_annullaSR163_InputMessage" />
+      <wsdl:output name="annullaSR163Response" message="ns0:IWsVerTitolIBAN_annullaSR163_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="annullaSR163Rc">
+      <wsdl:input name="annullaSR163RcRequest" message="ns0:IWsVerTitolIBAN_annullaSR163Rc_InputMessage" />
+      <wsdl:output name="annullaSR163RcResponse" message="ns0:IWsVerTitolIBAN_annullaSR163Rc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaEntiExtra">
+      <wsdl:input name="certificaEntiExtraRequest" message="ns0:IWsVerTitolIBAN_certificaEntiExtra_InputMessage" />
+      <wsdl:output name="certificaEntiExtraResponse" message="ns0:IWsVerTitolIBAN_certificaEntiExtra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaEntiExtraRc">
+      <wsdl:input name="certificaEntiExtraRcRequest" message="ns0:IWsVerTitolIBAN_certificaEntiExtraRc_InputMessage" />
+      <wsdl:output name="certificaEntiExtraRcResponse" message="ns0:IWsVerTitolIBAN_certificaEntiExtraRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaSDB">
+      <wsdl:input name="certificaSDBRequest" message="ns0:IWsVerTitolIBAN_certificaSDB_InputMessage" />
+      <wsdl:output name="certificaSDBResponse" message="ns0:IWsVerTitolIBAN_certificaSDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaSDBRc">
+      <wsdl:input name="certificaSDBRcRequest" message="ns0:IWsVerTitolIBAN_certificaSDBRc_InputMessage" />
+      <wsdl:output name="certificaSDBRcResponse" message="ns0:IWsVerTitolIBAN_certificaSDBRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaSR163">
+      <wsdl:input name="certificaSR163Request" message="ns0:IWsVerTitolIBAN_certificaSR163_InputMessage" />
+      <wsdl:output name="certificaSR163Response" message="ns0:IWsVerTitolIBAN_certificaSR163_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaSR163Rc">
+      <wsdl:input name="certificaSR163RcRequest" message="ns0:IWsVerTitolIBAN_certificaSR163Rc_InputMessage" />
+      <wsdl:output name="certificaSR163RcResponse" message="ns0:IWsVerTitolIBAN_certificaSR163Rc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitolarita">
+      <wsdl:input name="certificaTitolaritaRequest" message="ns0:IWsVerTitolIBAN_certificaTitolarita_InputMessage" />
+      <wsdl:output name="certificaTitolaritaResponse" message="ns0:IWsVerTitolIBAN_certificaTitolarita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitolaritaRc">
+      <wsdl:input name="certificaTitolaritaRcRequest" message="ns0:IWsVerTitolIBAN_certificaTitolaritaRc_InputMessage" />
+      <wsdl:output name="certificaTitolaritaRcResponse" message="ns0:IWsVerTitolIBAN_certificaTitolaritaRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitUff">
+      <wsdl:input name="certificaTitUffRequest" message="ns0:IWsVerTitolIBAN_certificaTitUff_InputMessage" />
+      <wsdl:output name="certificaTitUffResponse" message="ns0:IWsVerTitolIBAN_certificaTitUff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitUffRC">
+      <wsdl:input name="certificaTitUffRCRequest" message="ns0:IWsVerTitolIBAN_certificaTitUffRC_InputMessage" />
+      <wsdl:output name="certificaTitUffRCResponse" message="ns0:IWsVerTitolIBAN_certificaTitUffRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastIban">
+      <wsdl:input name="getLastIbanRequest" message="ns0:IWsVerTitolIBAN_getLastIban_InputMessage" />
+      <wsdl:output name="getLastIbanResponse" message="ns0:IWsVerTitolIBAN_getLastIban_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastIbanBic">
+      <wsdl:input name="getLastIbanBicRequest" message="ns0:IWsVerTitolIBAN_getLastIbanBic_InputMessage" />
+      <wsdl:output name="getLastIbanBicResponse" message="ns0:IWsVerTitolIBAN_getLastIbanBic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastIbanBicRC">
+      <wsdl:input name="getLastIbanBicRCRequest" message="ns0:IWsVerTitolIBAN_getLastIbanBicRC_InputMessage" />
+      <wsdl:output name="getLastIbanBicRCResponse" message="ns0:IWsVerTitolIBAN_getLastIbanBicRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastIbanRC">
+      <wsdl:input name="getLastIbanRCRequest" message="ns0:IWsVerTitolIBAN_getLastIbanRC_InputMessage" />
+      <wsdl:output name="getLastIbanRCResponse" message="ns0:IWsVerTitolIBAN_getLastIbanRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioni">
+      <wsdl:input name="getListaCertificazioniRequest" message="ns0:IWsVerTitolIBAN_getListaCertificazioni_InputMessage" />
+      <wsdl:output name="getListaCertificazioniResponse" message="ns0:IWsVerTitolIBAN_getListaCertificazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniB">
+      <wsdl:input name="getListaCertificazioniBRequest" message="ns0:IWsVerTitolIBAN_getListaCertificazioniB_InputMessage" />
+      <wsdl:output name="getListaCertificazioniBResponse" message="ns0:IWsVerTitolIBAN_getListaCertificazioniB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniBRc">
+      <wsdl:input name="getListaCertificazioniBRcRequest" message="ns0:IWsVerTitolIBAN_getListaCertificazioniBRc_InputMessage" />
+      <wsdl:output name="getListaCertificazioniBRcResponse" message="ns0:IWsVerTitolIBAN_getListaCertificazioniBRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniRc">
+      <wsdl:input name="getListaCertificazioniRcRequest" message="ns0:IWsVerTitolIBAN_getListaCertificazioniRc_InputMessage" />
+      <wsdl:output name="getListaCertificazioniRcResponse" message="ns0:IWsVerTitolIBAN_getListaCertificazioniRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniSDB">
+      <wsdl:input name="getListaCertificazioniSDBRequest" message="ns0:IWsVerTitolIBAN_getListaCertificazioniSDB_InputMessage" />
+      <wsdl:output name="getListaCertificazioniSDBResponse" message="ns0:IWsVerTitolIBAN_getListaCertificazioniSDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniSDBRc">
+      <wsdl:input name="getListaCertificazioniSDBRcRequest" message="ns0:IWsVerTitolIBAN_getListaCertificazioniSDBRc_InputMessage" />
+      <wsdl:output name="getListaCertificazioniSDBRcResponse" message="ns0:IWsVerTitolIBAN_getListaCertificazioniSDBRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaOperazioni">
+      <wsdl:input name="getListaOperazioniRequest" message="ns0:IWsVerTitolIBAN_getListaOperazioni_InputMessage" />
+      <wsdl:output name="getListaOperazioniResponse" message="ns0:IWsVerTitolIBAN_getListaOperazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaOperazioniRc">
+      <wsdl:input name="getListaOperazioniRcRequest" message="ns0:IWsVerTitolIBAN_getListaOperazioniRc_InputMessage" />
+      <wsdl:output name="getListaOperazioniRcResponse" message="ns0:IWsVerTitolIBAN_getListaOperazioniRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatusVarCoord">
+      <wsdl:input name="getStatusVarCoordRequest" message="ns0:IWsVerTitolIBAN_getStatusVarCoord_InputMessage" />
+      <wsdl:output name="getStatusVarCoordResponse" message="ns0:IWsVerTitolIBAN_getStatusVarCoord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatusVarCoordRC">
+      <wsdl:input name="getStatusVarCoordRCRequest" message="ns0:IWsVerTitolIBAN_getStatusVarCoordRC_InputMessage" />
+      <wsdl:output name="getStatusVarCoordRCResponse" message="ns0:IWsVerTitolIBAN_getStatusVarCoordRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitIbanNew">
+      <wsdl:input name="verificaTitIbanNewRequest" message="ns0:IWsVerTitolIBAN_verificaTitIbanNew_InputMessage" />
+      <wsdl:output name="verificaTitIbanNewResponse" message="ns0:IWsVerTitolIBAN_verificaTitIbanNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitIbanNewRc">
+      <wsdl:input name="verificaTitIbanNewRcRequest" message="ns0:IWsVerTitolIBAN_verificaTitIbanNewRc_InputMessage" />
+      <wsdl:output name="verificaTitIbanNewRcResponse" message="ns0:IWsVerTitolIBAN_verificaTitIbanNewRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolarita">
+      <wsdl:input name="verificaTitolaritaRequest" message="ns0:IWsVerTitolIBAN_verificaTitolarita_InputMessage" />
+      <wsdl:output name="verificaTitolaritaResponse" message="ns0:IWsVerTitolIBAN_verificaTitolarita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaB">
+      <wsdl:input name="verificaTitolaritaBRequest" message="ns0:IWsVerTitolIBAN_verificaTitolaritaB_InputMessage" />
+      <wsdl:output name="verificaTitolaritaBResponse" message="ns0:IWsVerTitolIBAN_verificaTitolaritaB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaBPens">
+      <wsdl:input name="verificaTitolaritaBPensRequest" message="ns0:IWsVerTitolIBAN_verificaTitolaritaBPens_InputMessage" />
+      <wsdl:output name="verificaTitolaritaBPensResponse" message="ns0:IWsVerTitolIBAN_verificaTitolaritaBPens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaBPensRc">
+      <wsdl:input name="verificaTitolaritaBPensRcRequest" message="ns0:IWsVerTitolIBAN_verificaTitolaritaBPensRc_InputMessage" />
+      <wsdl:output name="verificaTitolaritaBPensRcResponse" message="ns0:IWsVerTitolIBAN_verificaTitolaritaBPensRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaBRc">
+      <wsdl:input name="verificaTitolaritaBRcRequest" message="ns0:IWsVerTitolIBAN_verificaTitolaritaBRc_InputMessage" />
+      <wsdl:output name="verificaTitolaritaBRcResponse" message="ns0:IWsVerTitolIBAN_verificaTitolaritaBRc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaRc">
+      <wsdl:input name="verificaTitolaritaRcRequest" message="ns0:IWsVerTitolIBAN_verificaTitolaritaRc_InputMessage" />
+      <wsdl:output name="verificaTitolaritaRcResponse" message="ns0:IWsVerTitolIBAN_verificaTitolaritaRc_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

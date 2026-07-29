@@ -1,0 +1,105 @@
+﻿ul.tabs
+{
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    height: 25px; /*--Set height of tabs--*/
+    border-bottom: 1px solid #000080;
+    border-left: 1px solid #000080;
+    width: 100%;
+}
+
+    ul.tabs li
+    {
+        float: left;
+        margin: 0;
+        padding: 0;
+        height: 24px; /*--Subtract 1px from the height of the unordered list--*/
+        line-height: 19px; /*--Vertically aligns the text within the tab--*/
+        border: 1px solid #000080;
+        border-left: none;
+        margin-bottom: -1px; /*--Pull the list item down 1px--*/
+        overflow: hidden;
+        position: relative;
+        background-color: #EBF4FF;
+    }
+
+        ul.tabs li a
+        {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            font-size: small;
+            padding: 0 13px;
+            border: 1px solid #fff; /*--Gives the bevel look with a 1px white border inside the list item--*/
+            outline: none;
+        }
+
+            ul.tabs li a:hover
+            {
+                text-decoration: underline;
+                background: #ccc;
+            }
+
+html ul.tabs li.active, html ul.tabs li.active a:hover
+{
+    /*--Makes sure that the active tab does not listen to the hover properties--*/
+    background: #fff;
+    border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
+}
+
+.tab_container
+{
+    border: 1px solid #000080;
+    border-top: none;
+    /*overflow: hidden; /*clear: both;*/
+    float: left;
+    width: 100%;
+    background: #fff;
+}
+
+ul.tabsLine2
+{
+    padding-top: 1px;
+    border-right: 0px solid #000080;
+}
+
+ul.tabsLine2.tabs img
+{
+    display: none;
+}
+
+ul.tabsLine2.tabs div.optional li a, ul.tabsLine2.tabs div.mandatory li a, ul.tabsLine2.tabs div.saved li a
+{
+    padding-right: 40px;
+}
+
+ul.tabsLine2.tabs div.optional li a:after, ul.tabsLine2.tabs div.mandatory li a:after, ul.tabsLine2.tabs div.saved li a:after
+{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    height: fit-content;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+ul.tabsLine2.tabs div.optional li a:after
+{
+    content: "\f022";
+}
+
+ul.tabsLine2.tabs div.mandatory li a:after
+{
+    content: "\f071";
+}
+
+ul.tabsLine2.tabs div.saved li a:after
+{
+    content: "\f14a";
+}

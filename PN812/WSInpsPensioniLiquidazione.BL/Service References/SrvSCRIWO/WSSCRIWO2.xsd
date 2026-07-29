@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Enums.DecTipoAzione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Deafault" />
+      <xs:enumeration value="Link" />
+      <xs:enumeration value="Attivita" />
+      <xs:enumeration value="Informazione" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.DecTipoAzione" nillable="true" type="tns:Enums.DecTipoAzione" />
+  <xs:simpleType name="Enums.TipoMessaggio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ErroreTecnico">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Warning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Info">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ErroreValidazione">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.TipoMessaggio" nillable="true" type="tns:Enums.TipoMessaggio" />
+  <xs:simpleType name="Enums.RicercaStatoLavorazioneWorkflow">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InLavorazione">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Conclusi">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tutti">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.RicercaStatoLavorazioneWorkflow" nillable="true" type="tns:Enums.RicercaStatoLavorazioneWorkflow" />
+  <xs:simpleType name="Enums.TipoRicerca">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Domanda">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.TipoRicerca" nillable="true" type="tns:Enums.TipoRicerca" />
+  <xs:simpleType name="Enums.DecStato">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disattivo" />
+      <xs:enumeration value="NonAvviato" />
+      <xs:enumeration value="InElaborazione" />
+      <xs:enumeration value="Completato" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.DecStato" nillable="true" type="tns:Enums.DecStato" />
+  <xs:simpleType name="Enums.Step">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nessuno" />
+      <xs:enumeration value="Istruttoria" />
+      <xs:enumeration value="ConvenzioniInternazionali" />
+      <xs:enumeration value="Diritto" />
+      <xs:enumeration value="Definizione" />
+      <xs:enumeration value="VerificaDomanda" />
+      <xs:enumeration value="GestioneEstero" />
+      <xs:enumeration value="GestioneConto" />
+      <xs:enumeration value="VerificaDiritto" />
+      <xs:enumeration value="CalcoloMisura" />
+      <xs:enumeration value="CalcoloPensione" />
+      <xs:enumeration value="Liquidazione" />
+      <xs:enumeration value="Diritto2" />
+      <xs:enumeration value="PagamentoPadre">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pagamento">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.Step" nillable="true" type="tns:Enums.Step" />
+  <xs:simpleType name="Enums.IntervalliMonitoraggioLavorazioni">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MeseCorrente" />
+      <xs:enumeration value="UltimoTrimestre" />
+      <xs:enumeration value="AnnoCorrente" />
+      <xs:enumeration value="AnnoPrecedente" />
+      <xs:enumeration value="DueAnniPrecedenti" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.IntervalliMonitoraggioLavorazioni" nillable="true" type="tns:Enums.IntervalliMonitoraggioLavorazioni" />
+  <xs:simpleType name="Enums.StatoDomandaWebdom">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Tutte" />
+      <xs:enumeration value="InLavorazione" />
+      <xs:enumeration value="Accolte" />
+      <xs:enumeration value="Chiuse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.StatoDomandaWebdom" nillable="true" type="tns:Enums.StatoDomandaWebdom" />
+  <xs:simpleType name="Enums.StatoScriwo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disattivo" />
+      <xs:enumeration value="NonAvviato" />
+      <xs:enumeration value="InElaborazione" />
+      <xs:enumeration value="Completato" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.StatoScriwo" nillable="true" type="tns:Enums.StatoScriwo" />
+  <xs:simpleType name="Enums.StepScriwo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VerificaDomanda">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GestioneEstero">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GestioneConto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VerificaDiritto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CalcoloMisura">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CalcoloPensione">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Liquidazione">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.StepScriwo" nillable="true" type="tns:Enums.StepScriwo" />
+  <xs:simpleType name="Enums.TipoLavorazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Domanda">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.TipoLavorazione" nillable="true" type="tns:Enums.TipoLavorazione" />
+</xs:schema>

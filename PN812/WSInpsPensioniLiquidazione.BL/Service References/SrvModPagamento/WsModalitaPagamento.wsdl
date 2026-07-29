@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.inps.it" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.inps.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">INPS - Web Service Protocollo Informatico per Applicazioni</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.inps.it">
+      <s:element name="getModalitaPagamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codApp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codUtente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroDomanda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getModalitaPagamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getModalitaPagamentoResult" type="tns:tRisposta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="tRisposta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRisposta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescrizioneRisposta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatiModalitaPagamento" type="tns:tModalitaPagamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tModalitaPagamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumDomanda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModalitaPagamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatoPagamentoEstero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescStatoPagamentoEstero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Iban" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoPagamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LibrettoUfficioPostale" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCodiceSindacato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codApp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codUtente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroDomanda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCodiceSindacatoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCodiceSindacatoResult" type="tns:tRispostaSemplice" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="tRispostaSemplice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRisposta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescrizioneRisposta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valore" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getModalitaPagamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:getModalitaPagamento" />
+  </wsdl:message>
+  <wsdl:message name="getModalitaPagamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:getModalitaPagamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCodiceSindacatoSoapIn">
+    <wsdl:part name="parameters" element="tns:getCodiceSindacato" />
+  </wsdl:message>
+  <wsdl:message name="getCodiceSindacatoSoapOut">
+    <wsdl:part name="parameters" element="tns:getCodiceSindacatoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsModalitaPagamentoSoap">
+    <wsdl:operation name="getModalitaPagamento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo per il recupero dei dati relativi alla modalità di pagamento per numero di domanda di pensione.</wsdl:documentation>
+      <wsdl:input message="tns:getModalitaPagamentoSoapIn" />
+      <wsdl:output message="tns:getModalitaPagamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodiceSindacato">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo per il recupero del codice del Sindacato associato alla domanda e se presente.</wsdl:documentation>
+      <wsdl:input message="tns:getCodiceSindacatoSoapIn" />
+      <wsdl:output message="tns:getCodiceSindacatoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsModalitaPagamentoSoap" type="tns:WsModalitaPagamentoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getModalitaPagamento">
+      <soap:operation soapAction="http://www.inps.it/getModalitaPagamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodiceSindacato">
+      <soap:operation soapAction="http://www.inps.it/getCodiceSindacato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsModalitaPagamentoSoap12" type="tns:WsModalitaPagamentoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getModalitaPagamento">
+      <soap12:operation soapAction="http://www.inps.it/getModalitaPagamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodiceSindacato">
+      <soap12:operation soapAction="http://www.inps.it/getCodiceSindacato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsModalitaPagamento">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">INPS - Web Service Protocollo Informatico per Applicazioni</wsdl:documentation>
+    <wsdl:port name="WsModalitaPagamentoSoap" binding="tns:WsModalitaPagamentoSoap">
+      <soap:address location="http://wsmodalitapagamento.svil.inps/WsModalitaPagamento.Services/WsModalitaPagamento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsModalitaPagamentoSoap12" binding="tns:WsModalitaPagamentoSoap12">
+      <soap12:address location="http://wsmodalitapagamento.svil.inps/WsModalitaPagamento.Services/WsModalitaPagamento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

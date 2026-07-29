@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazione", "WSInpsPensioniLiquidazione\WSInpsPensioniLiquidazione.csproj", "{B01A1B69-FC09-4484-87A8-7E654C20BF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazione.Data", "WSInpsPensioniLiquidazione.Data\WSInpsPensioniLiquidazione.Data.csproj", "{CFADB017-EA4D-49C0-9EF6-3A1BC69BE6F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazione.BL", "WSInpsPensioniLiquidazione.BL\WSInpsPensioniLiquidazione.BL.csproj", "{812CCA70-F1C5-43E2-8814-3BE08F32BA1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazione.BLCommon", "WSInpsPensioniLiquidazione.BLCommon\WSInpsPensioniLiquidazione.BLCommon.csproj", "{EAB1B8AC-A3D3-4CBA-9C1D-893E9B36F063}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSInpsPensioniLiquidazione.DataCommon", "WSInpsPensioniLiquidazione.DataCommon\WSInpsPensioniLiquidazione.DataCommon.csproj", "{27D4B169-53E7-445B-99D8-494D017D3402}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = INPS.Pensioni.Liquidazione3.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B01A1B69-FC09-4484-87A8-7E654C20BF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B01A1B69-FC09-4484-87A8-7E654C20BF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B01A1B69-FC09-4484-87A8-7E654C20BF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B01A1B69-FC09-4484-87A8-7E654C20BF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFADB017-EA4D-49C0-9EF6-3A1BC69BE6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFADB017-EA4D-49C0-9EF6-3A1BC69BE6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFADB017-EA4D-49C0-9EF6-3A1BC69BE6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFADB017-EA4D-49C0-9EF6-3A1BC69BE6F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{812CCA70-F1C5-43E2-8814-3BE08F32BA1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{812CCA70-F1C5-43E2-8814-3BE08F32BA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{812CCA70-F1C5-43E2-8814-3BE08F32BA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{812CCA70-F1C5-43E2-8814-3BE08F32BA1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB1B8AC-A3D3-4CBA-9C1D-893E9B36F063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB1B8AC-A3D3-4CBA-9C1D-893E9B36F063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB1B8AC-A3D3-4CBA-9C1D-893E9B36F063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB1B8AC-A3D3-4CBA-9C1D-893E9B36F063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D4B169-53E7-445B-99D8-494D017D3402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D4B169-53E7-445B-99D8-494D017D3402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D4B169-53E7-445B-99D8-494D017D3402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D4B169-53E7-445B-99D8-494D017D3402}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SerenaSourceControl) = preSolution
+		CMNumberOfProjects = 7
+		CMProjectRoot0 = \
+		CMLocalPath0 = .\
+		CMRelativePathToRoot0 = .\
+		CMLocalPath1 = WSInpsPensioniLiquidazione.DataCommon\
+		CMUniqueName1 = WSInpsPensioniLiquidazione.DataCommon.csproj
+		CMProjectName1 = WSInpsPensioniLiquidazione.DataCommon
+		CMRelativePathToRoot1 = WSInpsPensioniLiquidazione.DataCommon\
+		CMProjectRoot1 = \
+		CMLocalPath2 = WSInpsPensioniLiquidazione.BLCommon\
+		CMUniqueName2 = WSInpsPensioniLiquidazione.BLCommon.csproj
+		CMProjectName2 = WSInpsPensioniLiquidazione.BLCommon
+		CMRelativePathToRoot2 = WSInpsPensioniLiquidazione.BLCommon\
+		CMProjectRoot2 = \
+		CMLocalPath3 = WSInpsPensioniLiquidazione.Data\
+		CMUniqueName3 = WSInpsPensioniLiquidazione.Data.csproj
+		CMProjectName3 = WSInpsPensioniLiquidazione.Data
+		CMRelativePathToRoot3 = WSInpsPensioniLiquidazione.Data\
+		CMProjectRoot3 = \
+		CMLocalPath4 = WSInpsPensioniLiquidazione\
+		CMUniqueName4 = WSInpsPensioniLiquidazione.csproj
+		CMProjectName4 = WSInpsPensioniLiquidazione
+		CMRelativePathToRoot4 = WSInpsPensioniLiquidazione\
+		CMProjectRoot4 = \
+		CMLocalPath5 = WSInpsPensioniLiquidazione.BL\
+		CMUniqueName5 = WSInpsPensioniLiquidazione.csproj
+		CMProjectName5 = WSInpsPensioniLiquidazione
+		CMRelativePathToRoot5 = WSInpsPensioniLiquidazione.BL\
+		CMProjectRoot5 = \
+		SccProjectUniqueName6 = WSInpsPensioniLiquidazione.ServiceTest\\INPS.Pensioni.Liquidazione.ServiceTest.csproj
+		SccProjectName6 = WSInpsPensioniLiquidazione.ServiceTest
+		SccLocalPath6 = WSInpsPensioniLiquidazione.ServiceTest
+		SccProjectUniqueName7 = WSInpsPensioniLiquidazione.UnitTest\\INPS.Pensioni.Liquidazione.UnitTest.csproj
+		SccProjectName7 = WSInpsPensioniLiquidazione.UnitTest
+		SccLocalPath7 = WSInpsPensioniLiquidazione.UnitTest
+	EndGlobalSection
+EndGlobal

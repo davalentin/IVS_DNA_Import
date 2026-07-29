@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="AllegatiConvenzioniService" targetNamespace="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="AllegatiConvenzioniService_schema1.xsd" namespace="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" />
+    </xsd:schema>
+  </types>
+  <message name="aggiornaFaseResponse">
+    <part name="parameters" element="tns:aggiornaFaseResponse" />
+  </message>
+  <message name="getAllegatoConvenzioniResponse">
+    <part name="params" element="tns:ModuloAllegatoRisposta" />
+  </message>
+  <message name="letturaCI05">
+    <part name="parameters" element="tns:letturaCI05" />
+  </message>
+  <message name="letturaCI05Response">
+    <part name="parameters" element="tns:letturaCI05Response" />
+  </message>
+  <message name="aggiornaCI05">
+    <part name="parameters" element="tns:aggiornaCI05" />
+  </message>
+  <message name="getStatiIstituzioneResponse">
+    <part name="parameters" element="tns:getStatiIstituzioneResponse" />
+  </message>
+  <message name="aggiornaFase">
+    <part name="parameters" element="tns:aggiornaFase" />
+  </message>
+  <message name="getAllegatoConvenzioni">
+    <part name="params" element="tns:ModuloAllegatoRichiesta" />
+  </message>
+  <message name="getStatiIstituzione">
+    <part name="parameters" element="tns:getStatiIstituzione" />
+  </message>
+  <message name="aggiornaCI05Response">
+    <part name="parameters" element="tns:aggiornaCI05Response" />
+  </message>
+  <portType name="AllegatiConvenzioniService">
+    <operation name="getAllegatoConvenzioni">
+      <input message="tns:getAllegatoConvenzioni" />
+      <output message="tns:getAllegatoConvenzioniResponse" />
+    </operation>
+    <operation name="getStatiIstituzione">
+      <input message="tns:getStatiIstituzione" />
+      <output message="tns:getStatiIstituzioneResponse" />
+    </operation>
+    <operation name="aggiornaFase">
+      <input message="tns:aggiornaFase" />
+      <output message="tns:aggiornaFaseResponse" />
+    </operation>
+    <operation name="letturaCI05">
+      <input message="tns:letturaCI05" />
+      <output message="tns:letturaCI05Response" />
+    </operation>
+    <operation name="aggiornaCI05">
+      <input message="tns:aggiornaCI05" />
+      <output message="tns:aggiornaCI05Response" />
+    </operation>
+  </portType>
+  <binding name="AllegatiConvenzioniServiceSOAPBinding" type="tns:AllegatiConvenzioniService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getAllegatoConvenzioni">
+      <soap:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/getAllegatoConvenzioni" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getStatiIstituzione">
+      <soap:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/getStatiIstituzione" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="aggiornaFase">
+      <soap:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/aggiornaFase" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="letturaCI05">
+      <soap:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/letturaCI05" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="aggiornaCI05">
+      <soap:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/aggiornaCI05" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AllegatiConvenzioniService">
+    <port name="AllegatiConvenzioniServiceSOAP" binding="tns:AllegatiConvenzioniServiceSOAPBinding">
+      <soap:address location="http://aixwbstest3.ser-test.inps:80/WSAllegatiConvenzioni/AllegatiConvenzioniService" />
+    </port>
+  </service>
+</definitions>

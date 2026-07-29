@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://inps.it/AS/WS/NumerazioneLIPE/" xmlns:s1="http://inps.it/XMLSchema/AssegnazioneCertificato.xsd" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://inps.it/AS/WS/NumerazioneLIPE/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://inps.it/AS/WS/NumerazioneLIPE/">
+      <s:import namespace="http://inps.it/XMLSchema/AssegnazioneCertificato.xsd" />
+      <s:element name="AssegnazioneCertificato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:_richiesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssegnazioneCertificatoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:AssegnazioneCertificatoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://inps.it/XMLSchema/AssegnazioneCertificato.xsd">
+      <s:element name="_richiesta" type="s1:richiestaAssegnazioneCertificato" />
+      <s:complexType name="richiestaAssegnazioneCertificato">
+        <s:attribute name="codiceSede" type="s:string" />
+        <s:attribute name="categoria" type="s:string" />
+      </s:complexType>
+      <s:element name="AssegnazioneCertificatoResult" type="s1:esitoAssegnazioneCertificato" />
+      <s:complexType name="esitoAssegnazioneCertificato">
+        <s:attribute name="codiceRisposta" type="s:string" />
+        <s:attribute name="certificato" type="s:integer" />
+        <s:attribute name="descrErrore" type="s:string" />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AssegnazioneCertificatoSoapIn">
+    <wsdl:part name="parameters" element="tns:AssegnazioneCertificato" />
+  </wsdl:message>
+  <wsdl:message name="AssegnazioneCertificatoSoapOut">
+    <wsdl:part name="parameters" element="tns:AssegnazioneCertificatoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicesSoap">
+    <wsdl:operation name="AssegnazioneCertificato">
+      <wsdl:input message="tns:AssegnazioneCertificatoSoapIn" />
+      <wsdl:output message="tns:AssegnazioneCertificatoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicesSoap" type="tns:ServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AssegnazioneCertificato">
+      <soap:operation soapAction="http://inps.it/AS/WS/NumerazioneLIPE/AssegnazioneCertificato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Services">
+    <wsdl:port name="ServicesSoap" binding="tns:ServicesSoap">
+      <soap:address location="http://intranet2.inps/Servizi.NetNT/EAP/WS.NetNt/WS.PP.PNL/NumerazioneLIPE/Services.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

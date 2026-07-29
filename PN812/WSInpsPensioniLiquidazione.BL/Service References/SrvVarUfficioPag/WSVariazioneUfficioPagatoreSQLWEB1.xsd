@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:pref="http://variazioneUfficioPagatore.services.soa.inps.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:intf="http://variazioneUfficioPagatore.services.soa.inps.it" elementFormDefault="qualified" targetNamespace="http://variazioneUfficioPagatore.services.soa.inps.it" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="EsitoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Codice" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Descrizione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Risultato" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TelefonoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Prefisso" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Numero" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{9}" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="IndirizzoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="PrefissoStradale" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="NomeVia" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="NumeroCivico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Cap" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="5" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Comune" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="SiglaProvincia" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Anno" nillable="true" type="intf:AnnoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Mese" nillable="true" type="intf:MeseType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Giorno" nillable="true" type="intf:GiornoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DataTimeType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Anno" nillable="true" type="intf:AnnoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Mese" nillable="true" type="intf:MeseType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Giorno" nillable="true" type="intf:GiornoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Ora" nillable="true" type="intf:OraType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Minuti" nillable="true" type="intf:MinutoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Secondi" nillable="true" type="intf:SecondoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="OraType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MinutoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SecondoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="GiornoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MeseType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AnnoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{4}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Anno2Type">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PeriodoDiRicercaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Anno" nillable="true" type="intf:AnnoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Mese" nillable="true" type="intf:MeseType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PeriodoDiRicerca2Type">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Anno" nillable="true" type="intf:Anno2Type" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Mese" nillable="true" type="intf:MeseType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CodiceFiscaleType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="16" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PaginazioneInType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="NumRecPartenza" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int" />
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="NumRecEstrarre" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int" />
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="RichiediTotRecord" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:boolean" />
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="RichiediIdSincronizzazione" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:boolean" />
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PaginazioneOutType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="NumRecEstratti" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int" />
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="TotRecord" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int" />
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="IdSincronizzazione" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string" />
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="PartitaIVAType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="11" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DecodificaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Codice" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Descrizione" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SoggettoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Nome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Cognome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Sesso" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="LuogoDiNascita" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataDiNascita" nillable="true" type="intf:DataType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="PersonaGiuridica" nillable="true" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaUfficioPagatoreType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensioneMandato" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CoordinatePagamento" nillable="true" type="intf:CoordinatePagamentoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataCoordinate" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="SoggettoRiscossore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="UfficioPagatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateValide" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateValideEsito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateValideDescEsito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Delegato" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RelazioneSoggetto">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Codice" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Descrizione" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Intestatario" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PensioniECoordinateType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensioneMandato" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="PensionePrincipaleMandato" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CoordinatePagamento" nillable="true" type="intf:CoordinatePagamentoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataCoordinate" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DecodificaABI_CAB" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateValide" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateValideEsito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateValideDescEsito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceCategoria" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DescrizioneCategoria" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SiglaCategoria" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceSede" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceZona" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DescrizioneSede" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NumeroCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DataDiAssunzioneInCarico" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RiferimentoPensioneEnte" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DataDecorrenza" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="TipoClassPens" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DescrClassPens" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Relazione" type="intf:RelazioneSoggetto" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NaturaPensione" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="GP1ALZ6" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DecodificaGP1ALZ6" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Delegato" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProvenienzaCoordinateType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Provenienza" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataCoordinate" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Matricola" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CoordinatePagamento" nillable="true" type="intf:CoordinatePagamentoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneUfficioPagatoreType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataVariazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DecorrenzaAzione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="PresenzaDelegato" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VerificaIbanType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensioneMandato" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataMovimentazione" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EsitoVariazioniUfficioPagatoreType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataVariazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Provenienza" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CoordinatePagamento" nillable="true" type="intf:CoordinatePagamentoType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="NumeroLibretto" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ModalitaPagamento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Operatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="SedeOperatore" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneUfficioPagatoreDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Nazione" nillable="true" type="intf:NazioneType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ModalitaPagamento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" nillable="true" type="intf:CodiceFiscaleType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateBancarie" nillable="true" type="intf:CoordinateBancarieType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NumeroLibretto" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Operatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Sede" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DataVariazione" nillable="true" type="intf:DataType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="VisualizzaProposta" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneUfficioPagatoreDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Cognome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Nome" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CodiceFiscale" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DataNascita" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CognomeAcquisito" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="StatoEstero" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="SedeInail" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Paese" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Iban" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Bic" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="VariazioneUfficioPagatore" nillable="true" type="intf:VariazioneUfficioPagatoreType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="DescrizioneUfficioPagatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Tutore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CodiceFiscaleTutore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValidazioneCoordinateBancarieDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Nazione" nillable="true" type="intf:NazioneType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateBancarie" nillable="true" type="intf:CoordinateBancarieType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValidazioneCoordinateBancarieDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PensioniECoordinateDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PensioniECoordinateDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="PensioniECoordinate" nillable="true" type="intf:PensioniECoordinateType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProvenienzaCoordinateDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceDocumento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Rata" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ProvenienzaCoordinateDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProvenienzaCoordinate" nillable="true" type="intf:ProvenienzaCoordinateType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaRegolaDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Nazione" nillable="true" type="intf:NazioneType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateBancarie" nillable="true" type="intf:CoordinateBancarieAbiCabType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaRegolaDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="StatoINPS" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="TitoloBIC" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="TipoBIC" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="HelpErroreBIC" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ControlloBIC" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="TitoloIBAN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="TipoIBAN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="HelpErroreIBAN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ControlloIBAN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ABI" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CAB" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaUfficioPagatoreDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" nillable="true" type="intf:CodiceFiscaleType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VerificaIbanDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" nillable="true" type="intf:CodiceFiscaleType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Iban" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaUfficioPagatoreDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ConsultaUfficioPagatore" nillable="true" type="intf:ConsultaUfficioPagatoreType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VerificaIbanDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="VerificaIban" nillable="true" type="intf:VerificaIbanType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValidaUfficioPagatoreDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Nazione" nillable="true" type="intf:NazioneType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ModalitaPagamento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateBancarie" nillable="true" type="intf:CoordinateBancarieType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NumeroLibretto" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValidaUfficioPagatoreDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaEsitoVariazioniUfficioPagatoreDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaVariazioniUfficioPagatoreDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaVariazioniUfficioPagatoreDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="VariazioniUfficioPagatoreStorico" nillable="true" type="intf:VariazioniUfficioPagatoreStoricoType" />
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="VariazioniUfficioPagatoreAttuale" nillable="true" type="intf:VariazioniUfficioPagatoreAttualeType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformazioniUfficioPagatoreDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateBancarie" type="intf:CoordinateBancarieType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InformazioniUfficioPagatoreDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Denominazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ConsultaEsitoVariazioniUfficioPagatoreDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CodiceFiscale" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="EsitoVariazioniUfficioPagatore" nillable="true" type="intf:EsitoVariazioniUfficioPagatoreType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneDaCassaSedeDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Nazione" nillable="true" type="intf:NazioneType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ModalitaPagamento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoordinateBancarie" nillable="true" type="intf:CoordinateBancarieType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NumeroLibretto" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Operatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Sede" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DataVariazione" nillable="true" type="intf:DataType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="VisualizzaProposta" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneDaCassaSedeDTOResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="intf:VariazioneUfficioPagatoreDTOResponse" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CoordinateBancarieVariazioniType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ABI_Storico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CAB_Storico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="IBAN_Storico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="BIC_Storico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Data_Variazione_Storico" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Procedura_Storico" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioniUfficioPagatoreStoricoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="CoordinateBancarieVariazioni" nillable="true" type="intf:CoordinateBancarieVariazioniType" />
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="ChiavePensione" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioniUfficioPagatoreAttualeType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CoordinateBancarieVariazioni" nillable="true" type="intf:CoordinateBancarieVariazioniType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CoordinateBancarieType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="IBAN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CAB" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ABI" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="BIC" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CoordinatePagamentoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ModalitaPagamento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="IBAN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CAB" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="ABI" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="BIC" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="PaesePagamento" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NazioneType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Denominazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CodiceISO" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CodiceCatastale" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AccessoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Userid" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Password" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="VariazioneUfficioPagatore">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="variazioneUfficioPagatoreRequest" type="intf:VariazioneUfficioPagatoreDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VariazioneUfficioPagatoreResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="variazioneUfficioPagatoreResponse" type="intf:VariazioneUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ValidazioneCoordinateBancarie">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="validazioneCoordinateBancarieRequest" type="intf:ValidazioneCoordinateBancarieDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ValidazioneCoordinateBancarieResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="validazioneCoordinateBancarieResponse" type="intf:ValidazioneCoordinateBancarieDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConsultaUfficioPagatore">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaUfficioPagatoreRequest" type="intf:ConsultaUfficioPagatoreDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConsultaUfficioPagatoreResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaUfficioPagatoreResponse" type="intf:ConsultaUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConsultaRegola">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaRegolaRequest" type="intf:ConsultaRegolaDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConsultaRegolaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaRegolaResponse" type="intf:ConsultaRegolaDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VerificaIban">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="verificaIbanRequest" type="intf:VerificaIbanDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VerificaIbanResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="verificaIbanResponse" type="intf:VerificaIbanDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="CoordinateBancarieAbiCabType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ABI" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CAB" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneAltriEntiDTORequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Operatore" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Terminale" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Nazione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ModalitaPagamento" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="IBAN" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ABI" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CAB" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="BIC" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NumeroLibretto" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneAltriEntiDTOResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneACassaSedeRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChiavePensione" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CAB" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="VisualizzaProposta" nillable="true" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="AccessoApplicazione" nillable="true" type="intf:AccessoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VariazioneACassaSedeResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Esito" nillable="true" type="intf:EsitoType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ElencoStatiRequest" />
+  <xsd:complexType name="ElencoStatiResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Nazione" nillable="true" type="intf:NazioneType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="CoordinateBancarie" nillable="true" type="intf:CoordinateBancarieAbiCabType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="VariazioneAltriEnti">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="variazioneAltriEntiRequest" nillable="true" type="intf:VariazioneAltriEntiDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VariazioneAltriEntiResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="variazioneAltriEntiResponse" nillable="true" type="intf:VariazioneAltriEntiDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ValidaUfficioPagatore">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="validaUfficioPagatoreRequest" nillable="true" type="intf:ValidaUfficioPagatoreDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ValidaUfficioPagatoreResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="validaUfficioPagatoreResponse" nillable="true" type="intf:ValidaUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="InformazioniUfficioPagatore">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="informazioniUfficioPagatoreRequest" type="intf:InformazioniUfficioPagatoreDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="InformazioniUfficioPagatoreResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="informazioniUfficioPagatoreResponse" nillable="true" type="intf:InformazioniUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ElencoStati">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="elencoStatiRequest" nillable="true" type="intf:ElencoStatiRequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ElencoStatiResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="unbounded" name="elencoStatiResponse" nillable="true" type="intf:ElencoStatiResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VariazioneDaCassaSede">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="variazioneDaCassaSedeRequest" type="intf:VariazioneDaCassaSedeDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VariazioneDaCassaSedeResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="variazioneDaCassaSedeResponse" type="intf:VariazioneUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VariazioneACassaSede">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="variazioneACassaSedeRequest" type="intf:VariazioneACassaSedeRequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="VariazioneACassaSedeResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="variazioneACassaSedeResponse" type="intf:VariazioneUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConsultaVariazioniUfficioPagatore">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaVariazioniUfficioPagatoreRequest" type="intf:ConsultaVariazioniUfficioPagatoreDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConsultaVariazioniUfficioPagatoreResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaVariazioniUfficioPagatoreResponse" type="intf:ConsultaVariazioniUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="EsitoVariazioni">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaEsitoVariazioniUfficioPagatoreRequest" type="intf:ConsultaEsitoVariazioniUfficioPagatoreDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="EsitoVariazioniResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="consultaEsitoVariazioniUfficioPagatoreResponse" type="intf:ConsultaEsitoVariazioniUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetPensioniECoordinate">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pensioniECoordinateRequest" type="intf:PensioniECoordinateDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetPensioniECoordinateResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pensioniECoordinateResponse" type="intf:PensioniECoordinateDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetProvenienzaCoordinate">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="provenienzaCoordinateRequest" type="intf:ProvenienzaCoordinateDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetProvenienzaCoordinateResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="provenienzaCoordinateResponse" type="intf:ProvenienzaCoordinateDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetInformazioniUfficioPagatore">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="informazioniUfficioPagatoreRequest" type="intf:InformazioniUfficioPagatoreDTORequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetInformazioniUfficioPagatoreResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="informazioniUfficioPagatoreResponse" type="intf:InformazioniUfficioPagatoreDTOResponse" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

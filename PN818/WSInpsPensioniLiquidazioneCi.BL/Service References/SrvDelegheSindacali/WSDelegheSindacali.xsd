@@ -1,0 +1,3592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:schema xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://inps.it/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://ritenutasindacale.inpdap.it" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" elementFormDefault="qualified" targetNamespace="http://inps.it/" xmlns:s="http://www.w3.org/2001/XMLSchema">
+  <s:import schemaLocation="WSDelegheSindacali.xsd2.xsd" namespace="http://ritenutasindacale.inpdap.it" />
+  <s:element name="DecodificaSiglaSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sSigla" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DecodificaSiglaSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="DecodificaSiglaSindacatoResult" type="tns:RispostaSindacato" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="RispostaSindacato">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sindacatoEsteso" type="tns:SindacatoEsteso" />
+      <s:element minOccurs="0" maxOccurs="1" name="sindacato" type="tns:Sindacato" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="SindacatoEsteso">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodice" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDescrizione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSigla" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sProgressivo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sAttivo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataConcomitanti" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataPrimaDec" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataCessazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataScadenzaConvenzione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sTipoCalcolo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataCarico" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataVariaz" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sVecchiaDenominazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMemo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCircolare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMatricola" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCategorieCompatibili" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCategorieNonCompatibili" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCategorieNonEsistenti" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCategorieNonSindacabili" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="codice_fiscale" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfString">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Sindacato">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:SindacatoEsteso">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ElencoCategorie" type="tns:ArrayOfCategoria" />
+          <s:element minOccurs="0" maxOccurs="1" name="ElencoSedi" type="tns:ArrayOfSedeInps" />
+          <s:element minOccurs="1" maxOccurs="1" name="sStato" type="tns:STATO_SINDACATO" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="ArrayOfCategoria">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Categoria" nillable="true" type="tns:Categoria" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Categoria">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:short" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceCategoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Descrizione" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfSedeInps">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="SedeInps" nillable="true" type="tns:SedeInps" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="SedeInps">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Descrizione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodRegione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Regione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cap" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Comune" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Fl_Attiva" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="STATO_SINDACATO">
+    <s:restriction base="s:string">
+      <s:enumeration value="INIZIATO" />
+      <s:enumeration value="ATTIVO" />
+      <s:enumeration value="CESSATO" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="Esito">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceEsito" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDescrizioneEsito" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="Identity" type="tns:Identity" />
+  <s:complexType name="Identity">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="AppName" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="AppKey" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IdentityProvider" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SessionId" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SequenceId" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PeerHost" type="s:string" />
+    </s:sequence>
+    <s:anyAttribute />
+  </s:complexType>
+  <s:element name="DecodificaCodiceSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCodice" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DecodificaCodiceSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="DecodificaCodiceSindacatoResult" type="tns:RispostaSindacato" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ElencoSindacati">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="campoOrdinamento" type="tns:ELENCO_CAMPI" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:simpleType name="ELENCO_CAMPI">
+    <s:restriction base="s:string">
+      <s:enumeration value="CODICE" />
+      <s:enumeration value="PROGRESSIVO" />
+      <s:enumeration value="SIGLA" />
+      <s:enumeration value="STATO" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="ElencoSindacatiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ElencoSindacatiResult" type="tns:RispostaElencoSindacati" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="RispostaElencoSindacati">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sindacato" type="tns:ArrayOfSindacato" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfSindacato">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Sindacato" nillable="true" type="tns:Sindacato" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="ElencoSindacatiPerCategoria">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="campoOrdinamento" type="tns:ELENCO_CAMPI" />
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ElencoSindacatiPerCategoriaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ElencoSindacatiPerCategoriaResult" type="tns:RispostaElencoSindacati" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ElencoSindacatiCompatibiliperCategoria">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCategoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCertificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sDecorrenzaPensione" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ElencoSindacatiCompatibiliperCategoriaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ElencoSindacatiCompatibiliperCategoriaResult" type="tns:ElencoSindacatiCompatibili" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ElencoSindacatiCompatibili">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DecorrenzaPensione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SindacatiCompatibili" type="tns:ArrayOfSindacatoCompatibile" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfSindacatoCompatibile">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="SindacatoCompatibile" nillable="true" type="tns:SindacatoCompatibile" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="SindacatoCompatibile">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="SiglaSindacato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceSindacato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceSindacatoNUMERICO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DecorrenzaSindacato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataScadenzaConvenzione" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="VerificaCompatibilita">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCategoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCertificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCodiceSindacato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sDecorrenzaPensione" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="VerificaCompatibilitaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="VerificaCompatibilitaResult" type="tns:RispostaCompatibilita" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="RispostaCompatibilita">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sindacato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Compatibilità" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DescCompatibilità" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DecorrenzaTrattenuta" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceDecorrenza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DescCodiceDecorrenza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="RecuperaSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCodice" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RecuperaSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RecuperaSindacatoResult" type="tns:RispostaSindacato" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RecuperaSindacatoStorico">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCodice" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sDatavariazione" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RecuperaSindacatoStoricoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RecuperaSindacatoStoricoResult" type="tns:RispostaSindacato" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="monitoraggioINPDAP">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="monitoraggioINPDAPResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="monitoraggioINPDAPResult" type="s1:esitoElaborazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getCatNoSind">
+    <s:complexType />
+  </s:element>
+  <s:element name="getCatNoSindResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getCatNoSindResult" type="tns:ArrayOfString" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DecodificaProgressivoSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sProgressivo" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DecodificaProgressivoSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="DecodificaProgressivoSindacatoResult" type="tns:RispostaSindacato" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="controllaIN_ELAB">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certitificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="controllaIN_ELABResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="controllaIN_ELABResult" type="tns:Esito" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="eseguiStatisticaOperatore">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="dataDa" type="s:dateTime" />
+        <s:element minOccurs="1" maxOccurs="1" name="dataA" type="s:dateTime" />
+        <s:element minOccurs="0" maxOccurs="1" name="cfOperatore" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="eseguiStatisticaOperatoreResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="eseguiStatisticaOperatoreResult" type="tns:StatisticheOperatore" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="StatisticheOperatore">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Deleghe" type="tns:ArrayOfDelega" />
+      <s:element minOccurs="0" maxOccurs="1" name="Revoche" type="tns:ArrayOfRevoca" />
+      <s:element minOccurs="0" maxOccurs="1" name="Congiunte" type="tns:ArrayOfCongiunta" />
+      <s:element minOccurs="0" maxOccurs="1" name="esitoStatistica" type="tns:EsitoMonitoraggio" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDelega">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Delega" nillable="true" type="tns:Delega" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Delega">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Richiesta" />
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="Richiesta" abstract="true">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="andataABuonFine" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="codiceRichiesta" type="tns:CodiceRichiesta" />
+      <s:element minOccurs="1" maxOccurs="1" name="tipoRichiesta" type="tns:TipoRichiesta" />
+      <s:element minOccurs="1" maxOccurs="1" name="ID_Richiesta" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="datiAnagrafica" type="tns:DatiAnagrafica" />
+      <s:element minOccurs="0" maxOccurs="1" name="datiRichiesta" type="tns:DatiRichiesta" />
+      <s:element minOccurs="0" maxOccurs="1" name="NumeroTicket" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="CodiceRichiesta">
+    <s:restriction base="s:string">
+      <s:enumeration value="DELEGA" />
+      <s:enumeration value="REVOCA" />
+      <s:enumeration value="CONGIUNTA" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="TipoRichiesta">
+    <s:restriction base="s:string">
+      <s:enumeration value="PROPOSTA" />
+      <s:enumeration value="CONFERMA" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="DatiAnagrafica">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NOME" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="COGNOME" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CODICE_FISCALE" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_NASC" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="COMUNE_NASC" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PR_NASC" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="STATO_NASC" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PEC" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NDOC" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TIPO_DOCUMENTO" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_RILASCIO_DOCUMENTO" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="ENTE_RILASCIO_DOCUMENTO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CIVICO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="LOCALITA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="COMUNE_RES" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CAP_RES" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PR_RES" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="STATO_RES" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="STRUTTURA" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_SOTTOSCRIZIONE_ALLEGATO" type="s:dateTime" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DatiRichiesta">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="IDFILE" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="IDFILE_REV" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="CODICE" type="s:decimal" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN_REV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ESITO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SEDE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN_Esteso" type="tns:SindacatoEsteso" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN_REV_Esteso" type="tns:SindacatoEsteso" />
+      <s:element minOccurs="0" maxOccurs="1" name="tipoRichiesta" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Congiunta">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Richiesta" />
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="Revoca">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Richiesta" />
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="ArrayOfRevoca">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Revoca" nillable="true" type="tns:Revoca" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfCongiunta">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Congiunta" nillable="true" type="tns:Congiunta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="EsitoMonitoraggio">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Codice" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DettaglioErrore" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getDocumentoTelematizzato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="codiceRichiesta" type="tns:CodiceRichiesta" />
+        <s:element minOccurs="1" maxOccurs="1" name="IDFile" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDocumentoTelematizzatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDocumentoTelematizzatoResult" type="tns:DocumentoOperativita" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="DocumentoOperativita">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="codiceRichiesta" type="tns:CodiceRichiesta" />
+      <s:element minOccurs="0" maxOccurs="1" name="esitoDocumento" type="tns:EsitoMonitoraggio" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MatricolaOperatore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NomeFile" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DescrizioneFile" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TipoPratica" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IDPratica" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Documento" type="s:base64Binary" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="AnnoValidita" type="s:short" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceSindacato" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="eseguiStatisticaGeneraleAmministratore">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="dataDa" type="s:dateTime" />
+        <s:element minOccurs="1" maxOccurs="1" name="dataA" type="s:dateTime" />
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="eseguiStatisticaGeneraleAmministratoreResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="eseguiStatisticaGeneraleAmministratoreResult" type="tns:StatisticheAmministratore" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="StatisticheAmministratore">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Deleghe" type="tns:ArrayOfElementoStatAdmin" />
+      <s:element minOccurs="0" maxOccurs="1" name="Revoche" type="tns:ArrayOfElementoStatAdmin" />
+      <s:element minOccurs="0" maxOccurs="1" name="Congiunte" type="tns:ArrayOfElementoStatAdmin" />
+      <s:element minOccurs="0" maxOccurs="1" name="esitoStatistica" type="tns:EsitoMonitoraggio" />
+      <s:element minOccurs="0" maxOccurs="1" name="delegheFasi" type="tns:ArrayOfElementoStatAdminFase" />
+      <s:element minOccurs="0" maxOccurs="1" name="revocheFasi" type="tns:ArrayOfElementoStatAdminFase" />
+      <s:element minOccurs="0" maxOccurs="1" name="congiunteFasi" type="tns:ArrayOfElementoStatAdminFase" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfElementoStatAdmin">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ElementoStatAdmin" nillable="true" type="tns:ElementoStatAdmin" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ElementoStatAdmin">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="tipoRichiesta" type="tns:TipoRichiesta" />
+      <s:element minOccurs="1" maxOccurs="1" name="Occorrenze" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfElementoStatAdminFase">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ElementoStatAdminFase" nillable="true" type="tns:ElementoStatAdminFase" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ElementoStatAdminFase">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="fase" type="tns:Fase" />
+      <s:element minOccurs="1" maxOccurs="1" name="occorrenze" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Fase">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="num" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="coloreRGB" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="foreColor" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="prendiInCarico">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="richiesta" type="tns:RichiestaTelematizzazione" />
+        <s:element minOccurs="1" maxOccurs="1" name="provenienza" type="tns:Provenienza" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="RichiestaTelematizzazione">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:baseEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_USER" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDRICHIESTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FUNZIONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOTTOFUNZIONE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ESITO" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCR_ESITO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COGNOME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODICE_FISCALE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA_NASC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMUNE_NASC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROV_NASC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATO_NASC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PEC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NDOC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CIVICO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOCALITA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMUNE_RES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CAP_RES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROV_RES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATO_RES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STRUTTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaMovimentazioni" type="tns:ArrayOfMovimentazione_Pensione" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOC_DELEGA" type="tns:Document" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOC_REVOCA" type="tns:Document" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_DOCUMENTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_RILASCIO_DOCUMENTO" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ENTE_RILASCIO_DOCUMENTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_SOTTOSCRIZIONE_ALLEGATO" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="idDocumentoRevoca" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="baseEntity" abstract="true">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SIGLA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DENOMINAZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANNO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="COD_SEDE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SEDE" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Document">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:baseEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IDFILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOME_FILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PERCORSO_FILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_FILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_MOV" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_OPERAZIONE" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NDOC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOC" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="CF_TITOLARE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MATRICOLA_OPERATORE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NPROTOCOLLO" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="Movimentazione_Pensione">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:baseEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODICE_ELENCO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSOG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_TIMESTAMP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFileDEL" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFileREV" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CATEGORIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CERTIFICATO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN_REV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_MOV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPOMOV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPOELAB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCR_ESITO_ELAB" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_IN_BLACKLIST" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isLavorabile" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isInLavorazione" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isLavorata" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isCongiunta" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CF_OPERATORE" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="ArrayOfMovimentazione_Pensione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Movimentazione_Pensione" nillable="true" type="tns:Movimentazione_Pensione" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="Provenienza">
+    <s:restriction base="s:string">
+      <s:enumeration value="INTRANET" />
+      <s:enumeration value="INTERNET" />
+      <s:enumeration value="CITTADINO" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="prendiInCaricoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="prendiInCaricoResult" type="tns:EsitoPresaInCarico" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="EsitoPresaInCarico">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="NumeroTicket" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="richiestaAnnullata" type="tns:DatiRichiesta" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="controllaSePossibilePresaInCarico">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="richiesta" type="tns:RichiestaTelematizzazione" />
+        <s:element minOccurs="1" maxOccurs="1" name="provenienza" type="tns:Provenienza" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="controllaSePossibilePresaInCaricoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="controllaSePossibilePresaInCaricoResult" type="tns:EsitoControlloPresaInCarico" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="EsitoControlloPresaInCarico">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="soggetto_ARCA" type="tns:Soggetto_ARCA" />
+      <s:element minOccurs="0" maxOccurs="1" name="sindacatoDelegaAttiva" type="tns:SindacatoEsteso" />
+      <s:element minOccurs="1" maxOccurs="1" name="dataMorte_ARCA" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="richiestaDaAnnullare" type="tns:DatiRichiesta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Soggetto_ARCA">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Anagrafica" type="tns:Anagrafica_ARCA" />
+      <s:element minOccurs="0" maxOccurs="1" name="DatiArca" type="tns:DatiArca" />
+      <s:element minOccurs="0" maxOccurs="1" name="Pensioni" type="tns:ArrayOfPensione_ARCA" />
+      <s:element minOccurs="0" maxOccurs="1" name="ChiaviPensione" type="tns:ArrayOfString" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Anagrafica_ARCA">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Residenza" type="tns:Residenza_ARCA" />
+      <s:element minOccurs="0" maxOccurs="1" name="Paese" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaPensioni" type="tns:ArrayOfPensione_ARCA" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsSoggettoDeceduto" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataMorte" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cittadinanza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceCittadinanza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceComune" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Nazionalita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CognomeAcqui" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataNascitaToString" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="StatoCivile" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleValidato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ComuneNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="tipoCodiceComune" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="StatoNascita" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Residenza_ARCA">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Indirizzo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Civico" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Comune" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Stato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cap" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SiglaPaese" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfPensione_ARCA">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Pensione_ARCA" nillable="true" type="tns:Pensione_ARCA" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Pensione_ARCA">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceEliminazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SiglaCategoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceAzione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FlagEliminazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DescrizioneEliminazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DecorrenzaEliminazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="AzioneDecodificata" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Azione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Importo" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DatiArca">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceArcaAlfanumerico" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="CodiceArcaNumerico" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsPresenzaSinonimi" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsPresenteInArca" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceIndividuale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FonteArchivio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Progetto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DescrizioneProgetto" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getStatiRichiesteCP">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatiRichiesteCPResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getStatiRichiesteCPResult" type="tns:StatiRichieste" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="StatiRichieste">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="stati" type="tns:ArrayOfStatoRichiesta" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfStatoRichiesta">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="StatoRichiesta" nillable="true" type="tns:StatoRichiesta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="StatoRichiesta">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="id" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="RICH_TLMT" type="tns:ArrayOfDatiRichiesta" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANAG_TLMT" type="tns:DatiAnagrafica" />
+      <s:element minOccurs="0" maxOccurs="1" name="SIND_OP_ENTI" type="tns:SindOpEnti" />
+      <s:element minOccurs="0" maxOccurs="1" name="TDELSIND" type="tns:TDELSIND_DB2" />
+      <s:element minOccurs="0" maxOccurs="1" name="TSEP_TSIN" type="tns:ArrayOfTSEP_TSIN_DB2" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="fase" type="tns:Fase" />
+      <s:element minOccurs="0" maxOccurs="1" name="esitoGlobale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="decodificaEsitoGlobale" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDatiRichiesta">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="DatiRichiesta" nillable="true" type="tns:DatiRichiesta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="SindOpEnti">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN_REV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FUNZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CODICE_FISCALE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_DECORRENZA" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_INSERIMENTO" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_PRELIEVO" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="ID_DS_ANDATA" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_DS_ANDATA" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="ID_DS_RITORNO" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_DS_RITORNO" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="FLAG_ELAB_ENTI" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_ELAB_ENTI" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="ESITO_ELAB_ENTI" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FLAG_ELAB_DBPN" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_ELAB_DBPN" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="ESITO_ELAB_DBPN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NOTE" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="ID_RICH_TLMT" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="STATO_LAVINPS" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_PRESENTAZIONE" type="s:dateTime" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="TDELSIND_DB2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="PROGR_MOV" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="ESITO" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_MOV" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="COD_MOV" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="IMPORTO" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE01" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE02" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE03" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE04" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE05" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE06" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE07" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE08" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE09" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE10" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE11" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="MESE12" type="s:decimal" />
+      <s:element minOccurs="0" maxOccurs="1" name="TRANSAZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TERMINALE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SOTTOFUNZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="STRUTTURA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CODICE_ELENCO" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="PRESENTAZIONE" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="COD_ELIMINAZ" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ALTRA_CHIAVE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="GP1AC01" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANCASIND" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="D_DECORRENZA" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="CSOG" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="ID_FILE" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="FL_TLMT" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="IDFILE_REV" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="CF_OP_TLMT" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DATA_INS" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="HVARIA" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="ID_RICH_TLMT" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfTSEP_TSIN_DB2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="TSEP_TSIN_DB2" nillable="true" type="tns:TSEP_TSIN_DB2" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="TSEP_TSIN_DB2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="APAGCDLVAL" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="NCDLBIM" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="CTPEST" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="EIMP" type="s:decimal" />
+      <s:element minOccurs="0" maxOccurs="1" name="CNATMOV" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DNATMOV" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="TMS_INS" type="s:dateTime" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getStatiRichiesteCF">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatiRichiesteCFResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getStatiRichiesteCFResult" type="tns:StatiRichieste" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatoRichiestaID_RICH">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="idRichiesta" type="s:dateTime" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatoRichiestaID_RICHResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getStatoRichiestaID_RICHResult" type="tns:StatiRichieste" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatiRichiesteOperatore">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="dataDa" type="s:dateTime" />
+        <s:element minOccurs="1" maxOccurs="1" name="dataA" type="s:dateTime" />
+        <s:element minOccurs="0" maxOccurs="1" name="cfOperatore" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="cfSoggettoRichiestaDati" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatiRichiesteOperatoreResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getStatiRichiesteOperatoreResult" type="tns:StatiRichieste" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDettagliReportAmministratore">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="dataDa" type="s:dateTime" />
+        <s:element minOccurs="1" maxOccurs="1" name="dataA" type="s:dateTime" />
+        <s:element minOccurs="0" maxOccurs="1" name="cfOperatore" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDettagliReportAmministratoreResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDettagliReportAmministratoreResult" type="tns:StatiRichieste" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatiRichiesteAmministratore">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="dataDa" type="s:dateTime" />
+        <s:element minOccurs="1" maxOccurs="1" name="dataA" type="s:dateTime" />
+        <s:element minOccurs="0" maxOccurs="1" name="cfOperatore" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getStatiRichiesteAmministratoreResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getStatiRichiesteAmministratoreResult" type="tns:StatisticheAmministratore" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getAllFasi">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="cfOperatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getAllFasiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getAllFasiResult" type="tns:ArrayOfFase" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfFase">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Fase" nillable="true" type="tns:Fase" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="insertDocumentRevocaPerCongiunta">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="richiesta" type="tns:RichiestaTelematizzazione" />
+        <s:element minOccurs="1" maxOccurs="1" name="provenienza" type="tns:Provenienza" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="insertDocumentRevocaPerCongiuntaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="insertDocumentRevocaPerCongiuntaResult" type="tns:EsitoDocRevoca" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="EsitoDocRevoca">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="1" maxOccurs="1" name="IDFile" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="ConsultazioneSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="richiesta" type="tns:RichiestaTelematizzazione" />
+        <s:element minOccurs="1" maxOccurs="1" name="provenienza" type="tns:Provenienza" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ConsultazioneSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ConsultazioneSindacatoResult" type="tns:ConsultazioneSindacato" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ConsultazioneSindacato">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="sindacatoDelegaAttiva" type="tns:SindacatoEsteso" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getPeriodiIscrizione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getPeriodiIscrizioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getPeriodiIscrizioneResult" type="tns:PeriodiIscrizione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="PeriodiIscrizione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="periodi" type="tns:ArrayOfT27e" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfT27e">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="T27e" nillable="true" type="tns:T27e" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="T27e">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MSINDEL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSINFED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSINZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MSINREV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FSINOPR" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getTrattenute">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getTrattenuteResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getTrattenuteResult" type="tns:Trattenute" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Trattenute">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="trattenute" type="tns:ArrayOfTSEP_TSIN_DB2" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getAllMovimentazioni">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getAllMovimentazioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getAllMovimentazioniResult" type="tns:Movimentazioni" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Movimentazioni">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="movimentazioni" type="tns:ArrayOfTDELSIND_DB2" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfTDELSIND_DB2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="TDELSIND_DB2" nillable="true" type="tns:TDELSIND_DB2" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getPeriodiIscrizionePensioni">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="pensioni" type="tns:ArrayOfPensione" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfPensione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Pensione" nillable="true" type="tns:Pensione" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Pensione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="csed" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="czon" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceEliminazione" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getPeriodiIscrizionePensioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getPeriodiIscrizionePensioniResult" type="tns:PeriodiIscrizione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getTrattenutePensioni">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="pensioni" type="tns:ArrayOfPensione" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getTrattenutePensioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getTrattenutePensioniResult" type="tns:Trattenute" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getAllMovimentazioniPensioni">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="pensioni" type="tns:ArrayOfPensione" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getAllMovimentazioniPensioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getAllMovimentazioniPensioniResult" type="tns:Movimentazioni" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDeleghePensione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="app_name" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDeleghePensioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDeleghePensioneResult" type="tns:DeleghePensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="DeleghePensione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="delegaAttiva" type="tns:SingolaDelegaPensione" />
+      <s:element minOccurs="0" maxOccurs="1" name="delegheRevocate" type="tns:ArrayOfSingolaDelegaPensione" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="SingolaDelegaPensione">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="dataInizio" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="dataFine" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sindacato" type="tns:SindacatoEsteso" />
+      <s:element minOccurs="0" maxOccurs="1" name="trattenute" type="tns:ArrayOfTrattenuta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfTrattenuta">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Trattenuta" nillable="true" type="tns:Trattenuta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Trattenuta">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="mese" type="s:short" />
+      <s:element minOccurs="1" maxOccurs="1" name="anno" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="importo" type="s:decimal" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfSingolaDelegaPensione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="SingolaDelegaPensione" nillable="true" type="tns:SingolaDelegaPensione" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getDettagliRichieste">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDettagliRichiesteResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDettagliRichiesteResult" type="tns:DettagliRichieste" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="DettagliRichieste">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="dettagli" type="tns:ArrayOfDettaglioSingolaRichiesta" />
+      <s:element minOccurs="1" maxOccurs="1" name="isRevocaPossibile" type="s:boolean" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDettaglioSingolaRichiesta">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="DettaglioSingolaRichiesta" nillable="true" type="tns:DettaglioSingolaRichiesta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DettaglioSingolaRichiesta">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sindacato" type="tns:SindacatoEsteso" />
+      <s:element minOccurs="0" maxOccurs="1" name="SindacatoRevocato" type="tns:SindacatoEsteso" />
+      <s:element minOccurs="1" maxOccurs="1" name="InseritaIl" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataDecorrenza" type="s:dateTime" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataMov" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="RichiestaDa" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="fase" type="tns:Fase" />
+      <s:element minOccurs="0" maxOccurs="1" name="esitoGlobale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Anagrafica" type="tns:DatiAnagrafica" />
+      <s:element minOccurs="1" maxOccurs="1" name="idDocumentoDelega" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="idDocumentoRevoca" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getSindpag_noncont">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="anno" type="s:string" />
+        <s:element minOccurs="1" maxOccurs="1" name="mese" type="s:int" />
+        <s:element minOccurs="0" maxOccurs="1" name="codProcedura" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getSindpag_noncontResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getSindpag_noncontResult" type="tns:SINDPAG_NONCONT" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="SINDPAG_NONCONT">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="elementi" type="tns:ArrayOfSINDPAG_NONCONT_element" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfSINDPAG_NONCONT_element">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="SINDPAG_NONCONT_element" nillable="true" type="tns:SINDPAG_NONCONT_element" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="SINDPAG_NONCONT_element">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CONTO_DI_MASTRO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="APAGCDLVAL" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="NCDLBIM" type="s:short" />
+      <s:element minOccurs="1" maxOccurs="1" name="PROG" type="s:short" />
+      <s:element minOccurs="1" maxOccurs="1" name="EIMP" type="s:decimal" />
+      <s:element minOccurs="0" maxOccurs="1" name="DA_CONTAB" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="COD_PROCEDURA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getDettagliRichiesteCittadino">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDettagliRichiesteCittadinoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDettagliRichiesteCittadinoResult" type="tns:DettagliSoggettoCittadino" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="DettagliSoggettoCittadino">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="dettagli" type="tns:ArrayOfDettagliSoggettoCittadino_Entry" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDettagliSoggettoCittadino_Entry">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="DettagliSoggettoCittadino_Entry" nillable="true" type="tns:DettagliSoggettoCittadino_Entry" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DettagliSoggettoCittadino_Entry">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Csed" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Czon" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodElim" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataElim" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="Csin" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="isRevocaPossibile" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="msgRevocaPossibile" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetMenu">
+    <s:complexType />
+  </s:element>
+  <s:element name="GetMenuResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetMenuResult" type="tns:ArrayOfMENU" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfMENU">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="MENU" nillable="true" type="tns:MENU" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="MENU">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_MENU" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LABEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISABILITATO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_OGGETTO" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="EntityObject" abstract="true">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:StructuralObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="StructuralObject" abstract="true" />
+  <s:complexType name="EntityKey">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="EntitySetName" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="EntityContainerName" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="EntityKeyValues" type="tns:ArrayOfEntityKeyMember" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfEntityKeyMember">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="EntityKeyMember">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Value" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getCategorie">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="codSind" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getCategorieResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getCategorieResult" type="tns:ArrayOfCategoria" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GET_CATEGORIE_CENSITE">
+    <s:complexType />
+  </s:element>
+  <s:complexType name="CategoriaCensita">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CAT_NUMERICA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CAT_ALFABETICA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CAT_WEBDOM" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CATEG_CHIARO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CATEG_SHORT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CERTIFIC_DA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CERTIFIC_A" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfCategoriaCensita">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="CategoriaCensita" nillable="true" type="tns:CategoriaCensita" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GET_CATEGORIE_CENSITEResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GET_CATEGORIE_CENSITEResult" type="tns:ArrayOfCategoriaCensita" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetListaEsiti">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfESITI">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ESITI" nillable="true" type="tns:ESITI" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ESITI">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CODICEESITO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetListaEsitiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetListaEsitiResult" type="tns:ArrayOfESITI" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetListaMovimentazioni">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="Codice" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfCODICIMOVIMENTAZIONE">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="CODICIMOVIMENTAZIONE" nillable="true" type="tns:CODICIMOVIMENTAZIONE" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="CODICIMOVIMENTAZIONE">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CODICEMOVIMENTAZIONE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetListaMovimentazioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetListaMovimentazioniResult" type="tns:ArrayOfCODICIMOVIMENTAZIONE" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getElencoSedi">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="User" type="tns:Utente" />
+        <s:element minOccurs="1" maxOccurs="1" name="isDigen" type="s:boolean" />
+        <s:element minOccurs="0" maxOccurs="1" name="sediPassi" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Utente">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sindacatoUtente" type="tns:Sindacato" />
+      <s:element minOccurs="0" maxOccurs="1" name="MAIL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PEC" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CELL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TELL_UFF" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Stampa" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="Contabili" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="Sessioneid" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="isDigen" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="sediDaPassi" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getElencoSediResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getElencoSediResult" type="tns:ArrayOfSedeInps" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getSEDI_IDM">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="User" type="tns:Utente" />
+        <s:element minOccurs="1" maxOccurs="1" name="isDigen" type="s:boolean" />
+        <s:element minOccurs="0" maxOccurs="1" name="sediPassi" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getSEDI_IDMResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getSEDI_IDMResult" type="tns:ArrayOfSedeInps" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ElencoDeleghe">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="Filtri" type="tns:FiltriValori" />
+        <s:element minOccurs="1" maxOccurs="1" name="TipoRicerca" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="FiltriValori">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="CategoriaPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="SedeZonaPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="CertificatoPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="SindacatoPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataInizioPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataFinePresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataMovimentazionePresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="MovimentazionePresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="EsitoPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="CognomePresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="NomePresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="CodiceFiscalePresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataDecorrenzaPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="ComuneResPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="ProvResPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="CapPresente" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="StrutturaPresente" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SedeZona" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sindacato" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataInizio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataFine" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataMovimentazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Movimentazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MeseDecorrenza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="AnnoDecorrenza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="TipoEsito" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="UltimaMov" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="Regione" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Livello" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="Attivo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ComuneRes" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ProvRes" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cap" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Struttura" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsGestionePrivata" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsGestionePubblica" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsSportESpettacolo" type="s:boolean" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ESITO_RICERCA">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ESITO" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="DESCR_ESITO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ELENCO_DELEGHE" type="tns:ArrayOfDatiDeleghe" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDatiDeleghe">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="DatiDeleghe" nillable="true" type="tns:DatiDeleghe" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DatiDeleghe">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="IDDELEGA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SiglaCategoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NomeSede" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Prog_mov" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataMov" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="CodMov" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="IMPORTO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE01" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE02" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE03" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE04" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE05" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE06" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE07" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE08" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE09" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE10" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE11" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE12" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Codice_Elenco" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Presentazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="D_Decorrenza" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Cod_Eliminazione" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="CSOG" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Indirizzo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Civico" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cap" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Frazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="LocEstera" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Comune" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodCatastale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ResEstero" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PagEstero" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Abi" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cab" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Transazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Terminale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Funzione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Operatore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SottoFunzione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Struttura" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="AltraChiave" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="GP1AC01" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANCASIND" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="IDFILE" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="IDFILE_REV" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="FL_TLMT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="ElencoDelegheResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ElencoDelegheResult" type="tns:ESITO_RICERCA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ScriviSessione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="IdUtente" type="s:int" />
+        <s:element minOccurs="0" maxOccurs="1" name="Tipologia" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="Oggetto" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ScriviSessioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="ScriviSessioneResult" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="LeggiSessione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="IdUser" type="s:int" />
+        <s:element minOccurs="0" maxOccurs="1" name="Tipologia" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="LeggiSessioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="LeggiSessioneResult" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ScriviLogApplicazione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="Log" type="tns:LogEventi" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="LogEventi">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="DataLog" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CF_OPERATORE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Metodo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Parametri" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Esito" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="ScriviLogApplicazioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="ScriviLogApplicazioneResult" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ClearSession">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="IdUser" type="s:int" />
+        <s:element minOccurs="0" maxOccurs="1" name="CHIAVE_SESSIONE" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ClearSessionResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="ClearSessionResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RicercaAnagraficaSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="cSindacato" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="AnagraficaSindacato">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SIGLA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DENOMINAZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CODICEFISCALE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CAP" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="LOCALITA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PROVINCIA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TELEFONO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PEC" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="RL_TITOLO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="RL_NOME" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="RL_COGNOME" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="UTENTEMODIFICA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATAMODIFICA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TIPOAGGIORNAMENTO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_SCADENZA_CARICA_RL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ATTO_NOMINA_RL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FIRMA_DIGITALE_RL" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="RicercaAnagraficaSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RicercaAnagraficaSindacatoResult" type="tns:AnagraficaSindacato" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="AggiornaAnagraficaSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="AnagSindacato" type="tns:AnagraficaSindacato" />
+        <s:element minOccurs="0" maxOccurs="1" name="utente" type="tns:Utente" />
+        <s:element minOccurs="0" maxOccurs="1" name="provenienza" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="AggiornaAnagraficaSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="AggiornaAnagraficaSindacatoResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetTariffe">
+    <s:complexType />
+  </s:element>
+  <s:complexType name="ArrayOfTARIFFE">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="TARIFFE" nillable="true" type="tns:TARIFFE" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="TARIFFE">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COD_TARIFFA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IMPORTO" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ANNO" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetTariffeResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetTariffeResult" type="tns:ArrayOfTARIFFE" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertTariffa">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="tariffe" type="tns:TARIFFE" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertTariffaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertTariffaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateTariffa">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="tariffe" type="tns:TARIFFE" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateTariffaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="UpdateTariffaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteTariffa">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="tariffe" type="tns:TARIFFE" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteTariffaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="DeleteTariffaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetFaq">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="isGestione" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Faq">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DOMANDA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="RISPSOSTA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SOGGETTO_INS" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NOME_INS" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="COGNOME_INS" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:Esito" />
+      <s:element minOccurs="1" maxOccurs="1" name="isVisible" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_INS" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_MOD" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_SCAD" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ORDINE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CATEG" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfFaq">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Faq" nillable="true" type="tns:Faq" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetFaqResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetFaqResult" type="tns:ArrayOfFaq" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateFaq">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="faq" type="tns:Faq" />
+        <s:element minOccurs="1" maxOccurs="1" name="operation" type="tns:UpdateFaqOperation" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:simpleType name="UpdateFaqOperation">
+    <s:restriction base="s:string">
+      <s:enumeration value="INSERIMENTO" />
+      <s:enumeration value="MODIFICA" />
+      <s:enumeration value="CANCELLAZIONE" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="UpdateFaqResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="UpdateFaqResult" type="tns:Faq" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetNotifiche">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Notifica">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ID_NOTIFICA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_INIZIO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_FINE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfNotifica">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Notifica" nillable="true" type="tns:Notifica" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetNotificheResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetNotificheResult" type="tns:ArrayOfNotifica" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateNotifica">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="notifica" type="tns:Notifica" />
+        <s:element minOccurs="1" maxOccurs="1" name="operation" type="tns:UpdateNotificaOperation" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:simpleType name="UpdateNotificaOperation">
+    <s:restriction base="s:string">
+      <s:enumeration value="INSERIMENTO" />
+      <s:enumeration value="MODIFICA" />
+      <s:enumeration value="CANCELLAZIONE" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="UpdateNotificaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="UpdateNotificaResult" type="tns:Notifica" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="CheckNewNotifiche">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="CheckNewNotificheResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="CheckNewNotificheResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getNotificheChkoperatore">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="cfOperatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="RelatedEnd" abstract="true" />
+  <s:complexType name="EntityReference" abstract="true">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:RelatedEnd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="EntityReferenceOfNOTIFICHE">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityReference" />
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="ArrayOfNOTIFICHE_CHK">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="NOTIFICHE_CHK" nillable="true" type="tns:NOTIFICHE_CHK" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="NOTIFICHE_CHK">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_NOTIFICA" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOGGETTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_VISUALIZZAZIONE" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOTIFICHEReference" type="tns:EntityReferenceOfNOTIFICHE" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="getNotificheChkoperatoreResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getNotificheChkoperatoreResult" type="tns:ArrayOfNOTIFICHE_CHK" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="CheckCaricamentoDati">
+    <s:complexType />
+  </s:element>
+  <s:element name="CheckCaricamentoDatiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="CheckCaricamentoDatiResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertNotificheVisualizzate">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+        <s:element minOccurs="1" maxOccurs="1" name="idNotifica" type="s:int" />
+        <s:element minOccurs="0" maxOccurs="1" name="soggetto" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertNotificheVisualizzateResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertNotificheVisualizzateResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertBlackList">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="blacklist" type="tns:TELE_BLACKLIST" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="TELE_BLACKLIST">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CF_OPERATORE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CATEGORIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CERTIFICATO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN_REV_ERR" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="N_ERR" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_OPERAZIONE" type="s:dateTime" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="InsertBlackListResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertBlackListResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetBlackList">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="filtriBlackList" type="tns:TELE_BLACKLIST" />
+        <s:element minOccurs="1" maxOccurs="1" name="DATA_OPER_DAL" type="s:dateTime" />
+        <s:element minOccurs="1" maxOccurs="1" name="DATA_OPER_AL" type="s:dateTime" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfTELE_BLACKLIST">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="TELE_BLACKLIST" nillable="true" type="tns:TELE_BLACKLIST" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetBlackListResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetBlackListResult" type="tns:ArrayOfTELE_BLACKLIST" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ControllaSituazioneInBlackList">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="cfOperatore" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="listaPensioni" type="tns:ArrayOfMovimentazione_Pensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="ControllaSituazioneInBlackListResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="ControllaSituazioneInBlackListResult" type="tns:RISULTATO_QUERY_BLACKLIST" />
+        <s:element minOccurs="0" maxOccurs="1" name="listaPensioni" type="tns:ArrayOfMovimentazione_Pensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:simpleType name="RISULTATO_QUERY_BLACKLIST">
+    <s:restriction base="s:string">
+      <s:enumeration value="OP_BLOCCATO" />
+      <s:enumeration value="OP_BLOCCATO_SU_PENSIONE" />
+      <s:enumeration value="OP_NON_PRESENTE" />
+      <s:enumeration value="ERRORE_LETTURA" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="CTRLBlacklist">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="mov" type="tns:Movimentazione_Pensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="CTRLBlacklistResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="CTRLBlacklistResult" type="tns:ArrayOfTELE_BLACKLIST" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertArgomento">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="argomento" type="tns:Argomento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Argomento">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Utente">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_PROPOSTA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ARGOMENTO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OGGETTO_ARGOMENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ARGOMENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATA_PROPOSTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="documento" type="tns:Document" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="InsertArgomentoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertArgomentoResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateArgomento">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="argomento" type="tns:Argomento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateArgomentoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="UpdateArgomentoResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetListaArgomenti">
+    <s:complexType />
+  </s:element>
+  <s:complexType name="ArrayOfARGOMENTI_LISTA">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ARGOMENTI_LISTA" nillable="true" type="tns:ARGOMENTI_LISTA" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ARGOMENTI_LISTA">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ARG" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCR_ARG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VISIBLE" type="s:short" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetListaArgomentiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetListaArgomentiResult" type="tns:ArrayOfARGOMENTI_LISTA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetArgomentiProposti">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="CF" type="s:string" />
+        <s:element minOccurs="1" maxOccurs="1" name="idArg" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfARGOMENTI_PROPOSTI">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ARGOMENTI_PROPOSTI" nillable="true" type="tns:ARGOMENTI_PROPOSTI" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ARGOMENTI_PROPOSTI">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ARG" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ARGOMENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOGGETTO_INS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOME_INS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COGNOME_INS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PEC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CELL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TELL_UFF" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_PROPOSTA" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OGGETTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ARGOMENTI_LISTAReference" type="tns:EntityReferenceOfARGOMENTI_LISTA" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="EntityReferenceOfARGOMENTI_LISTA">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityReference" />
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetArgomentiPropostiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetArgomentiPropostiResult" type="tns:ArrayOfARGOMENTI_PROPOSTI" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertArgomentoLista">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="argomento" type="tns:ARGOMENTI_LISTA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertArgomentoListaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertArgomentoListaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateArgomentoLista">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="argomento" type="tns:ARGOMENTI_LISTA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateArgomentoListaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="UpdateArgomentoListaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteArgomentoLista">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="idArg" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteArgomentoListaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="DeleteArgomentoListaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetArgomentiLista">
+    <s:complexType />
+  </s:element>
+  <s:element name="GetArgomentiListaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetArgomentiListaResult" type="tns:ArrayOfARGOMENTI_LISTA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetStoricoVariazioniAnagrafica">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfANAGRAFICASINDACATI_STORICO">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ANAGRAFICASINDACATI_STORICO" nillable="true" type="tns:ANAGRAFICASINDACATI_STORICO" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ANAGRAFICASINDACATI_STORICO">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SIGLA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DENOMINAZIONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODICEFISCALE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INDIRIZZO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CAP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOCALITA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROVINCIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TELEFONO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PEC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RL_TITOLO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RL_NOME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RL_COGNOME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTENTEMODIFICA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATAMODIFICA" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTENTE_NOME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTENTE_COGNOME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTENTE_RUOLO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROV" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_SCADENZA_CARICA_RL" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ATTO_NOMINA_RL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRMA_DIGITALE_RL" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetStoricoVariazioniAnagraficaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetStoricoVariazioniAnagraficaResult" type="tns:ArrayOfANAGRAFICASINDACATI_STORICO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetRuoliReferente">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="idRubrica" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfARGOMENTI_RUOLO">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ARGOMENTI_RUOLO" nillable="true" type="tns:ARGOMENTI_RUOLO" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ARGOMENTI_RUOLO">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_RUBRICA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ARGOMENTO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ARGOMENTI_LISTAReference" type="tns:EntityReferenceOfARGOMENTI_LISTA" />
+          <s:element minOccurs="0" maxOccurs="1" name="RUBRICAReference" type="tns:EntityReferenceOfRUBRICA" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="EntityReferenceOfRUBRICA">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityReference" />
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetRuoliReferenteResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetRuoliReferenteResult" type="tns:ArrayOfARGOMENTI_RUOLO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertRuoli">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ruoli" type="tns:ArrayOfARGOMENTI_RUOLO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertRuoliResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertRuoliResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteRuoli">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="idRubrica" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteRuoliResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="DeleteRuoliResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetRubrica">
+    <s:complexType />
+  </s:element>
+  <s:complexType name="VOCE_RUBRICA">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="UTENTE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="ID_GRUPPO" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="GRUPPO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="ISATTIVO" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfVOCE_RUBRICA">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="VOCE_RUBRICA" nillable="true" type="tns:VOCE_RUBRICA" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetRubricaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetRubricaResult" type="tns:ArrayOfVOCE_RUBRICA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetListaGruppi">
+    <s:complexType />
+  </s:element>
+  <s:complexType name="ArrayOfRUBRICA_GRUPPO">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="RUBRICA_GRUPPO" nillable="true" type="tns:RUBRICA_GRUPPO" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="RUBRICA_GRUPPO">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="GRUPPO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL_GRUPPO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_ATTIVO" type="s:int" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetListaGruppiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetListaGruppiResult" type="tns:ArrayOfRUBRICA_GRUPPO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertRubrica">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="rubrica" type="tns:RUBRICA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="RUBRICA">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_GRUPPO" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="RUBRICA_GRUPPOReference" type="tns:EntityReferenceOfRUBRICA_GRUPPO" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="EntityReferenceOfRUBRICA_GRUPPO">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityReference" />
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="InsertRubricaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertRubricaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateRubrica">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="rubrica" type="tns:RUBRICA" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UpdateRubricaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="UpdateRubricaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteRubrica">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="idRubrica" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DeleteRubricaResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="DeleteRubricaResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Get_ENTI_RIFERIMENTO">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="listaEntiRicerca" type="tns:ArrayOfEnteRiferimento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfEnteRiferimento">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="EnteRiferimento" nillable="true" type="tns:EnteRiferimento" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="EnteRiferimento">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="NRIFERIMENTO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Ente" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NumeroIscrizione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SEDE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="Get_ENTI_RIFERIMENTOResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="Get_ENTI_RIFERIMENTOResult" type="tns:ArrayOfEnteRiferimento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Get_ENTI_RIFERIMENTO_CF">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="listaEntiRicerca" type="tns:ArrayOfEnteRiferimento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Get_ENTI_RIFERIMENTO_CFResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="Get_ENTI_RIFERIMENTO_CFResult" type="tns:ArrayOfEnteRiferimento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetCostoServizio">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="filtroCosto" type="tns:Costo_Servizio" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Costo_Servizio">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANNO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TARIFFA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="costiMensili" type="tns:ArrayOfCostoMese" />
+      <s:element minOccurs="1" maxOccurs="1" name="TOT_CONTEGGIO" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="TOT_IMPORTO" type="s:decimal" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfCostoMese">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="CostoMese" nillable="true" type="tns:CostoMese" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="CostoMese">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="ANNO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TARIFFA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="CONTEGGIO" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="IMPORTO" type="s:decimal" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetCostoServizioResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetCostoServizioResult" type="tns:Costo_Servizio" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetCostoServizioPerAnno">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="filtroCosto" type="tns:Costo_Servizio" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="CostoServizioPerAnno">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="costi" type="tns:ArrayOfReportCostoServizioPerAnno" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfReportCostoServizioPerAnno">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ReportCostoServizioPerAnno" nillable="true" type="tns:ReportCostoServizioPerAnno" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ReportCostoServizioPerAnno">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Csin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tariffa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Gennaio" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Febbraio" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Marzo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Aprile" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Maggio" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Giugno" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Luglio" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Agosto" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Settembre" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ottobre" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Novembre" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dicembre" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Totale" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Importo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataRichiesta" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetCostoServizioPerAnnoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetCostoServizioPerAnnoResult" type="tns:CostoServizioPerAnno" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetReportCostoServizioRegionale">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="filtroRegionale" type="tns:ReportCostoRegionale" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ReportCostoRegionale">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Costo_Servizio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LISTA_SEDI_REGIONE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOT_DELEGHE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODICE_REGIONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE_REGIONE" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="ArrayOfReportCostoRegionale">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ReportCostoRegionale" nillable="true" type="tns:ReportCostoRegionale" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetReportCostoServizioRegionaleResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetReportCostoServizioRegionaleResult" type="tns:ArrayOfReportCostoRegionale" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetListaStatisticheMovimentazioni">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="filtriStatistica" type="tns:Statistiche" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Statistiche">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="COD_SEDE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SEDE" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="inEssere" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="CountDeleghe" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="TotaleImporti" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_MOV_0" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_MOV_1" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_MOV_2" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_MOV_3" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_MOV_4" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_MOV_5" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_MOV_9" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Gennaio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Febbraio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Marzo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Aprile" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Maggio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Giugno" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Luglio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Agosto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Settembre" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Ottobre" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Novembre" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Dicembre" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CAT_ALFABETICA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TIPO_ESTRAZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="STATO_PAGAMENTO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANNO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="NCAT_MIN" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="NCAT_MAX" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsGestionePrivata" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsGestionePubblica" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsSportESpettacolo" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="MeseA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="AnnoA" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfStatistiche">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Statistiche" nillable="true" type="tns:Statistiche" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetListaStatisticheMovimentazioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetListaStatisticheMovimentazioniResult" type="tns:ArrayOfStatistiche" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetStatisticheMovimentazioni">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="filtriStatistica" type="tns:Statistiche" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetStatisticheMovimentazioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetStatisticheMovimentazioniResult" type="tns:Statistiche" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetReportTrattenute">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="filtriTrattenute" type="tns:ReportTrattenute" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ReportTrattenute">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceProcedura" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SEDE" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="isINPS" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT_TRATTENUTE" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="TOT_IMPORTO" type="s:decimal" />
+      <s:element minOccurs="0" maxOccurs="1" name="TIPO_ESTRAZIONE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="STATO_PAGAMENTO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANNO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CATEGORIA" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="TipoPensioneInBaseAllaProcedura" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DecodificaCodiceTrattenuta" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfReportTrattenute">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ReportTrattenute" nillable="true" type="tns:ReportTrattenute" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetReportTrattenuteResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetReportTrattenuteResult" type="tns:ArrayOfReportTrattenute" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetListaImportiDettaglio">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="chiavepens" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="codSind" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ImportiDettaglio">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="ANNO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Gennaio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Febbraio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Marzo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Aprile" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Maggio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Giugno" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Luglio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Agosto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Settembre" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Ottobre" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Novembre" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="TOT_Dicembre" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfImportiDettaglio">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ImportiDettaglio" nillable="true" type="tns:ImportiDettaglio" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetListaImportiDettaglioResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetListaImportiDettaglioResult" type="tns:ArrayOfImportiDettaglio" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetStoricoMovimentazioniSoggetto">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="csog" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="StoricoMovimentaziniSoggetto">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SEDE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ZONA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CERT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PROGMOV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATAMOV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CODMOV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="PRESENT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ESITO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CODELIM" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSOG" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CODELENCO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DECOR" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="STRUTTURA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SOTTOFUNZ" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ALTRACHIAV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FL_TLMT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ID_FILE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IDFILE_REV" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="GP1AC01" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfStoricoMovimentaziniSoggetto">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="StoricoMovimentaziniSoggetto" nillable="true" type="tns:StoricoMovimentaziniSoggetto" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetStoricoMovimentazioniSoggettoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetStoricoMovimentazioniSoggettoResult" type="tns:ArrayOfStoricoMovimentaziniSoggetto" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="SendMailReferente">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="objectMail" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="mess" type="s:string" />
+        <s:element minOccurs="1" maxOccurs="1" name="idGruppo" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="SendMailReferenteResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="SendMailReferenteResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="SendMailSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="objectMail" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="mess" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="SendMailSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="SendMailSindacatoResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="inviaMail">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="email" type="tns:EMail_WS" />
+        <s:element minOccurs="1" maxOccurs="1" name="tipoEmail" type="tns:TipoEmail" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="EMail_WS">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Mittente" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Destinatari" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="DestinatariCC" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="DestinatariCCN" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="Oggetto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="allegato" type="tns:DocumentoPreparato_WS" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DocumentoPreparato_WS">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="document" type="tns:Document" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="TipoEmail">
+    <s:restriction base="s:string">
+      <s:enumeration value="UtenteSbloccato" />
+      <s:enumeration value="MailACittadino" />
+      <s:enumeration value="ErroreDataSottoscrizione" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="inviaMailResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="inviaMailResult" type="tns:Esito" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertAllegatoConvenzione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="allegatoConvenzione" type="tns:Allegato_Convenzione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Allegato_Convenzione">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATAINIZIO" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ALLEGATO" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATAMODIFICA" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOME_FILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTENTEMODIFICA" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="InsertAllegatoConvenzioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertAllegatoConvenzioneResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetAllegato_Convenzione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="allegatoConvenzione" type="tns:Allegato_Convenzione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ESITO_ALLEGATO">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ESITO" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="DESCR_ESITO" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="COUNT" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="ALLEGATO" type="s:base64Binary" />
+      <s:element minOccurs="0" maxOccurs="1" name="NOME_FILE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ESTENSIONE_FILE" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetAllegato_ConvenzioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetAllegato_ConvenzioneResult" type="tns:ESITO_ALLEGATO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetAllegato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="idOggetto" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetAllegatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetAllegatoResult" type="tns:ALLEGATO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ALLEGATO">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOME_FILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ALLEGATO1" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTENTEMODIFICA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATAMODIFICA" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_OGGETTO" type="s:short" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="InsertAllegato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="allegato" type="tns:ALLEGATO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="InsertAllegatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="InsertAllegatoResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetElencoComunicazioni">
+    <s:complexType />
+  </s:element>
+  <s:complexType name="Comunicazione">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="ID_COMUNICAZIONE" type="s:short" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_INIZIO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DATA_FINE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MESSAGGIO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="BLOCCO" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfComunicazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Comunicazione" nillable="true" type="tns:Comunicazione" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetElencoComunicazioniResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetElencoComunicazioniResult" type="tns:ArrayOfComunicazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="INSERT_COMUNICAZIONE">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="comunicazione" type="tns:Comunicazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="INSERT_COMUNICAZIONEResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="INSERT_COMUNICAZIONEResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UPDATE_COMUNICAZIONE">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="comunicazione" type="tns:Comunicazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="UPDATE_COMUNICAZIONEResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="UPDATE_COMUNICAZIONEResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DELETE_COMUNICAZIONE">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="comunicazione" type="tns:Comunicazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DELETE_COMUNICAZIONEResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="DELETE_COMUNICAZIONEResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetDelegheEsistenti">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="pensioniInserite" type="tns:ArrayOfMovimentazione_Pensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetDelegheEsistentiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetDelegheEsistentiResult" type="tns:ArrayOfMovimentazione_Pensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="insertMonitorLogInfo">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="METODO" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="PARAMETRI_INPUT" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="PARAMETRI_OUTPUT" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="OGGETTO" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="NOTE" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="insertMonitorLogInfoResponse">
+    <s:complexType />
+  </s:element>
+  <s:element name="insertMonitorLogError">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="METODO" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="PARAMETRI_INPUT" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="PARAMETRI_OUTPUT" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="OGGETTO" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="DESCRIZIONE_ERRORE" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="NOTE" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="insertMonitorLogErrorResponse">
+    <s:complexType />
+  </s:element>
+  <s:element name="isMonitorLogAttivo">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="csin" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="isMonitorLogAttivoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="isMonitorLogAttivoResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="controllaEsistenzaOperazioniPrecedenti">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="csed" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="czon" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+        <s:element minOccurs="1" maxOccurs="1" name="dataSottoscrizioneAllegato" type="s:dateTime" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="controllaEsistenzaOperazioniPrecedentiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="controllaEsistenzaOperazioniPrecedentiResult" type="tns:Esito" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="TELEMATIZZA">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="richiesta" type="tns:RichiestaTelematizzazione" />
+        <s:element minOccurs="1" maxOccurs="1" name="isConferma" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="TELEMATIZZAResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="TELEMATIZZAResult" type="tns:RichiestaTelematizzazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="TELEMATIZZA_CITTADINO">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="richiesta" type="tns:RichiestaTelematizzazione" />
+        <s:element minOccurs="1" maxOccurs="1" name="isConferma" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="TELEMATIZZA_CITTADINOResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="TELEMATIZZA_CITTADINOResult" type="tns:RichiestaTelematizzazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDatiSoggetto">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="DatiSoggetto">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CAUNCFCCC1" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="NAUNPRG" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CIDEFAM" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CCMPTIP" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FTITPRN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MRVSFAMSCA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MALTRVS" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CCDF" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getDatiSoggettoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDatiSoggettoResult" type="tns:DatiSoggetto" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetRichiesteEleborate">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="idRichiesta" type="s:string" />
+        <s:element minOccurs="1" maxOccurs="1" name="isEsitoOK" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetRichiesteEleborateResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetRichiesteEleborateResult" type="tns:ArrayOfMovimentazione_Pensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetDocument">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="idFile" type="s:int" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetDocumentResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetDocumentResult" type="tns:ESITO_ALLEGATO" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetPagamentiSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sindpag" type="tns:SINDPAG" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="SINDPAG">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:baseEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="APAGCDLVAL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_MANDATO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTO_DI_MASTRO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_PROCEDURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NCDLBIM" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_VALUTA" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EIMP" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HINSERT" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="HVARIA" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOTE" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="ArrayOfSINDPAG">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="SINDPAG" nillable="true" type="tns:SINDPAG" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetPagamentiSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetPagamentiSindacatoResult" type="tns:ArrayOfSINDPAG" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetPignoramentiSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="pignoramento" type="tns:Pignoramento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Pignoramento">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="COD_PIGN" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="APAGCDLVAL" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="COD_PROCEDURA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CONTO_MASTRO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="NCDLBIM" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="PROG" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="IMP_CONG" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="IMP_CONTAB" type="s:decimal" />
+      <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NOTE" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfPignoramento">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Pignoramento" nillable="true" type="tns:Pignoramento" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetPignoramentiSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetPignoramentiSindacatoResult" type="tns:ArrayOfPignoramento" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetRiportiSindacato">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="pignoramento" type="tns:Riporti" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Riporti">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="COD_PROCEDURA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CONTO_DI_MASTRO" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="APAGCDLVAL" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="NCDLBIM" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="PROG" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="EIMP" type="s:decimal" />
+      <s:element minOccurs="0" maxOccurs="1" name="DA_CONTAB" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfRiporti">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Riporti" nillable="true" type="tns:Riporti" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetRiportiSindacatoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetRiportiSindacatoResult" type="tns:ArrayOfRiporti" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetDelegheInLavorazione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="codSind" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfTDELSIND">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="TDELSIND" nillable="true" type="tns:TDELSIND" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="TDELSIND">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:EntityObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NCAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CZON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NCRT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CSIN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROGR_MOV" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESITO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_MOV" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="COD_MOV" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="IMPORTO" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE01" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE02" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE03" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE04" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE05" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE06" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE07" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE08" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE09" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE10" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE11" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MESE12" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TRANSAZIONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TERMINALE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OPERATORE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOTTOFUNZIONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STRUTTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODICE_ELENCO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRESENTAZIONE" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_ELIMINAZ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ALTRA_CHIAVE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GP1AC01" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ANCASIND" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_DECORRENZA" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CSOG" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_FILE" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="FL_TLMT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDFILE_REV" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATA_INS" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="HVARIA" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CF_OP_TLMT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_RICH_TLMT" type="s:string" />
+        </s:sequence>
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="GetDelegheInLavorazioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetDelegheInLavorazioneResult" type="tns:ArrayOfTDELSIND" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+</s:schema>

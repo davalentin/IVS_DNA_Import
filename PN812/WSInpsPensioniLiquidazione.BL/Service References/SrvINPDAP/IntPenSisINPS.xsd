@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:intf="http://webservice.intpensisinps.inpdap.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:impl="http://webservice.intpensisinps.inpdap.it" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://webservice.intpensisinps.inpdap.it" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="Approvazione_INPDAP_Request">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="CODFISC" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CODSED" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CODZON" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="NUMCERTIFICATO" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="NUMDOMUS" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="TIPOEMIS" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CODSEDNEW" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CODZONNEW" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="MATRICOLA" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Approvazione_INPDAP_Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="ESITO" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="MESSAGGIO" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="NUMDOMUS" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

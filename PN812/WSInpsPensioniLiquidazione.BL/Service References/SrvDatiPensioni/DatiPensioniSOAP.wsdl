@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://datiPensioni.services.soa.inps.it" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://datiPensioni.services.soa.inps.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="DatiPensioniSOAP.xsd1.xsd" namespace="http://datiPensioni.services.soa.inps.it" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAnagraficaComponentiRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaComponenti" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaComponentiResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaComponentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaCFAutRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaCFAut" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaCFAutResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaCFAutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaCfRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaCf" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaCfResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaCfResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaChiavePensioneAutRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaChiavePensioneAut" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaChiavePensioneAutResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaChiavePensioneAutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaChiavePensioneRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaChiavePensione" />
+  </wsdl:message>
+  <wsdl:message name="GetAnagraficaDaChiavePensioneResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnagraficaDaChiavePensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnniRifRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnniRif" />
+  </wsdl:message>
+  <wsdl:message name="GetAnniRifResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAnniRifResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttributiGP8Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAttributiGP8" />
+  </wsdl:message>
+  <wsdl:message name="GetAttributiGP8Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetAttributiGP8Response" />
+  </wsdl:message>
+  <wsdl:message name="GetBonus14esimaRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetBonus14esima" />
+  </wsdl:message>
+  <wsdl:message name="GetBonus14esimaResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetBonus14esimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBonus388_2000Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetBonus388_2000" />
+  </wsdl:message>
+  <wsdl:message name="GetBonus388_2000Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetBonus388_2000Response" />
+  </wsdl:message>
+  <wsdl:message name="GetCasseRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCasse" />
+  </wsdl:message>
+  <wsdl:message name="GetCasseResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCasseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCodicePensioneTrasferitaRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCodicePensioneTrasferita" />
+  </wsdl:message>
+  <wsdl:message name="GetCodicePensioneTrasferitaResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCodicePensioneTrasferitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliAnniPrecedentiRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliAnniPrecedenti" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliAnniPrecedentiResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliAnniPrecedentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliAnnoInCorsoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliAnnoInCorso" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliAnnoInCorsoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliAnnoInCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliArteRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliArte" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliArteResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliArteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliDaRinnovoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliDaRinnovo" />
+  </wsdl:message>
+  <wsdl:message name="GetConguagliDaRinnovoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetConguagliDaRinnovoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCumuliByRilevanzaANFRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCumuliByRilevanzaANF" />
+  </wsdl:message>
+  <wsdl:message name="GetCumuliByRilevanzaANFResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCumuliByRilevanzaANFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCumuliByRilevanzaRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCumuliByRilevanza" />
+  </wsdl:message>
+  <wsdl:message name="GetCumuliByRilevanzaResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetCumuliByRilevanzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiAbbinamentiPensioniRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiAbbinamentiPensioni" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiAbbinamentiPensioniResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiAbbinamentiPensioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiCalcoloRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiCalcolo" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiCalcoloResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiCalcoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiConguagliDa730Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiConguagliDa730" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiConguagliDa730Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiConguagliDa730Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiContabiliRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiContabili" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiContabiliResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiContabiliResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiCUDeDetrazioniImpostaRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiCUDeDetrazioniImposta" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiCUDeDetrazioniImpostaResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiCUDeDetrazioniImpostaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiDiarioRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiDiario" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiDiarioResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiDiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiECodiciVariRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiECodiciVari" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiECodiciVariResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiECodiciVariResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiEliminazioneRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiEliminazione" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiEliminazioneResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiEliminazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiGP5GP6Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiGP5GP6" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiGP5GP6Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiGP5GP6Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiInvCivRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiInvCiv" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiInvCivResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiInvCivResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiMovimentazioneRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiMovimentazione" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiMovimentazioneResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiMovimentazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiMovimentazioni2Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiMovimentazioni2" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiMovimentazioni2Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiMovimentazioni2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPatrimonioRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPatrimonio" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPatrimonioResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPatrimonioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioneAllRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioneAll" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioneAllResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioneAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioneGDSRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioneGDS" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioneGDSResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioneGDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioneNCCRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioneNCC" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioneNCCResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioneNCCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioniRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioni" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPensioniResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPensioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPianiPagamentoSoggettoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPianiPagamentoSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPianiPagamentoSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPianiPagamentoSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPrincipaliPensioniRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPrincipaliPensioni" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiPrincipaliPensioniResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiPrincipaliPensioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP1Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP1" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP1Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP2Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP2" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP2Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP3Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP3" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP3Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP4Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP4" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP4Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP4Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP5Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP5" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP5Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP5Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP6Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP6" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP6Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP6Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP7Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP7" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP7Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP7Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP8Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP8" />
+  </wsdl:message>
+  <wsdl:message name="GetDatiTGP8Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDatiTGP8Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDetrazioniDiImpostaRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDetrazioniDiImposta" />
+  </wsdl:message>
+  <wsdl:message name="GetDetrazioniDiImpostaResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDetrazioniDiImpostaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDettaglioSindacatiRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDettaglioSindacati" />
+  </wsdl:message>
+  <wsdl:message name="GetDettaglioSindacatiResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetDettaglioSindacatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntiArt8Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetEntiArt8" />
+  </wsdl:message>
+  <wsdl:message name="GetEntiArt8Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetEntiArt8Response" />
+  </wsdl:message>
+  <wsdl:message name="GetEstrazioneInCorsoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetEstrazioneInCorso" />
+  </wsdl:message>
+  <wsdl:message name="GetEstrazioneInCorsoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetEstrazioneInCorsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEstrazioneUltimaRataRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetEstrazioneUltimaRata" />
+  </wsdl:message>
+  <wsdl:message name="GetEstrazioneUltimaRataResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetEstrazioneUltimaRataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioneBRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetFunzioneB" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioneBResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetFunzioneBResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioneFRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetFunzioneF" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioneFResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetFunzioneFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImportiPensioneRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetImportiPensione" />
+  </wsdl:message>
+  <wsdl:message name="GetImportiPensioneResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetImportiPensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLavorazioniRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetLavorazioni" />
+  </wsdl:message>
+  <wsdl:message name="GetLavorazioniResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetLavorazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMandatiRatePensioneRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetMandatiRatePensione" />
+  </wsdl:message>
+  <wsdl:message name="GetMandatiRatePensioneResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetMandatiRatePensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNucleoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetNucleo" />
+  </wsdl:message>
+  <wsdl:message name="GetNucleoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetNucleoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniDaDiarioRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniDaDiario" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniDaDiarioResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniDaDiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniDaEnteRifRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniDaEnteRif" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniDaEnteRifResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniDaEnteRifResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniDaVerificareRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniDaVerificare" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniDaVerificareResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniDaVerificareResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniVigentiSoggettoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniVigentiSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniVigentiSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPensioniVigentiSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPianiPagamentoSoggettoACreditoEliminateRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPianiPagamentoSoggettoACreditoEliminate" />
+  </wsdl:message>
+  <wsdl:message name="GetPianiPagamentoSoggettoACreditoEliminateResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPianiPagamentoSoggettoACreditoEliminateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPianiPagamentoSoggettoEliminateRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPianiPagamentoSoggettoEliminate" />
+  </wsdl:message>
+  <wsdl:message name="GetPianiPagamentoSoggettoEliminateResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPianiPagamentoSoggettoEliminateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPianiPagamentoVigentiSoggettoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPianiPagamentoVigentiSoggetto" />
+  </wsdl:message>
+  <wsdl:message name="GetPianiPagamentoVigentiSoggettoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetPianiPagamentoVigentiSoggettoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRedditiCasellarioRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRedditiCasellario" />
+  </wsdl:message>
+  <wsdl:message name="GetRedditiCasellarioResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRedditiCasellarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRedditiDichiaratiRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRedditiDichiarati" />
+  </wsdl:message>
+  <wsdl:message name="GetRedditiDichiaratiResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRedditiDichiaratiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRedditiRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRedditi" />
+  </wsdl:message>
+  <wsdl:message name="GetRedditiResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRedditiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRettificheIrpefSuPreventivoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRettificheIrpefSuPreventivo" />
+  </wsdl:message>
+  <wsdl:message name="GetRettificheIrpefSuPreventivoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRettificheIrpefSuPreventivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRilevanzeRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRilevanze" />
+  </wsdl:message>
+  <wsdl:message name="GetRilevanzeResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetRilevanzeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVociCedolinoMandatoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetVociCedolinoMandato" />
+  </wsdl:message>
+  <wsdl:message name="GetVociCedolinoMandatoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetVociCedolinoMandatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVociContabiliMandatoRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetVociContabiliMandato" />
+  </wsdl:message>
+  <wsdl:message name="GetVociContabiliMandatoResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetVociContabiliMandatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVociContabiliRataPensioneRequest">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetVociContabiliRataPensione" />
+  </wsdl:message>
+  <wsdl:message name="GetVociContabiliRataPensioneResponse">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:GetVociContabiliRataPensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestGP1Request">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:TestGP1" />
+  </wsdl:message>
+  <wsdl:message name="TestGP1Response">
+    <wsdl:part xmlns:xsns="http://datiPensioni.services.soa.inps.it" name="parameters" element="xsns:TestGP1Response" />
+  </wsdl:message>
+  <wsdl:portType name="DatiPensioni">
+    <wsdl:operation name="GetAnagraficaComponenti">
+      <wsdl:input name="GetAnagraficaComponentiRequest" message="ns0:GetAnagraficaComponentiRequest" />
+      <wsdl:output name="GetAnagraficaComponentiResponse" message="ns0:GetAnagraficaComponentiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaCf">
+      <wsdl:input name="GetAnagraficaDaCfRequest" message="ns0:GetAnagraficaDaCfRequest" />
+      <wsdl:output name="GetAnagraficaDaCfResponse" message="ns0:GetAnagraficaDaCfResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaCFAut">
+      <wsdl:input name="GetAnagraficaDaCFAutRequest" message="ns0:GetAnagraficaDaCFAutRequest" />
+      <wsdl:output name="GetAnagraficaDaCFAutResponse" message="ns0:GetAnagraficaDaCFAutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaChiavePensione">
+      <wsdl:input name="GetAnagraficaDaChiavePensioneRequest" message="ns0:GetAnagraficaDaChiavePensioneRequest" />
+      <wsdl:output name="GetAnagraficaDaChiavePensioneResponse" message="ns0:GetAnagraficaDaChiavePensioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaChiavePensioneAut">
+      <wsdl:input name="GetAnagraficaDaChiavePensioneAutRequest" message="ns0:GetAnagraficaDaChiavePensioneAutRequest" />
+      <wsdl:output name="GetAnagraficaDaChiavePensioneAutResponse" message="ns0:GetAnagraficaDaChiavePensioneAutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniRif">
+      <wsdl:input name="GetAnniRifRequest" message="ns0:GetAnniRifRequest" />
+      <wsdl:output name="GetAnniRifResponse" message="ns0:GetAnniRifResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttributiGP8">
+      <wsdl:input name="GetAttributiGP8Request" message="ns0:GetAttributiGP8Request" />
+      <wsdl:output name="GetAttributiGP8Response" message="ns0:GetAttributiGP8Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBonus14esima">
+      <wsdl:input name="GetBonus14esimaRequest" message="ns0:GetBonus14esimaRequest" />
+      <wsdl:output name="GetBonus14esimaResponse" message="ns0:GetBonus14esimaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBonus388_2000">
+      <wsdl:input name="GetBonus388_2000Request" message="ns0:GetBonus388_2000Request" />
+      <wsdl:output name="GetBonus388_2000Response" message="ns0:GetBonus388_2000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCasse">
+      <wsdl:input name="GetCasseRequest" message="ns0:GetCasseRequest" />
+      <wsdl:output name="GetCasseResponse" message="ns0:GetCasseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodicePensioneTrasferita">
+      <wsdl:input name="GetCodicePensioneTrasferitaRequest" message="ns0:GetCodicePensioneTrasferitaRequest" />
+      <wsdl:output name="GetCodicePensioneTrasferitaResponse" message="ns0:GetCodicePensioneTrasferitaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliAnniPrecedenti">
+      <wsdl:input name="GetConguagliAnniPrecedentiRequest" message="ns0:GetConguagliAnniPrecedentiRequest" />
+      <wsdl:output name="GetConguagliAnniPrecedentiResponse" message="ns0:GetConguagliAnniPrecedentiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliAnnoInCorso">
+      <wsdl:input name="GetConguagliAnnoInCorsoRequest" message="ns0:GetConguagliAnnoInCorsoRequest" />
+      <wsdl:output name="GetConguagliAnnoInCorsoResponse" message="ns0:GetConguagliAnnoInCorsoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliArte">
+      <wsdl:input name="GetConguagliArteRequest" message="ns0:GetConguagliArteRequest" />
+      <wsdl:output name="GetConguagliArteResponse" message="ns0:GetConguagliArteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliDaRinnovo">
+      <wsdl:input name="GetConguagliDaRinnovoRequest" message="ns0:GetConguagliDaRinnovoRequest" />
+      <wsdl:output name="GetConguagliDaRinnovoResponse" message="ns0:GetConguagliDaRinnovoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCumuliByRilevanza">
+      <wsdl:input name="GetCumuliByRilevanzaRequest" message="ns0:GetCumuliByRilevanzaRequest" />
+      <wsdl:output name="GetCumuliByRilevanzaResponse" message="ns0:GetCumuliByRilevanzaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCumuliByRilevanzaANF">
+      <wsdl:input name="GetCumuliByRilevanzaANFRequest" message="ns0:GetCumuliByRilevanzaANFRequest" />
+      <wsdl:output name="GetCumuliByRilevanzaANFResponse" message="ns0:GetCumuliByRilevanzaANFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiAbbinamentiPensioni">
+      <wsdl:input name="GetDatiAbbinamentiPensioniRequest" message="ns0:GetDatiAbbinamentiPensioniRequest" />
+      <wsdl:output name="GetDatiAbbinamentiPensioniResponse" message="ns0:GetDatiAbbinamentiPensioniResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiCalcolo">
+      <wsdl:input name="GetDatiCalcoloRequest" message="ns0:GetDatiCalcoloRequest" />
+      <wsdl:output name="GetDatiCalcoloResponse" message="ns0:GetDatiCalcoloResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiConguagliDa730">
+      <wsdl:input name="GetDatiConguagliDa730Request" message="ns0:GetDatiConguagliDa730Request" />
+      <wsdl:output name="GetDatiConguagliDa730Response" message="ns0:GetDatiConguagliDa730Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiContabili">
+      <wsdl:input name="GetDatiContabiliRequest" message="ns0:GetDatiContabiliRequest" />
+      <wsdl:output name="GetDatiContabiliResponse" message="ns0:GetDatiContabiliResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiCUDeDetrazioniImposta">
+      <wsdl:input name="GetDatiCUDeDetrazioniImpostaRequest" message="ns0:GetDatiCUDeDetrazioniImpostaRequest" />
+      <wsdl:output name="GetDatiCUDeDetrazioniImpostaResponse" message="ns0:GetDatiCUDeDetrazioniImpostaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiDiario">
+      <wsdl:input name="GetDatiDiarioRequest" message="ns0:GetDatiDiarioRequest" />
+      <wsdl:output name="GetDatiDiarioResponse" message="ns0:GetDatiDiarioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiECodiciVari">
+      <wsdl:input name="GetDatiECodiciVariRequest" message="ns0:GetDatiECodiciVariRequest" />
+      <wsdl:output name="GetDatiECodiciVariResponse" message="ns0:GetDatiECodiciVariResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiGP5GP6">
+      <wsdl:input name="GetDatiGP5GP6Request" message="ns0:GetDatiGP5GP6Request" />
+      <wsdl:output name="GetDatiGP5GP6Response" message="ns0:GetDatiGP5GP6Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiInvCiv">
+      <wsdl:input name="GetDatiInvCivRequest" message="ns0:GetDatiInvCivRequest" />
+      <wsdl:output name="GetDatiInvCivResponse" message="ns0:GetDatiInvCivResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiMovimentazione">
+      <wsdl:input name="GetDatiMovimentazioneRequest" message="ns0:GetDatiMovimentazioneRequest" />
+      <wsdl:output name="GetDatiMovimentazioneResponse" message="ns0:GetDatiMovimentazioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPatrimonio">
+      <wsdl:input name="GetDatiPatrimonioRequest" message="ns0:GetDatiPatrimonioRequest" />
+      <wsdl:output name="GetDatiPatrimonioResponse" message="ns0:GetDatiPatrimonioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPensioneAll">
+      <wsdl:input name="GetDatiPensioneAllRequest" message="ns0:GetDatiPensioneAllRequest" />
+      <wsdl:output name="GetDatiPensioneAllResponse" message="ns0:GetDatiPensioneAllResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPensioneGDS">
+      <wsdl:input name="GetDatiPensioneGDSRequest" message="ns0:GetDatiPensioneGDSRequest" />
+      <wsdl:output name="GetDatiPensioneGDSResponse" message="ns0:GetDatiPensioneGDSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPensioneNCC">
+      <wsdl:input name="GetDatiPensioneNCCRequest" message="ns0:GetDatiPensioneNCCRequest" />
+      <wsdl:output name="GetDatiPensioneNCCResponse" message="ns0:GetDatiPensioneNCCResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPianiPagamentoSoggetto">
+      <wsdl:input name="GetDatiPianiPagamentoSoggettoRequest" message="ns0:GetDatiPianiPagamentoSoggettoRequest" />
+      <wsdl:output name="GetDatiPianiPagamentoSoggettoResponse" message="ns0:GetDatiPianiPagamentoSoggettoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPrincipaliPensioni">
+      <wsdl:input name="GetDatiPrincipaliPensioniRequest" message="ns0:GetDatiPrincipaliPensioniRequest" />
+      <wsdl:output name="GetDatiPrincipaliPensioniResponse" message="ns0:GetDatiPrincipaliPensioniResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP1">
+      <wsdl:input name="GetDatiTGP1Request" message="ns0:GetDatiTGP1Request" />
+      <wsdl:output name="GetDatiTGP1Response" message="ns0:GetDatiTGP1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP2">
+      <wsdl:input name="GetDatiTGP2Request" message="ns0:GetDatiTGP2Request" />
+      <wsdl:output name="GetDatiTGP2Response" message="ns0:GetDatiTGP2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP3">
+      <wsdl:input name="GetDatiTGP3Request" message="ns0:GetDatiTGP3Request" />
+      <wsdl:output name="GetDatiTGP3Response" message="ns0:GetDatiTGP3Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP4">
+      <wsdl:input name="GetDatiTGP4Request" message="ns0:GetDatiTGP4Request" />
+      <wsdl:output name="GetDatiTGP4Response" message="ns0:GetDatiTGP4Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP5">
+      <wsdl:input name="GetDatiTGP5Request" message="ns0:GetDatiTGP5Request" />
+      <wsdl:output name="GetDatiTGP5Response" message="ns0:GetDatiTGP5Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP6">
+      <wsdl:input name="GetDatiTGP6Request" message="ns0:GetDatiTGP6Request" />
+      <wsdl:output name="GetDatiTGP6Response" message="ns0:GetDatiTGP6Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP7">
+      <wsdl:input name="GetDatiTGP7Request" message="ns0:GetDatiTGP7Request" />
+      <wsdl:output name="GetDatiTGP7Response" message="ns0:GetDatiTGP7Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP8">
+      <wsdl:input name="GetDatiTGP8Request" message="ns0:GetDatiTGP8Request" />
+      <wsdl:output name="GetDatiTGP8Response" message="ns0:GetDatiTGP8Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioSindacati">
+      <wsdl:input name="GetDettaglioSindacatiRequest" message="ns0:GetDettaglioSindacatiRequest" />
+      <wsdl:output name="GetDettaglioSindacatiResponse" message="ns0:GetDettaglioSindacatiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntiArt8">
+      <wsdl:input name="GetEntiArt8Request" message="ns0:GetEntiArt8Request" />
+      <wsdl:output name="GetEntiArt8Response" message="ns0:GetEntiArt8Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEstrazioneInCorso">
+      <wsdl:input name="GetEstrazioneInCorsoRequest" message="ns0:GetEstrazioneInCorsoRequest" />
+      <wsdl:output name="GetEstrazioneInCorsoResponse" message="ns0:GetEstrazioneInCorsoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEstrazioneUltimaRata">
+      <wsdl:input name="GetEstrazioneUltimaRataRequest" message="ns0:GetEstrazioneUltimaRataRequest" />
+      <wsdl:output name="GetEstrazioneUltimaRataResponse" message="ns0:GetEstrazioneUltimaRataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioneB">
+      <wsdl:input name="GetFunzioneBRequest" message="ns0:GetFunzioneBRequest" />
+      <wsdl:output name="GetFunzioneBResponse" message="ns0:GetFunzioneBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioneF">
+      <wsdl:input name="GetFunzioneFRequest" message="ns0:GetFunzioneFRequest" />
+      <wsdl:output name="GetFunzioneFResponse" message="ns0:GetFunzioneFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImportiPensione">
+      <wsdl:input name="GetImportiPensioneRequest" message="ns0:GetImportiPensioneRequest" />
+      <wsdl:output name="GetImportiPensioneResponse" message="ns0:GetImportiPensioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLavorazioni">
+      <wsdl:input name="GetLavorazioniRequest" message="ns0:GetLavorazioniRequest" />
+      <wsdl:output name="GetLavorazioniResponse" message="ns0:GetLavorazioniResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMandatiRatePensione">
+      <wsdl:input name="GetMandatiRatePensioneRequest" message="ns0:GetMandatiRatePensioneRequest" />
+      <wsdl:output name="GetMandatiRatePensioneResponse" message="ns0:GetMandatiRatePensioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNucleo">
+      <wsdl:input name="GetNucleoRequest" message="ns0:GetNucleoRequest" />
+      <wsdl:output name="GetNucleoResponse" message="ns0:GetNucleoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniDaDiario">
+      <wsdl:input name="GetPensioniDaDiarioRequest" message="ns0:GetPensioniDaDiarioRequest" />
+      <wsdl:output name="GetPensioniDaDiarioResponse" message="ns0:GetPensioniDaDiarioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniDaEnteRif">
+      <wsdl:input name="GetPensioniDaEnteRifRequest" message="ns0:GetPensioniDaEnteRifRequest" />
+      <wsdl:output name="GetPensioniDaEnteRifResponse" message="ns0:GetPensioniDaEnteRifResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniDaVerificare">
+      <wsdl:input name="GetPensioniDaVerificareRequest" message="ns0:GetPensioniDaVerificareRequest" />
+      <wsdl:output name="GetPensioniDaVerificareResponse" message="ns0:GetPensioniDaVerificareResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniVigentiSoggetto">
+      <wsdl:input name="GetPensioniVigentiSoggettoRequest" message="ns0:GetPensioniVigentiSoggettoRequest" />
+      <wsdl:output name="GetPensioniVigentiSoggettoResponse" message="ns0:GetPensioniVigentiSoggettoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPianiPagamentoSoggettoACreditoEliminate">
+      <wsdl:input name="GetPianiPagamentoSoggettoACreditoEliminateRequest" message="ns0:GetPianiPagamentoSoggettoACreditoEliminateRequest" />
+      <wsdl:output name="GetPianiPagamentoSoggettoACreditoEliminateResponse" message="ns0:GetPianiPagamentoSoggettoACreditoEliminateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPianiPagamentoSoggettoEliminate">
+      <wsdl:input name="GetPianiPagamentoSoggettoEliminateRequest" message="ns0:GetPianiPagamentoSoggettoEliminateRequest" />
+      <wsdl:output name="GetPianiPagamentoSoggettoEliminateResponse" message="ns0:GetPianiPagamentoSoggettoEliminateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPianiPagamentoVigentiSoggetto">
+      <wsdl:input name="GetPianiPagamentoVigentiSoggettoRequest" message="ns0:GetPianiPagamentoVigentiSoggettoRequest" />
+      <wsdl:output name="GetPianiPagamentoVigentiSoggettoResponse" message="ns0:GetPianiPagamentoVigentiSoggettoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRedditi">
+      <wsdl:input name="GetRedditiRequest" message="ns0:GetRedditiRequest" />
+      <wsdl:output name="GetRedditiResponse" message="ns0:GetRedditiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRedditiCasellario">
+      <wsdl:input name="GetRedditiCasellarioRequest" message="ns0:GetRedditiCasellarioRequest" />
+      <wsdl:output name="GetRedditiCasellarioResponse" message="ns0:GetRedditiCasellarioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRedditiDichiarati">
+      <wsdl:input name="GetRedditiDichiaratiRequest" message="ns0:GetRedditiDichiaratiRequest" />
+      <wsdl:output name="GetRedditiDichiaratiResponse" message="ns0:GetRedditiDichiaratiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRettificheIrpefSuPreventivo">
+      <wsdl:input name="GetRettificheIrpefSuPreventivoRequest" message="ns0:GetRettificheIrpefSuPreventivoRequest" />
+      <wsdl:output name="GetRettificheIrpefSuPreventivoResponse" message="ns0:GetRettificheIrpefSuPreventivoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRilevanze">
+      <wsdl:input name="GetRilevanzeRequest" message="ns0:GetRilevanzeRequest" />
+      <wsdl:output name="GetRilevanzeResponse" message="ns0:GetRilevanzeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVociCedolinoMandato">
+      <wsdl:input name="GetVociCedolinoMandatoRequest" message="ns0:GetVociCedolinoMandatoRequest" />
+      <wsdl:output name="GetVociCedolinoMandatoResponse" message="ns0:GetVociCedolinoMandatoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVociContabiliMandato">
+      <wsdl:input name="GetVociContabiliMandatoRequest" message="ns0:GetVociContabiliMandatoRequest" />
+      <wsdl:output name="GetVociContabiliMandatoResponse" message="ns0:GetVociContabiliMandatoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVociContabiliRataPensione">
+      <wsdl:input name="GetVociContabiliRataPensioneRequest" message="ns0:GetVociContabiliRataPensioneRequest" />
+      <wsdl:output name="GetVociContabiliRataPensioneResponse" message="ns0:GetVociContabiliRataPensioneResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DatiPensioniSOAP" type="ns0:DatiPensioni">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAnagraficaComponenti">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetAnagraficaComponenti" style="document" />
+      <wsdl:input name="GetAnagraficaComponentiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnagraficaComponentiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaCf">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetAnagraficaDaCf" style="document" />
+      <wsdl:input name="GetAnagraficaDaCfRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnagraficaDaCfResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaCFAut">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetAnagraficaDaCFAut" style="document" />
+      <wsdl:input name="GetAnagraficaDaCFAutRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnagraficaDaCFAutResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaChiavePensione">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetAnagraficaDaChiavePensione" style="document" />
+      <wsdl:input name="GetAnagraficaDaChiavePensioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnagraficaDaChiavePensioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnagraficaDaChiavePensioneAut">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetAnagraficaDaChiavePensioneAut" style="document" />
+      <wsdl:input name="GetAnagraficaDaChiavePensioneAutRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnagraficaDaChiavePensioneAutResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniRif">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetAnniRif" style="document" />
+      <wsdl:input name="GetAnniRifRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnniRifResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttributiGP8">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetAttributiGP8" style="document" />
+      <wsdl:input name="GetAttributiGP8Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAttributiGP8Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBonus14esima">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetBonus14esima" style="document" />
+      <wsdl:input name="GetBonus14esimaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBonus14esimaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBonus388_2000">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/Getbonus388_2000" style="document" />
+      <wsdl:input name="GetBonus388_2000Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBonus388_2000Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCasse">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetCasse" style="document" />
+      <wsdl:input name="GetCasseRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCasseResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodicePensioneTrasferita">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetCodicePensioneTrasferita" style="document" />
+      <wsdl:input name="GetCodicePensioneTrasferitaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCodicePensioneTrasferitaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliAnniPrecedenti">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetConguagliAnniPrecedenti" style="document" />
+      <wsdl:input name="GetConguagliAnniPrecedentiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetConguagliAnniPrecedentiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliAnnoInCorso">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetConguagliAnnoInCorso" style="document" />
+      <wsdl:input name="GetConguagliAnnoInCorsoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetConguagliAnnoInCorsoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliArte">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetConguagliArte" style="document" />
+      <wsdl:input name="GetConguagliArteRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetConguagliArteResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConguagliDaRinnovo">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetConguagliDaRinnovo" style="document" />
+      <wsdl:input name="GetConguagliDaRinnovoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetConguagliDaRinnovoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCumuliByRilevanza">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetCumuliByRilevanza" style="document" />
+      <wsdl:input name="GetCumuliByRilevanzaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCumuliByRilevanzaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCumuliByRilevanzaANF">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetCumuliByRilevanzaANF" style="document" />
+      <wsdl:input name="GetCumuliByRilevanzaANFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCumuliByRilevanzaANFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiAbbinamentiPensioni">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiAbbinamentiPensioni" style="document" />
+      <wsdl:input name="GetDatiAbbinamentiPensioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiAbbinamentiPensioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiCalcolo">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiCalcolo" style="document" />
+      <wsdl:input name="GetDatiCalcoloRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiCalcoloResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiConguagliDa730">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiConguagliDa730" style="document" />
+      <wsdl:input name="GetDatiConguagliDa730Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiConguagliDa730Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiContabili">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiContabili" style="document" />
+      <wsdl:input name="GetDatiContabiliRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiContabiliResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiCUDeDetrazioniImposta">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/NewOperation" style="document" />
+      <wsdl:input name="GetDatiCUDeDetrazioniImpostaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiCUDeDetrazioniImpostaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiDiario">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiDiario" style="document" />
+      <wsdl:input name="GetDatiDiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiDiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiECodiciVari">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiECodiciVari" style="document" />
+      <wsdl:input name="GetDatiECodiciVariRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiECodiciVariResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiGP5GP6">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiGP5GP6" style="document" />
+      <wsdl:input name="GetDatiGP5GP6Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiGP5GP6Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiInvCiv">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiInvCiv" style="document" />
+      <wsdl:input name="GetDatiInvCivRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiInvCivResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiMovimentazione">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiMovimentazione" style="document" />
+      <wsdl:input name="GetDatiMovimentazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiMovimentazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPatrimonio">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiPatrimonio" style="document" />
+      <wsdl:input name="GetDatiPatrimonioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiPatrimonioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPensioneAll">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiPensioneAll" style="document" />
+      <wsdl:input name="GetDatiPensioneAllRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiPensioneAllResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPensioneGDS">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiPensioneGDS" style="document" />
+      <wsdl:input name="GetDatiPensioneGDSRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiPensioneGDSResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPensioneNCC">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiPensioneNCC" style="document" />
+      <wsdl:input name="GetDatiPensioneNCCRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiPensioneNCCResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPianiPagamentoSoggetto">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiPianiPagamentoSoggetto" style="document" />
+      <wsdl:input name="GetDatiPianiPagamentoSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiPianiPagamentoSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiPrincipaliPensioni">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiPrincipaliPensioni" style="document" />
+      <wsdl:input name="GetDatiPrincipaliPensioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiPrincipaliPensioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP1">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP1" style="document" />
+      <wsdl:input name="GetDatiTGP1Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP1Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP2">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP2" style="document" />
+      <wsdl:input name="GetDatiTGP2Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP2Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP3">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP3" style="document" />
+      <wsdl:input name="GetDatiTGP3Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP3Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP4">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP4" style="document" />
+      <wsdl:input name="GetDatiTGP4Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP4Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP5">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP5" style="document" />
+      <wsdl:input name="GetDatiTGP5Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP5Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP6">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP6" style="document" />
+      <wsdl:input name="GetDatiTGP6Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP6Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP7">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP7" style="document" />
+      <wsdl:input name="GetDatiTGP7Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP7Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiTGP8">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDatiTGP8" style="document" />
+      <wsdl:input name="GetDatiTGP8Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDatiTGP8Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioSindacati">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetDettaglioSindacati" style="document" />
+      <wsdl:input name="GetDettaglioSindacatiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDettaglioSindacatiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntiArt8">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetEntiArt8" style="document" />
+      <wsdl:input name="GetEntiArt8Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetEntiArt8Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEstrazioneInCorso">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetEstrazioneInCorso" style="document" />
+      <wsdl:input name="GetEstrazioneInCorsoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetEstrazioneInCorsoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEstrazioneUltimaRata">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetEstrazioneUltimaRata" style="document" />
+      <wsdl:input name="GetEstrazioneUltimaRataRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetEstrazioneUltimaRataResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioneB">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetFunzioneB" style="document" />
+      <wsdl:input name="GetFunzioneBRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFunzioneBResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioneF">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetFunzioneF" style="document" />
+      <wsdl:input name="GetFunzioneFRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFunzioneFResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImportiPensione">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetImportiPensione" style="document" />
+      <wsdl:input name="GetImportiPensioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetImportiPensioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLavorazioni">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetLavorazioni" style="document" />
+      <wsdl:input name="GetLavorazioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLavorazioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMandatiRatePensione">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetMandatiRatePensione" style="document" />
+      <wsdl:input name="GetMandatiRatePensioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMandatiRatePensioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNucleo">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetNucleo" style="document" />
+      <wsdl:input name="GetNucleoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNucleoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniDaDiario">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetPensioniDaDiario" style="document" />
+      <wsdl:input name="GetPensioniDaDiarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPensioniDaDiarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniDaEnteRif">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetPensioniDaEnteRif" style="document" />
+      <wsdl:input name="GetPensioniDaEnteRifRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPensioniDaEnteRifResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniDaVerificare">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetPensioniDaVerificare" style="document" />
+      <wsdl:input name="GetPensioniDaVerificareRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPensioniDaVerificareResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniVigentiSoggetto">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetPensioniVigentiSoggetto" style="document" />
+      <wsdl:input name="GetPensioniVigentiSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPensioniVigentiSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPianiPagamentoSoggettoACreditoEliminate">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetPianiPagamentoSoggettoACreditoEliminate" style="document" />
+      <wsdl:input name="GetPianiPagamentoSoggettoACreditoEliminateRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPianiPagamentoSoggettoACreditoEliminateResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPianiPagamentoSoggettoEliminate">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetPianiPagamentoSoggettoEliminate" style="document" />
+      <wsdl:input name="GetPianiPagamentoSoggettoEliminateRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPianiPagamentoSoggettoEliminateResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPianiPagamentoVigentiSoggetto">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetPianiPagamentoVigentiSoggetto" style="document" />
+      <wsdl:input name="GetPianiPagamentoVigentiSoggettoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPianiPagamentoVigentiSoggettoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRedditi">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetRedditi" style="document" />
+      <wsdl:input name="GetRedditiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRedditiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRedditiCasellario">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetRedditiCasellario" style="document" />
+      <wsdl:input name="GetRedditiCasellarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRedditiCasellarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRedditiDichiarati">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetRedditiDichiarati" style="document" />
+      <wsdl:input name="GetRedditiDichiaratiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRedditiDichiaratiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRettificheIrpefSuPreventivo">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetRettificheIrpefSuPreventivo" style="document" />
+      <wsdl:input name="GetRettificheIrpefSuPreventivoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRettificheIrpefSuPreventivoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRilevanze">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetRilevanze" style="document" />
+      <wsdl:input name="GetRilevanzeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRilevanzeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVociCedolinoMandato">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetVociCedolinoMandato" style="document" />
+      <wsdl:input name="GetVociCedolinoMandatoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetVociCedolinoMandatoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVociContabiliMandato">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetVociContabiliMandato" style="document" />
+      <wsdl:input name="GetVociContabiliMandatoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetVociContabiliMandatoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVociContabiliRataPensione">
+      <soap11:operation soapAction="http://datiPensioni.services.soa.inps.it/GetVociContabiliRataPensione" style="document" />
+      <wsdl:input name="GetVociContabiliRataPensioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetVociContabiliRataPensioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DatiPensioni">
+    <wsdl:port name="DatiPensioniSOAP" binding="ns0:DatiPensioniSOAP">
+      <soap11:address location="http://192.168.40.149:80/host/DatiPensioniWEB/services/DatiPensioniSOAP" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

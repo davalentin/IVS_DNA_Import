@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EAB1B8AC-A3D3-4CBA-9C1D-893E9B36F063}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INPS.Pensioni.Liquidazione.BLCommon</RootNamespace>
+    <AssemblyName>INPS.Pensioni.Liquidazione.BLCommon</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>\WSInpsPensioniLiquidazione.BLCommon\</SccProjectName>
+    <SccLocalPath>WSInpsPensioniLiquidazione.BLCommon\</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>Serena Source Control Provider:{04ED75C7-FE70-4589-A196-51A6FA0D4D7E}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INPS.DNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Context, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data.HostIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Security.Idm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\DNA.Runtime\Assembly\v1.0.0.0\INPS.DNA.Security.Idm.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WSInpsPensioniLiquidazione\dll_esterne\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalcoloCentraleConfiguratoreClient.cs" />
+    <Compile Include="Entity\GestioneEsitoAggiornamentoPianiDiPagamento.cs" />
+    <Compile Include="GestioneAnagraficaAccordiLetteraB.cs" />
+    <Compile Include="GestioneAnagraficaAziendeLetteraB.cs" />
+    <Compile Include="GestioneBancheFideiussioneESOPMI.cs" />
+    <Compile Include="GestioneBancheFideiussioneESPA.cs" />
+    <Compile Include="GestioneAnagraficaAziendePerTipo0179.cs" />
+    <Compile Include="GestioneAnagraficaAccordiPerTipo0179.cs" />
+    <Compile Include="GestioneAnniRichiestaBonus.cs" />
+    <Compile Include="GestioneCtrlCodiciFiscaliAbilitatiPerTipo0179.cs" />
+    <Compile Include="GestioneCtrlFelpePerINPDAP.cs" />
+    <Compile Include="GestioneCtrlMatricoleAutomazione.cs" />
+    <Compile Include="GestioneCtrlSediRicMotContribFsPtIndirette.cs" />
+    <Compile Include="GestioneCtrlStatiSenzaEsenzioneEsteraAutonomi.cs" />
+    <Compile Include="GestioneAziendeESOAMB.cs" />
+    <Compile Include="Entity\ContenitoreDecodifica.cs" />
+    <Compile Include="Entity\ContenitoreObject.cs" />
+    <Compile Include="GestioneAnagraficaAccordiPerTipo0171.cs" />
+    <Compile Include="GestioneAnagraficaAziende.cs" />
+    <Compile Include="GestioneAnagraficaAccordi.cs" />
+    <Compile Include="GestioneAnagraficaAziendePerTipo0171.cs" />
+    <Compile Include="GestioneAziendeESOTEL.cs" />
+    <Compile Include="GestioneAziendeVESO29.cs" />
+    <Compile Include="GestioneAziendeVOESO.cs" />
+    <Compile Include="GestioneCtrlAbilitazioneUtentePerUtility.cs" />
+    <Compile Include="GestioneCtrlAttEconProfInd_PensProv.cs" />
+    <Compile Include="GestioneCtrlControlliApplicativi.cs" />
+    <Compile Include="GestioneCtrlSedePolarizzata_ENPALS.cs" />
+    <Compile Include="GestioneDatiEsteriCumulo.cs" />
+    <Compile Include="GestioneDetrazioniContitolare.cs" />
+    <Compile Include="GestioneErroriPrelievo.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoCumulo.cs" />
+    <Compile Include="Entity\CrossLiqAgoSupp\DatiContribuzioneEnpals.cs" />
+    <Compile Include="GestioneAziendeCredito.cs" />
+    <Compile Include="GestioneAziendeScadenzaAssegnoGGmmAAAA.cs" />
+    <Compile Include="GestioneAziendeVESO33.cs" />
+    <Compile Include="Entity\Supplementi\DatiSupplementi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Supplementi\TipoSupplementi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Titolare\AreaTitolare.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Titolare\Sindacato.cs" />
+    <Compile Include="GestioneAggiornamenti.cs" />
+    <Compile Include="GestioneAventiDiritto.cs" />
+    <Compile Include="GestioneAvvisi.cs" />
+    <Compile Include="GestioneAziendeVOCRED_DAP.cs" />
+    <Compile Include="GestioneBancheFideiussione.cs" />
+    <Compile Include="GestioneBeneficioVittimeTerrorismo.cs" />
+    <Compile Include="GestioneBeneficiParticolari.cs" />
+    <Compile Include="GestioneAltrePensioni.cs" />
+    <Compile Include="GestioneBypassControllo.cs" />
+    <Compile Include="GestioneCalcoloVittimeTerrorismo.cs" />
+    <Compile Include="GestioneCertificato.cs" />
+    <Compile Include="GestioneComponenteFamiliare.cs" />
+    <Compile Include="GestioneContribuzioneEnpals.cs" />
+    <Compile Include="GestioneCrossControls.cs" />
+    <Compile Include="GestioneCtrlBypassTipologieNonAbilitate.cs" />
+    <Compile Include="GestioneCtrlCodiceConvenzionePrestazioniEE.cs" />
+    <Compile Include="GestioneCtrlCodiceNatura2.cs" />
+    <Compile Include="GestioneCtrlDecorrenzaRetrExINPDAI.cs" />
+    <Compile Include="GestioneCtrlRic.cs" />
+    <Compile Include="GestioneCtrlStatiSenzaEsenzioneFiscaleEstera.cs" />
+    <Compile Include="GestioneDatiControlloFelpe.cs" />
+    <Compile Include="GestioneDatiGenericiAgoCi.cs" />
+    <Compile Include="GestioneDatiNoCalcolo.cs" />
+    <Compile Include="GestioneDatiServizioUtile.cs" />
+    <Compile Include="GestioneDatiServizioUtileINPDAP.cs" />
+    <Compile Include="GestioneDatiStoricoGP.cs" />
+    <Compile Include="GestioneDecodificaAzienda.cs" />
+    <Compile Include="GestioneDL407.cs" />
+    <Compile Include="GestioneEnpals.cs" />
+    <Compile Include="GestioneErroriCalcolo.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoFelpe.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoINPDAP.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoNoteDiDebito.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoOneri.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoSai.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoTot.cs" />
+    <Compile Include="GestioneEsitoAggiornamentoWebDom.cs" />
+    <Compile Include="GestioneFAQ.cs" />
+    <Compile Include="GestioneFondoCredito.cs" />
+    <Compile Include="GestioneIntegrazioneArt11.cs" />
+    <Compile Include="GestioneInteressiLegali.cs" />
+    <Compile Include="GestioneLavorazioneManualeAutomatiche.cs" />
+    <Compile Include="GestioneLogGenerico.cs" />
+    <Compile Include="GestioneLogSoap.cs" />
+    <Compile Include="GestioneMessaggiHermes.cs" />
+    <Compile Include="GestioneMiglioramentiContrattuali.cs" />
+    <Compile Include="GestioneNuovoCalcolo.cs" />
+    <Compile Include="GestioneOneri.cs" />
+    <Compile Include="GestionePensioneInailInabilita.cs" />
+    <Compile Include="GestioneLiquidazioniAbilitate.cs" />
+    <Compile Include="GestioneNuoveLiquidate.cs" />
+    <Compile Include="GestioneDBSComuni.cs" />
+    <Compile Include="GestioneAnagrafica.cs" />
+    <Compile Include="GestioneDanteCausa.cs" />
+    <Compile Include="GestioneDatiContributiviCi.cs" />
+    <Compile Include="GestioneEsitoCalcolo.cs" />
+    <Compile Include="GestioneLavorazione.cs" />
+    <Compile Include="GestionePensioneINPDAP.cs" />
+    <Compile Include="GestionePeriodiAventiDiritto.cs" />
+    <Compile Include="GestionePrepensionamento.cs" />
+    <Compile Include="GestioneQuotaFondoINPGI.cs" />
+    <Compile Include="GestioneQuotaFondoIntegrativo.cs" />
+    <Compile Include="GestioneRecordDatiFondoINPDAP.cs" />
+    <Compile Include="GestioneRipartizioneFondi.cs" />
+    <Compile Include="GestioneRipartizioneINPDAP.cs" />
+    <Compile Include="GestioneSbloccoDomanda.cs" />
+    <Compile Include="GestioneSediMatricola.cs" />
+    <Compile Include="GestioneSentenzaArt4.cs" />
+    <Compile Include="GestioneSentenze.cs" />
+    <Compile Include="GestioneSindacati.cs" />
+    <Compile Include="GestioneStampa.cs" />
+    <Compile Include="GestioneStoricoDataLimiteDomandeINDCOM.cs" />
+    <Compile Include="GestioneStoricoDataLimitePoligraficiLetteraB.cs" />
+    <Compile Include="GestioneSupplementi.cs" />
+    <Compile Include="GestioneCalcolo.cs" />
+    <Compile Include="GestioneControlliDinamici.cs" />
+    <Compile Include="GestioneDecodifica.cs" />
+    <Compile Include="GestioneDelegatoTutore.cs" />
+    <Compile Include="GestioneDetrazioniImposta.cs" />
+    <Compile Include="GestioneFamiliari.cs" />
+    <Compile Include="GestioneFondo.cs" />
+    <Compile Include="GestioneIstruttoria.cs" />
+    <Compile Include="GestioneMaggiorazioniBenefici.cs" />
+    <Compile Include="GestionePagamento.cs" />
+    <Compile Include="GestionePensione.cs" />
+    <Compile Include="GestioneQuadri.cs" />
+    <Compile Include="GestioneRecordFondo.cs" />
+    <Compile Include="GestioneRedditi.cs" />
+    <Compile Include="GestioneStatoPratica.cs" />
+    <Compile Include="GestioneTipologieNonAbilitate.cs" />
+    <Compile Include="GestioneTrasformazioniAbilitate.cs" />
+    <Compile Include="GestioneVersioni.cs" />
+    <Compile Include="GestioneVittimeTerrorismo.cs" />
+    <Compile Include="GestioneCtrlNuovoCalcolo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.DataCommon\WSInpsPensioniLiquidazione.DataCommon.csproj">
+      <Project>{27D4B169-53E7-445B-99D8-494D017D3402}</Project>
+      <Name>WSInpsPensioniLiquidazione.DataCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

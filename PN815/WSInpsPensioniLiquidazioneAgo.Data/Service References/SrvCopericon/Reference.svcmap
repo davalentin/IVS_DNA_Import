@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d8bfcd6b-b794-467d-b8f3-1ff9a47a94e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msws2.svil.inps/WSWcfCopericon/SrvCopericon.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SrvCopericon.xsd" MetadataType="Schema" ID="b62018f0-4bf7-4e12-b704-13884fe7bf2c" SourceId="1" SourceUrl="http://msws2.svil.inps/WSWcfCopericon/SrvCopericon.svc?xsd=xsd0" />
+    <MetadataFile FileName="SrvCopericon.disco" MetadataType="Disco" ID="7c70750f-6ec2-4c6c-bec9-6c06731203de" SourceId="1" SourceUrl="http://msws2.svil.inps/WSWcfCopericon/SrvCopericon.svc?disco" />
+    <MetadataFile FileName="SrvCopericon1.xsd" MetadataType="Schema" ID="ae70cc23-7621-46cb-92e9-94b0e7c21230" SourceId="1" SourceUrl="http://msws2.svil.inps/WSWcfCopericon/SrvCopericon.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceVerica.wsdl" MetadataType="Wsdl" ID="cc88bf68-73fd-4951-a025-17d509210cf9" SourceId="1" SourceUrl="http://msws2.svil.inps/WSWcfCopericon/SrvCopericon.svc?wsdl" />
+    <MetadataFile FileName="SrvCopericon2.xsd" MetadataType="Schema" ID="a94e5b1a-0cde-479a-8d34-d4a630dff30d" SourceId="1" SourceUrl="http://msws2.svil.inps/WSWcfCopericon/SrvCopericon.svc?xsd=xsd2" />
+    <MetadataFile FileName="SrvCopericon21.xsd" MetadataType="Schema" ID="7d651076-a8f2-4ae5-a3cc-5ca6716b948d" SourceId="1" SourceUrl="http://msws2.svil.inps/WSWcfCopericon/SrvCopericon.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

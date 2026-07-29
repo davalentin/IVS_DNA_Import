@@ -1,0 +1,208 @@
+﻿<ANFConsultazioneUnificata>
+  <FontiDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_AUT</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Autorizzazioni ANF</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>3</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_DIA</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Disoccupazione Agricola</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_ACT</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Tubercolosi ACT</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_DNA</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Disoccupazione non Agricola</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>0</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte></DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>0</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>-1</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_GS</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Gestione Separata</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_LD</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Lavoratori Domestici, Ditte Cessate e Fallite</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDAF_CDCM</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Coltivatori Diretti, Coloni e Mezzadri</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_PD</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Ditte Cessate e Fallite</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_DIP</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Dipendenti Privati</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+    <FonteDatiANF>
+      <CodiceFonteDatiANF>FDANF_PENSIONI</CodiceFonteDatiANF>
+      <DescrizioneFonteDatiANF>Pensioni</DescrizioneFonteDatiANF>
+      <StatoFonteDatiANF>2</StatoFonteDatiANF>
+      <DataOraAggiornamentoFonte>04/01/2021 12:02:49</DataOraAggiornamentoFonte>
+      <RichiestaFonteDatiANF>1</RichiestaFonteDatiANF>
+      <RispostaNumeroDomandeANF>0</RispostaNumeroDomandeANF>
+    </FonteDatiANF>
+  </FontiDatiANF>
+  <ParametriRichiesta>
+    <CodiceFiscale>LNRGRG07S60L378M</CodiceFiscale>
+    <PeriodoDa></PeriodoDa>
+    <PeriodoA></PeriodoA>
+    <DettaglioDatiAnagrafici>0</DettaglioDatiAnagrafici>
+  </ParametriRichiesta>
+  <DataRichiesta>04/01/2021 12:02:49</DataRichiesta>
+  <DomandeANF>
+    <Fonte>
+      <CodiceFonteDatiANF>FDANF_AUT</CodiceFonteDatiANF>
+      <DataValiditaDati>04/01/2021 12:02:51</DataValiditaDati>
+      <DomandaANF>
+        <Tipologia>AB</Tipologia>
+        <Numero>2589388</Numero>
+        <NumeroProtocollo/>
+        <SedeCompetenza>830000</SedeCompetenza>
+        <FlgOccupato>S</FlgOccupato>
+        <DataPresentazione>10/12/2007</DataPresentazione>
+        <TipoAutorizzazioneDomanda>A</TipoAutorizzazioneDomanda>
+        <StatoDomanda>S</StatoDomanda>
+        <DatiAnagraficiRichiedente>
+          <Nome>TIZIANO</Nome>
+          <Cognome>LEONARDI</Cognome>
+          <CodiceFiscale>LNRTZN68M28L378E</CodiceFiscale>
+          <StatoCivileRichiedente>N</StatoCivileRichiedente>
+        </DatiAnagraficiRichiedente>
+        <Beneficiario>
+          <DatiAnagraficiBeneficiario>
+            <Nome>GIORGIA</Nome>
+            <Cognome>LEONARDI</Cognome>
+            <CodiceFiscale>LNRGRG07S60L378M</CodiceFiscale>
+            <DataNascita>20/11/2007</DataNascita>
+            <Sesso>F</Sesso>
+            <TipoBeneficiario>F</TipoBeneficiario>
+            <StatoCivileBeneficiario/>
+          </DatiAnagraficiBeneficiario>
+          <Autorizzazione>
+            <CodiceAutorizzazione>C12</CodiceAutorizzazione>
+            <CodiceRespinta/>
+            <DataDecorrenzaRichiesta>20/11/2007</DataDecorrenzaRichiesta>
+            <Periodo>
+              <DataDecorrenzaConcessa>20/11/2007</DataDecorrenzaConcessa>
+              <DataScadenza>31/12/2012</DataScadenza>
+              <DataScadenzaAnticipata/>
+            </Periodo>
+          </Autorizzazione>
+        </Beneficiario>
+      </DomandaANF>
+      <DomandaANF>
+        <Tipologia>AB</Tipologia>
+        <Numero>481552</Numero>
+        <NumeroProtocollo>INPS.8300.19/03/2013.0044431</NumeroProtocollo>
+        <SedeCompetenza>830000</SedeCompetenza>
+        <FlgOccupato>S</FlgOccupato>
+        <DataPresentazione>19/03/2013</DataPresentazione>
+        <TipoAutorizzazioneDomanda>A</TipoAutorizzazioneDomanda>
+        <StatoDomanda>S</StatoDomanda>
+        <DatiAnagraficiRichiedente>
+          <Nome>TIZIANO</Nome>
+          <Cognome>LEONARDI</Cognome>
+          <CodiceFiscale>LNRTZN68M28L378E</CodiceFiscale>
+          <StatoCivileRichiedente>N</StatoCivileRichiedente>
+        </DatiAnagraficiRichiedente>
+        <Beneficiario>
+          <DatiAnagraficiBeneficiario>
+            <Nome>GIORGIA</Nome>
+            <Cognome>LEONARDI</Cognome>
+            <CodiceFiscale>LNRGRG07S60L378M</CodiceFiscale>
+            <DataNascita>20/11/2007</DataNascita>
+            <Sesso>F</Sesso>
+            <TipoBeneficiario>F</TipoBeneficiario>
+            <StatoCivileBeneficiario>N</StatoCivileBeneficiario>
+          </DatiAnagraficiBeneficiario>
+          <Autorizzazione>
+            <CodiceAutorizzazione>C14</CodiceAutorizzazione>
+            <CodiceRespinta/>
+            <DataDecorrenzaRichiesta>01/01/2013</DataDecorrenzaRichiesta>
+            <Periodo>
+              <DataDecorrenzaConcessa>01/01/2013</DataDecorrenzaConcessa>
+              <DataScadenza>31/08/2018</DataScadenza>
+              <DataScadenzaAnticipata/>
+            </Periodo>
+          </Autorizzazione>
+        </Beneficiario>
+      </DomandaANF>
+      <DomandaANF>
+        <Tipologia>AB</Tipologia>
+        <Numero>775216</Numero>
+        <NumeroProtocollo>INPS.8300.24/01/2014.0013052</NumeroProtocollo>
+        <SedeCompetenza>830001</SedeCompetenza>
+        <FlgOccupato>S</FlgOccupato>
+        <DataPresentazione>24/01/2014</DataPresentazione>
+        <TipoAutorizzazioneDomanda>A</TipoAutorizzazioneDomanda>
+        <StatoDomanda>S</StatoDomanda>
+        <DatiAnagraficiRichiedente>
+          <Nome>MIRIAM</Nome>
+          <Cognome>KERSCHBAUMER</Cognome>
+          <CodiceFiscale>KRSMRM76C60F187Y</CodiceFiscale>
+          <StatoCivileRichiedente>N</StatoCivileRichiedente>
+        </DatiAnagraficiRichiedente>
+        <Beneficiario>
+          <DatiAnagraficiBeneficiario>
+            <Nome>GIORGIA</Nome>
+            <Cognome>LEONARDI</Cognome>
+            <CodiceFiscale>LNRGRG07S60L378M</CodiceFiscale>
+            <DataNascita>20/11/2007</DataNascita>
+            <Sesso>F</Sesso>
+            <TipoBeneficiario>F</TipoBeneficiario>
+            <StatoCivileBeneficiario>N</StatoCivileBeneficiario>
+          </DatiAnagraficiBeneficiario>
+          <Autorizzazione>
+            <CodiceAutorizzazione>C12</CodiceAutorizzazione>
+            <CodiceRespinta/>
+            <DataDecorrenzaRichiesta>07/03/2013</DataDecorrenzaRichiesta>
+            <Periodo>
+              <DataDecorrenzaConcessa>07/03/2013</DataDecorrenzaConcessa>
+              <DataScadenza>30/04/2019</DataScadenza>
+              <DataScadenzaAnticipata/>
+            </Periodo>
+          </Autorizzazione>
+        </Beneficiario>
+      </DomandaANF>
+    </Fonte>
+  </DomandeANF>
+</ANFConsultazioneUnificata>

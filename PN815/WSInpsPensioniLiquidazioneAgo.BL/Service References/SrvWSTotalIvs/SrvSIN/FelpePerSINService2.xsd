@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" />
+  <xs:element name="InserimentoPECO_INPDAP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q1:csTBPECOTOTALE_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserimentoPECO_INPDAPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="InserimentoPECO_INPDAPResult" nillable="true" type="q2:csTBPECOTOTALE_INPDAP" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q3:csTBPECOTOTALE_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaPECO_INPDAP_CodiceFiscale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FLAG_Tabella" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Codice_Fiscale" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q4:csTBPECOTOTALE_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaPECO_INPDAP_CodiceFiscaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="LetturaPECO_INPDAP_CodiceFiscaleResult" nillable="true" type="q5:csTBPECOTOTALE_INPDAP" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q6:csTBPECOTOTALE_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaPECO_INPDAP_NumeroDomus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FLAG_Tabella" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numero_domus" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q7:csTBPECOTOTALE_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaPECO_INPDAP_NumeroDomusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="LetturaPECO_INPDAP_NumeroDomusResult" nillable="true" type="q8:csTBPECOTOTALE_INPDAP" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q9:csTBPECOTOTALE_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaPECO_CertAttive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Codice_Fiscale" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q10:csTBPECOCERTATT_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LetturaPECO_CertAttiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="LetturaPECO_CertAttiveResult" nillable="true" type="q11:csTBPECOCERTATT_INPDAP" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="IN_OUT" nillable="true" type="q12:csTBPECOCERTATT_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornamentoPECO_INPDAP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PGM_Chiamante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="APPL_Chiamante" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="DATI_INPUT" nillable="true" type="q13:csParametriAggPECO_INPDAP" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="OUT" nillable="true" type="q14:csAggPECO_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiornamentoPECO_INPDAPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="AggiornamentoPECO_INPDAPResult" nillable="true" type="q15:csAggPECO_INPDAP" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" minOccurs="0" name="OUT" nillable="true" type="q16:csAggPECO_INPDAP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

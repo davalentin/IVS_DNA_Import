@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GestioneRichiestaBonus.AreaRichiestaBonus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anni" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnoInizioBonus" type="xs:int" />
+      <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificato" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiAnniRichiestaBonus" nillable="true" type="q1:ArrayOfGestioneAnniRichiestaBonus.DatiAnniRichiestaBonus" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="DatiPrenotazioneElaborazioni" nillable="true" type="q2:ArrayOfGestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni" />
+      <xs:element minOccurs="0" name="Esito" type="tns:GestioneRichiestaBonus.TipoRitornoRichiestaBonus" />
+      <xs:element minOccurs="0" name="MessaggioVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumDomanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoBonus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneRichiestaBonus.AreaRichiestaBonus" nillable="true" type="tns:GestioneRichiestaBonus.AreaRichiestaBonus" />
+  <xs:simpleType name="GestioneRichiestaBonus.TipoRitornoRichiestaBonus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NessunErrore" />
+      <xs:enumeration value="Errore" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GestioneRichiestaBonus.TipoRitornoRichiestaBonus" nillable="true" type="tns:GestioneRichiestaBonus.TipoRitornoRichiestaBonus" />
+  <xs:complexType name="ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare" nillable="true" type="tns:GestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare" nillable="true" type="tns:ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare" />
+  <xs:complexType name="GestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoUnione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare" nillable="true" type="tns:GestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare" />
+  <xs:complexType name="GestioneRedditi.AreaRedditi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" type="tns:GestioneRedditi.TipoRitornoRedditi" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ListaRedditi" nillable="true" type="q3:ArrayOfGestioneRedditi.RedditoDRedd" />
+      <xs:element minOccurs="0" name="MessaggioVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatoPensione" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UltimaModifica" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneRedditi.AreaRedditi" nillable="true" type="tns:GestioneRedditi.AreaRedditi" />
+  <xs:simpleType name="GestioneRedditi.TipoRitornoRedditi">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NessunErrore" />
+      <xs:enumeration value="Errore" />
+      <xs:enumeration value="Informativa" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GestioneRedditi.TipoRitornoRedditi" nillable="true" type="tns:GestioneRedditi.TipoRitornoRedditi" />
+  <xs:complexType name="ArrayOfGestioneAreaEliminazione.CodiceEliminazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAreaEliminazione.CodiceEliminazione" nillable="true" type="tns:GestioneAreaEliminazione.CodiceEliminazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAreaEliminazione.CodiceEliminazione" nillable="true" type="tns:ArrayOfGestioneAreaEliminazione.CodiceEliminazione" />
+  <xs:complexType name="GestioneAreaEliminazione.CodiceEliminazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestoVideo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaEliminazione.CodiceEliminazione" nillable="true" type="tns:GestioneAreaEliminazione.CodiceEliminazione" />
+  <xs:complexType name="ArrayOfGestioneDetrazioni.Soggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneDetrazioni.Soggetto" nillable="true" type="tns:GestioneDetrazioni.Soggetto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneDetrazioni.Soggetto" nillable="true" type="tns:ArrayOfGestioneDetrazioni.Soggetto" />
+  <xs:complexType name="GestioneDetrazioni.Soggetto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Confermato" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdAnagrafica" type="xs:long" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneDetrazioni.Soggetto" nillable="true" type="tns:GestioneDetrazioni.Soggetto" />
+  <xs:complexType name="ArrayOfGestioneAreaFamiliari.AreaFamiliare">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAreaFamiliari.AreaFamiliare" nillable="true" type="tns:GestioneAreaFamiliari.AreaFamiliare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAreaFamiliari.AreaFamiliare" nillable="true" type="tns:ArrayOfGestioneAreaFamiliari.AreaFamiliare" />
+  <xs:complexType name="GestioneAreaFamiliari.AreaFamiliare">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ElencoCodMaggFamiliari" nillable="true" type="q4:ArrayOfGestioneFamiliari.CodMaggFamiliari" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="Familiare" nillable="true" type="q5:GestioneFamiliari.Familiare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaFamiliari.AreaFamiliare" nillable="true" type="tns:GestioneAreaFamiliari.AreaFamiliare" />
+  <xs:complexType name="ArrayOfGestioneAreaPagamento.DatiCassaSede">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAreaPagamento.DatiCassaSede" nillable="true" type="tns:GestioneAreaPagamento.DatiCassaSede" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAreaPagamento.DatiCassaSede" nillable="true" type="tns:ArrayOfGestioneAreaPagamento.DatiCassaSede" />
+  <xs:complexType name="GestioneAreaPagamento.DatiCassaSede">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abi" type="xs:int" />
+      <xs:element minOccurs="0" name="Agenzia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cab" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaPagamento.DatiCassaSede" nillable="true" type="tns:GestioneAreaPagamento.DatiCassaSede" />
+  <xs:complexType name="ArrayOfGestioneAreaPagamento.DatiStatoEstero">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAreaPagamento.DatiStatoEstero" nillable="true" type="tns:GestioneAreaPagamento.DatiStatoEstero" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAreaPagamento.DatiStatoEstero" nillable="true" type="tns:ArrayOfGestioneAreaPagamento.DatiStatoEstero" />
+  <xs:complexType name="GestioneAreaPagamento.DatiStatoEstero">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodCatastale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeStato" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaPagamento.DatiStatoEstero" nillable="true" type="tns:GestioneAreaPagamento.DatiStatoEstero" />
+  <xs:complexType name="GestioneAreaPagamento.DatiPagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AgenziaUfficioPagatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CapUfficioPagatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CittaUfficioPagatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodCatastaleEstero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DecorrenzaPagamento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Frazionario" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IBAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImportoPensioneAltroEnte" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IndirizzoUfficioPagatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFromWebDom" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Libretto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModalitaPagamento" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="NomeUfficioPagatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentuale" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="QuotaConcorsoAltroEnte" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="QuotaFissa" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StatoEstero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoPagamento" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="UfficioPagatore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimoMesePagamento" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaPagamento.DatiPagamento" nillable="true" type="tns:GestioneAreaPagamento.DatiPagamento" />
+  <xs:complexType name="GestioneAreaFamiliari.AreaDecFam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ElencoCodMaggFamiliari" nillable="true" type="tns:ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari" />
+      <xs:element minOccurs="0" name="ElencoSiglaFamiliare" nillable="true" type="tns:ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiSiglaFamiliare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaFamiliari.AreaDecFam" nillable="true" type="tns:GestioneAreaFamiliari.AreaDecFam" />
+  <xs:complexType name="ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari" nillable="true" type="tns:GestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari" nillable="true" type="tns:ArrayOfGestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari" />
+  <xs:complexType name="GestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CampoVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoAppartenenza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari" nillable="true" type="tns:GestioneAreaFamiliari.AreaDecFam.DatiCodMaggFamiliari" />
+</xs:schema>

@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/Imports">
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd0" namespace="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd3" namespace="http://soa.inps.it/faultcontracts/1_0/" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://pp_dna_ric.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiExCombattente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiExCombattente" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiExCombattente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiExCombattenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiExCombattente_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q1="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q1:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiExCombattente_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q2="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q2:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiExCombattente_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q3="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q3:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiExCombattente_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q4="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q4:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaggiorazioni_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiMaggiorazioni" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaggiorazioni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiMaggiorazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q5="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q5:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q6="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q6:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q7="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q7:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q8="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q8:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaggiorazioni_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiMaggiorazioni" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaggiorazioni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiMaggiorazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q9="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q9:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q10="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q10:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q11="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q11:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q12="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q12:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetBititolaritaByDomanda_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBititolaritaByDomanda" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetBititolaritaByDomanda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBititolaritaByDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q13="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q13:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q14="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q14:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q15="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q15:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q16="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q16:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreBititolarita_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreBititolarita" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreBititolarita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreBititolaritaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreBititolarita_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q17="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q17:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreBititolarita_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q18="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q18:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreBititolarita_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q19="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q19:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreBititolarita_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q20="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q20:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreAltraPensione_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreAltraPensione" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreAltraPensione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreAltraPensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreAltraPensione_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q21="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q21:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreAltraPensione_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q22="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q22:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreAltraPensione_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q23="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q23:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreAltraPensione_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q24="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q24:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelAltraPensione_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelAltraPensione" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelAltraPensione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelAltraPensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelAltraPensione_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q25="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q25:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelAltraPensione_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q26="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q26:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelAltraPensione_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q27="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q27:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelAltraPensione_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q28="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q28:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiPostDecOriginaria" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiPostDecOriginariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q29="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q29:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q30="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q30:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q31="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q31:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q32="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q32:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiPostDecOriginaria" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiPostDecOriginariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q33="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q33:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q34="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q34:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q35="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q35:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q36="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q36:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetListaVersioniCI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaVersioniCI" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetListaVersioniCI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaVersioniCIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetListaVersioniCI_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q37="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q37:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetListaVersioniCI_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q38="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q38:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetListaVersioniCI_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q39="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q39:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetListaVersioniCI_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q40="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q40:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetDatiContributiviByDomanda_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatiContributiviByDomanda" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetDatiContributiviByDomanda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatiContributiviByDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q41="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q41:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q42="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q42:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q43="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q43:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q44="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q44:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiContributivi_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiContributivi" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiContributivi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiContributiviResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiContributivi_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q45="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q45:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiContributivi_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q46="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q46:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiContributivi_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q47="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q47:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiContributivi_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q48="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q48:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetStatiEsteri_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatiEsteri" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetStatiEsteri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatiEsteriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetStatiEsteri_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q49="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q49:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetStatiEsteri_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q50="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q50:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetStatiEsteri_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q51="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q51:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetStatiEsteri_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q52="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q52:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProRata_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiProRata" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProRata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiProRataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProRata_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q53="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q53:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProRata_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q54="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q54:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProRata_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q55="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q55:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProRata_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q56="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q56:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelProRata_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelProRata" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelProRata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelProRataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelProRata_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q57="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q57:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelProRata_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q58="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q58:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelProRata_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q59="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q59:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelProRata_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q60="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q60:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CalcolaDomanda_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalcolaDomanda" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CalcolaDomanda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalcolaDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CalcolaDomanda_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q61="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q61:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CalcolaDomanda_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q62="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q62:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CalcolaDomanda_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q63="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q63:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CalcolaDomanda_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q64="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q64:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_PrelevaDomanda_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrelevaDomanda" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_PrelevaDomanda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrelevaDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_PrelevaDomanda_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q65="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q65:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_PrelevaDomanda_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q66="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q66:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_PrelevaDomanda_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q67="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q67:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_PrelevaDomanda_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q68="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q68:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiCalcolo_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiCalcolo" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiCalcolo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiCalcoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiCalcolo_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q69="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q69:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiCalcolo_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q70="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q70:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiCalcolo_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q71="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q71:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiCalcolo_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q72="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q72:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiCalcolo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiCalcolo" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiCalcolo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiCalcoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiCalcolo_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q73="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q73:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiCalcolo_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q74="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q74:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiCalcolo_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q75="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q75:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiCalcolo_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q76="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q76:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiImportiEsteri_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiImportiEsteri" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiImportiEsteri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiImportiEsteriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q77="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q77:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q78="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q78:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q79="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q79:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q80="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q80:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiImportiEsteri_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiImportiEsteri" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiImportiEsteri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiImportiEsteriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q81="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q81:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q82="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q82:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q83="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q83:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q84="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q84:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaternitaAcna_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiMaternitaAcna" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaternitaAcna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiMaternitaAcnaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q85="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q85:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q86="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q86:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q87="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q87:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q88="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q88:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaternitaAcna_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiMaternitaAcna" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaternitaAcna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiMaternitaAcnaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q89="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q89:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q90="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q90:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q91="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q91:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q92="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q92:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiLavoratoriAutonomi" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiLavoratoriAutonomiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q93="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q93:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q94="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q94:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q95="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q95:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q96="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q96:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiLavoratoriAutonomi" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiLavoratoriAutonomiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q97="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q97:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q98="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q98:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q99="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q99:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q100="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q100:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiLiquidazionePensione" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiLiquidazionePensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q101="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q101:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q102="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q102:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q103="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q103:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q104="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q104:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiquidazionePensioneByDomanda" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiquidazionePensioneByDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q105="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q105:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q106="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q106:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q107="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q107:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q108="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q108:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiGenerici_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiGenerici" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiGenerici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiGenericiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiGenerici_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q109="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q109:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiGenerici_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q110="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q110:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiGenerici_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q111="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q111:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiGenerici_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q112="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q112:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiGenerici_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiGenerici" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiGenerici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiGenericiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiGenerici_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q113="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q113:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiGenerici_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q114="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q114:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiGenerici_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q115="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q115:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiGenerici_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q116="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q116:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiAssicurativi_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiAssicurativi" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiAssicurativi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiAssicurativiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q117="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q117:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q118="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q118:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q119="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q119:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q120="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q120:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiAssicurativi_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiAssicurativi" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiAssicurativi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiAssicurativiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q121="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q121:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q122="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q122:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q123="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q123:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q124="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q124:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiOpzione_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiOpzione" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiOpzione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiOpzioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiOpzione_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q125="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q125:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiOpzione_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q126="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q126:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiOpzione_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q127="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q127:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiOpzione_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q128="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q128:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiOpzione_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiOpzione" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiOpzione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiOpzioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiOpzione_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q129="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q129:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiOpzione_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q130="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q130:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiOpzione_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q131="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q131:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiOpzione_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q132="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q132:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiIstruttoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiIstruttoria" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiIstruttoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiIstruttoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q133="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q133:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q134="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q134:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q135="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q135:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q136="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q136:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiIstruttoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiIstruttoria" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiIstruttoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiIstruttoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q137="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q137:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q138="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q138:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q139="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q139:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q140="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q140:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProvenienza_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiProvenienza" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProvenienza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiProvenienzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProvenienza_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q141="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q141:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProvenienza_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q142="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q142:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProvenienza_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q143="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q143:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiProvenienza_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q144="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q144:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiProvenienza_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiProvenienza" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiProvenienza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiProvenienzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiProvenienza_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q145="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q145:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiProvenienza_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q146="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q146:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiProvenienza_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q147="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q147:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiProvenienza_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q148="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q148:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaggiorazioniBeneficiByDomanda" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaggiorazioniBeneficiByDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q149="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q149:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q150="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q150:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q151="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q151:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q152="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q152:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreMaggiorazioniBenefici" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreMaggiorazioniBeneficiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q153="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q153:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q154="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q154:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q155="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q155:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q156="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q156:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiBenefici_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiBenefici" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiBenefici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiBeneficiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiBenefici_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q157="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q157:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiBenefici_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q158="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q158:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiBenefici_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q159="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q159:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiBenefici_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q160="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q160:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiBenefici_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiBenefici" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiBenefici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelDatiBeneficiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiBenefici_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q161="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q161:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiBenefici_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q162="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q162:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiBenefici_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q163="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q163:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_CancelDatiBenefici_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q164="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q164:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiExCombattente_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiExCombattente" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiExCombattente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreDatiExCombattenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiExCombattente_DnaInfrastructureFaultContract_FaultMessage">
+    <wsdl:part xmlns:q165="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q165:DnaInfrastructureFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiExCombattente_DnaApplicationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q166="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q166:DnaApplicationFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiExCombattente_DnaSecurityFaultContract_FaultMessage">
+    <wsdl:part xmlns:q167="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q167:DnaSecurityFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IServizioLiquidazioneCi_StoreDatiExCombattente_DnaValidationFaultContract_FaultMessage">
+    <wsdl:part xmlns:q168="http://soa.inps.it/faultcontracts/1_0/" name="detail" element="q168:DnaValidationFaultContract" />
+  </wsdl:message>
+  <wsdl:portType name="IServizioLiquidazioneCi">
+    <wsdl:operation name="CancelDatiExCombattente">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiExCombattente" message="tns:IServizioLiquidazioneCi_CancelDatiExCombattente_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiExCombattenteResponse" message="tns:IServizioLiquidazioneCi_CancelDatiExCombattente_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiExCombattenteDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiExCombattente_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiExCombattenteDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiExCombattente_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiExCombattenteDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiExCombattente_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiExCombattenteDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiExCombattente_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiMaggiorazioni">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaggiorazioni" message="tns:IServizioLiquidazioneCi_StoreDatiMaggiorazioni_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaggiorazioniResponse" message="tns:IServizioLiquidazioneCi_StoreDatiMaggiorazioni_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaggiorazioniDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaggiorazioniDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaggiorazioniDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaggiorazioniDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaggiorazioni_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiMaggiorazioni">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaggiorazioni" message="tns:IServizioLiquidazioneCi_CancelDatiMaggiorazioni_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaggiorazioniResponse" message="tns:IServizioLiquidazioneCi_CancelDatiMaggiorazioni_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaggiorazioniDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaggiorazioniDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaggiorazioniDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaggiorazioniDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaggiorazioni_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBititolaritaByDomanda">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetBititolaritaByDomanda" message="tns:IServizioLiquidazioneCi_GetBititolaritaByDomanda_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetBititolaritaByDomandaResponse" message="tns:IServizioLiquidazioneCi_GetBititolaritaByDomanda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetBititolaritaByDomandaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetBititolaritaByDomandaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetBititolaritaByDomandaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetBititolaritaByDomandaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_GetBititolaritaByDomanda_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreBititolarita">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreBititolarita" message="tns:IServizioLiquidazioneCi_StoreBititolarita_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreBititolaritaResponse" message="tns:IServizioLiquidazioneCi_StoreBititolarita_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreBititolaritaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreBititolarita_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreBititolaritaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreBititolarita_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreBititolaritaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreBititolarita_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreBititolaritaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreBititolarita_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreAltraPensione">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreAltraPensione" message="tns:IServizioLiquidazioneCi_StoreAltraPensione_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreAltraPensioneResponse" message="tns:IServizioLiquidazioneCi_StoreAltraPensione_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreAltraPensioneDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreAltraPensione_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreAltraPensioneDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreAltraPensione_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreAltraPensioneDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreAltraPensione_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreAltraPensioneDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreAltraPensione_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelAltraPensione">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelAltraPensione" message="tns:IServizioLiquidazioneCi_CancelAltraPensione_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelAltraPensioneResponse" message="tns:IServizioLiquidazioneCi_CancelAltraPensione_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelAltraPensioneDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelAltraPensione_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelAltraPensioneDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelAltraPensione_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelAltraPensioneDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelAltraPensione_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelAltraPensioneDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelAltraPensione_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiPostDecOriginaria">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiPostDecOriginaria" message="tns:IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiPostDecOriginariaResponse" message="tns:IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiPostDecOriginariaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiPostDecOriginariaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiPostDecOriginariaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiPostDecOriginariaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiPostDecOriginaria_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiPostDecOriginaria">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiPostDecOriginaria" message="tns:IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiPostDecOriginariaResponse" message="tns:IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiPostDecOriginariaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiPostDecOriginariaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiPostDecOriginariaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiPostDecOriginariaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiPostDecOriginaria_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaVersioniCI">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetListaVersioniCI" message="tns:IServizioLiquidazioneCi_GetListaVersioniCI_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetListaVersioniCIResponse" message="tns:IServizioLiquidazioneCi_GetListaVersioniCI_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetListaVersioniCIDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_GetListaVersioniCI_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetListaVersioniCIDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_GetListaVersioniCI_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetListaVersioniCIDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_GetListaVersioniCI_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetListaVersioniCIDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_GetListaVersioniCI_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiContributiviByDomanda">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetDatiContributiviByDomanda" message="tns:IServizioLiquidazioneCi_GetDatiContributiviByDomanda_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetDatiContributiviByDomandaResponse" message="tns:IServizioLiquidazioneCi_GetDatiContributiviByDomanda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetDatiContributiviByDomandaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetDatiContributiviByDomandaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetDatiContributiviByDomandaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetDatiContributiviByDomandaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_GetDatiContributiviByDomanda_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiContributivi">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiContributivi" message="tns:IServizioLiquidazioneCi_StoreDatiContributivi_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiContributiviResponse" message="tns:IServizioLiquidazioneCi_StoreDatiContributivi_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiContributiviDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiContributivi_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiContributiviDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiContributivi_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiContributiviDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiContributivi_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiContributiviDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiContributivi_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatiEsteri">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetStatiEsteri" message="tns:IServizioLiquidazioneCi_GetStatiEsteri_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetStatiEsteriResponse" message="tns:IServizioLiquidazioneCi_GetStatiEsteri_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetStatiEsteriDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_GetStatiEsteri_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetStatiEsteriDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_GetStatiEsteri_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetStatiEsteriDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_GetStatiEsteri_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetStatiEsteriDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_GetStatiEsteri_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiProRata">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProRata" message="tns:IServizioLiquidazioneCi_StoreDatiProRata_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProRataResponse" message="tns:IServizioLiquidazioneCi_StoreDatiProRata_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProRataDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProRata_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProRataDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProRata_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProRataDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProRata_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProRataDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProRata_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelProRata">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelProRata" message="tns:IServizioLiquidazioneCi_CancelProRata_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelProRataResponse" message="tns:IServizioLiquidazioneCi_CancelProRata_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelProRataDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelProRata_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelProRataDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelProRata_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelProRataDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelProRata_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelProRataDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelProRata_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcolaDomanda">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CalcolaDomanda" message="tns:IServizioLiquidazioneCi_CalcolaDomanda_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CalcolaDomandaResponse" message="tns:IServizioLiquidazioneCi_CalcolaDomanda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CalcolaDomandaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CalcolaDomanda_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CalcolaDomandaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CalcolaDomanda_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CalcolaDomandaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CalcolaDomanda_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CalcolaDomandaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CalcolaDomanda_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrelevaDomanda">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/PrelevaDomanda" message="tns:IServizioLiquidazioneCi_PrelevaDomanda_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/PrelevaDomandaResponse" message="tns:IServizioLiquidazioneCi_PrelevaDomanda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/PrelevaDomandaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_PrelevaDomanda_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/PrelevaDomandaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_PrelevaDomanda_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/PrelevaDomandaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_PrelevaDomanda_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/PrelevaDomandaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_PrelevaDomanda_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiCalcolo">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiCalcolo" message="tns:IServizioLiquidazioneCi_StoreDatiCalcolo_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiCalcoloResponse" message="tns:IServizioLiquidazioneCi_StoreDatiCalcolo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiCalcoloDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiCalcolo_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiCalcoloDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiCalcolo_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiCalcoloDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiCalcolo_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiCalcoloDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiCalcolo_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiCalcolo">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiCalcolo" message="tns:IServizioLiquidazioneCi_CancelDatiCalcolo_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiCalcoloResponse" message="tns:IServizioLiquidazioneCi_CancelDatiCalcolo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiCalcoloDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiCalcolo_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiCalcoloDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiCalcolo_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiCalcoloDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiCalcolo_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiCalcoloDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiCalcolo_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiImportiEsteri">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiImportiEsteri" message="tns:IServizioLiquidazioneCi_StoreDatiImportiEsteri_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiImportiEsteriResponse" message="tns:IServizioLiquidazioneCi_StoreDatiImportiEsteri_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiImportiEsteriDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiImportiEsteriDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiImportiEsteriDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiImportiEsteriDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiImportiEsteri_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiImportiEsteri">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiImportiEsteri" message="tns:IServizioLiquidazioneCi_CancelDatiImportiEsteri_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiImportiEsteriResponse" message="tns:IServizioLiquidazioneCi_CancelDatiImportiEsteri_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiImportiEsteriDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiImportiEsteriDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiImportiEsteriDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiImportiEsteriDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiImportiEsteri_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiMaternitaAcna">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaternitaAcna" message="tns:IServizioLiquidazioneCi_StoreDatiMaternitaAcna_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaternitaAcnaResponse" message="tns:IServizioLiquidazioneCi_StoreDatiMaternitaAcna_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaternitaAcnaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaternitaAcnaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaternitaAcnaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiMaternitaAcnaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiMaternitaAcna_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiMaternitaAcna">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaternitaAcna" message="tns:IServizioLiquidazioneCi_CancelDatiMaternitaAcna_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaternitaAcnaResponse" message="tns:IServizioLiquidazioneCi_CancelDatiMaternitaAcna_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaternitaAcnaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaternitaAcnaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaternitaAcnaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiMaternitaAcnaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiMaternitaAcna_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiLavoratoriAutonomi">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLavoratoriAutonomi" message="tns:IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLavoratoriAutonomiResponse" message="tns:IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLavoratoriAutonomiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLavoratoriAutonomiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLavoratoriAutonomiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLavoratoriAutonomiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLavoratoriAutonomi_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiLavoratoriAutonomi">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiLavoratoriAutonomi" message="tns:IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiLavoratoriAutonomiResponse" message="tns:IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiLavoratoriAutonomiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiLavoratoriAutonomiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiLavoratoriAutonomiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiLavoratoriAutonomiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiLavoratoriAutonomi_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiLiquidazionePensione">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLiquidazionePensione" message="tns:IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLiquidazionePensioneResponse" message="tns:IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLiquidazionePensioneDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLiquidazionePensioneDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLiquidazionePensioneDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiLiquidazionePensioneDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiLiquidazionePensione_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLiquidazionePensioneByDomanda">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetLiquidazionePensioneByDomanda" message="tns:IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetLiquidazionePensioneByDomandaResponse" message="tns:IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetLiquidazionePensioneByDomandaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetLiquidazionePensioneByDomandaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetLiquidazionePensioneByDomandaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetLiquidazionePensioneByDomandaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_GetLiquidazionePensioneByDomanda_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiGenerici">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiGenerici" message="tns:IServizioLiquidazioneCi_StoreDatiGenerici_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiGenericiResponse" message="tns:IServizioLiquidazioneCi_StoreDatiGenerici_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiGenericiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiGenerici_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiGenericiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiGenerici_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiGenericiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiGenerici_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiGenericiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiGenerici_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiGenerici">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiGenerici" message="tns:IServizioLiquidazioneCi_CancelDatiGenerici_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiGenericiResponse" message="tns:IServizioLiquidazioneCi_CancelDatiGenerici_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiGenericiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiGenerici_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiGenericiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiGenerici_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiGenericiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiGenerici_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiGenericiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiGenerici_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiAssicurativi">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiAssicurativi" message="tns:IServizioLiquidazioneCi_StoreDatiAssicurativi_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiAssicurativiResponse" message="tns:IServizioLiquidazioneCi_StoreDatiAssicurativi_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiAssicurativiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiAssicurativiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiAssicurativiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiAssicurativiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiAssicurativi_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiAssicurativi">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiAssicurativi" message="tns:IServizioLiquidazioneCi_CancelDatiAssicurativi_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiAssicurativiResponse" message="tns:IServizioLiquidazioneCi_CancelDatiAssicurativi_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiAssicurativiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiAssicurativiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiAssicurativiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiAssicurativiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiAssicurativi_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiOpzione">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiOpzione" message="tns:IServizioLiquidazioneCi_StoreDatiOpzione_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiOpzioneResponse" message="tns:IServizioLiquidazioneCi_StoreDatiOpzione_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiOpzioneDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiOpzione_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiOpzioneDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiOpzione_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiOpzioneDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiOpzione_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiOpzioneDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiOpzione_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiOpzione">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiOpzione" message="tns:IServizioLiquidazioneCi_CancelDatiOpzione_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiOpzioneResponse" message="tns:IServizioLiquidazioneCi_CancelDatiOpzione_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiOpzioneDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiOpzione_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiOpzioneDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiOpzione_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiOpzioneDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiOpzione_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiOpzioneDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiOpzione_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiIstruttoria">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiIstruttoria" message="tns:IServizioLiquidazioneCi_StoreDatiIstruttoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiIstruttoriaResponse" message="tns:IServizioLiquidazioneCi_StoreDatiIstruttoria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiIstruttoriaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiIstruttoriaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiIstruttoriaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiIstruttoriaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiIstruttoria_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiIstruttoria">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiIstruttoria" message="tns:IServizioLiquidazioneCi_CancelDatiIstruttoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiIstruttoriaResponse" message="tns:IServizioLiquidazioneCi_CancelDatiIstruttoria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiIstruttoriaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiIstruttoriaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiIstruttoriaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiIstruttoriaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiIstruttoria_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiProvenienza">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProvenienza" message="tns:IServizioLiquidazioneCi_StoreDatiProvenienza_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProvenienzaResponse" message="tns:IServizioLiquidazioneCi_StoreDatiProvenienza_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProvenienzaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProvenienza_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProvenienzaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProvenienza_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProvenienzaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProvenienza_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiProvenienzaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiProvenienza_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiProvenienza">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiProvenienza" message="tns:IServizioLiquidazioneCi_CancelDatiProvenienza_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiProvenienzaResponse" message="tns:IServizioLiquidazioneCi_CancelDatiProvenienza_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiProvenienzaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiProvenienza_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiProvenienzaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiProvenienza_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiProvenienzaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiProvenienza_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiProvenienzaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiProvenienza_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaggiorazioniBeneficiByDomanda">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetMaggiorazioniBeneficiByDomanda" message="tns:IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetMaggiorazioniBeneficiByDomandaResponse" message="tns:IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetMaggiorazioniBeneficiByDomandaDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetMaggiorazioniBeneficiByDomandaDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetMaggiorazioniBeneficiByDomandaDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/GetMaggiorazioniBeneficiByDomandaDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_GetMaggiorazioniBeneficiByDomanda_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreMaggiorazioniBenefici">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreMaggiorazioniBenefici" message="tns:IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreMaggiorazioniBeneficiResponse" message="tns:IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreMaggiorazioniBeneficiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreMaggiorazioniBeneficiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreMaggiorazioniBeneficiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreMaggiorazioniBeneficiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreMaggiorazioniBenefici_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiBenefici">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiBenefici" message="tns:IServizioLiquidazioneCi_StoreDatiBenefici_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiBeneficiResponse" message="tns:IServizioLiquidazioneCi_StoreDatiBenefici_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiBeneficiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiBenefici_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiBeneficiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiBenefici_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiBeneficiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiBenefici_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiBeneficiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiBenefici_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiBenefici">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiBenefici" message="tns:IServizioLiquidazioneCi_CancelDatiBenefici_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiBeneficiResponse" message="tns:IServizioLiquidazioneCi_CancelDatiBenefici_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiBeneficiDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiBenefici_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiBeneficiDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiBenefici_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiBeneficiDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiBenefici_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/CancelDatiBeneficiDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_CancelDatiBenefici_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiExCombattente">
+      <wsdl:input wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiExCombattente" message="tns:IServizioLiquidazioneCi_StoreDatiExCombattente_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiExCombattenteResponse" message="tns:IServizioLiquidazioneCi_StoreDatiExCombattente_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiExCombattenteDnaInfrastructureFaultContract" name="DnaInfrastructureFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiExCombattente_DnaInfrastructureFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiExCombattenteDnaApplicationFaultContract" name="DnaApplicationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiExCombattente_DnaApplicationFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiExCombattenteDnaSecurityFaultContract" name="DnaSecurityFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiExCombattente_DnaSecurityFaultContract_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0/IServizioLiquidazioneCi/StoreDatiExCombattenteDnaValidationFaultContract" name="DnaValidationFaultContract" message="tns:IServizioLiquidazioneCi_StoreDatiExCombattente_DnaValidationFaultContract_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

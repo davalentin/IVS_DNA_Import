@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://TI_PCI_R.ILiquidazioneCi/WCFServices/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://TI_PCI_R.ILiquidazioneCi/WCFServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://TI_PCI_R.ILiquidazioneCi/WCFServices/Imports">
+      <xsd:import schemaLocation="http://hisrsvil03.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?xsd=xsd0" namespace="http://TI_PCI_R.ILiquidazioneCi/WCFServices/" />
+      <xsd:import schemaLocation="http://hisrsvil03.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://hisrsvil03.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILiquidazioneCi_CI05_InputMessage">
+    <wsdl:part name="parameters" element="tns:CI05" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_CI05_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CI05Response" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_GACI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GACI" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_GACI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GACIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_CI02_InputMessage">
+    <wsdl:part name="parameters" element="tns:CI02" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_CI02_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CI02Response" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_CI01_InputMessage">
+    <wsdl:part name="parameters" element="tns:CI01" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_CI01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CI01Response" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_UpdateContextInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContextInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_UpdateContextInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContextInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_ClosePersistentConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePersistentConnection" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneCi_ClosePersistentConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePersistentConnectionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILiquidazioneCi">
+    <wsdl:operation name="CI05">
+      <wsdl:input wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/CI05" message="tns:ILiquidazioneCi_CI05_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/CI05Response" message="tns:ILiquidazioneCi_CI05_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GACI">
+      <wsdl:input wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/GACI" message="tns:ILiquidazioneCi_GACI_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/GACIResponse" message="tns:ILiquidazioneCi_GACI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CI02">
+      <wsdl:input wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/CI02" message="tns:ILiquidazioneCi_CI02_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/CI02Response" message="tns:ILiquidazioneCi_CI02_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CI01">
+      <wsdl:input wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/CI01" message="tns:ILiquidazioneCi_CI01_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/CI01Response" message="tns:ILiquidazioneCi_CI01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContextInfo">
+      <wsdl:input wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/UpdateContextInfo" message="tns:ILiquidazioneCi_UpdateContextInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/UpdateContextInfoResponse" message="tns:ILiquidazioneCi_UpdateContextInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClosePersistentConnection">
+      <wsdl:input wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/ClosePersistentConnection" message="tns:ILiquidazioneCi_ClosePersistentConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PCI_R.ILiquidazioneCi/WCFServices/ILiquidazioneCi/ClosePersistentConnectionResponse" message="tns:ILiquidazioneCi_ClosePersistentConnection_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

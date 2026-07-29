@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc7f7f90-2c64-49fd-8691-68fb3435e4a9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://intranet.collaudo.inps.it/WS.Net/WsUfficiPagatori/consultaliste/wsufficipagatoriDB.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsufficipagatoriDB.disco" MetadataType="Disco" ID="13376fc6-a953-4e1a-bb17-85b296e2b1c5" SourceId="1" SourceUrl="http://intranet.collaudo.inps.it/WS.Net/WsUfficiPagatori/consultaliste/wsufficipagatoriDB.asmx?disco" />
+    <MetadataFile FileName="wsufficipagatoriDB.wsdl" MetadataType="Wsdl" ID="3e1e7724-d0c1-4f30-b2c0-fbe7959246f5" SourceId="1" SourceUrl="http://intranet.collaudo.inps.it/WS.Net/WsUfficiPagatori/consultaliste/wsufficipagatoriDB.asmx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

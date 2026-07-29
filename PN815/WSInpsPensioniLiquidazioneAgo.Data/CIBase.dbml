@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="CIBase" Class="CIBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLINPSSVIL01,1433;Initial Catalog=CIBase;Persist Security Info=True;User ID=DBWS0021201" SettingsObjectName="INPS.Pensioni.LiquidazioneAgo.Data.Properties.Settings" SettingsPropertyName="CIBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.aciistit" Member="aciistits">
+    <Type Name="aciistit">
+      <Column Name="CODITELE" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CDSTAIST" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="SIGLISTI" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+      <Column Name="CITTAIST" Type="System.String" DbType="Char(25) NOT NULL" CanBeNull="false" />
+      <Column Name="INDIRIZ1" Type="System.String" DbType="Char(45) NOT NULL" CanBeNull="false" />
+      <Column Name="INDIRIZ2" Type="System.String" DbType="Char(40) NOT NULL" CanBeNull="false" />
+      <Column Name="INDIRIZ3" Type="System.String" DbType="Char(40) NOT NULL" CanBeNull="false" />
+      <Column Name="INDIRIZ4" Type="System.String" DbType="Char(40) NOT NULL" CanBeNull="false" />
+      <Column Name="INDIRIZ5" Type="System.String" DbType="Char(40) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMESTAT" Type="System.String" DbType="Char(23) NOT NULL" CanBeNull="false" />
+      <Column Name="SIGLASTAT" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CODICONV" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="TELEMATI" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IsAbilitata" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AbilitaFormulario" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

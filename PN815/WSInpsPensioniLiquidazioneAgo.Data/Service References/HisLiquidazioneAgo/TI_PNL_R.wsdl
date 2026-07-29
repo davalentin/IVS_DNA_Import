@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/Imports">
+      <xsd:import schemaLocation="http://tfs2008build64.avndrome.net/TI-PrestazioniPensionistiche/TI_PNL_R.LiquidazioneAgo.svc?xsd=xsd0" namespace="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/" />
+      <xsd:import schemaLocation="http://tfs2008build64.avndrome.net/TI-PrestazioniPensionistiche/TI_PNL_R.LiquidazioneAgo.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tfs2008build64.avndrome.net/TI-PrestazioniPensionistiche/TI_PNL_R.LiquidazioneAgo.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILiquidazioneAgo_GAIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GAIN" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_GAIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GAINResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_GARC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GARC" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_GARC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GARCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_GAPL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GAPL" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_GAPL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GAPLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_UpdateContextInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContextInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_UpdateContextInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContextInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_ClosePersistentConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePersistentConnection" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneAgo_ClosePersistentConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePersistentConnectionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILiquidazioneAgo">
+    <wsdl:operation name="GAIN">
+      <wsdl:input wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GAIN" message="tns:ILiquidazioneAgo_GAIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GAINResponse" message="tns:ILiquidazioneAgo_GAIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GARC">
+      <wsdl:input wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GARC" message="tns:ILiquidazioneAgo_GARC_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GARCResponse" message="tns:ILiquidazioneAgo_GARC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GAPL">
+      <wsdl:input wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GAPL" message="tns:ILiquidazioneAgo_GAPL_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/GAPLResponse" message="tns:ILiquidazioneAgo_GAPL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContextInfo">
+      <wsdl:input wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/UpdateContextInfo" message="tns:ILiquidazioneAgo_UpdateContextInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/UpdateContextInfoResponse" message="tns:ILiquidazioneAgo_UpdateContextInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClosePersistentConnection">
+      <wsdl:input wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/ClosePersistentConnection" message="tns:ILiquidazioneAgo_ClosePersistentConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PNL_R.ILiquidazioneAgo/WCFServices/ILiquidazioneAgo/ClosePersistentConnectionResponse" message="tns:ILiquidazioneAgo_ClosePersistentConnection_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

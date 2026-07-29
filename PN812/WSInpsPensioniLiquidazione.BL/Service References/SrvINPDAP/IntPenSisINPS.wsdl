@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://webservice.intpensisinps.inpdap.it" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://webservice.intpensisinps.inpdap.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="IntPenSisINPS.xsd1.xsd" namespace="http://webservice.intpensisinps.inpdap.it" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Approvazione_INPDAP_Request">
+    <wsdl:part xmlns:xsns="http://webservice.intpensisinps.inpdap.it" name="parameters" element="xsns:Approvazione_INPDAP_Request" />
+  </wsdl:message>
+  <wsdl:message name="Approvazione_INPDAP_Response">
+    <wsdl:part xmlns:xsns="http://webservice.intpensisinps.inpdap.it" name="parameters" element="xsns:Approvazione_INPDAP_Response" />
+  </wsdl:message>
+  <wsdl:portType name="IntPenSisWS">
+    <wsdl:operation name="Approvazione_INPDAP">
+      <wsdl:input name="Approvazione_INPDAP_Request" message="ns0:Approvazione_INPDAP_Request" />
+      <wsdl:output name="Approvazione_INPDAP_Response" message="ns0:Approvazione_INPDAP_Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntPenSisWSSoapBinding" type="ns0:IntPenSisWS">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Approvazione_INPDAP">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="Approvazione_INPDAP_Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Approvazione_INPDAP_Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntPenSisWSService">
+    <wsdl:port name="IntPenSisWS" binding="ns0:IntPenSisWSSoapBinding">
+      <soap11:address location="http://192.168.40.149:80/INPDAP/IntPenSisINPS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

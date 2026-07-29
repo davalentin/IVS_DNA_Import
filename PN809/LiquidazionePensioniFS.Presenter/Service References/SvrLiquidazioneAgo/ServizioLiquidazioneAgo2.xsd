@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneAgo.Entity" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneAgo.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pp_dna_coz.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://pp_dna_coz.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" />
+  <xs:complexType name="ArrayOfAltraPensione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AltraPensione" nillable="true" type="tns:AltraPensione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAltraPensione" nillable="true" type="tns:ArrayOfAltraPensione" />
+  <xs:complexType name="AltraPensione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Certificato" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Cessazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CodiceImporto" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="CodiceUC" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="Decorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ente" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IdPensione" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AltraPensione" nillable="true" type="tns:AltraPensione" />
+  <xs:complexType name="ArrayOfDatiFamiliari">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiFamiliari" nillable="true" type="tns:DatiFamiliari" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiFamiliari" nillable="true" type="tns:ArrayOfDatiFamiliari" />
+  <xs:complexType name="DatiFamiliari">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="ElencoCodMaggFamiliari" nillable="true" type="q1:ArrayOfGestioneFamiliari.CodMaggFamiliari" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" minOccurs="0" name="Familiare" nillable="true" type="q2:GestioneFamiliari.Familiare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiFamiliari" nillable="true" type="tns:DatiFamiliari" />
+  <xs:complexType name="DatiAssicurativi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttivitaEconomica" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FineAssicurazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FineUltimoLavoro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InizioAssicurazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InizioUltimoLavoro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NContributiVVAnzianita" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NContributiVolontari" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NSettimaneOBG" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfessioneIndividuale" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RequisitiAl1294" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequisitiAl996" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequisitiVecchiaiaAl1294" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiAssicurativi" nillable="true" type="tns:DatiAssicurativi" />
+  <xs:complexType name="DatiGenerici">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Benefici" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CausaCarico" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceArretrati" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceComunicazioneCampo4" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceDomandaRicorso" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceLiquidazione" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="CodiceMobilita" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceMotivo" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DataCompletezza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataEvento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInizioCalcolo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInteressiLegali" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataRinunciaTrattenutaInpdap" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaCalcoloArretrati" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaEliminazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExCombattente" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FlagProvvisoria" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Maggiorazioni" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModalitaLiquidazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRiconoscimentiInvalidita" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="NaturaPensione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScadenzaRevisioneSanitaria" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TipoCalcolo" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TrasformazioneAOI" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TrattenutaInpdap" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiGenerici" nillable="true" type="tns:DatiGenerici" />
+  <xs:complexType name="DatiInail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DecorrenzaAssegnoAccompangamento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DirittoAssegnoAccompagnamento" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LpensioniInail" nillable="true" type="tns:ArrayOfDatiInail.PensioniInail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiInail" nillable="true" type="tns:DatiInail" />
+  <xs:complexType name="ArrayOfDatiInail.PensioniInail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiInail.PensioniInail" nillable="true" type="tns:DatiInail.PensioniInail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiInail.PensioniInail" nillable="true" type="tns:ArrayOfDatiInail.PensioniInail" />
+  <xs:complexType name="DatiInail.PensioniInail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DecorrenzaRenditaInail" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Evento" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdPensione" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ImportoMensileInail" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiInail.PensioniInail" nillable="true" type="tns:DatiInail.PensioniInail" />
+  <xs:complexType name="DatiIstruttoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliquotaTFREsodati" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Attivitausuranti" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CodiceBancaEsodati" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="CodiceCdCmMr" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceParticolareSoggettoDerogato" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Legge44997" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="RiduzioneRetributiva" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RiduzioneRetributivaPercentuale" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiIstruttoria" nillable="true" type="tns:DatiIstruttoria" />
+  <xs:complexType name="DatiOpzione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataDomandaOpzione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaOpzione" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiOpzione" nillable="true" type="tns:DatiOpzione" />
+  <xs:complexType name="DatiProvenienza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificatoPrecedentePensione" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CodiceP18PrecedentePensione" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="DecorrenzaCaricoPrecedentePensione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaOriginariaAltraPensione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SedePrecedentePensione" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiProvenienza" nillable="true" type="tns:DatiProvenienza" />
+  <xs:complexType name="ArrayOfDecodificaAziendaEditoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DecodificaAziendaEditoria" nillable="true" type="tns:DecodificaAziendaEditoria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDecodificaAziendaEditoria" nillable="true" type="tns:ArrayOfDecodificaAziendaEditoria" />
+  <xs:complexType name="DecodificaAziendaEditoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:short" />
+      <xs:element minOccurs="0" name="TraduzioneGp" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DecodificaAziendaEditoria" nillable="true" type="tns:DecodificaAziendaEditoria" />
+  <xs:complexType name="ArrayOfCDCMMR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDCMMR" nillable="true" type="tns:CDCMMR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDCMMR" nillable="true" type="tns:ArrayOfCDCMMR" />
+  <xs:complexType name="CDCMMR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDCMMR" nillable="true" type="tns:CDCMMR" />
+  <xs:complexType name="ArrayOfCodiceEliminazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiceEliminazione" nillable="true" type="tns:CodiceEliminazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiceEliminazione" nillable="true" type="tns:ArrayOfCodiceEliminazione" />
+  <xs:complexType name="CodiceEliminazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiceEliminazione" nillable="true" type="tns:CodiceEliminazione" />
+  <xs:complexType name="ArrayOfCodiceParticolare">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiceParticolare" nillable="true" type="tns:CodiceParticolare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiceParticolare" nillable="true" type="tns:ArrayOfCodiceParticolare" />
+  <xs:complexType name="CodiceParticolare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodCategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TraduzioneSuGp" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiceParticolare" nillable="true" type="tns:CodiceParticolare" />
+  <xs:complexType name="ArrayOfCodiciNatura">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiciNatura" nillable="true" type="tns:CodiciNatura" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiciNatura" nillable="true" type="tns:ArrayOfCodiciNatura" />
+  <xs:complexType name="CodiciNatura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fondo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posizione" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Tipologia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TraduzioneSuGP" nillable="true" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiciNatura" nillable="true" type="tns:CodiciNatura" />
+  <xs:complexType name="ArrayOfDecodificaLegge44997">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DecodificaLegge44997" nillable="true" type="tns:DecodificaLegge44997" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDecodificaLegge44997" nillable="true" type="tns:ArrayOfDecodificaLegge44997" />
+  <xs:complexType name="DecodificaLegge44997">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DecodificaLegge44997" nillable="true" type="tns:DecodificaLegge44997" />
+  <xs:complexType name="ArrayOfDomandaRicorso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DomandaRicorso" nillable="true" type="tns:DomandaRicorso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDomandaRicorso" nillable="true" type="tns:ArrayOfDomandaRicorso" />
+  <xs:complexType name="DomandaRicorso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomandaRicorso" nillable="true" type="tns:DomandaRicorso" />
+  <xs:complexType name="ArrayOfMobilita">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mobilita" nillable="true" type="tns:Mobilita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMobilita" nillable="true" type="tns:ArrayOfMobilita" />
+  <xs:complexType name="Mobilita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mobilita" nillable="true" type="tns:Mobilita" />
+  <xs:complexType name="ArrayOfDecModalitaLiquidazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DecModalitaLiquidazione" nillable="true" type="tns:DecModalitaLiquidazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDecModalitaLiquidazione" nillable="true" type="tns:ArrayOfDecModalitaLiquidazione" />
+  <xs:complexType name="DecModalitaLiquidazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TraduzioneGp" type="ser:char" />
+      <xs:element minOccurs="0" name="ValoreAggPeco" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DecModalitaLiquidazione" nillable="true" type="tns:DecModalitaLiquidazione" />
+  <xs:complexType name="ArrayOfDecodificaRiconoscimentiInvalidita">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DecodificaRiconoscimentiInvalidita" nillable="true" type="tns:DecodificaRiconoscimentiInvalidita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDecodificaRiconoscimentiInvalidita" nillable="true" type="tns:ArrayOfDecodificaRiconoscimentiInvalidita" />
+  <xs:complexType name="DecodificaRiconoscimentiInvalidita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DecodificaRiconoscimentiInvalidita" nillable="true" type="tns:DecodificaRiconoscimentiInvalidita" />
+  <xs:complexType name="DatiBenefici">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListOneriTerrorismo" nillable="true" type="tns:ArrayOfDatiBenefici.OneriTerrorismo" />
+      <xs:element minOccurs="0" name="NSettimaneBeneficio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NSettimaneIncremento05Percento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NSettimaneIncremento1Percento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sentenza495240" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TipoSettimaneBeneficio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiBenefici" nillable="true" type="tns:DatiBenefici" />
+  <xs:complexType name="ArrayOfDatiBenefici.OneriTerrorismo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiBenefici.OneriTerrorismo" nillable="true" type="tns:DatiBenefici.OneriTerrorismo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiBenefici.OneriTerrorismo" nillable="true" type="tns:ArrayOfDatiBenefici.OneriTerrorismo" />
+  <xs:complexType name="DatiBenefici.OneriTerrorismo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceAltroFondo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="Importo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Progressivo" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiBenefici.OneriTerrorismo" nillable="true" type="tns:DatiBenefici.OneriTerrorismo" />
+  <xs:complexType name="DatiExCombattente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceCieco" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DecorrenzaMaggiorazioneArt6" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiExCombattente" nillable="true" type="tns:DatiExCombattente" />
+  <xs:complexType name="DatiMaggiorazioni">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnniRiduzioneBeneficiArt38Legge02" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="CessazioneMaggiorazioneSociale" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaMaggiorazioneSociale" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiMaggiorazioni" nillable="true" type="tns:DatiMaggiorazioni" />
+  <xs:complexType name="DatiOneriBenefParticolari">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaDatiBeneficiParticolari" nillable="true" type="tns:ArrayOfDatiBeneficiParticolari" />
+      <xs:element minOccurs="0" name="ListaDatiOneri" nillable="true" type="tns:ArrayOfDatiOneri" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiOneriBenefParticolari" nillable="true" type="tns:DatiOneriBenefParticolari" />
+  <xs:complexType name="ArrayOfDatiBeneficiParticolari">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiBeneficiParticolari" nillable="true" type="tns:DatiBeneficiParticolari" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiBeneficiParticolari" nillable="true" type="tns:ArrayOfDatiBeneficiParticolari" />
+  <xs:complexType name="DatiBeneficiParticolari">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceBenefici" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Settimane" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiBeneficiParticolari" nillable="true" type="tns:DatiBeneficiParticolari" />
+  <xs:complexType name="ArrayOfDatiOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiOneri" nillable="true" type="tns:DatiOneri" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiOneri" nillable="true" type="tns:ArrayOfDatiOneri" />
+  <xs:complexType name="DatiOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Decorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdCodeGruppo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdCodeSottoGruppo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Onere" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Scadenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Settimane" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiOneri" nillable="true" type="tns:DatiOneri" />
+  <xs:complexType name="ArrayOfCodiceCieco">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiceCieco" nillable="true" type="tns:CodiceCieco" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiceCieco" nillable="true" type="tns:ArrayOfCodiceCieco" />
+  <xs:complexType name="CodiceCieco">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiceCieco" nillable="true" type="tns:CodiceCieco" />
+  <xs:complexType name="ArrayOfCodiceMaggiorazioneExCombattente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiceMaggiorazioneExCombattente" nillable="true" type="tns:CodiceMaggiorazioneExCombattente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiceMaggiorazioneExCombattente" nillable="true" type="tns:ArrayOfCodiceMaggiorazioneExCombattente" />
+  <xs:complexType name="CodiceMaggiorazioneExCombattente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="TraduzioneSuGP" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiceMaggiorazioneExCombattente" nillable="true" type="tns:CodiceMaggiorazioneExCombattente" />
+  <xs:complexType name="ArrayOfCodiciOneri.GruppoOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiciOneri.GruppoOneri" nillable="true" type="tns:CodiciOneri.GruppoOneri" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiciOneri.GruppoOneri" nillable="true" type="tns:ArrayOfCodiciOneri.GruppoOneri" />
+  <xs:complexType name="CodiciOneri.GruppoOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiciOneri.GruppoOneri" nillable="true" type="tns:CodiciOneri.GruppoOneri" />
+  <xs:complexType name="ArrayOfCodiciOneri.SottoGruppoOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiciOneri.SottoGruppoOneri" nillable="true" type="tns:CodiciOneri.SottoGruppoOneri" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiciOneri.SottoGruppoOneri" nillable="true" type="tns:ArrayOfCodiciOneri.SottoGruppoOneri" />
+  <xs:complexType name="CodiciOneri.SottoGruppoOneri">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdOnere" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiciOneri.SottoGruppoOneri" nillable="true" type="tns:CodiciOneri.SottoGruppoOneri" />
+  <xs:complexType name="ArrayOfTipoBenefici">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoBenefici" nillable="true" type="tns:TipoBenefici" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoBenefici" nillable="true" type="tns:ArrayOfTipoBenefici" />
+  <xs:complexType name="TipoBenefici">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoBenefici" nillable="true" type="tns:TipoBenefici" />
+</xs:schema>

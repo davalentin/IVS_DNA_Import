@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://variazioneUfficioPagatore.services.soa.inps.it" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://variazioneUfficioPagatore.services.soa.inps.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="WSVariazioneUfficioPagatoreSQLWEB.xsd1.xsd" namespace="http://variazioneUfficioPagatore.services.soa.inps.it" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaRegolaRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ConsultaRegola" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRegolaResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ConsultaRegolaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUfficioPagatoreRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ConsultaUfficioPagatore" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUfficioPagatoreResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ConsultaUfficioPagatoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVariazioniUfficioPagatoreRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ConsultaVariazioniUfficioPagatore" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVariazioniUfficioPagatoreResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ConsultaVariazioniUfficioPagatoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ElencoStatiRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ElencoStati" />
+  </wsdl:message>
+  <wsdl:message name="ElencoStatiResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ElencoStatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="EsitoVariazioniRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:EsitoVariazioni" />
+  </wsdl:message>
+  <wsdl:message name="EsitoVariazioniResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:EsitoVariazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInformazioniUfficioPagatoreRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:GetInformazioniUfficioPagatore" />
+  </wsdl:message>
+  <wsdl:message name="GetInformazioniUfficioPagatoreResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:GetInformazioniUfficioPagatoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniECoordinateRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:GetPensioniECoordinate" />
+  </wsdl:message>
+  <wsdl:message name="GetPensioniECoordinateResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:GetPensioniECoordinateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProvenienzaCoordinateRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:GetProvenienzaCoordinate" />
+  </wsdl:message>
+  <wsdl:message name="GetProvenienzaCoordinateResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:GetProvenienzaCoordinateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUfficioPagatoreRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ValidaUfficioPagatore" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUfficioPagatoreResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ValidaUfficioPagatoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidazioneCoordinateBancarieRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ValidazioneCoordinateBancarie" />
+  </wsdl:message>
+  <wsdl:message name="ValidazioneCoordinateBancarieResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:ValidazioneCoordinateBancarieResponse" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneACassaSedeRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneACassaSede" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneACassaSedeResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneACassaSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneAltriEntiRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneAltriEnti" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneAltriEntiResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneAltriEntiResponse" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneDaCassaSedeRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneDaCassaSede" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneDaCassaSedeResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneDaCassaSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneUfficioPagatoreRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneUfficioPagatore" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneUfficioPagatoreResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VariazioneUfficioPagatoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaIbanRequest">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VerificaIban" />
+  </wsdl:message>
+  <wsdl:message name="VerificaIbanResponse">
+    <wsdl:part xmlns:xsns="http://variazioneUfficioPagatore.services.soa.inps.it" name="parameters" element="xsns:VerificaIbanResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VariazioneUfficioPagatore">
+    <wsdl:operation name="ConsultaRegola">
+      <wsdl:input name="ConsultaRegolaRequest" message="ns0:ConsultaRegolaRequest" />
+      <wsdl:output name="ConsultaRegolaResponse" message="ns0:ConsultaRegolaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUfficioPagatore">
+      <wsdl:input name="ConsultaUfficioPagatoreRequest" message="ns0:ConsultaUfficioPagatoreRequest" />
+      <wsdl:output name="ConsultaUfficioPagatoreResponse" message="ns0:ConsultaUfficioPagatoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVariazioniUfficioPagatore">
+      <wsdl:input name="ConsultaVariazioniUfficioPagatoreRequest" message="ns0:ConsultaVariazioniUfficioPagatoreRequest" />
+      <wsdl:output name="ConsultaVariazioniUfficioPagatoreResponse" message="ns0:ConsultaVariazioniUfficioPagatoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ElencoStati">
+      <wsdl:input name="ElencoStatiRequest" message="ns0:ElencoStatiRequest" />
+      <wsdl:output name="ElencoStatiResponse" message="ns0:ElencoStatiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EsitoVariazioni">
+      <wsdl:input name="EsitoVariazioniRequest" message="ns0:EsitoVariazioniRequest" />
+      <wsdl:output name="EsitoVariazioniResponse" message="ns0:EsitoVariazioniResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformazioniUfficioPagatore">
+      <wsdl:input name="GetInformazioniUfficioPagatoreRequest" message="ns0:GetInformazioniUfficioPagatoreRequest" />
+      <wsdl:output name="GetInformazioniUfficioPagatoreResponse" message="ns0:GetInformazioniUfficioPagatoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniECoordinate">
+      <wsdl:input name="GetPensioniECoordinateRequest" message="ns0:GetPensioniECoordinateRequest" />
+      <wsdl:output name="GetPensioniECoordinateResponse" message="ns0:GetPensioniECoordinateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienzaCoordinate">
+      <wsdl:input name="GetProvenienzaCoordinateRequest" message="ns0:GetProvenienzaCoordinateRequest" />
+      <wsdl:output name="GetProvenienzaCoordinateResponse" message="ns0:GetProvenienzaCoordinateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUfficioPagatore">
+      <wsdl:input name="ValidaUfficioPagatoreRequest" message="ns0:ValidaUfficioPagatoreRequest" />
+      <wsdl:output name="ValidaUfficioPagatoreResponse" message="ns0:ValidaUfficioPagatoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidazioneCoordinateBancarie">
+      <wsdl:input name="ValidazioneCoordinateBancarieRequest" message="ns0:ValidazioneCoordinateBancarieRequest" />
+      <wsdl:output name="ValidazioneCoordinateBancarieResponse" message="ns0:ValidazioneCoordinateBancarieResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneACassaSede">
+      <wsdl:input name="VariazioneACassaSedeRequest" message="ns0:VariazioneACassaSedeRequest" />
+      <wsdl:output name="VariazioneACassaSedeResponse" message="ns0:VariazioneACassaSedeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneAltriEnti">
+      <wsdl:input name="VariazioneAltriEntiRequest" message="ns0:VariazioneAltriEntiRequest" />
+      <wsdl:output name="VariazioneAltriEntiResponse" message="ns0:VariazioneAltriEntiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneDaCassaSede">
+      <wsdl:input name="VariazioneDaCassaSedeRequest" message="ns0:VariazioneDaCassaSedeRequest" />
+      <wsdl:output name="VariazioneDaCassaSedeResponse" message="ns0:VariazioneDaCassaSedeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneUfficioPagatore">
+      <wsdl:input name="VariazioneUfficioPagatoreRequest" message="ns0:VariazioneUfficioPagatoreRequest" />
+      <wsdl:output name="VariazioneUfficioPagatoreResponse" message="ns0:VariazioneUfficioPagatoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaIban">
+      <wsdl:input name="VerificaIbanRequest" message="ns0:VerificaIbanRequest" />
+      <wsdl:output name="VerificaIbanResponse" message="ns0:VerificaIbanResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VariazioneUfficioPagatoreSOAP" type="ns0:VariazioneUfficioPagatore">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaRegola">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ConsultaRegola" style="document" />
+      <wsdl:input name="ConsultaRegolaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ConsultaRegolaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUfficioPagatore">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ConsultaUfficioPagatore" style="document" />
+      <wsdl:input name="ConsultaUfficioPagatoreRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ConsultaUfficioPagatoreResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVariazioniUfficioPagatore">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ConsultaVariazioniUfficioPagatore" style="document" />
+      <wsdl:input name="ConsultaVariazioniUfficioPagatoreRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ConsultaVariazioniUfficioPagatoreResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ElencoStati">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ElencoStati" style="document" />
+      <wsdl:input name="ElencoStatiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ElencoStatiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EsitoVariazioni">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/EsitoVariazioni" style="document" />
+      <wsdl:input name="EsitoVariazioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EsitoVariazioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformazioniUfficioPagatore">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/GetInformazioniUfficioPagatore" style="document" />
+      <wsdl:input name="GetInformazioniUfficioPagatoreRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetInformazioniUfficioPagatoreResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPensioniECoordinate">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/GetPensioniECoordinate" style="document" />
+      <wsdl:input name="GetPensioniECoordinateRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPensioniECoordinateResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvenienzaCoordinate">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/GetProvenienzaCoordinate" style="document" />
+      <wsdl:input name="GetProvenienzaCoordinateRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetProvenienzaCoordinateResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUfficioPagatore">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ValidaUfficioPagatore" style="document" />
+      <wsdl:input name="ValidaUfficioPagatoreRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ValidaUfficioPagatoreResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidazioneCoordinateBancarie">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ValidazioneCoordinateBancarie" style="document" />
+      <wsdl:input name="ValidazioneCoordinateBancarieRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ValidazioneCoordinateBancarieResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneACassaSede">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VariazioneACassaSede" style="document" />
+      <wsdl:input name="VariazioneACassaSedeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VariazioneACassaSedeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneAltriEnti">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VariazioneAltriEnti" style="document" />
+      <wsdl:input name="VariazioneAltriEntiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VariazioneAltriEntiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneDaCassaSede">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VariazioneDaCassaSede" style="document" />
+      <wsdl:input name="VariazioneDaCassaSedeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VariazioneDaCassaSedeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneUfficioPagatore">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VariazioneUfficioPagatore" style="document" />
+      <wsdl:input name="VariazioneUfficioPagatoreRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VariazioneUfficioPagatoreResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaIban">
+      <soap11:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VerificaIban" style="document" />
+      <wsdl:input name="VerificaIbanRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VerificaIbanResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VariazioneUfficioPagatore">
+    <wsdl:port name="VariazioneUfficioPagatoreSOAP" binding="ns0:VariazioneUfficioPagatoreSOAP">
+      <soap11:address location="http://192.168.40.149:80/WSJava/WSVariazioneUfficioPagatoreSQLWEB" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

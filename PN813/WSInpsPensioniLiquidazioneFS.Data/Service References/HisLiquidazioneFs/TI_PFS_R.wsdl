@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://TI_PFS_R.ILiquidazioneFs/WCFServices/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://TI_PFS_R.ILiquidazioneFs/WCFServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://TI_PFS_R.ILiquidazioneFs/WCFServices/Imports">
+      <xsd:import schemaLocation="http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc?xsd=xsd0" namespace="http://TI_PFS_R.ILiquidazioneFs/WCFServices/" />
+      <xsd:import schemaLocation="http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILiquidazioneFs_FSPR_InputMessage">
+    <wsdl:part name="parameters" element="tns:FSPR" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_FSPR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FSPRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_FSPL_InputMessage">
+    <wsdl:part name="parameters" element="tns:FSPL" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_FSPL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FSPLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_FSRC_InputMessage">
+    <wsdl:part name="parameters" element="tns:FSRC" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_FSRC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FSRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_UpdateContextInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContextInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_UpdateContextInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContextInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_ClosePersistentConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePersistentConnection" />
+  </wsdl:message>
+  <wsdl:message name="ILiquidazioneFs_ClosePersistentConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePersistentConnectionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILiquidazioneFs">
+    <wsdl:operation name="FSPR">
+      <wsdl:input wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSPR" message="tns:ILiquidazioneFs_FSPR_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSPRResponse" message="tns:ILiquidazioneFs_FSPR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FSPL">
+      <wsdl:input wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSPL" message="tns:ILiquidazioneFs_FSPL_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSPLResponse" message="tns:ILiquidazioneFs_FSPL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FSRC">
+      <wsdl:input wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSRC" message="tns:ILiquidazioneFs_FSRC_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSRCResponse" message="tns:ILiquidazioneFs_FSRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContextInfo">
+      <wsdl:input wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/UpdateContextInfo" message="tns:ILiquidazioneFs_UpdateContextInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/UpdateContextInfoResponse" message="tns:ILiquidazioneFs_UpdateContextInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClosePersistentConnection">
+      <wsdl:input wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/ClosePersistentConnection" message="tns:ILiquidazioneFs_ClosePersistentConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/ClosePersistentConnectionResponse" message="tns:ILiquidazioneFs_ClosePersistentConnection_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

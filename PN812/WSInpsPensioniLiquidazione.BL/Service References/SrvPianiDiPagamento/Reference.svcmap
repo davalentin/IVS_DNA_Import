@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3b4526c-b0ce-4adc-bdb5-45cc4f83a14a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSPianiDiPagamento.xsd" MetadataType="Schema" ID="ea7140af-de97-4c8a-83a0-ad7adb27978a" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd10" />
+    <MetadataFile FileName="WSPianiDiPagamento1.xsd" MetadataType="Schema" ID="4618b8c1-f9b6-43c1-bfc6-b7a515943e8d" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd14" />
+    <MetadataFile FileName="WSPianiDiPagamento18.xsd" MetadataType="Schema" ID="1b637703-447d-46f7-8859-ee564094055a" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd18" />
+    <MetadataFile FileName="WSPianiDiPagamento2.xsd" MetadataType="Schema" ID="a8dbd7c0-7127-45fa-9eeb-3af0d3576bcb" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd8" />
+    <MetadataFile FileName="WSPianiDiPagamento3.xsd" MetadataType="Schema" ID="e42f7e62-e4ab-4860-bdcd-8d10b9323e39" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd9" />
+    <MetadataFile FileName="WSPianiDiPagamento4.xsd" MetadataType="Schema" ID="bb20da5f-e2ed-447d-8685-ae05fc5d3fe2" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd15" />
+    <MetadataFile FileName="WSPianiDiPagamento5.xsd" MetadataType="Schema" ID="de1ef6de-a9a9-45fb-831c-fde1c497cf55" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd4" />
+    <MetadataFile FileName="WSPianiDiPagamento6.xsd" MetadataType="Schema" ID="47350cab-c597-494d-aa86-22501afe9baf" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" />
+    <MetadataFile FileName="WSPianiDiPagamento7.xsd" MetadataType="Schema" ID="b8039514-ddf6-4154-932c-28629d8940d6" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd11" />
+    <MetadataFile FileName="WSPianiDiPagamento8.xsd" MetadataType="Schema" ID="5741efb7-3fb9-4a56-9c7d-7b26815a814c" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd7" />
+    <MetadataFile FileName="WSPianiDiPagamento9.xsd" MetadataType="Schema" ID="415d5395-e059-4302-ae79-4350c04f78fc" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd0" />
+    <MetadataFile FileName="WSPianiDiPagamento10.xsd" MetadataType="Schema" ID="1a6957fa-0c4c-4e3e-a3b4-e2dfead0c76e" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSPianiDiPagamento11.xsd" MetadataType="Schema" ID="8bc5acb9-501d-4024-b6a5-f4fdfc1af6ce" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd2" />
+    <MetadataFile FileName="WSPianiDiPagamento12.xsd" MetadataType="Schema" ID="c16f9268-95ca-451e-bf8b-ab8e01756121" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd3" />
+    <MetadataFile FileName="WSPianiDiPagamento19.xsd" MetadataType="Schema" ID="38f16063-a053-4c09-bc10-592e466db6f0" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd20" />
+    <MetadataFile FileName="WSPianiDiPagamento13.xsd" MetadataType="Schema" ID="bf947388-08e7-40e6-b166-2799d405b635" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd12" />
+    <MetadataFile FileName="WSPianiDiPagamento14.xsd" MetadataType="Schema" ID="8d1d8f0c-ef16-44a9-a291-8ed020b61456" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd16" />
+    <MetadataFile FileName="WSPianiDiPagamento.wsdl" MetadataType="Wsdl" ID="8208b86e-36dc-433d-897c-6600149410ed" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?wsdl" />
+    <MetadataFile FileName="WSPianiDiPagamento191.xsd" MetadataType="Schema" ID="96c0fe1f-e0cb-4ff1-bf78-7bdc76a344e9" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd19" />
+    <MetadataFile FileName="WSPianiDiPagamento15.xsd" MetadataType="Schema" ID="0231a426-19d8-4dd4-9008-d4eecaf481b1" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd6" />
+    <MetadataFile FileName="WSPianiDiPagamento16.xsd" MetadataType="Schema" ID="d0f52d2f-01c1-4829-93ef-c126f7178d1c" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd13" />
+    <MetadataFile FileName="WSPianiDiPagamento17.xsd" MetadataType="Schema" ID="020414aa-7ad7-4117-a26d-f195058abd05" SourceId="1" SourceUrl="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd17" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

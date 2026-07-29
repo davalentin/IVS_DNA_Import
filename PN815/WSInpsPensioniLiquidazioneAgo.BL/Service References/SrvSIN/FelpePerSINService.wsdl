@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FelpePerSINService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSFelpePerSIN" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFelpePerSINService_InserimentoPECO_INPDAP_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserimentoPECO_INPDAP" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_InserimentoPECO_INPDAP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserimentoPECO_INPDAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_LetturaPECO_INPDAP_CodiceFiscale_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaPECO_INPDAP_CodiceFiscale" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_LetturaPECO_INPDAP_CodiceFiscale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaPECO_INPDAP_CodiceFiscaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_LetturaPECO_INPDAP_NumeroDomus_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaPECO_INPDAP_NumeroDomus" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_LetturaPECO_INPDAP_NumeroDomus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaPECO_INPDAP_NumeroDomusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_LetturaPECO_CertAttive_InputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaPECO_CertAttive" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_LetturaPECO_CertAttive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LetturaPECO_CertAttiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_AggiornamentoPECO_INPDAP_InputMessage">
+    <wsdl:part name="parameters" element="tns:AggiornamentoPECO_INPDAP" />
+  </wsdl:message>
+  <wsdl:message name="IFelpePerSINService_AggiornamentoPECO_INPDAP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AggiornamentoPECO_INPDAPResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFelpePerSINService">
+    <wsdl:operation name="InserimentoPECO_INPDAP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFelpePerSINService/InserimentoPECO_INPDAP" message="tns:IFelpePerSINService_InserimentoPECO_INPDAP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFelpePerSINService/InserimentoPECO_INPDAPResponse" message="tns:IFelpePerSINService_InserimentoPECO_INPDAP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_INPDAP_CodiceFiscale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFelpePerSINService/LetturaPECO_INPDAP_CodiceFiscale" message="tns:IFelpePerSINService_LetturaPECO_INPDAP_CodiceFiscale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFelpePerSINService/LetturaPECO_INPDAP_CodiceFiscaleResponse" message="tns:IFelpePerSINService_LetturaPECO_INPDAP_CodiceFiscale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_INPDAP_NumeroDomus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFelpePerSINService/LetturaPECO_INPDAP_NumeroDomus" message="tns:IFelpePerSINService_LetturaPECO_INPDAP_NumeroDomus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFelpePerSINService/LetturaPECO_INPDAP_NumeroDomusResponse" message="tns:IFelpePerSINService_LetturaPECO_INPDAP_NumeroDomus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_CertAttive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFelpePerSINService/LetturaPECO_CertAttive" message="tns:IFelpePerSINService_LetturaPECO_CertAttive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFelpePerSINService/LetturaPECO_CertAttiveResponse" message="tns:IFelpePerSINService_LetturaPECO_CertAttive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornamentoPECO_INPDAP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFelpePerSINService/AggiornamentoPECO_INPDAP" message="tns:IFelpePerSINService_AggiornamentoPECO_INPDAP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFelpePerSINService/AggiornamentoPECO_INPDAPResponse" message="tns:IFelpePerSINService_AggiornamentoPECO_INPDAP_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFelpePerSINService" type="tns:IFelpePerSINService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InserimentoPECO_INPDAP">
+      <soap:operation soapAction="http://tempuri.org/IFelpePerSINService/InserimentoPECO_INPDAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_INPDAP_CodiceFiscale">
+      <soap:operation soapAction="http://tempuri.org/IFelpePerSINService/LetturaPECO_INPDAP_CodiceFiscale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_INPDAP_NumeroDomus">
+      <soap:operation soapAction="http://tempuri.org/IFelpePerSINService/LetturaPECO_INPDAP_NumeroDomus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_CertAttive">
+      <soap:operation soapAction="http://tempuri.org/IFelpePerSINService/LetturaPECO_CertAttive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornamentoPECO_INPDAP">
+      <soap:operation soapAction="http://tempuri.org/IFelpePerSINService/AggiornamentoPECO_INPDAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FelpePerSINService">
+    <wsdl:port name="BasicHttpBinding_IFelpePerSINService" binding="tns:BasicHttpBinding_IFelpePerSINService">
+      <soap:address location="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

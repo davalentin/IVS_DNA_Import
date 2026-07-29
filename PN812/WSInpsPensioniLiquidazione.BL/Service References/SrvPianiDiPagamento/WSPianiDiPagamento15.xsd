@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.TestaRegole" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.TestaRegole" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="TestaRegole_Request">
+    <xs:sequence>
+      <xs:element name="sessionType" nillable="true" type="tns:SessionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestaRegole_Request" nillable="true" type="tns:TestaRegole_Request" />
+  <xs:complexType name="SessionType">
+    <xs:sequence>
+      <xs:element name="codiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element name="guid" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" name="testCase" nillable="true" type="q1:ArrayOfTestCaseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionType" nillable="true" type="tns:SessionType" />
+  <xs:complexType name="TestaRegole_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Session" nillable="true" type="tns:SessionResponseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestaRegole_Response" nillable="true" type="tns:TestaRegole_Response" />
+  <xs:complexType name="SessionResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestCase" nillable="true" type="tns:ArrayOfTestCaseResponseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionResponseType" nillable="true" type="tns:SessionResponseType" />
+  <xs:complexType name="ArrayOfTestCaseResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestCaseResponseType" nillable="true" type="tns:TestCaseResponseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestCaseResponseType" nillable="true" type="tns:ArrayOfTestCaseResponseType" />
+  <xs:complexType name="TestCaseResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoType" />
+      <xs:element minOccurs="0" name="GUID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestCaseResponseType" nillable="true" type="tns:TestCaseResponseType" />
+  <xs:complexType name="EsitoType">
+    <xs:sequence>
+      <xs:element name="codice" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="descrizione" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element name="risultato" type="tns:RisultatoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoType" nillable="true" type="tns:EsitoType" />
+  <xs:simpleType name="RisultatoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoType" nillable="true" type="tns:RisultatoType" />
+</xs:schema>

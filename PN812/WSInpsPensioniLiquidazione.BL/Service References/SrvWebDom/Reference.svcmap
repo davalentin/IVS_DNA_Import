@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="72f50967-3ba0-4ed1-94fa-c665d79d924c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msws.svil.inps/WsDomandeWebDom/WsWebDom.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataSetDomanda.xsd" MetadataType="Schema" ID="aa27a79f-b801-4b8e-b52f-c3444399c265" SourceId="1" SourceUrl="http://msws.svil.inps/WsDomandeWebDom/WsWebDom.asmx?schema=DataSetDomanda" />
+    <MetadataFile FileName="WsWebDom.wsdl" MetadataType="Wsdl" ID="611564a1-86d8-48de-a6bd-e3cefe4fcde5" SourceId="1" SourceUrl="http://msws.svil.inps/WsDomandeWebDom/WsWebDom.asmx?wsdl" />
+    <MetadataFile FileName="WsWebDom.disco" MetadataType="Disco" ID="c5e4d8e3-ec69-4646-a16b-27a8c40cf976" SourceId="1" SourceUrl="http://msws.svil.inps/WsDomandeWebDom/WsWebDom.asmx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

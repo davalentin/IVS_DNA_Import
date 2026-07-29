@@ -1,0 +1,10 @@
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\bin\Debug\INPS.Pensioni.LiquidazioneCi.dll.config
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\bin\Debug\INPS.Pensioni.LiquidazioneCi.dll
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\bin\Debug\INPS.Pensioni.LiquidazioneCi.pdb
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\bin\Debug\INPS.Pensioni.Liquidazione.BLCommon.dll
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\bin\Debug\INPS.Pensioni.Liquidazione.DataCommon.dll
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\bin\Debug\INPS.Pensioni.LiquidazioneCi.Data.dll
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\bin\Debug\INPS.Pensioni.LiquidazioneCi.Data.pdb
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\obj\Debug\INPS.Pensioni.LiquidazioneCi.csprojResolveAssemblyReference.cache
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\obj\Debug\INPS.Pensioni.LiquidazioneCi.dll
+C:\Liquidazione_pensioni\PN818\branches\WIP\WSInpsPensioniLiquidazioneCi.BL\obj\Debug\INPS.Pensioni.LiquidazioneCi.pdb

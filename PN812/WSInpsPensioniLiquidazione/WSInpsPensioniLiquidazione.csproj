@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B01A1B69-FC09-4484-87A8-7E654C20BF3D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INPS.Pensioni.Liquidazione.Service</RootNamespace>
+    <AssemblyName>INPS.Pensioni.Liquidazione.Service</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>\WSInpsPensioniLiquidazione\</SccProjectName>
+    <SccLocalPath>WSInpsPensioniLiquidazione\</SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>Serena Source Control Provider:{04ED75C7-FE70-4589-A196-51A6FA0D4D7E}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INPS.DNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Exceptions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_esterne\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll_esterne\itextsharp.dll" />
+    <Content Include="ServizioLiquidazione.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\DataContracts\AreaAggiornamenti.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAggiornamento.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAltreDomandeCollegate.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAltreFunzioni.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAventiDiritto.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAvvisi.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeEditorialiLetteraB.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeEditorialiPerTipo0171.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeVESO29.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeVOESO.cs" />
+    <Compile Include="Contracts\DataContracts\AreaBancaFideiussione.cs" />
+    <Compile Include="Contracts\DataContracts\AreaBancaFideiussioneESOPMI.cs" />
+    <Compile Include="Contracts\DataContracts\AreaHomepage.cs" />
+    <Compile Include="Contracts\DataContracts\AreaBypassControllo.cs" />
+    <Compile Include="Contracts\DataContracts\AreaCambioStatoDomanda.cs" />
+    <Compile Include="Contracts\DataContracts\AreaCtrlBypassTipologieNonAbilitate.cs" />
+    <Compile Include="Contracts\DataContracts\AreaEliminazione.cs" />
+    <Compile Include="Contracts\DataContracts\AreaFAQ.cs" />
+    <Compile Include="Contracts\DataContracts\AreaNuovoCalcolo.cs" />
+    <Compile Include="Contracts\DataContracts\AreaOneri.cs" />
+    <Compile Include="Contracts\DataContracts\AreaLavorazioneManualeAutomatiche.cs" />
+    <Compile Include="Contracts\DataContracts\AreaPeriodi.cs" />
+    <Compile Include="Contracts\DataContracts\AreaProvvisoriePerCoefficienti.cs" />
+    <Compile Include="Contracts\DataContracts\AreaPuliziaDomanda.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRichiestaBonus.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRichiestaDomanda.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRichiestaStampa.cs" />
+    <Compile Include="Contracts\DataContracts\AreaSbloccoCancellazione.cs" />
+    <Compile Include="Contracts\DataContracts\AreaControlliDinamici.cs" />
+    <Compile Include="Contracts\DataContracts\AreaDanteCausa.cs" />
+    <Compile Include="Contracts\DataContracts\AreaDecodifica.cs" />
+    <Compile Include="Contracts\DataContracts\AreaDetrazioni.cs" />
+    <Compile Include="Contracts\DataContracts\AreaEsito.cs" />
+    <Compile Include="Contracts\DataContracts\AreaInfoPratica.cs" />
+    <Compile Include="Contracts\DataContracts\AreaInvioSegnalazione.cs" />
+    <Compile Include="Contracts\DataContracts\AreaLiquidazioniAbilitate.cs" />
+    <Compile Include="Contracts\DataContracts\AreaMessaggiHermes.cs" />
+    <Compile Include="Contracts\DataContracts\AreaSediMatricola.cs" />
+    <Compile Include="Contracts\DataContracts\AreaStoricoDataLimiteDomandeINDCOM.cs" />
+    <Compile Include="Contracts\DataContracts\AreaStoricoDataLimitePoligraficiLetteraB.cs" />
+    <Compile Include="Contracts\DataContracts\AreaTipologieNonAbilitate.cs" />
+    <Compile Include="Contracts\DataContracts\AreaMaggiorazioniBenefici.cs" />
+    <Compile Include="Contracts\DataContracts\AreaPagamento.cs" />
+    <Compile Include="Contracts\DataContracts\AreaQuadri.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRedditi.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRiassegnazioneDomanda.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRichiestaRiepilogo.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRichiestaStatoPratica.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRispostaRiepilogo.cs" />
+    <Compile Include="Contracts\DataContracts\AreaRispostaStatoPratica.cs" />
+    <Compile Include="Contracts\DataContracts\AreaSupplementi.cs" />
+    <Compile Include="Contracts\DataContracts\AreaTitolare.cs" />
+    <Compile Include="Contracts\DataContracts\AreaTrasformazioniAbilitate.cs" />
+    <Compile Include="Contracts\DataContracts\AreaUfficioPagatore.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAbilitazioneServizi.cs" />
+    <Compile Include="Contracts\DataContracts\AreaVersioni.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeVESO33.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeCredito.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeEditoriali.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeESOTEL.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeESOAMB.cs" />
+    <Compile Include="Contracts\DataContracts\AreaAziendeEditorialiPerTipo0179.cs" />
+    <Compile Include="Contracts\DataContracts\AreaBancaFideiussioneESPA.cs" />
+    <Compile Include="Contracts\ServiceContracts\IQuadri.cs" />
+    <Compile Include="Contracts\ServiceContracts\IServizioLiquidazione.cs" />
+    <Compile Include="Contracts\ServiceContracts\IDecodifica.cs" />
+    <Compile Include="ServizioLiquidazione.svc.cs">
+      <DependentUpon>ServizioLiquidazione.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHGCOLL_Web.config" />
+    <Content Include="CHGESERCIZIO_Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CHGTEST_Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.BLCommon\WSInpsPensioniLiquidazione.BLCommon.csproj">
+      <Project>{eab1b8ac-a3d3-4cba-9c1d-893e9b36f063}</Project>
+      <Name>WSInpsPensioniLiquidazione.BLCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.BL\WSInpsPensioniLiquidazione.BL.csproj">
+      <Project>{812cca70-f1c5-43e2-8814-3be08f32ba1c}</Project>
+      <Name>WSInpsPensioniLiquidazione.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSInpsPensioniLiquidazione.Data\WSInpsPensioniLiquidazione.Data.csproj">
+      <Project>{cfadb017-ea4d-49c0-9ef6-3a1bc69be6f2}</Project>
+      <Name>WSInpsPensioniLiquidazione.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1780</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/INPS.Pensioni.Liquidazione.Service</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

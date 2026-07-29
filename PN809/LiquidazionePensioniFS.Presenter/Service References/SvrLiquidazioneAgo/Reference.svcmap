@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bf5fa5b8-d9a7-4891-aa0a-4f7578003cc3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="1_0.wsdl" MetadataType="Wsdl" ID="4250c9ad-7594-446e-ad81-4cd700c4e830" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8b2804bc-f8f9-441b-9cc4-d54cbe884a93" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="1_0.xsd" MetadataType="Schema" ID="64d65b07-d6d3-4fcf-a2d8-689a7b40b08c" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="86f2d84a-26c9-44ba-8c41-fa091545fa90" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.LiquidazioneAgo.Service.Contracts.DataContracts.xsd" MetadataType="Schema" ID="b6df6c88-9e64-4341-b896-729e26690ff3" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="7d076bdd-ded0-4fdc-9ae7-f9d46ef726bc" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8a5d2ece-50d5-4b39-91f7-6009546d28e6" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.LiquidazioneAgo.Entity.xsd" MetadataType="Schema" ID="fe824d2e-78c5-4cb4-a3d3-4b793113b871" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.LiquidazioneAgo.xsd" MetadataType="Schema" ID="c8e7b56f-92da-4ca5-b730-0b9d5760efa8" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.BLCommon.xsd" MetadataType="Schema" ID="69587165-8c88-4614-93e7-3462839097a8" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.BLCommon.Entity.xsd" MetadataType="Schema" ID="af5f8d3a-7764-41dc-b742-93d27cdb9485" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="62f92140-f8b3-426e-b544-6a2183e0573d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\TFS15\INPS.PrestazioniPensionistiche\Services\LIQPENS\WS00490_PN812\Dev\WSInpsPensioniLiquidazione.BL\Service References\WSOrchSerPen.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSOrchSerPen.xsd" MetadataType="Schema" ID="e91f2c40-f727-4f6c-ba16-09531a8022fc" SourceId="1" SourceUrl="file:///C:/TFS15/INPS.PrestazioniPensionistiche/Services/LIQPENS/WS00490_PN812/Dev/WSInpsPensioniLiquidazione.BL/Service References/WSOrchSerPen.xsd1.xsd" />
+    <MetadataFile FileName="WSOrchSerPen.wsdl" MetadataType="Wsdl" ID="6a4216e2-8640-47d7-be78-346501863363" SourceId="1" SourceUrl="file:///C:/TFS15/INPS.PrestazioniPensionistiche/Services/LIQPENS/WS00490_PN812/Dev/WSInpsPensioniLiquidazione.BL/Service References/WSOrchSerPen.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

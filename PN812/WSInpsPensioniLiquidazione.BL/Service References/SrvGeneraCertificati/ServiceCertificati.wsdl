@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://soa.inps.it/domainservices/WSLiqPensGeneraCertificati/servicecontracts/ServiceCertificati/1_0" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceCertificati" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_ServiceCertificati_GeneraCodiceFascicolo_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <dnap:dnaPolicy dnap:officePromotionRequired="False" xmlns:dnap="http://inps.it/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_ServiceCertificati_GeneraCertificato_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <dnap:dnaPolicy dnap:officePromotionRequired="False" xmlns:dnap="http://inps.it/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://soa.inps.it/domainservices/WSLiqPensGeneraCertificati/servicecontracts/ServiceCertificati/1_0" location="http://localhost/WSLiqPensGeneraCertificati/ServiceCertificati.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="CustomBinding_ServiceCertificati" type="i0:IServiceCertificati">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GeneraCodiceFascicolo">
+      <wsp:PolicyReference URI="#CustomBinding_ServiceCertificati_GeneraCodiceFascicolo_policy" />
+      <soap:operation soapAction="http://soa.inps.it/domainservices/WSLiqPensGeneraCertificati/servicecontracts/ServiceCertificati/1_0/IServiceCertificati/GeneraCodiceFascicolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GeneraCertificato">
+      <wsp:PolicyReference URI="#CustomBinding_ServiceCertificati_GeneraCertificato_policy" />
+      <soap:operation soapAction="http://soa.inps.it/domainservices/WSLiqPensGeneraCertificati/servicecontracts/ServiceCertificati/1_0/IServiceCertificati/GeneraCertificato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCertificati">
+    <wsdl:port name="CustomBinding_ServiceCertificati" binding="tns:CustomBinding_ServiceCertificati">
+      <soap:address location="http://localhost/WSLiqPensGeneraCertificati/ServiceCertificati.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="WsVerTitolIBAN.xsd5.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="VerificaTitolaritaInput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN">
+        <xs:sequence>
+          <xs:element name="identChiamante" nillable="true" type="tns:IdentChiamante" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VerificaTitolaritaInput" nillable="true" type="tns:VerificaTitolaritaInput" />
+  <xs:complexType name="CF_IBAN">
+    <xs:sequence>
+      <xs:element name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element name="codiceIban" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CF_IBAN" nillable="true" type="tns:CF_IBAN" />
+  <xs:complexType name="IdentChiamante">
+    <xs:sequence>
+      <xs:element name="matricola" nillable="true" type="xs:string" />
+      <xs:element name="sedeUtente" nillable="true" type="xs:string" />
+      <xs:element name="sistema" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentChiamante" nillable="true" type="tns:IdentChiamante" />
+  <xs:complexType name="VerificaTitolaritaOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ultimoAggiornamento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="verificaTitolaritaInput" nillable="true" type="tns:VerificaTitolaritaInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificaTitolaritaOutput" nillable="true" type="tns:VerificaTitolaritaOutput" />
+  <xs:complexType name="Esito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="retCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="retMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Esito" nillable="true" type="tns:Esito" />
+  <xs:complexType name="VerificaTitIbanNewOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VerificaTitolaritaOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codiceIbanNew" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VerificaTitIbanNewOutput" nillable="true" type="tns:VerificaTitIbanNewOutput" />
+  <xs:complexType name="GestioneSR163Input">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN">
+        <xs:sequence>
+          <xs:element name="identChiamante" nillable="true" type="tns:IdentChiamante" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GestioneSR163Input" nillable="true" type="tns:GestioneSR163Input" />
+  <xs:complexType name="GestioneSR163Output">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SR163Input" nillable="true" type="tns:GestioneSR163Input" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneSR163Output" nillable="true" type="tns:GestioneSR163Output" />
+  <xs:complexType name="GestioneEntiExtraInput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN">
+        <xs:sequence>
+          <xs:element name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GestioneEntiExtraInput" nillable="true" type="tns:GestioneEntiExtraInput" />
+  <xs:complexType name="IdentChiamanteRis">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentChiamante">
+        <xs:sequence>
+          <xs:element name="token" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdentChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+  <xs:complexType name="GestioneEntiExtraOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="enteExtraInput" nillable="true" type="tns:GestioneEntiExtraInput" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneEntiExtraOutput" nillable="true" type="tns:GestioneEntiExtraOutput" />
+  <xs:complexType name="CertificaTitolaritaInput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN">
+        <xs:sequence>
+          <xs:element name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+          <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+          <xs:element name="status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CertificaTitolaritaInput" nillable="true" type="tns:CertificaTitolaritaInput" />
+  <xs:complexType name="CertificaTitolaritaOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="certificaTitolaritaInput" nillable="true" type="tns:CertificaTitolaritaInput" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CertificaTitolaritaOutput" nillable="true" type="tns:CertificaTitolaritaOutput" />
+  <xs:complexType name="GetListaCertificazioniInput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN_F">
+        <xs:sequence>
+          <xs:element name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaCertificazioniInput" nillable="true" type="tns:GetListaCertificazioniInput" />
+  <xs:complexType name="CF_IBAN_F">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element name="codiceIban" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CF_IBAN_F" nillable="true" type="tns:CF_IBAN_F" />
+  <xs:complexType name="GetListaCertificazioniOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaCertificazioni" nillable="true" type="tns:ArrayOfCertificazione" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="getListaCertificazioniInput" nillable="true" type="tns:GetListaCertificazioniInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetListaCertificazioniOutput" nillable="true" type="tns:GetListaCertificazioniOutput" />
+  <xs:complexType name="ArrayOfCertificazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Certificazione" nillable="true" type="tns:Certificazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCertificazione" nillable="true" type="tns:ArrayOfCertificazione" />
+  <xs:complexType name="Certificazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CFIB_CF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_F_CERT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_IBAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_MATR_FINE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_NOTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_PERCRISC" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CFIB_SEDE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_SEDE_FINE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_SISTEMA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFIB_TSINSERT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CFIB_TS_FINE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CFIB_USERID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Certificazione" nillable="true" type="tns:Certificazione" />
+  <xs:complexType name="GetListaOperazioniInput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN_F">
+        <xs:sequence>
+          <xs:element name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaOperazioniInput" nillable="true" type="tns:GetListaOperazioniInput" />
+  <xs:complexType name="GetListaOperazioniOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaOperazioni" nillable="true" type="tns:ArrayOfOperazione" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="getListaOperazioniInput" nillable="true" type="tns:GetListaOperazioniInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetListaOperazioniOutput" nillable="true" type="tns:GetListaOperazioniOutput" />
+  <xs:complexType name="ArrayOfOperazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operazione" nillable="true" type="tns:Operazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperazione" nillable="true" type="tns:ArrayOfOperazione" />
+  <xs:complexType name="Operazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Certificata" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodFisc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iban" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inserimento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERCRISC" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sistema" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tabella" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gruppoEnte" type="xs:int" />
+      <xs:element minOccurs="0" name="gruppoEnteDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="noteConsumer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statoAbiCab" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statoAbiCabDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statusConsumer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Operazione" nillable="true" type="tns:Operazione" />
+  <xs:complexType name="GetLastIbanInput">
+    <xs:sequence>
+      <xs:element name="ListaCodiciFiscali" nillable="true" type="tns:ArrayOfCodiceFiscale" />
+      <xs:element name="identChiamante" nillable="true" type="tns:IdentChiamante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLastIbanInput" nillable="true" type="tns:GetLastIbanInput" />
+  <xs:complexType name="ArrayOfCodiceFiscale">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodiceFiscale" nillable="true" type="tns:CodiceFiscale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodiceFiscale" nillable="true" type="tns:ArrayOfCodiceFiscale" />
+  <xs:complexType name="CodiceFiscale">
+    <xs:sequence>
+      <xs:element name="codiceFiscale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodiceFiscale" nillable="true" type="tns:CodiceFiscale" />
+  <xs:complexType name="GetLastIbanOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaLastIban" nillable="true" type="tns:ArrayOfInfoLastIban" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="getLastIbanInput" nillable="true" type="tns:GetLastIbanInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLastIbanOutput" nillable="true" type="tns:GetLastIbanOutput" />
+  <xs:complexType name="ArrayOfInfoLastIban">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoLastIban" nillable="true" type="tns:InfoLastIban" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoLastIban" nillable="true" type="tns:ArrayOfInfoLastIban" />
+  <xs:complexType name="InfoLastIban">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anno" type="xs:int" />
+      <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IBAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mese" type="xs:int" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCoordinate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoPagamento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoLastIban" nillable="true" type="tns:InfoLastIban" />
+  <xs:complexType name="GetLastIbanBicOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaLastIban" nillable="true" type="tns:ArrayOfInfoLastIbanBic" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="getLastIbanInput" nillable="true" type="tns:GetLastIbanInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLastIbanBicOutput" nillable="true" type="tns:GetLastIbanBicOutput" />
+  <xs:complexType name="ArrayOfInfoLastIbanBic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoLastIbanBic" nillable="true" type="tns:InfoLastIbanBic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoLastIbanBic" nillable="true" type="tns:ArrayOfInfoLastIbanBic" />
+  <xs:complexType name="InfoLastIbanBic">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InfoLastIban">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BIC" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InfoLastIbanBic" nillable="true" type="tns:InfoLastIbanBic" />
+  <xs:complexType name="GetListaCertificazioniSDBInput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN_SDB">
+        <xs:sequence>
+          <xs:element name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListaCertificazioniSDBInput" nillable="true" type="tns:GetListaCertificazioniSDBInput" />
+  <xs:complexType name="CF_IBAN_SDB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element name="codiceIban" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CF_IBAN_SDB" nillable="true" type="tns:CF_IBAN_SDB" />
+  <xs:complexType name="GetListaCertificazioniSDBOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaCertificazioni" nillable="true" type="tns:ArrayOfCertificazione" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="getListaCertificazioniSDBInput" nillable="true" type="tns:GetListaCertificazioniSDBInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetListaCertificazioniSDBOutput" nillable="true" type="tns:GetListaCertificazioniSDBOutput" />
+  <xs:complexType name="GestioneSDBInput">
+    <xs:sequence>
+      <xs:element name="ListaCodiciFiscali" nillable="true" type="tns:ArrayOfCodiceFiscale" />
+      <xs:element name="codiceIban" nillable="true" type="xs:string" />
+      <xs:element name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+      <xs:element name="note" nillable="true" type="xs:string" />
+      <xs:element name="visualizzaLista" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneSDBInput" nillable="true" type="tns:GestioneSDBInput" />
+  <xs:complexType name="GestioneSDBOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaCertificazioni" nillable="true" type="tns:ArrayOfCertificazione" />
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="gestioneSDBInput" nillable="true" type="tns:GestioneSDBInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneSDBOutput" nillable="true" type="tns:GestioneSDBOutput" />
+  <xs:complexType name="GetStatusVarCoordInput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CF_IBAN">
+        <xs:sequence>
+          <xs:element name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetStatusVarCoordInput" nillable="true" type="tns:GetStatusVarCoordInput" />
+  <xs:complexType name="GetStatusVarCoordOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="getStatusVarCoordInput" nillable="true" type="tns:GetStatusVarCoordInput" />
+      <xs:element minOccurs="0" name="statusVarCoord" nillable="true" type="tns:StatusVarCoord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatusVarCoordOutput" nillable="true" type="tns:GetStatusVarCoordOutput" />
+  <xs:complexType name="StatusVarCoord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusVarCoord" nillable="true" type="tns:StatusVarCoord" />
+  <xs:complexType name="CertificaTitUffInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idPacchetto" type="ser:guid" />
+      <xs:element minOccurs="0" name="identChiamanteRis" nillable="true" type="tns:IdentChiamanteRis" />
+      <xs:element minOccurs="0" name="listInfoTitUff" nillable="true" type="tns:ArrayOfInfoTitUff" />
+      <xs:element minOccurs="0" name="tipoRichiesta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CertificaTitUffInput" nillable="true" type="tns:CertificaTitUffInput" />
+  <xs:complexType name="ArrayOfInfoTitUff">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoTitUff" nillable="true" type="tns:InfoTitUff" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoTitUff" nillable="true" type="tns:ArrayOfInfoTitUff" />
+  <xs:complexType name="InfoTitUff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="abiTrasmittente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceIbanNew" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codiceIbanOld" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idComunicazione" type="xs:long" />
+      <xs:element minOccurs="0" name="tipoPrestazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoTitUff" nillable="true" type="tns:InfoTitUff" />
+  <xs:complexType name="CertificaTitUffOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="idPacchetto" type="ser:guid" />
+      <xs:element minOccurs="0" name="listInfoTitUffOutput" nillable="true" type="tns:ArrayOfInfoTitUffOutput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CertificaTitUffOutput" nillable="true" type="tns:CertificaTitUffOutput" />
+  <xs:complexType name="ArrayOfInfoTitUffOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoTitUffOutput" nillable="true" type="tns:InfoTitUffOutput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoTitUffOutput" nillable="true" type="tns:ArrayOfInfoTitUffOutput" />
+  <xs:complexType name="InfoTitUffOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="esito" nillable="true" type="tns:Esito" />
+      <xs:element minOccurs="0" name="idComunicazione" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoTitUffOutput" nillable="true" type="tns:InfoTitUffOutput" />
+</xs:schema>

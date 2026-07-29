@@ -1,0 +1,2629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E7C5CF5-69AD-43A5-8961-E148EA765086}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INPS.Pensioni.LiquidazionePensione.View.Web</RootNamespace>
+    <AssemblyName>INPS.Pensioni.LiquidazionePensione.View.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INPS.DNA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Caching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Context, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Exceptions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Presenter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Security, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.Security.Idm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.UI.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="INPS.DNA.UI.WebControlToolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Polly, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_esterne\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AltreFunzioni\Aggiornamenti.aspx" />
+    <Content Include="AltreFunzioni\AggiornamentiEdit.aspx" />
+    <Content Include="AltreFunzioni\Aggiornamento.aspx" />
+    <Content Include="AltreFunzioni\BypassControlli.aspx" />
+    <Content Include="AltreFunzioni\BypassTipologieNonAbilitate.aspx" />
+    <Content Include="AltreFunzioni\CambioDataINDCOM.aspx" />
+    <Content Include="AltreFunzioni\CambioDataPrepensionamentoLetteraB.aspx" />
+    <Content Include="AltreFunzioni\CambioDataSistema.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeEditorialiLetteraB.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeESOPMI.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeESPA.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeEditorialiPerTipo0179.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeESOAMB.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeESOTRA.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeEditoriali.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeCredito.aspx" />
+    <Content Include="AltreFunzioni\FAQEdit.aspx" />
+    <Content Include="AltreFunzioni\GestioneAbilitazioneTrasformazioni.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeEditorialiPerTipo0171.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeVESO29.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeVESO33.aspx" />
+    <Content Include="AltreFunzioni\GestioneAziendeVOESO.aspx" />
+    <Content Include="AltreFunzioni\GestioneBancheFideiussione.aspx" />
+    <Content Include="AltreFunzioni\GestioneFAQ.aspx" />
+    <Content Include="AltreFunzioni\CambioStatoDomanda.aspx" />
+    <Content Include="AltreFunzioni\GestioneProvvisoriePerCoefficienti.aspx" />
+    <Content Include="AltreFunzioni\GestioneAbilitazioneServizi.aspx" />
+    <Content Include="AltreFunzioni\LavorazioneManualeAutomatiche.aspx" />
+    <Content Include="AltreFunzioni\PulisciDomanda.aspx" />
+    <Content Include="AltreFunzioni\SbloccoCancellazione.aspx" />
+    <Content Include="AltreFunzioni\StampaAggiornamento.aspx" />
+    <Content Include="App_Themes\BlueINPS1\Images\add24.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\ajax-loader.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\alert.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\arrow-left.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\arrow-right.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\arrows-ffffff.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\beneficiario.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\bg_bar.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\bg_hover.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\bg_menu.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\box-title-bck-blu.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\calendar.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\cancel24.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\change.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\check16.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\clean.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\delete24.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\Document-print.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\downloadmanuale.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\DPI.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\edit.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\euro.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\faq_icon.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\footer-bck.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\header.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\help.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\home.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\intranet_acn.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\intranet_down_left.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\intranet_inps.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\intranet_top_left.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\intranet_top_right.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\ko.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\lente.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\logo20091029_bck.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\logofc.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\menu-bck-blu.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\menu-row.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\menu-row1.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\minus.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\note.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\nuovopiano.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\ok.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\pdficon.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\pencil.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\piano2.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\plus.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\plus_minus.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\push-pin.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\recordset-bck.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\reload.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\report.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\save24.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\shadow.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\tag.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\titolare.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\turn_off.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\turn_on.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\valutazione.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\verified.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\warning.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\xrosso16.png" />
+    <Content Include="App_Themes\BlueINPS1\MainStyle.css" />
+    <Content Include="App_Themes\SistemaUnico\bootstrap.css" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="App_Themes\SistemaUnico\Images\add24.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\ajax-loader.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\alert.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\arancione.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\arancione_small.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\arancione_tab.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\arrow-left.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\arrow-right.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\arrow-right2.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\arrows-ffffff.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\beneficiario.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\bg_bar.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\bg_hover.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\bg_menu.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\book.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\box-title-bck-blu.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\calendar.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\calendar.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\calendar1.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\cancel24.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\change.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\check16.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\clean.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\Clock.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\delete24.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\detail.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\Document-print.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\down.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\downloadmanuale.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\DPI.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\edit.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\engine.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\euro.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\exit.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\faq_icon.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\footer-bck.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\footerbck2.jpg" />
+    <Content Include="App_Themes\SistemaUnico\Images\header.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\help.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\home.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\ico_asc.bmp" />
+    <Content Include="App_Themes\SistemaUnico\Images\ico_desc.bmp" />
+    <Content Include="App_Themes\SistemaUnico\Images\info.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\info_tab.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\intranet_down_back.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\intranet_down_left.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\intranet_inps.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\intranet_top_left.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\intranet_top_right.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\ko.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\lente.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\logo20091029_bck.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\logofc.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\lucchetto.jpg" />
+    <Content Include="App_Themes\SistemaUnico\Images\mail.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\menu-bck-blu.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\menu-row.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\menu-row1.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\minus.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\note.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\nuovopiano.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\ok.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\pdficon.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\pencil.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\piano2.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\plus.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\plus_minus.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\push-pin.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\recordset-bck.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\reload.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\report.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\reportTorta.jpg" />
+    <Content Include="App_Themes\SistemaUnico\Images\rosso.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\rosso_small.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\rosso_tab.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\save24.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\search.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\search24.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\shadow.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\tag.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\titolare.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\turn_off.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\turn_on.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\up.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\users.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\valutazione.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\verde.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\verde_small.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\verde_tab.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\verified.png" />
+    <Content Include="App_Themes\SistemaUnico\Images\warning.gif" />
+    <Content Include="App_Themes\SistemaUnico\Images\xrosso16.png" />
+    <Content Include="App_Themes\SistemaUnico\SistemaUnico.css" />
+    <Content Include="App_Themes\BlueINPS1\superfish.css" />
+    <Content Include="AltreFunzioni\Avvisi.aspx" />
+    <Content Include="AltreFunzioni\AvvisiEdit.aspx" />
+    <Content Include="App_Themes\SistemaUnico\StyleTabs.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaBooking.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaCI05.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaINPDAP.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaPianiDiPagamento.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaSai.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaNoteDebito.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaTot.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaTotal.aspx" />
+    <Content Include="ElaborazionePosizione\AltreDomandeCollegate.aspx" />
+    <Content Include="ElaborazionePosizione\AventiDiritto.aspx" />
+    <Content Include="ElaborazionePosizione\DatiNoCalcolo.aspx" />
+    <Content Include="ElaborazionePosizione\DatiFondo.aspx" />
+    <Content Include="ElaborazionePosizione\Eliminazione.aspx" />
+    <Content Include="ElaborazionePosizione\InformationPopup.aspx" />
+    <Content Include="ElaborazionePosizione\Oneri.aspx" />
+    <Content Include="ElaborazionePosizione\Periodi.aspx" />
+    <Content Include="ElaborazionePosizione\RichiestaBonus.aspx" />
+    <Content Include="ElaborazionePosizione\StampaFAQ.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Javascript\browser.js" />
+    <Content Include="Javascript\cleditor\images\buttons.gif" />
+    <Content Include="Javascript\cleditor\images\toolbar.gif" />
+    <Content Include="Javascript\cleditor\jquery.cleditor.css" />
+    <Content Include="Javascript\cleditor\jquery.cleditor.js" />
+    <Content Include="Javascript\cleditor\jquery.cleditor.min.js" />
+    <Content Include="AltreFunzioni\MessaggiHermes.aspx" />
+    <Content Include="AltreFunzioni\MessaggiHermesEdit.aspx" />
+    <Content Include="PrepensionamentoArt37Legge416198LetteraB.aspx" />
+    <Content Include="Previsan.aspx" />
+    <Content Include="Scriwo.aspx" />
+    <Content Include="SistemaUnico.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="UserControls\AltreDomandeCollegate\UCAltreDomandeCollegate.ascx" />
+    <Content Include="UserControls\AltreFunzioni\Aggiornamento\UCAggiornamento.ascx" />
+    <Content Include="UserControls\AltreFunzioni\BypassControlli\UCBypassControlli.ascx" />
+    <Content Include="UserControls\AltreFunzioni\BypassTipologieNonAbilitate\UCBypassTipologieNonAbilitate.ascx" />
+    <Content Include="UserControls\AltreFunzioni\CambioDataINDCOM\UCCambioDataINDCOM.ascx" />
+    <Content Include="UserControls\AltreFunzioni\CambioDataPrepensionamentoLetteraB\UCCambioDataPrepensionamentoLetteraB.ascx" />
+    <Content Include="UserControls\AltreFunzioni\CambioDataSistema\UCCambioDataSistema.ascx" />
+    <Content Include="UserControls\AltreFunzioni\CambioStatoDomanda\UCCambioStatoDomanda.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiLetteraB\UCGestioneAziendeEditorialiLetteraB.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeESOPMI\UCGestioneAziendeESOPMI.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeESPA\UCGestioneAziendeESPA.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiPerTipo0179\UCGestioneAziendeEditorialiPerTipo0179.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeESOAMB\UCAziendeESOAMB.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAbilitazioneServizi\UCAbilitazionePolarizzazioneENPALS.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiPerTipo0171\UCGestioneAziendeEditorialiPerTipo0171.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeEditoriali\UCGestioneAziendeEditoriali.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeCredito\UCAziendeCredito.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAbilitazioneTrasformazioni\UCGestioneAbilTrasf.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeESOTRA\UCAziendeESOTRA.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeVESO29\UCAziendeVESO29.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeVESO33\UCAziendeVESO33.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneAziendeVOESO\UCAziendeVOESO.ascx" />
+    <Content Include="UserControls\AltreFunzioni\GestioneBancheFideiussione\UCGestioneBancheFideiussione.ascx" />
+    <Content Include="UserControls\AltreFunzioni\LavorazioneManualeAutomatiche\UCLavorazioneManualeAutomatiche.ascx" />
+    <Content Include="UserControls\AltreFunzioni\ProvvisoriePerCoefficienti\UCProvvisoriePerCoefficienti.ascx" />
+    <Content Include="UserControls\AltreFunzioni\SbloccoCancellazione\UCSbloccoCancellazione.ascx" />
+    <Content Include="UserControls\AltreFunzioni\PulisciDomanda\UCPulisciDomanda.ascx" />
+    <Content Include="UserControls\AventiDiritto\UCAventiDiritto.ascx" />
+    <Content Include="UserControls\CrossDatiFondoContr\UCDatiCalcolo707.ascx" />
+    <Content Include="UserControls\CrossSuppLiqAgo\UCContribuzioneEnpals.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCDatiCalcoloINPDAI.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCDatiCalcoloStoricoGP_AGO.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCDatiCalcoloVittimeTerrorismo.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCDatiEsteri.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCQuotaFondoINPGI.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCQuotaFondoIntegrativo.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCMiglioramentiContrattuali.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCQuotePensione.ascx" />
+    <Content Include="UserControls\DatiContributiviCi\UCIntegrazioneVirtuale.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCAnte67ES.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiAgoAltraPensione_ET.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiCalcoloDZ.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiCalcoloPI.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiCalcoloPM.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiCalcoloStoricoGP.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDoppioCalcolo_ES_DZ_GAS_PM.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCSL336_ES.ascx" />
+    <Content Include="UserControls\DatiFondo\UCArticolo2.ascx" />
+    <Content Include="UserControls\DatiFondo\UCDatiCalcolo.ascx" />
+    <Content Include="UserControls\DatiFondo\UCDatiCalcoloDZ_New.ascx" />
+    <Content Include="UserControls\DatiFondo\UCDatiFondo.ascx" />
+    <Content Include="UserControls\DatiFondo\UCDoppioCalcolo_DZ.ascx" />
+    <Content Include="UserControls\DatiFondo\UCLegge460.ascx" />
+    <Content Include="UserControls\DatiFondo\UCPrivilegiate.ascx" />
+    <Content Include="UserControls\DatiFondo\UCRegistrazioniFondo.ascx" />
+    <Content Include="UserControls\DatiNoCalcolo\UCDatiNoCalcolo.ascx" />
+    <Content Include="UserControls\DatiNoCalcolo\UCRecordDatiNoCalcolo.ascx" />
+    <Content Include="UserControls\Eliminazione\UCEliminazione.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCLiquidazionePensioneStorico_AGO.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCSentenzaArt4.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCSentenze.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneCi\UCInailCi.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiAssicurativiDZ_ES_PM.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiAssicurativiINPDAP.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiGenericiDZ_ES_PM.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiGenericiINPDAP.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCLiquidazionePensioneStorico.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiAgo\UCVittime.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiCi\UCVittimeCi.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBenefici\UCVittimeFS.ascx" />
+    <Content Include="UserControls\Oneri\UCOneri.ascx" />
+    <Content Include="UserControls\Oneri\UCOneriStoricoGP.ascx" />
+    <Content Include="UserControls\Oneri\UCPrepensionamento.ascx" />
+    <Content Include="UserControls\Periodi\UCPeriodi.ascx" />
+    <Content Include="UserControls\RichiestaBonus\UCEsitoPrenotazione.ascx" />
+    <Content Include="UserControls\RichiestaBonus\UCRichiestaBonus.ascx" />
+    <Content Include="UserControls\Supplementi\UCSupplementiCumulo.ascx" />
+    <Content Include="UserControls\Supplementi\UCSupplementiCumuloStorico.ascx" />
+    <Content Include="UserControls\Supplementi\UCSupplementiENPALS.ascx" />
+    <Content Include="UserControls\UCAggiornamentiHomePage.ascx" />
+    <Content Include="UserControls\UCAvvisiHomePage.ascx" />
+    <Content Include="UserControls\UCMessaggiHermesHomePage.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebDom.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AltreFunzioni\Aggiornamenti.aspx.cs">
+      <DependentUpon>Aggiornamenti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\Aggiornamenti.aspx.designer.cs">
+      <DependentUpon>Aggiornamenti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\AggiornamentiEdit.aspx.cs">
+      <DependentUpon>AggiornamentiEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\AggiornamentiEdit.aspx.designer.cs">
+      <DependentUpon>AggiornamentiEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\Aggiornamento.aspx.cs">
+      <DependentUpon>Aggiornamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\Aggiornamento.aspx.designer.cs">
+      <DependentUpon>Aggiornamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\AltreFunzioni.Master.cs">
+      <DependentUpon>AltreFunzioni.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\AltreFunzioni.Master.designer.cs">
+      <DependentUpon>AltreFunzioni.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\BypassControlli.aspx.cs">
+      <DependentUpon>BypassControlli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\BypassControlli.aspx.designer.cs">
+      <DependentUpon>BypassControlli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\BypassTipologieNonAbilitate.aspx.cs">
+      <DependentUpon>BypassTipologieNonAbilitate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\BypassTipologieNonAbilitate.aspx.designer.cs">
+      <DependentUpon>BypassTipologieNonAbilitate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioDataINDCOM.aspx.cs">
+      <DependentUpon>CambioDataINDCOM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioDataINDCOM.aspx.designer.cs">
+      <DependentUpon>CambioDataINDCOM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioDataPrepensionamentoLetteraB.aspx.cs">
+      <DependentUpon>CambioDataPrepensionamentoLetteraB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioDataPrepensionamentoLetteraB.aspx.designer.cs">
+      <DependentUpon>CambioDataPrepensionamentoLetteraB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioDataSistema.aspx.cs">
+      <DependentUpon>CambioDataSistema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioDataSistema.aspx.designer.cs">
+      <DependentUpon>CambioDataSistema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditorialiLetteraB.aspx.cs">
+      <DependentUpon>GestioneAziendeEditorialiLetteraB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditorialiLetteraB.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeEditorialiLetteraB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESOPMI.aspx.cs">
+      <DependentUpon>GestioneAziendeESOPMI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESOPMI.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeESOPMI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESPA.aspx.cs">
+      <DependentUpon>GestioneAziendeESPA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESPA.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeESPA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditorialiPerTipo0179.aspx.cs">
+      <DependentUpon>GestioneAziendeEditorialiPerTipo0179.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditorialiPerTipo0179.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeEditorialiPerTipo0179.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESOAMB.aspx.cs">
+      <DependentUpon>GestioneAziendeESOAMB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESOAMB.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeESOAMB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESOTRA.aspx.cs">
+      <DependentUpon>GestioneAziendeESOTRA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeESOTRA.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeESOTRA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditoriali.aspx.cs">
+      <DependentUpon>GestioneAziendeEditoriali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditoriali.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeEditoriali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeCredito.aspx.cs">
+      <DependentUpon>GestioneAziendeCredito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeCredito.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeCredito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\FAQEdit.aspx.cs">
+      <DependentUpon>FAQEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\FAQEdit.aspx.designer.cs">
+      <DependentUpon>FAQEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAbilitazioneTrasformazioni.aspx.cs">
+      <DependentUpon>GestioneAbilitazioneTrasformazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAbilitazioneTrasformazioni.aspx.designer.cs">
+      <DependentUpon>GestioneAbilitazioneTrasformazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditorialiPerTipo0171.aspx.cs">
+      <DependentUpon>GestioneAziendeEditorialiPerTipo0171.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeEditorialiPerTipo0171.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeEditorialiPerTipo0171.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeVESO29.aspx.cs">
+      <DependentUpon>GestioneAziendeVESO29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeVESO29.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeVESO29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeVESO33.aspx.cs">
+      <DependentUpon>GestioneAziendeVESO33.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeVESO33.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeVESO33.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeVOESO.aspx.cs">
+      <DependentUpon>GestioneAziendeVOESO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAziendeVOESO.aspx.designer.cs">
+      <DependentUpon>GestioneAziendeVOESO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneBancheFideiussione.aspx.cs">
+      <DependentUpon>GestioneBancheFideiussione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneBancheFideiussione.aspx.designer.cs">
+      <DependentUpon>GestioneBancheFideiussione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneFAQ.aspx.cs">
+      <DependentUpon>GestioneFAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneFAQ.aspx.designer.cs">
+      <DependentUpon>GestioneFAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioStatoDomanda.aspx.cs">
+      <DependentUpon>CambioStatoDomanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\CambioStatoDomanda.aspx.designer.cs">
+      <DependentUpon>CambioStatoDomanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneProvvisoriePerCoefficienti.aspx.cs">
+      <DependentUpon>GestioneProvvisoriePerCoefficienti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneProvvisoriePerCoefficienti.aspx.designer.cs">
+      <DependentUpon>GestioneProvvisoriePerCoefficienti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAbilitazioneServizi.aspx.cs">
+      <DependentUpon>GestioneAbilitazioneServizi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneAbilitazioneServizi.aspx.designer.cs">
+      <DependentUpon>GestioneAbilitazioneServizi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\LavorazioneManualeAutomatiche.aspx.cs">
+      <DependentUpon>LavorazioneManualeAutomatiche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\LavorazioneManualeAutomatiche.aspx.designer.cs">
+      <DependentUpon>LavorazioneManualeAutomatiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\Monitoraggio.aspx.cs">
+      <DependentUpon>Monitoraggio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\Monitoraggio.aspx.designer.cs">
+      <DependentUpon>Monitoraggio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\PulisciDomanda.aspx.cs">
+      <DependentUpon>PulisciDomanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\PulisciDomanda.aspx.designer.cs">
+      <DependentUpon>PulisciDomanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\RiassegnazioneDomanda.aspx.cs">
+      <DependentUpon>RiassegnazioneDomanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\RiassegnazioneDomanda.aspx.designer.cs">
+      <DependentUpon>RiassegnazioneDomanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\SbloccoCancellazione.aspx.cs">
+      <DependentUpon>SbloccoCancellazione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\SbloccoCancellazione.aspx.designer.cs">
+      <DependentUpon>SbloccoCancellazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\SbloccoDomanda.aspx.cs">
+      <DependentUpon>SbloccoDomanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\SbloccoDomanda.aspx.designer.cs">
+      <DependentUpon>SbloccoDomanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\StampaAggiornamento.aspx.cs">
+      <DependentUpon>StampaAggiornamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\StampaAggiornamento.aspx.designer.cs">
+      <DependentUpon>StampaAggiornamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\TipologieNonAbilitate.aspx.cs">
+      <DependentUpon>TipologieNonAbilitate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\TipologieNonAbilitate.aspx.designer.cs">
+      <DependentUpon>TipologieNonAbilitate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\VisualizzaReport.aspx.cs">
+      <DependentUpon>VisualizzaReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\VisualizzaReport.aspx.designer.cs">
+      <DependentUpon>VisualizzaReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\Avvisi.aspx.cs">
+      <DependentUpon>Avvisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\Avvisi.aspx.designer.cs">
+      <DependentUpon>Avvisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\AvvisiEdit.aspx.cs">
+      <DependentUpon>AvvisiEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\AvvisiEdit.aspx.designer.cs">
+      <DependentUpon>AvvisiEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CodeUtils\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CodeUtils\CustomBaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfermaAcquisizione.aspx.cs">
+      <DependentUpon>ConfermaAcquisizione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfermaAcquisizione.aspx.designer.cs">
+      <DependentUpon>ConfermaAcquisizione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Courtesy.aspx.cs">
+      <DependentUpon>Courtesy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Courtesy.aspx.designer.cs">
+      <DependentUpon>Courtesy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaBooking.aspx.cs">
+      <DependentUpon>AggiornaBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaBooking.aspx.designer.cs">
+      <DependentUpon>AggiornaBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaCI05.aspx.cs">
+      <DependentUpon>AggiornaCI05.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaCI05.aspx.designer.cs">
+      <DependentUpon>AggiornaCI05.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaFelpe.aspx.cs">
+      <DependentUpon>AggiornaFelpe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaFelpe.aspx.designer.cs">
+      <DependentUpon>AggiornaFelpe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaINPDAP.aspx.cs">
+      <DependentUpon>AggiornaINPDAP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaINPDAP.aspx.designer.cs">
+      <DependentUpon>AggiornaINPDAP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaPianiDiPagamento.aspx.cs">
+      <DependentUpon>AggiornaPianiDiPagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaPianiDiPagamento.aspx.designer.cs">
+      <DependentUpon>AggiornaPianiDiPagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaOneri.aspx.cs">
+      <DependentUpon>AggiornaOneri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaOneri.aspx.designer.cs">
+      <DependentUpon>AggiornaOneri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaSai.aspx.cs">
+      <DependentUpon>AggiornaSai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaSai.aspx.designer.cs">
+      <DependentUpon>AggiornaSai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaNoteDebito.aspx.cs">
+      <DependentUpon>AggiornaNoteDebito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaNoteDebito.aspx.designer.cs">
+      <DependentUpon>AggiornaNoteDebito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaTot.aspx.cs">
+      <DependentUpon>AggiornaTot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaTot.aspx.designer.cs">
+      <DependentUpon>AggiornaTot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaTotal.aspx.cs">
+      <DependentUpon>AggiornaTotal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaTotal.aspx.designer.cs">
+      <DependentUpon>AggiornaTotal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaWebDom.aspx.cs">
+      <DependentUpon>AggiornaWebDom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AggiornaWebDom.aspx.designer.cs">
+      <DependentUpon>AggiornaWebDom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AltreDomandeCollegate.aspx.cs">
+      <DependentUpon>AltreDomandeCollegate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AltreDomandeCollegate.aspx.designer.cs">
+      <DependentUpon>AltreDomandeCollegate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AventiDiritto.aspx.cs">
+      <DependentUpon>AventiDiritto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\AventiDiritto.aspx.designer.cs">
+      <DependentUpon>AventiDiritto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Bititolarita.aspx.cs">
+      <DependentUpon>Bititolarita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Bititolarita.aspx.designer.cs">
+      <DependentUpon>Bititolarita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiFondo.aspx.cs">
+      <DependentUpon>DatiFondo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiFondo.aspx.designer.cs">
+      <DependentUpon>DatiFondo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiNoCalcolo.aspx.cs">
+      <DependentUpon>DatiNoCalcolo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiNoCalcolo.aspx.designer.cs">
+      <DependentUpon>DatiNoCalcolo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Eliminazione.aspx.cs">
+      <DependentUpon>Eliminazione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Eliminazione.aspx.designer.cs">
+      <DependentUpon>Eliminazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\InformationPopup.aspx.cs">
+      <DependentUpon>InformationPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\InformationPopup.aspx.designer.cs">
+      <DependentUpon>InformationPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\MaggiorazioniEBeneficiAgo.aspx.cs">
+      <DependentUpon>MaggiorazioniEBeneficiAgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\MaggiorazioniEBeneficiAgo.aspx.designer.cs">
+      <DependentUpon>MaggiorazioniEBeneficiAgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\MaggiorazioniEBeneficiCi.aspx.cs">
+      <DependentUpon>MaggiorazioniEBeneficiCi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\MaggiorazioniEBeneficiCi.aspx.designer.cs">
+      <DependentUpon>MaggiorazioniEBeneficiCi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneLiquidazioni.aspx.cs">
+      <DependentUpon>GestioneLiquidazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\GestioneLiquidazioni.aspx.designer.cs">
+      <DependentUpon>GestioneLiquidazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CodeUtils\CustomBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CodeUtils\CodeUtility.cs" />
+    <Compile Include="ElaborazionePosizione.aspx.cs">
+      <DependentUpon>ElaborazionePosizione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione.aspx.designer.cs">
+      <DependentUpon>ElaborazionePosizione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiContributiviAgo.aspx.cs">
+      <DependentUpon>DatiContributiviAgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiContributiviAgo.aspx.designer.cs">
+      <DependentUpon>DatiContributiviAgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiContributiviCi.aspx.cs">
+      <DependentUpon>DatiContributiviCi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiContributiviCi.aspx.designer.cs">
+      <DependentUpon>DatiContributiviCi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DelegatoTutore.aspx.cs">
+      <DependentUpon>DelegatoTutore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DelegatoTutore.aspx.designer.cs">
+      <DependentUpon>DelegatoTutore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\InvioCalcolo.aspx.cs">
+      <DependentUpon>InvioCalcolo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\InvioCalcolo.aspx.designer.cs">
+      <DependentUpon>InvioCalcolo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\LiquidazionePensioneAgo.aspx.cs">
+      <DependentUpon>LiquidazionePensioneAgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\LiquidazionePensioneAgo.aspx.designer.cs">
+      <DependentUpon>LiquidazionePensioneAgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Oneri.aspx.cs">
+      <DependentUpon>Oneri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Oneri.aspx.designer.cs">
+      <DependentUpon>Oneri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Periodi.aspx.cs">
+      <DependentUpon>Periodi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Periodi.aspx.designer.cs">
+      <DependentUpon>Periodi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\PresaInCarico.aspx.cs">
+      <DependentUpon>PresaInCarico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\PresaInCarico.aspx.designer.cs">
+      <DependentUpon>PresaInCarico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\MessaggiHermes.aspx.cs">
+      <DependentUpon>MessaggiHermes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\MessaggiHermes.aspx.designer.cs">
+      <DependentUpon>MessaggiHermes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltreFunzioni\MessaggiHermesEdit.aspx.cs">
+      <DependentUpon>MessaggiHermesEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltreFunzioni\MessaggiHermesEdit.aspx.designer.cs">
+      <DependentUpon>MessaggiHermesEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\RichiestaBonus.aspx.cs">
+      <DependentUpon>RichiestaBonus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\RichiestaBonus.aspx.designer.cs">
+      <DependentUpon>RichiestaBonus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\StampaFAQ.aspx.cs">
+      <DependentUpon>StampaFAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\StampaFAQ.aspx.designer.cs">
+      <DependentUpon>StampaFAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrepensionamentoArt37Legge416198LetteraB.aspx.cs">
+      <DependentUpon>PrepensionamentoArt37Legge416198LetteraB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrepensionamentoArt37Legge416198LetteraB.aspx.designer.cs">
+      <DependentUpon>PrepensionamentoArt37Legge416198LetteraB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Previsan.aspx.cs">
+      <DependentUpon>Previsan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Previsan.aspx.designer.cs">
+      <DependentUpon>Previsan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SceltaRuolo.aspx.cs">
+      <DependentUpon>SceltaRuolo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SceltaRuolo.aspx.designer.cs">
+      <DependentUpon>SceltaRuolo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Stampa.aspx.cs">
+      <DependentUpon>Stampa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Stampa.aspx.designer.cs">
+      <DependentUpon>Stampa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Supplementi.aspx.cs">
+      <DependentUpon>Supplementi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Supplementi.aspx.designer.cs">
+      <DependentUpon>Supplementi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DanteCausa.aspx.cs">
+      <DependentUpon>DanteCausa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DanteCausa.aspx.designer.cs">
+      <DependentUpon>DanteCausa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiContributivi.aspx.cs">
+      <DependentUpon>DatiContributivi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\DatiContributivi.aspx.designer.cs">
+      <DependentUpon>DatiContributivi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Detrazioni.aspx.cs">
+      <DependentUpon>Detrazioni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Detrazioni.aspx.designer.cs">
+      <DependentUpon>Detrazioni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Familiare.aspx.cs">
+      <DependentUpon>Familiare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Familiare.aspx.designer.cs">
+      <DependentUpon>Familiare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\MaggiorazioniEBenefici.aspx.cs">
+      <DependentUpon>MaggiorazioniEBenefici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\MaggiorazioniEBenefici.aspx.designer.cs">
+      <DependentUpon>MaggiorazioniEBenefici.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\ModalitaPagamento.aspx.cs">
+      <DependentUpon>ModalitaPagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\ModalitaPagamento.aspx.designer.cs">
+      <DependentUpon>ModalitaPagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\PosizioneSelezionata.aspx.cs">
+      <DependentUpon>PosizioneSelezionata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\PosizioneSelezionata.aspx.designer.cs">
+      <DependentUpon>PosizioneSelezionata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Redditi.aspx.cs">
+      <DependentUpon>Redditi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Redditi.aspx.designer.cs">
+      <DependentUpon>Redditi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\SindacatoPatronato.aspx.cs">
+      <DependentUpon>SindacatoPatronato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\SindacatoPatronato.aspx.designer.cs">
+      <DependentUpon>SindacatoPatronato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Liquidazione.Master.cs">
+      <DependentUpon>Liquidazione.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Liquidazione.Master.designer.cs">
+      <DependentUpon>Liquidazione.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\LiquidazionePensione.aspx.cs">
+      <DependentUpon>LiquidazionePensione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\LiquidazionePensione.aspx.designer.cs">
+      <DependentUpon>LiquidazionePensione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\LiquidazionePensioneCi.aspx.cs">
+      <DependentUpon>LiquidazionePensioneCi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\LiquidazionePensioneCi.aspx.designer.cs">
+      <DependentUpon>LiquidazionePensioneCi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcedureOperatore.Master.cs">
+      <DependentUpon>ProcedureOperatore.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcedureOperatore.Master.designer.cs">
+      <DependentUpon>ProcedureOperatore.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RisultatoRicercaElaborazione.aspx.cs">
+      <DependentUpon>RisultatoRicercaElaborazione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RisultatoRicercaElaborazione.aspx.designer.cs">
+      <DependentUpon>RisultatoRicercaElaborazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RisultatoVisualizzaStatoPratiche.aspx.cs">
+      <DependentUpon>RisultatoVisualizzaStatoPratiche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RisultatoVisualizzaStatoPratiche.aspx.designer.cs">
+      <DependentUpon>RisultatoVisualizzaStatoPratiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SceltaSede.aspx.cs">
+      <DependentUpon>SceltaSede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SceltaSede.aspx.designer.cs">
+      <DependentUpon>SceltaSede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Titolare.aspx.cs">
+      <DependentUpon>Titolare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElaborazionePosizione\Titolare.aspx.designer.cs">
+      <DependentUpon>Titolare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Scriwo.aspx.cs">
+      <DependentUpon>Scriwo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scriwo.aspx.designer.cs">
+      <DependentUpon>Scriwo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SistemaUnico.aspx.cs">
+      <DependentUpon>SistemaUnico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SistemaUnico.aspx.designer.cs">
+      <DependentUpon>SistemaUnico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrasmissioneECalcolo.aspx.cs">
+      <DependentUpon>TrasmissioneECalcolo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrasmissioneECalcolo.aspx.designer.cs">
+      <DependentUpon>TrasmissioneECalcolo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unicarpe.aspx.cs">
+      <DependentUpon>Unicarpe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unicarpe.aspx.designer.cs">
+      <DependentUpon>Unicarpe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreDomandeCollegate\UCAltreDomandeCollegate.ascx.cs">
+      <DependentUpon>UCAltreDomandeCollegate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreDomandeCollegate\UCAltreDomandeCollegate.ascx.designer.cs">
+      <DependentUpon>UCAltreDomandeCollegate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\Aggiornamento\UCAggiornamento.ascx.cs">
+      <DependentUpon>UCAggiornamento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\Aggiornamento\UCAggiornamento.ascx.designer.cs">
+      <DependentUpon>UCAggiornamento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\BypassControlli\UCBypassControlli.ascx.cs">
+      <DependentUpon>UCBypassControlli.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\BypassControlli\UCBypassControlli.ascx.designer.cs">
+      <DependentUpon>UCBypassControlli.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\BypassTipologieNonAbilitate\UCBypassTipologieNonAbilitate.ascx.cs">
+      <DependentUpon>UCBypassTipologieNonAbilitate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\BypassTipologieNonAbilitate\UCBypassTipologieNonAbilitate.ascx.designer.cs">
+      <DependentUpon>UCBypassTipologieNonAbilitate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioDataINDCOM\UCCambioDataINDCOM.ascx.cs">
+      <DependentUpon>UCCambioDataINDCOM.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioDataINDCOM\UCCambioDataINDCOM.ascx.designer.cs">
+      <DependentUpon>UCCambioDataINDCOM.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioDataPrepensionamentoLetteraB\UCCambioDataPrepensionamentoLetteraB.ascx.cs">
+      <DependentUpon>UCCambioDataPrepensionamentoLetteraB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioDataPrepensionamentoLetteraB\UCCambioDataPrepensionamentoLetteraB.ascx.designer.cs">
+      <DependentUpon>UCCambioDataPrepensionamentoLetteraB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioDataSistema\UCCambioDataSistema.ascx.cs">
+      <DependentUpon>UCCambioDataSistema.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioDataSistema\UCCambioDataSistema.ascx.designer.cs">
+      <DependentUpon>UCCambioDataSistema.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioStatoDomanda\UCCambioStatoDomanda.ascx.cs">
+      <DependentUpon>UCCambioStatoDomanda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\CambioStatoDomanda\UCCambioStatoDomanda.ascx.designer.cs">
+      <DependentUpon>UCCambioStatoDomanda.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiLetteraB\UCGestioneAziendeEditorialiLetteraB.ascx.cs">
+      <DependentUpon>UCGestioneAziendeEditorialiLetteraB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiLetteraB\UCGestioneAziendeEditorialiLetteraB.ascx.designer.cs">
+      <DependentUpon>UCGestioneAziendeEditorialiLetteraB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESOPMI\UCGestioneAziendeESOPMI.ascx.cs">
+      <DependentUpon>UCGestioneAziendeESOPMI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESOPMI\UCGestioneAziendeESOPMI.ascx.designer.cs">
+      <DependentUpon>UCGestioneAziendeESOPMI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESPA\UCGestioneAziendeESPA.ascx.cs">
+      <DependentUpon>UCGestioneAziendeESPA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESPA\UCGestioneAziendeESPA.ascx.designer.cs">
+      <DependentUpon>UCGestioneAziendeESPA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiPerTipo0179\UCGestioneAziendeEditorialiPerTipo0179.ascx.cs">
+      <DependentUpon>UCGestioneAziendeEditorialiPerTipo0179.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiPerTipo0179\UCGestioneAziendeEditorialiPerTipo0179.ascx.designer.cs">
+      <DependentUpon>UCGestioneAziendeEditorialiPerTipo0179.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESOAMB\UCAziendeESOAMB.ascx.cs">
+      <DependentUpon>UCAziendeESOAMB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESOAMB\UCAziendeESOAMB.ascx.designer.cs">
+      <DependentUpon>UCAziendeESOAMB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAbilitazioneServizi\UCAbilitazionePolarizzazioneENPALS.ascx.cs">
+      <DependentUpon>UCAbilitazionePolarizzazioneENPALS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAbilitazioneServizi\UCAbilitazionePolarizzazioneENPALS.ascx.designer.cs">
+      <DependentUpon>UCAbilitazionePolarizzazioneENPALS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiPerTipo0171\UCGestioneAziendeEditorialiPerTipo0171.ascx.cs">
+      <DependentUpon>UCGestioneAziendeEditorialiPerTipo0171.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditorialiPerTipo0171\UCGestioneAziendeEditorialiPerTipo0171.ascx.designer.cs">
+      <DependentUpon>UCGestioneAziendeEditorialiPerTipo0171.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditoriali\UCGestioneAziendeEditoriali.ascx.cs">
+      <DependentUpon>UCGestioneAziendeEditoriali.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeEditoriali\UCGestioneAziendeEditoriali.ascx.designer.cs">
+      <DependentUpon>UCGestioneAziendeEditoriali.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeCredito\UCAziendeCredito.ascx.cs">
+      <DependentUpon>UCAziendeCredito.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeCredito\UCAziendeCredito.ascx.designer.cs">
+      <DependentUpon>UCAziendeCredito.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAbilitazioneTrasformazioni\UCGestioneAbilTrasf.ascx.cs">
+      <DependentUpon>UCGestioneAbilTrasf.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAbilitazioneTrasformazioni\UCGestioneAbilTrasf.ascx.designer.cs">
+      <DependentUpon>UCGestioneAbilTrasf.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESOTRA\UCAziendeESOTRA.ascx.cs">
+      <DependentUpon>UCAziendeESOTRA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeESOTRA\UCAziendeESOTRA.ascx.designer.cs">
+      <DependentUpon>UCAziendeESOTRA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeVESO29\UCAziendeVESO29.ascx.cs">
+      <DependentUpon>UCAziendeVESO29.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeVESO29\UCAziendeVESO29.ascx.designer.cs">
+      <DependentUpon>UCAziendeVESO29.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeVESO33\UCAziendeVESO33.ascx.cs">
+      <DependentUpon>UCAziendeVESO33.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeVESO33\UCAziendeVESO33.ascx.designer.cs">
+      <DependentUpon>UCAziendeVESO33.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeVOESO\UCAziendeVOESO.ascx.cs">
+      <DependentUpon>UCAziendeVOESO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneAziendeVOESO\UCAziendeVOESO.ascx.designer.cs">
+      <DependentUpon>UCAziendeVOESO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneBancheFideiussione\UCGestioneBancheFideiussione.ascx.cs">
+      <DependentUpon>UCGestioneBancheFideiussione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneBancheFideiussione\UCGestioneBancheFideiussione.ascx.designer.cs">
+      <DependentUpon>UCGestioneBancheFideiussione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneLiquidazioni\UCLiquidazioni.ascx.cs">
+      <DependentUpon>UCLiquidazioni.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\GestioneLiquidazioni\UCLiquidazioni.ascx.designer.cs">
+      <DependentUpon>UCLiquidazioni.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\LavorazioneManualeAutomatiche\UCLavorazioneManualeAutomatiche.ascx.cs">
+      <DependentUpon>UCLavorazioneManualeAutomatiche.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\LavorazioneManualeAutomatiche\UCLavorazioneManualeAutomatiche.ascx.designer.cs">
+      <DependentUpon>UCLavorazioneManualeAutomatiche.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\Monitoraggio\UCMonitoraggio.ascx.cs">
+      <DependentUpon>UCMonitoraggio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\Monitoraggio\UCMonitoraggio.ascx.designer.cs">
+      <DependentUpon>UCMonitoraggio.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\ProvvisoriePerCoefficienti\UCProvvisoriePerCoefficienti.ascx.cs">
+      <DependentUpon>UCProvvisoriePerCoefficienti.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\ProvvisoriePerCoefficienti\UCProvvisoriePerCoefficienti.ascx.designer.cs">
+      <DependentUpon>UCProvvisoriePerCoefficienti.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\RiassegnazioneDomanda\UCRiassegnazioneDomanda.ascx.cs">
+      <DependentUpon>UCRiassegnazioneDomanda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\RiassegnazioneDomanda\UCRiassegnazioneDomanda.ascx.designer.cs">
+      <DependentUpon>UCRiassegnazioneDomanda.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\SbloccoCancellazione\UCSbloccoCancellazione.ascx.cs">
+      <DependentUpon>UCSbloccoCancellazione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\SbloccoCancellazione\UCSbloccoCancellazione.ascx.designer.cs">
+      <DependentUpon>UCSbloccoCancellazione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\SbloccoDomanda\UCSblocco.ascx.cs">
+      <DependentUpon>UCSblocco.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\SbloccoDomanda\UCSblocco.ascx.designer.cs">
+      <DependentUpon>UCSblocco.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\TipologieNonAbilitate\UCTipologieNonAbilitate.ascx.cs">
+      <DependentUpon>UCTipologieNonAbilitate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\TipologieNonAbilitate\UCTipologieNonAbilitate.ascx.designer.cs">
+      <DependentUpon>UCTipologieNonAbilitate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\PulisciDomanda\UCPulisciDomanda.ascx.cs">
+      <DependentUpon>UCPulisciDomanda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AltreFunzioni\PulisciDomanda\UCPulisciDomanda.ascx.designer.cs">
+      <DependentUpon>UCPulisciDomanda.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AventiDiritto\UCAventiDiritto.ascx.cs">
+      <DependentUpon>UCAventiDiritto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AventiDiritto\UCAventiDiritto.ascx.designer.cs">
+      <DependentUpon>UCAventiDiritto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Bititolarita\UCAltrePensioniAgo.ascx.cs">
+      <DependentUpon>UCAltrePensioniAgo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Bititolarita\UCAltrePensioniAgo.ascx.designer.cs">
+      <DependentUpon>UCAltrePensioniAgo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Bititolarita\UCAltrePensioniCi.ascx.cs">
+      <DependentUpon>UCAltrePensioniCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Bititolarita\UCAltrePensioniCi.ascx.designer.cs">
+      <DependentUpon>UCAltrePensioniCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CrossDatiFondoContr\UCDatiCalcolo707.ascx.cs">
+      <DependentUpon>UCDatiCalcolo707.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CrossDatiFondoContr\UCDatiCalcolo707.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcolo707.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CrossSuppLiqAgo\UCContribuzioneEnpals.ascx.cs">
+      <DependentUpon>UCContribuzioneEnpals.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CrossSuppLiqAgo\UCContribuzioneEnpals.ascx.designer.cs">
+      <DependentUpon>UCContribuzioneEnpals.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteSentenza49593.ascx.cs">
+      <DependentUpon>UCDanteSentenza49593.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteSentenza49593.ascx.designer.cs">
+      <DependentUpon>UCDanteSentenza49593.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteAltraPensioneDC.ascx.cs">
+      <DependentUpon>UCDanteAltraPensioneDC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteAltraPensioneDC.ascx.designer.cs">
+      <DependentUpon>UCDanteAltraPensioneDC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteAnagrafica.ascx.cs">
+      <DependentUpon>UCDanteAnagrafica.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteAnagrafica.ascx.designer.cs">
+      <DependentUpon>UCDanteAnagrafica.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteDatiPensioneCI.ascx.cs">
+      <DependentUpon>UCDanteDatiPensioneCI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDanteDatiPensioneCI.ascx.designer.cs">
+      <DependentUpon>UCDanteDatiPensioneCI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDantePensioneDiretta.ascx.cs">
+      <DependentUpon>UCDantePensioneDiretta.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanteCausa\UCDantePensioneDiretta.ascx.designer.cs">
+      <DependentUpon>UCDantePensioneDiretta.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloAgo.ascx.cs">
+      <DependentUpon>UCDatiCalcoloAgo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloAgo.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloAgo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloENPALS.ascx.cs">
+      <DependentUpon>UCDatiCalcoloENPALS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloENPALS.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloENPALS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloINPDAI.ascx.cs">
+      <DependentUpon>UCDatiCalcoloINPDAI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloINPDAI.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloINPDAI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloStoricoGP_AGO.ascx.cs">
+      <DependentUpon>UCDatiCalcoloStoricoGP_AGO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloStoricoGP_AGO.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloStoricoGP_AGO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloVittimeTerrorismo.ascx.cs">
+      <DependentUpon>UCDatiCalcoloVittimeTerrorismo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiCalcoloVittimeTerrorismo.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloVittimeTerrorismo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiEsteri.ascx.cs">
+      <DependentUpon>UCDatiEsteri.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCDatiEsteri.ascx.designer.cs">
+      <DependentUpon>UCDatiEsteri.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCQuotaFondoINPGI.ascx.cs">
+      <DependentUpon>UCQuotaFondoINPGI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCQuotaFondoINPGI.ascx.designer.cs">
+      <DependentUpon>UCQuotaFondoINPGI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCQuotaFondoIntegrativo.ascx.cs">
+      <DependentUpon>UCQuotaFondoIntegrativo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCQuotaFondoIntegrativo.ascx.designer.cs">
+      <DependentUpon>UCQuotaFondoIntegrativo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCMiglioramentiContrattuali.ascx.cs">
+      <DependentUpon>UCMiglioramentiContrattuali.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCMiglioramentiContrattuali.ascx.designer.cs">
+      <DependentUpon>UCMiglioramentiContrattuali.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCQuotePensione.ascx.cs">
+      <DependentUpon>UCQuotePensione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviAgo\UCQuotePensione.ascx.designer.cs">
+      <DependentUpon>UCQuotePensione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCDatiCalcoloCi.ascx.cs">
+      <DependentUpon>UCDatiCalcoloCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCDatiCalcoloCi.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCDatiPostDecOriginariaCi.ascx.cs">
+      <DependentUpon>UCDatiPostDecOriginariaCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCDatiPostDecOriginariaCi.ascx.designer.cs">
+      <DependentUpon>UCDatiPostDecOriginariaCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCImportiEsteriCi.ascx.cs">
+      <DependentUpon>UCImportiEsteriCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCImportiEsteriCi.ascx.designer.cs">
+      <DependentUpon>UCImportiEsteriCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCIntegrazioneVirtuale.ascx.cs">
+      <DependentUpon>UCIntegrazioneVirtuale.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCIntegrazioneVirtuale.ascx.designer.cs">
+      <DependentUpon>UCIntegrazioneVirtuale.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCMaternitaAcnaCi.ascx.cs">
+      <DependentUpon>UCMaternitaAcnaCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCMaternitaAcnaCi.ascx.designer.cs">
+      <DependentUpon>UCMaternitaAcnaCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCProrataCi.ascx.cs">
+      <DependentUpon>UCProrataCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributiviCi\UCProrataCi.ascx.designer.cs">
+      <DependentUpon>UCProrataCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCAnte67ES.ascx.cs">
+      <DependentUpon>UCAnte67ES.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCAnte67ES.ascx.designer.cs">
+      <DependentUpon>UCAnte67ES.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCArt11e14GAS_ES.ascx.cs">
+      <DependentUpon>UCArt11e14GAS_ES.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCArt11e14GAS_ES.ascx.designer.cs">
+      <DependentUpon>UCArt11e14GAS_ES.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiAgoAltraPensione_ET.ascx.cs">
+      <DependentUpon>UCDatiAgoAltraPensione_ET.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiAgoAltraPensione_ET.ascx.designer.cs">
+      <DependentUpon>UCDatiAgoAltraPensione_ET.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloDZ.ascx.cs">
+      <DependentUpon>UCDatiCalcoloDZ.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloDZ.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloDZ.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloEL_TT_ET.ascx.cs">
+      <DependentUpon>UCDatiCalcoloEL_TT_ET.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloEL_TT_ET.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloEL_TT_ET.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiAgoGAS_ES.ascx.cs">
+      <DependentUpon>UCDatiAgoGAS_ES.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiAgoGAS_ES.ascx.designer.cs">
+      <DependentUpon>UCDatiAgoGAS_ES.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloPI.ascx.cs">
+      <DependentUpon>UCDatiCalcoloPI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloPI.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloPI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloPM.ascx.cs">
+      <DependentUpon>UCDatiCalcoloPM.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloPM.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloPM.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloStoricoGP.ascx.cs">
+      <DependentUpon>UCDatiCalcoloStoricoGP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloStoricoGP.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloStoricoGP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloVL_FS_PT.ascx.cs">
+      <DependentUpon>UCDatiCalcoloVL_FS_PT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiCalcoloVL_FS_PT.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloVL_FS_PT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiFondoGAS_ES.ascx.cs">
+      <DependentUpon>UCDatiFondoGAS_ES.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDatiFondoGAS_ES.ascx.designer.cs">
+      <DependentUpon>UCDatiFondoGAS_ES.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDoppioCalcolo_ES_DZ_GAS_PM.ascx.cs">
+      <DependentUpon>UCDoppioCalcolo_ES_DZ_GAS_PM.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCDoppioCalcolo_ES_DZ_GAS_PM.ascx.designer.cs">
+      <DependentUpon>UCDoppioCalcolo_ES_DZ_GAS_PM.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCSL336_ES.ascx.cs">
+      <DependentUpon>UCSL336_ES.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCSL336_ES.ascx.designer.cs">
+      <DependentUpon>UCSL336_ES.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCTipoPensioneNonSelezionato.ascx.cs">
+      <DependentUpon>UCTipoPensioneNonSelezionato.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiContributivi\UCTipoPensioneNonSelezionato.ascx.designer.cs">
+      <DependentUpon>UCTipoPensioneNonSelezionato.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCArticolo2.ascx.cs">
+      <DependentUpon>UCArticolo2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCArticolo2.ascx.designer.cs">
+      <DependentUpon>UCArticolo2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDatiCalcolo.ascx.cs">
+      <DependentUpon>UCDatiCalcolo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDatiCalcolo.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcolo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDatiCalcoloDZ_New.ascx.cs">
+      <DependentUpon>UCDatiCalcoloDZ_New.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDatiCalcoloDZ_New.ascx.designer.cs">
+      <DependentUpon>UCDatiCalcoloDZ_New.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDatiFondo.ascx.cs">
+      <DependentUpon>UCDatiFondo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDatiFondo.ascx.designer.cs">
+      <DependentUpon>UCDatiFondo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDoppioCalcolo_DZ.ascx.cs">
+      <DependentUpon>UCDoppioCalcolo_DZ.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCDoppioCalcolo_DZ.ascx.designer.cs">
+      <DependentUpon>UCDoppioCalcolo_DZ.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCLegge460.ascx.cs">
+      <DependentUpon>UCLegge460.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCLegge460.ascx.designer.cs">
+      <DependentUpon>UCLegge460.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCPrivilegiate.ascx.cs">
+      <DependentUpon>UCPrivilegiate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCPrivilegiate.ascx.designer.cs">
+      <DependentUpon>UCPrivilegiate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCRegistrazioniFondo.ascx.cs">
+      <DependentUpon>UCRegistrazioniFondo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiFondo\UCRegistrazioniFondo.ascx.designer.cs">
+      <DependentUpon>UCRegistrazioniFondo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiNoCalcolo\UCDatiNoCalcolo.ascx.cs">
+      <DependentUpon>UCDatiNoCalcolo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiNoCalcolo\UCDatiNoCalcolo.ascx.designer.cs">
+      <DependentUpon>UCDatiNoCalcolo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatiNoCalcolo\UCRecordDatiNoCalcolo.ascx.cs">
+      <DependentUpon>UCRecordDatiNoCalcolo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatiNoCalcolo\UCRecordDatiNoCalcolo.ascx.designer.cs">
+      <DependentUpon>UCRecordDatiNoCalcolo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DelegatoTutore\UCDelegato.ascx.cs">
+      <DependentUpon>UCDelegato.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DelegatoTutore\UCDelegato.ascx.designer.cs">
+      <DependentUpon>UCDelegato.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DelegatoTutore\UCTutore.ascx.cs">
+      <DependentUpon>UCTutore.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DelegatoTutore\UCTutore.ascx.designer.cs">
+      <DependentUpon>UCTutore.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Detrazioni\UCDetrazioni.ascx.cs">
+      <DependentUpon>UCDetrazioni.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Detrazioni\UCDetrazioni.ascx.designer.cs">
+      <DependentUpon>UCDetrazioni.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Eliminazione\UCEliminazione.ascx.cs">
+      <DependentUpon>UCEliminazione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Eliminazione\UCEliminazione.ascx.designer.cs">
+      <DependentUpon>UCEliminazione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Familiari\UCFamiliari.ascx.cs">
+      <DependentUpon>UCFamiliari.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Familiari\UCFamiliari.ascx.designer.cs">
+      <DependentUpon>UCFamiliari.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCDatiAssicurativi.ascx.cs">
+      <DependentUpon>UCDatiAssicurativi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCDatiAssicurativi.ascx.designer.cs">
+      <DependentUpon>UCDatiAssicurativi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCDatiGenerici.ascx.cs">
+      <DependentUpon>UCDatiGenerici.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCDatiGenerici.ascx.designer.cs">
+      <DependentUpon>UCDatiGenerici.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCInail.ascx.cs">
+      <DependentUpon>UCInail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCInail.ascx.designer.cs">
+      <DependentUpon>UCInail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCIstruttoria.ascx.cs">
+      <DependentUpon>UCIstruttoria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCIstruttoria.ascx.designer.cs">
+      <DependentUpon>UCIstruttoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCLiquidazionePensioneStorico_AGO.ascx.cs">
+      <DependentUpon>UCLiquidazionePensioneStorico_AGO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCLiquidazionePensioneStorico_AGO.ascx.designer.cs">
+      <DependentUpon>UCLiquidazionePensioneStorico_AGO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCOpzione.ascx.cs">
+      <DependentUpon>UCOpzione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCOpzione.ascx.designer.cs">
+      <DependentUpon>UCOpzione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCPrecedentePensione.ascx.cs">
+      <DependentUpon>UCPrecedentePensione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCPrecedentePensione.ascx.designer.cs">
+      <DependentUpon>UCPrecedentePensione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCSentenzaArt4.ascx.cs">
+      <DependentUpon>UCSentenzaArt4.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCSentenzaArt4.ascx.designer.cs">
+      <DependentUpon>UCSentenzaArt4.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCSentenze.ascx.cs">
+      <DependentUpon>UCSentenze.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneAgo\UCSentenze.ascx.designer.cs">
+      <DependentUpon>UCSentenze.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCDatiAssicurativiCi.ascx.cs">
+      <DependentUpon>UCDatiAssicurativiCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCDatiAssicurativiCi.ascx.designer.cs">
+      <DependentUpon>UCDatiAssicurativiCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCDatiGenerici.ascx.cs">
+      <DependentUpon>UCDatiGenerici.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCDatiGenerici.ascx.designer.cs">
+      <DependentUpon>UCDatiGenerici.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCInailCi.ascx.cs">
+      <DependentUpon>UCInailCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCInailCi.ascx.designer.cs">
+      <DependentUpon>UCInailCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCIstruttoriaCi.ascx.cs">
+      <DependentUpon>UCIstruttoriaCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCIstruttoriaCi.ascx.designer.cs">
+      <DependentUpon>UCIstruttoriaCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCOpzioneCi.ascx.cs">
+      <DependentUpon>UCOpzioneCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCOpzioneCi.ascx.designer.cs">
+      <DependentUpon>UCOpzioneCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCPrecedentePensioneCi.ascx.cs">
+      <DependentUpon>UCPrecedentePensioneCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensioneCi\UCPrecedentePensioneCi.ascx.designer.cs">
+      <DependentUpon>UCPrecedentePensioneCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCBititolaritaINAIL.ascx.cs">
+      <DependentUpon>UCBititolaritaINAIL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCBititolaritaINAIL.ascx.designer.cs">
+      <DependentUpon>UCBititolaritaINAIL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiDZ_ES_PM.ascx.cs">
+      <DependentUpon>UCDatiAssicurativiDZ_ES_PM.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiDZ_ES_PM.ascx.designer.cs">
+      <DependentUpon>UCDatiAssicurativiDZ_ES_PM.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiEL_TT_ET.ascx.cs">
+      <DependentUpon>UCDatiAssicurativiEL_TT_ET.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiEL_TT_ET.ascx.designer.cs">
+      <DependentUpon>UCDatiAssicurativiEL_TT_ET.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiINPDAP.ascx.cs">
+      <DependentUpon>UCDatiAssicurativiINPDAP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiINPDAP.ascx.designer.cs">
+      <DependentUpon>UCDatiAssicurativiINPDAP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiPI_GAS_CL.ascx.cs">
+      <DependentUpon>UCDatiAssicurativiPI_GAS_CL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiPI_GAS_CL.ascx.designer.cs">
+      <DependentUpon>UCDatiAssicurativiPI_GAS_CL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiVL_FS_PT.ascx.cs">
+      <DependentUpon>UCDatiAssicurativiVL_FS_PT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiAssicurativiVL_FS_PT.ascx.designer.cs">
+      <DependentUpon>UCDatiAssicurativiVL_FS_PT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiDZ_ES_PM.ascx.cs">
+      <DependentUpon>UCDatiGenericiDZ_ES_PM.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiDZ_ES_PM.ascx.designer.cs">
+      <DependentUpon>UCDatiGenericiDZ_ES_PM.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiEL_TT_ET.ascx.cs">
+      <DependentUpon>UCDatiGenericiEL_TT_ET.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiEL_TT_ET.ascx.designer.cs">
+      <DependentUpon>UCDatiGenericiEL_TT_ET.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiINPDAP.ascx.cs">
+      <DependentUpon>UCDatiGenericiINPDAP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiINPDAP.ascx.designer.cs">
+      <DependentUpon>UCDatiGenericiINPDAP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiPI_GAS_CL.ascx.cs">
+      <DependentUpon>UCDatiGenericiPI_GAS_CL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiPI_GAS_CL.ascx.designer.cs">
+      <DependentUpon>UCDatiGenericiPI_GAS_CL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiVL_FS_PT.ascx.cs">
+      <DependentUpon>UCDatiGenericiVL_FS_PT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCDatiGenericiVL_FS_PT.ascx.designer.cs">
+      <DependentUpon>UCDatiGenericiVL_FS_PT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCLiquidazionePensioneStorico.ascx.cs">
+      <DependentUpon>UCLiquidazionePensioneStorico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCLiquidazionePensioneStorico.ascx.designer.cs">
+      <DependentUpon>UCLiquidazionePensioneStorico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCIstruttoria.ascx.cs">
+      <DependentUpon>UCIstruttoria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCIstruttoria.ascx.designer.cs">
+      <DependentUpon>UCIstruttoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCLegge460.ascx.cs">
+      <DependentUpon>UCLegge460.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCLegge460.ascx.designer.cs">
+      <DependentUpon>UCLegge460.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCOpzione.ascx.cs">
+      <DependentUpon>UCOpzione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCOpzione.ascx.designer.cs">
+      <DependentUpon>UCOpzione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCPrecedentePensione.ascx.cs">
+      <DependentUpon>UCPrecedentePensione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LiquidazionePensione\UCPrecedentePensione.ascx.designer.cs">
+      <DependentUpon>UCPrecedentePensione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCBenefici.ascx.cs">
+      <DependentUpon>UCBenefici.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCBenefici.ascx.designer.cs">
+      <DependentUpon>UCBenefici.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCExCombattente.ascx.cs">
+      <DependentUpon>UCExCombattente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCExCombattente.ascx.designer.cs">
+      <DependentUpon>UCExCombattente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCMaggiorazioni.ascx.cs">
+      <DependentUpon>UCMaggiorazioni.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCMaggiorazioni.ascx.designer.cs">
+      <DependentUpon>UCMaggiorazioni.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCVittime.ascx.cs">
+      <DependentUpon>UCVittime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiAgo\UCVittime.ascx.designer.cs">
+      <DependentUpon>UCVittime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCBenefici.ascx.cs">
+      <DependentUpon>UCBenefici.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCBenefici.ascx.designer.cs">
+      <DependentUpon>UCBenefici.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCExCombattente.ascx.cs">
+      <DependentUpon>UCExCombattente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCExCombattente.ascx.designer.cs">
+      <DependentUpon>UCExCombattente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCMaggiorazioni.ascx.cs">
+      <DependentUpon>UCMaggiorazioni.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCMaggiorazioni.ascx.designer.cs">
+      <DependentUpon>UCMaggiorazioni.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCVittimeCi.ascx.cs">
+      <DependentUpon>UCVittimeCi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBeneficiCi\UCVittimeCi.ascx.designer.cs">
+      <DependentUpon>UCVittimeCi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCArticolo2.ascx.cs">
+      <DependentUpon>UCArticolo2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCArticolo2.ascx.designer.cs">
+      <DependentUpon>UCArticolo2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCBenefici.ascx.cs">
+      <DependentUpon>UCBenefici.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCBenefici.ascx.designer.cs">
+      <DependentUpon>UCBenefici.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCExCombattente.ascx.cs">
+      <DependentUpon>UCExCombattente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCExCombattente.ascx.designer.cs">
+      <DependentUpon>UCExCombattente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCLegge407.ascx.cs">
+      <DependentUpon>UCLegge407.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCLegge407.ascx.designer.cs">
+      <DependentUpon>UCLegge407.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCPrivilegiate.ascx.cs">
+      <DependentUpon>UCPrivilegiate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCPrivilegiate.ascx.designer.cs">
+      <DependentUpon>UCPrivilegiate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCVittimeFS.ascx.cs">
+      <DependentUpon>UCVittimeFS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MaggiorazioniEBenefici\UCVittimeFS.ascx.designer.cs">
+      <DependentUpon>UCVittimeFS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ModalitaPagamento\UCPagamento.ascx.cs">
+      <DependentUpon>UCPagamento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ModalitaPagamento\UCPagamento.ascx.designer.cs">
+      <DependentUpon>UCPagamento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Oneri\UCOneri.ascx.cs">
+      <DependentUpon>UCOneri.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Oneri\UCOneri.ascx.designer.cs">
+      <DependentUpon>UCOneri.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Oneri\UCOneriStoricoGP.ascx.cs">
+      <DependentUpon>UCOneriStoricoGP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Oneri\UCOneriStoricoGP.ascx.designer.cs">
+      <DependentUpon>UCOneriStoricoGP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Oneri\UCPrepensionamento.ascx.cs">
+      <DependentUpon>UCPrepensionamento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Oneri\UCPrepensionamento.ascx.designer.cs">
+      <DependentUpon>UCPrepensionamento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Periodi\UCPeriodi.ascx.cs">
+      <DependentUpon>UCPeriodi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Periodi\UCPeriodi.ascx.designer.cs">
+      <DependentUpon>UCPeriodi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Redditi\UCRedditi.ascx.cs">
+      <DependentUpon>UCRedditi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Redditi\UCRedditi.ascx.designer.cs">
+      <DependentUpon>UCRedditi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RichiestaBonus\UCEsitoPrenotazione.ascx.cs">
+      <DependentUpon>UCEsitoPrenotazione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RichiestaBonus\UCEsitoPrenotazione.ascx.designer.cs">
+      <DependentUpon>UCEsitoPrenotazione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RichiestaBonus\UCRichiestaBonus.ascx.cs">
+      <DependentUpon>UCRichiestaBonus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RichiestaBonus\UCRichiestaBonus.ascx.designer.cs">
+      <DependentUpon>UCRichiestaBonus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RisultatoRicerca\UCRisultatoRicerca.ascx.cs">
+      <DependentUpon>UCRisultatoRicerca.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RisultatoRicerca\UCRisultatoRicerca.ascx.designer.cs">
+      <DependentUpon>UCRisultatoRicerca.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RisultatoRicerca\UCSinonimi.ascx.cs">
+      <DependentUpon>UCSinonimi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RisultatoRicerca\UCSinonimi.ascx.designer.cs">
+      <DependentUpon>UCSinonimi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SindacatoPatronato\UCPatronato.ascx.cs">
+      <DependentUpon>UCPatronato.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SindacatoPatronato\UCPatronato.ascx.designer.cs">
+      <DependentUpon>UCPatronato.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SindacatoPatronato\UCSindacato.ascx.cs">
+      <DependentUpon>UCSindacato.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SindacatoPatronato\UCSindacato.ascx.designer.cs">
+      <DependentUpon>UCSindacato.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementi.ascx.cs">
+      <DependentUpon>UCSupplementi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementi.ascx.designer.cs">
+      <DependentUpon>UCSupplementi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiAgoCI.ascx.cs">
+      <DependentUpon>UCSupplementiAgoCI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiAgoCI.ascx.designer.cs">
+      <DependentUpon>UCSupplementiAgoCI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiCumulo.ascx.cs">
+      <DependentUpon>UCSupplementiCumulo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiCumulo.ascx.designer.cs">
+      <DependentUpon>UCSupplementiCumulo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiCumuloStorico.ascx.cs">
+      <DependentUpon>UCSupplementiCumuloStorico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiCumuloStorico.ascx.designer.cs">
+      <DependentUpon>UCSupplementiCumuloStorico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiENPALS.ascx.cs">
+      <DependentUpon>UCSupplementiENPALS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Supplementi\UCSupplementiENPALS.ascx.designer.cs">
+      <DependentUpon>UCSupplementiENPALS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCAnagrafica.ascx.cs">
+      <DependentUpon>UCAnagrafica.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCAnagrafica.ascx.designer.cs">
+      <DependentUpon>UCAnagrafica.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCAnagraficaRIC.ascx.cs">
+      <DependentUpon>UCAnagraficaRIC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCAnagraficaRIC.ascx.designer.cs">
+      <DependentUpon>UCAnagraficaRIC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCResidenzeEstere.ascx.cs">
+      <DependentUpon>UCResidenzeEstere.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCResidenzeEstere.ascx.designer.cs">
+      <DependentUpon>UCResidenzeEstere.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCStatoCivile.ascx.cs">
+      <DependentUpon>UCStatoCivile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Titolare\UCStatoCivile.ascx.designer.cs">
+      <DependentUpon>UCStatoCivile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAggiornamentiHomePage.ascx.cs">
+      <DependentUpon>UCAggiornamentiHomePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAggiornamentiHomePage.ascx.designer.cs">
+      <DependentUpon>UCAggiornamentiHomePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAvvisiHomePage.ascx.cs">
+      <DependentUpon>UCAvvisiHomePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAvvisiHomePage.ascx.designer.cs">
+      <DependentUpon>UCAvvisiHomePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAvviso.ascx.cs">
+      <DependentUpon>UCAvviso.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAvviso.ascx.designer.cs">
+      <DependentUpon>UCAvviso.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCChangeRuolo.ascx.cs">
+      <DependentUpon>UCChangeRuolo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCChangeRuolo.ascx.designer.cs">
+      <DependentUpon>UCChangeRuolo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCChangeSede.ascx.cs">
+      <DependentUpon>UCChangeSede.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCChangeSede.ascx.designer.cs">
+      <DependentUpon>UCChangeSede.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCInfo.ascx.cs">
+      <DependentUpon>UCInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCInfo.ascx.designer.cs">
+      <DependentUpon>UCInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCIntestazione.ascx.cs">
+      <DependentUpon>UCIntestazione.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCIntestazione.ascx.designer.cs">
+      <DependentUpon>UCIntestazione.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMenuLeft.ascx.cs">
+      <DependentUpon>UCMenuLeft.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMenuLeft.ascx.designer.cs">
+      <DependentUpon>UCMenuLeft.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMenuLeftAltreFunzioni.ascx.cs">
+      <DependentUpon>UCMenuLeftAltreFunzioni.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMenuLeftAltreFunzioni.ascx.designer.cs">
+      <DependentUpon>UCMenuLeftAltreFunzioni.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMenuLeftProcedureOperatore.ascx.cs">
+      <DependentUpon>UCMenuLeftProcedureOperatore.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMenuLeftProcedureOperatore.ascx.designer.cs">
+      <DependentUpon>UCMenuLeftProcedureOperatore.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMessaggiHermesHomePage.ascx.cs">
+      <DependentUpon>UCMessaggiHermesHomePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMessaggiHermesHomePage.ascx.designer.cs">
+      <DependentUpon>UCMessaggiHermesHomePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCTestata.ascx.cs">
+      <DependentUpon>UCTestata.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCTestata.ascx.designer.cs">
+      <DependentUpon>UCTestata.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VisualizzaStatoPratiche\UCStatoPratiche.ascx.cs">
+      <DependentUpon>UCStatoPratiche.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\VisualizzaStatoPratiche\UCStatoPratiche.ascx.designer.cs">
+      <DependentUpon>UCStatoPratiche.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VisualizzaStatoPratiche\UCVisualizzaStatoPratiche.ascx.cs">
+      <DependentUpon>UCVisualizzaStatoPratiche.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\VisualizzaStatoPratiche\UCVisualizzaStatoPratiche.ascx.designer.cs">
+      <DependentUpon>UCVisualizzaStatoPratiche.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UtilitySistema.aspx.cs">
+      <DependentUpon>UtilitySistema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UtilitySistema.aspx.designer.cs">
+      <DependentUpon>UtilitySistema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizzazioneStatoPratiche.aspx.cs">
+      <DependentUpon>VisualizzazioneStatoPratiche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisualizzazioneStatoPratiche.aspx.designer.cs">
+      <DependentUpon>VisualizzazioneStatoPratiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebDom.aspx.cs">
+      <DependentUpon>WebDom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebDom.aspx.designer.cs">
+      <DependentUpon>WebDom.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\BlueINPS1\UC1.skin" />
+    <Content Include="Javascript\diQuery-collapsiblePanel.js" />
+    <Content Include="Javascript\hoverIntent.js" />
+    <Content Include="Javascript\jquery-1.4.2.min.js" />
+    <Content Include="Javascript\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="Javascript\jquery.datepick-it.js" />
+    <Content Include="Javascript\jquery.maskedinput-1.2.2.min.js" />
+    <Content Include="Javascript\jquery.maskMoney.0.2.js" />
+    <Content Include="Javascript\superfish.1.4.1.js" />
+    <Content Include="Javascript\supposition.js" />
+    <Content Include="Javascript\validate2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ElaborazionePosizione\Liquidazione.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IdmSimulator.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\BlueINPS1\Images\arancione.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\arancione_small.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\arancione_tab.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\calendar.gif" />
+    <Content Include="App_Themes\BlueINPS1\Images\rosso.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\rosso_small.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\rosso_tab.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\verde.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\verde_small.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\verde_tab.png" />
+    <Content Include="CHGTEST_Web.config" />
+    <Content Include="ElaborazionePosizione\DatiContributivi.aspx" />
+    <Content Include="Javascript\redmond\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Javascript\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Javascript\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Javascript\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Javascript\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Javascript\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Javascript\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Javascript\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Javascript\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Javascript\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Javascript\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Javascript\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Javascript\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Javascript\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Javascript\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Javascript\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Javascript\redmond\jquery-ui-1.8.2.custom.css" />
+    <Content Include="ElaborazionePosizione\LiquidazionePensione.aspx" />
+    <Content Include="SceltaSede.aspx" />
+    <Content Include="ElaborazionePosizione\Titolare.aspx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiAssicurativiEL_TT_ET.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiGenericiEL_TT_ET.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCIstruttoria.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCOpzione.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCPrecedentePensione.ascx" />
+    <Content Include="UserControls\Titolare\UCAnagrafica.ascx" />
+    <Content Include="UserControls\Titolare\UCResidenzeEstere.ascx" />
+    <Content Include="UserControls\Titolare\UCStatoCivile.ascx" />
+    <Content Include="UserControls\UCAvviso.ascx" />
+    <Content Include="UserControls\UCChangeSede.ascx" />
+    <Content Include="UserControls\UCInfo.ascx" />
+    <Content Include="UserControls\UCIntestazione.ascx" />
+    <Content Include="UserControls\UCMenuLeft.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\BlueINPS1\Images\arrow-right2.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\calendar1.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\down.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\engine.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\ico_asc.bmp" />
+    <Content Include="App_Themes\BlueINPS1\Images\ico_desc.bmp" />
+    <Content Include="App_Themes\BlueINPS1\Images\info.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\info_tab.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\search.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\search24.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\up.png" />
+    <Content Include="ElaborazionePosizione.aspx" />
+    <Content Include="ElaborazionePosizione\DatiContributiviAgo.aspx" />
+    <Content Include="ElaborazionePosizione\DatiContributiviCi.aspx" />
+    <Content Include="ElaborazionePosizione\DelegatoTutore.aspx" />
+    <Content Include="ElaborazionePosizione\InvioCalcolo.aspx" />
+    <Content Include="ElaborazionePosizione\LiquidazionePensioneAgo.aspx" />
+    <Content Include="ElaborazionePosizione\Stampa.aspx" />
+    <Content Include="ElaborazionePosizione\Supplementi.aspx" />
+    <Content Include="ElaborazionePosizione\DanteCausa.aspx" />
+    <Content Include="ElaborazionePosizione\Detrazioni.aspx" />
+    <Content Include="ElaborazionePosizione\Familiare.aspx" />
+    <Content Include="ElaborazionePosizione\MaggiorazioniEBenefici.aspx" />
+    <Content Include="ElaborazionePosizione\ModalitaPagamento.aspx" />
+    <Content Include="ElaborazionePosizione\PosizioneSelezionata.aspx" />
+    <Content Include="ElaborazionePosizione\Redditi.aspx" />
+    <Content Include="ElaborazionePosizione\SindacatoPatronato.aspx" />
+    <Content Include="Javascript\jquery.blockUI.js" />
+    <Content Include="Javascript\Utility.js" />
+    <Content Include="ElaborazionePosizione\LiquidazionePensioneCi.aspx" />
+    <Content Include="ProcedureOperatore.Master" />
+    <Content Include="RisultatoRicercaElaborazione.aspx" />
+    <Content Include="RisultatoVisualizzaStatoPratiche.aspx" />
+    <Content Include="TrasmissioneECalcolo.aspx" />
+    <Content Include="UserControls\DanteCausa\UCDanteAltraPensioneDC.ascx" />
+    <Content Include="UserControls\DanteCausa\UCDanteAnagrafica.ascx" />
+    <Content Include="UserControls\DanteCausa\UCDanteDatiPensioneCI.ascx" />
+    <Content Include="UserControls\DanteCausa\UCDantePensioneDiretta.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCDatiCalcoloAgo.ascx" />
+    <Content Include="UserControls\DatiContributiviCi\UCDatiCalcoloCi.ascx" />
+    <Content Include="UserControls\DatiContributiviCi\UCImportiEsteriCi.ascx" />
+    <Content Include="UserControls\DatiContributiviCi\UCMaternitaAcnaCi.ascx" />
+    <Content Include="UserControls\DatiContributiviCi\UCProrataCi.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiCalcoloEL_TT_ET.ascx" />
+    <Content Include="UserControls\DelegatoTutore\UCDelegato.ascx" />
+    <Content Include="UserControls\DelegatoTutore\UCTutore.ascx" />
+    <Content Include="UserControls\Detrazioni\UCDetrazioni.ascx" />
+    <Content Include="UserControls\Familiari\UCFamiliari.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCDatiAssicurativi.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCDatiGenerici.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCIstruttoria.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCOpzione.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCPrecedentePensione.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneCi\UCDatiAssicurativiCi.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneCi\UCDatiGenerici.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneCi\UCIstruttoriaCi.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneCi\UCOpzioneCi.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneCi\UCPrecedentePensioneCi.ascx" />
+    <Content Include="UserControls\ModalitaPagamento\UCPagamento.ascx" />
+    <Content Include="UserControls\Redditi\UCRedditi.ascx" />
+    <Content Include="UserControls\RisultatoRicerca\UCRisultatoRicerca.ascx" />
+    <Content Include="UserControls\RisultatoRicerca\UCSinonimi.ascx" />
+    <Content Include="UserControls\SindacatoPatronato\UCPatronato.ascx" />
+    <Content Include="UserControls\SindacatoPatronato\UCSindacato.ascx" />
+    <Content Include="UserControls\Supplementi\UCSupplementi.ascx" />
+    <Content Include="UserControls\UCMenuLeftProcedureOperatore.ascx" />
+    <Content Include="UserControls\VisualizzaStatoPratiche\UCStatoPratiche.ascx" />
+    <Content Include="UserControls\VisualizzaStatoPratiche\UCVisualizzaStatoPratiche.ascx" />
+    <Content Include="VisualizzazioneStatoPratiche.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHGCOLL_Web.config" />
+    <Content Include="UserControls\LiquidazionePensione\UCBititolaritaINAIL.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\BlueINPS1\Images\Clock.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\exit.png" />
+    <Content Include="App_Themes\BlueINPS1\StyleTabs.css" />
+    <Content Include="Courtesy.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaFelpe.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaWebDom.aspx" />
+    <Content Include="ElaborazionePosizione\MaggiorazioniEBeneficiAgo.aspx" />
+    <Content Include="ElaborazionePosizione\MaggiorazioniEBeneficiCi.aspx" />
+    <Content Include="AltreFunzioni\GestioneLiquidazioni.aspx" />
+    <Content Include="CHGESERCIZIO_Web.config" />
+    <Content Include="UserControls\AltreFunzioni\GestioneLiquidazioni\UCLiquidazioni.ascx" />
+    <Content Include="UserControls\DanteCausa\UCDanteSentenza49593.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiCalcoloVL_FS_PT.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCTipoPensioneNonSelezionato.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiAssicurativiPI_GAS_CL.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiAssicurativiVL_FS_PT.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiGenericiPI_GAS_CL.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCDatiGenericiVL_FS_PT.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiAgo\UCBenefici.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiAgo\UCExCombattente.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiAgo\UCMaggiorazioni.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiCi\UCBenefici.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiCi\UCExCombattente.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBenefici\UCArticolo2.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBenefici\UCBenefici.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBenefici\UCExCombattente.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBenefici\UCLegge407.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBenefici\UCPrivilegiate.ascx" />
+    <Content Include="UserControls\Supplementi\UCSupplementiAgoCI.ascx" />
+    <Content Include="UserControls\Titolare\UCAnagraficaRIC.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AltreFunzioni\AltreFunzioni.Master" />
+    <Content Include="AltreFunzioni\Monitoraggio.aspx" />
+    <Content Include="AltreFunzioni\RiassegnazioneDomanda.aspx" />
+    <Content Include="AltreFunzioni\SbloccoDomanda.aspx" />
+    <Content Include="AltreFunzioni\TipologieNonAbilitate.aspx" />
+    <Content Include="AltreFunzioni\VisualizzaReport.aspx" />
+    <Content Include="App_Themes\BlueINPS1\Images\book.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\detail.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\footerbck2.jpg" />
+    <Content Include="App_Themes\BlueINPS1\Images\intranet_down_back.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\lucchetto.jpg" />
+    <Content Include="App_Themes\BlueINPS1\Images\mail.png" />
+    <Content Include="App_Themes\BlueINPS1\Images\reportTorta.jpg" />
+    <Content Include="App_Themes\BlueINPS1\Images\users.png" />
+    <Content Include="ConfermaAcquisizione.aspx" />
+    <Content Include="ElaborazionePosizione\AggiornaOneri.aspx" />
+    <Content Include="ElaborazionePosizione\Bititolarita.aspx" />
+    <Content Include="ElaborazionePosizione\PresaInCarico.aspx" />
+    <Content Include="SceltaRuolo.aspx" />
+    <Content Include="Unicarpe.aspx" />
+    <Content Include="UserControls\AltreFunzioni\Monitoraggio\UCMonitoraggio.ascx" />
+    <Content Include="UserControls\AltreFunzioni\RiassegnazioneDomanda\UCRiassegnazioneDomanda.ascx" />
+    <Content Include="UserControls\AltreFunzioni\SbloccoDomanda\UCSblocco.ascx" />
+    <Content Include="UserControls\AltreFunzioni\TipologieNonAbilitate\UCTipologieNonAbilitate.ascx" />
+    <Content Include="UserControls\Bititolarita\UCAltrePensioniAgo.ascx" />
+    <Content Include="UserControls\Bititolarita\UCAltrePensioniCi.ascx" />
+    <Content Include="UserControls\DatiContributiviAgo\UCDatiCalcoloENPALS.ascx" />
+    <Content Include="UserControls\DatiContributiviCi\UCDatiPostDecOriginariaCi.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCArt11e14GAS_ES.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiAgoGAS_ES.ascx" />
+    <Content Include="UserControls\DatiContributivi\UCDatiFondoGAS_ES.ascx" />
+    <Content Include="UserControls\LiquidazionePensioneAgo\UCInail.ascx" />
+    <Content Include="UserControls\LiquidazionePensione\UCLegge460.ascx" />
+    <Content Include="UserControls\MaggiorazioniEBeneficiCi\UCMaggiorazioni.ascx" />
+    <Content Include="UserControls\UCChangeRuolo.ascx" />
+    <Content Include="UserControls\UCMenuLeftAltreFunzioni.ascx" />
+    <Content Include="UserControls\UCTestata.ascx" />
+    <Content Include="UtilitySistema.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\SistemaUnico\UC1.skin" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\brands.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\fontawesome.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\regular.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\solid.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\v4-shims.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_animated.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_core.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_icons.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_larger.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_list.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_mixins.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_shims.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_stacked.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\scss\_variables.scss" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="App_Themes\SistemaUnico\font-awesome\webfonts\fa-solid-900.woff2" />
+    <None Include="Manuali\Manuale_AGO.pdf" />
+    <None Include="Manuali\Manuale_CI.pdf" />
+    <None Include="Manuali\Manuale_FS.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiquidazionePensioniFS.Presenter\INPS.Pensioni.LiquidazionePensione.Presenter.csproj">
+      <Project>{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}</Project>
+      <Name>INPS.Pensioni.LiquidazionePensione.Presenter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1074</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/INPS.Pensioni.LiquidazionePensione.View.Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

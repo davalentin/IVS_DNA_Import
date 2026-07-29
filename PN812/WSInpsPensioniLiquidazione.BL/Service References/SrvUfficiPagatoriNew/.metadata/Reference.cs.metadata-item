@@ -1,0 +1,13 @@
+version=10.2
+item-uid=100026393
+file-version=1
+checksum=2ec52a10ab5c759a9951ab1776584a19
+fetch-size=34236
+mtime=1570689117
+item-spec=504E3831323A5245464552454E43452043532D313838393533383037302E412D5352433B31
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=WSInpsPensioniLiquidazione.BL/Service References/SrvUfficiPagatoriNew/Reference.cs
+project=504E3831323A53315F5753494E505350454E53494F4E494C4951554944415A494F4E45
+project-uid=43036098

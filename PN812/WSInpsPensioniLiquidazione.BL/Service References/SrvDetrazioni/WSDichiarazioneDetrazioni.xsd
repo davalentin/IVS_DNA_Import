@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema">
+  <s:element name="RicercaDatiMese_2">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCodProd" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscale" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sAnnofisc" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sMeseFiscaleRichiesto" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RicercaDatiMese_2Response">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RicercaDatiMese_2Result" type="tns:csDetrazioneMese_2" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="csDetrazioneMese_2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Risposta_2" type="tns:csDetrazioneTracciatoXMese_2" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:csEsito" />
+      <s:element minOccurs="0" maxOccurs="1" name="Procedura" type="tns:csProcedura" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csDetrazioneTracciatoXMese_2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sMessaggioRisposta" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodFiscaleFornito" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sAnnoFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMese" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodDetrazMeseRichiesto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataPresentazioneDichiarazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDecorrenzaDirittoDetrazioni" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Coniuge" type="tns:csConiuge" />
+      <s:element minOccurs="0" maxOccurs="1" name="PrimoFiglio" type="tns:csPrimoFiglio" />
+      <s:element minOccurs="0" maxOccurs="1" name="aFigli" type="tns:ArrayOfCsFigli" />
+      <s:element minOccurs="0" maxOccurs="1" name="aFamiliari" type="tns:ArrayOfCsAltroFamiliare" />
+      <s:element minOccurs="0" maxOccurs="1" name="sQuattroFigli" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMeseElaboratoconDecorrenzaSuccessiva" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csConiuge">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodFiscConiuge" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sConiugeCarico" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csPrimoFiglio">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodFiscPrimoFiglio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sPrimoFiglioDisabile" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sPrimoFiglioMinoreTreAnni" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfCsFigli">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="csFigli" nillable="true" type="tns:csFigli" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csFigli">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodFiscaleFiglio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sPercentualeDetrazFiglio" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sFiglioDisabile" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sFiglioMinoreTreAnni" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfCsAltroFamiliare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="csAltroFamiliare" nillable="true" type="tns:csAltroFamiliare" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csAltroFamiliare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodFiscAltroFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sPercDetrAltroFamiliare" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csEsito">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodice" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDescrizione" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csProcedura">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodice" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDescrizione" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="RicercaGenerale_2">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCodProd" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscale" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sAnnofisc" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RicercaGenerale_2Response">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RicercaGenerale_2Result" type="tns:csDetrazione_2" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="csDetrazione_2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Risposta_2" type="tns:csDetrazioneTracciato_2" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:csEsito" />
+      <s:element minOccurs="0" maxOccurs="1" name="Procedura" type="tns:csProcedura" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="csDetrazioneTracciato_2">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sMessaggioRisposta" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodFiscaleFornito" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sAnnoFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodCategoriaFonito" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="aCodDetrazione" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="sQuattroFigli" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiciProiettatiFinoAl" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfString">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="RicercaPerDatiPensionato_2">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCodProd" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscale" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sAnnofisc" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCodCatPensione" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RicercaPerDatiPensionato_2Response">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RicercaPerDatiPensionato_2Result" type="tns:csDetrazione_2" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RicercaDatiStorico">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscale" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sAnnofiscale" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sMatricola" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sSede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="cCodiceProcedura" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RicercaDatiStoricoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RicercaDatiStoricoResult" type="tns:AreaInquiry" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="AreaInquiry">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceTransazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sTipoRichiesta" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceErrore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMessaggioErrore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMessaggioErroreEsteso" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sAnnoFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="asIndiceDichiarazioneValidaNelMese" type="tns:ArrayOfString" />
+      <s:element minOccurs="0" maxOccurs="1" name="asCodiciDetrazioneNelMese" type="tns:ArrayOfString" />
+      <s:element minOccurs="1" maxOccurs="1" name="Codice_Risposta" type="tns:CODICE_RISPOSTA" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaInquiryDichiarazione" type="tns:ArrayOfAreaInquiryDichiarazione" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscaleDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sNomeDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCognomeDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sComuneNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSiglaProvinciaNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sStatoEsteroNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCittadinanzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sComuneResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSiglaProvinciaResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sStatoEsteroResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sIndirizzoResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCapResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sNumeroTelefonoDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaInquiryAnagraficaFamiliare" type="tns:ArrayOfAreaInquiryAnagraficaFamiliare" />
+      <s:element minOccurs="0" maxOccurs="1" name="DetrazioniApplicate" type="tns:AreaDetrazioniApplicatesuPensioni" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="CODICE_RISPOSTA">
+    <s:restriction base="s:string">
+      <s:enumeration value="ERRORE_GENERICO" />
+      <s:enumeration value="NESSUNA_DICHIARAZIONE" />
+      <s:enumeration value="DICHIARAZIONE_PRESENTE" />
+      <s:enumeration value="DICHIARAZIONE_PRECEDENTE" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="ArrayOfAreaInquiryDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="AreaInquiryDichiarazione" nillable="true" type="tns:AreaInquiryDichiarazione" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaInquiryDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sDataPresentazioneDichiarazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sFonteAcquisizioneDichiarazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMatricolaOperatore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSedeOperatore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sUtenteCAF" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sTipoUtente" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sUtentePerifericoCAF" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sUtentePerifericoCAFInChiaro" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataAcquisizioneDichiarazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sModelloDichiarazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDecorrenzaDirittoDetrazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoDetrazioneLavoroDipendente" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoDetrazioneRedditoInferioreAlLimite" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoDetrazioneConiugeACarico" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoDetrazioneFigliACarico" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoAddizionaleRegionaleAgevolataLombardia" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoAddizionaleRegionaleAgevolataVenetoTipo1" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoAddizionaleRegionaleAgevolataVenetoTipo2" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoAddizionaleRegionaleAgevolataVenetoTipo3" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoEsenzioneIrpefPerConvenzioneInternazionale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDirittoDetrazioneQuattroFigli" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sChiaveDichiarazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sProtocollo" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaInquiryFamiliariSuDichiarazione" type="tns:ArrayOfAreaInquiryFamiliariSuDichiarazione" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfAreaInquiryFamiliariSuDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="AreaInquiryFamiliariSuDichiarazione" nillable="true" type="tns:AreaInquiryFamiliariSuDichiarazione" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaInquiryFamiliariSuDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sIndiceFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sTipoFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDecorrenzaDetrazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sTermineDetrazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sPercentualeDetrazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeMinoreDiTreAnni" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSeDisabile" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfAreaInquiryAnagraficaFamiliare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="AreaInquiryAnagraficaFamiliare" nillable="true" type="tns:AreaInquiryAnagraficaFamiliare" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaInquiryAnagraficaFamiliare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sTipoFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sNome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCognome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sComuneNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sProvinciaNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sStatoEsteroNascita" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaDetrazioniApplicatesuPensioni">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="seDetrazioniApplicate" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sChiaveDichiarazioneApplicata" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataPresentazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataAcquisizione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sFonteAcquisizione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sMeseAplicazioneCodici" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiciDetrazioniApplicati" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="iMeseAppicazioneCodiciDetrazioniDaDichiarazione" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="Codice_Risposta" type="tns:CODICE_RISPOSTA_T34" />
+      <s:element minOccurs="0" maxOccurs="1" name="arElencoPnsioni" type="tns:ArrayOfElencoPensioni" />
+      <s:element minOccurs="0" maxOccurs="1" name="sErroreDetrazioni" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="CODICE_RISPOSTA_T34">
+    <s:restriction base="s:string">
+      <s:enumeration value="ERRORE_GENERICO" />
+      <s:enumeration value="NESSUNA_DETRAZIONE_APPLICATA" />
+      <s:enumeration value="DETRAZIONI_APPLICATE_DA_DICHIARAZIONE" />
+      <s:enumeration value="DETRAZIONI_APPLICATE_DA_DICHIARAZIONE_PRECEDENTE" />
+      <s:enumeration value="DETRAZIONI_SENZA_DICHIARAZIONE" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="ArrayOfElencoPensioni">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="ElencoPensioni" nillable="true" type="tns:ElencoPensioni" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ElencoPensioni">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CODICECATEGORIA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CATEGORIA" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SEDE" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CERTIFICATO" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="ELIMINATA" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="DECORRENZAELIMINAZIONE" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="RegistraDichiarazione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="areaRegistraDichiarazione" type="tns:AreaRegistraDichiarazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="AreaRegistraDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="areaDatiDichiarazione" type="tns:AreaDatiDichiarazione" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaDichiarante" type="tns:AreaDichiarante" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaDetrazioni" type="tns:AreaDetrazioni" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaFamiliare" type="tns:ArrayOfAreaFamiliare" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaRisposta" type="tns:AreaRisposta" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaDatiDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="FonteAcquisizioneDichiarazione" type="tns:FONTE_ACQUISIZIONE" />
+      <s:element minOccurs="0" maxOccurs="1" name="sIdentificativoUtente" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="TipoUtenteCAF_Patronato" type="tns:TIPO_UTENTE" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataAcquisizioneDichiarazione" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="ModelloDichiarazione" type="tns:MODELLO_DICHIARAZIONE" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataPresentazioneDichiarazione" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="FONTE_ACQUISIZIONE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="DOMANDE_PENSIONE_ONLINE_PATRONATI" />
+      <s:enumeration value="DOMANDE_PENSIONE_ONLINE_RICHIEDENTI" />
+      <s:enumeration value="DOMANDE_DISOCCUPAZIONE_ONLINE_PATRONATI" />
+      <s:enumeration value="DOMANDE_CASSA_INTEGRAZIONE_ONLINE_AZIENDE" />
+      <s:enumeration value="DICHIARAZIONE_INVIATE_ON_LINE_DAI_CAF" />
+      <s:enumeration value="GESTIONE_DETRAZIONI_CITTADINO" />
+      <s:enumeration value="DOMANDE_ONLINE_DA_CONTACT_CENTER_INPS" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="TIPO_UTENTE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="PATRONATO" />
+      <s:enumeration value="AZIENDA" />
+      <s:enumeration value="SOGGETTO_RICHIEDENTE" />
+      <s:enumeration value="CAF" />
+      <s:enumeration value="CONTACT_CENTER" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="MODELLO_DICHIARAZIONE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="DETRAZIONI_ITALIA" />
+      <s:enumeration value="ADDIZIONALE_REGIONALE_AGEVOLATA" />
+      <s:enumeration value="DETRAZIONI_ITALIA_E_ADDIZIONALE_REGIONALE_AGEVOLATA" />
+      <s:enumeration value="DETRAZIONI_UNIONE_EUROPEA" />
+      <s:enumeration value="DETRAZIONI_EXTRA_UNIONE_EUROPEA" />
+      <s:enumeration value="ESENZIONE_TOTALE_IRPEF" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="AreaDichiarante">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscaleDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sNomeDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCognomeDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sComuneNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSiglaProvinciaNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sStatoEsteroNascitaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCittadinanzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sComuneResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sSiglaProvinciaResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sStatoEsteroResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sIndirizzoResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCapResidenzaDichiarante" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sNumeroTelefonoDichiarante" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaDetrazioni">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sDecorrenzaDirittoDetrazione" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDirittoDetrazioneLavoroDipendente" type="tns:SE_DIRITTO_DETRAZIONE_LAVORO_DIPENDENTE" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDirittoDetrazioneRedditoInferioreAlLimite" type="tns:SE_DIRITTO_DETRAZIONE_REDDITO_INFERIORE_AL_LIMITE" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDirittoAddizionaleRegionaleAgevolataVenetoTipo1" type="tns:SE_DIRITTO_DETRAZIONE_ADDIZIONALE_REGIONALE_AGEVOLATA_VENETO_TIPO1" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDirittoAddizionaleRegionaleAgevolataVenetoTipo2" type="tns:SE_DIRITTO_DETRAZIONE_ADDIZIONALE_REGIONALE_AGEVOLATA_VENETO_TIPO2" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDirittoAddizionaleRegionaleAgevolataVenetoTipo3" type="tns:SE_DIRITTO_DETRAZIONE_ADDIZIONALE_REGIONALE_AGEVOLATA_VENETO_TIPO3" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDirittoEsenzioneIrpefPerConvenzioneInternazionale" type="tns:SE_DIRITTO_ESENZIONE_IRPEF_PER_CONVENZIONE_INTERNAZIONALE" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDirittoUlterioreDetrazioneConAlmenoQuattroFigli" type="tns:SE_DIRITTO_ULTERIORE_DETRAZIONE_CON_ALMENO_QUATTRO_FIGLI" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="SE_DIRITTO_DETRAZIONE_LAVORO_DIPENDENTE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_DIRITTO_DETRAZIONE_REDDITO_INFERIORE_AL_LIMITE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_DIRITTO_DETRAZIONE_ADDIZIONALE_REGIONALE_AGEVOLATA_VENETO_TIPO1">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_DIRITTO_DETRAZIONE_ADDIZIONALE_REGIONALE_AGEVOLATA_VENETO_TIPO2">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_DIRITTO_DETRAZIONE_ADDIZIONALE_REGIONALE_AGEVOLATA_VENETO_TIPO3">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_DIRITTO_ESENZIONE_IRPEF_PER_CONVENZIONE_INTERNAZIONALE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_DIRITTO_ULTERIORE_DETRAZIONE_CON_ALMENO_QUATTRO_FIGLI">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="ArrayOfAreaFamiliare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="AreaFamiliare" nillable="true" type="tns:AreaFamiliare" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaFamiliare">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="TipoFamiliare" type="tns:TIPO_FAMILIARE" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscaleFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sNomeFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sCognomeFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDataNascitaFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sComuneNascitaFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sProvinciaNascitaFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sStatoEsteroNascitaFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDecorrenzaDetrazioneFamiliare" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="PercentualeDetrazioneFamiliare" type="tns:PERCENTUALE_DETRAZIONE_FAMILIARE" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeMinoreDiTreAnniFamiliare" type="tns:SE_MINORE_DI_TRE_ANNI_FAMILIARE" />
+      <s:element minOccurs="1" maxOccurs="1" name="SeDisabileFamiliare" type="tns:SE_DISABILE_FAMILIARE" />
+      <s:element minOccurs="0" maxOccurs="1" name="sTermineDetrazioneFamiliare" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="TIPO_FAMILIARE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="CONIUGE" />
+      <s:enumeration value="PRIMO_FIGLIO" />
+      <s:enumeration value="FIGLIO" />
+      <s:enumeration value="ALTRO_FAMILIARE" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="PERCENTUALE_DETRAZIONE_FAMILIARE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="CINQUANTA_PER_CENTO" />
+      <s:enumeration value="CENTO_PER_CENTO" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_MINORE_DI_TRE_ANNI_FAMILIARE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:simpleType name="SE_DISABILE_FAMILIARE">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="NON_SIGNIFICATIVO" />
+      <s:enumeration value="NO" />
+      <s:enumeration value="SI" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="AreaRisposta">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CHIAVEDICHIARAZIONE" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="CodiceRisposta" type="tns:CODICE_RISPOSTA_REG" />
+      <s:element minOccurs="0" maxOccurs="1" name="areaErrori" type="tns:ArrayOfAreaErrori" />
+    </s:sequence>
+  </s:complexType>
+  <s:simpleType name="CODICE_RISPOSTA_REG">
+    <s:restriction base="s:string">
+      <s:enumeration value="NON_VALORIZZATO" />
+      <s:enumeration value="DICHIARAZIONE_REGISTRATA" />
+      <s:enumeration value="DICHIARAZIONE_REGISTRATA_IN_PRESENZA_DI_ERRORI_NON_BLOCCANTI" />
+      <s:enumeration value="DICHIARAZIONE_NON_REGISTRATA_IN_PRESENZA_DI_ERRORI_BLOCCANTI" />
+      <s:enumeration value="ERRORE_APPLICAZIONE" />
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="ArrayOfAreaErrori">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="AreaErrori" nillable="true" type="tns:AreaErrori" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AreaErrori">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="sCodiceErrore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sProgressivoFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="sDescrizioneErrore" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="RegistraDichiarazioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="RegistraDichiarazioneResult" type="tns:AreaRegistraDichiarazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RegistraProtocolloDichiarazione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="sNumeroProtocollo" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sChiaveDichiarazione" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sCodiceFiscale" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="RegistraProtocolloDichiarazioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="RegistraProtocolloDichiarazioneResult" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+</s:schema>

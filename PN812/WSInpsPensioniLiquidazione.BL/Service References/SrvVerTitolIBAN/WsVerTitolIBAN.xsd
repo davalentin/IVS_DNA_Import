@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://soa.inps.it/WS01179" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/WS01179" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="WsVerTitolIBAN.xsd4.xsd" namespace="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" />
+  <xs:element name="verificaTitolarita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q1:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitolaritaResult" nillable="true" type="q2:VerificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q3:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitolaritaRcResult" nillable="true" type="q4:VerificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitIbanNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q5:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitIbanNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitIbanNewResult" nillable="true" type="q6:VerificaTitIbanNewOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitIbanNewRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q7:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitIbanNewRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitIbanNewRcResult" nillable="true" type="q8:VerificaTitIbanNewOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q9:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitolaritaBResult" nillable="true" type="q10:VerificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaBRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q11:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaBRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitolaritaBRcResult" nillable="true" type="q12:VerificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaBPens">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q13:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaBPensResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitolaritaBPensResult" nillable="true" type="q14:VerificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaBPensRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q15:VerificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verificaTitolaritaBPensRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="verificaTitolaritaBPensRcResult" nillable="true" type="q16:VerificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSR163">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q17:GestioneSR163Input" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSR163Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaSR163Result" nillable="true" type="q18:GestioneSR163Output" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSR163Rc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q19:GestioneSR163Input" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSR163RcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaSR163RcResult" nillable="true" type="q20:GestioneSR163Output" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaSR163">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q21:GestioneSR163Input" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaSR163Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="annullaSR163Result" nillable="true" type="q22:GestioneSR163Output" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaSR163Rc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q23:GestioneSR163Input" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaSR163RcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="annullaSR163RcResult" nillable="true" type="q24:GestioneSR163Output" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaEntiExtra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q25:GestioneEntiExtraInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaEntiExtraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaEntiExtraResult" nillable="true" type="q26:GestioneEntiExtraOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaEntiExtraRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q27:GestioneEntiExtraInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaEntiExtraRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaEntiExtraRcResult" nillable="true" type="q28:GestioneEntiExtraOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaEntiExtra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q29:GestioneEntiExtraInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaEntiExtraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="annullaEntiExtraResult" nillable="true" type="q30:GestioneEntiExtraOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaEntiExtraRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q31:GestioneEntiExtraInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="annullaEntiExtraRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="annullaEntiExtraRcResult" nillable="true" type="q32:GestioneEntiExtraOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitolarita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q33:CertificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitolaritaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaTitolaritaResult" nillable="true" type="q34:CertificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitolaritaRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q35:CertificaTitolaritaInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitolaritaRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaTitolaritaRcResult" nillable="true" type="q36:CertificaTitolaritaOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q37:GetListaCertificazioniInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaCertificazioniResult" nillable="true" type="q38:GetListaCertificazioniOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q39:GetListaCertificazioniInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaCertificazioniRcResult" nillable="true" type="q40:GetListaCertificazioniOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q41:GetListaCertificazioniInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaCertificazioniBResult" nillable="true" type="q42:GetListaCertificazioniOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniBRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q43:GetListaCertificazioniInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniBRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaCertificazioniBRcResult" nillable="true" type="q44:GetListaCertificazioniOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaOperazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q45:GetListaOperazioniInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaOperazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaOperazioniResult" nillable="true" type="q46:GetListaOperazioniOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaOperazioniRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q47:GetListaOperazioniInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaOperazioniRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaOperazioniRcResult" nillable="true" type="q48:GetListaOperazioniOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIban">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q49:GetLastIbanInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIbanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getLastIbanResult" nillable="true" type="q50:GetLastIbanOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIbanRC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q51:GetLastIbanInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIbanRCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getLastIbanRCResult" nillable="true" type="q52:GetLastIbanOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIbanBic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q53:GetLastIbanInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIbanBicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getLastIbanBicResult" nillable="true" type="q54:GetLastIbanBicOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIbanBicRC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q55:GetLastIbanInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastIbanBicRCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getLastIbanBicRCResult" nillable="true" type="q56:GetLastIbanBicOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniSDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q57:GetListaCertificazioniSDBInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniSDBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaCertificazioniSDBResult" nillable="true" type="q58:GetListaCertificazioniSDBOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniSDBRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q59:GetListaCertificazioniSDBInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getListaCertificazioniSDBRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getListaCertificazioniSDBRcResult" nillable="true" type="q60:GetListaCertificazioniSDBOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q61:GestioneSDBInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSDBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaSDBResult" nillable="true" type="q62:GestioneSDBOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSDBRc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q63:GestioneSDBInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaSDBRcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaSDBRcResult" nillable="true" type="q64:GestioneSDBOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStatusVarCoord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q65:GetStatusVarCoordInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStatusVarCoordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getStatusVarCoordResult" nillable="true" type="q66:GetStatusVarCoordOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStatusVarCoordRC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q67:GetStatusVarCoordInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStatusVarCoordRCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="getStatusVarCoordRCResult" nillable="true" type="q68:GetStatusVarCoordOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitUff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q69:CertificaTitUffInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitUffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaTitUffResult" nillable="true" type="q70:CertificaTitUffOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitUffRC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="input" nillable="true" type="q71:CertificaTitUffInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="certificaTitUffRCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/WsVerTitolIBAN" minOccurs="0" name="certificaTitUffRCResult" nillable="true" type="q72:CertificaTitUffOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

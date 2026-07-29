@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.Service_Reference" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.Service_Reference" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RootIndebitoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:IndebitoDto" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RootIndebitoDto" nillable="true" type="tns:RootIndebitoDto" />
+  <xs:complexType name="IndebitoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChiavePrestazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceFiscaleTitolare" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CognomeDebitore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContiRic" nillable="true" type="tns:ArrayOfContoRicDto" />
+      <xs:element minOccurs="0" name="DataFineDebito" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInizioDebito" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataRicostituzione" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ImponibileAnniPrecedenti" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImponibileAnnoInCorso" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Importo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ndompro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeDebitore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NonImponibile" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SedeGestione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SedePrestazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatoIndebito" nillable="true" type="tns:StatoIndebitoDto" />
+      <xs:element minOccurs="0" name="TipoPratica" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndebitoDto" nillable="true" type="tns:IndebitoDto" />
+  <xs:complexType name="ArrayOfContoRicDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContoRicDto" nillable="true" type="tns:ContoRicDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContoRicDto" nillable="true" type="tns:ArrayOfContoRicDto" />
+  <xs:complexType name="ContoRicDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CausaleSelezionata" nillable="true" type="tns:CausaleDto" />
+      <xs:element minOccurs="0" name="CausaliAmmesse" nillable="true" type="tns:ArrayOfCausaleDto" />
+      <xs:element minOccurs="0" name="ContoRecupero" nillable="true" type="tns:ContoRecuperoDto" />
+      <xs:element minOccurs="0" name="IsModificabile" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContoRicDto" nillable="true" type="tns:ContoRicDto" />
+  <xs:complexType name="CausaleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Analitica" type="xs:int" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sintetica" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CausaleDto" nillable="true" type="tns:CausaleDto" />
+  <xs:complexType name="ArrayOfCausaleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CausaleDto" nillable="true" type="tns:CausaleDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCausaleDto" nillable="true" type="tns:ArrayOfCausaleDto" />
+  <xs:complexType name="ContoRecuperoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Causale" nillable="true" type="tns:CausaleDto" />
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element minOccurs="0" name="CodiceBilancio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdConto" type="xs:int" />
+      <xs:element minOccurs="0" name="Importo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Residuo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContoRecuperoDto" nillable="true" type="tns:ContoRecuperoDto" />
+  <xs:complexType name="StatoIndebitoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdStatoIndebito" type="xs:int" />
+      <xs:element minOccurs="0" name="StatoEnum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatoStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoStato" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatoIndebitoDto" nillable="true" type="tns:StatoIndebitoDto" />
+</xs:schema>

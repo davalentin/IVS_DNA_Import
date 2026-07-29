@@ -1,0 +1,50 @@
+﻿<asp:Label runat="server" SkinID="lblNoData" Font-Bold="true" ForeColor="Red" Font-Size="Small" />
+<asp:Label runat="server" SkinID="lblBoldBlack" Font-Bold="true" Font-Size="Small" />
+
+
+<asp:Label runat="server" SkinID="lblVoceMenu" Font-Size="14px" Font-Bold="true" />
+<asp:LinkButton runat="server" SkinID="lkbVoceMenu" Font-Size="14px" Font-Bold="true" />
+
+
+<asp:Button runat="server" SkinID="btnBiancoSenzaBordi" CssClass="linkLookingButton" />
+
+<asp:Button runat="server" SkinID="btnAzione1" CssClass="btn btn-base" />
+
+
+
+<asp:ImageButton runat="server" SkinID="pdfButton1" ImageUrl="Images/pdficon.png" />
+
+<asp:ImageButton runat="server" SkinID="f24Button1" ImageUrl="Images/iconaf24_2.png" />
+
+<asp:ImageButton runat="server" SkinID="btnEdit1" ImageUrl="Images/edit.gif" BackColor="Transparent" />
+
+<asp:ImageButton runat="server" SkinID="btnEdit2" ImageUrl="Images/lente.png" BackColor="Transparent" />
+<asp:ImageButton runat="server" SkinID="btnNuovoPiano" ImageUrl="Images/nuovopiano.png" BackColor="Transparent" />
+<asp:ImageButton runat="server" SkinID="btnEdit2Dis" ImageUrl="Images/edit.gif" BackColor="Transparent" />
+<asp:ImageButton runat="server" SkinID="btnPrint" ImageUrl="Images/Document-print.png" BackColor="Transparent" />
+<asp:ImageButton runat="server" SkinID="btnNote" ImageUrl="Images/note.png" BackColor="Transparent" />
+
+<asp:GridView runat="server" SkinID="grdElenco1" CssClass="table table-striped display dataTable">
+    <AlternatingRowStyle BackColor="#f5f7f6"  />
+    <HeaderStyle CssClass="TblRecordset" />
+    <PagerStyle CssClass="Pager" />
+</asp:GridView>
+
+<asp:GridView runat="server" SkinID="grdElenco2" CssClass="TblForm2 table table-striped display dataTable">
+    <AlternatingRowStyle BackColor="White" />
+    <HeaderStyle BorderWidth="0px" CssClass="TblRecordset2" />
+</asp:GridView>
+
+<asp:DetailsView runat="server"   CssClass="TblRecordset4"  SkinID="dtlElenco1" RowStyle-BackColor="#EAF3F8" width="320px"  border="0px" padding="0px">
+    <AlternatingRowStyle BackColor="White" />
+ </asp:DetailsView>
+    
+    <asp:TreeView runat="server" SkinID="tree" RootNodeStyle-ImageUrl="~/Imagenes/Fabrica2.gif" ParentNodeStyle-ImageUrl="~/Imagenes/Fabrica1.gif" LeafNodeStyle-ImageUrl="~/Imagenes/Engranajes.gif"  
+    NodeStyle-ForeColor="DarkBlue" NodeStyle-Font-Names="Verdana" NodeStyle-Font-Size="8pt" NodeStyle-HorizontalPadding="5" NodeStyle-VerticalPadding="0" NodeStyle-BorderColor="#FFFFFF" NodeStyle-BorderStyle="solid"
+    NodeStyle-BorderWidth="0px" RootNodeStyle-Font-Bold="true" HoverNodeStyle-BackColor="#cccccc" HoverNodeStyle-BorderColor="#888888" HoverNodeStyle-BorderStyle="solid" HoverNodeStyle-BorderWidth="0px"
+    SelectedNodeStyle-BackColor="#cccccc" SelectedNodeStyle-BorderColor="#888888" SelectedNodeStyle-BorderStyle="solid" SelectedNodeStyle-BorderWidth="0px" ShowLines="True"
+    NodeIndent="15" PathSeparator="|"/>
+    
+<asp:DataList  runat="server" SkinID="dataList1" CssClass="TblRecordset">
+    <HeaderStyle CssClass="TblRecordset" />
+</asp:DataList>

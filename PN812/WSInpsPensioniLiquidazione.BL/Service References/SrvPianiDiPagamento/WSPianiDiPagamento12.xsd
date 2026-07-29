@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserisciConguaglio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserisciConguaglio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" />
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="InserisciConguaglio_Gruppo01_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdentificativoChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Test" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InserisciConguaglio_Gruppo01_Request" nillable="true" type="tns:InserisciConguaglio_Gruppo01_Request" />
+  <xs:complexType name="PianoDiPagamentoInserisciConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnoRiferimento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatiPiano" nillable="true" type="tns:DatiPianoInserisciConguaglio" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q1:PensioneInserisciConguaglio" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Prodotto" type="q2:ProdottoInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoInserisciConguaglio" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio" />
+  <xs:complexType name="DatiPianoInserisciConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImportoComplessivo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumeroPartita" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensionato" nillable="true" type="q3:BeneficiarioPensionatoInserisciConguaglio" />
+      <xs:element minOccurs="0" name="TipoDeducibilitaTassazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoInserisciConguaglio" nillable="true" type="tns:DatiPianoInserisciConguaglio" />
+  <xs:complexType name="InserisciConguaglio_Gruppo01_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Esito" nillable="true" type="q4:EsitoInserisciConguaglio" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificativoChiamante" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q5:PensioneInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InserisciConguaglio_Gruppo01_Response" nillable="true" type="tns:InserisciConguaglio_Gruppo01_Response" />
+  <xs:complexType name="InserisciConguaglio_Gruppo03_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio03" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InserisciConguaglio_Gruppo03_Request" nillable="true" type="tns:InserisciConguaglio_Gruppo03_Request" />
+  <xs:complexType name="PianoDiPagamentoInserisciConguaglio03">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatiPiani" nillable="true" type="tns:ArrayOfDatiPianoInserisciConguaglio03" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q6:PensioneInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoInserisciConguaglio03" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio03" />
+  <xs:complexType name="ArrayOfDatiPianoInserisciConguaglio03">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiPianoInserisciConguaglio03" nillable="true" type="tns:DatiPianoInserisciConguaglio03" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiPianoInserisciConguaglio03" nillable="true" type="tns:ArrayOfDatiPianoInserisciConguaglio03" />
+  <xs:complexType name="DatiPianoInserisciConguaglio03">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnoMeseCompletamentoRecupero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnoMeseScadenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnoRiferimento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataInizioTrattenuta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificativoChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImportoComplessivo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoDeducibileAnnoCorrente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoDeducibileAnnoPrecedente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoNonDeducibile" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MatricolaDipendente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroRateRecupero" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensionato" nillable="true" type="q7:BeneficiarioPensionatoInserisciConguaglio" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Prodotto" type="q8:ProdottoInserisciConguaglio" />
+      <xs:element minOccurs="0" name="RataMensile" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoDeducibilitaTassazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Utenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Validatore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoInserisciConguaglio03" nillable="true" type="tns:DatiPianoInserisciConguaglio03" />
+  <xs:complexType name="InserisciConguaglio_Gruppo03_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatiPiani" nillable="true" type="tns:ArrayOfDatiPianoEsitoConguaglio03" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Esito" nillable="true" type="q9:EsitoInserisciConguaglio" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q10:PensioneInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InserisciConguaglio_Gruppo03_Response" nillable="true" type="tns:InserisciConguaglio_Gruppo03_Response" />
+  <xs:complexType name="ArrayOfDatiPianoEsitoConguaglio03">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiPianoEsitoConguaglio03" nillable="true" type="tns:DatiPianoEsitoConguaglio03" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiPianoEsitoConguaglio03" nillable="true" type="tns:ArrayOfDatiPianoEsitoConguaglio03" />
+  <xs:complexType name="DatiPianoEsitoConguaglio03">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificativoChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoEsitoConguaglio03" nillable="true" type="tns:DatiPianoEsitoConguaglio03" />
+  <xs:complexType name="InserisciConguaglio_Gruppo04_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdentificativoChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModalitaScrittura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDomanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio04" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Test" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InserisciConguaglio_Gruppo04_Request" nillable="true" type="tns:InserisciConguaglio_Gruppo04_Request" />
+  <xs:complexType name="PianoDiPagamentoInserisciConguaglio04">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatiAnalitici" nillable="true" type="tns:ArrayOfDatoAnaliticoInserisciConguaglio04" />
+      <xs:element minOccurs="0" name="DatiIstruttoria" nillable="true" type="tns:DatiIstruttoriaInserisciConguaglio04" />
+      <xs:element minOccurs="0" name="DatiPiano" nillable="true" type="tns:DatiPianoInserisciConguaglio04" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q11:PensioneInserisciConguaglio" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Prodotto" type="q12:ProdottoInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoInserisciConguaglio04" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio04" />
+  <xs:complexType name="ArrayOfDatoAnaliticoInserisciConguaglio04">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatoAnaliticoInserisciConguaglio04" nillable="true" type="tns:DatoAnaliticoInserisciConguaglio04" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatoAnaliticoInserisciConguaglio04" nillable="true" type="tns:ArrayOfDatoAnaliticoInserisciConguaglio04" />
+  <xs:complexType name="DatoAnaliticoInserisciConguaglio04">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFondo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceSindacato" nillable="true" type="xs:string" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="ComponenteAnalitica" type="q13:ComponenteAnaliticaInserisciConguaglio" />
+      <xs:element minOccurs="0" name="ImportoDatoAnalitico" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatoAnaliticoInserisciConguaglio04" nillable="true" type="tns:DatoAnaliticoInserisciConguaglio04" />
+  <xs:complexType name="DatiIstruttoriaInserisciConguaglio04">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodicePagamentoArretrati" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataContabile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataFineCalcolo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataInizioCalcolo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlagConfermaPagamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Procedura" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiIstruttoriaInserisciConguaglio04" nillable="true" type="tns:DatiIstruttoriaInserisciConguaglio04" />
+  <xs:complexType name="DatiPianoInserisciConguaglio04">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentroOperativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImportoComplessivo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoDeducibileAnnoCorrente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoDeducibileAnnoPrecedente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoNonDeducibile" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MatricolaDipendente" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensionato" nillable="true" type="q14:BeneficiarioPensionatoInserisciConguaglio" />
+      <xs:element minOccurs="0" name="ProceduraGenerante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoInserisciConguaglio04" nillable="true" type="tns:DatiPianoInserisciConguaglio04" />
+  <xs:complexType name="InserisciConguaglio_Gruppo04_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoInserisciConguaglio04" />
+      <xs:element minOccurs="0" name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamento04" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InserisciConguaglio_Gruppo04_Response" nillable="true" type="tns:InserisciConguaglio_Gruppo04_Response" />
+  <xs:complexType name="EsitoInserisciConguaglio04">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Descrizione" nillable="true" type="q15:ArrayOfstring" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Risultato" type="q16:RisultatoInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoInserisciConguaglio04" nillable="true" type="tns:EsitoInserisciConguaglio04" />
+  <xs:complexType name="PianoDiPagamento04">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificativoChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDomanda" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q17:PensioneInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamento04" nillable="true" type="tns:PianoDiPagamento04" />
+  <xs:complexType name="InserisciConguaglio_Gruppo05_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio05" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InserisciConguaglio_Gruppo05_Request" nillable="true" type="tns:InserisciConguaglio_Gruppo05_Request" />
+  <xs:complexType name="PianoDiPagamentoInserisciConguaglio05">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatiPiani" nillable="true" type="tns:ArrayOfDatiPianoInserisciConguaglio05" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensione" nillable="true" type="q18:PensioneInserisciConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoInserisciConguaglio05" nillable="true" type="tns:PianoDiPagamentoInserisciConguaglio05" />
+  <xs:complexType name="ArrayOfDatiPianoInserisciConguaglio05">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiPianoInserisciConguaglio05" nillable="true" type="tns:DatiPianoInserisciConguaglio05" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiPianoInserisciConguaglio05" nillable="true" type="tns:ArrayOfDatiPianoInserisciConguaglio05" />
+  <xs:complexType name="DatiPianoInserisciConguaglio05">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnoMeseCompletamentoRecupero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnoMeseScadenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnoRiferimento" nillable="true" type="xs:string" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Beneficiario" nillable="true" type="q19:BeneficiarioPensionatoInserisciConguaglio" />
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataInizioTrattenuta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificativoChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImportoComplessivo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoDeducibileAnnoCorrente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoDeducibileAnnoPrecedente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImportoNonDeducibile" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MatricolaDipendente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroRateRecupero" nillable="true" type="xs:string" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Pensionato" nillable="true" type="q20:BeneficiarioPensionatoInserisciConguaglio" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" minOccurs="0" name="Prodotto" type="q21:ProdottoInserisciConguaglio" />
+      <xs:element minOccurs="0" name="RataMensile" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoDeducibilitaTassazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Utenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Validatore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoInserisciConguaglio05" nillable="true" type="tns:DatiPianoInserisciConguaglio05" />
+</xs:schema>

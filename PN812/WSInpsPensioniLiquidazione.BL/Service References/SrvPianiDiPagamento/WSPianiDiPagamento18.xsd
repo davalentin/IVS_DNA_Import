@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.GeneraLinkpoint" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.GeneraLinkpoint" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PianiDiPagamento_WS_GeneraLinkpoint_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Linkpoint" nillable="true" type="tns:Linkpoint" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianiDiPagamento_WS_GeneraLinkpoint_Request" nillable="true" type="tns:PianiDiPagamento_WS_GeneraLinkpoint_Request" />
+  <xs:complexType name="Linkpoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceVersione" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Linkpoint" nillable="true" type="tns:Linkpoint" />
+  <xs:complexType name="PianiDiPagamento_WS_GeneraLinkpoint_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoGeneraLinkpoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianiDiPagamento_WS_GeneraLinkpoint_Response" nillable="true" type="tns:PianiDiPagamento_WS_GeneraLinkpoint_Response" />
+  <xs:complexType name="EsitoGeneraLinkpoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Descrizione" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Risultato" type="tns:RisultatoGeneraLinkpoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoGeneraLinkpoint" nillable="true" type="tns:EsitoGeneraLinkpoint" />
+  <xs:simpleType name="RisultatoGeneraLinkpoint">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoGeneraLinkpoint" nillable="true" type="tns:RisultatoGeneraLinkpoint" />
+</xs:schema>

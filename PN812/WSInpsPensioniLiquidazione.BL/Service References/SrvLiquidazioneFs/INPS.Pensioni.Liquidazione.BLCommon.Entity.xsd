@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDatiSupplementi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiSupplementi" nillable="true" type="tns:DatiSupplementi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiSupplementi" nillable="true" type="tns:ArrayOfDatiSupplementi" />
+  <xs:complexType name="DatiSupplementi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmmontareContributivo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CodGestioneSupplemento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodTipoQuota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceLiquidazione" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DecorrenzaSupplemento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="IsFromPrelievo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStorico" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MontanteSupplemento" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NSettimaneSupplemento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumDomanda" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="QuotaSupplemento" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="RMSSupplemento" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoSupplemento" nillable="true" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiSupplementi" nillable="true" type="tns:DatiSupplementi" />
+</xs:schema>

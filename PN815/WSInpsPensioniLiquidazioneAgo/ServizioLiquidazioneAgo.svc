@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="INPS.Pensioni.LiquidazioneAgo.Service.ServizioLiquidazioneAgo" CodeBehind="ServizioLiquidazioneAgo.svc.cs" Factory="INPS.DNA.Services.HostFactory.InpsBaseHostFactory, INPS.DNA.Services.HostFactory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a31fe99d2f98435c"  %>

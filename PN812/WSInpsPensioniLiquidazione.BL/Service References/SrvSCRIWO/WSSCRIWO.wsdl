@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://soa.inps.it/WS01323" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://soa.inps.it/WS01323" location="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IWSSCRIWO" type="i0:IWSSCRIWO">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDomanda">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetDomanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/ClearCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoricoServiziEsterni">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetStoricoServiziEsterni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetElencoSedi">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetElencoSedi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaLavorazioni">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetAreaLavorazioni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaLavorazioni">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/RicercaLavorazioni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurazioneLavorazioniGiacenti">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetConfigurazioneLavorazioniGiacenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetConfigurazioneLavorazioniGiacenti">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/SetConfigurazioneLavorazioniGiacenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoraggioLavorazioni">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetMonitoraggioLavorazioni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConfigurazioneLavorazioniGiacenti">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/DeleteConfigurazioneLavorazioniGiacenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeConfiugrazioneLavorazioniGiacenti">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetListeConfiugrazioneLavorazioniGiacenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDettaglioLavorazioniGiacenti">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetDettaglioLavorazioniGiacenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRicercaLavorazioniWebdom">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetRicercaLavorazioniWebdom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLavorazioniUrgenti">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetLavorazioniUrgenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetElencoMemo">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetElencoMemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdWorkFlow">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetIdWorkFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaMatricoleSperimentazione">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO/GetListaMatricoleSperimentazione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IWSSCRIWO_Aggiorna" type="i0:IWSSCRIWO_Aggiorna">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AggiornaStatoLavorazione">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO_Aggiorna/AggiornaStatoLavorazione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaStatoLavorazioneOneWay">
+      <soap:operation soapAction="http://soa.inps.it/WS01323/IWSSCRIWO_Aggiorna/AggiornaStatoLavorazioneOneWay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

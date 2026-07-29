@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiquidazionePensioniFS.Presenter", "LiquidazionePensioniFS.Presenter\LiquidazionePensioniFS.Presenter.csproj", "{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiquidazionePensioniFS", "LiquidazionePensioniFS\LiquidazionePensioniFS.csproj", "{3E7C5CF5-69AD-43A5-8961-E148EA765086}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugLocal|Any CPU = DebugLocal|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7FD254-3735-4339-B020-1B3CC2B0FB1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E7C5CF5-69AD-43A5-8961-E148EA765086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7C5CF5-69AD-43A5-8961-E148EA765086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7C5CF5-69AD-43A5-8961-E148EA765086}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7C5CF5-69AD-43A5-8961-E148EA765086}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{3E7C5CF5-69AD-43A5-8961-E148EA765086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7C5CF5-69AD-43A5-8961-E148EA765086}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SerenaSourceControl) = preSolution
+		CMNumberOfProjects = 3
+		CMProjectRoot0 = \
+		CMLocalPath0 = .\
+		CMRelativePathToRoot0 = .\
+		CMLocalPath1 = LiquidazionePensioniFS.Presenter\
+		CMUniqueName1 = LiquidazionePensioniFS.Presenter.csproj
+		CMProjectName1 = LiquidazionePensioniFS.Presenter
+		CMRelativePathToRoot1 = LiquidazionePensioniFS.Presenter\
+		CMProjectRoot1 = \
+		CMLocalPath2 = LiquidazionePensioniFS\
+		CMUniqueName2 = LiquidazionePensioniFS.csproj
+		CMProjectName2 = LiquidazionePensioniFS
+		CMRelativePathToRoot2 = LiquidazionePensioniFS\
+		CMProjectRoot2 = \
+	EndGlobalSection
+EndGlobal

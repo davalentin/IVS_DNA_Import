@@ -1,0 +1,13 @@
+version=10.2
+item-uid=43396427
+file-version=1
+checksum=bee9e22f68af562c11f1bfe6be46b7dd
+fetch-size=4319
+mtime=1570689169
+item-spec=504E3831383A31485A503846204C4951554944415A494F4E45434931205753444C2D313430333338303034332E412D5352433B31
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=WSInpsPensioniLiquidazioneCi.Data/Service References/HisLiquidazioneCi/LiquidazioneCi1.wsdl
+project=504E3831383A53315F5753494E505350454E53494F4E494C4951554944415A494F4E454349
+project-uid=43214342

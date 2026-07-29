@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pp-dna-coz.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" />
+  <xs:import schemaLocation="http://pp-dna-coz.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" />
+  <xs:import schemaLocation="http://pp-dna-coz.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AreaEsito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Messaggio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RisultatoOperazione" type="tns:AreaEsito.TipoEsito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaEsito" nillable="true" type="tns:AreaEsito" />
+  <xs:simpleType name="AreaEsito.TipoEsito">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="KO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AreaEsito.TipoEsito" nillable="true" type="tns:AreaEsito.TipoEsito" />
+  <xs:complexType name="AreaMaggiorazioniBenefici">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiBenefici" nillable="true" type="q1:DatiBenefici" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiExCombattente" nillable="true" type="q2:DatiExCombattente" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiMaggiorazioni" nillable="true" type="q3:DatiMaggiorazioni" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiOneriBenefParticolari" nillable="true" type="q4:DatiOneriBenefParticolari" />
+      <xs:element minOccurs="0" name="IsBeneficioExArt80" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="ListaCodiceCieco" nillable="true" type="q5:ArrayOfCodiceCieco" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="ListaCodiceMaggiorazioneExCombattente" nillable="true" type="q6:ArrayOfCodiceMaggiorazioneExCombattente" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="ListaCodiceRequisitiLegge50392" nillable="true" type="q7:ArrayOfCodiceRequisitiLegge50392" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="ListaGruppoOneri" nillable="true" type="q8:ArrayOfCodiciOneri.GruppoOneri" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="ListaSottoGruppoOneri" nillable="true" type="q9:ArrayOfCodiciOneri.SottoGruppoOneri" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="ListaTipoBenefici" nillable="true" type="q10:ArrayOfTipoBenefici" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaMaggiorazioniBenefici" nillable="true" type="tns:AreaMaggiorazioniBenefici" />
+  <xs:complexType name="AreaDatiBititolarita">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="ElencoAltraPensione" nillable="true" type="q11:ArrayOfAltraPensione" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="ElencoCatEnte" nillable="true" type="q12:ArrayOfGestioneBititolarita.DecCatEnte" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="ElencoDecodificaEnte" nillable="true" type="q13:ArrayOfGestioneBititolarita.DecodificaEnte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaDatiBititolarita" nillable="true" type="tns:AreaDatiBititolarita" />
+  <xs:complexType name="AreaDatiContributivi">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="DatiCalcolo" nillable="true" type="q14:GestioneContrib.DatiCalcolo" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="ElencoCodiceConvenzione" nillable="true" type="q15:ArrayOfGestioneContrib.CodiceConvenzione" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="ElencoCodiceVirtuale" nillable="true" type="q16:ArrayOfGestioneContrib.CodiceVirtuale" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="ElencoRegimeLiquidazione" nillable="true" type="q17:ArrayOfGestioneContrib.RegimeLiquidazione" />
+      <xs:element minOccurs="0" name="IsFineAssicurazionePost2012" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInizioAssicurazionePost1995" type="xs:boolean" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="LDatiPostDecOriginaria" nillable="true" type="q18:ArrayOfGestioneContrib.DatiPostDecOriginaria" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="LMaternitaAcna" nillable="true" type="q19:ArrayOfGestioneContrib.MaternitaAcna" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="LavoratoriAutonomi" nillable="true" type="q20:GestioneContrib.LavoratoriAutonomi" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="LimportiEsteriValuta" nillable="true" type="q21:ArrayOfGestioneContrib.PensioniCiImportiValuta" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="ProRata" nillable="true" type="q22:GestioneContrib.ProRata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaDatiContributivi" nillable="true" type="tns:AreaDatiContributivi" />
+  <xs:complexType name="AreaVersioni">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListaVersioni" nillable="true" type="q23:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaVersioni" nillable="true" type="tns:AreaVersioni" />
+  <xs:complexType name="AreaPrelievo">
+    <xs:sequence>
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="Richiesta" nillable="true" type="q24:GestionePrelievo.RichiestaPrelievo" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="Risposta" nillable="true" type="q25:GestionePrelievo.RispostaPrelievo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaPrelievo" nillable="true" type="tns:AreaPrelievo" />
+  <xs:complexType name="AreaLiquidazionePensione">
+    <xs:sequence>
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiAssicurativi" nillable="true" type="q26:DatiAssicurativi" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiGenerici" nillable="true" type="q27:DatiGenerici" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiIstruttoria" nillable="true" type="q28:DatiIstruttoria" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiOpzione" nillable="true" type="q29:DatiOpzione" />
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="DatiProvenienza" nillable="true" type="q30:DatiProvenienza" />
+      <xs:element minOccurs="0" name="IsEsenzioneFiscale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGestioneNormale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsImportoIVSVisible" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRiduzioneRetribVisible" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRiduzioneRetributivaEnabled" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRipristino" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUsuranti" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVecchiaiaInvaliditaSupplementare" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="TipologiaSalvaguardia" nillable="true" type="q31:GestioneLiquidazionePensione.TipoSalvaguardia" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="lCodiceCi21" nillable="true" type="q32:ArrayOfCodiceCi21" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="lCodiceCi28" nillable="true" type="q33:ArrayOfCodiceCi28" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="lCodiceVirtuale" nillable="true" type="q34:ArrayOfCodiceVirtuale" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="lOpzioneRiliquidazione" nillable="true" type="q35:ArrayOfOpzioneRiliquidazione" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="listaCodiceParticolare" nillable="true" type="q36:ArrayOfCodiceParticolare" />
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="listaCodiceRequisitiParticolari" nillable="true" type="q37:ArrayOfCodiceRequisitiParticolari" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="listaCodiciNatura" nillable="true" type="q38:ArrayOfCodiciNatura" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="listaDecodificaLegge44997" nillable="true" type="q39:ArrayOfDecodificaLegge44997" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="listaDomandaRicorso" nillable="true" type="q40:ArrayOfDomandaRicorso" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="listaMobilita" nillable="true" type="q41:ArrayOfMobilita" />
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Entity" minOccurs="0" name="listaRiconoscimentiInvalidita" nillable="true" type="q42:ArrayOfDecodificaRiconoscimentiInvalidita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaLiquidazionePensione" nillable="true" type="tns:AreaLiquidazionePensione" />
+</xs:schema>

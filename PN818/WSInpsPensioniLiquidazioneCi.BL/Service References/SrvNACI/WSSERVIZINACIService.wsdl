@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://ws.deploy.inps.it/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurityutility-1.0.xsd" name="WSSERVIZINACIService" targetNamespace="http://ws.deploy.inps.it/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="http://ws.deploy.inps.it/" version="1.0">
+      <xsd:complexType name="TipoMetadatiServizio">
+        <xsd:sequence>
+          <xsd:element name="NomeServizio" type="tns:TipoNomeServizio" />
+          <xsd:element name="Mittente" type="xsd:string" />
+          <xsd:element name="Timestamp" type="xsd:long">
+            <xsd:annotation>
+              <xsd:documentation>
+								Timestamp della richiesta. E' il numero
+								di millisecondi a partire dalla data
+								1/1/1970, con il quale il mittente
+								identifica univocamente la richiesta
+								inviata ad INPS. Non possono esistere
+								due richieste con lo stesso timestamp.
+							</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="TipoNomeServizio">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="GetStatiIstituzioneService" />
+          <xsd:enumeration value="VerificaProceduraEESSIService" />
+          <xsd:enumeration value="GetDatiNaciService" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="getStatiIstituzione">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ModuloGetStatiIstituzioneRichiesta" type="tns:TipoModuloGetStatiIstituzioneRichiesta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="verificaProceduraEESSI">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ModuloVerificaProceduraEESSIRichiesta" type="tns:TipoModuloVerificaProceduraEESSIRichiesta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDatiNaci">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ModuloGetDatiNaciRichiesta" type="tns:TipoModuloGetDatiNaciRichiesta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getStatiIstituzioneResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ModuloGetStatiIstituzioneRisposta" type="tns:TipoModuloGetStatiIstituzioneRisposta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="verificaProceduraEESSIResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ModuloVerificaProceduraEESSIRisposta" type="tns:TipoModuloVerificaProceduraEESSIRisposta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDatiNaciResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ModuloGetDatiNaciRisposta" type="tns:TipoModuloGetDatiNaciRisposta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="TipoModuloGetStatiIstituzioneRichiesta">
+        <xsd:sequence>
+          <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+          <xsd:element name="DatiRichiesta" type="tns:TipoGetStatiIstituzioneRichiesta" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoModuloVerificaProceduraEESSIRichiesta">
+        <xsd:sequence>
+          <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+          <xsd:element name="DatiRichiesta" type="tns:TipoVerificaProceduraEESSIRichiesta" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoModuloGetDatiNaciRichiesta">
+        <xsd:sequence>
+          <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+          <xsd:element name="DatiRichiesta" type="tns:TipoGetDatiNaciRichiesta" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoGetStatiIstituzioneRichiesta">
+        <xsd:sequence>
+          <xsd:element name="NumeroDomus">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:length value="13" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoVerificaProceduraEESSIRichiesta">
+        <xsd:sequence>
+          <xsd:element name="NumeroDomus">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:length value="13" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoGetDatiNaciRichiesta">
+        <xsd:sequence>
+          <xsd:element name="NumeroDomus">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:length value="13" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoModuloGetStatiIstituzioneRisposta">
+        <xsd:sequence>
+          <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+          <xsd:element name="DatiRisposta" type="tns:TipoGetStatiIstituzioneRisposta" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoModuloVerificaProceduraEESSIRisposta">
+        <xsd:sequence>
+          <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+          <xsd:element name="DatiRisposta" type="tns:TipoVerificaProceduraEESSIRisposta" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoModuloGetDatiNaciRisposta">
+        <xsd:sequence>
+          <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+          <xsd:element name="DatiRisposta" type="tns:TipoGetDatiNaciRisposta" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoGetStatiIstituzioneRisposta">
+        <xsd:sequence>
+          <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+          <xsd:element minOccurs="0" name="Cittadinanza" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CittadinanzaDc" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Attivita107" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Stati" type="tns:TipoStatoIstituzione" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoVerificaProceduraEESSIRisposta">
+        <xsd:sequence>
+          <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+          <xsd:element minOccurs="0" name="PresenteInProcedureEESSI" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoGetDatiNaciRisposta">
+        <xsd:sequence>
+          <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+          <xsd:element minOccurs="0" name="Cittadinanza" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CittadinanzaDc" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CittadinanzaISO" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CittadinanzaDcISO" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CittadinanzaArca2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CittadinanzaDcArca2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Attivita107" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Stati" type="tns:TipoStatoIstituzione" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DatiTitolare" type="tns:TipoDatiTitolare" />
+          <xsd:element minOccurs="0" name="DataPresentazioneDomanda" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="DecisioneItaliana" nillable="true" type="tns:TipoDecisioneItaliana" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoMessaggio">
+        <xsd:sequence>
+          <xsd:element name="Codice" type="xsd:int" />
+          <xsd:element name="Descrizione" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoStatoIstituzione">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="15" name="Stato" type="tns:TipoStato" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoDatiTitolare">
+        <xsd:sequence>
+          <xsd:element name="Cognome" nillable="true" type="xsd:string" />
+          <xsd:element name="CognomeAcquisito" nillable="true" type="xsd:string" />
+          <xsd:element name="Nome" nillable="true" type="xsd:string" />
+          <xsd:element name="Sesso" nillable="true" type="xsd:string" />
+          <xsd:element name="DataNascita" nillable="true" type="xsd:string" />
+          <xsd:element name="Luogonascita" nillable="true" type="xsd:string" />
+          <xsd:element name="CodiceFiscale">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:length value="16" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="Cittadinanza" nillable="true" type="xsd:string" />
+          <xsd:element name="StatoCivile" nillable="true" type="tns:TipoStatoCivile" />
+          <xsd:element name="DataDecesso" nillable="true" type="xsd:string" />
+          <xsd:element name="ProvinciaNascita" nillable="true" type="xsd:string" />
+          <xsd:element name="StatoNascita" nillable="true" type="xsd:string" />
+          <xsd:element name="NatoEstero" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoStato">
+        <xsd:sequence>
+          <xsd:element name="CodiceStato" nillable="true" type="xsd:string" />
+          <xsd:element name="CodiceIstituzione" nillable="true" type="xsd:string" />
+          <xsd:element name="Matricola" nillable="true" type="xsd:string" />
+          <xsd:element name="ProvvedimentoEstero" nillable="true" type="xsd:string" />
+          <xsd:element name="DataProvvedimentoEstero" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoStatoCivile">
+        <xsd:sequence>
+          <xsd:element name="Codice" nillable="true" type="xsd:string" />
+          <xsd:element name="Descrizione" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TipoDecisioneItaliana">
+        <xsd:sequence>
+          <xsd:element name="Codice" type="xsd:string" />
+          <xsd:element name="Descrizione" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="getStatiIstituzioneRequest">
+    <part name="ModuloGetStatiIstituzioneRichiesta" element="tns:getStatiIstituzione" />
+  </message>
+  <message name="getDatiNaciRequest">
+    <part name="ModuloGetDatiNaciRichiesta" element="tns:getDatiNaci" />
+  </message>
+  <message name="getDatiNaciResponse">
+    <part name="ModuloGetDatiNaciRisposta" element="tns:getDatiNaciResponse" />
+  </message>
+  <message name="verificaProceduraEESSIRequest">
+    <part name="ModuloVerificaProceduraEESSIRichiesta" element="tns:verificaProceduraEESSI" />
+  </message>
+  <message name="verificaProceduraEESSIResponse">
+    <part name="ModuloVerificaProceduraEESSIRisposta" element="tns:verificaProceduraEESSIResponse" />
+  </message>
+  <message name="getStatiIstituzioneResponse">
+    <part name="ModuloGetStatiIstituzioneRisposta" element="tns:getStatiIstituzioneResponse" />
+  </message>
+  <portType name="WSSERVIZINACIService">
+    <operation name="getStatiIstituzione">
+      <input message="tns:getStatiIstituzioneRequest" />
+      <output message="tns:getStatiIstituzioneResponse" />
+    </operation>
+    <operation name="verificaProceduraEESSI">
+      <input message="tns:verificaProceduraEESSIRequest" />
+      <output message="tns:verificaProceduraEESSIResponse" />
+    </operation>
+    <operation name="getDatiNaci">
+      <input message="tns:getDatiNaciRequest" />
+      <output message="tns:getDatiNaciResponse" />
+    </operation>
+  </portType>
+  <binding name="WSSERVIZINACIPortBinding" type="tns:WSSERVIZINACIService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getStatiIstituzione">
+      <soap:operation soapAction="http://ws.deploy.inps.it/getStatiIstituzione" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verificaProceduraEESSI">
+      <soap:operation soapAction="http://ws.deploy.inps.it/verificaProceduraEESSI" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDatiNaci">
+      <soap:operation soapAction="http://ws.deploy.inps.it/getDatiNaci" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WSSERVIZINACIService">
+    <port name="WSSERVIZINACIPort" binding="tns:WSSERVIZINACIPortBinding">
+      <soap:address location="http://192.168.41.167:8096/WSSERVIZINACI/WSSERVIZINACIService" />
+    </port>
+  </service>
+</definitions>

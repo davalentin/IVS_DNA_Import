@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://TI_PFS_R.ILiquidazioneFs/WCFServices/" elementFormDefault="qualified" targetNamespace="http://TI_PFS_R.ILiquidazioneFs/WCFServices/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" />
+  <xs:element name="FSPR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INPUT" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q1:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FSPRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FSPRResult" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q2:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FSPL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INPUT" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q3:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FSPLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FSPLResult" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q4:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FSRC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INPUT" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q5:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FSRCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FSRCResult" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q6:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContextInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q7:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContextInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q8:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClosePersistentConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q9:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClosePersistentConnectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" minOccurs="0" name="clientContext" nillable="true" type="q10:ClientContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://soa.inps.it/faultcontracts/1_0/" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/faultcontracts/1_0/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DnaInfrastructureFaultContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DnaBaseFaultContract">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DnaInfrastructureFaultContract" nillable="true" type="tns:DnaInfrastructureFaultContract" />
+  <xs:complexType name="DnaBaseFaultContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResourceName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DnaBaseFaultContract" nillable="true" type="tns:DnaBaseFaultContract" />
+  <xs:complexType name="DnaApplicationFaultContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DnaBaseFaultContract">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DnaApplicationFaultContract" nillable="true" type="tns:DnaApplicationFaultContract" />
+  <xs:complexType name="DnaSecurityFaultContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DnaBaseFaultContract">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DnaSecurityFaultContract" nillable="true" type="tns:DnaSecurityFaultContract" />
+  <xs:complexType name="DnaValidationFaultContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DnaBaseFaultContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DnaValidationFaultContract" nillable="true" type="tns:DnaValidationFaultContract" />
+</xs:schema>

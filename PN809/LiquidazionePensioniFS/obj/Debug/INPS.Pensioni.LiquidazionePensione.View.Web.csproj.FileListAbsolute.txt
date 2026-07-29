@@ -1,0 +1,8 @@
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\bin\INPS.Pensioni.LiquidazionePensione.View.Web.dll
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\bin\INPS.Pensioni.LiquidazionePensione.View.Web.pdb
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\bin\INPS.Pensioni.LiquidazionePensione.Presenter.dll
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\bin\Polly.dll
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\bin\INPS.Pensioni.LiquidazionePensione.Presenter.pdb
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\obj\Debug\INPS.Pensioni.LiquidazionePensione.View.Web.csprojResolveAssemblyReference.cache
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\obj\Debug\INPS.Pensioni.LiquidazionePensione.View.Web.dll
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS\obj\Debug\INPS.Pensioni.LiquidazionePensione.View.Web.pdb

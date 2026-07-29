@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e3d08271-b8ff-4620-b089-476f56a93c99" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://hisrsvil04.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LiquidazioneCi1.wsdl" MetadataType="Wsdl" ID="df9b109f-050d-4ef0-a9da-1dae7e654432" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?wsdl" />
+    <MetadataFile FileName="TI_PCI_R3.xsd" MetadataType="Schema" ID="0fd6d6be-99d7-4928-8804-6f38c81987bf" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?xsd=xsd2" />
+    <MetadataFile FileName="TI_PCI_R31.xsd" MetadataType="Schema" ID="8c927557-55cb-4aae-adc6-6404559f73be" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?xsd=xsd1" />
+    <MetadataFile FileName="TI_PCI_R1.wsdl" MetadataType="Wsdl" ID="4c1d91ae-8f7b-4bd7-b272-e3b785754cc0" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TI_PCI_R32.xsd" MetadataType="Schema" ID="f5d39bb5-5765-4a90-bb7f-9b79ff4476d4" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?xsd=xsd0" />
+    <MetadataFile FileName="TI_PCI_R1.disco" MetadataType="Disco" ID="16877f91-08e6-437c-a07a-80412e13648c" SourceId="1" SourceUrl="http://hisrsvil04.ser-test.inps/PN819-PensioniLiquidazionePensioneCi/TI_PCI_R.LiquidazioneCi.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

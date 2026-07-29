@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSPianiDiPagamento" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserisciConguaglio" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserimentoConguaglioTipi" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.TestaRegole" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglio" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.EliminaConguaglioTipi" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.VerificaConguaglio_Gruppo02" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.VerificaConguaglio_Gruppo01" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.ConsultaConguaglio" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.ConsultaConguaglioTipi" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.ConsultaConguaglioResponse" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.ConsultaConguaglio2" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.ConsultaConguaglio3" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.TestaClasse" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.AggiornamentoConguaglio" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.GeneraLinkpoint" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.InserisciConguaglio002" />
+      <xsd:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.GestioneConguaglio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWSPianiDiPagamento_Interpil_InputMessage">
+    <wsdl:part name="parameters" element="tns:Interpil" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_Interpil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InterpilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG001_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG001" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG001_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG001Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_DeleteCONG001_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCONG001" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_DeleteCONG001_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCONG001Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_VerificaCong002_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificaCong002" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_VerificaCong002_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificaCong002Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_VerificaCong001_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificaCong001" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_VerificaCong001_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificaCong001Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG001_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG001" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG001_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG001Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG002_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG002" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG002_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG002Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG003_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG003" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG003_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG003Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG004_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG004" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_SelectCONG004_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCONG004Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_TestaClasse_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestaClasse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_TestaClasse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestaClasseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_TestaConguaglio_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestaConguaglio" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_TestaConguaglio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestaConguaglioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_UpdateCONG001_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCONG001" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_UpdateCONG001_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCONG001Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_GeneraLinkpoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GeneraLinkpoint" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_GeneraLinkpoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GeneraLinkpointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG003_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG003" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG003_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG003Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG002_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG002" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG002_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG002Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG004_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG004" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG004_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG004Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_DeleteCONG002_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCONG002" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_DeleteCONG002_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCONG002Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_GestioneCong_6scatti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GestioneCong_6scatti" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_GestioneCong_6scatti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GestioneCong_6scattiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_GestioneCong_Indennizzo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GestioneCong_Indennizzo" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_GestioneCong_Indennizzo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GestioneCong_IndennizzoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG005_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG005" />
+  </wsdl:message>
+  <wsdl:message name="IWSPianiDiPagamento_InsertCONG005_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCONG005Response" />
+  </wsdl:message>
+  <wsdl:portType name="IWSPianiDiPagamento">
+    <wsdl:operation name="Interpil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/Interpil" message="tns:IWSPianiDiPagamento_Interpil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InterpilResponse" message="tns:IWSPianiDiPagamento_Interpil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG001">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG001" message="tns:IWSPianiDiPagamento_InsertCONG001_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG001Response" message="tns:IWSPianiDiPagamento_InsertCONG001_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/Test" message="tns:IWSPianiDiPagamento_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/TestResponse" message="tns:IWSPianiDiPagamento_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCONG001">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/DeleteCONG001" message="tns:IWSPianiDiPagamento_DeleteCONG001_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/DeleteCONG001Response" message="tns:IWSPianiDiPagamento_DeleteCONG001_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaCong002">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/VerificaCong002" message="tns:IWSPianiDiPagamento_VerificaCong002_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/VerificaCong002Response" message="tns:IWSPianiDiPagamento_VerificaCong002_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaCong001">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/VerificaCong001" message="tns:IWSPianiDiPagamento_VerificaCong001_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/VerificaCong001Response" message="tns:IWSPianiDiPagamento_VerificaCong001_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG001">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG001" message="tns:IWSPianiDiPagamento_SelectCONG001_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG001Response" message="tns:IWSPianiDiPagamento_SelectCONG001_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG002">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG002" message="tns:IWSPianiDiPagamento_SelectCONG002_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG002Response" message="tns:IWSPianiDiPagamento_SelectCONG002_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG003">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG003" message="tns:IWSPianiDiPagamento_SelectCONG003_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG003Response" message="tns:IWSPianiDiPagamento_SelectCONG003_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG004">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG004" message="tns:IWSPianiDiPagamento_SelectCONG004_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/SelectCONG004Response" message="tns:IWSPianiDiPagamento_SelectCONG004_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestaClasse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/TestaClasse" message="tns:IWSPianiDiPagamento_TestaClasse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/TestaClasseResponse" message="tns:IWSPianiDiPagamento_TestaClasse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestaConguaglio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/TestaConguaglio" message="tns:IWSPianiDiPagamento_TestaConguaglio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/TestaConguaglioResponse" message="tns:IWSPianiDiPagamento_TestaConguaglio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCONG001">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/UpdateCONG001" message="tns:IWSPianiDiPagamento_UpdateCONG001_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/UpdateCONG001Response" message="tns:IWSPianiDiPagamento_UpdateCONG001_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneraLinkpoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/GeneraLinkpoint" message="tns:IWSPianiDiPagamento_GeneraLinkpoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/GeneraLinkpointResponse" message="tns:IWSPianiDiPagamento_GeneraLinkpoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG003">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG003" message="tns:IWSPianiDiPagamento_InsertCONG003_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG003Response" message="tns:IWSPianiDiPagamento_InsertCONG003_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG002">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG002" message="tns:IWSPianiDiPagamento_InsertCONG002_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG002Response" message="tns:IWSPianiDiPagamento_InsertCONG002_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG004">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG004" message="tns:IWSPianiDiPagamento_InsertCONG004_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG004Response" message="tns:IWSPianiDiPagamento_InsertCONG004_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCONG002">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/DeleteCONG002" message="tns:IWSPianiDiPagamento_DeleteCONG002_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/DeleteCONG002Response" message="tns:IWSPianiDiPagamento_DeleteCONG002_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GestioneCong_6scatti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/GestioneCong_6scatti" message="tns:IWSPianiDiPagamento_GestioneCong_6scatti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/GestioneCong_6scattiResponse" message="tns:IWSPianiDiPagamento_GestioneCong_6scatti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GestioneCong_Indennizzo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/GestioneCong_Indennizzo" message="tns:IWSPianiDiPagamento_GestioneCong_Indennizzo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/GestioneCong_IndennizzoResponse" message="tns:IWSPianiDiPagamento_GestioneCong_Indennizzo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG005">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG005" message="tns:IWSPianiDiPagamento_InsertCONG005_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSPianiDiPagamento/InsertCONG005Response" message="tns:IWSPianiDiPagamento_InsertCONG005_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSPianiDiPagamentoEndPoint" type="tns:IWSPianiDiPagamento">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Interpil">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/Interpil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG001">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/InsertCONG001" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCONG001">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/DeleteCONG001" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaCong002">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/VerificaCong002" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaCong001">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/VerificaCong001" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG001">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/SelectCONG001" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG002">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/SelectCONG002" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG003">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/SelectCONG003" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCONG004">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/SelectCONG004" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestaClasse">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/TestaClasse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestaConguaglio">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/TestaConguaglio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCONG001">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/UpdateCONG001" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneraLinkpoint">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/GeneraLinkpoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG003">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/InsertCONG003" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG002">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/InsertCONG002" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG004">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/InsertCONG004" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCONG002">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/DeleteCONG002" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GestioneCong_6scatti">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/GestioneCong_6scatti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GestioneCong_Indennizzo">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/GestioneCong_Indennizzo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCONG005">
+      <soap:operation soapAction="http://tempuri.org/IWSPianiDiPagamento/InsertCONG005" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSPianiDiPagamento">
+    <wsdl:port name="WSPianiDiPagamentoEndPoint" binding="tns:WSPianiDiPagamentoEndPoint">
+      <soap:address location="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

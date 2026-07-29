@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RichiestaModelli">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoArchivio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoModello" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaModelliResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaModelliResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaModelliNumDomus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataCalcolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoArchivio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoModello" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BResponse" type="s:unsignedByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaModelliNumDomusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaModelliNumDomusResult" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="BResponse" type="s:unsignedByte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaModelliDB2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoModello" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaModelliDB2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaModelliDB2Result" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaRicBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AnnoLavorazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoLavorazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodicePatronato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaRicBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaRicBatchResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaModelliCodice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceStampa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaModelliCodiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaModelliCodiceResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RichiestaModelliSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaModelli" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaModelliResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliNumDomusSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaModelliNumDomus" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliNumDomusSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaModelliNumDomusResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliDB2SoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaModelliDB2" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliDB2SoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaModelliDB2Response" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRicBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaRicBatch" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRicBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaRicBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliCodiceSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaModelliCodice" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliCodiceSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaModelliCodiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliHttpGetIn">
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="TipoArchivio" type="s:string" />
+    <wsdl:part name="TipoModello" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliDB2HttpGetIn">
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="TipoModello" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliDB2HttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRicBatchHttpGetIn">
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="AnnoLavorazione" type="s:string" />
+    <wsdl:part name="TipoLavorazione" type="s:string" />
+    <wsdl:part name="CodicePatronato" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRicBatchHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliCodiceHttpGetIn">
+    <wsdl:part name="CodiceStampa" type="s:string" />
+    <wsdl:part name="Archivio" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliCodiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliHttpPostIn">
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="TipoArchivio" type="s:string" />
+    <wsdl:part name="TipoModello" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliDB2HttpPostIn">
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="TipoModello" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliDB2HttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRicBatchHttpPostIn">
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="AnnoLavorazione" type="s:string" />
+    <wsdl:part name="TipoLavorazione" type="s:string" />
+    <wsdl:part name="CodicePatronato" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRicBatchHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliCodiceHttpPostIn">
+    <wsdl:part name="CodiceStampa" type="s:string" />
+    <wsdl:part name="Archivio" type="s:string" />
+    <wsdl:part name="Applicazione" type="s:string" />
+    <wsdl:part name="Utente" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaModelliCodiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="RichiestaModelli">
+      <wsdl:input message="tns:RichiestaModelliSoapIn" />
+      <wsdl:output message="tns:RichiestaModelliSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliNumDomus">
+      <wsdl:input message="tns:RichiestaModelliNumDomusSoapIn" />
+      <wsdl:output message="tns:RichiestaModelliNumDomusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliDB2">
+      <wsdl:input message="tns:RichiestaModelliDB2SoapIn" />
+      <wsdl:output message="tns:RichiestaModelliDB2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicBatch">
+      <wsdl:input message="tns:RichiestaRicBatchSoapIn" />
+      <wsdl:output message="tns:RichiestaRicBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliCodice">
+      <wsdl:input message="tns:RichiestaModelliCodiceSoapIn" />
+      <wsdl:output message="tns:RichiestaModelliCodiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpGet">
+    <wsdl:operation name="RichiestaModelli">
+      <wsdl:input message="tns:RichiestaModelliHttpGetIn" />
+      <wsdl:output message="tns:RichiestaModelliHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliDB2">
+      <wsdl:input message="tns:RichiestaModelliDB2HttpGetIn" />
+      <wsdl:output message="tns:RichiestaModelliDB2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicBatch">
+      <wsdl:input message="tns:RichiestaRicBatchHttpGetIn" />
+      <wsdl:output message="tns:RichiestaRicBatchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliCodice">
+      <wsdl:input message="tns:RichiestaModelliCodiceHttpGetIn" />
+      <wsdl:output message="tns:RichiestaModelliCodiceHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpPost">
+    <wsdl:operation name="RichiestaModelli">
+      <wsdl:input message="tns:RichiestaModelliHttpPostIn" />
+      <wsdl:output message="tns:RichiestaModelliHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliDB2">
+      <wsdl:input message="tns:RichiestaModelliDB2HttpPostIn" />
+      <wsdl:output message="tns:RichiestaModelliDB2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicBatch">
+      <wsdl:input message="tns:RichiestaRicBatchHttpPostIn" />
+      <wsdl:output message="tns:RichiestaRicBatchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliCodice">
+      <wsdl:input message="tns:RichiestaModelliCodiceHttpPostIn" />
+      <wsdl:output message="tns:RichiestaModelliCodiceHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RichiestaModelli">
+      <soap:operation soapAction="http://tempuri.org/RichiestaModelli" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliNumDomus">
+      <soap:operation soapAction="http://tempuri.org/RichiestaModelliNumDomus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliDB2">
+      <soap:operation soapAction="http://tempuri.org/RichiestaModelliDB2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicBatch">
+      <soap:operation soapAction="http://tempuri.org/RichiestaRicBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliCodice">
+      <soap:operation soapAction="http://tempuri.org/RichiestaModelliCodice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpGet" type="tns:Service1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="RichiestaModelli">
+      <http:operation location="/RichiestaModelli" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliDB2">
+      <http:operation location="/RichiestaModelliDB2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicBatch">
+      <http:operation location="/RichiestaRicBatch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliCodice">
+      <http:operation location="/RichiestaModelliCodice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpPost" type="tns:Service1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="RichiestaModelli">
+      <http:operation location="/RichiestaModelli" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliDB2">
+      <http:operation location="/RichiestaModelliDB2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicBatch">
+      <http:operation location="/RichiestaRicBatch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModelliCodice">
+      <http:operation location="/RichiestaModelliCodice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://emweb.svil.inps/wsTE08/ServizioRichieste.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpGet" binding="tns:Service1HttpGet">
+      <http:address location="http://emweb.svil.inps/wsTE08/ServizioRichieste.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpPost" binding="tns:Service1HttpPost">
+      <http:address location="http://emweb.svil.inps/wsTE08/ServizioRichieste.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

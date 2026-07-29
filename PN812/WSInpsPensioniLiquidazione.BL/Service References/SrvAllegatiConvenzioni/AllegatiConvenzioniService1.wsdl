@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="AllegatiConvenzioniService.xsd1.xsd" namespace="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="aggiornaCI05Request">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:aggiornaCI05" />
+  </wsdl:message>
+  <wsdl:message name="aggiornaCI05Response">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:aggiornaCI05Response" />
+  </wsdl:message>
+  <wsdl:message name="aggiornaFaseRequest">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:aggiornaFase" />
+  </wsdl:message>
+  <wsdl:message name="aggiornaFaseResponse">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:aggiornaFaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllegatoConvenzioniRequest">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="params" element="xsns:ModuloAllegatoRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="getAllegatoConvenzioniResponse">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="params" element="xsns:ModuloAllegatoRisposta" />
+  </wsdl:message>
+  <wsdl:message name="getStatiIstituzioneRequest">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:getStatiIstituzione" />
+  </wsdl:message>
+  <wsdl:message name="getStatiIstituzioneResponse">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:getStatiIstituzioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="letturaCI05Request">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:letturaCI05" />
+  </wsdl:message>
+  <wsdl:message name="letturaCI05Response">
+    <wsdl:part xmlns:xsns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" name="parameters" element="xsns:letturaCI05Response" />
+  </wsdl:message>
+  <wsdl:portType name="AllegatiConvenzioniService">
+    <wsdl:operation name="aggiornaCI05">
+      <wsdl:input name="aggiornaCI05Request" message="ns0:aggiornaCI05Request" />
+      <wsdl:output name="aggiornaCI05Response" message="ns0:aggiornaCI05Response" />
+    </wsdl:operation>
+    <wsdl:operation name="aggiornaFase">
+      <wsdl:input name="aggiornaFaseRequest" message="ns0:aggiornaFaseRequest" />
+      <wsdl:output name="aggiornaFaseResponse" message="ns0:aggiornaFaseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllegatoConvenzioni">
+      <wsdl:input name="getAllegatoConvenzioniRequest" message="ns0:getAllegatoConvenzioniRequest" />
+      <wsdl:output name="getAllegatoConvenzioniResponse" message="ns0:getAllegatoConvenzioniResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatiIstituzione">
+      <wsdl:input name="getStatiIstituzioneRequest" message="ns0:getStatiIstituzioneRequest" />
+      <wsdl:output name="getStatiIstituzioneResponse" message="ns0:getStatiIstituzioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="letturaCI05">
+      <wsdl:input name="letturaCI05Request" message="ns0:letturaCI05Request" />
+      <wsdl:output name="letturaCI05Response" message="ns0:letturaCI05Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AllegatiConvenzioniServiceSOAP" type="ns0:AllegatiConvenzioniService">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="aggiornaCI05">
+      <soap11:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/aggiornaCI05" style="document" />
+      <wsdl:input name="aggiornaCI05Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="aggiornaCI05Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aggiornaFase">
+      <soap11:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/aggiornaFase" style="document" />
+      <wsdl:input name="aggiornaFaseRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="aggiornaFaseResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllegatoConvenzioni">
+      <soap11:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/getAllegatoConvenzioni" style="document" />
+      <wsdl:input name="getAllegatoConvenzioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllegatoConvenzioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatiIstituzione">
+      <soap11:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/getStatiIstituzione" style="document" />
+      <wsdl:input name="getStatiIstituzioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStatiIstituzioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="letturaCI05">
+      <soap11:operation soapAction="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/letturaCI05" style="document" />
+      <wsdl:input name="letturaCI05Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="letturaCI05Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AllegatiConvenzioniService">
+    <wsdl:port name="AllegatiConvenzioniServiceSOAP" binding="ns0:AllegatiConvenzioniServiceSOAP">
+      <soap11:address location="http://192.168.40.149:80/WsJava/WSAllegatiConvenzioni/AllegatiConvenzioniService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

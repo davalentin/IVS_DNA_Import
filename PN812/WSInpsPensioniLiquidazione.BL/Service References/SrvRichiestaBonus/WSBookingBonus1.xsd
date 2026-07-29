@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://soa.inps.it/servicecontracts/bookingbonus/1_0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/servicecontracts/bookingbonus/1_0">
+  <xs:import schemaLocation="WSBookingBonus.xsd3.xsd" namespace="http://schemas.datacontract.org/2004/07/Dedagroup.Web.Service.Contracts" />
+  <xs:import schemaLocation="WSBookingBonus.xsd4.xsd" namespace="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" />
+  <xs:import schemaLocation="WSBookingBonus.xsd6.xsd" namespace="http://schemas.datacontract.org/2004/07/WSBookingBonus.Contracts" />
+  <xs:element name="GetVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaDirittoAlBonus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="certificato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoBonus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="anni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaDirittoAlBonusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dedagroup.Web.Service.Contracts" minOccurs="0" name="VerificaDirittoAlBonusResult" nillable="true" type="q1:ArrayOfDatiSoggPensione" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" minOccurs="0" name="response" nillable="true" type="q2:OperationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrenotazioneElaborazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matrOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="certificato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoBonus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="anni" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nrDomus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrenotazioneElaborazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dedagroup.Web.Service.Contracts" minOccurs="0" name="PrenotazioneElaborazioniResult" nillable="true" type="q3:ArrayOfDatiPrenotazione" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" minOccurs="0" name="response" nillable="true" type="q4:OperationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatoElaborazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="certificato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoBonus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="anni" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatoElaborazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Dedagroup.Web.Service.Contracts" minOccurs="0" name="StatoElaborazioniResult" nillable="true" type="q5:ArrayOfStatoElaborazione" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" minOccurs="0" name="response" nillable="true" type="q6:OperationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RichiestaVerify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matrOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="certificato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoBonus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="anni" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nrDomus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RichiestaVerifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Dedagroup.Web.Service.Contracts" minOccurs="0" name="RichiestaVerifyResult" nillable="true" type="q7:ArrayOfDatiPrenotazione" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" minOccurs="0" name="response" nillable="true" type="q8:OperationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaAnniDirittoAlBonus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="certificato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoBonus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaAnniDirittoAlBonusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WSBookingBonus.Contracts" minOccurs="0" name="VerificaAnniDirittoAlBonusResult" nillable="true" type="q9:ArrayOfDatiVerificaAnni" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" minOccurs="0" name="response" nillable="true" type="q10:OperationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RiepilogoPrenotazioniBonus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sede" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="certificato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codiceFiscale" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoPrenotazioneBonus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RiepilogoPrenotazioniBonusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Dedagroup.Web.Service.Contracts" minOccurs="0" name="RiepilogoPrenotazioniBonusResult" nillable="true" type="q11:ArrayOfPrenotazioni" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" minOccurs="0" name="response" nillable="true" type="q12:OperationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaPrenotazioneBonus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="anno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoBonus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idBooking" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pensione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancellaPrenotazioneBonusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancellaPrenotazioneBonusResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Dedagroup.Foundation.Core" minOccurs="0" name="response" nillable="true" type="q13:OperationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xsd:schema>

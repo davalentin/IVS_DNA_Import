@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://TI_PFS_R.ILiquidazioneFs/WCFServices/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LiquidazioneFs" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ILiquidazioneFs_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://TI_PFS_R.ILiquidazioneFs/WCFServices/" location="http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="WSHttpBinding_ILiquidazioneFs" type="i0:ILiquidazioneFs">
+    <wsp:PolicyReference URI="#WSHttpBinding_ILiquidazioneFs_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FSPR">
+      <soap12:operation soapAction="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSPR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FSPL">
+      <soap12:operation soapAction="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSPL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FSRC">
+      <soap12:operation soapAction="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/FSRC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContextInfo">
+      <soap12:operation soapAction="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/UpdateContextInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClosePersistentConnection">
+      <soap12:operation soapAction="http://TI_PFS_R.ILiquidazioneFs/WCFServices/ILiquidazioneFs/ClosePersistentConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LiquidazioneFs">
+    <wsdl:port name="WSHttpBinding_ILiquidazioneFs" binding="tns:WSHttpBinding_ILiquidazioneFs">
+      <soap12:address location="http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://hisrsvil03.ser-test.inps/PN811-PensioniLiquidazione/TI_PFS_R.LiquidazioneFs.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

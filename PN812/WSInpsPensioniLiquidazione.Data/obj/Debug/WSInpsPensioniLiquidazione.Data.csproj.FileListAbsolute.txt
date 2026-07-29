@@ -1,0 +1,4 @@
+C:\Liquidazione_pensioni\PN812\branches\WIP\WSInpsPensioniLiquidazione.Data\bin\Debug\INPS.Pensioni.Liquidazione.Data.dll
+C:\Liquidazione_pensioni\PN812\branches\WIP\WSInpsPensioniLiquidazione.Data\bin\Debug\INPS.Pensioni.Liquidazione.Data.pdb
+C:\Liquidazione_pensioni\PN812\branches\WIP\WSInpsPensioniLiquidazione.Data\obj\Debug\INPS.Pensioni.Liquidazione.Data.dll
+C:\Liquidazione_pensioni\PN812\branches\WIP\WSInpsPensioniLiquidazione.Data\obj\Debug\INPS.Pensioni.Liquidazione.Data.pdb

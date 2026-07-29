@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://soa.inps.it/WSUNIDETRA" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Detrazioni" targetNamespace="http://soa.inps.it/WSUNIDETRA" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://soa.inps.it/WSUNIDETRA" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:element name="Ricerca">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="richiesta" type="tns:RichiestaRicercaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RichiestaRicercaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Argomento del WS di ricerca di una detrazione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodiceFiscale" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del soggetto di cui si richiede la detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Decorrenza" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Anno di decorrenza della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Al" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Opzionale, serve ad indicare a quale data si vuole la detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sicurezza" type="tns:Sicurezza">
+            <xs:annotation>
+              <xs:documentation>Dati identificativi dell'applicazione chiamante</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RichiestaRicercaDetrazione" nillable="true" type="tns:RichiestaRicercaDetrazione" />
+      <xs:complexType name="Sicurezza">
+        <xs:annotation>
+          <xs:documentation>Dati identificativi dell'applicazione chiamante</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CsAppName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Nome dell'applicazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CsAppKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Chiave assegnata all'applicazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Username" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Nome utente applicativo</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Sicurezza" nillable="true" type="tns:Sicurezza" />
+      <xs:element name="RicercaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RicercaResult" nillable="true" type="tns:EsitoRicercaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EsitoRicercaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Esito della ricerca della detrazione. Lo stato è 'OK' se l’aggiunta è andata a buon fine</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Titolare" type="tns:Titolare">
+            <xs:annotation>
+              <xs:documentation>Contiene i dati del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Stato" type="tns:WSStato">
+            <xs:annotation>
+              <xs:documentation>Stato Esito della richiesta</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messaggi" type="q1:ArrayOfstring">
+            <xs:annotation>
+              <xs:documentation>Eventuali messaggi di errore e/o validazione se lo stato non è 'OK'</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EsitoRicercaDetrazione" nillable="true" type="tns:EsitoRicercaDetrazione" />
+      <xs:complexType name="Titolare">
+        <xs:annotation>
+          <xs:documentation>Contiene i dati del titolare della detrazione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodFiscale">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del dichiarante
+Il dato deve essere sempre presente. 
+Se il codice fiscale è riferito a percipiente persona fisica, deve essere congruente a Cognome, Nome, Sesso e Data di nascita
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="16" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Cognome">
+            <xs:annotation>
+              <xs:documentation>Cognome del dichiarante
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Nome">
+            <xs:annotation>
+              <xs:documentation>Nome del dichiarante
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Sesso">
+            <xs:annotation>
+              <xs:documentation>Sesso del dichiarante
+Vale M o F
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="F" />
+                <xs:maxLength value="1" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="DataNascita" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data di nascita del dichiarante
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LuogoNascita" type="tns:DomicilioNascita">
+            <xs:annotation>
+              <xs:documentation>Luogo di Nascita
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Domic0101" type="tns:Domicilio">
+            <xs:annotation>
+              <xs:documentation>Domicilio all'1/1
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Residenza" type="tns:Residenza">
+            <xs:annotation>
+              <xs:documentation>Domicilio di Residenza
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cittadinanza">
+            <xs:annotation>
+              <xs:documentation>Cittadinanza del titolare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="StatoCivile">
+            <xs:annotation>
+              <xs:documentation>1 = CELIBE/NUBILE
+2 = CONIUGATO/A
+3 = VEDOVO/A
+4 = SEPARATO/A
+5 = DIVORZIATO/A
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="1" />
+                <xs:maxInclusive value="5" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Telefono">
+            <xs:annotation>
+              <xs:documentation>Telefono
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="12" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Fax">
+            <xs:annotation>
+              <xs:documentation>Fax
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="12" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Mail">
+            <xs:annotation>
+              <xs:documentation>Indirizzo email
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="100" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cellulare">
+            <xs:annotation>
+              <xs:documentation>Cellulare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="12" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Presentazione" type="tns:Presentazione">
+            <xs:annotation>
+              <xs:documentation>Contiene le informazioni inerenti alla presentazione della detrazione
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DetrazioneArt11" type="tns:DetrazioneArt11">
+            <xs:annotation>
+              <xs:documentation>Detrazioni articolo 11</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DetrazioneArt12" type="tns:DetrazioneArt12">
+            <xs:annotation>
+              <xs:documentation>Detrazioni articolo 12</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DetrazioneArt13" type="tns:DetrazioneArt13">
+            <xs:annotation>
+              <xs:documentation>Detrazioni articolo 13
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AltreDetrazioni" type="tns:AltreDetrazioni">
+            <xs:annotation>
+              <xs:documentation>Altri tipi di detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AliquotaFissa" type="tns:AliquotaFissa">
+            <xs:annotation>
+              <xs:documentation>Aliquota fissa o marginale
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NucleoFamiliare" type="tns:NucleoFamiliare">
+            <xs:annotation>
+              <xs:documentation>Nucleo familiare del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NoGestione" type="tns:NoGestione">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Titolare" nillable="true" type="tns:Titolare" />
+      <xs:complexType name="DomicilioNascita">
+        <xs:annotation>
+          <xs:documentation>Informazioni sul comune
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comune">
+            <xs:annotation>
+              <xs:documentation>Nome del comune
+se stato estero, mettere il nome dello Stato Estero
+
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="100" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Prov">
+            <xs:annotation>
+              <xs:documentation>Provincia associata al comune indicato
+Deve essere presente nell’elenco delle unità amministrative Istat. 
+Se comune è Stato Estero, indicare 'EE'
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="2" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="CodFisco">
+            <xs:annotation>
+              <xs:documentation>Codice catasto associato al comune indicato
+
+Il dato deve essere presente nei codici comuni della tabella Codici catastali comunali
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="4" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Stato">
+            <xs:annotation>
+              <xs:documentation>Stato
+Se stato estero, mettere il nome dello Stato Estero presente nell’elenco pubblicato dall’Agenzia delle Entrate
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DomicilioNascita" nillable="true" type="tns:DomicilioNascita" />
+      <xs:complexType name="Domicilio">
+        <xs:annotation>
+          <xs:documentation>Informazioni sul comune
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Comune">
+            <xs:annotation>
+              <xs:documentation>Nome del comune
+se stato estero, mettere il nome dello Stato Estero
+
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="100" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Prov">
+            <xs:annotation>
+              <xs:documentation>Provincia associata al comune indicato
+Deve essere presente nell’elenco delle unità amministrative Istat. 
+Se comune è Stato Estero, indicare 'EE'
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="2" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CodFisco">
+            <xs:annotation>
+              <xs:documentation>Codice catasto associato al comune indicato
+
+Il dato deve essere presente nei codici comuni della tabella Codici catastali comunali
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="4" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Stato">
+            <xs:annotation>
+              <xs:documentation>Stato
+Se stato estero, mettere il nome dello Stato Estero presente nell’elenco pubblicato dall’Agenzia delle Entrate
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Domicilio" nillable="true" type="tns:Domicilio" />
+      <xs:complexType name="Residenza">
+        <xs:annotation>
+          <xs:documentation>Informazioni principali sulla residenza
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Indirizzo">
+            <xs:annotation>
+              <xs:documentation>Indirizzo di residenza
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="80" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cap">
+            <xs:annotation>
+              <xs:documentation>CAP di residenza
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Comune">
+            <xs:annotation>
+              <xs:documentation>Nome del comune
+se stato estero, mettere il nome dello Stato Estero
+
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="100" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Prov">
+            <xs:annotation>
+              <xs:documentation>Provincia associata al comune indicato
+Deve essere presente nell’elenco delle unità amministrative Istat. 
+Se comune è Stato Estero, indicare 'EE'
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="2" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CodFisco">
+            <xs:annotation>
+              <xs:documentation>Codice catasto associato al comune indicato
+
+Il dato deve essere presente nei codici comuni della tabella Codici catastali comunali
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="4" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Stato">
+            <xs:annotation>
+              <xs:documentation>Stato
+Se stato estero, mettere il nome dello Stato Estero presente nell’elenco pubblicato dall’Agenzia delle Entrate
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Residenza" nillable="true" type="tns:Residenza" />
+      <xs:complexType name="Presentazione">
+        <xs:annotation>
+          <xs:documentation>Contiene le informazioni inerenti alla presentazione della detrazione
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Data" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data in cui è stata presentata la domanda delle prestazioni. Serve per aggiornare l'archivio se più recente
+La data di presentazione è l'elemento base per la gestione unificata delle detrazioni.
+Indica la data in cui il Dipendente/Pensionato ha presentato la domanda di detrazioni all'INPS nelle diverse forme disponibili(direttamente all'istituto o servendosi dei patronati/caf).
+
+• La data di presentazione è unica per ogni modello detrazioni presentato, quindi è la stessa per tutte le sezioni (art 11, 12,13 , aliquota marginale) presenti nel modello
+• La PF utilizza la data di presentazione per sostituire le domande di detrazioni aventi date meno recenti a parità di anno di decorrenza.   A parità di data di presentazione e anno di decorrenza l’ultima domanda pervenuta alla PF sostituisce la precedente
+• Non è previsto che una domanda di detrazione venga considerata solo parzialmente ossia solo per detrazioni familiari e non per le altre detrazioni.
+
+La PF scarta le domande di detrazione se la data di presentazione è
+• Assente
+• Errata 
+• Nel futuro, ossia maggiore alla data in cui la PF la elabora”
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Decorrenza">
+            <xs:annotation>
+              <xs:documentation>Anno da cui decorre la domanda (AAAA)
+L’anno di decorrenza indica l’anno da cui far valere la nuova domanda di detrazione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Prestazione">
+            <xs:annotation>
+              <xs:documentation>Indica la prestazione o caf che ha ricevuto la domanda
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="25" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Protocollo">
+            <xs:annotation>
+              <xs:documentation>E' il protocollo attribuito alla domanda in fase di presentazione. Impostato solo dalla piattaforma
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="30" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Operatore">
+            <xs:annotation>
+              <xs:documentation>Indica l'operatore che ha inserito la detrazione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="25" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Sede">
+            <xs:annotation>
+              <xs:documentation>Indica la sede dell'operatore che ha inserito la detrazione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="25" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="DataAcquisizione" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data in cui è stata acquisita la domanda dalla prestazione
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Presentazione" nillable="true" type="tns:Presentazione" />
+      <xs:complexType name="DetrazioneArt11">
+        <xs:annotation>
+          <xs:documentation>Detrazioni articolo 11
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NoApplicazioneArt11" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Non applicare la detrazione di cui all'articolo 11 del Tuir, solo redditi da pensione non superiore a 7.500€, solo redditi di terreni non superiore a 185,92€ e reddito abitazione principale e pertinenze
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ReddComplDichiarato">
+            <xs:annotation>
+              <xs:documentation>Reddito complessivo dichiarato
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="11" />
+                <xs:fractionDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="CompReddComplComma2" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Composizione Reddito Complessivo Comma 2
+• Composizione Reddito Complessivo comma 2 
+o Il flag indica che il reddito complessivo è composto solo da:
+- Reddito di pensione non superiore a 7500 
+- Reddito terreni   inferiore a 185,92
+- Reddito unità immobiliare adibita abitazione principale e pertinenze 
+
+• Questo valore è un di cui del reddito complessivo 
+
+Pertanto la detrazione art 11 verrà applicata se 
+
+• se non è attivo il flag nodetrazione  
+- RedditoComplComma2 = true 
+- Se non ci sono redditi di lavoro dipendente per la singola posizione
+- Se il reddito unificato di pensione non supera i 7500
+- I giorni di pensione non sono inferiori a 365  
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DetrazioneArt11" nillable="true" type="tns:DetrazioneArt11" />
+      <xs:complexType name="DetrazioneArt12">
+        <xs:annotation>
+          <xs:documentation>Detrazioni articolo 12
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NoApplicazioneArt12" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Non applicare le detrazioni per carichi di famiglia di cui all'articolo 12 del Tuir
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ApplicazioneDetrFamiglieNumerose">
+            <xs:annotation>
+              <xs:documentation>Ulteriore detrazione per famiglie con 4 figli o superiore
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:enumeration value="0" />
+                <xs:enumeration value="50" />
+                <xs:enumeration value="100" />
+                <xs:totalDigits value="3" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="FigliResidentiEstero">
+            <xs:annotation>
+              <xs:documentation>Numero figli residenti all'estero
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DetrazioneArt12" nillable="true" type="tns:DetrazioneArt12" />
+      <xs:complexType name="DetrazioneArt13">
+        <xs:annotation>
+          <xs:documentation>Detrazioni articolo 13
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NoApplicazioneArt13" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Non applicare la detrazione per redditi di lavoro dipendente, assimilati e di pensioni di cui all'articolo 13 del Tuir
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DetrMinimaRagguagliata" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Detrazione minima ragguagliata
+• Deve essere indicata anche la volontà di non ragguagliare al periodo di lavoro la detrazione minima  ( come avviene in dichiarazione dei redditi ) di  1380  lavoro tempo determinato – 690  lav. tempo indeterminato ,perché applicando il Tuir  art 13 comma 1 bis il sostituto deve obbligatoriamente rapportarla ai giorni di lavoro ( elemento DetrMinimaRagguagliata presente nel nodo DetrazioneArt13)
+•In Inps ( “Damato”) aveva scelto di non applicare questa detrazione minima perché questa tiene conto del reddito complessivo ( terreni , fabbricati etc) che l’Inps non lo ha
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RinunciaBonusDL66" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Rinuncia al Bonus DL66
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DetrazioneArt13" nillable="true" type="tns:DetrazioneArt13" />
+      <xs:complexType name="AltreDetrazioni">
+        <xs:annotation>
+          <xs:documentation>Altri tipi di detrazione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CasiParticolari" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Applicare detrazione casi particolari Regione Veneto 
+•	Se è presente il flag, il comune di domicilio deve appartenere alla regione Veneto
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NonResidenteSchumacker" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Attenzione: se impostato a true non viene considerato in fase di acquisizione della detrazione, pertanto si considera in sola lettura.
+
+Deve essere impostato a true solo se:
+ il soggetto titolare è residente in uno dei Paesi membri o aderente al trattato di Schengen diverso dall’Italia
+ ha rilasciato la dichiarazione di aver prodotto almeno il 75% del reddito in Italia
+ Non gode di agevolazioni fiscali analoghe nel Paese di residenza o dove è stato prodotto l’altro reddito.
+
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ConvDoppieImposizioni" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Attenzione: se impostato a true non viene considerato in fase di acquisizione della detrazione, pertanto si considera in sola lettura.
+
+Applica convenzione doppie imposizioni.
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AltreDetrazioni" nillable="true" type="tns:AltreDetrazioni" />
+      <xs:complexType name="AliquotaFissa">
+        <xs:annotation>
+          <xs:documentation>Aliquota fissa o marginale
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Aliquota">
+            <xs:annotation>
+              <xs:documentation>Aliquota fissa per calcolo Irpef
+Vale 23, 27, 38, 41, 43
+Se presente il calcolo dell'imposta lorda viene eseguito con l'aliquota indicata e non a scaglioni di reddito
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="5" />
+                <xs:fractionDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="NoRestitCreditoConguaglio" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>In presenza dell’aliquota marginale si deve obbligatoriamente esprimere la volontà della non restituzione del credito ottenuto con il calcolo del conguaglio ordinario. In caso contrario l’aliquota marginale non verrà considerata e applicato il conguaglio fiscale ordinario
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AliquotaFissa" nillable="true" type="tns:AliquotaFissa" />
+      <xs:complexType name="NucleoFamiliare">
+        <xs:annotation>
+          <xs:documentation>Nucleo familiare del titolare della detrazione
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Coniugi" type="tns:Coniugi">
+            <xs:annotation>
+              <xs:documentation>Insieme delle informazioni relative ai coniugi del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PrimiFigli" type="tns:PrimiFigli">
+            <xs:annotation>
+              <xs:documentation>Insieme delle informazioni relative ai primi figli del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AltriFigli" type="tns:AltriFigli">
+            <xs:annotation>
+              <xs:documentation>Insieme delle informazioni relative agli altri del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AltriFamiliari" type="tns:AltriFamiliari">
+            <xs:annotation>
+              <xs:documentation>Insieme delle informazioni relative agli altri familiari del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NucleoFamiliare" nillable="true" type="tns:NucleoFamiliare" />
+      <xs:complexType name="Coniugi">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Coniuge" nillable="true" type="tns:Coniuge" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Coniugi" nillable="true" type="tns:Coniugi" />
+      <xs:complexType name="Coniuge">
+        <xs:annotation>
+          <xs:documentation>Informazioni relative al coniuge
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodFiscale">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del familiare
+Il dato deve essere sempre presente. 
+Se il codice fiscale è riferito a percipiente persona fisica, deve essere congruente a Cognome, Nome, Sesso e Data di nascita
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="16" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cognome">
+            <xs:annotation>
+              <xs:documentation>Cognome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Nome">
+            <xs:annotation>
+              <xs:documentation>Nome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Sesso">
+            <xs:annotation>
+              <xs:documentation>Sesso del familiare
+Vale M o F
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="F" />
+                <xs:maxLength value="1" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data di nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LuogoNascita" type="tns:DomicilioNascita">
+            <xs:annotation>
+              <xs:documentation>Luogo di Nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dall'anno
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dal mese
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico All'anno
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico Al mese
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="MesiCaricoTotali">
+            <xs:annotation>
+              <xs:documentation>Mesi a carico totali del familiare
+Campo in sola lettura, impostato solo dalla piattaforma
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Residenza" type="tns:Residenza">
+            <xs:annotation>
+              <xs:documentation>Domicilio di Residenza del coniuge
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cittadinanza">
+            <xs:annotation>
+              <xs:documentation>Cittadinanza del coniuge
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Telefono">
+            <xs:annotation>
+              <xs:documentation>Telefono
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="12" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Fax">
+            <xs:annotation>
+              <xs:documentation>Fax
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="12" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Mail">
+            <xs:annotation>
+              <xs:documentation>Indirizzo email
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="100" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cellulare">
+            <xs:annotation>
+              <xs:documentation>Cellulare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="12" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Coniuge" nillable="true" type="tns:Coniuge" />
+      <xs:complexType name="PrimiFigli">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PrimoFiglio" nillable="true" type="tns:PrimoFiglio" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PrimiFigli" nillable="true" type="tns:PrimiFigli" />
+      <xs:complexType name="PrimoFiglio">
+        <xs:annotation>
+          <xs:documentation>Informazioni relative al primo figlio
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodFiscale">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del familiare
+Il dato deve essere sempre presente. 
+Se il codice fiscale è riferito a percipiente persona fisica, deve essere congruente a Cognome, Nome, Sesso e Data di nascita
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="16" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cognome">
+            <xs:annotation>
+              <xs:documentation>Cognome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Nome">
+            <xs:annotation>
+              <xs:documentation>Nome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Sesso">
+            <xs:annotation>
+              <xs:documentation>Sesso del familiare
+Vale M o F
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="F" />
+                <xs:maxLength value="1" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data di nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LuogoNascita" type="tns:DomicilioNascita">
+            <xs:annotation>
+              <xs:documentation>Luogo di Nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dall'anno
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dal mese
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico All'anno
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico Al mese
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="MesiCaricoTotali">
+            <xs:annotation>
+              <xs:documentation>Mesi a carico totali del familiare
+Campo in sola lettura, impostato solo dalla piattaforma
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Disabile" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Disabile
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AssenzaConiuge" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Primo figlio assenza coniuge
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MesiMinore">
+            <xs:annotation>
+              <xs:documentation>Minore di 3 anni
+Campo in sola lettura, impostato solo dalla piattaforma
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Perc">
+            <xs:annotation>
+              <xs:documentation>Percentuale detrazione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:enumeration value="0" />
+                <xs:enumeration value="50" />
+                <xs:enumeration value="100" />
+                <xs:totalDigits value="3" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Affidamento" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Detrazione 100% affidamento figlio
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Minore" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Flag minore 3 anni
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PrimoFiglio" nillable="true" type="tns:PrimoFiglio" />
+      <xs:complexType name="AltriFigli">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AltroFiglio" nillable="true" type="tns:AltroFiglio" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AltriFigli" nillable="true" type="tns:AltriFigli" />
+      <xs:complexType name="AltroFiglio">
+        <xs:annotation>
+          <xs:documentation>Informazioni relative ad altro figlio
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodFiscale">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del familiare
+Il dato deve essere sempre presente. 
+Se il codice fiscale è riferito a percipiente persona fisica, deve essere congruente a Cognome, Nome, Sesso e Data di nascita
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="16" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cognome">
+            <xs:annotation>
+              <xs:documentation>Cognome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Nome">
+            <xs:annotation>
+              <xs:documentation>Nome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Sesso">
+            <xs:annotation>
+              <xs:documentation>Sesso del familiare
+Vale M o F
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="F" />
+                <xs:maxLength value="1" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data di nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LuogoNascita" type="tns:DomicilioNascita">
+            <xs:annotation>
+              <xs:documentation>Luogo di Nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dall'anno
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dal mese
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico All'anno
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico Al mese
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="MesiCaricoTotali">
+            <xs:annotation>
+              <xs:documentation>Mesi a carico totali del familiare
+Campo in sola lettura, impostato solo dalla piattaforma
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Disabile" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Disabile
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MesiMinore">
+            <xs:annotation>
+              <xs:documentation>Minore di 3 anni
+Campo in sola lettura, impostato solo dalla piattaforma
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Perc">
+            <xs:annotation>
+              <xs:documentation>Percentuale detrazione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:enumeration value="0" />
+                <xs:enumeration value="50" />
+                <xs:enumeration value="100" />
+                <xs:totalDigits value="3" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Affidamento" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Detrazione 100% affidamento figlio
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Minore" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Flag minore 3 anni
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AltroFiglio" nillable="true" type="tns:AltroFiglio" />
+      <xs:complexType name="AltriFamiliari">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AltroFamiliare" nillable="true" type="tns:AltroFamiliare" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AltriFamiliari" nillable="true" type="tns:AltriFamiliari" />
+      <xs:complexType name="AltroFamiliare">
+        <xs:annotation>
+          <xs:documentation>Informazioni relative ad altro familiare
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodFiscale">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del familiare
+Il dato deve essere sempre presente. 
+Se il codice fiscale è riferito a percipiente persona fisica, deve essere congruente a Cognome, Nome, Sesso e Data di nascita
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="16" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Cognome">
+            <xs:annotation>
+              <xs:documentation>Cognome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="60" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Nome">
+            <xs:annotation>
+              <xs:documentation>Nome del familiare
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Sesso">
+            <xs:annotation>
+              <xs:documentation>Sesso del familiare
+Vale M o F
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="F" />
+                <xs:maxLength value="1" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data di nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LuogoNascita" type="tns:DomicilioNascita">
+            <xs:annotation>
+              <xs:documentation>Luogo di Nascita del familiare
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dall'anno
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoDalMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico dal mese
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlAnno">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico All'anno
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="4" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ACaricoAlMese">
+            <xs:annotation>
+              <xs:documentation>Fiscalmente a carico Al mese
+Lasciare a 0 se la posizione non è terminata.
+Il dato è valorizzato con il mese originario di acquisizione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:maxInclusive value="12" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="MesiCaricoTotali">
+            <xs:annotation>
+              <xs:documentation>Mesi a carico totali del familiare
+Campo in sola lettura, impostato solo dalla piattaforma
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Perc">
+            <xs:annotation>
+              <xs:documentation>Percentuale detrazione
+</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="5" />
+                <xs:fractionDigits value="2" />
+                <xs:minInclusive value="0" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AltroFamiliare" nillable="true" type="tns:AltroFamiliare" />
+      <xs:complexType name="NoGestione">
+        <xs:annotation>
+          <xs:documentation>Sezioni non gestite
+</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Sezione" nillable="true" type="tns:Sezione">
+            <xs:annotation>
+              <xs:documentation>Gestione delle sezioni
+Con valori diversi da None, significa che le sezioni delle detrazioni corrispondenti non sono gestite dalla prestazione e il dato deve essere recuperato dalle detrazioni precedenti.
+
+Valori possibili: None,  AliquotaFissa
+</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NoGestione" nillable="true" type="tns:NoGestione" />
+      <xs:simpleType name="Sezione">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None" />
+          <xs:enumeration value="AliquotaFissa" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="Sezione" nillable="true" type="tns:Sezione" />
+      <xs:simpleType name="WSStato">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ND" />
+          <xs:enumeration value="OK" />
+          <xs:enumeration value="AutFallita" />
+          <xs:enumeration value="AutInsufficienti" />
+          <xs:enumeration value="NoPresente" />
+          <xs:enumeration value="PosizioneInvalida" />
+          <xs:enumeration value="ErrGenerico" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="WSStato" nillable="true" type="tns:WSStato" />
+      <xs:complexType name="RichiestaInvalida">
+        <xs:annotation>
+          <xs:documentation>Oggetto che viene restituito se la chiamata al WS va in eccezione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errori" nillable="true" type="q2:ArrayOfstring">
+            <xs:annotation>
+              <xs:documentation>Descrizioni degli eventuali errori relativi alla richiesta effettuata</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RichiestaInvalida" nillable="true" type="tns:RichiestaInvalida" />
+      <xs:element name="RicercaStorico">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="richiesta" type="tns:RichiestaRicercaStoricoDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RichiestaRicercaStoricoDetrazione">
+        <xs:annotation>
+          <xs:documentation>Argomento del WS di ricerca dello storico delle detrazioni</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodiceFiscale" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del soggetto di cui si richiede lo storico delle detrazioni</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sicurezza" type="tns:Sicurezza">
+            <xs:annotation>
+              <xs:documentation>Dati identificativi dell'applicazione chiamante</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RichiestaRicercaStoricoDetrazione" nillable="true" type="tns:RichiestaRicercaStoricoDetrazione" />
+      <xs:element name="RicercaStoricoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RicercaStoricoResult" nillable="true" type="tns:EsitoRicercaStoricoDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EsitoRicercaStoricoDetrazione">
+        <xs:annotation>
+          <xs:documentation>Esito della ricerca dello storico delle detrazione. Lo stato è 'OK' se l’aggiunta è andata a buon fine</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Titolari" type="tns:Titolari">
+            <xs:annotation>
+              <xs:documentation>Elenco di titolari di detrazioni</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Stato" type="tns:WSStato">
+            <xs:annotation>
+              <xs:documentation>Stato Esito della richiesta</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messaggi" type="q3:ArrayOfstring">
+            <xs:annotation>
+              <xs:documentation>Eventuali messaggi di errore e/o validazione se lo stato non è 'OK'</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EsitoRicercaStoricoDetrazione" nillable="true" type="tns:EsitoRicercaStoricoDetrazione" />
+      <xs:complexType name="Titolari">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Titolare" nillable="true" type="tns:Titolare" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Titolari" nillable="true" type="tns:Titolari" />
+      <xs:element name="Aggiungi">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="richiesta" type="tns:RichiestaAggiungiDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RichiestaAggiungiDetrazione">
+        <xs:annotation>
+          <xs:documentation>Argomento del WS di aggiunta di una detrazione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Titolare" type="tns:Titolare">
+            <xs:annotation>
+              <xs:documentation>Contiene i dati del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sicurezza" type="tns:Sicurezza">
+            <xs:annotation>
+              <xs:documentation>Dati identificativi dell'applicazione chiamante</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RichiestaAggiungiDetrazione" nillable="true" type="tns:RichiestaAggiungiDetrazione" />
+      <xs:element name="AggiungiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AggiungiResult" nillable="true" type="tns:EsitoAggiungiDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EsitoAggiungiDetrazione">
+        <xs:annotation>
+          <xs:documentation>Esito dell'aggiunta di una detrazione. Lo stato è 'OK' se l’aggiunta è andata a buon fine</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Stato" type="tns:WSStato">
+            <xs:annotation>
+              <xs:documentation>Stato Esito della richiesta</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messaggi" type="q4:ArrayOfstring">
+            <xs:annotation>
+              <xs:documentation>Eventuali messaggi di errore e/o validazione se lo stato non è 'OK'</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EsitoAggiungiDetrazione" nillable="true" type="tns:EsitoAggiungiDetrazione" />
+      <xs:element name="Annulla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="richiesta" type="tns:RichiestaAnnullaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RichiestaAnnullaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Argomento del WS di annullamento di una detrazione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodiceFiscale" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del soggetto di cui si richiede l'annullamento</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Protocollo" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Protocollo univoco della detrazione da annullare</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sicurezza" type="tns:Sicurezza">
+            <xs:annotation>
+              <xs:documentation>Dati identificativi dell'applicazione chiamante</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RichiestaAnnullaDetrazione" nillable="true" type="tns:RichiestaAnnullaDetrazione" />
+      <xs:element name="AnnullaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AnnullaResult" nillable="true" type="tns:EsitoAnnullaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EsitoAnnullaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Esito dell'annullamento di una detrazione. Lo stato è 'OK' se l’aggiunta è andata a buon fine</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Stato" type="tns:WSStato">
+            <xs:annotation>
+              <xs:documentation>Stato Esito della richiesta</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messaggi" type="q5:ArrayOfstring">
+            <xs:annotation>
+              <xs:documentation>Eventuali messaggi di errore e/o validazione se lo stato non è 'OK'</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EsitoAnnullaDetrazione" nillable="true" type="tns:EsitoAnnullaDetrazione" />
+      <xs:element name="Stampa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="richiesta" type="tns:RichiestaStampaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RichiestaStampaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Argomento del WS di stampa di una detrazione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CodiceFiscale" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Codice Fiscale del soggetto di cui si richiede la stampa</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Protocollo" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Protocollo univoco della detrazione da stampare</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sicurezza" type="tns:Sicurezza">
+            <xs:annotation>
+              <xs:documentation>Dati identificativi dell'applicazione chiamante</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RichiestaStampaDetrazione" nillable="true" type="tns:RichiestaStampaDetrazione" />
+      <xs:element name="StampaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StampaResult" nillable="true" type="tns:EsitoStampaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EsitoStampaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Esito della stampa del modello di dichiarazione per il diritto alle detrazioni d’imposta. Lo stato è 'OK' se la stampa è andata a buon fine</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentoPDF" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Contiene il documento pdf della detrazione stampata</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Stato" type="tns:WSStato">
+            <xs:annotation>
+              <xs:documentation>Stato Esito della richiesta</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messaggi" type="q6:ArrayOfstring">
+            <xs:annotation>
+              <xs:documentation>Eventuali messaggi di errore e/o validazione se lo stato non è 'OK'</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EsitoStampaDetrazione" nillable="true" type="tns:EsitoStampaDetrazione" />
+      <xs:element name="Valida">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="richiesta" type="tns:RichiestaValidaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RichiestaValidaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Argomento del WS di validazione di una detrazione</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Titolare" type="tns:Titolare">
+            <xs:annotation>
+              <xs:documentation>Contiene i dati del titolare della detrazione</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sicurezza" type="tns:Sicurezza">
+            <xs:annotation>
+              <xs:documentation>Dati identificativi dell'applicazione chiamante</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RichiestaValidaDetrazione" nillable="true" type="tns:RichiestaValidaDetrazione" />
+      <xs:element name="ValidaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ValidaResult" nillable="true" type="tns:EsitoValidaDetrazione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="EsitoValidaDetrazione">
+        <xs:annotation>
+          <xs:documentation>Esito della validazione di una detrazione. Lo stato è 'OK' se la validazione è andata a buon fine</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Stato" type="tns:WSStato">
+            <xs:annotation>
+              <xs:documentation>Stato Esito della richiesta</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messaggi" type="q7:ArrayOfstring">
+            <xs:annotation>
+              <xs:documentation>Eventuali messaggi di errore e/o validazione se lo stato non è 'OK'</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EsitoValidaDetrazione" nillable="true" type="tns:EsitoValidaDetrazione" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IDetrazioni_Ricerca_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ricerca" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Ricerca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RicercaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Ricerca_RichiestaInvalidaFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RichiestaInvalida" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_RicercaStorico_InputMessage">
+    <wsdl:part name="parameters" element="tns:RicercaStorico" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_RicercaStorico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RicercaStoricoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_RicercaStorico_RichiestaInvalidaFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RichiestaInvalida" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Aggiungi_InputMessage">
+    <wsdl:part name="parameters" element="tns:Aggiungi" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Aggiungi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AggiungiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Aggiungi_RichiestaInvalidaFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RichiestaInvalida" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Annulla_InputMessage">
+    <wsdl:part name="parameters" element="tns:Annulla" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Annulla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnnullaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Annulla_RichiestaInvalidaFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RichiestaInvalida" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Stampa_InputMessage">
+    <wsdl:part name="parameters" element="tns:Stampa" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Stampa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StampaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Stampa_RichiestaInvalidaFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RichiestaInvalida" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Valida_InputMessage">
+    <wsdl:part name="parameters" element="tns:Valida" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Valida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetrazioni_Valida_RichiestaInvalidaFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RichiestaInvalida" />
+  </wsdl:message>
+  <wsdl:portType name="IDetrazioni">
+    <wsdl:operation name="Ricerca">
+      <wsdl:documentation>Consente di estrarre dall'archivio unico delle detrazioni la detrazione più recente, alla data indicata (se indicata, parametro opzionale), associata al codice fiscale del titolare, ed elaborata per l’anno di decorrenza specificato</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Ricerca" message="tns:IDetrazioni_Ricerca_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/RicercaResponse" message="tns:IDetrazioni_Ricerca_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/RicercaRichiestaInvalidaFault" name="RichiestaInvalidaFault" message="tns:IDetrazioni_Ricerca_RichiestaInvalidaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RicercaStorico">
+      <wsdl:documentation>Consente di estrarre dall'archivio unico delle detrazioni l’elenco delle detrazioni acquisite, associate al codice fiscale del titolare ordinate per data di presentazione in ordine decrescente</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/RicercaStorico" message="tns:IDetrazioni_RicercaStorico_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/RicercaStoricoResponse" message="tns:IDetrazioni_RicercaStorico_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/RicercaStoricoRichiestaInvalidaFault" name="RichiestaInvalidaFault" message="tns:IDetrazioni_RicercaStorico_RichiestaInvalidaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiungi">
+      <wsdl:documentation>Aggiunge una detrazione. L’oggetto Titolare è sottoposto preventivamente alla validazione di schema e fiscale</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Aggiungi" message="tns:IDetrazioni_Aggiungi_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/AggiungiResponse" message="tns:IDetrazioni_Aggiungi_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/AggiungiRichiestaInvalidaFault" name="RichiestaInvalidaFault" message="tns:IDetrazioni_Aggiungi_RichiestaInvalidaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Annulla">
+      <wsdl:documentation>Annulla una detrazione</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Annulla" message="tns:IDetrazioni_Annulla_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/AnnullaResponse" message="tns:IDetrazioni_Annulla_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/AnnullaRichiestaInvalidaFault" name="RichiestaInvalidaFault" message="tns:IDetrazioni_Annulla_RichiestaInvalidaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Stampa">
+      <wsdl:documentation>Stampa il modello di dichiarazione per il diritto alle detrazioni d’imposta</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Stampa" message="tns:IDetrazioni_Stampa_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/StampaResponse" message="tns:IDetrazioni_Stampa_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/StampaRichiestaInvalidaFault" name="RichiestaInvalidaFault" message="tns:IDetrazioni_Stampa_RichiestaInvalidaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Valida">
+      <wsdl:documentation>Validazione di schema e fiscale di una detrazione</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Valida" message="tns:IDetrazioni_Valida_InputMessage" />
+      <wsdl:output wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/ValidaResponse" message="tns:IDetrazioni_Valida_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://soa.inps.it/WSUNIDETRA/IDetrazioni/ValidaRichiestaInvalidaFault" name="RichiestaInvalidaFault" message="tns:IDetrazioni_Valida_RichiestaInvalidaFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDetrazioni" type="tns:IDetrazioni">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ricerca">
+      <soap:operation soapAction="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Ricerca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RichiestaInvalidaFault">
+        <soap:fault use="literal" name="RichiestaInvalidaFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RicercaStorico">
+      <soap:operation soapAction="http://soa.inps.it/WSUNIDETRA/IDetrazioni/RicercaStorico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RichiestaInvalidaFault">
+        <soap:fault use="literal" name="RichiestaInvalidaFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiungi">
+      <soap:operation soapAction="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Aggiungi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RichiestaInvalidaFault">
+        <soap:fault use="literal" name="RichiestaInvalidaFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Annulla">
+      <soap:operation soapAction="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Annulla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RichiestaInvalidaFault">
+        <soap:fault use="literal" name="RichiestaInvalidaFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stampa">
+      <soap:operation soapAction="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Stampa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RichiestaInvalidaFault">
+        <soap:fault use="literal" name="RichiestaInvalidaFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Valida">
+      <soap:operation soapAction="http://soa.inps.it/WSUNIDETRA/IDetrazioni/Valida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RichiestaInvalidaFault">
+        <soap:fault use="literal" name="RichiestaInvalidaFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Detrazioni">
+    <wsdl:port name="BasicHttpBinding_IDetrazioni" binding="tns:BasicHttpBinding_IDetrazioni">
+      <soap:address location="http://localhost/WSUNIDETRA/Detrazioni.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

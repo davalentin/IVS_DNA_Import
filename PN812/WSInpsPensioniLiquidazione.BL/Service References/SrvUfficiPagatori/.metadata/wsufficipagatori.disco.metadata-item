@@ -1,0 +1,13 @@
+version=10.2
+item-uid=43089984
+file-version=1
+checksum=4948b5f7c8e411e9af9f2a73468b3dda
+fetch-size=695
+mtime=1570689125
+item-spec=504E3831323A31484E425A3920575355464649434950414741544F524920444953434F2D323132373131353036332E412D5352433B31
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=WSInpsPensioniLiquidazione.BL/Service References/SrvUfficiPagatori/wsufficipagatori.disco
+project=504E3831323A53315F5753494E505350454E53494F4E494C4951554944415A494F4E45
+project-uid=43036098

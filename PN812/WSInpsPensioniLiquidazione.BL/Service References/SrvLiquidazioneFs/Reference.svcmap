@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="07923444-5653-414b-b41d-5256c535dcd7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="1_0.wsdl" MetadataType="Wsdl" ID="8476bcac-6131-4b46-8de4-ef3badd089e2" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3caf1127-4ebc-4927-bbf0-c9c59f30fd49" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="1_0.xsd" MetadataType="Schema" ID="a68d2b97-c5bc-4e88-8d34-9b9c68e2bf67" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f44bb630-746d-4c36-975f-c01d5aa011b4" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.LiquidazioneFs.Service.Contracts.DataContracts.xsd" MetadataType="Schema" ID="04b05d4b-7467-429e-89ab-75817eb28304" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.BLCommon.xsd" MetadataType="Schema" ID="47de7414-bc94-4b66-8fd8-591e4cad1074" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.LiquidazioneFs.Entity.xsd" MetadataType="Schema" ID="c6782b61-b986-4a85-b71a-f66744a23d56" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8ddf29f6-4460-468c-a6f1-f2dabab3d8a7" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.LiquidazioneFs.xsd" MetadataType="Schema" ID="401965da-440e-41ed-b868-e56a7457d161" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="0eda8714-f70f-419b-8a7e-f9135ac152ee" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.LiquidazioneFs.Entity.CrossEntity.xsd" MetadataType="Schema" ID="6c71e3a8-595e-415a-a962-754fb9a5e5dc" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+    <MetadataFile FileName="INPS.Pensioni.Liquidazione.BLCommon.Entity.xsd" MetadataType="Schema" ID="c5f04a3e-7c39-4881-b4ea-cc9097a9dee7" SourceId="1" SourceUrl="http://localhost/INPS.Pensioni.LiquidazioneFs.Service/ServizioLiquidazioneFs.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

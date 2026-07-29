@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:schema xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema">
+  <s:element name="getRelease">
+    <s:complexType />
+  </s:element>
+  <s:element name="getReleaseResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getReleaseResult" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="EseguiProceduraAutomaticaRedditi">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="Pensione" type="tns:Pensione" />
+        <s:element minOccurs="0" maxOccurs="1" name="Titolare" type="tns:Titolare" />
+        <s:element minOccurs="0" maxOccurs="1" name="ListaFamiliari" type="tns:ListaFamiliari" />
+        <s:element minOccurs="0" maxOccurs="1" name="Operatore" type="tns:Operatore" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Pensione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Decorrenza" type="tns:DataDecorrenza" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cessazione" type="tns:DataDecorrenza" />
+      <s:element minOccurs="0" maxOccurs="1" name="ChiavePensione" type="tns:ChiavePensione" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceNatura" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="MaggiorazioneSociale" type="tns:MaggiorazioneSociale" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataPresDomanda" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="FondiSpeciali" type="tns:FondiSpeciali" />
+      <s:element minOccurs="0" maxOccurs="1" name="FlgPensioneContributiva" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Sentenza240" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="ANFPensTOT" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="InvaliditaCivile" type="tns:InvaliditaCivile" />
+      <s:element minOccurs="1" maxOccurs="1" name="IdPensione" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="EntiCreditizi" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="NumeroWebdom" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="AnnoCompetenza" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DescrSede" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="DescrCategoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodificaCategoria" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DataDecorrenza">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Mese" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ChiavePensione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="MaggiorazioneSociale">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Decorrenza" type="tns:DataDecorrenza" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cessazione" type="tns:DataDecorrenza" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="FondiSpeciali">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Codice" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="Tipologia" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="InvaliditaCivile">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FasceInvalidita" type="tns:ArrayOfFasceInvalidita" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfFasceInvalidita">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="FasceInvalidita" nillable="true" type="tns:FasceInvalidita" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="FasceInvalidita">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFascia" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Decorrenza" type="tns:DataDecorrenza" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Titolare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataNascita" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceARCA1" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceARCA2" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiciStatoResidenza" type="tns:ArrayOfStatoResidenza" />
+      <s:element minOccurs="0" maxOccurs="1" name="SiglaTitolare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Decorrenza" type="tns:DataDecorrenza" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaRedditi" type="tns:ListaRedditi" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaRedLavoroAutonomo" type="tns:ListaRedLavoroAutonomo" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ProvinciaNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ComuneNascita" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sesso" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfStatoResidenza">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="StatoResidenza" nillable="true" type="tns:StatoResidenza" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="StatoResidenza">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Decorrenza" type="tns:DataDecorrenza" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ListaRedditi">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Reddito" type="tns:ArrayOfReddito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfReddito">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Reddito" nillable="true" type="tns:Reddito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Reddito">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DatiReddito" type="tns:ArrayOfDatiReddito" />
+      <s:element minOccurs="1" maxOccurs="1" name="FlgRedditiZero" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="FlgNoReddito" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="FlgArt49" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="RedditoAcquisito" type="s:boolean" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDatiReddito">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="DatiReddito" nillable="true" type="tns:DatiReddito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DatiReddito">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Importo" type="s:decimal" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ListaRedLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="RedditoLavoroAutonomo" type="tns:ArrayOfRedditoLavoroAutonomo" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfRedditoLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="RedditoLavoroAutonomo" nillable="true" type="tns:RedditoLavoroAutonomo" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="RedditoLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DatiRedLavoroAutonomo" type="tns:ArrayOfDatiRedLavoroAutonomo" />
+      <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="FlgArt49" type="s:boolean" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDatiRedLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="DatiRedLavoroAutonomo" nillable="true" type="tns:DatiRedLavoroAutonomo" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DatiRedLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Importo" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="PeriodoDal" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="PeriodoAl" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ListaFamiliari">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Familiari" type="tns:ArrayOfFamiliare" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfFamiliare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Familiare" nillable="true" type="tns:Familiare" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Familiare">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="FlagCFAnag" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CFAnagrafica" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceARCA1" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceARCA2" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaDirittoANF" type="tns:ArrayOfDirittoANF" />
+      <s:element minOccurs="0" maxOccurs="1" name="SiglaFamiliare" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaRedditi" type="tns:ListaRedditi" />
+      <s:element minOccurs="0" maxOccurs="1" name="TipoSoggetto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ProgressivoSoggetto" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="IdFamiliare" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfDirittoANF">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="DirittoANF" nillable="true" type="tns:DirittoANF" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DirittoANF">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Decorrenza" type="tns:DataDecorrenza" />
+      <s:element minOccurs="0" maxOccurs="1" name="Cessazione" type="tns:DataDecorrenza" />
+      <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Operatore">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Matricola" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="SedeLavoro" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Procedura" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceProcedura" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="EseguiProceduraAutomaticaRedditiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="EseguiProceduraAutomaticaRedditiResult" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="verificaInserimentoRedditi">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="chiavePensione" type="tns:ChiavePensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="verificaInserimentoRedditiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="verificaInserimentoRedditiResult" type="tns:Output_VerificaPresRedditi" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Output_VerificaPresRedditi">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="ListaEsito" type="tns:ArrayOfEsito" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataUltimaModifica" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaAnniRilevanze" type="tns:ArrayOfAnniRilevanze" />
+      <s:element minOccurs="1" maxOccurs="1" name="StatoPensione" type="s:boolean" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfEsito">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Esito" nillable="true" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Esito">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Codice" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="Descrizione" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfAnniRilevanze">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="AnniRilevanze" nillable="true" type="tns:AnniRilevanze" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="AnniRilevanze">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="Rilevanze" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetAnniDataPresentazione">
+    <s:complexType />
+  </s:element>
+  <s:element name="GetAnniDataPresentazioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetAnniDataPresentazioneResult" type="tns:ArrayOfInt" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfInt">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GetAnniDataPresentazioneByChiavePensione">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="sede" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="certificato" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="GetAnniDataPresentazioneByChiavePensioneResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="GetAnniDataPresentazioneByChiavePensioneResult" type="tns:ArrayOfOutupt_AnniDataPresentazione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ArrayOfOutupt_AnniDataPresentazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Outupt_AnniDataPresentazione" nillable="true" type="tns:Outupt_AnniDataPresentazione" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Outupt_AnniDataPresentazione">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="DataPresentazione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="FlagSosp" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="insertDatiSQL">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="pensione" type="tns:Pensione" />
+        <s:element minOccurs="0" maxOccurs="1" name="titolare" type="tns:Titolare" />
+        <s:element minOccurs="0" maxOccurs="1" name="listaFamiliari" type="tns:ListaFamiliari" />
+        <s:element minOccurs="0" maxOccurs="1" name="operatore" type="tns:Operatore" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="insertDatiSQLResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="insertDatiSQLResult" type="tns:Output_VerificaPresRedditi" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="insertRedditiTemp">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="numeroWebdom" type="s:string" />
+        <s:element minOccurs="0" maxOccurs="1" name="listaRedditiTemp" type="tns:ListaRedditiTemp" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="ListaRedditiTemp">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="RedditoTemp" type="tns:ArrayOfRedditoTemp" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfRedditoTemp">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="RedditoTemp" nillable="true" type="tns:RedditoTemp" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="RedditoTemp">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Sigla" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceReddito" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="Importo" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="PeriodoDal" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="PeriodoAl" type="s:int" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="insertRedditiTempResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="insertRedditiTempResult" type="tns:ArrayOfEsito" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="eliminaRedditi">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ChiavePensione" type="tns:ChiavePensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="eliminaRedditiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="eliminaRedditiResult" type="tns:Esito" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="AuthHeader" type="tns:AuthHeader" />
+  <s:complexType name="AuthHeader">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="ChiaveAccesso" type="s:string" />
+    </s:sequence>
+    <s:anyAttribute />
+  </s:complexType>
+  <s:element name="eliminaRedditiAncheTemporanei">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="ChiavePensione" type="tns:ChiavePensione" />
+        <s:element minOccurs="1" maxOccurs="1" name="DeleteTabelleTemporanee" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="eliminaRedditiAncheTemporaneiResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="eliminaRedditiAncheTemporaneiResult" type="tns:Esito" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="insertDatiDB2">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="tbqEntity" type="tns:TBQEntity" />
+        <s:element minOccurs="0" maxOccurs="1" name="numeroDomus" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="TBQEntity">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="ListaTipoDichiarazionePerAnno" type="tns:ArrayOfTipoDichiarazione" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaRedLavoroAutonomo" type="tns:ArrayOfRedditiLavoroAutonomo" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaRedditi" type="tns:ArrayOfRedditi" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaSoggetti" type="tns:ArrayOfSoggetti" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaNucleoInabili" type="tns:ArrayOfNucleoInabili" />
+      <s:element minOccurs="0" maxOccurs="1" name="ChiavePensione" type="tns:ChiavePensione" />
+      <s:element minOccurs="0" maxOccurs="1" name="DatiPensioneTBQ" type="tns:DatiPensioneTBQ" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfTipoDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="TipoDichiarazione" nillable="true" type="tns:TipoDichiarazione" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="TipoDichiarazione">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="Art49" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="RedditoZero" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="NoReddito" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="DichiarazioneReddito" type="s:boolean" />
+      <s:element minOccurs="0" maxOccurs="1" name="Rilevanze" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="NoRedditoConiuge" type="s:boolean" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfRedditiLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="RedditiLavoroAutonomo" nillable="true" type="tns:RedditiLavoroAutonomo" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="RedditiLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="TipoReddito" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaPeriodi" type="tns:ArrayOfLavoroAutonomo" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfLavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="LavoroAutonomo" nillable="true" type="tns:LavoroAutonomo" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="LavoroAutonomo">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Periodo" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Importo" type="s:decimal" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfRedditi">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Redditi" nillable="true" type="tns:Redditi" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Redditi">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceSoggetto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IdSoggetto" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="TipoReddito" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Importo" type="s:decimal" />
+      <s:element minOccurs="1" maxOccurs="1" name="FlgRedLavoroAutonomo" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="IsObbligatorio" type="s:boolean" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfSoggetti">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Soggetti" nillable="true" type="tns:Soggetti" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Soggetti">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceSoggetto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="IdSoggetto" type="s:string" />
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ARCA1" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="ARCA2" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfNucleoInabili">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="NucleoInabili" nillable="true" type="tns:NucleoInabili" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="NucleoInabili">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaCodiciInabili" type="tns:ArrayOfInabile" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfInabile">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Inabile" nillable="true" type="tns:Inabile" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="Inabile">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Periodo" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="DatiPensioneTBQ">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="FlgConiuge" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="FlgFiglio" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="FlgInabile" type="s:boolean" />
+      <s:element minOccurs="1" maxOccurs="1" name="DataAcquisizione" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="SedeAcquisizione" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Matricola" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Procedura" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="insertDatiDB2Response">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="insertDatiDB2Result" type="tns:Esito" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDatiSQL">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="chiavePensione" type="tns:ChiavePensione" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDatiSQLResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDatiSQLResult" type="tns:Output_DatiSQL" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Output_DatiSQL">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Pensione" type="tns:Pensione" />
+      <s:element minOccurs="0" maxOccurs="1" name="Titolare" type="tns:Titolare" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaFamiliari" type="tns:ListaFamiliari" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="Operatore" type="tns:Operatore" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getDatiDB2">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="chiavePensione" type="tns:ChiavePensione" />
+        <s:element minOccurs="1" maxOccurs="1" name="isRicostituzione" type="s:boolean" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getDatiDB2Response">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getDatiDB2Result" type="tns:Output_TBQ" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Output_TBQ">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="DatiTBQ" type="tns:TBQEntity" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:Esito" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getRedditiTemp">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="numeroDomus" type="s:string" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getRedditiTempResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getRedditiTempResult" type="tns:Output_RedditiTemp" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="Output_RedditiTemp">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="ListaRedditiTemp" type="tns:ListaRedditiTemp" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="getLogInfo">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="chiavePensione" type="tns:ChiavePensione" />
+        <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+        <s:element minOccurs="1" maxOccurs="1" name="dateTo" nillable="true" type="s:dateTime" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="getLogInfoResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="0" maxOccurs="1" name="getLogInfoResult" type="tns:OutputTransitoWS" />
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:complexType name="OutputTransitoWS">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="1" name="ChiavePensione" type="tns:ChiavePensione" />
+      <s:element minOccurs="0" maxOccurs="1" name="Esito" type="tns:Esito" />
+      <s:element minOccurs="0" maxOccurs="1" name="TransitoWSList" type="tns:ArrayOfTransitoWSEntity" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfTransitoWSEntity">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="TransitoWSEntity" nillable="true" type="tns:TransitoWSEntity" />
+    </s:sequence>
+  </s:complexType>
+  <s:complexType name="TransitoWSEntity">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+      <s:element minOccurs="1" maxOccurs="1" name="Data" type="s:dateTime" />
+      <s:element minOccurs="0" maxOccurs="1" name="Operatore" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Oggetto" type="s:string" />
+      <s:element minOccurs="0" maxOccurs="1" name="Xml" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+</s:schema>

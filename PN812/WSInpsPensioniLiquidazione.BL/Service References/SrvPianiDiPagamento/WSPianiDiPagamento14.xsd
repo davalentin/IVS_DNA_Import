@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.TestaClasse" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.TestaClasse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PianiDiPagamento_WS_TestaClasse_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Simulazione" nillable="true" type="tns:SimulazioneTestaClasse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianiDiPagamento_WS_TestaClasse_Request" nillable="true" type="tns:PianiDiPagamento_WS_TestaClasse_Request" />
+  <xs:complexType name="SimulazioneTestaClasse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ElaborazioneSincrona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDRichiesta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SimulazioneTestaClasse" nillable="true" type="tns:SimulazioneTestaClasse" />
+  <xs:complexType name="PianiDiPagamento_WS_TestaClasse_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Elaborazione" nillable="true" type="tns:ElaborazioneTestaClasse" />
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoTestaClasse" />
+      <xs:element minOccurs="0" name="Simulazione" nillable="true" type="tns:SimulazioneTestaClasse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianiDiPagamento_WS_TestaClasse_Response" nillable="true" type="tns:PianiDiPagamento_WS_TestaClasse_Response" />
+  <xs:complexType name="ElaborazioneTestaClasse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element minOccurs="0" name="DataAggiornamento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDElaborazione" type="xs:long" />
+      <xs:element minOccurs="0" name="StatoElaborazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ElaborazioneTestaClasse" nillable="true" type="tns:ElaborazioneTestaClasse" />
+  <xs:complexType name="EsitoTestaClasse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Descrizione" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Risultato" type="tns:RisultatoTestaClasse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoTestaClasse" nillable="true" type="tns:EsitoTestaClasse" />
+  <xs:simpleType name="RisultatoTestaClasse">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoTestaClasse" nillable="true" type="tns:RisultatoTestaClasse" />
+  <xs:complexType name="PianiDiPagamento_WS_TestaConguaglio_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Simulazione" nillable="true" type="tns:SimulazioneTestaConguaglioRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianiDiPagamento_WS_TestaConguaglio_Request" nillable="true" type="tns:PianiDiPagamento_WS_TestaConguaglio_Request" />
+  <xs:complexType name="SimulazioneTestaConguaglioRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceVersione" type="xs:int" />
+      <xs:element minOccurs="0" name="ElencoRegole" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdRichiestaCaricamento" type="xs:long" />
+      <xs:element minOccurs="0" name="IdRichiestaSimulazione" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTsCaricamento" type="xs:long" />
+      <xs:element minOccurs="0" name="Id_Elaborazione" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SimulazioneTestaConguaglioRequest" nillable="true" type="tns:SimulazioneTestaConguaglioRequest" />
+  <xs:complexType name="PianiDiPagamento_WS_TestaConguaglio_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoTestaClasse" />
+      <xs:element minOccurs="0" name="Simulazione" nillable="true" type="tns:SimulazioneTestaConguaglioResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianiDiPagamento_WS_TestaConguaglio_Response" nillable="true" type="tns:PianiDiPagamento_WS_TestaConguaglio_Response" />
+  <xs:complexType name="SimulazioneTestaConguaglioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Record_Elaborati" type="xs:long" />
+      <xs:element minOccurs="0" name="Record_Falliti" type="xs:long" />
+      <xs:element minOccurs="0" name="Record_Letti" type="xs:long" />
+      <xs:element minOccurs="0" name="Record_Saltati" type="xs:long" />
+      <xs:element minOccurs="0" name="Record_Verificati" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SimulazioneTestaConguaglioResponse" nillable="true" type="tns:SimulazioneTestaConguaglioResponse" />
+</xs:schema>

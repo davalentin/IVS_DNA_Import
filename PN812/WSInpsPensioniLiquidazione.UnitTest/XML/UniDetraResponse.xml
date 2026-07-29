@@ -1,0 +1,40 @@
+﻿<RicercaResponse>
+  <Body>
+  <RicercaResult xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <Titolare>
+      <CodFiscale>SPZLBT36S50C750G</CodFiscale>
+      <Cognome>SPEZIALE</Cognome>
+      <Nome>ELISABETTA</Nome>
+      <Sesso>F</Sesso>
+      <DataNascita>1936-11-10T00:00:00</DataNascita>
+      <LuogoNascita>
+        <Comune>CITTA' SANT'ANGELO</Comune>
+        <Prov>PE</Prov>
+        <CodFisco>C750</CodFisco>
+        <Stato>ITALIA</Stato>
+      </LuogoNascita>
+      <Cittadinanza/>
+      <StatoCivile>0</StatoCivile>
+      <Telefono/>
+      <Fax/>
+      <Mail/>
+      <Cellulare/>
+      <Presentazione>
+        <Data>2014-07-24T00:00:00</Data>
+        <Decorrenza>2014</Decorrenza>
+        <Prestazione>PENSIONI</Prestazione>
+        <Protocollo>DTR-4-0000666893</Protocollo>
+        <Operatore/>
+        <Sede/>
+        <DataAcquisizione i:nil="true"/>
+      </Presentazione>
+      <DetrazioneArt11>
+        <NoApplicazioneArt11>true</NoApplicazioneArt11>
+        <ReddComplDichiarato>0</ReddComplDichiarato>
+        <CompReddComplComma2>false</CompReddComplComma2>
+      </DetrazioneArt11>
+    </Titolare>
+    <Stato>OK</Stato>
+  </RicercaResult>
+  </Body>
+</RicercaResponse>

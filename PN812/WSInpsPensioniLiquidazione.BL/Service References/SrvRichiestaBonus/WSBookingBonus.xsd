@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.datacontract.org/2004/07/WSBookingBonus.Contracts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSBookingBonus.Contracts">
+  <xs:complexType name="ArrayOfDatiVerificaAnni">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiVerificaAnni" nillable="true" type="tns:DatiVerificaAnni" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiVerificaAnni" nillable="true" type="tns:ArrayOfDatiVerificaAnni" />
+  <xs:complexType name="DatiVerificaAnni">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anno" type="xs:int" />
+      <xs:element minOccurs="0" name="Codice_Esito_Messaggio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione_Esito_messaggio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Esito_calcolo_beneficio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prescrizione" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiVerificaAnni" nillable="true" type="tns:DatiVerificaAnni" />
+</xsd:schema>

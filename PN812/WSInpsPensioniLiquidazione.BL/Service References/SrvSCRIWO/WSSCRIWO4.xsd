@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSSCRIWO/WSSCRIWO.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" />
+  <xs:complexType name="AreaUtente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdConsumer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IndirizzoIp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Session_Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Utente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaUtente" nillable="true" type="tns:AreaUtente" />
+  <xs:complexType name="AreaEsito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaEsiti" nillable="true" type="tns:ArrayOfAreaEsitoBase" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="TipoMessaggio" nillable="true" type="q1:Enums.TipoMessaggio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaEsito" nillable="true" type="tns:AreaEsito" />
+  <xs:complexType name="ArrayOfAreaEsitoBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AreaEsitoBase" nillable="true" type="tns:AreaEsitoBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAreaEsitoBase" nillable="true" type="tns:ArrayOfAreaEsitoBase" />
+  <xs:complexType name="AreaEsitoBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceEsito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Messaggio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaEsitoBase" nillable="true" type="tns:AreaEsitoBase" />
+  <xs:complexType name="AreaRichiestaStorico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdStep" type="xs:int" />
+      <xs:element minOccurs="0" name="Ndomus" type="xs:long" />
+      <xs:element minOccurs="0" name="ProgDomanda" type="xs:int" />
+      <xs:element minOccurs="0" name="ProgFase" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaRichiestaStorico" nillable="true" type="tns:AreaRichiestaStorico" />
+  <xs:complexType name="AreaInput">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="IntervalloMonitoraggioLavorazioni" type="q2:Enums.IntervalliMonitoraggioLavorazioni" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaInput" nillable="true" type="tns:AreaInput" />
+  <xs:complexType name="AreaRicercaLavorazioniWebdom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumDomanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PeriodoAl" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PeriodoDal" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="Stato" type="q3:Enums.StatoDomandaWebdom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaRicercaLavorazioniWebdom" nillable="true" type="tns:AreaRicercaLavorazioniWebdom" />
+  <xs:complexType name="ArrayOfLavorazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lavorazione" nillable="true" type="tns:Lavorazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLavorazione" nillable="true" type="tns:ArrayOfLavorazione" />
+  <xs:complexType name="Lavorazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InfoScriwo" nillable="true" type="tns:InfoScriwo" />
+      <xs:element minOccurs="0" name="InfoSistemaChiamante" nillable="true" type="tns:InfoSistemaChiamante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lavorazione" nillable="true" type="tns:Lavorazione" />
+  <xs:complexType name="InfoScriwo">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="StatoScriwo" type="q4:Enums.StatoScriwo" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WSSCRIWO.Repository" minOccurs="0" name="StepScriwo" type="q5:Enums.StepScriwo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoScriwo" nillable="true" type="tns:InfoScriwo" />
+  <xs:complexType name="InfoSistemaChiamante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceStato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataLavorazione" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescrizioneStato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsProvvisoria" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgFase" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoSistemaChiamante" nillable="true" type="tns:InfoSistemaChiamante" />
+</xs:schema>

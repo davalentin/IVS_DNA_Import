@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0" elementFormDefault="qualified" targetNamespace="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneCi/1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pp-dna-arr.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" />
+  <xs:import schemaLocation="http://pp-dna-arr.avndrome.net/INPS.Pensioni.LiquidazioneCi.Service/ServizioLiquidazioneCi.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" />
+  <xs:element name="CancelDatiExCombattente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiExCombattenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiExCombattenteResult" nillable="true" type="q1:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiMaggiorazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaMaggiorazioniBenefici" nillable="true" type="q2:AreaMaggiorazioniBenefici" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiMaggiorazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiMaggiorazioniResult" nillable="true" type="q3:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiMaggiorazioni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiMaggiorazioniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiMaggiorazioniResult" nillable="true" type="q4:AreaEsito" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaMaggiorazioniBenefici" nillable="true" type="q5:AreaMaggiorazioniBenefici" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBititolaritaByDomanda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBititolaritaByDomandaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="GetBititolaritaByDomandaResult" nillable="true" type="q6:AreaEsito" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaBititolarita" nillable="true" type="q7:AreaDatiBititolarita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreBititolarita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaBititolarita" nillable="true" type="q8:AreaDatiBititolarita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreBititolaritaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreBititolaritaResult" nillable="true" type="q9:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreAltraPensione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaBititolarita" nillable="true" type="q10:AreaDatiBititolarita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreAltraPensioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreAltraPensioneResult" nillable="true" type="q11:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelAltraPensione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelAltraPensioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelAltraPensioneResult" nillable="true" type="q12:AreaEsito" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaBititolarita" nillable="true" type="q13:AreaDatiBititolarita" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiPostDecOriginaria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q14:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiPostDecOriginariaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiPostDecOriginariaResult" nillable="true" type="q15:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiPostDecOriginaria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiPostDecOriginariaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiPostDecOriginariaResult" nillable="true" type="q16:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaVersioniCI">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaVersioniCIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="GetListaVersioniCIResult" nillable="true" type="q17:AreaEsito" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="listaVersioni" nillable="true" type="q18:AreaVersioni" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatiContributiviByDomanda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element minOccurs="0" name="matricolaOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" type="xs:short" />
+        <xs:element minOccurs="0" name="centroOperativoOperatore" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatiContributiviByDomandaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="GetDatiContributiviByDomandaResult" nillable="true" type="q19:AreaEsito" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q20:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiContributivi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element minOccurs="0" name="matricolaOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" type="xs:short" />
+        <xs:element minOccurs="0" name="centroOperativoOperatore" type="xs:short" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q21:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiContributiviResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiContributiviResult" nillable="true" type="q22:AreaEsito" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q23:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatiEsteri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element minOccurs="0" name="codiceSede" type="xs:short" />
+        <xs:element minOccurs="0" name="centroOperativo" type="xs:short" />
+        <xs:element minOccurs="0" name="matricolaOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" type="xs:short" />
+        <xs:element minOccurs="0" name="centroOperativoOperatore" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatiEsteriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="GetStatiEsteriResult" nillable="true" type="q24:AreaEsito" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi" minOccurs="0" name="elencoStatiEsteri" nillable="true" type="q25:ArrayOfGestioneContrib.StatoEstero" />
+        <xs:element minOccurs="0" name="cittadinanzaTitolare" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiProRata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element minOccurs="0" name="matricolaOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" type="xs:short" />
+        <xs:element minOccurs="0" name="centroOperativoOperatore" type="xs:short" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q26:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiProRataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiProRataResult" nillable="true" type="q27:AreaEsito" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q28:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProRata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element minOccurs="0" name="matricolaOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" type="xs:short" />
+        <xs:element minOccurs="0" name="centroOperativoOperatore" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProRataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelProRataResult" nillable="true" type="q29:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalcolaDomanda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element minOccurs="0" name="matricolaOperatore" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sedeOperatore" type="xs:short" />
+        <xs:element minOccurs="0" name="centroOperativoOperatore" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalcolaDomandaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CalcolaDomandaResult" nillable="true" type="q30:AreaEsito" />
+        <xs:element minOccurs="0" name="statoPensione" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrelevaDomanda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaPrelievo" nillable="true" type="q31:AreaPrelievo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrelevaDomandaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="PrelevaDomandaResult" nillable="true" type="q32:AreaEsito" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaPrelievo" nillable="true" type="q33:AreaPrelievo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiCalcolo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q34:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiCalcoloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiCalcoloResult" nillable="true" type="q35:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiCalcolo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiCalcoloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiCalcoloResult" nillable="true" type="q36:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiImportiEsteri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q37:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiImportiEsteriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiImportiEsteriResult" nillable="true" type="q38:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiImportiEsteri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiImportiEsteriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiImportiEsteriResult" nillable="true" type="q39:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiMaternitaAcna">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q40:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiMaternitaAcnaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiMaternitaAcnaResult" nillable="true" type="q41:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiMaternitaAcna">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiMaternitaAcnaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiMaternitaAcnaResult" nillable="true" type="q42:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiLavoratoriAutonomi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaDatiContributivi" nillable="true" type="q43:AreaDatiContributivi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiLavoratoriAutonomiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiLavoratoriAutonomiResult" nillable="true" type="q44:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiLavoratoriAutonomi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiLavoratoriAutonomiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiLavoratoriAutonomiResult" nillable="true" type="q45:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiLiquidazionePensione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q46:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiLiquidazionePensioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiLiquidazionePensioneResult" nillable="true" type="q47:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLiquidazionePensioneByDomanda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLiquidazionePensioneByDomandaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="GetLiquidazionePensioneByDomandaResult" nillable="true" type="q48:AreaEsito" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q49:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiGenerici">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q50:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiGenericiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiGenericiResult" nillable="true" type="q51:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiGenerici">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiGenericiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiGenericiResult" nillable="true" type="q52:AreaEsito" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q53:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiAssicurativi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q54:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiAssicurativiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiAssicurativiResult" nillable="true" type="q55:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiAssicurativi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiAssicurativiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiAssicurativiResult" nillable="true" type="q56:AreaEsito" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q57:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiOpzione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q58:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiOpzioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiOpzioneResult" nillable="true" type="q59:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiOpzione">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiOpzioneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiOpzioneResult" nillable="true" type="q60:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiIstruttoria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q61:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiIstruttoriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiIstruttoriaResult" nillable="true" type="q62:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiIstruttoria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiIstruttoriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiIstruttoriaResult" nillable="true" type="q63:AreaEsito" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q64:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiProvenienza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaLiquidazionePensione" nillable="true" type="q65:AreaLiquidazionePensione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiProvenienzaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiProvenienzaResult" nillable="true" type="q66:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiProvenienza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiProvenienzaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiProvenienzaResult" nillable="true" type="q67:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaggiorazioniBeneficiByDomanda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaggiorazioniBeneficiByDomandaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="GetMaggiorazioniBeneficiByDomandaResult" nillable="true" type="q68:AreaEsito" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaMaggiorazioniBenefici" nillable="true" type="q69:AreaMaggiorazioniBenefici" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreMaggiorazioniBenefici">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaMaggiorazioniBenefici" nillable="true" type="q70:AreaMaggiorazioniBenefici" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreMaggiorazioniBeneficiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreMaggiorazioniBeneficiResult" nillable="true" type="q71:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiBenefici">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaMaggiorazioniBenefici" nillable="true" type="q72:AreaMaggiorazioniBenefici" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiBeneficiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiBeneficiResult" nillable="true" type="q73:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiBenefici">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelDatiBeneficiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="CancelDatiBeneficiResult" nillable="true" type="q74:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiExCombattente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroDomanda" type="xs:long" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="areaMaggiorazioniBenefici" nillable="true" type="q75:AreaMaggiorazioniBenefici" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDatiExCombattenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/INPS.Pensioni.LiquidazioneCi.Service.Contracts.DataContracts" minOccurs="0" name="StoreDatiExCombattenteResult" nillable="true" type="q76:AreaEsito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

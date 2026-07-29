@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://orchestratore.pensioni.gdp.inps.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://orchestratore.pensioni.gdp.inps.it/">
+  <xsd:complexType name="calcolaCFRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codiceApplicazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codiceUtente" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codicefiscale" type="xsd:string" />
+      <xsd:element minOccurs="0" name="datiAnticipoDMA" type="tns:datiAnticipoDMARequest" />
+      <xsd:element minOccurs="0" name="datiUltimoMiglio" type="tns:vociRetributiveRequest" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datiAnticipoDMARequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="aspSindacalePercentuale" type="xsd:double" />
+      <xsd:element minOccurs="0" name="codAppl" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codIdentTipoPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codUtente" type="xsd:string" />
+      <xsd:element minOccurs="0" name="contratto" type="tns:waconContrattoRequest" />
+      <xsd:element minOccurs="0" name="credito" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="dafaFinePeriodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataCessazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataDecGiuridica" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrCessazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="enteAppartenenza" type="xsd:string" />
+      <xsd:element minOccurs="0" name="enteSedeServizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="gestionePens" type="tns:wacasCassaRequest" />
+      <xsd:element minOccurs="0" name="gestionePrev" type="tns:wacasCassaRequest" />
+      <xsd:element minOccurs="0" name="idEnteAppartenenza" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idGestionePens" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idTipoImpiego" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idTipoServizio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="imponibileTotalePensionistico" type="xsd:double" />
+      <xsd:element minOccurs="0" name="motivoCessazione" type="tns:wamceMotcesRequest" />
+      <xsd:element minOccurs="0" name="partTimePercentuale" type="xsd:double" />
+      <xsd:element minOccurs="0" name="partTimeTipo" type="tns:wapptTippartimeRequest" />
+      <xsd:element minOccurs="0" name="personaleScolasticoNumOreSettimanale" type="xsd:string" />
+      <xsd:element minOccurs="0" name="personaleScolasticoTotOreSettimanale" type="xsd:string" />
+      <xsd:element minOccurs="0" name="qualifica" type="tns:waiqdInquadraRequest" />
+      <xsd:element minOccurs="0" name="tipoImpieg" type="tns:watimTipoimpRequest" />
+      <xsd:element minOccurs="0" name="tipoServizio" type="tns:watsvTiposervRequest" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="waconContrattoRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codApp1" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codContrattoEst" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codUtente" type="xsd:string" />
+      <xsd:element minOccurs="0" name="conContrattoNew" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descContratto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagEsposiz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagIgop" type="xsd:string" />
+      <xsd:element minOccurs="0" name="wacomSeqComparto" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="wacasCassaRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codEnte" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codFiscale" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codVB" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataVariazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrBreve" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrSigla" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagEsposiz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagTipCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="numVb" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="wamceMotcesRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codCessaz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codDma" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codDma2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrCessaz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrTedesco" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagEsposiz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagSospcess" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagUmTfs" type="xsd:string" />
+      <xsd:element minOccurs="0" name="numEntrate" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="wapptTippartimeRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codAppl" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codUtente" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descTipParttime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagEsposiz" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="waiqdInquadraRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codQualifica" type="xsd:string" />
+      <xsd:element minOccurs="0" name="contratto" type="tns:waconContrattoRequest" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descQualifica" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagEsposiz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="wadccSeqComsotPK" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="watimTipoimpRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="bdiiEriVR" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codImporto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codMinistFin" type="xsd:string" />
+      <xsd:element minOccurs="0" name="conMinistFin2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="contaCredito" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrImporto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagDma" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagDma2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagEsposiz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagFormLavoro" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagParttime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="presenzaCredito" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="watsvTiposervRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="bdsnEriVR" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codServMinfin" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codServizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="conMinfin2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descServizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagControbb" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagDma" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagDma2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagInterrca" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagObbligRetrib" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagParttime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagPercAspSind" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagPercRetr" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagRetribuzVirtuale" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagStato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="percCopFigurative" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="vociRetributiveRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codUtente" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFinePeriodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="datiEconomici" type="tns:arrayOfWadreDettRetribRequest" />
+      <xsd:element minOccurs="0" name="enteAppartenenza" type="xsd:string" />
+      <xsd:element minOccurs="0" name="enteSedeServizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="stato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoImpiego" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoRapporto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoServizio" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfWadreDettRetribRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="wadreDettRetribDto" nillable="true" type="tns:wadreDettRetribRequest" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="wadreDettRetribRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codAppl" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codUtente" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagStato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="impRetr" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="impVirtuale" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="stato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="voceret" type="tns:wavrtVoceretRequest" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="wavrtVoceretRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codTipovoce" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiorn" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descVoceretrib" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagEsposiz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagPepr" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="esitoCalcoloPensioneExWrappedResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:esitoCalcoloPensioneWrapped">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="anagrafica" type="tns:anagraficaWrapped" />
+          <xsd:element minOccurs="0" name="anzianitaContributiva" type="tns:arrayOfAnzianitaContributivaWrapped" />
+          <xsd:element minOccurs="0" name="anzianitaContributivaAl95" type="xsd:string" />
+          <xsd:element minOccurs="0" name="anzianitaDiritto" type="xsd:string" />
+          <xsd:element minOccurs="0" name="categoriaOpzioneOut" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codiceRitorno" type="xsd:string" />
+          <xsd:element minOccurs="0" name="dataOpzioneOut" type="xsd:string" />
+          <xsd:element minOccurs="0" name="estrattoContoCalcolato" type="tns:arrayOfEstrattoContoCalcolatoWrapped" />
+          <xsd:element minOccurs="0" name="flagUltimoMiglio" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fondiPresentiInEstratto" type="tns:arrayOfstringWrapped" />
+          <xsd:element minOccurs="0" name="key" type="xsd:string" />
+          <xsd:element minOccurs="0" name="listaErrori" type="tns:arrayOfContributoErratoWrapped" />
+          <xsd:element minOccurs="0" name="periodiDaRiscatto" type="tns:arrayOfPeriodoDaRiscattoWrapped" />
+          <xsd:element minOccurs="0" name="retrUltimoMiglio1" type="xsd:string" />
+          <xsd:element minOccurs="0" name="retrUltimoMiglio2" type="xsd:string" />
+          <xsd:element minOccurs="0" name="retribuzioneSettimanaleUltimoAnno" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sistemaCalcoloOut" type="xsd:string" />
+          <xsd:element minOccurs="0" name="statoOpzioneOut" type="xsd:string" />
+          <xsd:element minOccurs="0" name="unitaMisuraAnzianitaDiritto" type="xsd:string" />
+          <xsd:element minOccurs="0" name="unitaMisuraAnzianitaMisura" type="xsd:string" />
+          <xsd:element minOccurs="0" name="verificaDiritto" type="tns:arrayOfVerificaDirittoWrapped" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="esitoCalcoloPensioneWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="anzAltreGest" type="xsd:int" />
+      <xsd:element minOccurs="0" name="anzTotStessaGest" type="xsd:int" />
+      <xsd:element minOccurs="0" name="anzianitaMisura" type="xsd:int" />
+      <xsd:element minOccurs="0" name="beneficio" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="codiceErrore" type="xsd:string" />
+      <xsd:element minOccurs="0" name="datiretributivi" type="tns:arrayOfDatiRetributiviWrapped" />
+      <xsd:element minOccurs="0" name="descrizioneErrore" type="xsd:string" />
+      <xsd:element minOccurs="0" name="importoPensione" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="note" type="tns:arrayOfstringWrapped" />
+      <xsd:element minOccurs="0" name="noteContoCalcolato" type="tns:arrayOfstringWrapped" />
+      <xsd:element minOccurs="0" name="periodi" type="tns:arrayOfPeriodoWrapped" />
+      <xsd:element minOccurs="0" name="retribuzioneUltime52Settimane" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="risultatoCarpe" type="tns:arrayOfCarpeWrapped" />
+      <xsd:element minOccurs="0" name="sviluppoMontanteContributivo" type="tns:arrayOfPeriodoMontanteWrapped" />
+      <xsd:element minOccurs="0" name="utiliUltimoAnno" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="anagraficaWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codFisc" type="xsd:string" />
+      <xsd:element minOccurs="0" name="cognome" type="xsd:string" />
+      <xsd:element minOccurs="0" name="comuneNascita" type="xsd:string" />
+      <xsd:element minOccurs="0" name="comuneResidenza" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataNascita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="indirizzo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="nome" type="xsd:string" />
+      <xsd:element minOccurs="0" name="provNascita" type="xsd:string" />
+      <xsd:element minOccurs="0" name="provResidenza" type="xsd:string" />
+      <xsd:element minOccurs="0" name="sesso" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfAnzianitaContributivaWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="anzianitaContributiva" nillable="true" type="tns:anzianitaContributivaWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="anzianitaContributivaWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="anzianitaContributiva" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="sigla" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfEstrattoContoCalcolatoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="estrattoContoCalcolato" nillable="true" type="tns:estrattoContoCalcolatoWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="estrattoContoCalcolatoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="al" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="altroImporto" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="codiceContributo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="competenzeAcc" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="dal" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="fondo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="integrativaSpeciale" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="matricolaAzienda" type="xsd:string" />
+      <xsd:element minOccurs="0" name="nota" type="xsd:string" />
+      <xsd:element minOccurs="0" name="retribuzione" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="retribuzioneL177" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="settimaneAbbattuteDiritto" type="xsd:int" />
+      <xsd:element minOccurs="0" name="settimaneAbbattuteMisura" type="xsd:int" />
+      <xsd:element minOccurs="0" name="settimaneDiritto" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="settimaneDirittoMisura" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="settimaneMisura" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="settimaneOriginali" type="xsd:int" />
+      <xsd:element minOccurs="0" name="settimaneRidotte" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="tipoContributo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tredicesima" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="unitaMisura" type="xsd:string" />
+      <xsd:element minOccurs="0" name="unitaMisuraDiritto" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfstringWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfContributoErratoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="contributoErrato" nillable="true" type="tns:contributoErratoWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="contributoErratoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="al" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="archivio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dal" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="listaErrori" type="tns:arrayOfErroriSegnalazioniWrapped" />
+      <xsd:element minOccurs="0" name="tipoContributo" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfErroriSegnalazioniWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="erroriSegnalazioni" nillable="true" type="tns:erroriSegnalazioniWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="erroriSegnalazioniWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codiceErrore" type="xsd:int" />
+      <xsd:element minOccurs="0" name="descrizioneErrore" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoErrore" type="tns:enumTipoErroreWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfPeriodoDaRiscattoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="periodoDaRiscatto" nillable="true" type="tns:periodoDaRiscattoWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="periodoDaRiscattoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="al" type="xsd:string" />
+      <xsd:element minOccurs="0" name="anno" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codiceContribuzione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dal" type="xsd:string" />
+      <xsd:element minOccurs="0" name="fondo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="retribuzione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoContribuzione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="unitaMisura" type="xsd:string" />
+      <xsd:element minOccurs="0" name="utiliDiritto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="utiliMisura" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfVerificaDirittoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="verificaDiritto" nillable="true" type="tns:verificaDirittoWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="verificaDirittoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="decorrenza" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="derogaArt15Bis" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="esito" type="tns:esitoVerificaDirittoWrapped" />
+      <xsd:element minOccurs="0" name="tipoCalcolo" type="tns:tipoCalcoloWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfDatiRetributiviWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="datiRetributivi" nillable="true" type="tns:datiRetributiviWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datiRetributiviWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="anno" type="xsd:int" />
+      <xsd:element minOccurs="0" name="redditoContributivo" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="retribuzione" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="settimane" type="xsd:int" />
+      <xsd:element minOccurs="0" name="tipoCalcolo" type="xsd:int" />
+      <xsd:element minOccurs="0" name="tipoContributo" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfPeriodoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="periodo" nillable="true" type="tns:periodoWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="periodoWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="al" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="anno" type="xsd:int" />
+      <xsd:element minOccurs="0" name="contribCoinc" type="xsd:int" />
+      <xsd:element minOccurs="0" name="contribuzioneVV" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="dal" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="misuraContoCal" type="xsd:int" />
+      <xsd:element minOccurs="0" name="nonUtili" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="redditoContributivo" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="redditoPensionabile" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="tipo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="unitaMisura" type="xsd:string" />
+      <xsd:element minOccurs="0" name="utiliDiritto" type="xsd:int" />
+      <xsd:element minOccurs="0" name="utiliMisura" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfCarpeWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="carpe" nillable="true" type="tns:carpeWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="carpeWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="anzianitaAl92" type="xsd:int" />
+      <xsd:element minOccurs="0" name="anzianitaAl95" type="xsd:int" />
+      <xsd:element minOccurs="0" name="anzianitaAl96" type="xsd:int" />
+      <xsd:element minOccurs="0" name="importoPensione" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="quote" type="tns:arrayOfQuotaWrapped" />
+      <xsd:element minOccurs="0" name="tipo" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfQuotaWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="quota" nillable="true" type="tns:quotaWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="quotaWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="adeguataMensile" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="anzianitaContributiva" type="xsd:int" />
+      <xsd:element minOccurs="0" name="descrizioneGestione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrizioneQuota" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idGestione" type="xsd:short" />
+      <xsd:element minOccurs="0" name="idQuota" type="xsd:short" />
+      <xsd:element minOccurs="0" name="reddito" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="rms" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="settimaneUtili" type="xsd:int" />
+      <xsd:element minOccurs="0" name="unitaMisuraAnzianitaContributiva" type="xsd:string" />
+      <xsd:element minOccurs="0" name="unitaMisuraSettimaneUtili" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayOfPeriodoMontanteWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="periodoMontante" nillable="true" type="tns:periodoMontanteWrapped" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="periodoMontanteWrapped">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="aliquota" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="anno" type="xsd:short" />
+      <xsd:element minOccurs="0" name="contributiNellAnno" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="descr" type="xsd:string" />
+      <xsd:element minOccurs="0" name="montanteContributivo" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="nota" type="xsd:string" />
+      <xsd:element minOccurs="0" name="retribuzioneOReddito" type="xsd:decimal" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="intPaRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codiceFiscale" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codicePrestazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="pratica" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="interrogazioniPAWrappedResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="errore" type="xsd:string" />
+      <xsd:element name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaPeriodiDaPrestazione" nillable="true" type="tns:periodoDaPrestazioneWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaPeriodiDaPrestazioneOriginari" nillable="true" type="tns:periodoDaPrestazioneWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaPeriodiDaRapportoLavoro" nillable="true" type="tns:periodoDaRappLavWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaPeriodiDaRapportoLavoroOriginari" nillable="true" type="tns:periodoDaRappLavWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaUltimoMiglioDTO" nillable="true" type="tns:ultimoMiglioWrappedDTO" />
+      <xsd:element minOccurs="0" name="presenzaAnomalie" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="periodoDaPrestazioneWrappedDTO">
+    <xsd:sequence>
+      <xsd:element name="certificato" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="codCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codStatoPagamento" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codTipoCassa" type="xsd:string" />
+      <xsd:element name="conPrestazione" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="dataAccettazione" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataDecorrenzaAmministrativa" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataDomanda" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataFineOriginaria" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioOriginaria" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataProvvedimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRichiestaRiscatto" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="descrCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrTipoPeriodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagPeriodoRiconosConOnere" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagRetribuzione" type="xsd:string" />
+      <xsd:element name="ggDiritto" type="xsd:long" />
+      <xsd:element name="ggMisura" type="xsd:double" />
+      <xsd:element minOccurs="0" name="idBaseCalcolo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idCassa" type="xsd:long" />
+      <xsd:element name="idIscritto" type="xsd:long" />
+      <xsd:element name="idPeriodoRiconoscito" type="xsd:long" />
+      <xsd:element name="idPratica" type="xsd:long" />
+      <xsd:element name="idProvvedimento" type="xsd:long" />
+      <xsd:element name="idStatoEstero" type="xsd:long" />
+      <xsd:element name="idTipoPeriodoRiconosciuto" type="xsd:long" />
+      <xsd:element name="importoOnere" type="xsd:double" />
+      <xsd:element name="importoRata" type="xsd:double" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaMaggiorazioni" nillable="true" type="tns:paMaggiorazioneWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaVociRetributive" nillable="true" type="tns:paRetribuzioneWrappedDTO" />
+      <xsd:element minOccurs="0" name="numeroProvvedimento" type="xsd:string" />
+      <xsd:element name="numeroRate" type="xsd:long" />
+      <xsd:element name="onereEstinto" type="xsd:boolean" />
+      <xsd:element name="periodoNonRiproporzionabile" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="progressivoPeriodo" type="xsd:long" />
+      <xsd:element minOccurs="0" name="seqProvenienzaProvvPratica" type="xsd:long" />
+      <xsd:element minOccurs="0" name="siglaCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="sistema" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoPeriodoRiconosciuto" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="paMaggiorazioneWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="categoriaMagg" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codiceMagg" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataFineMagg" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioMagg" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="descrMagg" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagStatus" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ggDiritto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="ggMaggQFissaDiritto" type="xsd:double" />
+      <xsd:element minOccurs="0" name="ggMaggQFissaMisura" type="xsd:double" />
+      <xsd:element minOccurs="0" name="ggMisura" type="xsd:double" />
+      <xsd:element minOccurs="0" name="idTipoMagg" type="xsd:long" />
+      <xsd:element name="idTipoPrestazPeriodoPrest" type="xsd:long" />
+      <xsd:element name="importo" type="xsd:double" />
+      <xsd:element minOccurs="0" name="MAXANZIANITAMAGG" type="xsd:long" />
+      <xsd:element minOccurs="0" name="MINANZIANITARICH" type="xsd:long" />
+      <xsd:element name="numGiorniMaggiorabili" type="xsd:int" />
+      <xsd:element name="numeroCampagne" type="xsd:int" />
+      <xsd:element minOccurs="0" name="percDirittoMagg" type="xsd:double" />
+      <xsd:element minOccurs="0" name="percMisuraMagg" type="xsd:double" />
+      <xsd:element minOccurs="0" name="progrPeriodo" type="xsd:long" />
+      <xsd:element name="seqProvenienza" type="xsd:long" />
+      <xsd:element minOccurs="0" name="tipoMaggiorazione" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="paRetribuzioneWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codTipoImpon" type="xsd:long" />
+      <xsd:element minOccurs="0" name="flagCassaRiferimentoVoce" type="xsd:string" />
+      <xsd:element name="imponibile" type="xsd:double" />
+      <xsd:element name="importoNettoBase" type="xsd:double" />
+      <xsd:element minOccurs="0" name="importoRetPensionistico" type="xsd:double" />
+      <xsd:element name="importoVoceret" type="xsd:double" />
+      <xsd:element minOccurs="0" name="tipoImponibile" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoVoceRet" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="periodoDaRappLavWrappedDTO">
+    <xsd:sequence>
+      <xsd:element name="certificato" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="codAppl" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codComparto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codFinCassa" type="xsd:string" />
+      <xsd:element name="codFinTipoImpiego" type="xsd:long" />
+      <xsd:element name="codFinTipoServizio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="codIdentTipoPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codMotivoCessazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codPrestazDiRicongiunzione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codQuiescenza" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codTipoImpiego" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codTipoPeriodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codTipoRapporto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="codTipoServizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codiceFiscaleEnte" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codiceTipoImpiegoInps" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataDecorrenzaGiuridica" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataDomanda" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataDomandaRicongiunzione" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataFine" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataFineOriginaria" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizio" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioOriginaria" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRicongiunzioneUscita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="descrCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrEnte" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrMotivoCessazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrQualifica" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrSospensione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrTipoImpiego" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrTipoRicongiunzione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrTipoServizio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagArticolo40" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagGiornaliero" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagInterruzioneDiritto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagPeriodoFigurativo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagRetribuzione" type="xsd:string" />
+      <xsd:element name="ggDiritto" type="xsd:long" />
+      <xsd:element name="ggMisura" type="xsd:double" />
+      <xsd:element name="idCassa" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idCompartoSottocomparto" type="xsd:long" />
+      <xsd:element name="idEnte" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idInquadramento" type="xsd:long" />
+      <xsd:element name="idIscritto" type="xsd:long" />
+      <xsd:element name="idMotCessazione" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idPratica" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idProvvedimentoRicostruzione" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idTipoImpiego" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idTipoPeriodo" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idTipoServizio" type="xsd:long" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaMaggiorazioni" nillable="true" type="tns:paMaggiorazioneWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaVociRetributive" nillable="true" type="tns:paRetribuzioneWrappedDTO" />
+      <xsd:element minOccurs="0" name="numGiorniUtili" type="xsd:int" />
+      <xsd:element name="numMensilita" type="xsd:int" />
+      <xsd:element name="numOreSettimanali" type="xsd:int" />
+      <xsd:element name="perPartTime" type="xsd:double" />
+      <xsd:element name="percAspettativa" type="xsd:double" />
+      <xsd:element minOccurs="0" name="percFigurativa" type="xsd:double" />
+      <xsd:element name="percPartTime" type="xsd:double" />
+      <xsd:element name="percRetrib" type="xsd:double" />
+      <xsd:element minOccurs="0" name="progressivoEnte" type="xsd:string" />
+      <xsd:element minOccurs="0" name="progressivoPeriodo" type="xsd:int" />
+      <xsd:element name="regimeFineServizio" type="xsd:int" />
+      <xsd:element name="seqDatoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="seqProvenienza" type="xsd:int" />
+      <xsd:element minOccurs="0" name="siglaCassa" type="xsd:string" />
+      <xsd:element name="tipoAeromobile" type="xsd:int" />
+      <xsd:element minOccurs="0" name="tipoDiRicongiunzione" type="xsd:long" />
+      <xsd:element minOccurs="0" name="tipoIscrizione" type="xsd:long" />
+      <xsd:element minOccurs="0" name="tipoPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoPeriodo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoRicongiunzione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="tipoSecondario" type="xsd:string" />
+      <xsd:element name="tipoSospensione" type="xsd:long" />
+      <xsd:element name="totOreSettimanali" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ultimoMiglioWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codPrestaz" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataRiferim" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idPratica" type="xsd:long" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaBeneficiCess" nillable="true" type="tns:beneficiCessazioneWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaDatiIntegrativi" nillable="true" type="tns:datiIntegrativiWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaDatiRetributiviTFS" nillable="true" type="tns:datiRetributiviTFSWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaDatiUtiliTFS" nillable="true" type="tns:datiUtiliTFSWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaDettImpVirtualeMandSindacale" nillable="true" type="tns:impVirtualeMandSindacaleWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaDettRetrDataRifer" nillable="true" type="tns:dettaglioRetribuzioniAllaDataDiRiferimentoWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaDettRetrUltimi360Lav" nillable="true" type="tns:dettRetribUltimi360GgLavoratiWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaImporVirtMeMed" nillable="true" type="tns:importiVirtualiMediaMediciWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaIndicArt40" nillable="true" type="tns:indicazioneArticolo40WrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaMaggiorazioni" nillable="true" type="tns:maggiorazioniUMWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaMiglContratt" nillable="true" type="tns:miglioramentiContrattualiWrappedDTO" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="beneficiCessazioneWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataValidita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="descrTipoBeneficio" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element name="ggDiritto" type="xsd:int" />
+      <xsd:element name="ggMisura" type="xsd:int" />
+      <xsd:element minOccurs="0" name="giorniDiritto" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="giorniMisura" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="impBeneficio" type="xsd:double" />
+      <xsd:element minOccurs="0" name="importoBeneficio" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="tipoBeneficio" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datiIntegrativiWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codDeroga" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codMicroqualif" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codMotivoRiposo" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codPrestazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codiceTipoRapporto" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codtipoRich" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataDL78" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataPartTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataValidita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataVarTipoServ" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="descrTipRapporto" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dettaglioDatoreLavDTO" nillable="true" type="tns:datoreLavWrappedDTO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dettaglioIndVoloVO" nillable="true" type="tns:dettaglioIndVoloWrappedVO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dettaglioLavUsuranteVO" nillable="true" type="tns:dettaglioLavUsuranteWrappedVO" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dettaglioPtVerticaleDTO" nillable="true" type="tns:ptVerticaleWrappedDTO" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagCoeffMilitar" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagLimiteEta" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idCassa" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idEnte" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idTipImpiego" type="xsd:long" />
+      <xsd:element minOccurs="0" name="impRetribAnteVar" type="xsd:double" />
+      <xsd:element minOccurs="0" name="impRetribDL16597Art4" type="xsd:double" />
+      <xsd:element minOccurs="0" name="impRetribDPR38280Art40" type="xsd:double" />
+      <xsd:element minOccurs="0" name="impRetribL33670Art2" type="xsd:double" />
+      <xsd:element minOccurs="0" name="numDL78" type="xsd:long" />
+      <xsd:element minOccurs="0" name="percPartTime" type="xsd:double" />
+      <xsd:element minOccurs="0" name="percPartTimeSpett" type="xsd:double" />
+      <xsd:element minOccurs="0" name="prgDatiIntegrativi" type="xsd:long" />
+      <xsd:element minOccurs="0" name="prgUltimoMiglio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="tipoMediaPon" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datoreLavWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idEnte" type="xsd:long" />
+      <xsd:element minOccurs="0" name="progPeriodoLav" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettaglioIndVoloWrappedVO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codPrestazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codTipAeromob" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrTipAeromob" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="impIndMediaVolo" type="xsd:double" />
+      <xsd:element minOccurs="0" name="prgDatiIntegrativi" type="xsd:long" />
+      <xsd:element minOccurs="0" name="prgUltimoMiglio" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettaglioLavUsuranteWrappedVO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codPrestazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="flagConduLavUsur" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagLavUsurante" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagNotti3Ore" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagProdottSerie" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="numNottiLavUsur" type="xsd:long" />
+      <xsd:element minOccurs="0" name="prgDatiIntegrativi" type="xsd:long" />
+      <xsd:element minOccurs="0" name="prgUltimoMiglio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="progrPeriodoLav" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ptVerticaleWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idEnte" type="xsd:long" />
+      <xsd:element minOccurs="0" name="progPeriodoLav" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datiRetributiviTFSWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codPrestazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idComparto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listDettaglioVoci" nillable="true" type="tns:dettaglioVociRetributiveTFSWrappedVO" />
+      <xsd:element minOccurs="0" name="prgUltimoMiglio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="progPeriodoLav" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettaglioVociRetributiveTFSWrappedVO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="idVoceRetributiva" type="xsd:long" />
+      <xsd:element minOccurs="0" name="importo" type="xsd:double" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datiUtiliTFSWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codPrestazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFineRapporto" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioRapporto" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="flagAutodichiarazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="idMotivoCessazione" type="xsd:long" />
+      <xsd:element minOccurs="0" name="prgDatiUtiliTFS" type="xsd:long" />
+      <xsd:element minOccurs="0" name="prgUltimoMiglio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="stato" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="impVirtualeMandSindacaleWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codiceApplicazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codicePrestazione" type="xsd:string" />
+      <xsd:element minOccurs="0" name="codiceUtente" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataAggiornamento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataValiditaInfoRetr" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagStato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idIscritto" type="xsd:long" />
+      <xsd:element minOccurs="0" name="imponibileVirtuale" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="millisecondsDataAggiornamento" type="xsd:long" />
+      <xsd:element name="modPostDetermina" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="prgUltimoMiglio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="seqRifPeriodoApuivApurp" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettaglioRetribuzioniAllaDataDiRiferimentoWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codTipoPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataValidita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dettaglioRetribuzioniVO" nillable="true" type="tns:dettaglioRetribuzioniWrappedVO" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flgPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="giorniDiritto" type="xsd:int" />
+      <xsd:element minOccurs="0" name="giorniMisura" type="xsd:double" />
+      <xsd:element minOccurs="0" name="idCassaPensionistica" type="xsd:long" />
+      <xsd:element minOccurs="0" name="numGiorniUtili" type="xsd:int" />
+      <xsd:element minOccurs="0" name="percentualePartTime" type="xsd:double" />
+      <xsd:element minOccurs="0" name="progrPeriodoLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="sospCess" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettaglioRetribuzioniWrappedVO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codVoceret" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrVoceret" type="xsd:string" />
+      <xsd:element name="idVoceret" type="xsd:long" />
+      <xsd:element minOccurs="0" name="impRetrib" type="xsd:double" />
+      <xsd:element minOccurs="0" name="impVirt" type="xsd:double" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettRetribUltimi360GgLavoratiWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codTipoPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataValidita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dettaglioRetribuzioniVO" nillable="true" type="tns:dettaglioRetribuzioniWrappedVO" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flgPartTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="giorniDiritto" type="xsd:int" />
+      <xsd:element minOccurs="0" name="giorniMisura" type="xsd:double" />
+      <xsd:element minOccurs="0" name="idCassaPensionistica" type="xsd:long" />
+      <xsd:element minOccurs="0" name="numGiorniUtili" type="xsd:int" />
+      <xsd:element minOccurs="0" name="percentualePartTime" type="xsd:double" />
+      <xsd:element minOccurs="0" name="prgUltimoMiglio" type="xsd:long" />
+      <xsd:element minOccurs="0" name="progrPeriodoLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="sospCess" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="importiVirtualiMediaMediciWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="importoVirtuale" type="xsd:double" />
+      <xsd:element name="progrPeriodoLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="seqPeriodo" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="indicazioneArticolo40WrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" name="flagArt40" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="progrPeriodoLav" type="xsd:string" />
+      <xsd:element minOccurs="0" name="seqPeriodo" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="maggiorazioniUMWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dataFinePeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataInizioPeriodoLav" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataValidita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="datoreLav" type="xsd:long" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dettaglioMaggiorazioniUMDTO" nillable="true" type="tns:dettaglioMaggiorazioniUMWrappedDTO" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="listaDettaglioMaggiorazioniUMDVO" nillable="true" type="tns:dettaglioMaggiorazioniUMWrappedVO" />
+      <xsd:element minOccurs="0" name="progrPeriodoLav" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettaglioMaggiorazioniUMWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codMagg" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrMagg" type="xsd:string" />
+      <xsd:element name="idMagg" type="xsd:long" />
+      <xsd:element minOccurs="0" name="numGgDirMagg" type="xsd:double" />
+      <xsd:element minOccurs="0" name="numGgMagg" type="xsd:long" />
+      <xsd:element minOccurs="0" name="numGgMisMagg" type="xsd:double" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dettaglioMaggiorazioniUMWrappedVO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codMagg" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrMagg" type="xsd:string" />
+      <xsd:element name="idMagg" type="xsd:long" />
+      <xsd:element minOccurs="0" name="numGgDirMagg" type="xsd:double" />
+      <xsd:element minOccurs="0" name="numGgMagg" type="xsd:long" />
+      <xsd:element minOccurs="0" name="numGgMisMagg" type="xsd:double" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="miglioramentiContrattualiWrappedDTO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="dataDecorrGiurid" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataRiferimento" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="dataValidita" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" name="descrCassa" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrQualifica" type="xsd:string" />
+      <xsd:element minOccurs="0" name="flagCertificato" type="xsd:string" />
+      <xsd:element minOccurs="0" name="idCassa" type="xsd:long" />
+      <xsd:element minOccurs="0" name="qualifica" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="vociRetXMiglContrVO" nillable="true" type="tns:vociRetXMiglContrWrappedVO" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="vociRetXMiglContrWrappedVO">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="codVoceret" type="xsd:string" />
+      <xsd:element minOccurs="0" name="descrVoceret" type="xsd:string" />
+      <xsd:element minOccurs="0" name="importoVirtuale" type="xsd:double" />
+      <xsd:element minOccurs="0" name="importoVoceRet" type="xsd:double" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="enumTipoErroreWrapped">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ERRORE" />
+      <xsd:enumeration value="SEGNALAZIONE" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="esitoVerificaDirittoWrapped">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NON_SUSSISTONO_I_REQUISITI" />
+      <xsd:enumeration value="SUSSISTONO_I_REQUISITI" />
+      <xsd:enumeration value="ERRORE" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="tipoCalcoloWrapped">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="VECCHIAIA" />
+      <xsd:enumeration value="ANTICIPATA" />
+      <xsd:enumeration value="QUOTA_100" />
+      <xsd:enumeration value="OPZIONE_CONTRIBUTIVO" />
+      <xsd:enumeration value="QUOTA_100_CONTRIBUTIVO" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="OrchServPensException" type="tns:OrchServPensException" />
+  <xsd:complexType name="OrchServPensException">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="message" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xs:schema>

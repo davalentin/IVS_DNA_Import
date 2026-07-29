@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RichiestaRedEst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AnnoLavorazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoLavorazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodicePatronato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoEnte" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaRedEstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaRedEstResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentoTE08">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRitorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoPDF" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVerify" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescrMod" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RichiestaTE08SQLServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08SQLServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08SQLServerResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08Patronati">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodicePatronato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceUfficio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoEnte" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08PatronatiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08PatronatiResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08CodiceAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodicePatronato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08CodiceAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08CodiceAllResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08ListaCFPATAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodicePatronato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoEnte" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08ListaCFPATAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08ListaCFPATAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataCalcolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08NumDomusResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomusMatr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataCalcolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Matricola" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoProfilo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomusMatrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08NumDomusMatrResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomanda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataCalcolo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomandaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08NumDomandaResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomandaPrimo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08NumDomandaPrimoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08NumDomandaPrimoResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08RicBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChiavePensione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DomPro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataElaborazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08RicBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08RicBatchResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08Codice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08CodiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08CodiceResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08DB2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08DB2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08DB2Result" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08DB2NewIVS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NuovoCalcolo" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08DB2NewIVSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08DB2NewIVSResult" type="tns:DocumentoTE08" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08Ind">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ChiavePensione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataElaborazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08IndResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08IndResult" type="tns:DocumentoTE08Ind" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentoTE08Ind">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTE08" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRitorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoPDF" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RichiestaTE08ListaCF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08ListaCFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08ListaCFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08ListaCFEsodati">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08ListaCFEsodatiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08ListaCFEsodatiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08ListaCFPAT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodicePatronato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoEnte" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaTE08ListaCFPATResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaTE08ListaCFPATResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaRateo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaRateoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaRateoResult" type="tns:DocumentoRateo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentoRateo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRitorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoPDF" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RichiestaRateoPerInterni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaRateoPerInterniResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaRateoPerInterniResult" type="tns:DocumentoRateo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaWebdom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Istanza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgLettera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoLettera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Operatore" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoProfilo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaWebdomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaWebdomResult" type="tns:DocumentoWebdom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentoWebdom">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRitorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoPDF" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RichiestaEcocertEcomar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaEcocertEcomarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaEcocertEcomarResult" type="tns:DocumentoWebdom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaEcocertEcomarCF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscaleSoggetto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaEcocertEcomarCFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaEcocertEcomarCFResult" type="tns:DocumentoWebdom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgIstanza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgFase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgLettera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoProdotto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EcomarPathPDF" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsPatronato" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoBeneficio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaPDFResult" type="tns:DocumentoWebdom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaLettereWebdom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Istanza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgLettera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoLettera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaLettereWebdomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaLettereWebdomResult" type="tns:DocumentoWebdom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaWebdomListaCF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaWebdomListaCFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaWebdomListaCFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaWebdomListaCFPAT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodicePatronato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoEnte" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaWebdomListaCFPATResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaWebdomListaCFPATResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaDeleghe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonDeleghe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaDelegheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaDelegheResult" type="tns:DocumentoDeleghe" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentoDeleghe">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRitorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentiPDF" type="tns:ArrayOfListaDocumenti" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfListaDocumenti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListaDocumenti" nillable="true" type="tns:ListaDocumenti" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListaDocumenti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProgressivoDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documento" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RichiestaDetermine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumDetermina" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MatricolaOperatore" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaDetermineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaDetermineResult" type="tns:DocumentoWebdom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaComunicazioniMassive_CF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaComunicazioniMassive_CFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaComunicazioniMassive_CFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NuovaNota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="numeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataSistema" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NuovaNotaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NuovaNotaResult" type="tns:EsitoRichiesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EsitoRichiesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRitorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValoreRestituito" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CancellaNota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chiave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancellaNotaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancellaNotaResult" type="tns:EsitoRichiesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaPdfComunicazioniMassive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idLavorazione_FK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DatLavorazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodCategoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodSede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodCertificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Applicazione" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RichiestaPdfComunicazioniMassiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RichiestaPdfComunicazioniMassiveResult" type="tns:ModelloLettera" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ModelloLettera">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceRitorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoPDF" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RichiestaRedEstSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaRedEst" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRedEstSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaRedEstResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08SQLServerSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08SQLServer" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08SQLServerSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08SQLServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08PatronatiSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08Patronati" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08PatronatiSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08PatronatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08CodiceAllSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08CodiceAll" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08CodiceAllSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08CodiceAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFPATAllSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCFPATAll" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFPATAllSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCFPATAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomusSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomus" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomusSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomusResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomusMatrSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomusMatr" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomusMatrSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomusMatrResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomandaSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomanda" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomandaSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomandaPrimoSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomandaPrimo" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08NumDomandaPrimoSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08NumDomandaPrimoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08RicBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08RicBatch" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08RicBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08RicBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08CodiceSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08Codice" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08CodiceSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08CodiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08DB2SoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08DB2" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08DB2SoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08DB2Response" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08DB2NewIVSSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08DB2NewIVS" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08DB2NewIVSSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08DB2NewIVSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08IndSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08Ind" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08IndSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08IndResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCF" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFEsodatiSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCFEsodati" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFEsodatiSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCFEsodatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFPATSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCFPAT" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaTE08ListaCFPATSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaTE08ListaCFPATResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRateoSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaRateo" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRateoSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaRateoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRateoPerInterniSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaRateoPerInterni" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaRateoPerInterniSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaRateoPerInterniResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaWebdomSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaWebdom" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaWebdomSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaWebdomResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaEcocertEcomarSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaEcocertEcomar" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaEcocertEcomarSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaEcocertEcomarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaEcocertEcomarCFSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaEcocertEcomarCF" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaEcocertEcomarCFSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaEcocertEcomarCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaPDF" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaLettereWebdomSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaLettereWebdom" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaLettereWebdomSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaLettereWebdomResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaWebdomListaCFSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaWebdomListaCF" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaWebdomListaCFSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaWebdomListaCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaWebdomListaCFPATSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaWebdomListaCFPAT" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaWebdomListaCFPATSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaWebdomListaCFPATResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaDelegheSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaDeleghe" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaDelegheSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaDelegheResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaDetermineSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaDetermine" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaDetermineSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaDetermineResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaComunicazioniMassive_CFSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaComunicazioniMassive_CF" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaComunicazioniMassive_CFSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaComunicazioniMassive_CFResponse" />
+  </wsdl:message>
+  <wsdl:message name="NuovaNotaSoapIn">
+    <wsdl:part name="parameters" element="tns:NuovaNota" />
+  </wsdl:message>
+  <wsdl:message name="NuovaNotaSoapOut">
+    <wsdl:part name="parameters" element="tns:NuovaNotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancellaNotaSoapIn">
+    <wsdl:part name="parameters" element="tns:CancellaNota" />
+  </wsdl:message>
+  <wsdl:message name="CancellaNotaSoapOut">
+    <wsdl:part name="parameters" element="tns:CancellaNotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaPdfComunicazioniMassiveSoapIn">
+    <wsdl:part name="parameters" element="tns:RichiestaPdfComunicazioniMassive" />
+  </wsdl:message>
+  <wsdl:message name="RichiestaPdfComunicazioniMassiveSoapOut">
+    <wsdl:part name="parameters" element="tns:RichiestaPdfComunicazioniMassiveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServizioRichiesteSoap">
+    <wsdl:operation name="RichiestaRedEst">
+      <wsdl:input message="tns:RichiestaRedEstSoapIn" />
+      <wsdl:output message="tns:RichiestaRedEstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08SQLServer">
+      <wsdl:input message="tns:RichiestaTE08SQLServerSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08SQLServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Patronati">
+      <wsdl:input message="tns:RichiestaTE08PatronatiSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08PatronatiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08CodiceAll">
+      <wsdl:input message="tns:RichiestaTE08CodiceAllSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08CodiceAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFPATAll">
+      <wsdl:input message="tns:RichiestaTE08ListaCFPATAllSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08ListaCFPATAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomus">
+      <wsdl:input message="tns:RichiestaTE08NumDomusSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08NumDomusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomusMatr">
+      <wsdl:input message="tns:RichiestaTE08NumDomusMatrSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08NumDomusMatrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomanda">
+      <wsdl:input message="tns:RichiestaTE08NumDomandaSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08NumDomandaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomandaPrimo">
+      <wsdl:input message="tns:RichiestaTE08NumDomandaPrimoSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08NumDomandaPrimoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08RicBatch">
+      <wsdl:input message="tns:RichiestaTE08RicBatchSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08RicBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Codice">
+      <wsdl:input message="tns:RichiestaTE08CodiceSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08CodiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08DB2">
+      <wsdl:input message="tns:RichiestaTE08DB2SoapIn" />
+      <wsdl:output message="tns:RichiestaTE08DB2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08DB2NewIVS">
+      <wsdl:input message="tns:RichiestaTE08DB2NewIVSSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08DB2NewIVSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Ind">
+      <wsdl:input message="tns:RichiestaTE08IndSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08IndSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCF">
+      <wsdl:input message="tns:RichiestaTE08ListaCFSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08ListaCFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFEsodati">
+      <wsdl:input message="tns:RichiestaTE08ListaCFEsodatiSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08ListaCFEsodatiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFPAT">
+      <wsdl:input message="tns:RichiestaTE08ListaCFPATSoapIn" />
+      <wsdl:output message="tns:RichiestaTE08ListaCFPATSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRateo">
+      <wsdl:input message="tns:RichiestaRateoSoapIn" />
+      <wsdl:output message="tns:RichiestaRateoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRateoPerInterni">
+      <wsdl:input message="tns:RichiestaRateoPerInterniSoapIn" />
+      <wsdl:output message="tns:RichiestaRateoPerInterniSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdom">
+      <wsdl:input message="tns:RichiestaWebdomSoapIn" />
+      <wsdl:output message="tns:RichiestaWebdomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaEcocertEcomar">
+      <wsdl:input message="tns:RichiestaEcocertEcomarSoapIn" />
+      <wsdl:output message="tns:RichiestaEcocertEcomarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaEcocertEcomarCF">
+      <wsdl:input message="tns:RichiestaEcocertEcomarCFSoapIn" />
+      <wsdl:output message="tns:RichiestaEcocertEcomarCFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaPDF">
+      <wsdl:input message="tns:RichiestaPDFSoapIn" />
+      <wsdl:output message="tns:RichiestaPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaLettereWebdom">
+      <wsdl:input message="tns:RichiestaLettereWebdomSoapIn" />
+      <wsdl:output message="tns:RichiestaLettereWebdomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdomListaCF">
+      <wsdl:input message="tns:RichiestaWebdomListaCFSoapIn" />
+      <wsdl:output message="tns:RichiestaWebdomListaCFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdomListaCFPAT">
+      <wsdl:input message="tns:RichiestaWebdomListaCFPATSoapIn" />
+      <wsdl:output message="tns:RichiestaWebdomListaCFPATSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDeleghe">
+      <wsdl:input message="tns:RichiestaDelegheSoapIn" />
+      <wsdl:output message="tns:RichiestaDelegheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDetermine">
+      <wsdl:input message="tns:RichiestaDetermineSoapIn" />
+      <wsdl:output message="tns:RichiestaDetermineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaComunicazioniMassive_CF">
+      <wsdl:input message="tns:RichiestaComunicazioniMassive_CFSoapIn" />
+      <wsdl:output message="tns:RichiestaComunicazioniMassive_CFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NuovaNota">
+      <wsdl:input message="tns:NuovaNotaSoapIn" />
+      <wsdl:output message="tns:NuovaNotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancellaNota">
+      <wsdl:input message="tns:CancellaNotaSoapIn" />
+      <wsdl:output message="tns:CancellaNotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaPdfComunicazioniMassive">
+      <wsdl:input message="tns:RichiestaPdfComunicazioniMassiveSoapIn" />
+      <wsdl:output message="tns:RichiestaPdfComunicazioniMassiveSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServizioRichiesteSoap" type="tns:ServizioRichiesteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RichiestaRedEst">
+      <soap:operation soapAction="http://tempuri.org/RichiestaRedEst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08SQLServer">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08SQLServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Patronati">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08Patronati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08CodiceAll">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08CodiceAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFPATAll">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08ListaCFPATAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomus">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08NumDomus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomusMatr">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08NumDomusMatr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomanda">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08NumDomanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomandaPrimo">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08NumDomandaPrimo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08RicBatch">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08RicBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Codice">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08Codice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08DB2">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08DB2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08DB2NewIVS">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08DB2NewIVS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Ind">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08Ind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCF">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08ListaCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFEsodati">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08ListaCFEsodati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFPAT">
+      <soap:operation soapAction="http://tempuri.org/RichiestaTE08ListaCFPAT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRateo">
+      <soap:operation soapAction="http://tempuri.org/RichiestaRateo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRateoPerInterni">
+      <soap:operation soapAction="http://tempuri.org/RichiestaRateoPerInterni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdom">
+      <soap:operation soapAction="http://tempuri.org/RichiestaWebdom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaEcocertEcomar">
+      <soap:operation soapAction="http://tempuri.org/RichiestaEcocertEcomar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaEcocertEcomarCF">
+      <soap:operation soapAction="http://tempuri.org/RichiestaEcocertEcomarCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaPDF">
+      <soap:operation soapAction="http://tempuri.org/RichiestaPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaLettereWebdom">
+      <soap:operation soapAction="http://tempuri.org/RichiestaLettereWebdom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdomListaCF">
+      <soap:operation soapAction="http://tempuri.org/RichiestaWebdomListaCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdomListaCFPAT">
+      <soap:operation soapAction="http://tempuri.org/RichiestaWebdomListaCFPAT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDeleghe">
+      <soap:operation soapAction="http://tempuri.org/RichiestaDeleghe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDetermine">
+      <soap:operation soapAction="http://tempuri.org/RichiestaDetermine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaComunicazioniMassive_CF">
+      <soap:operation soapAction="http://tempuri.org/RichiestaComunicazioniMassive_CF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NuovaNota">
+      <soap:operation soapAction="http://tempuri.org/NuovaNota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancellaNota">
+      <soap:operation soapAction="http://tempuri.org/CancellaNota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaPdfComunicazioniMassive">
+      <soap:operation soapAction="http://tempuri.org/RichiestaPdfComunicazioniMassive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServizioRichiesteSoap12" type="tns:ServizioRichiesteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RichiestaRedEst">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaRedEst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08SQLServer">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08SQLServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Patronati">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08Patronati" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08CodiceAll">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08CodiceAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFPATAll">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08ListaCFPATAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomus">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08NumDomus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomusMatr">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08NumDomusMatr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomanda">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08NumDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08NumDomandaPrimo">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08NumDomandaPrimo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08RicBatch">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08RicBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Codice">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08Codice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08DB2">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08DB2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08DB2NewIVS">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08DB2NewIVS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08Ind">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08Ind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCF">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08ListaCF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFEsodati">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08ListaCFEsodati" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaTE08ListaCFPAT">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaTE08ListaCFPAT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRateo">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaRateo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRateoPerInterni">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaRateoPerInterni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdom">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaWebdom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaEcocertEcomar">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaEcocertEcomar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaEcocertEcomarCF">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaEcocertEcomarCF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaPDF">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaLettereWebdom">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaLettereWebdom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdomListaCF">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaWebdomListaCF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaWebdomListaCFPAT">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaWebdomListaCFPAT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDeleghe">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaDeleghe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDetermine">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaDetermine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaComunicazioniMassive_CF">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaComunicazioniMassive_CF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NuovaNota">
+      <soap12:operation soapAction="http://tempuri.org/NuovaNota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancellaNota">
+      <soap12:operation soapAction="http://tempuri.org/CancellaNota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaPdfComunicazioniMassive">
+      <soap12:operation soapAction="http://tempuri.org/RichiestaPdfComunicazioniMassive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServizioRichieste">
+    <wsdl:port name="ServizioRichiesteSoap" binding="tns:ServizioRichiesteSoap">
+      <soap:address location="http://msws.svil.inps/WSStampeWeb/servizioRichieste.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServizioRichiesteSoap12" binding="tns:ServizioRichiesteSoap12">
+      <soap12:address location="http://msws.svil.inps/WSStampeWeb/servizioRichieste.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

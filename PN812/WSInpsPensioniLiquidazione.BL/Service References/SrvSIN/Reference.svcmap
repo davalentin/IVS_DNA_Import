@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28b924dc-ebf0-4078-87d3-bd6ac5a34734" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msws2.svil.inps/WsFelpePerSin/FelpePerSINService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FelpePerSINService.xsd" MetadataType="Schema" ID="d3b90bb8-0859-4431-a4c8-947a90d6981c" SourceId="1" SourceUrl="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FelpePerSINService1.xsd" MetadataType="Schema" ID="a5309e61-d14f-4b02-9ef1-09a30b381a9a" SourceId="1" SourceUrl="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FelpePerSINService.wsdl" MetadataType="Wsdl" ID="26a3af98-8cf5-4219-9994-c389bec8747c" SourceId="1" SourceUrl="http://msws2.svil.inps/WsFelpePerSin/FelpePerSINService.svc?wsdl" />
+    <MetadataFile FileName="FelpePerSINService2.xsd" MetadataType="Schema" ID="48a9eca8-4256-4e27-9e34-32a515912ff9" SourceId="1" SourceUrl="http://msws2.svil.inps/WSFelpePerSIN/FelpePerSINService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

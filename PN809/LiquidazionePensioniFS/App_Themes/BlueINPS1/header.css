@@ -1,0 +1,230 @@
+﻿#containerHeader .container {
+    width: 100%;
+}
+
+div[id*=user] .container .row,
+div[id*=User] .container .row {
+    width: 100% !important;
+}
+
+.header {
+    display: none;
+    align-items: center;
+    background-color: #002460;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 32px
+}
+
+.header-wrapper {
+    padding: 0 !important;
+    display: flex;
+    justify-content: space-between
+}
+
+.header__title {
+    align-items: center;
+    display: flex;
+    gap: 24px
+}
+
+.header__title-logo {
+    height: auto;
+    max-height: 45px;
+    width: auto
+}
+
+.header__title-text {
+    vertical-align: middle;
+    color: #fff;
+    font-family: Titillium Web;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 42px;
+    text-decoration: none
+}
+
+.header_menu {
+    align-items: center;
+    display: flex
+}
+
+    .header_menu .header-links-cointainer {
+        padding-right: 32px;
+        border-right: 1px solid #fff
+    }
+
+    .header_menu .user-container {
+        color: #fff;
+        padding-left: 32px;
+        display: flex;
+        gap: 16px;
+        align-items: center
+    }
+
+        .header_menu .user-container .user-logged {
+            font-weight: 700
+        }
+
+        .header_menu .user-container .user-badge {
+            background-color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+            .header_menu .user-container .user-badge span {
+                color: #00368f;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px
+            }
+
+.header_menu-button {
+    background: transparent;
+    border: none;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding: 0 !important;
+    margin: 0 !important
+}
+
+    .header_menu-button:hover {
+        background-color: inherit;
+        border: none
+    }
+
+    .header_menu-button:not(:last-child) {
+        margin-right: 32px !important
+    }
+
+.header_menu-button-icon {
+    height: auto;
+    max-height: 16px;
+    max-width: 16px;
+    width: auto
+}
+
+.header_menu-button-message {
+    vertical-align: middle;
+    color: #fff;
+    font-family: Titillium Web;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 32px;
+    text-decoration: none
+}
+
+div[id*=user],
+div[id*=User] {
+    background-color: #f2f6fc;
+}
+
+    div[id*=user] div,
+    div[id*=User] div {
+        padding: 0 !important;
+        height: initial !important;
+        width: initial !important;
+    }
+
+        div[id*=user] div .intestazione,
+        div[id*=User] div .intestazione {
+            padding: 0 !important;
+            color: #454d56;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: 14px;
+            text-align: right;
+        }
+
+            div[id*=user] div .intestazione > span,
+            div[id*=User] div .intestazione > span {
+                font-weight: 600 !important;
+                margin-right: 8px;
+            }
+
+}
+
+div[id*=user],
+div[id*=User] {
+    padding: 0 !important;
+    color: #454d56;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal !important;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: right;
+}
+
+    div[id*=user] > span,
+    div[id*=User] > span,
+    div[id*=user] a.btn-icon-text,
+    div[id*=User] a.btn-icon-text {
+        color: #454d56;
+        font-size: 14px;
+        font-weight: 700 !important;
+        font-style: normal !important;
+        letter-spacing: 0;
+        line-height: 21px;
+        text-align: right;
+        text-decoration: none;
+    }
+
+    #ctl00_UCIntestazione_ucChangeRuolo_btnChangeRuolo,
+    #ctl00_UCIntestazione_ucChangeSede_btnChangeSede {
+        margin-left: 16px;
+        height: unset !important;
+    }
+
+div[id*=user] .subheader,
+div[id*=User] .subheader {
+    display: flex;
+    justify-content: space-between;
+    width: 100% !important;
+    padding: 0 12px !important;
+    height: 56px !important;
+    align-items: center;
+    position: relative;
+    right: 45px;
+}
+
+    div[id*=user] .subheader .header-system-container .header-system,
+    div[id*=User] .subheader .header-system-container .header-system {
+        background-color: rgba(24,206,231,.25);
+        color: #002460;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 8px 16px !important;
+        grid-gap: 8px
+    }
+
+        div[id*=user] .subheader .header-system-container .header-system span,
+        div[id*=User] .subheader .header-system-container .header-system span {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px
+        }
+
+    div[id*=user] .subheader .header-role,
+    div[id*=User] .subheader .header-role {
+        display: flex
+    }
+
+        div[id*=user] .subheader .header-role #ctl00_UCIntestazione_ucChangeSede_pnlChgSede table,
+        div[id*=User] .subheader .header-role #ctl00_UCIntestazione_ucChangeSede_pnlChgSede table {
+            margin-left: 16px
+        }
+
+#ctl00_user {
+    padding-left: 64px;
+    padding-right: 64px;
+}

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://soa.inps.it/WS01179" xmlns:ns1="http://tempuri.org/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IWsVerTitolIBAN" type="ns0:IWsVerTitolIBAN">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="annullaEntiExtra">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/annullaEntiExtra" style="document" />
+      <wsdl:input name="annullaEntiExtraRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="annullaEntiExtraResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="annullaEntiExtraRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/annullaEntiExtraRc" style="document" />
+      <wsdl:input name="annullaEntiExtraRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="annullaEntiExtraRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="annullaSR163">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/annullaSR163" style="document" />
+      <wsdl:input name="annullaSR163Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="annullaSR163Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="annullaSR163Rc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/annullaSR163Rc" style="document" />
+      <wsdl:input name="annullaSR163RcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="annullaSR163RcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaEntiExtra">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaEntiExtra" style="document" />
+      <wsdl:input name="certificaEntiExtraRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaEntiExtraResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaEntiExtraRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaEntiExtraRc" style="document" />
+      <wsdl:input name="certificaEntiExtraRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaEntiExtraRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaSDB">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaSDB" style="document" />
+      <wsdl:input name="certificaSDBRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaSDBResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaSDBRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaSDBRc" style="document" />
+      <wsdl:input name="certificaSDBRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaSDBRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaSR163">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaSR163" style="document" />
+      <wsdl:input name="certificaSR163Request">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaSR163Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaSR163Rc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaSR163Rc" style="document" />
+      <wsdl:input name="certificaSR163RcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaSR163RcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitolarita">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaTitolarita" style="document" />
+      <wsdl:input name="certificaTitolaritaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaTitolaritaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitolaritaRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaTitolaritaRc" style="document" />
+      <wsdl:input name="certificaTitolaritaRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaTitolaritaRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitUff">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaTitUff" style="document" />
+      <wsdl:input name="certificaTitUffRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaTitUffResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="certificaTitUffRC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/certificaTitUffRC" style="document" />
+      <wsdl:input name="certificaTitUffRCRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="certificaTitUffRCResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastIban">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getLastIban" style="document" />
+      <wsdl:input name="getLastIbanRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLastIbanResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastIbanBic">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getLastIbanBic" style="document" />
+      <wsdl:input name="getLastIbanBicRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLastIbanBicResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastIbanBicRC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getLastIbanBicRC" style="document" />
+      <wsdl:input name="getLastIbanBicRCRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLastIbanBicRCResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastIbanRC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getLastIbanRC" style="document" />
+      <wsdl:input name="getLastIbanRCRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLastIbanRCResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioni">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaCertificazioni" style="document" />
+      <wsdl:input name="getListaCertificazioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaCertificazioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniB">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaCertificazioniB" style="document" />
+      <wsdl:input name="getListaCertificazioniBRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaCertificazioniBResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniBRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaCertificazioniBRc" style="document" />
+      <wsdl:input name="getListaCertificazioniBRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaCertificazioniBRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaCertificazioniRc" style="document" />
+      <wsdl:input name="getListaCertificazioniRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaCertificazioniRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniSDB">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaCertificazioniSDB" style="document" />
+      <wsdl:input name="getListaCertificazioniSDBRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaCertificazioniSDBResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaCertificazioniSDBRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaCertificazioniSDBRc" style="document" />
+      <wsdl:input name="getListaCertificazioniSDBRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaCertificazioniSDBRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaOperazioni">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaOperazioni" style="document" />
+      <wsdl:input name="getListaOperazioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaOperazioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaOperazioniRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getListaOperazioniRc" style="document" />
+      <wsdl:input name="getListaOperazioniRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getListaOperazioniRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusVarCoord">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getStatusVarCoord" style="document" />
+      <wsdl:input name="getStatusVarCoordRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStatusVarCoordResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusVarCoordRC">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/getStatusVarCoordRC" style="document" />
+      <wsdl:input name="getStatusVarCoordRCRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStatusVarCoordRCResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitIbanNew">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitIbanNew" style="document" />
+      <wsdl:input name="verificaTitIbanNewRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitIbanNewResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitIbanNewRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitIbanNewRc" style="document" />
+      <wsdl:input name="verificaTitIbanNewRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitIbanNewRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolarita">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitolarita" style="document" />
+      <wsdl:input name="verificaTitolaritaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitolaritaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaB">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitolaritaB" style="document" />
+      <wsdl:input name="verificaTitolaritaBRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitolaritaBResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaBPens">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitolaritaBPens" style="document" />
+      <wsdl:input name="verificaTitolaritaBPensRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitolaritaBPensResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaBPensRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitolaritaBPensRc" style="document" />
+      <wsdl:input name="verificaTitolaritaBPensRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitolaritaBPensRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaBRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitolaritaBRc" style="document" />
+      <wsdl:input name="verificaTitolaritaBRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitolaritaBRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTitolaritaRc">
+      <soap11:operation soapAction="http://soa.inps.it/WS01179/IWsVerTitolIBAN/verificaTitolaritaRc" style="document" />
+      <wsdl:input name="verificaTitolaritaRcRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaTitolaritaRcResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsVerTitolIBAN">
+    <wsdl:port name="BasicHttpBinding_IWsVerTitolIBAN" binding="ns1:BasicHttpBinding_IWsVerTitolIBAN">
+      <soap11:address location="http://192.168.40.154:80/Ws.Net/WsVerTitolIBAN" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EstrazioneDatiTotalIVS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstrazioneDatiTotalIVSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstrazioneDatiTotalIVSResult" type="tns:clsDati" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsDati">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="objErrori" type="tns:clsErrori" />
+          <s:element minOccurs="0" maxOccurs="1" name="objDomanda" type="tns:clsDomanda" />
+          <s:element minOccurs="0" maxOccurs="1" name="objPagamento" type="tns:clsPagamento" />
+          <s:element minOccurs="0" maxOccurs="1" name="objDatiContributivi" type="tns:ArrayOfClsDatiContributivi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsErrori">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceErrore" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescrErrore" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsDomanda">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatoCivile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Decorrenza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoLiquid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sindacato" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnteIstruttoria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SistemaCalcolo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataIniAss" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataFineAss" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotSettDiritto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceNatura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataPerfReq" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsPagamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ModPagamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Iban" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumLibr_CcBanca" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClsDatiContributivi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsDatiContributivi" nillable="true" type="tns:clsDatiContributivi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsDatiContributivi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="objDatiTrattenute" type="tns:ArrayOfClsDatiTrattenute" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnteFondo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SettimaneMisura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImpQuotaEnte" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClsDatiTrattenute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsDatiTrattenute" nillable="true" type="tns:clsDatiTrattenute" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsDatiTrattenute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AnnoCompetenza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImpTrattEnte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodTrattenuta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EstrazioneDatiCumulIVS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstrazioneDatiCumulIVSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstrazioneDatiCumulIVSResult" type="tns:clsDatiCumulo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsDatiCumulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="objErrori" type="tns:clsErrori" />
+          <s:element minOccurs="0" maxOccurs="1" name="objDomanda" type="tns:domandaCumulo" />
+          <s:element minOccurs="0" maxOccurs="1" name="objPagamento" type="tns:pagamentoCumulo" />
+          <s:element minOccurs="0" maxOccurs="1" name="objDatiContributivi" type="tns:ArrayOfDatiContributiviCumulo" />
+          <s:element minOccurs="0" maxOccurs="1" name="objListaVarSup" type="tns:ArrayOfClsVarSup" />
+          <s:element minOccurs="0" maxOccurs="1" name="objDatiEsteri" type="tns:ArrayOfDatiEsteriCumulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="domandaCumulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceFiscale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatoCivile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Decorrenza" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoPensione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sindacato" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnteIstruttoria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SistemaCalcolo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataIniAss" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFineAss" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotSettDiritto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceNatura" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataPerfReq" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Interna" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatoCompletamento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFineOneri" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFineIncumulabilita" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDipendente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroFigli" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoBeneficioLavoratriciMadri" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceProvvisorio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaratterizzazioneLegge" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="pagamentoCumulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ModPagamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Iban" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumLibr_CcBanca" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estero" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatiContributiviCumulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datiContributiviCumulo" nillable="true" type="tns:datiContributiviCumulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datiContributiviCumulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="objDatiTrattenute" type="tns:ArrayOfClsDatiTrattenute" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceFondo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescFondo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SistemaCalcolo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceNatura" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettimaneMisura" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImpQuotaEnte" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataDecorrenzaQuota" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClsVarSup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsVarSup" nillable="true" type="tns:clsVarSup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsVarSup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceFondo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PeriodoDal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PeriodoAl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotSettDiritto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prorata" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataDecSupplemento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoVariazione" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatiEsteriCumulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="datiEsteriCumulo" nillable="true" type="tns:datiEsteriCumulo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="datiEsteriCumulo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceStato" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceIstituzione" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettimaneDiritto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SettimaneMisura" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EstrazioneDatiCumulRicostituzioneIVS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstrazioneDatiCumulRicostituzioneIVSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstrazioneDatiCumulRicostituzioneIVSResult" type="tns:clsDatiCumulo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AggiornaKeyRicostituzioneCUMUL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgIVS" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Dataliquidazione" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AggiornaKeyRicostituzioneCUMULResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AggiornaKeyRicostituzioneCUMULResult" type="tns:clsDati" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AggiornaKeyPensioneCUMUL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zona" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Dataliquidazione" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AggiornaKeyPensioneCUMULResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AggiornaKeyPensioneCUMULResult" type="tns:clsDati" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AggiornaKeyPensioneTOTAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDomus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zona" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Certificato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dataliquidazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AggiornaKeyPensioneTOTALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AggiornaKeyPensioneTOTALResult" type="tns:clsDati" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clsDati" nillable="true" type="tns:clsDati" />
+      <s:element name="clsDatiCumulo" nillable="true" type="tns:clsDatiCumulo" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EstrazioneDatiTotalIVSSoapIn">
+    <wsdl:part name="parameters" element="tns:EstrazioneDatiTotalIVS" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiTotalIVSSoapOut">
+    <wsdl:part name="parameters" element="tns:EstrazioneDatiTotalIVSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulIVSSoapIn">
+    <wsdl:part name="parameters" element="tns:EstrazioneDatiCumulIVS" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulIVSSoapOut">
+    <wsdl:part name="parameters" element="tns:EstrazioneDatiCumulIVSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulRicostituzioneIVSSoapIn">
+    <wsdl:part name="parameters" element="tns:EstrazioneDatiCumulRicostituzioneIVS" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulRicostituzioneIVSSoapOut">
+    <wsdl:part name="parameters" element="tns:EstrazioneDatiCumulRicostituzioneIVSResponse" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyRicostituzioneCUMULSoapIn">
+    <wsdl:part name="parameters" element="tns:AggiornaKeyRicostituzioneCUMUL" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyRicostituzioneCUMULSoapOut">
+    <wsdl:part name="parameters" element="tns:AggiornaKeyRicostituzioneCUMULResponse" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneCUMULSoapIn">
+    <wsdl:part name="parameters" element="tns:AggiornaKeyPensioneCUMUL" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneCUMULSoapOut">
+    <wsdl:part name="parameters" element="tns:AggiornaKeyPensioneCUMULResponse" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneTOTALSoapIn">
+    <wsdl:part name="parameters" element="tns:AggiornaKeyPensioneTOTAL" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneTOTALSoapOut">
+    <wsdl:part name="parameters" element="tns:AggiornaKeyPensioneTOTALResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiTotalIVSHttpPostIn">
+    <wsdl:part name="NumeroDomus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiTotalIVSHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsDati" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulIVSHttpPostIn">
+    <wsdl:part name="NumeroDomus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulIVSHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsDatiCumulo" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulRicostituzioneIVSHttpPostIn">
+    <wsdl:part name="NumeroDomus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EstrazioneDatiCumulRicostituzioneIVSHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsDatiCumulo" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyRicostituzioneCUMULHttpPostIn">
+    <wsdl:part name="NumeroDomus" type="s:string" />
+    <wsdl:part name="flgIVS" type="s:string" />
+    <wsdl:part name="Dataliquidazione" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyRicostituzioneCUMULHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsDati" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneCUMULHttpPostIn">
+    <wsdl:part name="NumeroDomus" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Zona" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="Dataliquidazione" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneCUMULHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsDati" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneTOTALHttpPostIn">
+    <wsdl:part name="NumeroDomus" type="s:string" />
+    <wsdl:part name="Categoria" type="s:string" />
+    <wsdl:part name="Sede" type="s:string" />
+    <wsdl:part name="Zona" type="s:string" />
+    <wsdl:part name="Certificato" type="s:string" />
+    <wsdl:part name="Dataliquidazione" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AggiornaKeyPensioneTOTALHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsDati" />
+  </wsdl:message>
+  <wsdl:portType name="WSTotalIvsSoap">
+    <wsdl:operation name="EstrazioneDatiTotalIVS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Estrae i dati necessari per il calcolo della pensione di totalizzazione dalla procedura TOTAL</wsdl:documentation>
+      <wsdl:input message="tns:EstrazioneDatiTotalIVSSoapIn" />
+      <wsdl:output message="tns:EstrazioneDatiTotalIVSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulIVS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Estrae i dati necessari per il calcolo della pensione in regime di cumulo dalla procedura CUMUL</wsdl:documentation>
+      <wsdl:input message="tns:EstrazioneDatiCumulIVSSoapIn" />
+      <wsdl:output message="tns:EstrazioneDatiCumulIVSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulRicostituzioneIVS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Estrae i dati necessari, delle ricostituzioni, per il calcolo della pensione in regime di cumulo dalla procedura CUMUL</wsdl:documentation>
+      <wsdl:input message="tns:EstrazioneDatiCumulRicostituzioneIVSSoapIn" />
+      <wsdl:output message="tns:EstrazioneDatiCumulRicostituzioneIVSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyRicostituzioneCUMUL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna la base dati della procedura Cumul con la chiave della pensione calcolata</wsdl:documentation>
+      <wsdl:input message="tns:AggiornaKeyRicostituzioneCUMULSoapIn" />
+      <wsdl:output message="tns:AggiornaKeyRicostituzioneCUMULSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneCUMUL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna la base dati della procedura Cumul con la chiave della pensione calcolata</wsdl:documentation>
+      <wsdl:input message="tns:AggiornaKeyPensioneCUMULSoapIn" />
+      <wsdl:output message="tns:AggiornaKeyPensioneCUMULSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneTOTAL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna la base dati della procedura Total con la chiave della pensione calcolata</wsdl:documentation>
+      <wsdl:input message="tns:AggiornaKeyPensioneTOTALSoapIn" />
+      <wsdl:output message="tns:AggiornaKeyPensioneTOTALSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSTotalIvsHttpPost">
+    <wsdl:operation name="EstrazioneDatiTotalIVS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Estrae i dati necessari per il calcolo della pensione di totalizzazione dalla procedura TOTAL</wsdl:documentation>
+      <wsdl:input message="tns:EstrazioneDatiTotalIVSHttpPostIn" />
+      <wsdl:output message="tns:EstrazioneDatiTotalIVSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulIVS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Estrae i dati necessari per il calcolo della pensione in regime di cumulo dalla procedura CUMUL</wsdl:documentation>
+      <wsdl:input message="tns:EstrazioneDatiCumulIVSHttpPostIn" />
+      <wsdl:output message="tns:EstrazioneDatiCumulIVSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulRicostituzioneIVS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Estrae i dati necessari, delle ricostituzioni, per il calcolo della pensione in regime di cumulo dalla procedura CUMUL</wsdl:documentation>
+      <wsdl:input message="tns:EstrazioneDatiCumulRicostituzioneIVSHttpPostIn" />
+      <wsdl:output message="tns:EstrazioneDatiCumulRicostituzioneIVSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyRicostituzioneCUMUL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna la base dati della procedura Cumul con la chiave della pensione calcolata</wsdl:documentation>
+      <wsdl:input message="tns:AggiornaKeyRicostituzioneCUMULHttpPostIn" />
+      <wsdl:output message="tns:AggiornaKeyRicostituzioneCUMULHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneCUMUL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna la base dati della procedura Cumul con la chiave della pensione calcolata</wsdl:documentation>
+      <wsdl:input message="tns:AggiornaKeyPensioneCUMULHttpPostIn" />
+      <wsdl:output message="tns:AggiornaKeyPensioneCUMULHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneTOTAL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna la base dati della procedura Total con la chiave della pensione calcolata</wsdl:documentation>
+      <wsdl:input message="tns:AggiornaKeyPensioneTOTALHttpPostIn" />
+      <wsdl:output message="tns:AggiornaKeyPensioneTOTALHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSTotalIvsSoap" type="tns:WSTotalIvsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EstrazioneDatiTotalIVS">
+      <soap:operation soapAction="http://tempuri.org/EstrazioneDatiTotalIVS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulIVS">
+      <soap:operation soapAction="http://tempuri.org/EstrazioneDatiCumulIVS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulRicostituzioneIVS">
+      <soap:operation soapAction="http://tempuri.org/EstrazioneDatiCumulRicostituzioneIVS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyRicostituzioneCUMUL">
+      <soap:operation soapAction="http://tempuri.org/AggiornaKeyRicostituzioneCUMUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneCUMUL">
+      <soap:operation soapAction="http://tempuri.org/AggiornaKeyPensioneCUMUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneTOTAL">
+      <soap:operation soapAction="http://tempuri.org/AggiornaKeyPensioneTOTAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSTotalIvsSoap12" type="tns:WSTotalIvsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EstrazioneDatiTotalIVS">
+      <soap12:operation soapAction="http://tempuri.org/EstrazioneDatiTotalIVS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulIVS">
+      <soap12:operation soapAction="http://tempuri.org/EstrazioneDatiCumulIVS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulRicostituzioneIVS">
+      <soap12:operation soapAction="http://tempuri.org/EstrazioneDatiCumulRicostituzioneIVS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyRicostituzioneCUMUL">
+      <soap12:operation soapAction="http://tempuri.org/AggiornaKeyRicostituzioneCUMUL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneCUMUL">
+      <soap12:operation soapAction="http://tempuri.org/AggiornaKeyPensioneCUMUL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneTOTAL">
+      <soap12:operation soapAction="http://tempuri.org/AggiornaKeyPensioneTOTAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSTotalIvsHttpPost" type="tns:WSTotalIvsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="EstrazioneDatiTotalIVS">
+      <http:operation location="/EstrazioneDatiTotalIVS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulIVS">
+      <http:operation location="/EstrazioneDatiCumulIVS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstrazioneDatiCumulRicostituzioneIVS">
+      <http:operation location="/EstrazioneDatiCumulRicostituzioneIVS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyRicostituzioneCUMUL">
+      <http:operation location="/AggiornaKeyRicostituzioneCUMUL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneCUMUL">
+      <http:operation location="/AggiornaKeyPensioneCUMUL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornaKeyPensioneTOTAL">
+      <http:operation location="/AggiornaKeyPensioneTOTAL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSTotalIvs">
+    <wsdl:port name="WSTotalIvsSoap" binding="tns:WSTotalIvsSoap">
+      <soap:address location="http://msws.svil.inps/WStotalivs/wstotalivs.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSTotalIvsSoap12" binding="tns:WSTotalIvsSoap12">
+      <soap12:address location="http://msws.svil.inps/WStotalivs/wstotalivs.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSTotalIvsHttpPost" binding="tns:WSTotalIvsHttpPost">
+      <http:address location="http://msws.svil.inps/WStotalivs/wstotalivs.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9bcca6e6-4ec7-44b0-b683-d65305926158" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://ws.svil.inps/Ws.Net/WSDelegheSindacali?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSDelegheSindacali.xsd" MetadataType="Schema" ID="4f688006-52f2-4e3d-b209-6f45a3232858" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSDelegheSindacali.xsd1.xsd" />
+    <MetadataFile FileName="WSDelegheSindacali1.xsd" MetadataType="Schema" ID="4e373076-278c-4241-b76a-990c7e1a7020" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSDelegheSindacali.xsd2.xsd" />
+    <MetadataFile FileName="WSDelegheSindacali.wsdl" MetadataType="Wsdl" ID="29046cef-3f4e-4970-88c6-4a6dc763710a" SourceId="1" SourceUrl="https://ws.svil.inps/Ws.Net/WSDelegheSindacali?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

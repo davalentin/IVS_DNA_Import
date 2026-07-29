@@ -1,0 +1,13 @@
+version=10.2
+item-uid=43303175
+file-version=1
+checksum=dcf2eccea73af631f662a67a6ecb06eb
+fetch-size=5409
+mtime=1570689156
+item-spec=504E3831353A3148574A4D5920544920504E4C2052205753444C2D323037333831333735362E412D5352433B31
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=WSInpsPensioniLiquidazioneAgo.Data/Service References/HisLiquidazioneAgo/TI_PNL_R.wsdl
+project=504E3831353A53315F5753494E505350454E53494F4E494C4951554944415A494F4E4541474F
+project-uid=43216262

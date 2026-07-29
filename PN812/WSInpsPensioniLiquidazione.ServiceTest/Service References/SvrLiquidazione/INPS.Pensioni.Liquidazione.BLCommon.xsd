@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/INPS.Pensioni.Liquidazione.BLCommon" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ProgressivoRichiesto" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="SiglaCatPensione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TraduzioneSuGP" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA" nillable="true" type="tns:GestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA" />
+  <xs:complexType name="ArrayOfGestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA" nillable="true" type="tns:GestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA" nillable="true" type="tns:ArrayOfGestioneAziendeScadenzaAssegnoGGmmAAAA.DecAziendeScadenzaAssegnoGGmmAAAA" />
+  <xs:simpleType name="TipologiaContribuzioneEnpals">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SAI" />
+      <xs:enumeration value="SAS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipologiaContribuzioneEnpals" nillable="true" type="tns:TipologiaContribuzioneEnpals" />
+  <xs:complexType name="ArrayOfGestioneAnniRichiestaBonus.DatiAnniRichiestaBonus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAnniRichiestaBonus.DatiAnniRichiestaBonus" nillable="true" type="tns:GestioneAnniRichiestaBonus.DatiAnniRichiestaBonus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAnniRichiestaBonus.DatiAnniRichiestaBonus" nillable="true" type="tns:ArrayOfGestioneAnniRichiestaBonus.DatiAnniRichiestaBonus" />
+  <xs:complexType name="GestioneAnniRichiestaBonus.DatiAnniRichiestaBonus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anno" type="xs:int" />
+      <xs:element minOccurs="0" name="CodiceEsitoMessaggio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescrizioneEsitoMessaggio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsitoCalcoloBeneficio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="IsRichiestaBonus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Prescrizione" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAnniRichiestaBonus.DatiAnniRichiestaBonus" nillable="true" type="tns:GestioneAnniRichiestaBonus.DatiAnniRichiestaBonus" />
+  <xs:complexType name="ArrayOfGestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni" nillable="true" type="tns:GestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni" nillable="true" type="tns:ArrayOfGestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni" />
+  <xs:complexType name="GestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnoRichiesto" type="xs:int" />
+      <xs:element minOccurs="0" name="DataInserimento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaPresaInCarico" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescrizioneEsito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsitoCalcoloBeneficio" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="TipoElaborazione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni" nillable="true" type="tns:GestioneAnniRichiestaBonus.DatiPrenotazioneElaborazioni" />
+  <xs:complexType name="GestioneDecodificaAzienda.DecAzienda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:short" />
+      <xs:element minOccurs="0" name="SiglaCategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TraduzioneSuGP" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneDecodificaAzienda.DecAzienda" nillable="true" type="tns:GestioneDecodificaAzienda.DecAzienda" />
+  <xs:complexType name="GestioneBancheFideiussioneESOPMI.DecBancaFideiussione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Anno" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="BancaFideiussione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CodiceAzienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FineEsodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="InizioEsodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Progressivo" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneBancheFideiussioneESOPMI.DecBancaFideiussione" nillable="true" type="tns:GestioneBancheFideiussioneESOPMI.DecBancaFideiussione" />
+  <xs:complexType name="ArrayOfGestioneDecodificaAzienda.DecAzienda">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneDecodificaAzienda.DecAzienda" nillable="true" type="tns:GestioneDecodificaAzienda.DecAzienda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneDecodificaAzienda.DecAzienda" nillable="true" type="tns:ArrayOfGestioneDecodificaAzienda.DecAzienda" />
+  <xs:complexType name="ArrayOfGestioneBancheFideiussioneESOPMI.DecBancaFideiussione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneBancheFideiussioneESOPMI.DecBancaFideiussione" nillable="true" type="tns:GestioneBancheFideiussioneESOPMI.DecBancaFideiussione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneBancheFideiussioneESOPMI.DecBancaFideiussione" nillable="true" type="tns:ArrayOfGestioneBancheFideiussioneESOPMI.DecBancaFideiussione" />
+  <xs:complexType name="GestioneBancheFideiussioneESPA.DecBancaFideiussione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Anno" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="BancaFideiussione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CodiceAzienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FineEsodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="InizioEsodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Progressivo" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneBancheFideiussioneESPA.DecBancaFideiussione" nillable="true" type="tns:GestioneBancheFideiussioneESPA.DecBancaFideiussione" />
+  <xs:complexType name="ArrayOfGestioneBancheFideiussioneESPA.DecBancaFideiussione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneBancheFideiussioneESPA.DecBancaFideiussione" nillable="true" type="tns:GestioneBancheFideiussioneESPA.DecBancaFideiussione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneBancheFideiussioneESPA.DecBancaFideiussione" nillable="true" type="tns:ArrayOfGestioneBancheFideiussioneESPA.DecBancaFideiussione" />
+  <xs:complexType name="ArrayOfGestioneAnagrafica.DatiAnagrafici">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAnagrafica.DatiAnagrafici" nillable="true" type="tns:GestioneAnagrafica.DatiAnagrafici" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAnagrafica.DatiAnagrafici" nillable="true" type="tns:ArrayOfGestioneAnagrafica.DatiAnagrafici" />
+  <xs:complexType name="GestioneAnagrafica.DatiAnagrafici">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CSog" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Cell" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CessValAmmSost" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Cittadinanza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codice1Arca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codice2Arca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceComuneNascita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceComuneResidenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceDelegato" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceStatoCivile" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="CodiceTutore" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CognomeAcquisito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComuneNascita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComuneResidenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataMatrimonio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataMorte" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataNascita" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaStatoCivile" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DomicilioEstero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrazioneResidenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Indirizzo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NCivico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinciaNascita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinciaResidenza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidenzaEstero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Sesso" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAnagrafica.DatiAnagrafici" nillable="true" type="tns:GestioneAnagrafica.DatiAnagrafici" />
+  <xs:complexType name="ArrayOfGestioneAventiDiritto.AventiDiritto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAventiDiritto.AventiDiritto" nillable="true" type="tns:GestioneAventiDiritto.AventiDiritto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAventiDiritto.AventiDiritto" nillable="true" type="tns:ArrayOfGestioneAventiDiritto.AventiDiritto" />
+  <xs:complexType name="GestioneAventiDiritto.AventiDiritto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSog" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoriaPensione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificatoPensione" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CodiceNucleo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceNucleoFromGP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataMatrimonio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecParentelaDA" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdAnagrafica" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="IsSelezionato" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListaPeriodi" nillable="true" type="tns:ArrayOfGestionePeriodiAventiDiritto.PeriodoAventiDiritto" />
+      <xs:element minOccurs="0" name="NucleoTitolare" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PresenzaGP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PresenzaWebDom" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SedePensione" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="TipoUnione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAventiDiritto.AventiDiritto" nillable="true" type="tns:GestioneAventiDiritto.AventiDiritto" />
+  <xs:complexType name="ArrayOfGestionePeriodiAventiDiritto.PeriodoAventiDiritto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestionePeriodiAventiDiritto.PeriodoAventiDiritto" nillable="true" type="tns:GestionePeriodiAventiDiritto.PeriodoAventiDiritto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestionePeriodiAventiDiritto.PeriodoAventiDiritto" nillable="true" type="tns:ArrayOfGestionePeriodiAventiDiritto.PeriodoAventiDiritto" />
+  <xs:complexType name="GestionePeriodiAventiDiritto.PeriodoAventiDiritto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CessazionePeriodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CoeffRiduzione" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DecorrenzaPeriodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GradoParentela" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdAventeDiritto" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="IsFromGP" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFromWebDom" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PercGiudice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PercSpettante" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoUnione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestionePeriodiAventiDiritto.PeriodoAventiDiritto" nillable="true" type="tns:GestionePeriodiAventiDiritto.PeriodoAventiDiritto" />
+  <xs:complexType name="GestioneAnagraficaAccordi.DecodAnagraficaAccordi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abilitata" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AbilitataTxt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="DataAccordi" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Decreto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DenominazioneAzienda" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DomandeLiquidabili" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DomandeLiquidate" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAnagraficaAccordi.DecodAnagraficaAccordi" nillable="true" type="tns:GestioneAnagraficaAccordi.DecodAnagraficaAccordi" />
+  <xs:complexType name="GestioneAnagraficaAziende.DecodAnagraficaAziende">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DenominazioneAzienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="SottogruppoOnere" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneAnagraficaAziende.DecodAnagraficaAziende" nillable="true" type="tns:GestioneAnagraficaAziende.DecodAnagraficaAziende" />
+  <xs:complexType name="ArrayOfGestioneAnagraficaAccordi.DecodAnagraficaAccordi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAnagraficaAccordi.DecodAnagraficaAccordi" nillable="true" type="tns:GestioneAnagraficaAccordi.DecodAnagraficaAccordi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAnagraficaAccordi.DecodAnagraficaAccordi" nillable="true" type="tns:ArrayOfGestioneAnagraficaAccordi.DecodAnagraficaAccordi" />
+  <xs:complexType name="ArrayOfGestioneAnagraficaAziende.DecodAnagraficaAziende">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneAnagraficaAziende.DecodAnagraficaAziende" nillable="true" type="tns:GestioneAnagraficaAziende.DecodAnagraficaAziende" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneAnagraficaAziende.DecodAnagraficaAziende" nillable="true" type="tns:ArrayOfGestioneAnagraficaAziende.DecodAnagraficaAziende" />
+  <xs:simpleType name="Utility.TipoAppartenenza">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FS" />
+      <xs:enumeration value="AGO" />
+      <xs:enumeration value="CI" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Utility.TipoAppartenenza" nillable="true" type="tns:Utility.TipoAppartenenza" />
+  <xs:complexType name="GestioneFamiliari.Familiare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceDetrazioni" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Confermato" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DataMorte" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FlagTitolare" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdAnagrafica" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="Progressivo" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="Provenienza" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="ScadenzaRevisioneSanitaria" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SiglaFamiliare" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="TipoComponente" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="TipoUnione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidazioneCF" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="numerodomanda" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneFamiliari.Familiare" nillable="true" type="tns:GestioneFamiliari.Familiare" />
+  <xs:complexType name="GestioneBancheFideiussione.DecBancaFideiussione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABI" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Anno" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="BancaFideiussione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAB" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CodiceAzienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FineEsodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="InizioEsodo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Matricola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Progressivo" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneBancheFideiussione.DecBancaFideiussione" nillable="true" type="tns:GestioneBancheFideiussione.DecBancaFideiussione" />
+  <xs:complexType name="ArrayOfGestioneBancheFideiussione.DecBancaFideiussione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneBancheFideiussione.DecBancaFideiussione" nillable="true" type="tns:GestioneBancheFideiussione.DecBancaFideiussione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneBancheFideiussione.DecBancaFideiussione" nillable="true" type="tns:ArrayOfGestioneBancheFideiussione.DecBancaFideiussione" />
+  <xs:simpleType name="Utility.Ruolo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AMMINISTRATORE" />
+      <xs:enumeration value="DIRETTORE_RDP" />
+      <xs:enumeration value="UTENTE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Utility.Ruolo" nillable="true" type="tns:Utility.Ruolo" />
+  <xs:complexType name="ArrayOfGestioneRedditi.RedditoDRedd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneRedditi.RedditoDRedd" nillable="true" type="tns:GestioneRedditi.RedditoDRedd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneRedditi.RedditoDRedd" nillable="true" type="tns:ArrayOfGestioneRedditi.RedditoDRedd" />
+  <xs:complexType name="GestioneRedditi.RedditoDRedd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnoReddito" type="xs:short" />
+      <xs:element minOccurs="0" name="Rilevanza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneRedditi.RedditoDRedd" nillable="true" type="tns:GestioneRedditi.RedditoDRedd" />
+  <xs:complexType name="ArrayOfGestioneDecodifica.Filtro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneDecodifica.Filtro" nillable="true" type="tns:GestioneDecodifica.Filtro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneDecodifica.Filtro" nillable="true" type="tns:ArrayOfGestioneDecodifica.Filtro" />
+  <xs:complexType name="GestioneDecodifica.Filtro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneDecodifica.Filtro" nillable="true" type="tns:GestioneDecodifica.Filtro" />
+  <xs:complexType name="ArrayOfGestioneDecodifica.Gruppo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneDecodifica.Gruppo" nillable="true" type="tns:GestioneDecodifica.Gruppo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneDecodifica.Gruppo" nillable="true" type="tns:ArrayOfGestioneDecodifica.Gruppo" />
+  <xs:complexType name="GestioneDecodifica.Gruppo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodGruppo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescGruppo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneDecodifica.Gruppo" nillable="true" type="tns:GestioneDecodifica.Gruppo" />
+  <xs:complexType name="ArrayOfGestioneDecodifica.Prodotto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneDecodifica.Prodotto" nillable="true" type="tns:GestioneDecodifica.Prodotto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneDecodifica.Prodotto" nillable="true" type="tns:ArrayOfGestioneDecodifica.Prodotto" />
+  <xs:complexType name="GestioneDecodifica.Prodotto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescEstesaProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCatPensione" type="ser:char" />
+      <xs:element minOccurs="0" name="TipoStampaReiezione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneDecodifica.Prodotto" nillable="true" type="tns:GestioneDecodifica.Prodotto" />
+  <xs:complexType name="ArrayOfGestioneDecodifica.Tipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneDecodifica.Tipo" nillable="true" type="tns:GestioneDecodifica.Tipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneDecodifica.Tipo" nillable="true" type="tns:ArrayOfGestioneDecodifica.Tipo" />
+  <xs:complexType name="GestioneDecodifica.Tipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescEstesaTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescTipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneDecodifica.Tipo" nillable="true" type="tns:GestioneDecodifica.Tipo" />
+  <xs:simpleType name="Utility.TipoOperazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RICERCA" />
+      <xs:enumeration value="UPDATE" />
+      <xs:enumeration value="INSERIMENTO" />
+      <xs:enumeration value="CANCELLAZIONE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Utility.TipoOperazione" nillable="true" type="tns:Utility.TipoOperazione" />
+  <xs:complexType name="ArrayOfGestioneTipologieNonAbilitate.Filtro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneTipologieNonAbilitate.Filtro" nillable="true" type="tns:GestioneTipologieNonAbilitate.Filtro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneTipologieNonAbilitate.Filtro" nillable="true" type="tns:ArrayOfGestioneTipologieNonAbilitate.Filtro" />
+  <xs:complexType name="GestioneTipologieNonAbilitate.Filtro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneTipologieNonAbilitate.Filtro" nillable="true" type="tns:GestioneTipologieNonAbilitate.Filtro" />
+  <xs:complexType name="ArrayOfGestioneTipologieNonAbilitate.Gruppo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneTipologieNonAbilitate.Gruppo" nillable="true" type="tns:GestioneTipologieNonAbilitate.Gruppo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneTipologieNonAbilitate.Gruppo" nillable="true" type="tns:ArrayOfGestioneTipologieNonAbilitate.Gruppo" />
+  <xs:complexType name="GestioneTipologieNonAbilitate.Gruppo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodGruppo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescGruppo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneTipologieNonAbilitate.Gruppo" nillable="true" type="tns:GestioneTipologieNonAbilitate.Gruppo" />
+  <xs:complexType name="ArrayOfGestioneTipologieNonAbilitate.Prodotto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneTipologieNonAbilitate.Prodotto" nillable="true" type="tns:GestioneTipologieNonAbilitate.Prodotto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneTipologieNonAbilitate.Prodotto" nillable="true" type="tns:ArrayOfGestioneTipologieNonAbilitate.Prodotto" />
+  <xs:complexType name="GestioneTipologieNonAbilitate.Prodotto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescProdotto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneTipologieNonAbilitate.Prodotto" nillable="true" type="tns:GestioneTipologieNonAbilitate.Prodotto" />
+  <xs:complexType name="ArrayOfGestioneTipologieNonAbilitate.Tipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneTipologieNonAbilitate.Tipo" nillable="true" type="tns:GestioneTipologieNonAbilitate.Tipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneTipologieNonAbilitate.Tipo" nillable="true" type="tns:ArrayOfGestioneTipologieNonAbilitate.Tipo" />
+  <xs:complexType name="GestioneTipologieNonAbilitate.Tipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescTipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneTipologieNonAbilitate.Tipo" nillable="true" type="tns:GestioneTipologieNonAbilitate.Tipo" />
+  <xs:complexType name="GestionePensione.DatiEliminazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceMotivo" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceRinnovo" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CodiceTipoMovimentazione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataCessazioneDiritto" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataComunicazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataComunicazioneEliminazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataEvento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataFineCalcoloArretrati" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataUltimaMovimentazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataUltimaRiscossione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DecorrenzaEliminazione" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestionePensione.DatiEliminazione" nillable="true" type="tns:GestionePensione.DatiEliminazione" />
+  <xs:simpleType name="Utility.StatoSindacato">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Iniziato" />
+      <xs:enumeration value="Attivo" />
+      <xs:enumeration value="Cessato" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Utility.StatoSindacato" nillable="true" type="tns:Utility.StatoSindacato" />
+  <xs:simpleType name="Utility.TipoCalcolo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NonValido" />
+      <xs:enumeration value="Contributivo" />
+      <xs:enumeration value="Retributivo" />
+      <xs:enumeration value="Misto" />
+      <xs:enumeration value="RetributivoMonti" />
+      <xs:enumeration value="MistoL214" />
+      <xs:enumeration value="RetributivoComma707" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Utility.TipoCalcolo" nillable="true" type="tns:Utility.TipoCalcolo" />
+  <xs:complexType name="ArrayOfGestioneFamiliari.ConsultazioneUnificataANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneFamiliari.ConsultazioneUnificataANF" nillable="true" type="tns:GestioneFamiliari.ConsultazioneUnificataANF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneFamiliari.ConsultazioneUnificataANF" nillable="true" type="tns:ArrayOfGestioneFamiliari.ConsultazioneUnificataANF" />
+  <xs:complexType name="GestioneFamiliari.ConsultazioneUnificataANF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFiscaleRichiedente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dataRichiestaRichiedente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="listaDatiDomandaAnf" nillable="true" type="tns:ArrayOfGestioneFamiliari.DomandaAnf" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneFamiliari.ConsultazioneUnificataANF" nillable="true" type="tns:GestioneFamiliari.ConsultazioneUnificataANF" />
+  <xs:complexType name="ArrayOfGestioneFamiliari.DomandaAnf">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneFamiliari.DomandaAnf" nillable="true" type="tns:GestioneFamiliari.DomandaAnf" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneFamiliari.DomandaAnf" nillable="true" type="tns:ArrayOfGestioneFamiliari.DomandaAnf" />
+  <xs:complexType name="GestioneFamiliari.DomandaAnf">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codiceFonte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codicePratica1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codicePratica2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descrizioneFonte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroProtocolloDomanda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="periodoDataA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="periodoDataDa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="respinto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statoDomanda" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneFamiliari.DomandaAnf" nillable="true" type="tns:GestioneFamiliari.DomandaAnf" />
+  <xs:complexType name="ArrayOfGestioneFamiliari.CodMaggFamiliari">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestioneFamiliari.CodMaggFamiliari" nillable="true" type="tns:GestioneFamiliari.CodMaggFamiliari" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestioneFamiliari.CodMaggFamiliari" nillable="true" type="tns:ArrayOfGestioneFamiliari.CodMaggFamiliari" />
+  <xs:complexType name="GestioneFamiliari.CodMaggFamiliari">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cessazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CodiceMaggiorazione" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Decorrenza" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdAnagrafica" type="xs:long" />
+      <xs:element minOccurs="0" name="IdPensione" type="xs:long" />
+      <xs:element minOccurs="0" name="SiglaFamiliare" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="TipoUnione" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestioneFamiliari.CodMaggFamiliari" nillable="true" type="tns:GestioneFamiliari.CodMaggFamiliari" />
+  <xs:simpleType name="GestioneStatoPratica.TipoDomanda">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nessuno" />
+      <xs:enumeration value="PL" />
+      <xs:enumeration value="RIC" />
+      <xs:enumeration value="PL_RIC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GestioneStatoPratica.TipoDomanda" nillable="true" type="tns:GestioneStatoPratica.TipoDomanda" />
+</xs:schema>

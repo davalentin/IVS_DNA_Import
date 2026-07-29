@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://schemi.arcaman.soa.sistinf.it" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://services.arcaman.soa.sistinf.it" targetNamespace="http://services.arcaman.soa.sistinf.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="ArcaManWS.xsd" namespace="http://schemi.arcaman.soa.sistinf.it" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ModificaAnagraficaGestioneResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="InserimentoAnagraficaARCAResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="ModificaAnagraficaARCAResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="RicercaAnagraficaARCAResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="InserimentoAnagraficaGestioneRequest">
+    <wsdl:part name="parameter" element="xsd1:InserimentoAnagraficaGestioneRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFamiliariTitoliResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGestioneResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="ModificaGestioneRequest">
+    <wsdl:part name="parameter" element="xsd1:ModificaGestioneRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="RicercaAnagraficaARCARequest">
+    <wsdl:part name="parameter" element="xsd1:RicercaAnagraficaARCARichiesta" />
+  </wsdl:message>
+  <wsdl:message name="ModificaGestioneResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="RicercaAnagraficaGestioneRequest">
+    <wsdl:part name="parameter" element="xsd1:RicercaAnagraficaGestioneRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="InserimentoGestioneResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="InserimentoAnagraficaGestioneResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGestioneRequest">
+    <wsdl:part name="parameter" element="xsd1:DeleteGestioneRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="InserimentoGestioneRequest">
+    <wsdl:part name="parameter" element="xsd1:InserimentoGestioneRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFamiliariTitoliRequest">
+    <wsdl:part name="Parameter" element="xsd1:DeleteFamiliariTitoliRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="InserimentoAnagraficaARCARequest">
+    <wsdl:part name="parameter" element="xsd1:InserimentoAnagraficaARCARichiesta" />
+  </wsdl:message>
+  <wsdl:message name="ModificaAnagraficaARCARequest">
+    <wsdl:part name="parameter" element="xsd1:ModificaAnagraficaARCARichiesta" />
+  </wsdl:message>
+  <wsdl:message name="ModificaAnagraficaGestioneRequest">
+    <wsdl:part name="parameter" element="xsd1:ModificaAnagraficaGestioneRichiesta" />
+  </wsdl:message>
+  <wsdl:message name="RicercaAnagraficaGestioneResponse">
+    <wsdl:part name="parameter" element="xsd1:Risposta" />
+  </wsdl:message>
+  <wsdl:portType name="ArcaManWS">
+    <wsdl:operation name="RichiestaInserimentoAnagraficaGestione">
+      <wsdl:input name="InserimentoAnagraficaGestioneRequest" message="intf:InserimentoAnagraficaGestioneRequest" />
+      <wsdl:output name="InserimentoAnagraficaGestioneResponse" message="intf:InserimentoAnagraficaGestioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModificaAnagraficaGestione">
+      <wsdl:input name="ModificaAnagraficaGestioneRequest" message="intf:ModificaAnagraficaGestioneRequest" />
+      <wsdl:output name="ModificaAnagraficaGestioneResponse" message="intf:ModificaAnagraficaGestioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicercaAnagraficaGestione">
+      <wsdl:input name="RicercaAnagraficaGestioneRequest" message="intf:RicercaAnagraficaGestioneRequest" />
+      <wsdl:output name="RicercaAnagraficaGestioneResponse" message="intf:RicercaAnagraficaGestioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaInserimentoAnagraficaARCA">
+      <wsdl:input name="InserimentoAnagraficaARCARequest" message="intf:InserimentoAnagraficaARCARequest" />
+      <wsdl:output name="InserimentoAnagraficaARCAResponse" message="intf:InserimentoAnagraficaARCAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModificaAnagraficaARCA">
+      <wsdl:input name="ModificaAnagraficaARCARequest" message="intf:ModificaAnagraficaARCARequest" />
+      <wsdl:output name="ModificaAnagraficaARCAResponse" message="intf:ModificaAnagraficaARCAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicercaAnagraficaARCA">
+      <wsdl:input name="RicercaAnagraficaARCARequest" message="intf:RicercaAnagraficaARCARequest" />
+      <wsdl:output name="RicercaAnagraficaARCAResponse" message="intf:RicercaAnagraficaARCAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDeleteFamiliariTitoli">
+      <wsdl:input name="DeleteFamiliariTitoliRequest" message="intf:DeleteFamiliariTitoliRequest" />
+      <wsdl:output name="DeleteFamiliariTitoliResponse" message="intf:DeleteFamiliariTitoliResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaInserimentoGestione">
+      <wsdl:input name="InserimentoGestioneRequest" message="intf:InserimentoGestioneRequest" />
+      <wsdl:output name="InserimentoGestioneResponse" message="intf:InserimentoGestioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModificaGestione">
+      <wsdl:input name="ModificaGestioneRequest" message="intf:ModificaGestioneRequest" />
+      <wsdl:output name="ModificaGestioneResponse" message="intf:ModificaGestioneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDeleteGestione">
+      <wsdl:input name="DeleteGestioneRequest" message="intf:DeleteGestioneRequest" />
+      <wsdl:output name="DeleteGestioneResponse" message="intf:DeleteGestioneResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArcaManWSSoapBinding" type="intf:ArcaManWS">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RichiestaInserimentoAnagraficaARCA">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="InserimentoAnagraficaARCARequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InserimentoAnagraficaARCAResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModificaAnagraficaARCA">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ModificaAnagraficaARCARequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ModificaAnagraficaARCAResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicercaAnagraficaARCA">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="RicercaAnagraficaARCARequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaAnagraficaARCAResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaInserimentoAnagraficaGestione">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="InserimentoAnagraficaGestioneRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InserimentoAnagraficaGestioneResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModificaAnagraficaGestione">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ModificaAnagraficaGestioneRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ModificaAnagraficaGestioneResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaRicercaAnagraficaGestione">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="RicercaAnagraficaGestioneRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RicercaAnagraficaGestioneResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaInserimentoGestione">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="InserimentoGestioneRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InserimentoGestioneResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaModificaGestione">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="ModificaGestioneRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ModificaGestioneResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDeleteGestione">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="DeleteGestioneRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteGestioneResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RichiestaDeleteFamiliariTitoli">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="DeleteFamiliariTitoliRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteFamiliariTitoliResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArcaManWSService">
+    <wsdl:port name="ArcaManWS" binding="intf:ArcaManWSSoapBinding">
+      <wsdlsoap:address location="http://svil.host.inps:80/ArcaManWS/services/ArcaManWS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

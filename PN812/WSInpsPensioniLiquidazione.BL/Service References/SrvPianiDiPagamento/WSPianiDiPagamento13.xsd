@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.ConsultaConguaglioTipi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.ConsultaConguaglioTipi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AnnoMeseGiornoConsultazione">
+    <xs:sequence>
+      <xs:element name="anno" nillable="true" type="xs:string" />
+      <xs:element name="giorno" nillable="true" type="xs:string" />
+      <xs:element name="mese" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnoMeseGiornoConsultazione" nillable="true" type="tns:AnnoMeseGiornoConsultazione" />
+  <xs:complexType name="BeneficiarioPensionatoConsultazione">
+    <xs:sequence>
+      <xs:element name="codiceFiscale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeneficiarioPensionatoConsultazione" nillable="true" type="tns:BeneficiarioPensionatoConsultazione" />
+  <xs:complexType name="PensioneConsultazione">
+    <xs:sequence>
+      <xs:element name="categoria" nillable="true" type="xs:string" />
+      <xs:element name="certificato" nillable="true" type="xs:string" />
+      <xs:element name="sede" nillable="true" type="xs:string" />
+      <xs:element name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PensioneConsultazione" nillable="true" type="tns:PensioneConsultazione" />
+  <xs:complexType name="AnnoMeseConsultazione">
+    <xs:sequence>
+      <xs:element name="anno" nillable="true" type="xs:string" />
+      <xs:element name="mese" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnoMeseConsultazione" nillable="true" type="tns:AnnoMeseConsultazione" />
+  <xs:complexType name="EsitoConsultazione">
+    <xs:sequence>
+      <xs:element name="codice" type="xs:int" />
+      <xs:element name="descrizione" nillable="true" type="xs:string" />
+      <xs:element name="pianiDiPagamento" nillable="true" type="tns:ArrayOfPianoDiPagamentoConsultazione" />
+      <xs:element name="risultato" type="tns:RisultatoConsultazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoConsultazione" nillable="true" type="tns:EsitoConsultazione" />
+  <xs:complexType name="ArrayOfPianoDiPagamentoConsultazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PianoDiPagamentoConsultazione" nillable="true" type="tns:PianoDiPagamentoConsultazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPianoDiPagamentoConsultazione" nillable="true" type="tns:ArrayOfPianoDiPagamentoConsultazione" />
+  <xs:complexType name="PianoDiPagamentoConsultazione">
+    <xs:sequence>
+      <xs:element name="annoRiferimento" nillable="true" type="xs:string" />
+      <xs:element name="codicePiano" nillable="true" type="xs:string" />
+      <xs:element name="codiceProdotto" nillable="true" type="xs:string" />
+      <xs:element name="dataRiferimento" nillable="true" type="tns:AnnoMeseGiornoConsultazione" />
+      <xs:element name="datiAnalitici" nillable="true" type="tns:ArrayOfDatoAnaliticoConsultazione" />
+      <xs:element name="datiIstruttoria" nillable="true" type="tns:DatiIstruttoriaConsultazione" />
+      <xs:element name="datiPiano" nillable="true" type="tns:DatiPianoConsultazione" />
+      <xs:element name="flagPensioneEliminata" nillable="true" type="xs:string" />
+      <xs:element name="flagPensioneVigente" nillable="true" type="xs:string" />
+      <xs:element name="identificativo" nillable="true" type="xs:string" />
+      <xs:element name="pensione" nillable="true" type="tns:PensioneConsultazione" />
+      <xs:element name="periodoRiferimento" nillable="true" type="tns:AnnoMeseConsultazione" />
+      <xs:element name="prodotto" type="tns:ProdottoConsultazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoConsultazione" nillable="true" type="tns:PianoDiPagamentoConsultazione" />
+  <xs:complexType name="ArrayOfDatoAnaliticoConsultazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatoAnaliticoConsultazione" nillable="true" type="tns:DatoAnaliticoConsultazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatoAnaliticoConsultazione" nillable="true" type="tns:ArrayOfDatoAnaliticoConsultazione" />
+  <xs:complexType name="DatoAnaliticoConsultazione">
+    <xs:sequence>
+      <xs:element name="codiceComponenteAnalitica" nillable="true" type="xs:string" />
+      <xs:element name="contoImputazione" nillable="true" type="xs:string" />
+      <xs:element name="importoComponenteAnalitica" type="xs:decimal" />
+      <xs:element name="numeroPartita" nillable="true" type="xs:string" />
+      <xs:element name="numeroProgressivoTrattenuta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatoAnaliticoConsultazione" nillable="true" type="tns:DatoAnaliticoConsultazione" />
+  <xs:complexType name="DatiIstruttoriaConsultazione">
+    <xs:sequence>
+      <xs:element name="area" nillable="true" type="xs:string" />
+      <xs:element name="codicePagamentoArretrati" nillable="true" type="xs:string" />
+      <xs:element name="dataContabile" nillable="true" type="xs:string" />
+      <xs:element name="dataFineCalcolo" nillable="true" type="xs:string" />
+      <xs:element name="dataInizioCalcolo" nillable="true" type="xs:string" />
+      <xs:element name="procedura" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiIstruttoriaConsultazione" nillable="true" type="tns:DatiIstruttoriaConsultazione" />
+  <xs:complexType name="DatiPianoConsultazione">
+    <xs:sequence>
+      <xs:element name="annoMeseCompletamentoRecupero" nillable="true" type="xs:string" />
+      <xs:element name="annoMesePerequazione" nillable="true" type="xs:string" />
+      <xs:element name="annoMeseScadenza" nillable="true" type="xs:string" />
+      <xs:element name="applicabilitaTassazione" nillable="true" type="xs:string" />
+      <xs:element name="arrotondamentoQuotaScissa" type="xs:decimal" />
+      <xs:element name="autorizzazioneTrattenuta" nillable="true" type="xs:string" />
+      <xs:element name="beneficiarioARCA" nillable="true" type="tns:BeneficiarioPensionatoARCAConsultazione" />
+      <xs:element name="centroOperativo" nillable="true" type="xs:string" />
+      <xs:element name="codiceClasseConguaglio" nillable="true" type="xs:string" />
+      <xs:element name="codiceConguaglio" nillable="true" type="xs:string" />
+      <xs:element name="codiceNumericoConguaglio" nillable="true" type="xs:string" />
+      <xs:element name="codiceStatoPagamento" nillable="true" type="xs:string" />
+      <xs:element name="coefficientePerequazione" type="xs:decimal" />
+      <xs:element name="contoImputazione" nillable="true" type="xs:string" />
+      <xs:element name="dataAggiornamento" type="xs:dateTime" />
+      <xs:element name="dataDefinizione" type="xs:dateTime" />
+      <xs:element name="dataEstrazione" type="xs:dateTime" />
+      <xs:element name="dataFineCalcoloPiano" nillable="true" type="xs:string" />
+      <xs:element name="dataInizioTrattenuta" nillable="true" type="xs:string" />
+      <xs:element name="dataTrasmissione" type="xs:dateTime" />
+      <xs:element name="decorrenzaContabile" nillable="true" type="tns:AnnoMeseConsultazione" />
+      <xs:element name="importoAltraPensione" type="xs:decimal" />
+      <xs:element name="importoComplessivo" type="xs:decimal" />
+      <xs:element name="importoDeducibileAnnoCorrente" type="xs:decimal" />
+      <xs:element name="importoDeducibileAnnoPrecedente" type="xs:decimal" />
+      <xs:element name="importoNonDeducibile" type="xs:decimal" />
+      <xs:element name="importoQuotaConcorso" type="xs:decimal" />
+      <xs:element name="importoRataTrattamentoDiFamiglia" type="xs:decimal" />
+      <xs:element name="importoRecuperato" type="xs:decimal" />
+      <xs:element name="importoRecuperatoFuoriPiano" type="xs:decimal" />
+      <xs:element name="indicatoreRecuperoSuTredicesima" nillable="true" type="xs:string" />
+      <xs:element name="indicatoreTrattenutaSuPensione" nillable="true" type="xs:string" />
+      <xs:element name="matricolaDipendente" nillable="true" type="xs:string" />
+      <xs:element name="notaPianoDiPagamento" nillable="true" type="xs:string" />
+      <xs:element name="numeroPartita" nillable="true" type="xs:string" />
+      <xs:element name="numeroRate" nillable="true" type="xs:string" />
+      <xs:element name="numeroRateEmesse" nillable="true" type="xs:string" />
+      <xs:element name="numeroRateRecupero" nillable="true" type="xs:string" />
+      <xs:element name="pagamento" nillable="true" type="tns:PagamentoConsultazione" />
+      <xs:element name="pensionatoARCA" nillable="true" type="tns:BeneficiarioPensionatoARCAConsultazione" />
+      <xs:element name="pensioneOriginaria" nillable="true" type="tns:PensioneOriginariaConsultazione" />
+      <xs:element name="percentualeRecuperoCumuloPensioni" type="xs:decimal" />
+      <xs:element name="percentualeRecuperoTrattamentoDiFamiglia" type="xs:decimal" />
+      <xs:element name="priorita" nillable="true" type="xs:string" />
+      <xs:element name="proceduraGenerante" nillable="true" type="xs:string" />
+      <xs:element name="rataMensile" type="xs:decimal" />
+      <xs:element name="sedeBeneficiario" nillable="true" type="xs:string" />
+      <xs:element name="statoPagamento" type="tns:StatoPagamentoConsultazione" />
+      <xs:element name="tipoDeducibilitaTassazione" nillable="true" type="xs:string" />
+      <xs:element name="tipoDocumento" nillable="true" type="xs:string" />
+      <xs:element name="tipoPerequazione" nillable="true" type="xs:string" />
+      <xs:element name="tutore" nillable="true" type="tns:TutoreConsultazione" />
+      <xs:element name="ultimoPagamento" nillable="true" type="tns:AnnoMeseConsultazione" />
+      <xs:element name="utenza" nillable="true" type="xs:string" />
+      <xs:element name="validatore" nillable="true" type="xs:string" />
+      <xs:element name="validazioni" nillable="true" type="tns:ValidazioniConsultazione" />
+      <xs:element name="zonaBeneficiario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoConsultazione" nillable="true" type="tns:DatiPianoConsultazione" />
+  <xs:complexType name="BeneficiarioPensionatoARCAConsultazione">
+    <xs:sequence>
+      <xs:element name="aRCA" nillable="true" type="tns:ARCAConsultazione" />
+      <xs:element name="codiceFiscale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeneficiarioPensionatoARCAConsultazione" nillable="true" type="tns:BeneficiarioPensionatoARCAConsultazione" />
+  <xs:complexType name="ARCAConsultazione">
+    <xs:sequence>
+      <xs:element name="matricola" nillable="true" type="xs:string" />
+      <xs:element name="progressivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ARCAConsultazione" nillable="true" type="tns:ARCAConsultazione" />
+  <xs:complexType name="PagamentoConsultazione">
+    <xs:sequence>
+      <xs:element name="codiceABI" nillable="true" type="xs:string" />
+      <xs:element name="codiceBIC" nillable="true" type="xs:string" />
+      <xs:element name="codiceCAB" nillable="true" type="xs:string" />
+      <xs:element name="codiceIBAN" nillable="true" type="xs:string" />
+      <xs:element name="dataModifica" nillable="true" type="xs:string" />
+      <xs:element name="tipoPagamento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagamentoConsultazione" nillable="true" type="tns:PagamentoConsultazione" />
+  <xs:complexType name="PensioneOriginariaConsultazione">
+    <xs:sequence>
+      <xs:element name="categoria" nillable="true" type="xs:string" />
+      <xs:element name="certificato" nillable="true" type="xs:string" />
+      <xs:element name="sede" nillable="true" type="xs:string" />
+      <xs:element name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PensioneOriginariaConsultazione" nillable="true" type="tns:PensioneOriginariaConsultazione" />
+  <xs:simpleType name="StatoPagamentoConsultazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DA_DEFINIRE" />
+      <xs:enumeration value="DEFINITO" />
+      <xs:enumeration value="SOSPESO_DC" />
+      <xs:enumeration value="CHIUSO" />
+      <xs:enumeration value="PAGAMENTO_PARZIALE" />
+      <xs:enumeration value="IN_PAGAMENTO" />
+      <xs:enumeration value="ANNULLATO" />
+      <xs:enumeration value="SCADUTO" />
+      <xs:enumeration value="ESTINTO_PER_ELIMINAZIONE_PENSIONE" />
+      <xs:enumeration value="PRESCRITTO" />
+      <xs:enumeration value="PAGATO_RATEO" />
+      <xs:enumeration value="PAGATO_RATEO_PARZIALE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatoPagamentoConsultazione" nillable="true" type="tns:StatoPagamentoConsultazione" />
+  <xs:complexType name="TutoreConsultazione">
+    <xs:sequence>
+      <xs:element name="aRCA" nillable="true" type="tns:ARCAConsultazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TutoreConsultazione" nillable="true" type="tns:TutoreConsultazione" />
+  <xs:complexType name="ValidazioniConsultazione">
+    <xs:sequence>
+      <xs:element name="prima" nillable="true" type="tns:ValidazioneConsultazione" />
+      <xs:element name="seconda" nillable="true" type="tns:ValidazioneConsultazione" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidazioniConsultazione" nillable="true" type="tns:ValidazioniConsultazione" />
+  <xs:complexType name="ValidazioneConsultazione">
+    <xs:sequence>
+      <xs:element name="dataDefinizione" type="xs:dateTime" />
+      <xs:element name="matricolaDipendente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidazioneConsultazione" nillable="true" type="tns:ValidazioneConsultazione" />
+  <xs:simpleType name="ProdottoConsultazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CREDITO" />
+      <xs:enumeration value="DEBITO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProdottoConsultazione" nillable="true" type="tns:ProdottoConsultazione" />
+  <xs:simpleType name="RisultatoConsultazione">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoConsultazione" nillable="true" type="tns:RisultatoConsultazione" />
+  <xs:complexType name="ParametriConsultazione">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FlagNuovaLiquidata" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlagRicostituzioneBatch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlagRicostituzioneOnline" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prodotto" nillable="true" type="tns:ProdottoConsultazione" />
+      <xs:element minOccurs="0" name="StatoPagamento" nillable="true" type="tns:ArrayOfStatoPagamentoConsultazioneItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametriConsultazione" nillable="true" type="tns:ParametriConsultazione" />
+  <xs:complexType name="ArrayOfStatoPagamentoConsultazioneItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatoPagamentoConsultazioneItem" type="tns:StatoPagamentoConsultazioneItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatoPagamentoConsultazioneItem" nillable="true" type="tns:ArrayOfStatoPagamentoConsultazioneItem" />
+  <xs:simpleType name="StatoPagamentoConsultazioneItem">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DA_DEFINIRE" />
+      <xs:enumeration value="DEFINITO" />
+      <xs:enumeration value="SOSPESO_DC" />
+      <xs:enumeration value="CHIUSO" />
+      <xs:enumeration value="PAGAMENTO_PARZIALE" />
+      <xs:enumeration value="IN_PAGAMENTO" />
+      <xs:enumeration value="ANNULLATO" />
+      <xs:enumeration value="SCADUTO" />
+      <xs:enumeration value="ESTINTO_PER_ELIMINAZIONE_PENSIONE" />
+      <xs:enumeration value="PRESCRITTO" />
+      <xs:enumeration value="PAGATO_RATEO" />
+      <xs:enumeration value="PAGATO_RATEO_PARZIALE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatoPagamentoConsultazioneItem" nillable="true" type="tns:StatoPagamentoConsultazioneItem" />
+</xs:schema>

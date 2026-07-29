@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="" id="DataSetDomanda" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:Locale="it-IT" name="DataSetDomanda">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Domanda">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="CodProvincia" type="xs:string" />
+              <xs:element minOccurs="0" name="CodZona" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCentroOperativo" type="xs:string" />
+              <xs:element minOccurs="0" name="CodUnitaProcesso" type="xs:string" />
+              <xs:element minOccurs="0" name="CodAreaInteresse" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInserimento" type="xs:string" />
+              <xs:element minOccurs="0" name="DataStampaRicevuta" type="xs:string" />
+              <xs:element minOccurs="0" name="DataCaricoTelematica" type="xs:string" />
+              <xs:element minOccurs="0" name="LockDomanda" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="LockMatricola" type="xs:string" />
+              <xs:element minOccurs="0" name="IndTrasferimento" type="xs:string" />
+              <xs:element minOccurs="0" name="DataMigrazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataScorporo" type="xs:string" />
+              <xs:element minOccurs="0" name="NumProtocollo" type="xs:string" />
+              <xs:element minOccurs="0" name="IndDomus" type="xs:string" />
+              <xs:element minOccurs="0" name="IndTipoProtocollo" type="xs:string" />
+              <xs:element minOccurs="0" name="NumDomandaPrincipale" type="xs:string" />
+              <xs:element minOccurs="0" name="DataAP70" type="xs:string" />
+              <xs:element minOccurs="0" name="FlagLegge80" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Istanza">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="CodGruppo" type="xs:string" />
+              <xs:element minOccurs="0" name="CodProdotto" type="xs:string" />
+              <xs:element minOccurs="0" name="CodTipo" type="xs:string" />
+              <xs:element minOccurs="0" name="CodGestione" type="xs:string" />
+              <xs:element minOccurs="0" name="CodFondo" type="xs:string" />
+              <xs:element minOccurs="0" name="CodEnte" type="xs:string" />
+              <xs:element minOccurs="0" name="IndConvInt" type="xs:string" />
+              <xs:element minOccurs="0" name="CodRelazioneProdotto" type="xs:string" />
+              <xs:element minOccurs="0" name="CodTipoRichiesta" type="xs:string" />
+              <xs:element minOccurs="0" name="DataCancellazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataPresentazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataRicezione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataCaricamento" type="xs:string" />
+              <xs:element minOccurs="0" name="DataStampaRicevuta" type="xs:string" />
+              <xs:element minOccurs="0" name="MatricolaCaricamento" type="xs:string" />
+              <xs:element minOccurs="0" name="Note" type="xs:string" />
+              <xs:element minOccurs="0" name="IndPertinenza" type="xs:string" />
+              <xs:element minOccurs="0" name="LavoroEstero" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaCatLav" type="xs:string" />
+              <xs:element minOccurs="0" name="IndAutomaticoManuale" type="xs:string" />
+              <xs:element minOccurs="0" name="DescIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="AnnoDecorsoRichiesta14" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Delega">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="CodTipoDelega" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInizio" type="xs:string" />
+              <xs:element minOccurs="0" name="DataFine" type="xs:string" />
+              <xs:element minOccurs="0" name="CodInpsPatronato" type="xs:string" />
+              <xs:element minOccurs="0" name="CodUfficioPatronato" type="xs:string" />
+              <xs:element minOccurs="0" name="EstremiPratica" type="xs:string" />
+              <xs:element minOccurs="0" name="IdSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaProvinciaPatronato" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RequisitoParticolare">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="CodRequisito" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInserimento" type="xs:string" />
+              <xs:element minOccurs="0" name="DataCancellazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DecorrenzaFinestra" type="xs:string" />
+              <xs:element minOccurs="0" name="ValiditaRequisito" type="xs:string" />
+              <xs:element minOccurs="0" name="Filtro" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fase">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgFase" type="xs:string" />
+              <xs:element minOccurs="0" name="CodFase" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCanale" type="xs:string" />
+              <xs:element minOccurs="0" name="CodFonte" type="xs:string" />
+              <xs:element minOccurs="0" name="CodSituazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataSituazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataPresentazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataRicezione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataCaricamento" type="xs:string" />
+              <xs:element minOccurs="0" name="MatricolaUltimaVar" type="xs:string" />
+              <xs:element minOccurs="0" name="DataUltimaVar" type="xs:string" />
+              <xs:element minOccurs="0" name="IndAttivitaPostDefinizione" type="xs:string" />
+              <xs:element minOccurs="0" name="TimestampModifica" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Attivita">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgFase" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgAttivita" type="xs:string" />
+              <xs:element minOccurs="0" name="CodAttivita" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInizio" type="xs:string" />
+              <xs:element minOccurs="0" name="DataFine" type="xs:string" />
+              <xs:element minOccurs="0" name="Note" type="xs:string" />
+              <xs:element minOccurs="0" name="DataNotificaProvv" type="xs:string" />
+              <xs:element minOccurs="0" name="DataStampaProvv" type="xs:string" />
+              <xs:element minOccurs="0" name="CodTipoVisita" type="xs:string" />
+              <xs:element minOccurs="0" name="CodRichiestaDoc" type="xs:string" />
+              <xs:element minOccurs="0" name="CodTipoProvvedimento" type="xs:string" />
+              <xs:element minOccurs="0" name="CodProvincia" type="xs:string" />
+              <xs:element minOccurs="0" name="CodZona" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCentroOperativo" type="xs:string" />
+              <xs:element minOccurs="0" name="CodUnitaProcesso" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PensioneGenerata">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="CodProvinciaGen" type="xs:string" />
+              <xs:element minOccurs="0" name="CodZonaGen" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCatPensioneGen" type="xs:string" />
+              <xs:element minOccurs="0" name="NumCertificatoGen" type="xs:string" />
+              <xs:element minOccurs="0" name="DataDecorrenzaGen" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInizioPagamento" type="xs:string" />
+              <xs:element minOccurs="0" name="IndAnnullata" type="xs:string" />
+              <xs:element minOccurs="0" name="CodProvinciaGenAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="CodZonaGenAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCatPensioneGenAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="NumCertificatoGenAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaCatLav" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PensioneRiferimento">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="CodProvinciaRif" type="xs:string" />
+              <xs:element minOccurs="0" name="CodZonaRif" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCatPensioneRif" type="xs:string" />
+              <xs:element minOccurs="0" name="NumCertificatoRif" type="xs:string" />
+              <xs:element minOccurs="0" name="CodProvinciaRifAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="CodZonaRifAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCatPensioneRifAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="NumCertificatoRifAttuale" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaCatLav" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ModalitaPagamento">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ModPagamento" type="xs:string" />
+              <xs:element minOccurs="0" name="StatoPagamentoEstero" type="xs:string" />
+              <xs:element minOccurs="0" name="Abi" type="xs:string" />
+              <xs:element minOccurs="0" name="Cab" type="xs:string" />
+              <xs:element minOccurs="0" name="Iban" type="xs:string" />
+              <xs:element minOccurs="0" name="Bic" type="xs:string" />
+              <xs:element minOccurs="0" name="TipoPagamento" type="xs:string" />
+              <xs:element minOccurs="0" name="LibrettoUfficioPostale" type="xs:string" />
+              <xs:element minOccurs="0" name="CartaPrepagata" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sindacato">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="CodSindacato" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInizio" type="xs:string" />
+              <xs:element minOccurs="0" name="DataFine" type="xs:string" />
+              <xs:element minOccurs="0" name="IdSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="DatiStatuto" type="xs:string" />
+              <xs:element minOccurs="0" name="DatiINPS" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RelazioneSoggetto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="IdSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="CodRelazioneSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="CodRelazioneParentela" type="xs:string" />
+              <xs:element minOccurs="0" name="FlagRelazione" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Soggetto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="IdSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="MatricolaArca" type="xs:string" />
+              <xs:element minOccurs="0" name="CodiceFiscale" type="xs:string" />
+              <xs:element minOccurs="0" name="Cognome" type="xs:string" />
+              <xs:element minOccurs="0" name="Nome" type="xs:string" />
+              <xs:element minOccurs="0" name="CognomeAcquisito" type="xs:string" />
+              <xs:element minOccurs="0" name="Sesso" type="xs:string" />
+              <xs:element minOccurs="0" name="DataNascita" type="xs:string" />
+              <xs:element minOccurs="0" name="CodComuneNascita" type="xs:string" />
+              <xs:element minOccurs="0" name="ComuneNascita" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaProvinciaNascita" type="xs:string" />
+              <xs:element minOccurs="0" name="CodComuneResidenza" type="xs:string" />
+              <xs:element minOccurs="0" name="ComuneResidenza" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaProvinciaResidenza" type="xs:string" />
+              <xs:element minOccurs="0" name="CapResidenza" type="xs:string" />
+              <xs:element minOccurs="0" name="FrazioneResidenza" type="xs:string" />
+              <xs:element minOccurs="0" name="NumeroCivico" type="xs:string" />
+              <xs:element minOccurs="0" name="Indirizzo1" type="xs:string" />
+              <xs:element minOccurs="0" name="Indirizzo2" type="xs:string" />
+              <xs:element minOccurs="0" name="Indirizzo3" type="xs:string" />
+              <xs:element minOccurs="0" name="Indirizzo4" type="xs:string" />
+              <xs:element minOccurs="0" name="IndResidenteEstero" type="xs:string" />
+              <xs:element minOccurs="0" name="DataMorte" type="xs:string" />
+              <xs:element minOccurs="0" name="StatoCivile" type="xs:string" />
+              <xs:element minOccurs="0" name="DataDecorrStatoCivile" type="xs:string" />
+              <xs:element minOccurs="0" name="CodLingua" type="xs:string" />
+              <xs:element minOccurs="0" name="IndArca" type="xs:string" />
+              <xs:element minOccurs="0" name="IndScarto" type="xs:string" />
+              <xs:element minOccurs="0" name="NumeroTelefono1" type="xs:string" />
+              <xs:element minOccurs="0" name="NumeroTelefono2" type="xs:string" />
+              <xs:element minOccurs="0" name="IndirizzoEmail" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaNazione" type="xs:string" />
+              <xs:element minOccurs="0" name="DataMatrimonio" type="xs:string" />
+              <xs:element minOccurs="0" name="Validato" type="xs:string" />
+              <xs:element minOccurs="0" name="Cittadinanza" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaNazioneCittadinanza" type="xs:string" />
+              <xs:element minOccurs="0" name="CatastaleNazioneCittadinanza" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PersonaGiuridica">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="IdSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="CodRelazioneSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="CodRelazioneParentela" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInizio" type="xs:string" />
+              <xs:element minOccurs="0" name="DataFine" type="xs:string" />
+              <xs:element minOccurs="0" name="FlagRelazione" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TabNote">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="DataInserimentoNota" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Matricola" type="xs:string" />
+              <xs:element minOccurs="0" name="Account" type="xs:string" />
+              <xs:element minOccurs="0" name="IndirizzoIP" type="xs:string" />
+              <xs:element minOccurs="0" name="Nota" type="xs:string" />
+              <xs:element minOccurs="0" name="Oggetto" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AventiDiritto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="IdSoggetto" type="xs:string" />
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="PercGiudice" type="xs:string" />
+              <xs:element minOccurs="0" name="IsNucleo" type="xs:string" />
+              <xs:element minOccurs="0" name="IsRichiedente" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IstanzaCassa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="ProgIstanza" type="xs:string" />
+              <xs:element minOccurs="0" name="CodGestione" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCassa" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UltimoEnteDatoreLavoro">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumDomanda" type="xs:string" />
+              <xs:element minOccurs="0" name="DenominazioneEnte" type="xs:string" />
+              <xs:element minOccurs="0" name="SiglaProvinciaEnte" type="xs:string" />
+              <xs:element minOccurs="0" name="CodCatastaleComuneEnte" type="xs:string" />
+              <xs:element minOccurs="0" name="CapEnte" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

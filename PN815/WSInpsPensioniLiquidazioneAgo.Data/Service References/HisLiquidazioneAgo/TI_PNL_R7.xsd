@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.HostIntegration.TI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hisrsvil04.ser-test.inps/PN821-INPSPensioniLiquidazioneAgo/TI_PNL_R.LiquidazioneAgo.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ClientContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliasTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionUsage" type="tns:ConnectionTypes" />
+      <xs:element minOccurs="0" name="IMSClientId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMSLTerm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMSModName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsConnectionViable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsConversational" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPersistent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LUName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LibraryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MirrorProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtmaSystemId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersistentConnectionCorrelator" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersistentConnectionTimeout" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Port" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiveTimeout" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RemoteEnvironment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendTimeout" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserAgent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientContext" nillable="true" type="tns:ClientContext" />
+  <xs:simpleType name="ConnectionTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NonPersistent" />
+      <xs:enumeration value="PersistentOpen" />
+      <xs:enumeration value="PersistentUse" />
+      <xs:enumeration value="PersistentClose" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConnectionTypes" nillable="true" type="tns:ConnectionTypes" />
+</xs:schema>

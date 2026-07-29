@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://ws.allegati.convenzioni.inps.it/AllegatiConvenzioniService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="TipoMetadatiServizio">
+    <xsd:sequence>
+      <xsd:element name="NomeServizio" type="tns:TipoNomeServizio" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Modello" type="tns:TipoClassificazioneModello" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CodiceModello" type="xsd:int" />
+      <xsd:element name="Mittente" type="xsd:string" />
+      <xsd:element name="Timestamp" type="xsd:long">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp della richiesta. E' il
+								numero di millisecondi a partire dalla data 1/1/1970, con il
+								quale il mittente identifica univocamente la richiesta inviata
+								ad INPS. Non possono esistere due richieste con lo stesso
+								timestamp.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoPeriodoRichiesta">
+    <xsd:sequence>
+      <xsd:element name="AnnoDa" type="xsd:int" />
+      <xsd:element name="AnnoA" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="TipoNomeServizio">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AllegatiConvenzioniService" />
+      <xsd:enumeration value="StatiIstituzioniService" />
+      <xsd:enumeration value="AggiornaFaseService" />
+      <xsd:enumeration value="LetturaCI05Service" />
+      <xsd:enumeration value="AggiornamentoCI05Service" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="TipoDatiRichiesta">
+    <xsd:sequence>
+      <xsd:element name="CodiceSede" type="xsd:string" />
+      <xsd:element name="CodiceCategoria" type="xsd:string" />
+      <xsd:element name="Certificato" type="xsd:string" />
+      <xsd:element name="PeriodoRicerca" type="tns:TipoPeriodoRichiesta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ModuloAllegatoRichiesta" type="tns:TipoModuloAllegatoRichiesta" />
+  <xsd:complexType name="TipoModuloAllegatoRichiesta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRichiesta" type="tns:TipoDatiRichiesta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ModuloAllegatoRisposta" type="tns:TipoModuloAllegatoRisposta" />
+  <xsd:complexType name="TipoModuloAllegatoRisposta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRisposta" type="tns:TipoDatiRisposta" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ModuloAllegato" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoDatiRisposta">
+    <xsd:sequence>
+      <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DatiAllegato" type="tns:TipoDatiAllegato" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoMessaggio">
+    <xsd:sequence>
+      <xsd:element name="Codice" type="xsd:int" />
+      <xsd:element name="Descrizione" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoDatiAllegato">
+    <xsd:sequence>
+      <xsd:element name="Length" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Dimensionamento in KB
+								dell'allegato. Da vincolo DataPower non può superare i 4096 KB
+							</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="TipoClassificazioneModello">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AUS" />
+      <xsd:enumeration value="CAN" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="getStatiIstituzione">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloStatiRichiesta" type="tns:TipoModuloStatiRichiesta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getStatiIstituzioneResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloStatiRisposta" type="tns:TipoModuloStatiRisposta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="AREA_PERAS">
+    <xsd:sequence>
+      <xsd:element name="Numedoma" type="xsd:string" />
+      <xsd:element name="Progista" type="xsd:string" />
+      <xsd:element name="Progfase" type="xsd:string" />
+      <xsd:element name="PTperas" type="tns:P_TPERAS" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P_TPERAS">
+    <xsd:sequence>
+      <xsd:element name="Numedoma" type="xsd:string" />
+      <xsd:element name="Progista" type="xsd:string" />
+      <xsd:element name="Progfase" type="xsd:string" />
+      <xsd:element name="Codigrup" type="xsd:string" />
+      <xsd:element name="Codiprod" type="xsd:string" />
+      <xsd:element name="Coditipo" type="xsd:string" />
+      <xsd:element name="Codigest" type="xsd:string" />
+      <xsd:element name="Codifond" type="xsd:string" />
+      <xsd:element name="Codiente" type="xsd:string" />
+      <xsd:element name="Indicoin" type="xsd:string" />
+      <xsd:element name="Nazional" type="xsd:string" />
+      <xsd:element name="Datasitu" type="xsd:string" />
+      <xsd:element name="Codifase" type="xsd:string" />
+      <xsd:element name="Codiprov" type="xsd:string" />
+      <xsd:element name="Codizona" type="xsd:string" />
+      <xsd:element name="Codioper" type="xsd:string" />
+      <xsd:element name="Codiunpr" type="xsd:string" />
+      <xsd:element name="Datpreis" type="xsd:string" />
+      <xsd:element name="Codicana" type="xsd:string" />
+      <xsd:element name="Codifont" type="xsd:string" />
+      <xsd:element name="Datprefa" type="xsd:string" />
+      <xsd:element name="Codisitu" type="xsd:string" />
+      <xsd:element name="Codtipro" type="xsd:string" />
+      <xsd:element name="Datinici" type="xsd:string" />
+      <xsd:element name="Datfinci" type="xsd:string" />
+      <xsd:element name="Datainis" type="xsd:string" />
+      <xsd:element name="Datafins" type="xsd:string" />
+      <xsd:element name="Codtivis" type="xsd:string" />
+      <xsd:element name="Codiatti" type="xsd:string" />
+      <xsd:element name="Datainiz" type="xsd:string" />
+      <xsd:element name="Codienes" type="xsd:string" />
+      <xsd:element name="Codiuffv" type="xsd:string" />
+      <xsd:element name="Estrprat" type="xsd:string" />
+      <xsd:element name="Datfinpa" type="xsd:string" />
+      <xsd:element name="Codiprog" type="xsd:string" />
+      <xsd:element name="Codizong" type="xsd:string" />
+      <xsd:element name="Siglacat" type="xsd:string" />
+      <xsd:element name="Codicerg" type="xsd:string" />
+      <xsd:element name="Datadecg" type="xsd:string" />
+      <xsd:element name="Campfilt" type="xsd:string" />
+      <xsd:element name="Coduff" type="xsd:string" />
+      <xsd:element name="Ente" type="xsd:string" />
+      <xsd:element name="Codinps" type="xsd:string" />
+      <xsd:element name="Codifisc" type="xsd:string" />
+      <xsd:element name="Cognome" type="xsd:string" />
+      <xsd:element name="Nome" type="xsd:string" />
+      <xsd:element name="Cognoacq" type="xsd:string" />
+      <xsd:element name="Sesso" type="xsd:string" />
+      <xsd:element name="Datanasc" type="xsd:string" />
+      <xsd:element name="Comunasc" type="xsd:string" />
+      <xsd:element name="Provnasc" type="xsd:string" />
+      <xsd:element name="Statnasc" type="xsd:string" />
+      <xsd:element name="Comuresi" type="xsd:string" />
+      <xsd:element name="Provresi" type="xsd:string" />
+      <xsd:element name="Siglstre" type="xsd:string" />
+      <xsd:element name="Cap" type="xsd:string" />
+      <xsd:element name="Numecivi" type="xsd:string" />
+      <xsd:element name="Indiriz1" type="xsd:string" />
+      <xsd:element name="Tiporesi" type="xsd:string" />
+      <xsd:element name="Statciv" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoStatiRisposta">
+    <xsd:sequence>
+      <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xsd:element name="Cittadinanza" type="xsd:string" />
+      <xsd:element name="CittadinanzaDc" type="xsd:string" />
+      <xsd:element name="Attivita107" type="xsd:string" />
+      <xsd:element name="Coddb2" type="xsd:string" />
+      <xsd:element name="CodiceEsito" type="xsd:string" />
+      <xsd:element name="CodiceErroreEsteso" type="xsd:string" />
+      <xsd:element name="TotIstituzioni" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Stati" type="tns:TipoStatoIstituzione" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StatoIstituzione">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="15" name="Stato" type="tns:TipoStato" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoModuloStatiRichiesta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRichiesta" type="tns:AREA_PERAS" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoModuloStatiRisposta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRisposta" type="tns:TipoStatiRisposta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoStato">
+    <xsd:sequence>
+      <xsd:element name="CodiceStato" type="xsd:string" />
+      <xsd:element name="CodiceIstituzione" type="xsd:string" />
+      <xsd:element name="Matricola" type="xsd:string" />
+      <xsd:element name="ProvvedimentoEstero" type="xsd:string" />
+      <xsd:element name="DataProvvedimentoEstero" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoStatoIstituzione">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="15" name="Stato" type="tns:TipoStato" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="aggiornaFase">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloAggiornaFaseRichiesta" type="tns:TipoModuloAggiornaFaseRichiesta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="aggiornaFaseResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloAggiornaFaseRisposta" type="tns:TipoModuloAggiornaFaseRisposta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="TipoModuloAggiornaFaseRichiesta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRichiesta" type="tns:TipoAggiornaFaseRichiesta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoModuloAggiornaFaseRisposta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRisposta" type="tns:TipoAggiornaFaseRisposta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AreaPciagg">
+    <xsd:sequence>
+      <xsd:element name="Codesit" type="xsd:string" />
+      <xsd:element name="MatrxCI" type="xsd:string" />
+      <xsd:element name="Sede6" type="xsd:string" />
+      <xsd:element name="Kdomus" type="xsd:string" />
+      <xsd:element name="Data" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAggiornaFaseRichiesta">
+    <xsd:sequence>
+      <xsd:element name="Codesit" type="xsd:string" />
+      <xsd:element name="MatrxCI" type="xsd:string" />
+      <xsd:element name="Sede6" type="xsd:string" />
+      <xsd:element name="Kdomus" type="xsd:string" />
+      <xsd:element name="Data" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAggiornaFaseRisposta">
+    <xsd:sequence>
+      <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xsd:element name="Codesit" type="xsd:string" />
+      <xsd:element name="MatrxCI" type="xsd:string" />
+      <xsd:element name="Sede6" type="xsd:string" />
+      <xsd:element name="Kdomus" type="xsd:string" />
+      <xsd:element name="Data" type="xsd:int" />
+      <xsd:element name="Codice" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="letturaCI05">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloLetturaCI05Richiesta" type="tns:TipoModuloLetturaCI05Richiesta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="letturaCI05Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloLetturaCI05Risposta" type="tns:TipoModuloLetturaCI05Risposta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="TipoModuloLetturaCI05Richiesta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRichiesta" type="tns:TipoLetturaCI05Richiesta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoLetturaCI05Richiesta">
+    <xsd:sequence>
+      <xsd:element name="Comarea" type="tns:TipoComareaPcics10" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoModuloLetturaCI05Risposta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRisposta" type="tns:TipoLetturaCI05Risposta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoLetturaCI05Risposta">
+    <xsd:sequence>
+      <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xsd:element name="Ciead75" type="tns:TipoCiead75" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="aggiornaCI05">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloAggiornaCI05Richiesta" type="tns:TipoModuloAggiornaCI05Richiesta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="aggiornaCI05Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ModuloAggiornaCI05Risposta" type="tns:TipoModuloAggiornaCI05Risposta" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="TipoModuloAggiornaCI05Richiesta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRichiesta" type="tns:TipoAggiornaCI05Richiesta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoModuloAggiornaCI05Risposta">
+    <xsd:sequence>
+      <xsd:element name="MetadatiServizio" type="tns:TipoMetadatiServizio" />
+      <xsd:element name="DatiRisposta" type="tns:TipoAggiornaCI05Risposta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAggiornaCI05Richiesta">
+    <xsd:sequence>
+      <xsd:element name="Comarea" type="tns:TipoComareaPcics11" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAggiornaCI05Risposta">
+    <xsd:sequence>
+      <xsd:element name="Messaggio" type="tns:TipoMessaggio" />
+      <xsd:element name="MatricolaOp" type="xsd:string" />
+      <xsd:element name="Sede" type="xsd:string" />
+      <xsd:element name="Domus" type="xsd:string" />
+      <xsd:element name="ErroriEstesi" type="xsd:string" />
+      <xsd:element name="ErroreAggiornamento" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoComareaPcics10">
+    <xsd:sequence>
+      <xsd:element name="Cpgmdas" type="xsd:string" />
+      <xsd:element name="MatricolaOp" type="xsd:string" />
+      <xsd:element name="Sede" type="xsd:string" />
+      <xsd:element name="ErroreRitorno" type="xsd:int" />
+      <xsd:element name="Continua" type="xsd:string" />
+      <xsd:element name="CheFare" type="xsd:string" />
+      <xsd:element name="Prova" type="xsd:string" />
+      <xsd:element name="Altri" type="xsd:string" />
+      <xsd:element name="Chiavi" type="tns:TipoChiaviPcics10" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoComareaPcics11">
+    <xsd:sequence>
+      <xsd:element name="Cpgmdas" type="xsd:string" />
+      <xsd:element name="MatricolaOp" type="xsd:string" />
+      <xsd:element name="Sede" type="xsd:string" />
+      <xsd:element name="ErroreRitorno" type="xsd:int" />
+      <xsd:element name="AltriD" type="xsd:string" />
+      <xsd:element name="CheFare" type="xsd:string" />
+      <xsd:element name="Prova" type="xsd:string" />
+      <xsd:element name="Altri" type="xsd:string" />
+      <xsd:element name="Chiavi" type="tns:TipoChiaviPcics11" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoCiead75">
+    <xsd:sequence>
+      <xsd:element name="AreaRichiedente" type="tns:TipoAreaRichiedente" />
+      <xsd:element name="AreaDanteCausa" type="tns:TipoAreaDanteCausa" />
+      <xsd:element name="AreaAltro" type="tns:TipoAreaAltro" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoChiaviPcics10">
+    <xsd:sequence>
+      <xsd:element name="KeyDa" type="xsd:int" />
+      <xsd:element name="KeyA" type="xsd:int" />
+      <xsd:element name="KeyFrom" type="xsd:string" />
+      <xsd:element name="Filtro01" type="xsd:string" />
+      <xsd:element name="Filtro" type="xsd:string" />
+      <xsd:element name="Filler" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoChiaviPcics11">
+    <xsd:sequence>
+      <xsd:element name="Numedoma" type="xsd:string" />
+      <xsd:element name="TipoElab" type="xsd:string" />
+      <xsd:element name="EsitoCI" type="xsd:string" />
+      <xsd:element name="Filler01" type="xsd:string" />
+      <xsd:element name="Filler02" type="xsd:string" />
+      <xsd:element name="DataEsito" type="xsd:int" />
+      <xsd:element name="Filler03" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaRichiedente">
+    <xsd:sequence>
+      <xsd:element name="AreaEad75" type="tns:TipoAreaEad75" />
+      <xsd:element name="AreaCi2005" type="tns:TipoAreaCi2005" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaEad75">
+    <xsd:sequence>
+      <xsd:element name="Ido" type="xsd:int" />
+      <xsd:element name="Kkk2" type="xsd:int" />
+      <xsd:element name="KeyDom" type="tns:TipoKeyDom" />
+      <xsd:element name="Sede6" type="xsd:int" />
+      <xsd:element name="Categ" type="xsd:string" />
+      <xsd:element name="Cognome" type="xsd:string" />
+      <xsd:element name="Sesso" type="xsd:string" />
+      <xsd:element name="NomeAcq" type="xsd:string" />
+      <xsd:element name="DataNas" type="xsd:int" />
+      <xsd:element name="ComNas" type="xsd:string" />
+      <xsd:element name="Dispon" type="xsd:string" />
+      <xsd:element name="ProvNas" type="xsd:string" />
+      <xsd:element name="Indiriz" type="xsd:string" />
+      <xsd:element name="Xcap" type="xsd:string" />
+      <xsd:element name="ComRes" type="xsd:string" />
+      <xsd:element name="ProvRes" type="xsd:string" />
+      <xsd:element name="StatRes" type="xsd:string" />
+      <xsd:element name="TipoDom" type="xsd:string" />
+      <xsd:element name="CodPato" type="xsd:string" />
+      <xsd:element name="Npratpa" type="xsd:string" />
+      <xsd:element name="DataDom" type="xsd:int" />
+      <xsd:element name="CoFase" type="xsd:int" />
+      <xsd:element name="CoInfa" type="xsd:int" />
+      <xsd:element name="DataLgd" type="xsd:int" />
+      <xsd:element name="DataDalg" type="xsd:int" />
+      <xsd:element name="DatEsit" type="xsd:int" />
+      <xsd:element name="CodEsit" type="xsd:string" />
+      <xsd:element name="Filler" type="xsd:string" />
+      <xsd:element name="CodiSitu" type="xsd:string" />
+      <xsd:element name="SedeRic" type="xsd:int" />
+      <xsd:element name="CatCer" type="tns:TipoCatCer" />
+      <xsd:element name="PrintF3" type="xsd:string" />
+      <xsd:element name="DecPen" type="xsd:int" />
+      <xsd:element name="Dioti" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoKeyDom">
+    <xsd:sequence>
+      <xsd:element name="DataInse" type="xsd:int" />
+      <xsd:element name="KDomus" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoCatCer">
+    <xsd:sequence>
+      <xsd:element name="CateGri" type="xsd:string" />
+      <xsd:element name="CertRic" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaCi2005">
+    <xsd:sequence>
+      <xsd:element name="AreaCarCor" type="tns:TipoAreaCarCor" />
+      <xsd:element name="AreaStatiEsteri" type="tns:TipoAreaStatiEsteri" />
+      <xsd:element name="AreaVari" type="tns:TipoAreaVari" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaCarCor">
+    <xsd:sequence>
+      <xsd:element name="Citt1" type="xsd:string" />
+      <xsd:element name="Statc" type="xsd:string" />
+      <xsd:element name="DataCar" type="xsd:int" />
+      <xsd:element name="Prestp" type="xsd:string" />
+      <xsd:element name="Erreosi" type="xsd:string" />
+      <xsd:element name="DocRici" type="xsd:string" />
+      <xsd:element name="DatRici" type="xsd:int" />
+      <xsd:element name="SedeC106" type="xsd:int" />
+      <xsd:element name="Erreoss" type="xsd:string" />
+      <xsd:element name="DocRics" type="xsd:string" />
+      <xsd:element name="DatRics" type="xsd:int" />
+      <xsd:element name="Erreosa" type="xsd:string" />
+      <xsd:element name="DatRica" type="xsd:int" />
+      <xsd:element name="CodExit" type="xsd:string" />
+      <xsd:element name="DatExit" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaStatiEsteri">
+    <xsd:sequence>
+      <xsd:element name="Stis01" type="xsd:int" />
+      <xsd:element name="Matre1" type="xsd:string" />
+      <xsd:element name="Pi1" type="xsd:string" />
+      <xsd:element name="Mot1" type="xsd:string" />
+      <xsd:element name="Mvv1" type="xsd:string" />
+      <xsd:element name="FaseSt1" type="xsd:int" />
+      <xsd:element name="Mod2051" type="xsd:string" />
+      <xsd:element name="Inicol1" type="xsd:int" />
+      <xsd:element name="Invfor1" type="xsd:int" />
+      <xsd:element name="Parag1" type="xsd:string" />
+      <xsd:element name="Datc111" type="xsd:int" />
+      <xsd:element name="DatRis1" type="xsd:int" />
+      <xsd:element name="Preste1" type="xsd:string" />
+      <xsd:element name="Risult1" type="xsd:int" />
+      <xsd:element name="NoteSt1" type="xsd:string" />
+      <xsd:element name="Stis02" type="xsd:int" />
+      <xsd:element name="Matre2" type="xsd:string" />
+      <xsd:element name="Pi2" type="xsd:string" />
+      <xsd:element name="Mot2" type="xsd:string" />
+      <xsd:element name="Mvv2" type="xsd:string" />
+      <xsd:element name="FaseSt2" type="xsd:int" />
+      <xsd:element name="Mod2052" type="xsd:string" />
+      <xsd:element name="Inicol2" type="xsd:int" />
+      <xsd:element name="Invfor2" type="xsd:int" />
+      <xsd:element name="Parag2" type="xsd:string" />
+      <xsd:element name="Datc112" type="xsd:int" />
+      <xsd:element name="DatRis2" type="xsd:int" />
+      <xsd:element name="Preste2" type="xsd:string" />
+      <xsd:element name="Risult2" type="xsd:int" />
+      <xsd:element name="NoteSt2" type="xsd:string" />
+      <xsd:element name="Stis03" type="xsd:int" />
+      <xsd:element name="Matre3" type="xsd:string" />
+      <xsd:element name="Pi3" type="xsd:string" />
+      <xsd:element name="Mot3" type="xsd:string" />
+      <xsd:element name="Mvv3" type="xsd:string" />
+      <xsd:element name="FaseSt3" type="xsd:int" />
+      <xsd:element name="Mod2053" type="xsd:string" />
+      <xsd:element name="Inicol3" type="xsd:int" />
+      <xsd:element name="Invfor3" type="xsd:int" />
+      <xsd:element name="Parag3" type="xsd:string" />
+      <xsd:element name="Datc113" type="xsd:int" />
+      <xsd:element name="DatRis3" type="xsd:int" />
+      <xsd:element name="Preste3" type="xsd:string" />
+      <xsd:element name="Risult3" type="xsd:int" />
+      <xsd:element name="NoteSt3" type="xsd:string" />
+      <xsd:element name="Stis04" type="xsd:int" />
+      <xsd:element name="Matre4" type="xsd:string" />
+      <xsd:element name="Pi4" type="xsd:string" />
+      <xsd:element name="Mot4" type="xsd:string" />
+      <xsd:element name="Mvv4" type="xsd:string" />
+      <xsd:element name="FaseSt4" type="xsd:int" />
+      <xsd:element name="Mod2054" type="xsd:string" />
+      <xsd:element name="Inicol4" type="xsd:int" />
+      <xsd:element name="Invfor4" type="xsd:int" />
+      <xsd:element name="Parag4" type="xsd:string" />
+      <xsd:element name="Datc114" type="xsd:int" />
+      <xsd:element name="DatRis4" type="xsd:int" />
+      <xsd:element name="Preste4" type="xsd:string" />
+      <xsd:element name="Risult4" type="xsd:int" />
+      <xsd:element name="NoteSt4" type="xsd:string" />
+      <xsd:element name="Stis05" type="xsd:int" />
+      <xsd:element name="Matre5" type="xsd:string" />
+      <xsd:element name="Pi5" type="xsd:string" />
+      <xsd:element name="Mot5" type="xsd:string" />
+      <xsd:element name="Mvv5" type="xsd:string" />
+      <xsd:element name="FaseSt5" type="xsd:int" />
+      <xsd:element name="Mod2055" type="xsd:string" />
+      <xsd:element name="Inicol5" type="xsd:int" />
+      <xsd:element name="Invfor5" type="xsd:int" />
+      <xsd:element name="Parag5" type="xsd:string" />
+      <xsd:element name="Datc115" type="xsd:int" />
+      <xsd:element name="DatRis5" type="xsd:int" />
+      <xsd:element name="Preste5" type="xsd:string" />
+      <xsd:element name="Risult5" type="xsd:int" />
+      <xsd:element name="NoteSt5" type="xsd:string" />
+      <xsd:element name="Stis06" type="xsd:int" />
+      <xsd:element name="Matre6" type="xsd:string" />
+      <xsd:element name="Pi6" type="xsd:string" />
+      <xsd:element name="Mot6" type="xsd:string" />
+      <xsd:element name="Mvv6" type="xsd:string" />
+      <xsd:element name="FaseSt6" type="xsd:int" />
+      <xsd:element name="Mod2056" type="xsd:string" />
+      <xsd:element name="Inicol6" type="xsd:int" />
+      <xsd:element name="Invfor6" type="xsd:int" />
+      <xsd:element name="Parag6" type="xsd:string" />
+      <xsd:element name="Datc116" type="xsd:int" />
+      <xsd:element name="DatRis6" type="xsd:int" />
+      <xsd:element name="Preste6" type="xsd:string" />
+      <xsd:element name="Risult6" type="xsd:int" />
+      <xsd:element name="NoteSt6" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaVari">
+    <xsd:sequence>
+      <xsd:element name="MatricMigr" type="xsd:string" />
+      <xsd:element name="Resest" type="xsd:string" />
+      <xsd:element name="Riga75" type="xsd:string" />
+      <xsd:element name="Staz" type="xsd:int" />
+      <xsd:element name="TipIst" type="xsd:string" />
+      <xsd:element name="CodFis" type="xsd:string" />
+      <xsd:element name="Uniproc" type="xsd:string" />
+      <xsd:element name="Mail" type="xsd:string" />
+      <xsd:element name="CognomeIntero" type="xsd:string" />
+      <xsd:element name="NomeIntero" type="xsd:string" />
+      <xsd:element name="CognoAcqIntero" type="xsd:string" />
+      <xsd:element name="AltriDatiStati" type="tns:TipoAltriDatiStati" />
+      <xsd:element name="DataCanc" type="xsd:int" />
+      <xsd:element name="CodSit" type="xsd:string" />
+      <xsd:element name="CodiFase" type="xsd:string" />
+      <xsd:element name="ProPat" type="xsd:string" />
+      <xsd:element name="KeyPat" type="tns:TipoKeyPat" />
+      <xsd:element name="Key205" type="xsd:string" />
+      <xsd:element name="So" type="xsd:string" />
+      <xsd:element name="Filler" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAltriDatiStati">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="6" name="AltriDatiStatiOcc" type="tns:TipoAltriDatiStatiOcc" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAltriDatiStatiOcc">
+    <xsd:sequence>
+      <xsd:element name="Ci14" type="xsd:string" />
+      <xsd:element name="Tipc" type="xsd:string" />
+      <xsd:element name="Model" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoKeyPat">
+    <xsd:sequence>
+      <xsd:element name="Ente" type="xsd:string" />
+      <xsd:element name="Codinps" type="xsd:string" />
+      <xsd:element name="Coduff" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaDanteCausa">
+    <xsd:sequence>
+      <xsd:element name="FlagDc" type="xsd:string" />
+      <xsd:element name="CieadDc" type="tns:TipoCieadDc" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoCieadDc">
+    <xsd:sequence>
+      <xsd:element name="DatiDc" type="tns:TipoDatiDc" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoDatiDc">
+    <xsd:sequence>
+      <xsd:element name="CogDc" type="xsd:string" />
+      <xsd:element name="NomDc" type="xsd:string" />
+      <xsd:element name="ComDc" type="xsd:string" />
+      <xsd:element name="ProDc" type="xsd:string" />
+      <xsd:element name="StatoDc" type="xsd:string" />
+      <xsd:element name="DnasDc" type="xsd:int" />
+      <xsd:element name="Dmor" type="xsd:int" />
+      <xsd:element name="Lumor" type="xsd:string" />
+      <xsd:element name="StatoMorteDc" type="xsd:string" />
+      <xsd:element name="SesDc" type="xsd:string" />
+      <xsd:element name="CittadinDc" type="xsd:string" />
+      <xsd:element name="StatcDc" type="xsd:string" />
+      <xsd:element name="Dmat" type="xsd:int" />
+      <xsd:element name="Relpar" type="xsd:string" />
+      <xsd:element name="Tp1seded" type="xsd:int" />
+      <xsd:element name="Tp1catd" type="xsd:int" />
+      <xsd:element name="Tp1certd" type="xsd:int" />
+      <xsd:element name="Iw1diret" type="xsd:int" />
+      <xsd:element name="CodfisDc" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TipoAreaAltro">
+    <xsd:sequence>
+      <xsd:element name="DataSitu" type="xsd:int" />
+      <xsd:element name="Flag107" type="xsd:string" />
+      <xsd:element name="Filler" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

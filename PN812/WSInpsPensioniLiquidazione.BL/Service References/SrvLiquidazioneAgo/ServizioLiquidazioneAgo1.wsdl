@@ -1,0 +1,3462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServizioLiquidazioneAgo" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IServizioLiquidazioneAgo_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IServizioLiquidazioneAgo1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IServizioLiquidazioneAgo2_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0" location="http://pp-dna-vio.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="CustomBinding_IServizioLiquidazioneAgo" type="i0:IServizioLiquidazioneAgo">
+    <wsp:PolicyReference URI="#CustomBinding_IServizioLiquidazioneAgo_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StoreDatiBeneficioVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiBeneficioVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiBeneficioVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiBeneficioVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiCalcoloByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiCalcoloByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrelevaGP4">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/PrelevaGP4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuadroDatiFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetQuadroDatiFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddRegistrazioneFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/AddRegistrazioneFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRegistrazioneFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelRegistrazioneFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRegistrazioniFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelRegistrazioniFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrazioneFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetRegistrazioneFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreQuadroDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreQuadroDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiCalcoloByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiCalcoloByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiCalcoloByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiCalcoloByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiPrivilegiateByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiPrivilegiateByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiPrivilegiateByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiPrivilegiateByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiArticolo2ByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiArticolo2ByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiArticolo2ByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiArticolo2ByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiInteressiLegali">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiInteressiLegali" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiInteressiLegali">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiInteressiLegali" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalcolaDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CalcolaDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrelevaDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/PrelevaDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiLiquidazionePensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiLiquidazionePensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLiquidazionePensioneByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetLiquidazionePensioneByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiGenerici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiGenerici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiGenerici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiGenerici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiAssicurativi">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiAssicurativi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiAssicurativi">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiAssicurativi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiOpzione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiOpzione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiOpzione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiOpzione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiIstruttoria">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiIstruttoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiIstruttoria">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiIstruttoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiProvenienza">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiProvenienza">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiInail">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiInail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiInail">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiInail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaggiorazioniBeneficiByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetMaggiorazioniBeneficiByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreMaggiorazioniBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreMaggiorazioniBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiExCombattente">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiExCombattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiExCombattente">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiExCombattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiMaggiorazioni">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiMaggiorazioni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiMaggiorazioni">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiMaggiorazioni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBititolaritaByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetBititolaritaByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreBititolarita">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreBititolarita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreAltraPensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreAltraPensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelAltraPensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelAltraPensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaVersioniAGO">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetListaVersioniAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_IServizioLiquidazioneAgo1" type="i0:IServizioLiquidazioneAgo">
+    <wsp:PolicyReference URI="#CustomBinding_IServizioLiquidazioneAgo1_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="StoreDatiBeneficioVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiBeneficioVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiBeneficioVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiBeneficioVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiCalcoloByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiCalcoloByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrelevaGP4">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/PrelevaGP4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuadroDatiFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetQuadroDatiFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddRegistrazioneFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/AddRegistrazioneFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRegistrazioneFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelRegistrazioneFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRegistrazioniFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelRegistrazioniFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrazioneFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetRegistrazioneFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreQuadroDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreQuadroDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiCalcoloByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiCalcoloByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiCalcoloByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiCalcoloByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiPrivilegiateByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiPrivilegiateByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiPrivilegiateByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiPrivilegiateByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiArticolo2ByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiArticolo2ByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiArticolo2ByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiArticolo2ByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiInteressiLegali">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiInteressiLegali" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiInteressiLegali">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiInteressiLegali" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalcolaDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CalcolaDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrelevaDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/PrelevaDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiLiquidazionePensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiLiquidazionePensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLiquidazionePensioneByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetLiquidazionePensioneByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiGenerici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiGenerici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiGenerici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiGenerici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiAssicurativi">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiAssicurativi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiAssicurativi">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiAssicurativi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiOpzione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiOpzione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiOpzione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiOpzione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiIstruttoria">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiIstruttoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiIstruttoria">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiIstruttoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiProvenienza">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiProvenienza">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiInail">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiInail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiInail">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiInail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaggiorazioniBeneficiByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetMaggiorazioniBeneficiByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreMaggiorazioniBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreMaggiorazioniBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiExCombattente">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiExCombattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiExCombattente">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiExCombattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiMaggiorazioni">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiMaggiorazioni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiMaggiorazioni">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiMaggiorazioni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBititolaritaByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetBititolaritaByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreBititolarita">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreBititolarita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreAltraPensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreAltraPensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelAltraPensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelAltraPensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaVersioniAGO">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetListaVersioniAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_IServizioLiquidazioneAgo2" type="i0:IServizioLiquidazioneAgo">
+    <wsp:PolicyReference URI="#CustomBinding_IServizioLiquidazioneAgo2_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="StoreDatiBeneficioVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiBeneficioVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiBeneficioVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiBeneficioVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiVittimeTerrorismo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiVittimeTerrorismo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiCalcoloByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiCalcoloByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrelevaGP4">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/PrelevaGP4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuadroDatiFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetQuadroDatiFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddRegistrazioneFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/AddRegistrazioneFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRegistrazioneFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelRegistrazioneFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRegistrazioniFondoByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelRegistrazioniFondoByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrazioneFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetRegistrazioneFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreQuadroDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreQuadroDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiFondoByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiFondoByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiCalcoloByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiCalcoloByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiCalcoloByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiCalcoloByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiPrivilegiateByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiPrivilegiateByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiPrivilegiateByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiPrivilegiateByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiArticolo2ByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiArticolo2ByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiArticolo2ByIdRecordFondo">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiArticolo2ByIdRecordFondo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiInteressiLegali">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiInteressiLegali" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiInteressiLegali">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiInteressiLegali" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalcolaDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CalcolaDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrelevaDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/PrelevaDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiContributiviByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiContributiviByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiLiquidazionePensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiLiquidazionePensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLiquidazionePensioneByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetLiquidazionePensioneByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiGenerici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiGenerici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiGenerici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiGenerici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiAssicurativi">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiAssicurativi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiAssicurativi">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiAssicurativi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiOpzione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiOpzione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiOpzione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiOpzione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiIstruttoria">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiIstruttoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiIstruttoria">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiIstruttoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiProvenienza">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiProvenienza">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiProvenienza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiInail">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiInail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiInail">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiInail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaggiorazioniBeneficiByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetMaggiorazioniBeneficiByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreMaggiorazioniBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreMaggiorazioniBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiBenefici">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiBenefici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiExCombattente">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiExCombattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiExCombattente">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiExCombattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreDatiMaggiorazioni">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreDatiMaggiorazioni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDatiMaggiorazioni">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelDatiMaggiorazioni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBititolaritaByDomanda">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetBititolaritaByDomanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreBititolarita">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreBititolarita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreAltraPensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/StoreAltraPensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelAltraPensione">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/CancelAltraPensione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaVersioniAGO">
+      <soap12:operation soapAction="http://soa.inps.it/domainservices/pensioni/servicecontracts/LiquidazioneAgo/1_0/IServizioLiquidazioneAgo/GetListaVersioniAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DnaInfrastructureFaultContract">
+        <soap12:fault use="literal" name="DnaInfrastructureFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaApplicationFaultContract">
+        <soap12:fault use="literal" name="DnaApplicationFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaSecurityFaultContract">
+        <soap12:fault use="literal" name="DnaSecurityFaultContract" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DnaValidationFaultContract">
+        <soap12:fault use="literal" name="DnaValidationFaultContract" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServizioLiquidazioneAgo">
+    <wsdl:port name="CustomBinding_IServizioLiquidazioneAgo" binding="tns:CustomBinding_IServizioLiquidazioneAgo">
+      <soap12:address location="http://pp-dna-vio.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://pp-dna-vio.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_IServizioLiquidazioneAgo1" binding="tns:CustomBinding_IServizioLiquidazioneAgo1">
+      <soap12:address location="net.tcp://pp-dna-vio.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/nettcp" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://pp-dna-vio.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/nettcp</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_IServizioLiquidazioneAgo2" binding="tns:CustomBinding_IServizioLiquidazioneAgo2">
+      <soap12:address location="net.pipe://pp-dna-vio.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/netpipe" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://pp-dna-vio.avndrome.net/INPS.Pensioni.LiquidazioneAgo.Service/ServizioLiquidazioneAgo.svc/netpipe</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

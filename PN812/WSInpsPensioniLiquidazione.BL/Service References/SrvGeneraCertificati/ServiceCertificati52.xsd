@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" />
+  <xs:complexType name="RichiestaFascicolo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaControllo" nillable="true" type="q1:Controllo" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaRichiesta" nillable="true" type="q2:Fascicolo.Input" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RichiestaFascicolo" nillable="true" type="tns:RichiestaFascicolo" />
+  <xs:complexType name="RispostaFascicolo">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaEsito" nillable="true" type="q3:Esito" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaRisposta" nillable="true" type="q4:Fascicolo.Output" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RispostaFascicolo" nillable="true" type="tns:RispostaFascicolo" />
+  <xs:complexType name="RichiestaCertificato">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaControllo" nillable="true" type="q5:Controllo" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaRichiesta" nillable="true" type="q6:Certificato.Input" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RichiestaCertificato" nillable="true" type="tns:RichiestaCertificato" />
+  <xs:complexType name="RispostaCertificato">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaEsito" nillable="true" type="q7:Esito" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WSLiqPensGeneraCertificati.Entity" minOccurs="0" name="AreaRisposta" nillable="true" type="q8:Certificato.Output" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RispostaCertificato" nillable="true" type="tns:RispostaCertificato" />
+</xs:schema>

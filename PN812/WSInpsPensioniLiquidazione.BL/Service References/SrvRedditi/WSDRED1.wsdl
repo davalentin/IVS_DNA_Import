@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://tempuri.org/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="WSDRED.xsd1.xsd" namespace="http://tempuri.org/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="eliminaRedditiAncheTemporaneiAuthHeader">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="AuthHeader" element="xsns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRedditiAncheTemporaneiSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:eliminaRedditiAncheTemporanei" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRedditiAncheTemporaneiSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:eliminaRedditiAncheTemporaneiResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRedditiAuthHeader">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="AuthHeader" element="xsns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRedditiSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:eliminaRedditi" />
+  </wsdl:message>
+  <wsdl:message name="eliminaRedditiSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:eliminaRedditiResponse" />
+  </wsdl:message>
+  <wsdl:message name="EseguiProceduraAutomaticaRedditiSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:EseguiProceduraAutomaticaRedditi" />
+  </wsdl:message>
+  <wsdl:message name="EseguiProceduraAutomaticaRedditiSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:EseguiProceduraAutomaticaRedditiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnniDataPresentazioneByChiavePensioneSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:GetAnniDataPresentazioneByChiavePensione" />
+  </wsdl:message>
+  <wsdl:message name="GetAnniDataPresentazioneByChiavePensioneSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:GetAnniDataPresentazioneByChiavePensioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnniDataPresentazioneSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:GetAnniDataPresentazione" />
+  </wsdl:message>
+  <wsdl:message name="GetAnniDataPresentazioneSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:GetAnniDataPresentazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDatiDB2AuthHeader">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="AuthHeader" element="xsns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="getDatiDB2SoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getDatiDB2" />
+  </wsdl:message>
+  <wsdl:message name="getDatiDB2SoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getDatiDB2Response" />
+  </wsdl:message>
+  <wsdl:message name="getDatiSQLAuthHeader">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="AuthHeader" element="xsns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="getDatiSQLSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getDatiSQL" />
+  </wsdl:message>
+  <wsdl:message name="getDatiSQLSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getDatiSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLogInfoAuthHeader">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="AuthHeader" element="xsns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="getLogInfoSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getLogInfo" />
+  </wsdl:message>
+  <wsdl:message name="getLogInfoSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getLogInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRedditiTempSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getRedditiTemp" />
+  </wsdl:message>
+  <wsdl:message name="getRedditiTempSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getRedditiTempResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReleaseSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getRelease" />
+  </wsdl:message>
+  <wsdl:message name="getReleaseSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:getReleaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertDatiDB2AuthHeader">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="AuthHeader" element="xsns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="insertDatiDB2SoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:insertDatiDB2" />
+  </wsdl:message>
+  <wsdl:message name="insertDatiDB2SoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:insertDatiDB2Response" />
+  </wsdl:message>
+  <wsdl:message name="insertDatiSQLSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:insertDatiSQL" />
+  </wsdl:message>
+  <wsdl:message name="insertDatiSQLSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:insertDatiSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertRedditiTempSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:insertRedditiTemp" />
+  </wsdl:message>
+  <wsdl:message name="insertRedditiTempSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:insertRedditiTempResponse" />
+  </wsdl:message>
+  <wsdl:message name="verificaInserimentoRedditiSoapIn">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:verificaInserimentoRedditi" />
+  </wsdl:message>
+  <wsdl:message name="verificaInserimentoRedditiSoapOut">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:verificaInserimentoRedditiResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RED_ServiceSoap">
+    <wsdl:operation name="eliminaRedditi">
+      <wsdl:input name="eliminaRedditiRequest" message="ns0:eliminaRedditiSoapIn" />
+      <wsdl:output name="eliminaRedditiResponse" message="ns0:eliminaRedditiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRedditiAncheTemporanei">
+      <wsdl:input name="eliminaRedditiAncheTemporaneiRequest" message="ns0:eliminaRedditiAncheTemporaneiSoapIn" />
+      <wsdl:output name="eliminaRedditiAncheTemporaneiResponse" message="ns0:eliminaRedditiAncheTemporaneiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EseguiProceduraAutomaticaRedditi">
+      <wsdl:input name="EseguiProceduraAutomaticaRedditiRequest" message="ns0:EseguiProceduraAutomaticaRedditiSoapIn" />
+      <wsdl:output name="EseguiProceduraAutomaticaRedditiResponse" message="ns0:EseguiProceduraAutomaticaRedditiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniDataPresentazione">
+      <wsdl:input name="GetAnniDataPresentazioneRequest" message="ns0:GetAnniDataPresentazioneSoapIn" />
+      <wsdl:output name="GetAnniDataPresentazioneResponse" message="ns0:GetAnniDataPresentazioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniDataPresentazioneByChiavePensione">
+      <wsdl:input name="GetAnniDataPresentazioneByChiavePensioneRequest" message="ns0:GetAnniDataPresentazioneByChiavePensioneSoapIn" />
+      <wsdl:output name="GetAnniDataPresentazioneByChiavePensioneResponse" message="ns0:GetAnniDataPresentazioneByChiavePensioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatiDB2">
+      <wsdl:input name="getDatiDB2Request" message="ns0:getDatiDB2SoapIn" />
+      <wsdl:output name="getDatiDB2Response" message="ns0:getDatiDB2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatiSQL">
+      <wsdl:input name="getDatiSQLRequest" message="ns0:getDatiSQLSoapIn" />
+      <wsdl:output name="getDatiSQLResponse" message="ns0:getDatiSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLogInfo">
+      <wsdl:input name="getLogInfoRequest" message="ns0:getLogInfoSoapIn" />
+      <wsdl:output name="getLogInfoResponse" message="ns0:getLogInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRedditiTemp">
+      <wsdl:input name="getRedditiTempRequest" message="ns0:getRedditiTempSoapIn" />
+      <wsdl:output name="getRedditiTempResponse" message="ns0:getRedditiTempSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRelease">
+      <wsdl:input name="getReleaseRequest" message="ns0:getReleaseSoapIn" />
+      <wsdl:output name="getReleaseResponse" message="ns0:getReleaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertDatiDB2">
+      <wsdl:input name="insertDatiDB2Request" message="ns0:insertDatiDB2SoapIn" />
+      <wsdl:output name="insertDatiDB2Response" message="ns0:insertDatiDB2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertDatiSQL">
+      <wsdl:input name="insertDatiSQLRequest" message="ns0:insertDatiSQLSoapIn" />
+      <wsdl:output name="insertDatiSQLResponse" message="ns0:insertDatiSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertRedditiTemp">
+      <wsdl:input name="insertRedditiTempRequest" message="ns0:insertRedditiTempSoapIn" />
+      <wsdl:output name="insertRedditiTempResponse" message="ns0:insertRedditiTempSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificaInserimentoRedditi">
+      <wsdl:input name="verificaInserimentoRedditiRequest" message="ns0:verificaInserimentoRedditiSoapIn" />
+      <wsdl:output name="verificaInserimentoRedditiResponse" message="ns0:verificaInserimentoRedditiSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RED_ServiceSoap" type="ns0:RED_ServiceSoap">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="eliminaRedditi">
+      <soap11:operation soapAction="http://tempuri.org/eliminaRedditi" style="document" />
+      <wsdl:input name="eliminaRedditiRequest">
+        <soap11:body use="literal" />
+        <soap11:header message="ns0:eliminaRedditiAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="eliminaRedditiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRedditiAncheTemporanei">
+      <soap11:operation soapAction="http://tempuri.org/eliminaRedditiAncheTemporanei" style="document" />
+      <wsdl:input name="eliminaRedditiAncheTemporaneiRequest">
+        <soap11:body use="literal" />
+        <soap11:header message="ns0:eliminaRedditiAncheTemporaneiAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="eliminaRedditiAncheTemporaneiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EseguiProceduraAutomaticaRedditi">
+      <soap11:operation soapAction="http://tempuri.org/EseguiProceduraAutomaticaRedditi" style="document" />
+      <wsdl:input name="EseguiProceduraAutomaticaRedditiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EseguiProceduraAutomaticaRedditiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniDataPresentazione">
+      <soap11:operation soapAction="http://tempuri.org/GetAnniDataPresentazione" style="document" />
+      <wsdl:input name="GetAnniDataPresentazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnniDataPresentazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniDataPresentazioneByChiavePensione">
+      <soap11:operation soapAction="http://tempuri.org/GetAnniDataPresentazioneByChiavePensione" style="document" />
+      <wsdl:input name="GetAnniDataPresentazioneByChiavePensioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnniDataPresentazioneByChiavePensioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatiDB2">
+      <soap11:operation soapAction="http://tempuri.org/getDatiDB2" style="document" />
+      <wsdl:input name="getDatiDB2Request">
+        <soap11:body use="literal" />
+        <soap11:header message="ns0:getDatiDB2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDatiDB2Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatiSQL">
+      <soap11:operation soapAction="http://tempuri.org/getDatiSQL" style="document" />
+      <wsdl:input name="getDatiSQLRequest">
+        <soap11:body use="literal" />
+        <soap11:header message="ns0:getDatiSQLAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDatiSQLResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogInfo">
+      <soap11:operation soapAction="http://tempuri.org/getLogInfo" style="document" />
+      <wsdl:input name="getLogInfoRequest">
+        <soap11:body use="literal" />
+        <soap11:header message="ns0:getLogInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLogInfoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRedditiTemp">
+      <soap11:operation soapAction="http://tempuri.org/getRedditiTemp" style="document" />
+      <wsdl:input name="getRedditiTempRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRedditiTempResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelease">
+      <soap11:operation soapAction="http://tempuri.org/getRelease" style="document" />
+      <wsdl:input name="getReleaseRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getReleaseResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertDatiDB2">
+      <soap11:operation soapAction="http://tempuri.org/insertDatiDB2" style="document" />
+      <wsdl:input name="insertDatiDB2Request">
+        <soap11:body use="literal" />
+        <soap11:header message="ns0:insertDatiDB2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertDatiDB2Response">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertDatiSQL">
+      <soap11:operation soapAction="http://tempuri.org/insertDatiSQL" style="document" />
+      <wsdl:input name="insertDatiSQLRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertDatiSQLResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertRedditiTemp">
+      <soap11:operation soapAction="http://tempuri.org/insertRedditiTemp" style="document" />
+      <wsdl:input name="insertRedditiTempRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertRedditiTempResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaInserimentoRedditi">
+      <soap11:operation soapAction="http://tempuri.org/verificaInserimentoRedditi" style="document" />
+      <wsdl:input name="verificaInserimentoRedditiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaInserimentoRedditiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RED_ServiceSoap12" type="ns0:RED_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="eliminaRedditi">
+      <soap12:operation soapAction="http://tempuri.org/eliminaRedditi" style="document" />
+      <wsdl:input name="eliminaRedditiRequest">
+        <soap12:body use="literal" />
+        <soap12:header message="ns0:eliminaRedditiAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="eliminaRedditiResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaRedditiAncheTemporanei">
+      <soap12:operation soapAction="http://tempuri.org/eliminaRedditiAncheTemporanei" style="document" />
+      <wsdl:input name="eliminaRedditiAncheTemporaneiRequest">
+        <soap12:body use="literal" />
+        <soap12:header message="ns0:eliminaRedditiAncheTemporaneiAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="eliminaRedditiAncheTemporaneiResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EseguiProceduraAutomaticaRedditi">
+      <soap12:operation soapAction="http://tempuri.org/EseguiProceduraAutomaticaRedditi" style="document" />
+      <wsdl:input name="EseguiProceduraAutomaticaRedditiRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EseguiProceduraAutomaticaRedditiResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniDataPresentazione">
+      <soap12:operation soapAction="http://tempuri.org/GetAnniDataPresentazione" style="document" />
+      <wsdl:input name="GetAnniDataPresentazioneRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnniDataPresentazioneResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnniDataPresentazioneByChiavePensione">
+      <soap12:operation soapAction="http://tempuri.org/GetAnniDataPresentazioneByChiavePensione" style="document" />
+      <wsdl:input name="GetAnniDataPresentazioneByChiavePensioneRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAnniDataPresentazioneByChiavePensioneResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatiDB2">
+      <soap12:operation soapAction="http://tempuri.org/getDatiDB2" style="document" />
+      <wsdl:input name="getDatiDB2Request">
+        <soap12:body use="literal" />
+        <soap12:header message="ns0:getDatiDB2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDatiDB2Response">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatiSQL">
+      <soap12:operation soapAction="http://tempuri.org/getDatiSQL" style="document" />
+      <wsdl:input name="getDatiSQLRequest">
+        <soap12:body use="literal" />
+        <soap12:header message="ns0:getDatiSQLAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDatiSQLResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogInfo">
+      <soap12:operation soapAction="http://tempuri.org/getLogInfo" style="document" />
+      <wsdl:input name="getLogInfoRequest">
+        <soap12:body use="literal" />
+        <soap12:header message="ns0:getLogInfoAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLogInfoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRedditiTemp">
+      <soap12:operation soapAction="http://tempuri.org/getRedditiTemp" style="document" />
+      <wsdl:input name="getRedditiTempRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRedditiTempResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelease">
+      <soap12:operation soapAction="http://tempuri.org/getRelease" style="document" />
+      <wsdl:input name="getReleaseRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getReleaseResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertDatiDB2">
+      <soap12:operation soapAction="http://tempuri.org/insertDatiDB2" style="document" />
+      <wsdl:input name="insertDatiDB2Request">
+        <soap12:body use="literal" />
+        <soap12:header message="ns0:insertDatiDB2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertDatiDB2Response">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertDatiSQL">
+      <soap12:operation soapAction="http://tempuri.org/insertDatiSQL" style="document" />
+      <wsdl:input name="insertDatiSQLRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertDatiSQLResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertRedditiTemp">
+      <soap12:operation soapAction="http://tempuri.org/insertRedditiTemp" style="document" />
+      <wsdl:input name="insertRedditiTempRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertRedditiTempResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaInserimentoRedditi">
+      <soap12:operation soapAction="http://tempuri.org/verificaInserimentoRedditi" style="document" />
+      <wsdl:input name="verificaInserimentoRedditiRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaInserimentoRedditiResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RED_Service">
+    <wsdl:port name="RED_ServiceSoap" binding="ns0:RED_ServiceSoap">
+      <soap11:address location="http://192.168.40.154:80/Ws.Net/WSDRED" />
+    </wsdl:port>
+    <wsdl:port name="RED_ServiceSoap12" binding="ns0:RED_ServiceSoap12">
+      <soap12:address location="http://192.168.40.154:80/Ws.Net/WSDRED" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,13 @@
+version=10.2
+item-uid=90608831
+file-version=3
+checksum=e1f0ec5d6d9d129d0dd956b3f914e079
+fetch-size=28541
+mtime=1570689131
+item-spec=504E3831323A53455256495A494F4C4951554944415A494F4E45434935205853442D313436343331383031372E412D5352433B33
+item-status=524149534544
+is-extracted=0
+is-headersubst=0
+relpath=WSInpsPensioniLiquidazione.BL/Service References/SrvLiquidazioneCi/ServizioLiquidazioneCi5.xsd
+project=504E3831323A53315F5753494E505350454E53494F4E494C4951554944415A494F4E45
+project-uid=43036098

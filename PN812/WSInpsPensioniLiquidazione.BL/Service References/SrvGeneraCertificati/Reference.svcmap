@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="98736efb-f298-4ef8-853d-a4a488922219" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceCertificati2.wsdl" MetadataType="Wsdl" ID="15a1220b-2940-4179-b4d0-5b76e1289574" SourceId="1" SourceUrl="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?wsdl" />
+    <MetadataFile FileName="ServiceCertificati5.xsd" MetadataType="Schema" ID="f3c8e575-e4e0-4d3a-bcc9-9ad459355743" SourceId="1" SourceUrl="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceCertificati51.xsd" MetadataType="Schema" ID="bdf87beb-2403-4f6b-a0f0-96b3f0a055f0" SourceId="1" SourceUrl="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceCertificati52.xsd" MetadataType="Schema" ID="ab49a536-bd34-4ad4-93b9-c0556837a94f" SourceId="1" SourceUrl="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceCertificati53.xsd" MetadataType="Schema" ID="952a6e67-6662-48f5-b15e-58965401cb72" SourceId="1" SourceUrl="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceCertificati54.xsd" MetadataType="Schema" ID="2f5d6789-11be-446d-bfab-d750475f26be" SourceId="1" SourceUrl="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceCertificati21.wsdl" MetadataType="Wsdl" ID="20a9df2b-6b5e-4a54-bdd5-6e10f971a693" SourceId="1" SourceUrl="http://msws2.svil.inps/WSLiqPensGeneraCertificati/ServiceCertificati.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

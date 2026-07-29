@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:pref="http://variazioneUfficioPagatore.services.soa.inps.it" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:intf="http://variazioneUfficioPagatore.services.soa.inps.it" name="VariazioneUfficioPagatore" targetNamespace="http://variazioneUfficioPagatore.services.soa.inps.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://variazioneUfficioPagatore.services.soa.inps.it">
+      <xsd:complexType name="EsitoType">
+        <xsd:sequence>
+          <xsd:element name="Codice" type="xsd:string" />
+          <xsd:element name="Descrizione" type="xsd:string" />
+          <xsd:element name="Risultato" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TelefonoType">
+        <xsd:sequence>
+          <xsd:element name="Prefisso">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="Numero">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:pattern value="\d{9}" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IndirizzoType">
+        <xsd:sequence>
+          <xsd:element name="PrefissoStradale" type="xsd:string" />
+          <xsd:element name="NomeVia" type="xsd:string" />
+          <xsd:element name="NumeroCivico" type="xsd:string" />
+          <xsd:element name="Cap">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="5" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="Comune" type="xsd:string" />
+          <xsd:element name="SiglaProvincia">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="2" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DataType">
+        <xsd:sequence>
+          <xsd:element name="Anno" type="intf:AnnoType" />
+          <xsd:element name="Mese" type="intf:MeseType" />
+          <xsd:element name="Giorno" type="intf:GiornoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DataTimeType">
+        <xsd:sequence>
+          <xsd:element name="Anno" type="intf:AnnoType" />
+          <xsd:element name="Mese" type="intf:MeseType" />
+          <xsd:element name="Giorno" type="intf:GiornoType" />
+          <xsd:element name="Ora" type="intf:OraType" />
+          <xsd:element name="Minuti" type="intf:MinutoType" />
+          <xsd:element name="Secondi" type="intf:SecondoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="OraType">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="MinutoType">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="SecondoType">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="GiornoType">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="MeseType">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="AnnoType">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="\d{4}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Anno2Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="PeriodoDiRicercaType">
+        <xsd:sequence>
+          <xsd:element name="Anno" type="intf:AnnoType" />
+          <xsd:element name="Mese" type="intf:MeseType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PeriodoDiRicerca2Type">
+        <xsd:sequence>
+          <xsd:element name="Anno" type="intf:Anno2Type" />
+          <xsd:element name="Mese" type="intf:MeseType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="CodiceFiscaleType">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="16" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="PaginazioneInType">
+        <xsd:sequence>
+          <xsd:element name="NumRecPartenza">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int" />
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="NumRecEstrarre">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int" />
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="RichiediTotRecord">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:boolean" />
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="RichiediIdSincronizzazione">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:boolean" />
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PaginazioneOutType">
+        <xsd:sequence>
+          <xsd:element name="NumRecEstratti">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int" />
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="TotRecord">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int" />
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element name="IdSincronizzazione">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string" />
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="PartitaIVAType">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="11" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="DecodificaType">
+        <xsd:sequence>
+          <xsd:element name="Codice" type="xsd:string" />
+          <xsd:element name="Descrizione" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SoggettoType">
+        <xsd:sequence>
+          <xsd:element name="Nome" type="xsd:string" />
+          <xsd:element name="Cognome" type="xsd:string" />
+          <xsd:element name="Sesso" type="xsd:string" />
+          <xsd:element name="LuogoDiNascita" type="xsd:string" />
+          <xsd:element name="DataDiNascita" type="intf:DataType" />
+          <xsd:element name="PersonaGiuridica" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaUfficioPagatoreType">
+        <xsd:sequence>
+          <xsd:element name="ChiavePensione" type="xsd:string" />
+          <xsd:element name="ChiavePensioneMandato" type="xsd:string" />
+          <xsd:element name="CoordinatePagamento" type="intf:CoordinatePagamentoType" />
+          <xsd:element name="DataCoordinate" type="xsd:string" />
+          <xsd:element name="SoggettoRiscossore" type="xsd:string" />
+          <xsd:element name="UfficioPagatore" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VariazioneUfficioPagatoreType">
+        <xsd:sequence>
+          <xsd:element name="ChiavePensione" type="xsd:string" />
+          <xsd:element name="DataVariazione" type="xsd:string" />
+          <xsd:element name="DecorrenzaAzione" type="xsd:string" />
+          <xsd:element name="PresenzaDelegato" type="xsd:string" />
+          <xsd:element name="Esito" type="intf:EsitoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VerificaIbanType">
+        <xsd:sequence>
+          <xsd:element name="Esito" type="xsd:string" />
+          <xsd:element name="ChiavePensione" type="xsd:string" />
+          <xsd:element name="ChiavePensioneMandato" type="xsd:string" />
+          <xsd:element name="DataMovimentazione" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VariazioneUfficioPagatoreDTORequest">
+        <xsd:sequence>
+          <xsd:element name="Nazione" type="intf:NazioneType" />
+          <xsd:element name="ModalitaPagamento" type="xsd:string" />
+          <xsd:element name="CodiceFiscale" type="intf:CodiceFiscaleType" />
+          <xsd:element name="ChiavePensione" type="xsd:string" />
+          <xsd:element name="CoordinateBancarie" type="intf:CoordinateBancarieType" />
+          <xsd:element name="NumeroLibretto" type="xsd:string" />
+          <xsd:element name="Operatore" type="xsd:string" />
+          <xsd:element name="Sede" type="xsd:string" />
+          <xsd:element name="DataVariazione" type="intf:DataType" />
+          <xsd:element name="AccessoApplicazione" type="intf:AccessoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VariazioneUfficioPagatoreDTOResponse">
+        <xsd:sequence>
+          <xsd:element name="Cognome" type="xsd:string" />
+          <xsd:element name="Nome" type="xsd:string" />
+          <xsd:element name="CodiceFiscale" type="xsd:string" />
+          <xsd:element name="DataNascita" type="xsd:string" />
+          <xsd:element name="CognomeAcquisito" type="xsd:string" />
+          <xsd:element name="StatoEstero" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SedeInail" type="xsd:string" />
+          <xsd:element name="Paese" type="xsd:string" />
+          <xsd:element name="Iban" type="xsd:string" />
+          <xsd:element name="Bic" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="VariazioneUfficioPagatore" type="intf:VariazioneUfficioPagatoreType" />
+          <xsd:element name="Esito" type="intf:EsitoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ValidazioneCoordinateBancarieDTORequest">
+        <xsd:sequence>
+          <xsd:element name="Nazione" type="intf:NazioneType" />
+          <xsd:element name="CoordinateBancarie" type="intf:CoordinateBancarieType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ValidazioneCoordinateBancarieDTOResponse">
+        <xsd:sequence>
+          <xsd:element name="Esito" type="intf:EsitoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaRegolaDTORequest">
+        <xsd:sequence>
+          <xsd:element name="Nazione" type="intf:NazioneType" />
+          <xsd:element name="CoordinateBancarie" type="intf:CoordinateBancarieAbiCabType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaRegolaDTOResponse">
+        <xsd:sequence>
+          <xsd:element name="StatoINPS" type="xsd:string" />
+          <xsd:element name="TitoloBIC" type="xsd:string" />
+          <xsd:element name="TipoBIC" type="xsd:string" />
+          <xsd:element name="HelpErroreBIC" type="xsd:string" />
+          <xsd:element name="ControlloBIC" type="xsd:string" />
+          <xsd:element name="TitoloIBAN" type="xsd:string" />
+          <xsd:element name="TipoIBAN" type="xsd:string" />
+          <xsd:element name="HelpErroreIBAN" type="xsd:string" />
+          <xsd:element name="ControlloIBAN" type="xsd:string" />
+          <xsd:element name="Esito" type="intf:EsitoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaUfficioPagatoreDTORequest">
+        <xsd:sequence>
+          <xsd:element name="CodiceFiscale" type="intf:CodiceFiscaleType" />
+          <xsd:element name="ChiavePensione" type="xsd:string" />
+          <xsd:element name="AccessoApplicazione" type="intf:AccessoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VerificaIbanDTORequest">
+        <xsd:sequence>
+          <xsd:element name="CodiceFiscale" type="intf:CodiceFiscaleType" />
+          <xsd:element name="ChiavePensione" type="xsd:string" />
+          <xsd:element name="Iban" type="xsd:string" />
+          <xsd:element name="AccessoApplicazione" type="intf:AccessoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaUfficioPagatoreDTOResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ConsultaUfficioPagatore" type="intf:ConsultaUfficioPagatoreType" />
+          <xsd:element name="Esito" type="intf:EsitoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VerificaIbanDTOResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="VerificaIban" type="intf:VerificaIbanType" />
+          <xsd:element name="Esito" type="intf:EsitoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CoordinateBancarieType">
+        <xsd:sequence>
+          <xsd:element name="IBAN" type="xsd:string" />
+          <xsd:element name="CAB" type="xsd:string" />
+          <xsd:element name="ABI" type="xsd:string" />
+          <xsd:element name="BIC" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CoordinatePagamentoType">
+        <xsd:sequence>
+          <xsd:element name="ModalitaPagamento" type="xsd:string" />
+          <xsd:element name="IBAN" type="xsd:string" />
+          <xsd:element name="CAB" type="xsd:string" />
+          <xsd:element name="ABI" type="xsd:string" />
+          <xsd:element name="BIC" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="NazioneType">
+        <xsd:sequence>
+          <xsd:element name="Denominazione" type="xsd:string" />
+          <xsd:element name="CodiceISO" type="xsd:string" />
+          <xsd:element name="CodiceCatastale" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AccessoType">
+        <xsd:sequence>
+          <xsd:element name="Userid" type="xsd:string" />
+          <xsd:element name="Password" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="VariazioneUfficioPagatore">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="variazioneUfficioPagatoreRequest" type="intf:VariazioneUfficioPagatoreDTORequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VariazioneUfficioPagatoreResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="variazioneUfficioPagatoreResponse" type="intf:VariazioneUfficioPagatoreDTOResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ValidazioneCoordinateBancarie">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validazioneCoordinateBancarieRequest" type="intf:ValidazioneCoordinateBancarieDTORequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ValidazioneCoordinateBancarieResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validazioneCoordinateBancarieResponse" type="intf:ValidazioneCoordinateBancarieDTOResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaUfficioPagatore">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="consultaUfficioPagatoreRequest" type="intf:ConsultaUfficioPagatoreDTORequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaUfficioPagatoreResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="consultaUfficioPagatoreResponse" type="intf:ConsultaUfficioPagatoreDTOResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaRegola">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="consultaRegolaRequest" type="intf:ConsultaRegolaDTORequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaRegolaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="consultaRegolaResponse" type="intf:ConsultaRegolaDTOResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VerificaIban">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validaIbanRequest" type="intf:VerificaIbanDTORequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VerificaIbanResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="verificaIbanResponse" type="intf:VerificaIbanDTOResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CoordinateBancarieAbiCabType">
+        <xsd:sequence>
+          <xsd:element name="ABI" type="xsd:string" />
+          <xsd:element name="CAB" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VariazioneAltriEntiDTORequest">
+        <xsd:sequence>
+          <xsd:element name="Operatore" type="xsd:string" />
+          <xsd:element name="Terminale" type="xsd:string" />
+          <xsd:element name="ChiavePensione" type="xsd:string" />
+          <xsd:element name="Nazione" type="xsd:string" />
+          <xsd:element name="ModalitaPagamento" type="xsd:string" />
+          <xsd:element name="IBAN" type="xsd:string" />
+          <xsd:element name="ABI" type="xsd:string" />
+          <xsd:element name="CAB" type="xsd:string" />
+          <xsd:element name="BIC" type="xsd:string" />
+          <xsd:element name="NumeroLibretto" type="xsd:string" />
+          <xsd:element name="AccessoApplicazione" type="intf:AccessoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VariazioneAltriEntiDTOResponse">
+        <xsd:sequence>
+          <xsd:element name="esito" type="intf:EsitoType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="VariazioneAltriEnti">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="intf:VariazioneAltriEntiDTORequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VariazioneAltriEntiResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="intf:VariazioneAltriEntiDTOResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidazioneCoordinateBancarieRequest">
+    <wsdl:part name="parameters" element="intf:ValidazioneCoordinateBancarie" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneAltriEntiResponse">
+    <wsdl:part name="parameters" element="intf:VariazioneAltriEntiResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaIbanRequest">
+    <wsdl:part name="parameters" element="intf:VerificaIban" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneUfficioPagatoreResponse">
+    <wsdl:part name="parameters" element="intf:VariazioneUfficioPagatoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRegolaResponse">
+    <wsdl:part name="parameters" element="intf:ConsultaRegolaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRegolaRequest">
+    <wsdl:part name="parameters" element="intf:ConsultaRegola" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneUfficioPagatoreRequest">
+    <wsdl:part name="parameters" element="intf:VariazioneUfficioPagatore" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUfficioPagatoreRequest">
+    <wsdl:part name="parameters" element="intf:ConsultaUfficioPagatore" />
+  </wsdl:message>
+  <wsdl:message name="ValidazioneCoordinateBancarieResponse">
+    <wsdl:part name="parameters" element="intf:ValidazioneCoordinateBancarieResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUfficioPagatoreResponse">
+    <wsdl:part name="parameters" element="intf:ConsultaUfficioPagatoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaIbanResponse">
+    <wsdl:part name="parameters" element="intf:VerificaIbanResponse" />
+  </wsdl:message>
+  <wsdl:message name="VariazioneAltriEntiRequest">
+    <wsdl:part name="parameters" element="intf:VariazioneAltriEnti" />
+  </wsdl:message>
+  <wsdl:portType name="VariazioneUfficioPagatore">
+    <wsdl:operation name="VariazioneUfficioPagatore">
+      <wsdl:input message="intf:VariazioneUfficioPagatoreRequest" />
+      <wsdl:output message="intf:VariazioneUfficioPagatoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidazioneCoordinateBancarie">
+      <wsdl:input message="intf:ValidazioneCoordinateBancarieRequest" />
+      <wsdl:output message="intf:ValidazioneCoordinateBancarieResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUfficioPagatore">
+      <wsdl:input message="intf:ConsultaUfficioPagatoreRequest" />
+      <wsdl:output message="intf:ConsultaUfficioPagatoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRegola">
+      <wsdl:input message="intf:ConsultaRegolaRequest" />
+      <wsdl:output message="intf:ConsultaRegolaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaIban">
+      <wsdl:input message="intf:VerificaIbanRequest" />
+      <wsdl:output message="intf:VerificaIbanResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneAltriEnti">
+      <wsdl:input message="intf:VariazioneAltriEntiRequest" />
+      <wsdl:output message="intf:VariazioneAltriEntiResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VariazioneUfficioPagatoreSOAP" type="intf:VariazioneUfficioPagatore">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VariazioneUfficioPagatore">
+      <soap:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VariazioneUfficioPagatore" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidazioneCoordinateBancarie">
+      <soap:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ValidazioneCoordinateBancarie" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUfficioPagatore">
+      <soap:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ConsultaUfficioPagatore" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaRegola">
+      <soap:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/ConsultaRegola" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaIban">
+      <soap:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VerificaIban" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariazioneAltriEnti">
+      <soap:operation soapAction="http://variazioneUfficioPagatore.services.soa.inps.it/VariazioneAltriEnti" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VariazioneUfficioPagatore">
+    <wsdl:port name="VariazioneUfficioPagatoreSOAP" binding="intf:VariazioneUfficioPagatoreSOAP">
+      <soap:address location="http://svil.host.inps:9084/VariazioneUfficioPagatoreWEB/services/VariazioneUfficioPagatoreSOAP" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://arca.services.soa.sistinf.it" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://arca.services.soa.sistinf.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="ArcaIntraWS.xsd1.xsd" namespace="http://arca.services.soa.sistinf.it" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ricercaPerCodiceArcaRequest">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:RichiestaDettaglio" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerCodiceArcaResponse">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:DatiRisposta" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerCodiceFiscaleParzialeRequest">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:RichiestaPerCodiceFiscaleParziale" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerCodiceFiscaleParzialeResponse">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:DatiRisposta" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerCodiceFiscaleRequest">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:RichiestaPerCodiceFiscale" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerCodiceFiscaleResponse">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:DatiRisposta" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerCodiceIndividualeRequest">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:RichiestaPerCodiceIndividuale" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerCodiceIndividualeResponse">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:DatiRisposta" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerDatiPersonaliParzialiRequest">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:RichiestaPerDatiAnagraficiParziali" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerDatiPersonaliParzialiResponse">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:DatiRisposta" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerDatiPersonaliRequest">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:RichiestaPerDatiAnagrafici" />
+  </wsdl:message>
+  <wsdl:message name="ricercaPerDatiPersonaliResponse">
+    <wsdl:part xmlns:xsns="http://arca.services.soa.sistinf.it" name="parameter" element="xsns:DatiRisposta" />
+  </wsdl:message>
+  <wsdl:portType name="ArcaIntraWS">
+    <wsdl:operation name="ricercaPerCodiceArca">
+      <wsdl:input name="ricercaPerCodiceArcaRequest" message="ns0:ricercaPerCodiceArcaRequest" />
+      <wsdl:output name="ricercaPerCodiceArcaResponse" message="ns0:ricercaPerCodiceArcaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerCodiceFiscale">
+      <wsdl:input name="ricercaPerCodiceFiscaleRequest" message="ns0:ricercaPerCodiceFiscaleRequest" />
+      <wsdl:output name="ricercaPerCodiceFiscaleResponse" message="ns0:ricercaPerCodiceFiscaleResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerCodiceFiscaleParziale">
+      <wsdl:input name="ricercaPerCodiceFiscaleParzialeRequest" message="ns0:ricercaPerCodiceFiscaleParzialeRequest" />
+      <wsdl:output name="ricercaPerCodiceFiscaleParzialeResponse" message="ns0:ricercaPerCodiceFiscaleParzialeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerCodiceIndividuale">
+      <wsdl:input name="ricercaPerCodiceIndividualeRequest" message="ns0:ricercaPerCodiceIndividualeRequest" />
+      <wsdl:output name="ricercaPerCodiceIndividualeResponse" message="ns0:ricercaPerCodiceIndividualeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerDatiPersonali">
+      <wsdl:input name="ricercaPerDatiPersonaliRequest" message="ns0:ricercaPerDatiPersonaliRequest" />
+      <wsdl:output name="ricercaPerDatiPersonaliResponse" message="ns0:ricercaPerDatiPersonaliResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerDatiPersonaliParziali">
+      <wsdl:input name="ricercaPerDatiPersonaliParzialiRequest" message="ns0:ricercaPerDatiPersonaliParzialiRequest" />
+      <wsdl:output name="ricercaPerDatiPersonaliParzialiResponse" message="ns0:ricercaPerDatiPersonaliParzialiResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArcaIntraWSSoapBinding" type="ns0:ArcaIntraWS">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ricercaPerCodiceArca">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ricercaPerCodiceArcaRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ricercaPerCodiceArcaResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerCodiceFiscale">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ricercaPerCodiceFiscaleRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ricercaPerCodiceFiscaleResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerCodiceFiscaleParziale">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ricercaPerCodiceFiscaleParzialeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ricercaPerCodiceFiscaleParzialeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerCodiceIndividuale">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ricercaPerCodiceIndividualeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ricercaPerCodiceIndividualeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerDatiPersonali">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ricercaPerDatiPersonaliRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ricercaPerDatiPersonaliResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ricercaPerDatiPersonaliParziali">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="ricercaPerDatiPersonaliParzialiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ricercaPerDatiPersonaliParzialiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArcaIntraWSService">
+    <wsdl:port name="ArcaIntraWS" binding="ns0:ArcaIntraWSSoapBinding">
+      <soap11:address location="http://192.168.40.149:80/host/ArcaIntraWS/services/ArcaIntraWS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

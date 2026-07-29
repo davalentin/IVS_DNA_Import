@@ -1,0 +1,5 @@
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS.Presenter\bin\Debug\INPS.Pensioni.LiquidazionePensione.Presenter.dll.config
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS.Presenter\bin\Debug\INPS.Pensioni.LiquidazionePensione.Presenter.dll
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS.Presenter\bin\Debug\INPS.Pensioni.LiquidazionePensione.Presenter.pdb
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS.Presenter\obj\Debug\INPS.Pensioni.LiquidazionePensione.Presenter.dll
+C:\Liquidazione_pensioni\PN809\branches\WIP\LiquidazionePensioniFS.Presenter\obj\Debug\INPS.Pensioni.LiquidazionePensione.Presenter.pdb

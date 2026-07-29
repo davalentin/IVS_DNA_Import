@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://tempuri.org/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="WSGestionePeco.xsd1.xsd" namespace="http://tempuri.org/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_AGO_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_AGO" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_AGO_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_AGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Convenzioni_Internazionali" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Convenzioni_InternazionaliResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Felpe_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Felpe" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Felpe_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_FelpeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_INPDAP_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Fondi_AMG_INPDAP" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_INPDAP_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Fondi_AMG_INPDAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Fondi_AMG" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Fondi_AMGResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Fondi_Speciali" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Aggiornamento_PECO_Fondi_SpecialiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_AggiornamentoPECO_ApeVolontario_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:AggiornamentoPECO_ApeVolontario" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_AggiornamentoPECO_ApeVolontario_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:AggiornamentoPECO_ApeVolontarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_AnnullamentoCertificazione_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:AnnullamentoCertificazione" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_AnnullamentoCertificazione_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:AnnullamentoCertificazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_INPDAP_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:InserimentoPECO_INPDAP" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_INPDAP_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:InserimentoPECO_INPDAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:InserimentoPECO" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_InserimentoPECO_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:InserimentoPECOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_ApeVolontario_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_ApeVolontario" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_ApeVolontario_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_ApeVolontarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_CertAttive_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_CertAttive" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_CertAttive_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_CertAttiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_GetDoppioSgravio_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_GetDoppioSgravio" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_GetDoppioSgravio_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_GetDoppioSgravioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_LetturaCertificazioni_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_LetturaCertificazioni" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_LetturaCertificazioni_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_LetturaCertificazioniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_OpzioneContributivo_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_OpzioneContributivo" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_LetturaPECO_OpzioneContributivo_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:LetturaPECO_OpzioneContributivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Verifica_Certificazioni_Per_CIGS_InputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Verifica_Certificazioni_Per_CIGS" />
+  </wsdl:message>
+  <wsdl:message name="IGestionePecoService_Verifica_Certificazioni_Per_CIGS_OutputMessage">
+    <wsdl:part xmlns:xsns="http://tempuri.org/" name="parameters" element="xsns:Verifica_Certificazioni_Per_CIGSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGestionePecoService">
+    <wsdl:operation name="Aggiornamento_PECO_AGO">
+      <wsdl:input name="Aggiornamento_PECO_AGORequest" message="ns0:IGestionePecoService_Aggiornamento_PECO_AGO_InputMessage" />
+      <wsdl:output name="Aggiornamento_PECO_AGOResponse" message="ns0:IGestionePecoService_Aggiornamento_PECO_AGO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Convenzioni_Internazionali">
+      <wsdl:input name="Aggiornamento_PECO_Convenzioni_InternazionaliRequest" message="ns0:IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_InputMessage" />
+      <wsdl:output name="Aggiornamento_PECO_Convenzioni_InternazionaliResponse" message="ns0:IGestionePecoService_Aggiornamento_PECO_Convenzioni_Internazionali_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Felpe">
+      <wsdl:input name="Aggiornamento_PECO_FelpeRequest" message="ns0:IGestionePecoService_Aggiornamento_PECO_Felpe_InputMessage" />
+      <wsdl:output name="Aggiornamento_PECO_FelpeResponse" message="ns0:IGestionePecoService_Aggiornamento_PECO_Felpe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_AMG">
+      <wsdl:input name="Aggiornamento_PECO_Fondi_AMGRequest" message="ns0:IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_InputMessage" />
+      <wsdl:output name="Aggiornamento_PECO_Fondi_AMGResponse" message="ns0:IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_AMG_INPDAP">
+      <wsdl:input name="Aggiornamento_PECO_Fondi_AMG_INPDAPRequest" message="ns0:IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_INPDAP_InputMessage" />
+      <wsdl:output name="Aggiornamento_PECO_Fondi_AMG_INPDAPResponse" message="ns0:IGestionePecoService_Aggiornamento_PECO_Fondi_AMG_INPDAP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_Speciali">
+      <wsdl:input name="Aggiornamento_PECO_Fondi_SpecialiRequest" message="ns0:IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_InputMessage" />
+      <wsdl:output name="Aggiornamento_PECO_Fondi_SpecialiResponse" message="ns0:IGestionePecoService_Aggiornamento_PECO_Fondi_Speciali_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiornamentoPECO_ApeVolontario">
+      <wsdl:input name="AggiornamentoPECO_ApeVolontarioRequest" message="ns0:IGestionePecoService_AggiornamentoPECO_ApeVolontario_InputMessage" />
+      <wsdl:output name="AggiornamentoPECO_ApeVolontarioResponse" message="ns0:IGestionePecoService_AggiornamentoPECO_ApeVolontario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnullamentoCertificazione">
+      <wsdl:input name="AnnullamentoCertificazioneRequest" message="ns0:IGestionePecoService_AnnullamentoCertificazione_InputMessage" />
+      <wsdl:output name="AnnullamentoCertificazioneResponse" message="ns0:IGestionePecoService_AnnullamentoCertificazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserimentoPECO">
+      <wsdl:input name="InserimentoPECORequest" message="ns0:IGestionePecoService_InserimentoPECO_InputMessage" />
+      <wsdl:output name="InserimentoPECOResponse" message="ns0:IGestionePecoService_InserimentoPECO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserimentoPECO_INPDAP">
+      <wsdl:input name="InserimentoPECO_INPDAPRequest" message="ns0:IGestionePecoService_InserimentoPECO_INPDAP_InputMessage" />
+      <wsdl:output name="InserimentoPECO_INPDAPResponse" message="ns0:IGestionePecoService_InserimentoPECO_INPDAP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_ApeVolontario">
+      <wsdl:input name="LetturaPECO_ApeVolontarioRequest" message="ns0:IGestionePecoService_LetturaPECO_ApeVolontario_InputMessage" />
+      <wsdl:output name="LetturaPECO_ApeVolontarioResponse" message="ns0:IGestionePecoService_LetturaPECO_ApeVolontario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_CertAttive">
+      <wsdl:input name="LetturaPECO_CertAttiveRequest" message="ns0:IGestionePecoService_LetturaPECO_CertAttive_InputMessage" />
+      <wsdl:output name="LetturaPECO_CertAttiveResponse" message="ns0:IGestionePecoService_LetturaPECO_CertAttive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_GetDoppioSgravio">
+      <wsdl:input name="LetturaPECO_GetDoppioSgravioRequest" message="ns0:IGestionePecoService_LetturaPECO_GetDoppioSgravio_InputMessage" />
+      <wsdl:output name="LetturaPECO_GetDoppioSgravioResponse" message="ns0:IGestionePecoService_LetturaPECO_GetDoppioSgravio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_LetturaCertificazioni">
+      <wsdl:input name="LetturaPECO_LetturaCertificazioniRequest" message="ns0:IGestionePecoService_LetturaPECO_LetturaCertificazioni_InputMessage" />
+      <wsdl:output name="LetturaPECO_LetturaCertificazioniResponse" message="ns0:IGestionePecoService_LetturaPECO_LetturaCertificazioni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_OpzioneContributivo">
+      <wsdl:input name="LetturaPECO_OpzioneContributivoRequest" message="ns0:IGestionePecoService_LetturaPECO_OpzioneContributivo_InputMessage" />
+      <wsdl:output name="LetturaPECO_OpzioneContributivoResponse" message="ns0:IGestionePecoService_LetturaPECO_OpzioneContributivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Verifica_Certificazioni_Per_CIGS">
+      <wsdl:input name="Verifica_Certificazioni_Per_CIGSRequest" message="ns0:IGestionePecoService_Verifica_Certificazioni_Per_CIGS_InputMessage" />
+      <wsdl:output name="Verifica_Certificazioni_Per_CIGSResponse" message="ns0:IGestionePecoService_Verifica_Certificazioni_Per_CIGS_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGestionePecoService" type="ns0:IGestionePecoService">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Aggiornamento_PECO_AGO">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_AGO" style="document" />
+      <wsdl:input name="Aggiornamento_PECO_AGORequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Aggiornamento_PECO_AGOResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Convenzioni_Internazionali">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Convenzioni_Internazionali" style="document" />
+      <wsdl:input name="Aggiornamento_PECO_Convenzioni_InternazionaliRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Aggiornamento_PECO_Convenzioni_InternazionaliResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Felpe">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Felpe" style="document" />
+      <wsdl:input name="Aggiornamento_PECO_FelpeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Aggiornamento_PECO_FelpeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_AMG">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_AMG" style="document" />
+      <wsdl:input name="Aggiornamento_PECO_Fondi_AMGRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Aggiornamento_PECO_Fondi_AMGResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_AMG_INPDAP">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_AMG_INPDAP" style="document" />
+      <wsdl:input name="Aggiornamento_PECO_Fondi_AMG_INPDAPRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Aggiornamento_PECO_Fondi_AMG_INPDAPResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Aggiornamento_PECO_Fondi_Speciali">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/Aggiornamento_PECO_Fondi_Speciali" style="document" />
+      <wsdl:input name="Aggiornamento_PECO_Fondi_SpecialiRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Aggiornamento_PECO_Fondi_SpecialiResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiornamentoPECO_ApeVolontario">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/AggiornamentoPECO_ApeVolontario" style="document" />
+      <wsdl:input name="AggiornamentoPECO_ApeVolontarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AggiornamentoPECO_ApeVolontarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnullamentoCertificazione">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/AnnullamentoCertificazione" style="document" />
+      <wsdl:input name="AnnullamentoCertificazioneRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AnnullamentoCertificazioneResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserimentoPECO">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/InserimentoPECO" style="document" />
+      <wsdl:input name="InserimentoPECORequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InserimentoPECOResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserimentoPECO_INPDAP">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/InserimentoPECO_INPDAP" style="document" />
+      <wsdl:input name="InserimentoPECO_INPDAPRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="InserimentoPECO_INPDAPResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_ApeVolontario">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/LetturaPECO_ApeVolontario" style="document" />
+      <wsdl:input name="LetturaPECO_ApeVolontarioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LetturaPECO_ApeVolontarioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_CertAttive">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/LetturaPECO_CertAttive" style="document" />
+      <wsdl:input name="LetturaPECO_CertAttiveRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LetturaPECO_CertAttiveResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_GetDoppioSgravio">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/LetturaPECO_GetDoppioSgravio" style="document" />
+      <wsdl:input name="LetturaPECO_GetDoppioSgravioRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LetturaPECO_GetDoppioSgravioResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_LetturaCertificazioni">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/LetturaPECO_LetturaCertificazioni" style="document" />
+      <wsdl:input name="LetturaPECO_LetturaCertificazioniRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LetturaPECO_LetturaCertificazioniResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetturaPECO_OpzioneContributivo">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/LetturaPECO_OpzioneContributivo" style="document" />
+      <wsdl:input name="LetturaPECO_OpzioneContributivoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LetturaPECO_OpzioneContributivoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Verifica_Certificazioni_Per_CIGS">
+      <soap11:operation soapAction="http://tempuri.org/IGestionePecoService/Verifica_Certificazioni_Per_CIGS" style="document" />
+      <wsdl:input name="Verifica_Certificazioni_Per_CIGSRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Verifica_Certificazioni_Per_CIGSResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GestionePecoService">
+    <wsdl:port name="BasicHttpBinding_IGestionePecoService" binding="ns0:BasicHttpBinding_IGestionePecoService">
+      <soap11:address location="http://192.168.40.154:80/Ws.Net/WSGestionePeco" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

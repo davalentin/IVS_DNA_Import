@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.AggiornamentoConguaglio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSPianiDiPagamento.DomainModel.DTO.AggiornamentoConguaglio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://msws2.svil.inps/WSPianiDiPagamento/WSPianiDiPagamento.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AggiornamentoConguaglio_Gruppo01_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PianoDiPagamento" nillable="true" type="tns:PianoDiPagamentoAggiornamentoConguaglioGruppo01" />
+      <xs:element minOccurs="0" name="ProceduraChiamante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AggiornamentoConguaglio_Gruppo01_Request" nillable="true" type="tns:AggiornamentoConguaglio_Gruppo01_Request" />
+  <xs:complexType name="PianoDiPagamentoAggiornamentoConguaglioGruppo01">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FlagPensioneEliminata" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlagPensioneVigente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parametri" nillable="true" type="tns:ParametriAggiornamentoConguaglioGruppo01" />
+      <xs:element minOccurs="0" name="Pensionato" nillable="true" type="tns:BeneficiarioPensionatoAggiornamentoConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoAggiornamentoConguaglioGruppo01" nillable="true" type="tns:PianoDiPagamentoAggiornamentoConguaglioGruppo01" />
+  <xs:complexType name="ParametriAggiornamentoConguaglioGruppo01">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatiPiani" nillable="true" type="tns:ArrayOfDatiPianoAggiornamentoConguaglioGruppo01" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametriAggiornamentoConguaglioGruppo01" nillable="true" type="tns:ParametriAggiornamentoConguaglioGruppo01" />
+  <xs:complexType name="ArrayOfDatiPianoAggiornamentoConguaglioGruppo01">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatiPianoAggiornamentoConguaglioGruppo01" nillable="true" type="tns:DatiPianoAggiornamentoConguaglioGruppo01" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatiPianoAggiornamentoConguaglioGruppo01" nillable="true" type="tns:ArrayOfDatiPianoAggiornamentoConguaglioGruppo01" />
+  <xs:complexType name="DatiPianoAggiornamentoConguaglioGruppo01">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataDefinizione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataEstrazione" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatricolaDipendente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pensione" nillable="true" type="tns:PensioneAggiornamentoConguaglio" />
+      <xs:element minOccurs="0" name="Prodotto" type="tns:ProdottoAggiornamentoConguaglio" />
+      <xs:element minOccurs="0" name="StatoPagamento" nillable="true" type="tns:StatoPagamentoAggiornamentoConguaglio" />
+      <xs:element minOccurs="0" name="UltimoPagamento" nillable="true" type="tns:AnnoMeseAggiornamentoConguaglio" />
+      <xs:element minOccurs="0" name="Validatore" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatiPianoAggiornamentoConguaglioGruppo01" nillable="true" type="tns:DatiPianoAggiornamentoConguaglioGruppo01" />
+  <xs:complexType name="PensioneAggiornamentoConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sede" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PensioneAggiornamentoConguaglio" nillable="true" type="tns:PensioneAggiornamentoConguaglio" />
+  <xs:simpleType name="ProdottoAggiornamentoConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CREDITO" />
+      <xs:enumeration value="DEBITO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProdottoAggiornamentoConguaglio" nillable="true" type="tns:ProdottoAggiornamentoConguaglio" />
+  <xs:simpleType name="StatoPagamentoAggiornamentoConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DA_DEFINIRE" />
+      <xs:enumeration value="DEFINITO" />
+      <xs:enumeration value="SOSPESO_DC" />
+      <xs:enumeration value="CHIUSO" />
+      <xs:enumeration value="PAGAMENTO_PARZIALE" />
+      <xs:enumeration value="IN_PAGAMENTO" />
+      <xs:enumeration value="ANNULLATO" />
+      <xs:enumeration value="SCADUTO" />
+      <xs:enumeration value="ESTINTO_PER_ELIMINAZIONE_PENSIONE" />
+      <xs:enumeration value="PRESCRITTO" />
+      <xs:enumeration value="PAGATO_RATEO" />
+      <xs:enumeration value="PAGATO_RATEO_PARZIALE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatoPagamentoAggiornamentoConguaglio" nillable="true" type="tns:StatoPagamentoAggiornamentoConguaglio" />
+  <xs:complexType name="AnnoMeseAggiornamentoConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mese" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnoMeseAggiornamentoConguaglio" nillable="true" type="tns:AnnoMeseAggiornamentoConguaglio" />
+  <xs:complexType name="BeneficiarioPensionatoAggiornamentoConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceFiscale" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeneficiarioPensionatoAggiornamentoConguaglio" nillable="true" type="tns:BeneficiarioPensionatoAggiornamentoConguaglio" />
+  <xs:complexType name="AggiornaConguaglio_Gruppo01_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esito" nillable="true" type="tns:EsitoAggiornamentoConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AggiornaConguaglio_Gruppo01_Response" nillable="true" type="tns:AggiornaConguaglio_Gruppo01_Response" />
+  <xs:complexType name="EsitoAggiornamentoConguaglio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codice" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Descrizione" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="PianiDiPagamento" nillable="true" type="tns:ArrayOfPianoDiPagamentoAggiornamentoConguaglioResponse" />
+      <xs:element minOccurs="0" name="Risultato" type="tns:RisultatoAggiornamentoConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EsitoAggiornamentoConguaglio" nillable="true" type="tns:EsitoAggiornamentoConguaglio" />
+  <xs:complexType name="ArrayOfPianoDiPagamentoAggiornamentoConguaglioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PianoDiPagamentoAggiornamentoConguaglioResponse" nillable="true" type="tns:PianoDiPagamentoAggiornamentoConguaglioResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPianoDiPagamentoAggiornamentoConguaglioResponse" nillable="true" type="tns:ArrayOfPianoDiPagamentoAggiornamentoConguaglioResponse" />
+  <xs:complexType name="PianoDiPagamentoAggiornamentoConguaglioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodiceProdotto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pensionato" nillable="true" type="tns:BeneficiarioPensionatoAggiornamentoConguaglio" />
+      <xs:element minOccurs="0" name="Pensione" nillable="true" type="tns:PensioneAggiornamentoConguaglio" />
+      <xs:element minOccurs="0" name="Prodotto" type="tns:ProdottoAggiornamentoConguaglio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PianoDiPagamentoAggiornamentoConguaglioResponse" nillable="true" type="tns:PianoDiPagamentoAggiornamentoConguaglioResponse" />
+  <xs:simpleType name="RisultatoAggiornamentoConguaglio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="NOK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RisultatoAggiornamentoConguaglio" nillable="true" type="tns:RisultatoAggiornamentoConguaglio" />
+</xs:schema>
